@@ -167,6 +167,75 @@ function attachFavoriteRecipesToggle() {
   });
 }
 
+function goToPreviousCookingStep() {
+  if (cookingModeState.stepIndex > 0) setCookingStep(cookingModeState.stepIndex - 1);
+}
+
+function goToNextCookingStep(options) {
+  const steps = getCookingSteps(cookingModeState.recipe);
+  const settings = options || {};
+
+  if (cookingModeState.stepIndex >= steps.length - 1) {
+    if (settings.finishOnLast) closeCookingMode();
+    return;
+  }
+
+  setCookingStep(cookingModeState.stepIndex + 1);
+}
+
+function attachCookingStepSwipe() {
+  const stepPanel = document.querySelector(".cooking-step-panel");
+  if (!stepPanel) return;
+
+  let startX = 0;
+  let startY = 0;
+  let startTime = 0;
+  let isTrackingSwipe = false;
+
+  stepPanel.addEventListener(
+    "touchstart",
+    (event) => {
+      if (!isCookingModeOpen() || event.touches.length !== 1) return;
+
+      const touch = event.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      startTime = Date.now();
+      isTrackingSwipe = true;
+    },
+    { passive: true }
+  );
+
+  stepPanel.addEventListener(
+    "touchend",
+    (event) => {
+      if (!isTrackingSwipe || !isCookingModeOpen() || event.changedTouches.length !== 1) return;
+
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - startX;
+      const deltaY = touch.clientY - startY;
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
+      const elapsed = Date.now() - startTime;
+
+      isTrackingSwipe = false;
+
+      if (elapsed > 900 || absX < 56 || absX < absY * 1.35) return;
+      if (deltaX < 0) {
+        goToNextCookingStep();
+        return;
+      }
+
+      goToPreviousCookingStep();
+    },
+    { passive: true }
+  );
+
+  stepPanel.addEventListener("touchcancel", () => {
+    isTrackingSwipe = false;
+  });
+}
+
 function attachCookingModeControls() {
   const closeButton = document.getElementById("closeCookingMode");
   const previousButton = document.getElementById("previousCookingStep");
@@ -183,20 +252,17 @@ function attachCookingModeControls() {
 
   if (previousButton) {
     previousButton.addEventListener("click", () => {
-      setCookingStep(cookingModeState.stepIndex - 1);
+      goToPreviousCookingStep();
     });
   }
 
   if (nextButton) {
     nextButton.addEventListener("click", () => {
-      const steps = getCookingSteps(cookingModeState.recipe);
-      if (cookingModeState.stepIndex >= steps.length - 1) {
-        closeCookingMode();
-        return;
-      }
-      setCookingStep(cookingModeState.stepIndex + 1);
+      goToNextCookingStep({ finishOnLast: true });
     });
   }
+
+  attachCookingStepSwipe();
 
   document.addEventListener("keydown", (event) => {
     if (!isCookingModeOpen()) return;
@@ -209,14 +275,13 @@ function attachCookingModeControls() {
 
     if (event.key === "ArrowRight") {
       event.preventDefault();
-      const steps = getCookingSteps(cookingModeState.recipe);
-      if (cookingModeState.stepIndex < steps.length - 1) setCookingStep(cookingModeState.stepIndex + 1);
+      goToNextCookingStep();
       return;
     }
 
     if (event.key === "ArrowLeft") {
       event.preventDefault();
-      if (cookingModeState.stepIndex > 0) setCookingStep(cookingModeState.stepIndex - 1);
+      goToPreviousCookingStep();
     }
   });
 
