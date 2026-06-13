@@ -136,9 +136,23 @@
         </div>
 
         <div class="cooking-layout">
-          <aside class="cooking-ingredients" aria-labelledby="cookingIngredientsTitle">
-            <h3 id="cookingIngredientsTitle">Ingredients</h3>
-            <div id="cookingIngredients"></div>
+          <aside id="cookingIngredientsPanel" class="cooking-ingredients" aria-labelledby="cookingIngredientsTitle">
+            <div class="cooking-ingredients-header">
+              <div>
+                <h3 id="cookingIngredientsTitle">Ingredients</h3>
+                <p id="cookingIngredientsSummary" class="cooking-ingredients-summary"></p>
+              </div>
+              <button
+                id="toggleCookingIngredients"
+                class="cooking-ingredients-toggle"
+                type="button"
+                aria-expanded="true"
+                aria-controls="cookingIngredients"
+              >
+                Hide
+              </button>
+            </div>
+            <div id="cookingIngredients" class="cooking-ingredients-body"></div>
           </aside>
 
           <section class="cooking-step-panel" aria-live="polite">

@@ -171,8 +171,15 @@ function attachCookingModeControls() {
   const closeButton = document.getElementById("closeCookingMode");
   const previousButton = document.getElementById("previousCookingStep");
   const nextButton = document.getElementById("nextCookingStep");
+  const ingredientsToggle = document.getElementById("toggleCookingIngredients");
 
   if (closeButton) closeButton.addEventListener("click", closeCookingMode);
+
+  if (ingredientsToggle) {
+    ingredientsToggle.addEventListener("click", () => {
+      setCookingIngredientsExpanded(!cookingModeState.ingredientsExpanded);
+    });
+  }
 
   if (previousButton) {
     previousButton.addEventListener("click", () => {
@@ -211,6 +218,12 @@ function attachCookingModeControls() {
       event.preventDefault();
       if (cookingModeState.stepIndex > 0) setCookingStep(cookingModeState.stepIndex - 1);
     }
+  });
+
+  window.addEventListener("resize", () => {
+    if (!isCookingModeOpen()) return;
+    if (!isMobileCookingLayout()) cookingModeState.ingredientsExpanded = true;
+    renderCookingMode();
   });
 }
 
