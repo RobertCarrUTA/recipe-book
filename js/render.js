@@ -6,6 +6,7 @@ function renderGroceryList() {
   container.innerHTML = "";
 
   const grouped = document.getElementById("groupToggle").checked;
+  const selectedRecipeCount = Object.keys(groceryState.selectedRecipeIds || {}).length;
 
   const display = {};
 
@@ -19,6 +20,7 @@ function renderGroceryList() {
     display[group][canonicalKey] = {
       totals: groceryState.totalsByKey[canonicalKey] || null,
       notes: groceryState.notesByKey[canonicalKey] || [],
+      sources: groceryState.sourcesByKey[canonicalKey] || [],
     };
   });
 
@@ -44,7 +46,10 @@ function renderGroceryList() {
           const cb = document.createElement("input");
           cb.type = "checkbox";
 
-          const span = document.createElement("span");
+          const content = document.createElement("span");
+          content.className = "grocery-item-content";
+          const itemName = document.createElement("span");
+          itemName.className = "grocery-item-name";
 
           const totalsText = entry.totals ? formatTotalsForKey(entry.totals) : "";
           const displayNotes = getDisplayNotes(entry.notes);
@@ -53,9 +58,51 @@ function renderGroceryList() {
           const displayName =
             (parsedCanonicalDisplayMap && parsedCanonicalDisplayMap[canonicalKey]) || canonicalKey;
 
-          span.textContent = totalsText
+          itemName.textContent = totalsText
             ? `${displayName} - ${totalsText}${notesText}`
             : `${displayName}${notesText}`;
+          content.appendChild(itemName);
+
+          const sourceSummary = formatGrocerySourceSummary(entry.sources, selectedRecipeCount);
+          if (sourceSummary) {
+            const sourceNames = getSortedGrocerySourceNames(entry.sources);
+
+            if (sourceNames.length > 1) {
+              const sourceToggle = document.createElement("button");
+              sourceToggle.className = "grocery-item-source grocery-item-source-toggle";
+              sourceToggle.type = "button";
+              sourceToggle.textContent = sourceSummary;
+              sourceToggle.setAttribute("aria-expanded", "false");
+
+              const sourceDetails = document.createElement("span");
+              sourceDetails.className = "grocery-item-source-list";
+              sourceDetails.hidden = true;
+              sourceNames.forEach((sourceName) => {
+                const sourceItem = document.createElement("span");
+                sourceItem.className = "grocery-item-source-list-item";
+                sourceItem.textContent = sourceName;
+                sourceDetails.appendChild(sourceItem);
+              });
+
+              sourceToggle.addEventListener("click", (event) => {
+                event.stopPropagation();
+                const isExpanded = sourceToggle.getAttribute("aria-expanded") === "true";
+                sourceToggle.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+                sourceDetails.hidden = isExpanded;
+              });
+              sourceDetails.addEventListener("click", (event) => {
+                event.stopPropagation();
+              });
+
+              content.appendChild(sourceToggle);
+              content.appendChild(sourceDetails);
+            } else {
+              const source = document.createElement("span");
+              source.className = "grocery-item-source";
+              source.textContent = sourceSummary;
+              content.appendChild(source);
+            }
+          }
 
           cb.checked = !!groceryCheckedByKey[canonicalKey];
           li.classList.toggle("checked", cb.checked);
@@ -78,6 +125,7 @@ function renderGroceryList() {
           });
 
           li.onkeydown = (event) => {
+            if (event.target !== li) return;
             if (event.key === " " || event.key === "Enter") {
               event.preventDefault();
               cb.checked = !cb.checked;
@@ -86,7 +134,7 @@ function renderGroceryList() {
           };
 
           li.appendChild(cb);
-          li.appendChild(span);
+          li.appendChild(content);
           ul.appendChild(li);
         });
 
@@ -108,6 +156,25 @@ function renderGroceryList() {
 
 function formatCount(count, singular, plural) {
   return `${count} ${count === 1 ? singular : plural}`;
+}
+
+function getSortedGrocerySourceNames(sources) {
+  return (sources || [])
+    .map((source) => source && source.title)
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
+}
+
+function formatGrocerySourceSummary(sources, selectedRecipeCount) {
+  if (!Array.isArray(sources) || sources.length === 0 || selectedRecipeCount <= 1) return "";
+
+  const sourceNames = getSortedGrocerySourceNames(sources);
+  if (!sourceNames.length) return "";
+  if (sourceNames.length === 1) {
+    return selectedRecipeCount > 8 ? "From 1 recipe" : `From ${sourceNames[0]}`;
+  }
+
+  return `From ${formatCount(sourceNames.length, "recipe", "recipes")}`;
 }
 
 function updateGrocerySummary(allKeys) {

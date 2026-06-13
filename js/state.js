@@ -16,6 +16,7 @@ const groceryState = {
   selectedRecipeIds: {}, // { [recipeId]: true }
   totalsByKey: {}, // { [canonicalKey]: { [unitKey]: { min: number, max: number } } }
   notesByKey: {}, // { [canonicalKey]: string[] } e.g., ["pinch", "to taste"]
+  sourcesByKey: {}, // { [canonicalKey]: [{ id: string, title: string }] }
 };
 
 const favoriteRecipeIds = {}; // { [recipeId]: true }
@@ -143,6 +144,9 @@ function restorePersistentState() {
     if (savedGroceryState.notesByKey && typeof savedGroceryState.notesByKey === "object") {
       groceryState.notesByKey = savedGroceryState.notesByKey;
     }
+    if (savedGroceryState.sourcesByKey && typeof savedGroceryState.sourcesByKey === "object") {
+      groceryState.sourcesByKey = savedGroceryState.sourcesByKey;
+    }
   }
 
   const savedSelectedText = localStorage.getItem(storageKeys.selectedRecipes);
@@ -245,6 +249,21 @@ function addNoteForKey(canonicalKey, note) {
   }
 }
 
+function addSourceForKey(canonicalKey, recipe, index) {
+  if (!recipe || !canonicalKey) return;
+
+  const recipeId = getRecipeKey(recipe, index);
+  const source = {
+    id: recipeId,
+    title: recipe.title || "Untitled recipe",
+  };
+
+  groceryState.sourcesByKey[canonicalKey] = groceryState.sourcesByKey[canonicalKey] || [];
+  if (!groceryState.sourcesByKey[canonicalKey].some((existing) => existing.id === recipeId)) {
+    groceryState.sourcesByKey[canonicalKey].push(source);
+  }
+}
+
 function getEffectiveUnit(parsed) {
   if (parsed.unitKey) return parsed.unitKey;
 
@@ -267,11 +286,12 @@ function getEffectiveUnit(parsed) {
   return "item";
 }
 
-function addParsedIngredientToTotals(parsed) {
+function addParsedIngredientToTotals(parsed, sourceRecipe, sourceIndex) {
   if (!parsed || !parsed.canonical || !parsed.canonical.base) return;
 
   const canonicalKey = parsed.canonical.base;
   parsedCanonicalDisplayMap[canonicalKey] = parsed.canonical.display || canonicalKey;
+  addSourceForKey(canonicalKey, sourceRecipe, sourceIndex);
 
   if (!groceryState.totalsByKey[canonicalKey]) {
     groceryState.totalsByKey[canonicalKey] = {};
@@ -321,6 +341,7 @@ function getRecipeGroceryIngredients(recipe) {
 function recomputeGroceryState() {
   groceryState.totalsByKey = {};
   groceryState.notesByKey = {};
+  groceryState.sourcesByKey = {};
 
   Object.keys(parsedCanonicalDisplayMap).forEach((key) => {
     delete parsedCanonicalDisplayMap[key];
@@ -328,7 +349,9 @@ function recomputeGroceryState() {
 
   recipes.forEach((recipe, index) => {
     if (!isRecipeSelected(recipe, index)) return;
-    getRecipeGroceryIngredients(recipe).forEach(addParsedIngredientToTotals);
+    getRecipeGroceryIngredients(recipe).forEach((parsed) => {
+      addParsedIngredientToTotals(parsed, recipe, index);
+    });
   });
 }
 
@@ -367,6 +390,7 @@ function removeIngredient(text) {
     if (Object.keys(totalsForKey).length === 0) {
       delete groceryState.totalsByKey[parsed.canonical.base];
       delete groceryState.notesByKey[parsed.canonical.base];
+      delete groceryState.sourcesByKey[parsed.canonical.base];
     }
   });
 
@@ -397,6 +421,7 @@ function clearGroceryList() {
   groceryState.selectedRecipeIds = {};
   groceryState.totalsByKey = {};
   groceryState.notesByKey = {};
+  groceryState.sourcesByKey = {};
   Object.keys(groceryCheckedByKey).forEach((key) => {
     delete groceryCheckedByKey[key];
   });
