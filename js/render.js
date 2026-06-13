@@ -460,6 +460,7 @@ const cookingModeState = {
   recipe: null,
   recipeIndex: -1,
   stepIndex: 0,
+  lastRenderedStepIndex: -1,
   ingredientsExpanded: true,
 };
 
@@ -477,6 +478,7 @@ function openCookingMode(recipe, recipeIndex) {
   cookingModeState.recipe = recipe;
   cookingModeState.recipeIndex = recipeIndex;
   cookingModeState.stepIndex = 0;
+  cookingModeState.lastRenderedStepIndex = -1;
   cookingModeState.ingredientsExpanded = !isMobileCookingLayout();
 
   const cookingMode = document.getElementById("cookingMode");
@@ -555,6 +557,7 @@ function renderCookingMode() {
   const meta = document.getElementById("cookingMeta");
   const stepCount = document.getElementById("cookingStepCount");
   const stepText = document.getElementById("cookingStepText");
+  const stepPanel = document.querySelector(".cooking-step-panel");
   const progressBar = document.getElementById("cookingProgressBar");
   const previousButton = document.getElementById("previousCookingStep");
   const nextButton = document.getElementById("nextCookingStep");
@@ -572,6 +575,10 @@ function renderCookingMode() {
   }
   if (stepCount) stepCount.textContent = `Step ${stepIndex + 1} of ${steps.length}`;
   if (stepText) stepText.textContent = steps[stepIndex];
+  if (stepPanel && cookingModeState.lastRenderedStepIndex !== stepIndex) {
+    stepPanel.scrollTop = 0;
+    cookingModeState.lastRenderedStepIndex = stepIndex;
+  }
   if (progressBar) progressBar.style.width = `${Math.round(((stepIndex + 1) / steps.length) * 100)}%`;
 
   if (previousButton) previousButton.disabled = stepIndex === 0;
