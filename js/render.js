@@ -547,7 +547,8 @@ function renderCookingMode() {
   const steps = getCookingSteps(recipe);
   const ingredients = getCookingIngredients(recipe);
   const stepIndex = Math.max(0, Math.min(cookingModeState.stepIndex, steps.length - 1));
-  const ingredientsExpanded = !isMobileCookingLayout() || cookingModeState.ingredientsExpanded;
+  const canCollapseIngredients = isMobileCookingLayout();
+  const ingredientsExpanded = !canCollapseIngredients || cookingModeState.ingredientsExpanded;
   cookingModeState.stepIndex = stepIndex;
 
   const title = document.getElementById("cookingTitle");
@@ -582,7 +583,13 @@ function renderCookingMode() {
       ingredients.length === 1 ? "1 item" : `${ingredients.length || "No"} items`;
   }
   if (ingredientsToggle) {
-    ingredientsToggle.textContent = ingredientsExpanded ? "Hide" : "Show";
+    ingredientsToggle.disabled = !canCollapseIngredients;
+    ingredientsToggle.setAttribute(
+      "aria-label",
+      canCollapseIngredients
+        ? `${ingredientsExpanded ? "Collapse" : "Expand"} ingredients`
+        : "Ingredients"
+    );
     ingredientsToggle.setAttribute("aria-expanded", ingredientsExpanded ? "true" : "false");
   }
 

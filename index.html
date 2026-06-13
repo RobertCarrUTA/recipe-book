@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css?v=cooking-mode-favorites" />
+    <link rel="stylesheet" href="css/styles.css?v=cooking-mode-disclosure" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   </head>
   <body class="app-mode-recipes">
@@ -137,21 +137,21 @@
 
         <div class="cooking-layout">
           <aside id="cookingIngredientsPanel" class="cooking-ingredients" aria-labelledby="cookingIngredientsTitle">
-            <div class="cooking-ingredients-header">
-              <div>
-                <h3 id="cookingIngredientsTitle">Ingredients</h3>
-                <p id="cookingIngredientsSummary" class="cooking-ingredients-summary"></p>
-              </div>
+            <h3 class="cooking-ingredients-heading">
               <button
                 id="toggleCookingIngredients"
-                class="cooking-ingredients-toggle"
+                class="cooking-ingredients-header"
                 type="button"
                 aria-expanded="true"
                 aria-controls="cookingIngredients"
               >
-                Hide
+                <span class="cooking-ingredients-copy">
+                  <span id="cookingIngredientsTitle" class="cooking-ingredients-title">Ingredients</span>
+                  <span id="cookingIngredientsSummary" class="cooking-ingredients-summary"></span>
+                </span>
+                <span class="cooking-ingredients-toggle" aria-hidden="true"></span>
               </button>
-            </div>
+            </h3>
             <div id="cookingIngredients" class="cooking-ingredients-body"></div>
           </aside>
 
@@ -175,13 +175,13 @@
       </div>
     </section>
 
-    <script src="js/normalization.js?v=cooking-mode-favorites"></script>
-    <script src="js/grouping.js?v=cooking-mode-favorites"></script>
-    <script src="js/units.js?v=cooking-mode-favorites"></script>
-    <script src="js/ingredient_parser.js?v=cooking-mode-favorites"></script>
-    <script src="js/state.js?v=cooking-mode-favorites"></script>
-    <script src="js/recipes.js?v=cooking-mode-favorites"></script>
-    <script src="js/render.js?v=cooking-mode-favorites"></script>
-    <script src="js/app.js?v=cooking-mode-favorites"></script>
+    <script src="js/normalization.js?v=cooking-mode-disclosure"></script>
+    <script src="js/grouping.js?v=cooking-mode-disclosure"></script>
+    <script src="js/units.js?v=cooking-mode-disclosure"></script>
+    <script src="js/ingredient_parser.js?v=cooking-mode-disclosure"></script>
+    <script src="js/state.js?v=cooking-mode-disclosure"></script>
+    <script src="js/recipes.js?v=cooking-mode-disclosure"></script>
+    <script src="js/render.js?v=cooking-mode-disclosure"></script>
+    <script src="js/app.js?v=cooking-mode-disclosure"></script>
   </body>
 </html>
