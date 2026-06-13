@@ -152,7 +152,7 @@
     ],
     "prepTime": "30 minutes",
     "rating": {
-      "count": 322,
+      "count": 347,
       "value": 4.99
     },
     "servings": "6",
@@ -329,7 +329,7 @@
     ],
     "prepTime": "15 minutes",
     "rating": {
-      "count": 237,
+      "count": 238,
       "value": 4.99
     },
     "servings": "6",
@@ -510,7 +510,7 @@
     },
     "prepTime": "15 minutes",
     "rating": {
-      "count": 26,
+      "count": 39,
       "value": 4.93
     },
     "servings": "6",
@@ -710,7 +710,7 @@
     },
     "prepTime": "5 minutes",
     "rating": {
-      "count": 601,
+      "count": 611,
       "value": 4.99
     },
     "servings": "2",
@@ -977,7 +977,7 @@
     },
     "prepTime": "20 minutes",
     "rating": {
-      "count": 2773,
+      "count": 2801,
       "value": 4.99
     },
     "servings": "4",
@@ -1097,7 +1097,7 @@
     },
     "prepTime": "15 minutes",
     "rating": {
-      "count": 9501,
+      "count": 9519,
       "value": 4.91
     },
     "servings": "9",
@@ -1225,7 +1225,7 @@
     },
     "prepTime": "10 minutes",
     "rating": {
-      "count": 364,
+      "count": 366,
       "value": 4.6
     },
     "servings": "8",
@@ -1338,7 +1338,7 @@
     },
     "prepTime": "15 minutes",
     "rating": {
-      "count": 50,
+      "count": 51,
       "value": 4.8
     },
     "servings": "5",
@@ -1418,8 +1418,8 @@
     },
     "prepTime": "5 minutes",
     "rating": {
-      "count": 482,
-      "value": 4.43
+      "count": 495,
+      "value": 4.44
     },
     "servings": "12",
     "tags": {
@@ -1557,7 +1557,10 @@
       "vitaminC": "8 mg"
     },
     "prepTime": "10 minutes",
-    "rating": null,
+    "rating": {
+      "count": 19,
+      "value": 4.95
+    },
     "servings": "4",
     "tags": {
       "equipment": [
@@ -1662,7 +1665,10 @@
       "vitaminC": "0.2 mg"
     },
     "prepTime": "30 minutes",
-    "rating": null,
+    "rating": {
+      "count": 238,
+      "value": 5.0
+    },
     "servings": "8",
     "tags": {
       "equipment": [
@@ -1802,7 +1808,10 @@
       "vitaminC": "11 mg"
     },
     "prepTime": "15 minutes",
-    "rating": null,
+    "rating": {
+      "count": 33,
+      "value": 5.0
+    },
     "servings": "6",
     "tags": {
       "equipment": [
@@ -1974,7 +1983,10 @@
       "vitaminC": "0.04 mg"
     },
     "prepTime": "15 minutes",
-    "rating": null,
+    "rating": {
+      "count": 701,
+      "value": 4.96
+    },
     "servings": "12",
     "tags": {
       "equipment": [
@@ -2149,7 +2161,10 @@
       "vitaminC": "1 mg"
     },
     "prepTime": "30 minutes",
-    "rating": null,
+    "rating": {
+      "count": 243,
+      "value": 4.93
+    },
     "servings": "12",
     "tags": {
       "equipment": [
@@ -2296,7 +2311,10 @@
       "vitaminC": "54 mg"
     },
     "prepTime": "20 minutes",
-    "rating": null,
+    "rating": {
+      "count": 145,
+      "value": 4.96
+    },
     "servings": "1 (9-inch) cake",
     "tags": {
       "equipment": [
@@ -2398,7 +2416,10 @@
       "vitaminC": "0.3 mg"
     },
     "prepTime": "20 minutes",
-    "rating": null,
+    "rating": {
+      "count": 98,
+      "value": 4.85
+    },
     "servings": "24 cookies",
     "tags": {
       "equipment": [
@@ -2565,7 +2586,10 @@
       "vitaminC": "21 mg"
     },
     "prepTime": "10 minutes",
-    "rating": null,
+    "rating": {
+      "count": 2,
+      "value": 5.0
+    },
     "servings": "8",
     "tags": {
       "equipment": [
@@ -2845,7 +2869,10 @@
       "vitaminA": "1270 IU"
     },
     "prepTime": "20 minutes",
-    "rating": null,
+    "rating": {
+      "count": 2208,
+      "value": 4.98
+    },
     "servings": "16 cupcakes",
     "tags": {
       "equipment": [
@@ -2972,7 +2999,10 @@
       "vitaminC": "0.4 mg"
     },
     "prepTime": "20 minutes",
-    "rating": null,
+    "rating": {
+      "count": 1,
+      "value": 5.0
+    },
     "servings": "6-8 (24 hush puppies)",
     "tags": {
       "equipment": [
@@ -3077,7 +3107,10 @@
       "vitaminC": "38 mg"
     },
     "prepTime": "10 minutes",
-    "rating": null,
+    "rating": {
+      "count": 6,
+      "value": 5.0
+    },
     "servings": "6",
     "tags": {
       "equipment": [
@@ -3172,7 +3205,10 @@
       "vitaminC": "4 mg"
     },
     "prepTime": "10 minutes",
-    "rating": null,
+    "rating": {
+      "count": 3,
+      "value": 5.0
+    },
     "servings": "2",
     "tags": {
       "equipment": [
@@ -3319,7 +3355,10 @@
       "vitaminC": "2 mg"
     },
     "prepTime": "15 minutes",
-    "rating": null,
+    "rating": {
+      "count": 423,
+      "value": 4.99
+    },
     "servings": "12",
     "tags": {
       "equipment": [
@@ -3433,7 +3472,10 @@
       "vitaminC": "2 mg"
     },
     "prepTime": "3 hours 30 minutes",
-    "rating": null,
+    "rating": {
+      "count": 1,
+      "value": 5.0
+    },
     "servings": "10",
     "tags": {
       "equipment": [
@@ -3502,7 +3544,10 @@
       "vitaminC": "5 mg"
     },
     "prepTime": "10 minutes",
-    "rating": null,
+    "rating": {
+      "count": 2,
+      "value": 5.0
+    },
     "servings": "2-4",
     "tags": {
       "equipment": [
@@ -3629,7 +3674,10 @@
       "vitaminA": "307 IU"
     },
     "prepTime": "10 minutes",
-    "rating": null,
+    "rating": {
+      "count": 1664,
+      "value": 4.96
+    },
     "servings": "16 bars",
     "tags": {
       "equipment": [
@@ -3764,7 +3812,10 @@
       "vitaminC": "0.1 mg"
     },
     "prepTime": "20 minutes",
-    "rating": null,
+    "rating": {
+      "count": 980,
+      "value": 4.98
+    },
     "servings": "12",
     "tags": {
       "equipment": [
@@ -3876,7 +3927,10 @@
       "vitaminC": "8 mg"
     },
     "prepTime": "20 minutes",
-    "rating": null,
+    "rating": {
+      "count": 4287,
+      "value": 4.97
+    },
     "servings": "15 bars",
     "tags": {
       "equipment": [
@@ -4006,7 +4060,10 @@
       "vitaminC": "0.2 mg"
     },
     "prepTime": "10 minutes",
-    "rating": null,
+    "rating": {
+      "count": 624,
+      "value": 4.96
+    },
     "servings": "12",
     "tags": {
       "equipment": [
@@ -4166,7 +4223,10 @@
       "vitaminC": "10 mg"
     },
     "prepTime": "10 minutes",
-    "rating": null,
+    "rating": {
+      "count": 4,
+      "value": 5.0
+    },
     "servings": "4",
     "tags": {
       "equipment": [
@@ -4274,7 +4334,10 @@
       "vitaminC": "0.01 mg"
     },
     "prepTime": "20 minutes",
-    "rating": null,
+    "rating": {
+      "count": 6,
+      "value": 5.0
+    },
     "servings": "12",
     "tags": {
       "equipment": [
@@ -4432,7 +4495,10 @@
       "vitaminC": "18 mg"
     },
     "prepTime": "20 minutes",
-    "rating": null,
+    "rating": {
+      "count": 8,
+      "value": 5.0
+    },
     "servings": "8",
     "tags": {
       "equipment": [
@@ -4552,7 +4618,10 @@
       "vitaminA": "170 IU"
     },
     "prepTime": "1 minute",
-    "rating": null,
+    "rating": {
+      "count": 5485,
+      "value": 4.95
+    },
     "servings": "18 cookies",
     "tags": {
       "equipment": [
@@ -4669,8 +4738,8 @@
     },
     "prepTime": "10 minutes",
     "rating": {
-      "count": 378,
-      "value": 4.9
+      "count": 423,
+      "value": 4.91
     },
     "servings": "20 cookies",
     "tags": {
@@ -4799,8 +4868,8 @@
     },
     "prepTime": "15 minutes",
     "rating": {
-      "count": 1279,
-      "value": 4.4
+      "count": 1320,
+      "value": 4.41
     },
     "servings": "24 cookies",
     "tags": {
