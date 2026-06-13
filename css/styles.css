@@ -967,35 +967,67 @@ li {
   overflow: hidden;
 }
 
+.cooking-ingredients-heading {
+  margin: 0;
+}
+
 .cooking-ingredients-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  width: 100%;
   min-height: 58px;
   padding: 10px 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  cursor: default;
+  text-align: left;
+}
+
+.cooking-ingredients-header:hover {
+  background: transparent;
+}
+
+.cooking-ingredients-header:disabled {
+  opacity: 1;
 }
 
 .cooking-ingredients:not(.is-collapsed) .cooking-ingredients-header {
   border-bottom: 1px solid rgba(45, 54, 63, 0.7);
 }
 
-.cooking-ingredients h3 {
-  margin: 0;
+.cooking-ingredients-copy {
+  min-width: 0;
+}
+
+.cooking-ingredients-title {
+  display: block;
   font-size: 0.95rem;
+  font-weight: 850;
+  line-height: 1.2;
 }
 
 .cooking-ingredients-summary {
-  margin: 3px 0 0;
+  display: block;
+  margin-top: 3px;
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 750;
+  line-height: 1.25;
 }
 
 .cooking-ingredients-toggle {
   display: none;
-  min-height: 38px;
-  padding: 0 12px;
+  flex: 0 0 auto;
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 160ms ease;
 }
 
 .cooking-ingredients-body {
@@ -1125,8 +1157,20 @@ li {
     max-height: min(36vh, 260px);
   }
 
+  .cooking-ingredients-header {
+    cursor: pointer;
+  }
+
+  .cooking-ingredients-header:not(:disabled):hover {
+    background: rgba(255, 255, 255, 0.025);
+  }
+
   .cooking-ingredients-toggle {
     display: inline-block;
+  }
+
+  .cooking-ingredients-header[aria-expanded="true"] .cooking-ingredients-toggle {
+    transform: translateY(3px) rotate(225deg);
   }
 
   .cooking-ingredients.is-collapsed {
