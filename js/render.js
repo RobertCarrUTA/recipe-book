@@ -460,6 +460,7 @@ const cookingModeState = {
   recipe: null,
   recipeIndex: -1,
   stepIndex: 0,
+  ingredientsExpanded: true,
 };
 
 function getCookingSteps(recipe) {
@@ -468,10 +469,15 @@ function getCookingSteps(recipe) {
     : ["No instructions are available for this recipe yet."];
 }
 
+function isMobileCookingLayout() {
+  return window.matchMedia && window.matchMedia("(max-width: 979px)").matches;
+}
+
 function openCookingMode(recipe, recipeIndex) {
   cookingModeState.recipe = recipe;
   cookingModeState.recipeIndex = recipeIndex;
   cookingModeState.stepIndex = 0;
+  cookingModeState.ingredientsExpanded = !isMobileCookingLayout();
 
   const cookingMode = document.getElementById("cookingMode");
   if (!cookingMode) return;
@@ -501,12 +507,21 @@ function setCookingStep(nextIndex) {
   renderCookingMode();
 }
 
+function setCookingIngredientsExpanded(isExpanded) {
+  cookingModeState.ingredientsExpanded = !!isExpanded;
+  renderCookingMode();
+}
+
+function getCookingIngredients(recipe) {
+  return Array.isArray(recipe && recipe.ingredients) ? recipe.ingredients : [];
+}
+
 function renderCookingIngredients(recipe) {
   const container = document.getElementById("cookingIngredients");
   if (!container) return;
 
   container.innerHTML = "";
-  const ingredients = Array.isArray(recipe && recipe.ingredients) ? recipe.ingredients : [];
+  const ingredients = getCookingIngredients(recipe);
 
   if (!ingredients.length) {
     const empty = document.createElement("p");
@@ -530,7 +545,9 @@ function renderCookingMode() {
   if (!recipe) return;
 
   const steps = getCookingSteps(recipe);
+  const ingredients = getCookingIngredients(recipe);
   const stepIndex = Math.max(0, Math.min(cookingModeState.stepIndex, steps.length - 1));
+  const ingredientsExpanded = !isMobileCookingLayout() || cookingModeState.ingredientsExpanded;
   cookingModeState.stepIndex = stepIndex;
 
   const title = document.getElementById("cookingTitle");
@@ -540,6 +557,10 @@ function renderCookingMode() {
   const progressBar = document.getElementById("cookingProgressBar");
   const previousButton = document.getElementById("previousCookingStep");
   const nextButton = document.getElementById("nextCookingStep");
+  const ingredientsPanel = document.getElementById("cookingIngredientsPanel");
+  const ingredientsContainer = document.getElementById("cookingIngredients");
+  const ingredientsSummary = document.getElementById("cookingIngredientsSummary");
+  const ingredientsToggle = document.getElementById("toggleCookingIngredients");
 
   if (title) title.textContent = recipe.title || "Recipe";
   if (meta) {
@@ -554,6 +575,16 @@ function renderCookingMode() {
 
   if (previousButton) previousButton.disabled = stepIndex === 0;
   if (nextButton) nextButton.textContent = stepIndex === steps.length - 1 ? "Finish" : "Next";
+  if (ingredientsPanel) ingredientsPanel.classList.toggle("is-collapsed", !ingredientsExpanded);
+  if (ingredientsContainer) ingredientsContainer.hidden = !ingredientsExpanded;
+  if (ingredientsSummary) {
+    ingredientsSummary.textContent =
+      ingredients.length === 1 ? "1 item" : `${ingredients.length || "No"} items`;
+  }
+  if (ingredientsToggle) {
+    ingredientsToggle.textContent = ingredientsExpanded ? "Hide" : "Show";
+    ingredientsToggle.setAttribute("aria-expanded", ingredientsExpanded ? "true" : "false");
+  }
 
   renderCookingIngredients(recipe);
 }
