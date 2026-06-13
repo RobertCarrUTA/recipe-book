@@ -1,0 +1,860 @@
+/*=============================================================================
+CLIENT-SIDE APPLICATION OVERVIEW
+
+This file intentionally uses no build step and no external JS framework.
+The goal is long-term durability: the file can be opened locally, emailed,
+versioned, and archived without tooling dependencies.
+
+Major responsibilities handled in this script:
+  - Parse free-form ingredient text into canonical grocery items
+  - Normalize units and quantities so multiple recipes can be merged
+  - Preserve important distinctions (e.g., salted vs unsalted butter)
+  - Persist user state (grocery list, checkmarks, filters) via localStorage
+  - Render both recipes and a derived grocery list accessibly
+
+=============================================================================*/
+
+// ===== Commodity helpers (single source of truth) =====
+function extractCommodityBaseStrict(raw) {
+  const name = raw.toLowerCase();
+
+  if (name.includes("all-purpose flour") || name === "flour") return "all-purpose flour";
+  if (name.includes("granulated sugar")) return "granulated sugar";
+  if (name.includes("powdered sugar") || name.includes("confectioners")) return "powdered sugar";
+  if (name.includes("light brown sugar")) return "light brown sugar";
+  if (name.includes("dark brown sugar")) return "dark brown sugar";
+
+  if (name.includes("lemon zest")) return "lemon zest";
+  if (name.includes("lemon juice")) return "lemon juice";
+  if (name.includes("lemon")) return "lemon";
+
+  if (name.includes("greek yogurt") && name.includes("sour cream")) return "greek yogurt or sour cream";
+  if (name.includes("greek yogurt")) return "greek yogurt";
+
+  if (name.includes("sweetened condensed milk")) return "sweetened condensed milk";
+  if (name.includes("evaporated milk")) return "evaporated milk";
+  if (name.includes("buttermilk")) return "buttermilk";
+
+  if (name.includes("peanut butter")) return "peanut butter";
+  if (name.includes("almond butter")) return "almond butter";
+
+  if (name.includes("milk chocolate")) return "milk chocolate";
+
+  if (name.includes("unsalted butter")) return "unsalted butter";
+  if (name.includes("salted butter")) return "salted butter";
+  if (name.includes("butter")) return "butter";
+
+  if (name.includes("cream cheese")) return "cream cheese";
+
+  if (name.includes("whole milk")) return "whole milk";
+  if (name.includes("skim milk")) return "skim milk";
+  if (name.includes("2% milk")) return "2% milk";
+  if (name.includes("milk")) return "milk";
+
+  if (/\begg\s+yolks?\b/.test(name)) return "egg yolk";
+  if (/\begg\s+whites?\b/.test(name)) return "egg whites";
+  if (/\beggs?\b/.test(name)) return "egg";
+
+  if (name.includes("sour cream")) return "sour cream";
+
+  if (name.includes("parmigiano reggiano")) return "parmigiano reggiano cheese";
+  if (name.includes("parmesan") || name.includes("parmigiano")) return "parmesan cheese";
+
+  if (name.includes("heavy whipping cream")) return "heavy whipping cream";
+  if (name.includes("heavy cream")) return "heavy cream";
+
+  if (name.includes("cheddar")) return "cheddar cheese";
+
+  if (name.includes("flaky sea salt")) return "flaky sea salt";
+  if (name.includes("flaked sea salt")) return "flaked sea salt";
+  if (name.includes("flaky salt")) return "flaky salt";
+  if (name.includes("sea salt")) return "sea salt";
+  if (name.includes("kosher salt")) return "kosher salt";
+  if (name.includes("salt")) return "salt";
+  if (name.includes("black pepper")) return "black pepper";
+  if (/^(?:ground\s+)?pepper$/.test(name)) return "pepper";
+
+  return null;
+}
+
+function extractNotesStrict(raw) {
+  const notes = [];
+  ["divided", "for dredging", "for dusting", "plus more", "packed", "lightly packed", "sifted"].forEach((k) => {
+    if (raw.includes(k)) notes.push(k);
+  });
+  return notes;
+}
+
+/* ================================
+NORMALIZATION HELPERS
+
+Ingredient text is highly inconsistent across recipes. These helpers
+exist to aggressively normalize input before aggregation.
+  - Treat visually different but semantically identical inputs as equal
+  - Preserve distinctions that affect shopping decisions
+  - Avoid over-normalization that could merge distinct products
+================================ */
+const unicodeFractionMap = {
+  "¼": "1/4",
+  "½": "1/2",
+  "¾": "3/4",
+  "⅐": "1/7",
+  "⅑": "1/9",
+  "⅒": "1/10",
+  "⅓": "1/3",
+  "⅔": "2/3",
+  "⅕": "1/5",
+  "⅖": "2/5",
+  "⅗": "3/5",
+  "⅘": "4/5",
+  "⅙": "1/6",
+  "⅚": "5/6",
+  "⅛": "1/8",
+  "⅜": "3/8",
+  "⅝": "5/8",
+  "⅞": "7/8",
+};
+
+function normalizeWhitespace(text) {
+  return String(text || "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function normalizeUnicodeFractions(text) {
+  let result = String(text || "");
+  Object.keys(unicodeFractionMap).forEach((symbol) => {
+    result = result.replace(new RegExp(`(\\d)${symbol}`, "g"), `$1 ${unicodeFractionMap[symbol]}`);
+    result = result.replace(new RegExp(symbol, "g"), unicodeFractionMap[symbol]);
+  });
+  return result;
+}
+
+function parseNumberToken(token) {
+  const trimmed = token.trim();
+  if (!trimmed) return null;
+
+  if (/^\d+(\.\d+)?$/.test(trimmed)) {
+    return Number(trimmed);
+  }
+
+  if (/^\d+\/\d+$/.test(trimmed)) {
+    const parts = trimmed.split("/");
+    const numerator = Number(parts[0]);
+    const denominator = Number(parts[1]);
+    if (!denominator) return null;
+    return numerator / denominator;
+  }
+
+  return null;
+}
+
+function parseQuantityRange(quantityText) {
+  const cleaned = normalizeWhitespace(normalizeUnicodeFractions(quantityText || "").replace(/-\s*to\s+/gi, "-"));
+  if (!cleaned) return null;
+
+  const rangeMatch = cleaned.match(/^(.+?)(?:\s*(?:-|to)\s*)(.+)$/i);
+  if (rangeMatch) {
+    const left = parseQuantityRange(rangeMatch[1]);
+    const right = parseQuantityRange(rangeMatch[2]);
+    if (!left || !right) return null;
+    return { min: left.min, max: right.max };
+  }
+
+  const mixedMatch = cleaned.match(/^(\d+)\s+(\d+\/\d+)$/);
+  if (mixedMatch) {
+    const whole = Number(mixedMatch[1]);
+    const frac = parseNumberToken(mixedMatch[2]);
+    if (frac === null) return null;
+    const value = whole + frac;
+    return { min: value, max: value };
+  }
+
+  const value = parseNumberToken(cleaned);
+  if (value === null) return null;
+  return { min: value, max: value };
+}
+
+function normalizeUnit(unitRaw) {
+  const unit = (unitRaw || "").toLowerCase().trim();
+
+  if (!unit) return null;
+
+  if (unit === "tsp" || unit === "teaspoon" || unit === "teaspoons") return "tsp";
+  if (unit === "tbsp" || unit === "tablespoon" || unit === "tablespoons") return "tbsp";
+  if (unit === "cup" || unit === "cups") return "cup";
+  if (unit === "oz" || unit === "ounce" || unit === "ounces") return "oz";
+  if (unit === "lb" || unit === "lbs" || unit === "pound" || unit === "pounds") return "lb";
+  if (unit === "g" || unit === "gram" || unit === "grams") return "g";
+  if (unit === "kg" || unit === "kilogram" || unit === "kilograms") return "kg";
+  if (unit === "ml" || unit === "milliliter" || unit === "milliliters") return "ml";
+  if (unit === "l" || unit === "liter" || unit === "liters") return "l";
+
+  if (unit === "bag" || unit === "bags") return "bag";
+  if (unit === "block" || unit === "blocks") return "block";
+  if (unit === "bottle" || unit === "bottles") return "bottle";
+  if (unit === "bunch" || unit === "bunches") return "bunch";
+  if (unit === "can" || unit === "cans") return "can";
+  if (unit === "clove" || unit === "cloves") return "clove";
+  if (unit === "egg" || unit === "eggs") return "egg";
+  if (unit === "egg white" || unit === "egg whites") return "egg white";
+  if (unit === "jar" || unit === "jars") return "jar";
+  if (unit === "leaf" || unit === "leaves") return "leaf";
+  if (unit === "package" || unit === "packages" || unit === "pkg" || unit === "pkgs") return "package";
+  if (unit === "sheet" || unit === "sheets") return "sheet";
+  if (unit === "slice" || unit === "slices") return "slice";
+  if (unit === "sprig" || unit === "sprigs") return "sprig";
+  if (unit === "stalk" || unit === "stalks") return "stalk";
+  if (unit === "stick" || unit === "sticks") return "stick";
+  if (unit === "yolk" || unit === "yolks") return "yolk";
+
+  return unit;
+}
+
+function removeParentheticalsAndTrailingNotes(nameText) {
+  let name = String(nameText || "");
+
+  // Preserve primary imperial weight inside parentheses, e.g. "(4-pound / 1.8 kg)"
+  const weightMatch = name.match(/\(([^)]*?)(\d+(?:\.\d+)?)[\s-]*(pound|pounds|lb|lbs)[^)]*\)/i);
+  let preservedWeight = "";
+  if (weightMatch) {
+    preservedWeight = ` ${weightMatch[2]} lb`;
+  }
+
+  name = name.replace(/\([^)]*\)/g, " ");
+
+  // Remove slash-weight fragments like "/ 1.8 kg" or "/1.8kg"
+  name = name.replace(/\/\s*\d+(?:\.\d+)?\s*(kg|g)\b/gi, " ");
+
+  // Do NOT truncate at commas; commas often separate important words
+  name = name.replace(/,/g, " ");
+
+  return normalizeWhitespace(name + preservedWeight);
+}
+
+function classifyNonQuantified(textLower) {
+  const markers = ["to taste", "as needed", "as desired", "pinch", "dash", "optional:"];
+
+  for (const marker of markers) {
+    if (textLower.includes(marker)) return marker;
+  }
+  return null;
+}
+
+function extractUsageNotes(ingredientText) {
+  const lowered = String(ingredientText || "").toLowerCase();
+
+  const usagePhrases = [
+    "to taste",
+    "for garnish",
+    "for serving",
+    "for frying",
+    "for greasing",
+    "for topping",
+    "for rolling",
+    "as needed",
+    "as required",
+    "plus more",
+    "optional",
+    "divided",
+  ];
+
+  const notes = [];
+  for (const phrase of usagePhrases) {
+    if (lowered.includes(phrase)) notes.push(phrase);
+  }
+  return notes;
+}
+
+function extractCommodityBase(ingredientText) {
+  let working = String(ingredientText || "")
+    .trim()
+    .toLowerCase();
+
+  working = working.replace(/\([^)]*\)/g, " ");
+
+  const removablePhrases = [
+    "to taste",
+    "for garnish",
+    "for serving",
+    "for frying",
+    "for greasing",
+    "as needed",
+    "as required",
+    "optional",
+    "divided",
+  ];
+
+  for (const phrase of removablePhrases) {
+    working = working.replace(new RegExp(`\\b${escapeRegex(phrase)}\\b`, "g"), " ");
+  }
+
+  working = working.replace(/[,;]+/g, " ");
+  working = working.replace(/\s+/g, " ").trim();
+
+  const removableLeadingWords = [
+    "fresh",
+    "large",
+    "small",
+    "medium",
+    "ripe",
+    "raw",
+    "cooked",
+    "uncooked",
+    "frozen",
+    "thawed",
+    "room",
+    "temperature",
+    "softened",
+    "melted",
+    "packed",
+    "lightly",
+    "firmly",
+    "finely",
+    "coarsely",
+    "roughly",
+    "thinly",
+    "thickly",
+    "chopped",
+    "diced",
+    "minced",
+    "sliced",
+    "crushed",
+    "peeled",
+    "seeded",
+    "deveined",
+    "grated",
+    "shredded",
+    "zested",
+    "juiced",
+    "drained",
+    "rinsed",
+  ];
+
+  let tokens = working.split(" ").filter(Boolean);
+
+  while (tokens.length > 1 && removableLeadingWords.includes(tokens[0])) {
+    tokens.shift();
+  }
+
+  working = tokens.join(" ").trim();
+
+  if (working.includes("salt")) {
+    if (working.includes("kosher")) return "kosher salt";
+    if (working.includes("sea")) return "sea salt";
+    if (working.includes("table")) return "table salt";
+    if (working.includes("iodized")) return "iodized salt";
+    return "salt";
+  }
+
+  if (working.includes("butter")) {
+    if (working.includes("unsalted")) return "unsalted butter";
+    if (working.includes("salted")) return "salted butter";
+    return "butter";
+  }
+
+  return working;
+}
+
+function buildCanonicalIngredient(nameLower) {
+  const raw = normalizeWhitespace(removeParentheticalsAndTrailingNotes(nameLower)).toLowerCase();
+  if (!raw) return null;
+
+  if (raw.includes("dark or semi sweet chocolate") || raw.includes("dark or semi-sweet chocolate")) {
+    return {
+      base: "chocolate",
+      display: "Chocolate (dark OR semi-sweet)",
+      notes: [],
+    };
+  }
+
+  const commodity = extractCommodityBaseStrict(raw);
+  const notes = extractNotesStrict(raw);
+
+  if (commodity) {
+    return {
+      base: commodity, // ONLY key used for aggregation
+      display: commodity, // UI label
+      notes: notes,
+    };
+  }
+
+  if (raw.includes("granulated garlic") && raw.includes("garlic powder")) {
+    return { base: "granulated garlic or garlic powder", display: "granulated garlic or garlic powder" };
+  }
+
+  if (raw.includes("garlic powder")) {
+    return { base: "garlic powder", display: "garlic powder" };
+  }
+
+  if (raw.includes("onion powder")) {
+    return { base: "onion powder", display: "onion powder" };
+  }
+
+  if (raw.includes("garlic")) {
+    return { base: "garlic", display: "garlic" };
+  }
+
+  if (raw.includes("yellow onion")) {
+    return { base: "yellow onion", display: "yellow onion" };
+  }
+
+  if (raw.includes("roasted red peppers")) {
+    return { base: "roasted red peppers", display: "roasted red peppers" };
+  }
+
+  if (raw.includes("green bell pepper")) {
+    return { base: "green bell pepper", display: "green bell pepper" };
+  }
+
+  if (raw.includes("red bell pepper")) {
+    return { base: "red bell pepper", display: "red bell pepper" };
+  }
+
+  if (raw.includes("bell pepper")) {
+    return { base: "bell pepper", display: "bell pepper" };
+  }
+
+  if (raw.includes("carrot")) {
+    return { base: "carrot", display: "carrot" };
+  }
+
+  if (raw.includes("celery")) {
+    return { base: "celery", display: "celery" };
+  }
+
+  if (raw.includes("potato")) {
+    if (raw.includes("sweet potato")) return { base: "sweet potato", display: "sweet potato" };
+    if (raw.includes("yukon gold")) return { base: "yukon gold potato", display: "Yukon gold potato" };
+    if (raw.includes("baby yellow")) return { base: "baby yellow potato", display: "baby yellow potato" };
+    return { base: "potato", display: "potato" };
+  }
+
+  if (raw.includes("chicken breast")) {
+    return { base: "chicken breast", display: "chicken breast" };
+  }
+
+  if (raw.includes("flank steak")) {
+    return { base: "flank steak", display: "flank steak" };
+  }
+
+  if (raw.includes("new york strip") || raw.includes("ribeye") || raw.includes("top sirloin")) {
+    return { base: "steak", display: "steak" };
+  }
+
+  if (raw.includes("ground beef")) {
+    return { base: "ground beef", display: "ground beef" };
+  }
+
+  if (raw.includes("short rib")) {
+    return { base: "beef short rib", display: "beef short rib" };
+  }
+
+  if (raw.includes("beef tenderloin")) {
+    return { base: "beef tenderloin", display: "beef tenderloin" };
+  }
+
+  if (raw.includes("prime rib")) {
+    return { base: "prime rib roast", display: "prime rib roast" };
+  }
+
+  if (raw.includes("crushed tomatoes")) {
+    return { base: "crushed tomatoes", display: "crushed tomatoes" };
+  }
+
+  if (raw.includes("fire-roasted diced tomatoes")) {
+    return { base: "fire-roasted diced tomatoes", display: "fire-roasted diced tomatoes" };
+  }
+
+  if (raw.includes("diced tomatoes")) {
+    return { base: "diced tomatoes", display: "diced tomatoes" };
+  }
+
+  if (raw.includes("tomato sauce")) {
+    return { base: "tomato sauce", display: "tomato sauce" };
+  }
+
+  if (raw.includes("tomato paste")) {
+    return { base: "tomato paste", display: "tomato paste" };
+  }
+
+  if (raw.includes("kidney beans")) {
+    return { base: "kidney beans", display: "kidney beans" };
+  }
+
+  if (raw.includes("pinto beans")) {
+    return { base: "pinto beans", display: "pinto beans" };
+  }
+
+  if (raw.includes("cream of chicken soup")) {
+    return { base: "cream of chicken soup", display: "cream of chicken soup" };
+  }
+
+  if (raw.includes("puff pastry")) {
+    return { base: "puff pastry dough", display: "puff pastry dough" };
+  }
+
+  if (raw.includes("vanilla bean paste") && raw.includes("extract")) {
+    return { base: "vanilla extract or paste", display: "vanilla extract or paste" };
+  }
+
+  if (raw.includes("vanilla bean paste")) {
+    return { base: "vanilla bean paste", display: "vanilla bean paste" };
+  }
+
+  if (raw.includes("vanilla extract") || raw.includes("vanilla paste")) {
+    return { base: "vanilla extract or paste", display: "vanilla extract or paste" };
+  }
+
+  if (raw.includes("egg yolk")) {
+    return { base: "egg yolk", display: "egg yolk" };
+  }
+
+  if (raw.includes("brown sugar")) {
+    if (raw.includes("light or dark")) return { base: "brown sugar", display: "brown sugar" };
+    return { base: "brown sugar", display: "brown sugar" };
+  }
+
+  if (raw.includes("maple syrup")) {
+    return { base: "maple syrup", display: "maple syrup" };
+  }
+
+  if (raw.includes("blueberries")) {
+    return { base: "blueberries", display: "blueberries" };
+  }
+
+  if (raw.includes("raspberries")) {
+    return { base: "raspberries", display: "raspberries" };
+  }
+
+  if (raw.includes("mixed berries")) {
+    return { base: "mixed berries", display: "mixed berries" };
+  }
+
+  if (raw.includes("berries")) {
+    return { base: "berries", display: "berries" };
+  }
+
+  if (raw.includes("banana")) {
+    return { base: "banana", display: "banana" };
+  }
+
+  if (raw.includes("walnut")) {
+    return { base: "walnuts", display: "walnuts" };
+  }
+
+  if (raw.includes("pecan")) {
+    return { base: "pecans", display: "pecans" };
+  }
+
+  if (raw.includes("pistachio")) {
+    return { base: "pistachios", display: "pistachios" };
+  }
+
+  if (raw.includes("nuts of choice")) {
+    return { base: "nuts of choice", display: "nuts of choice" };
+  }
+
+  if (raw.includes("pasta of choice") || raw.includes("pasta")) {
+    return { base: "pasta", display: "pasta" };
+  }
+
+  if (raw.includes("beef broth")) {
+    return { base: "beef broth", display: "beef broth" };
+  }
+
+  if (raw.includes("chicken broth")) {
+    return { base: "chicken broth", display: "chicken broth" };
+  }
+
+  if (raw.includes("cinnamon")) {
+    return { base: "cinnamon", display: "cinnamon" };
+  }
+
+  if (raw.includes("red pepper flakes")) {
+    return { base: "red pepper flakes", display: "red pepper flakes" };
+  }
+
+  if (raw.includes("peanut or vegetable oil")) {
+    return { base: "peanut or vegetable oil", display: "peanut or vegetable oil" };
+  }
+
+  if (raw.includes("olive or avocado oil")) {
+    return { base: "olive or avocado oil", display: "olive or avocado oil" };
+  }
+
+  if (raw.includes("pizza oil")) {
+    return { base: "pizza oil or olive oil", display: "pizza oil or olive oil" };
+  }
+
+  if (raw.includes("oil of choice")) {
+    return { base: "oil of choice", display: "oil of choice" };
+  }
+
+  if (raw.includes("mayonnaise")) {
+    return { base: "mayonnaise", display: "mayonnaise" };
+  }
+
+  if (raw.includes("pizza sauce")) {
+    return { base: "pizza sauce", display: "pizza sauce" };
+  }
+
+  if (raw.includes("cheese of choice")) {
+    return { base: "cheese", display: "cheese" };
+  }
+
+  if (raw.includes("lettuce")) {
+    return { base: "lettuce", display: "lettuce" };
+  }
+
+  if (raw.includes("chocolate chip") || raw.includes("chopped chocolate") || raw.includes("dark chocolate") || raw.includes("white chocolate") || raw.includes("semi-sweet chocolate") || raw.includes("semisweet chocolate")) {
+    if (raw.includes("white chocolate")) return { base: "white chocolate", display: "white chocolate" };
+    if (raw.includes("dark chocolate")) return { base: "dark chocolate", display: "dark chocolate" };
+    if (raw.includes("semisweet chocolate chips")) return { base: "semisweet chocolate chips", display: "semisweet chocolate chips" };
+    if (raw.includes("semi-sweet chocolate chips")) return { base: "semi-sweet chocolate chips", display: "semi-sweet chocolate chips" };
+    if (raw.includes("semi-sweet")) return { base: "semi-sweet chocolate", display: "semi-sweet chocolate" };
+    if (raw.includes("semisweet")) return { base: "semisweet chocolate", display: "semisweet chocolate" };
+    return { base: "chocolate", display: "chocolate" };
+  }
+
+  if (raw.includes("avocado oil") && raw.includes("coconut oil")) {
+    return { base: "avocado oil or coconut oil", display: "avocado oil or coconut oil" };
+  }
+
+  if (raw.includes("avocado oil")) {
+    return { base: "avocado oil", display: "avocado oil" };
+  }
+
+  if (raw.includes("olive oil")) {
+    return { base: "olive oil", display: "olive oil" };
+  }
+
+  if (raw.includes("chipotle peppers in adobo")) {
+    return { base: "chipotle peppers in adobo sauce", display: "chipotle peppers in adobo sauce" };
+  }
+
+  if (raw.includes("sun-dried tomatoes")) {
+    return { base: "sun-dried tomatoes", display: "sun-dried tomatoes" };
+  }
+
+  if (raw.includes("broccoli")) {
+    return { base: "broccoli", display: "broccoli" };
+  }
+
+  if (raw.includes("green onion")) {
+    return { base: "green onion", display: "green onion" };
+  }
+
+  if (raw.includes("onion")) {
+    return { base: "onion", display: "onion" };
+  }
+
+  if (raw.includes("ginger")) {
+    return { base: "ginger", display: "ginger" };
+  }
+
+  if (raw.includes("peach")) {
+    return { base: "peach", display: "peach" };
+  }
+
+  if (raw.includes("graham cracker")) {
+    return { base: "graham crackers", display: "graham crackers" };
+  }
+
+  if (raw.includes("croissant")) {
+    return { base: "croissants", display: "croissants" };
+  }
+
+  if (raw.includes("refrigerated crescent rolls")) {
+    return { base: "refrigerated crescent rolls", display: "refrigerated crescent rolls" };
+  }
+
+  if (raw.includes("pineapple slices")) {
+    return { base: "pineapple slices", display: "pineapple slices" };
+  }
+
+  if (raw.includes("maraschino cherries")) {
+    return { base: "maraschino cherries", display: "maraschino cherries" };
+  }
+
+  if (raw.includes("vanilla bean")) {
+    return { base: "vanilla bean", display: "vanilla bean" };
+  }
+
+  if (raw.includes("basil pesto")) {
+    return { base: "basil pesto", display: "basil pesto" };
+  }
+
+  if (raw.includes("basil")) {
+    return { base: "basil", display: "basil" };
+  }
+
+  if (raw.includes("sourdough discard")) {
+    return { base: "sourdough discard", display: "sourdough discard" };
+  }
+
+  if (raw.includes("freeze-dried strawberries")) {
+    return { base: "freeze-dried strawberries", display: "freeze-dried strawberries" };
+  }
+
+  if (raw.includes("pickles")) {
+    return { base: "pickles", display: "pickles" };
+  }
+
+  if (raw.includes("bacon")) {
+    return { base: "bacon", display: "bacon" };
+  }
+
+  if (raw.includes("salami")) {
+    return { base: "deli salami", display: "deli salami" };
+  }
+
+  if (raw.includes("pepperoni")) {
+    return { base: "deli pepperoni", display: "deli pepperoni" };
+  }
+
+  if (raw.includes("ice cream")) {
+    return { base: "ice cream", display: "ice cream" };
+  }
+
+  if (raw.includes("dried bay leaf") || raw.includes("dried bay leaves")) {
+    return { base: "dried bay leaf", display: "dried bay leaf" };
+  }
+
+  if (raw.includes("bay leaf") || raw.includes("bay leaves")) {
+    return { base: "bay leaf", display: "bay leaf" };
+  }
+
+  if (raw.includes("italian parsley")) {
+    return { base: "italian parsley", display: "italian parsley" };
+  }
+
+  if (raw.includes("fresh parsley")) {
+    return { base: "fresh parsley", display: "fresh parsley" };
+  }
+
+  if (raw.includes("parsley")) {
+    return { base: "parsley", display: "parsley" };
+  }
+
+  if (raw.includes("rosemary")) {
+    if (raw.includes("fresh rosemary")) {
+      return { base: "fresh rosemary", display: "fresh rosemary" };
+    }
+    if (raw.includes("sprig")) {
+      return { base: "rosemary sprig", display: "rosemary sprig" };
+    }
+    return { base: "rosemary", display: "rosemary" };
+  }
+
+  if (raw.includes("thyme")) {
+    if (raw.includes("fresh thyme")) {
+      return { base: "fresh thyme", display: "fresh thyme" };
+    }
+    if (raw.includes("sprig")) {
+      return { base: "thyme sprig", display: "thyme sprig" };
+    }
+    return { base: "thyme", display: "thyme" };
+  }
+
+  return { base: raw, display: raw };
+}
+
+// Legacy function retained but unused for compatibility
+function buildCanonicalKey(nameLower) {
+  let name = normalizeWhitespace(removeParentheticalsAndTrailingNotes(nameLower))
+    .toLowerCase()
+    .replace(/-/g, " ")
+    .replace(/\bor\b.*$/g, "")
+    .replace(/\b(divided|for dusting|plus more|for garnish)\b/g, "");
+
+  if (!name) return null;
+
+  if (/\bsemi\s*sweet\b/.test(name)) return "semi-sweet chocolate chips";
+  if (/\bdark chocolate\b/.test(name)) return "dark chocolate";
+  if (/\begg whites?\b/.test(name)) return "egg whites";
+  if (/\begg\b/.test(name)) return "egg";
+  if (/\bmilk\b/.test(name)) return "milk";
+  if (/\bflour\b/.test(name)) return "flour";
+  if (/\bsugar\b/.test(name)) return "sugar";
+
+  const saltTypeMatch = name.match(/\b(kosher|sea|table|iodized|himalayan|flake)\s+salt\b/);
+  if (saltTypeMatch) {
+    return `${saltTypeMatch[1]} salt`;
+  }
+  if (/\bsalt\b/.test(name)) {
+    return "salt";
+  }
+
+  if (/\bbutter\b/.test(name) && /\bunsalted\b/.test(name)) {
+    return "unsalted butter";
+  }
+  if (/\bbutter\b/.test(name) && /\bsalted\b/.test(name)) {
+    return "salted butter";
+  }
+  if (/\bbutter\b/.test(name)) {
+    return "butter";
+  }
+
+  const descriptorsToRemove = [
+    "fresh",
+    "room temperature",
+    "room temp",
+    "cold",
+    "warm",
+    "large",
+    "small",
+    "medium",
+    "packed",
+    "peeled",
+    "sliced",
+    "diced",
+    "minced",
+    "chopped",
+    "shredded",
+    "grated",
+    "ground",
+    "boneless",
+    "skinless",
+    "thick cut",
+    "at room temperature",
+    "cubed",
+    "slice",
+    "slices",
+    "sprig",
+    "sprigs",
+    "can",
+    "cans",
+    "sheet",
+    "sheets",
+  ];
+
+  let result = ` ${name} `;
+  descriptorsToRemove.forEach((descriptor) => {
+    const escaped = descriptor.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const pattern = new RegExp(`\\b${escaped}\\b`, "g");
+    result = result.replace(pattern, " ");
+  });
+
+  result = normalizeWhitespace(result);
+
+  result = result.replace(/\beggs\b/g, "egg");
+  result = result.replace(/\bcloves\b/g, "clove");
+  result = result.replace(/\bonions\b/g, "onion");
+  result = result.replace(/\bapples\b/g, "apple");
+  result = result.replace(/\bcarrots\b/g, "carrot");
+  result = result.replace(/\bpotatoes\b/g, "potato");
+  result = result.replace(/\bpeppers\b/g, "pepper");
+  result = result.replace(/\bleaves\b/g, "leaf");
+
+  if (/\bgarlic\b/.test(result) && /\bclove\b/.test(result)) {
+    result = "garlic clove";
+  }
+
+  if (!result) return null;
+  return result;
+}
+
+function escapeRegex(text) {
+  return String(text || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}

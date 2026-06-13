@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Robert's Recipe Book and Grocery List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css?v=cooking-mode-favorites" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="app-mode-recipes">
+    <div class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="app-kicker">Robert's kitchen</p>
+          <h1>Recipe Book</h1>
+          <p class="app-subtitle">Cook from saved recipes and build a grocery list without losing your place.</p>
+        </div>
+      </header>
+
+      <nav class="mobile-view-tabs" aria-label="Primary views">
+        <button class="mobile-view-tab active" type="button" data-view="recipes" aria-controls="recipesPanel">
+          Recipes
+        </button>
+        <button class="mobile-view-tab" type="button" data-view="grocery" aria-controls="groceryPanel">
+          Grocery List
+          <span id="mobileGroceryBadge" class="mobile-tab-badge" hidden>0</span>
+        </button>
+      </nav>
+
+      <main class="app-layout">
+        <section id="recipesPanel" class="workspace recipes-section" aria-labelledby="recipesTitle">
+          <div class="workspace-header">
+            <div>
+              <p class="section-kicker">Browse</p>
+              <h2 id="recipesTitle">Recipes</h2>
+            </div>
+            <div id="recipeSearchMeta" class="recipe-search-meta"></div>
+          </div>
+
+          <div class="recipe-search">
+            <label class="recipe-search-label" for="recipeSearch">Search recipes</label>
+            <input id="recipeSearch" type="search" placeholder="Search title, ingredients, notes..." autocomplete="off" />
+
+            <div class="quick-controls" aria-label="Recipe options">
+              <label class="switch-control">
+                <input id="showSelectedRecipesOnly" type="checkbox" />
+                <span class="switch-track" aria-hidden="true"></span>
+                <span>Selected only</span>
+              </label>
+              <label class="switch-control">
+                <input id="showFavoriteRecipesOnly" type="checkbox" />
+                <span class="switch-track" aria-hidden="true"></span>
+                <span>Favorites</span>
+              </label>
+              <label class="switch-control">
+                <input id="keepScreenAwake" type="checkbox" />
+                <span class="switch-track" aria-hidden="true"></span>
+                <span>Keep awake</span>
+              </label>
+              <button id="toggleFilters" class="filter-toggle" type="button" aria-expanded="false" aria-controls="recipeFilters">
+                Filters
+              </button>
+            </div>
+
+            <div class="recipe-filters hidden" id="recipeFilters">
+              <div class="filter-group">
+                <strong>Status</strong>
+                <label><input type="checkbox" data-filter="status" value="tried" /> Tried</label>
+                <label><input type="checkbox" data-filter="status" value="not-tried" /> Not Tried</label>
+              </div>
+              <div class="filter-group">
+                <strong>Rating</strong>
+                <label><input type="checkbox" data-filter="rating" value="great" /> Great</label>
+                <label><input type="checkbox" data-filter="rating" value="good" /> Good</label>
+                <label><input type="checkbox" data-filter="rating" value="okay" /> Okay</label>
+              </div>
+              <div class="filter-group">
+                <strong>Difficulty</strong>
+                <label><input type="checkbox" data-filter="difficulty" value="easy" /> Easy</label>
+                <label><input type="checkbox" data-filter="difficulty" value="medium" /> Medium</label>
+                <label><input type="checkbox" data-filter="difficulty" value="hard" /> Hard</label>
+              </div>
+              <div class="filter-group">
+                <strong>Equipment</strong>
+                <label><input type="checkbox" data-filter="equipment" value="dutch-oven" /> Dutch Oven</label>
+                <label><input type="checkbox" data-filter="equipment" value="instant-pot" /> Instant Pot</label>
+              </div>
+              <button id="clearFilters" type="button">Clear filters</button>
+            </div>
+          </div>
+
+          <div id="recipeContainer" class="recipe-list"></div>
+        </section>
+
+        <aside id="groceryPanel" class="workspace grocery-list" aria-labelledby="groceryTitle">
+          <div class="workspace-header grocery-header">
+            <div>
+              <p class="section-kicker">Shop</p>
+              <h2 id="groceryTitle">Grocery List</h2>
+              <p id="grocerySummary" class="grocery-summary">No recipes selected</p>
+            </div>
+            <button class="clear-grocery-button" type="button" onclick="clearGroceryList()">Clear</button>
+          </div>
+
+          <div class="grocery-toolbar">
+            <label class="switch-control compact-switch">
+              <input type="checkbox" id="groupToggle" onchange="renderGroceryList(); savePersistentState();" />
+              <span class="switch-track" aria-hidden="true"></span>
+              <span>Group items</span>
+            </label>
+            <button class="secondary-button" type="button" onclick="addAllRecipesToGroceryList()">Add all recipes</button>
+          </div>
+
+          <div class="grocery-progress" aria-hidden="true">
+            <span id="groceryProgressBar"></span>
+          </div>
+
+          <div id="groceryList" class="grocery-list-body"></div>
+        </aside>
+      </main>
+    </div>
+
+    <section id="cookingMode" class="cooking-mode" aria-labelledby="cookingTitle" hidden>
+      <div class="cooking-shell">
+        <header class="cooking-header">
+          <div>
+            <p class="section-kicker">Cooking Mode</p>
+            <h2 id="cookingTitle">Recipe</h2>
+            <p id="cookingMeta" class="cooking-meta"></p>
+          </div>
+          <button id="closeCookingMode" class="icon-button" type="button" aria-label="Close cooking mode">Close</button>
+        </header>
+
+        <div class="cooking-progress" aria-hidden="true">
+          <span id="cookingProgressBar"></span>
+        </div>
+
+        <div class="cooking-layout">
+          <aside class="cooking-ingredients" aria-labelledby="cookingIngredientsTitle">
+            <h3 id="cookingIngredientsTitle">Ingredients</h3>
+            <div id="cookingIngredients"></div>
+          </aside>
+
+          <section class="cooking-step-panel" aria-live="polite">
+            <p id="cookingStepCount" class="cooking-step-count"></p>
+            <p id="cookingStepText" class="cooking-step-text"></p>
+          </section>
+        </div>
+
+        <footer class="cooking-footer">
+          <label class="switch-control compact-switch">
+            <input id="cookingKeepScreenAwake" type="checkbox" />
+            <span class="switch-track" aria-hidden="true"></span>
+            <span>Keep awake</span>
+          </label>
+          <div class="cooking-nav">
+            <button id="previousCookingStep" class="secondary-button" type="button">Previous</button>
+            <button id="nextCookingStep" class="primary-button" type="button">Next</button>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <script src="js/normalization.js?v=cooking-mode-favorites"></script>
+    <script src="js/grouping.js?v=cooking-mode-favorites"></script>
+    <script src="js/units.js?v=cooking-mode-favorites"></script>
+    <script src="js/ingredient_parser.js?v=cooking-mode-favorites"></script>
+    <script src="js/state.js?v=cooking-mode-favorites"></script>
+    <script src="js/recipes.js?v=cooking-mode-favorites"></script>
+    <script src="js/render.js?v=cooking-mode-favorites"></script>
+    <script src="js/app.js?v=cooking-mode-favorites"></script>
+  </body>
+</html>
