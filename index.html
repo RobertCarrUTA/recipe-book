@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css?v=grocery-source-disclosure" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css?v=20260614-1" />
+    <link rel="icon" href="data:," />
   </head>
   <body class="app-mode-recipes">
     <div class="app-shell">
@@ -99,16 +99,16 @@
               <h2 id="groceryTitle">Grocery List</h2>
               <p id="grocerySummary" class="grocery-summary">No recipes selected</p>
             </div>
-            <button class="clear-grocery-button" type="button" onclick="clearGroceryList()">Clear</button>
+            <button id="clearGroceryList" class="clear-grocery-button" type="button">Clear</button>
           </div>
 
           <div class="grocery-toolbar">
             <label class="switch-control compact-switch">
-              <input type="checkbox" id="groupToggle" onchange="renderGroceryList(); savePersistentState();" />
+              <input type="checkbox" id="groupToggle" />
               <span class="switch-track" aria-hidden="true"></span>
               <span>Group items</span>
             </label>
-            <button class="secondary-button" type="button" onclick="addAllRecipesToGroceryList()">Add all recipes</button>
+            <button id="addAllRecipesToGroceryList" class="secondary-button" type="button">Add all recipes</button>
           </div>
 
           <div class="grocery-progress" aria-hidden="true">
@@ -175,13 +175,6 @@
       </div>
     </section>
 
-    <script src="js/normalization.js?v=grocery-source-disclosure"></script>
-    <script src="js/grouping.js?v=grocery-source-disclosure"></script>
-    <script src="js/units.js?v=grocery-source-disclosure"></script>
-    <script src="js/ingredient_parser.js?v=grocery-source-disclosure"></script>
-    <script src="js/state.js?v=grocery-source-disclosure"></script>
-    <script src="js/recipes.js?v=grocery-source-disclosure"></script>
-    <script src="js/render.js?v=grocery-source-disclosure"></script>
-    <script src="js/app.js?v=grocery-source-disclosure"></script>
+    <script type="module" src="js/app.js?v=20260614-1"></script>
   </body>
 </html>

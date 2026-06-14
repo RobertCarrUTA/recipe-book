@@ -1,16 +1,9 @@
 /*=============================================================================
-CLIENT-SIDE APPLICATION OVERVIEW
+NORMALIZATION OVERVIEW
 
-This file intentionally uses no build step and no external JS framework.
-The goal is long-term durability: the file can be opened locally, emailed,
-versioned, and archived without tooling dependencies.
-
-Major responsibilities handled in this script:
-  - Parse free-form ingredient text into canonical grocery items
-  - Normalize units and quantities so multiple recipes can be merged
-  - Preserve important distinctions (e.g., salted vs unsalted butter)
-  - Persist user state (grocery list, checkmarks, filters) via localStorage
-  - Render both recipes and a derived grocery list accessibly
+These helpers are deliberately free of DOM and storage dependencies.
+They normalize inconsistent recipe text into stable strings and canonical
+ingredient labels used by the parser and grocery aggregation model.
 
 =============================================================================*/
 
@@ -95,6 +88,24 @@ exist to aggressively normalize input before aggregation.
   - Avoid over-normalization that could merge distinct products
 ================================ */
 const unicodeFractionMap = {
+  "\u00bc": "1/4",
+  "\u00bd": "1/2",
+  "\u00be": "3/4",
+  "\u2150": "1/7",
+  "\u2151": "1/9",
+  "\u2152": "1/10",
+  "\u2153": "1/3",
+  "\u2154": "2/3",
+  "\u2155": "1/5",
+  "\u2156": "2/5",
+  "\u2157": "3/5",
+  "\u2158": "4/5",
+  "\u2159": "1/6",
+  "\u215a": "5/6",
+  "\u215b": "1/8",
+  "\u215c": "3/8",
+  "\u215d": "5/8",
+  "\u215e": "7/8",
   "¼": "1/4",
   "½": "1/2",
   "¾": "3/4",
@@ -115,13 +126,13 @@ const unicodeFractionMap = {
   "⅞": "7/8",
 };
 
-function normalizeWhitespace(text) {
+export function normalizeWhitespace(text) {
   return String(text || "")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-function normalizeUnicodeFractions(text) {
+export function normalizeUnicodeFractions(text) {
   let result = String(text || "");
   Object.keys(unicodeFractionMap).forEach((symbol) => {
     result = result.replace(new RegExp(`(\\d)${symbol}`, "g"), `$1 ${unicodeFractionMap[symbol]}`);
@@ -130,7 +141,7 @@ function normalizeUnicodeFractions(text) {
   return result;
 }
 
-function parseNumberToken(token) {
+export function parseNumberToken(token) {
   const trimmed = token.trim();
   if (!trimmed) return null;
 
@@ -149,7 +160,7 @@ function parseNumberToken(token) {
   return null;
 }
 
-function parseQuantityRange(quantityText) {
+export function parseQuantityRange(quantityText) {
   const cleaned = normalizeWhitespace(normalizeUnicodeFractions(quantityText || "").replace(/-\s*to\s+/gi, "-"));
   if (!cleaned) return null;
 
@@ -175,7 +186,7 @@ function parseQuantityRange(quantityText) {
   return { min: value, max: value };
 }
 
-function normalizeUnit(unitRaw) {
+export function normalizeUnit(unitRaw) {
   const unit = (unitRaw || "").toLowerCase().trim();
 
   if (!unit) return null;
@@ -211,7 +222,7 @@ function normalizeUnit(unitRaw) {
   return unit;
 }
 
-function removeParentheticalsAndTrailingNotes(nameText) {
+export function removeParentheticalsAndTrailingNotes(nameText) {
   let name = String(nameText || "");
 
   // Preserve primary imperial weight inside parentheses, e.g. "(4-pound / 1.8 kg)"
@@ -232,7 +243,7 @@ function removeParentheticalsAndTrailingNotes(nameText) {
   return normalizeWhitespace(name + preservedWeight);
 }
 
-function classifyNonQuantified(textLower) {
+export function classifyNonQuantified(textLower) {
   const markers = ["to taste", "as needed", "as desired", "pinch", "dash", "optional:"];
 
   for (const marker of markers) {
@@ -241,7 +252,7 @@ function classifyNonQuantified(textLower) {
   return null;
 }
 
-function extractUsageNotes(ingredientText) {
+export function extractUsageNotes(ingredientText) {
   const lowered = String(ingredientText || "").toLowerCase();
 
   const usagePhrases = [
@@ -356,7 +367,7 @@ function extractCommodityBase(ingredientText) {
   return working;
 }
 
-function buildCanonicalIngredient(nameLower) {
+export function buildCanonicalIngredient(nameLower) {
   const raw = normalizeWhitespace(removeParentheticalsAndTrailingNotes(nameLower)).toLowerCase();
   if (!raw) return null;
 
@@ -761,7 +772,7 @@ function buildCanonicalIngredient(nameLower) {
 }
 
 // Legacy function retained but unused for compatibility
-function buildCanonicalKey(nameLower) {
+export function buildCanonicalKey(nameLower) {
   let name = normalizeWhitespace(removeParentheticalsAndTrailingNotes(nameLower))
     .toLowerCase()
     .replace(/-/g, " ")
@@ -855,6 +866,36 @@ function buildCanonicalKey(nameLower) {
   return result;
 }
 
-function escapeRegex(text) {
+export function escapeRegex(text) {
   return String(text || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+export function repairTextEncoding(value) {
+  if (typeof value !== "string") return value;
+
+  const replacements = {
+    "Â°F": "\u00b0F",
+    "Â°C": "\u00b0C",
+    "Â¼": "1/4",
+    "Â½": "1/2",
+    "Â¾": "3/4",
+    "â€“": "-",
+    "â€”": "-",
+    "â€˜": "'",
+    "â€™": "'",
+    "â€œ": "\"",
+    "â€": "\"",
+    "Ã©": "\u00e9",
+    "Ã¨": "\u00e8",
+    "Ã¡": "\u00e1",
+    "Ã¢": "\u00e2",
+    "Ã±": "\u00f1",
+    "Ã¼": "\u00fc",
+    "Ã§": "\u00e7",
+  };
+
+  return Object.keys(replacements).reduce(
+    (text, token) => text.replace(new RegExp(escapeRegex(token), "g"), replacements[token]),
+    value
+  );
 }

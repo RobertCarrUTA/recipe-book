@@ -1,21 +1,20 @@
-/* ================================
-RECIPES
-================================ */
-let recipes = [];
+import { normalizeRecipeBook } from "./recipe_schema.js";
 
-async function loadRecipes() {
-  const response = await fetch("data/recipes.json", { cache: "no-store" });
+export async function loadRecipes(options = {}) {
+  const url = options.url || "data/recipes.json";
+  const logger = options.logger || console;
+  const response = await fetch(url, { cache: "no-store" });
 
   if (!response.ok) {
     throw new Error(`Unable to load recipes.json (${response.status})`);
   }
 
-  const loadedRecipes = await response.json();
-  if (!Array.isArray(loadedRecipes)) {
-    throw new Error("recipes.json must contain an array of recipes");
+  const rawRecipes = await response.json();
+  const result = normalizeRecipeBook(rawRecipes);
+
+  if (result.warnings.length) {
+    logger.warn(`${result.warnings.length} recipe data warnings`, result.warnings);
   }
 
-  recipes = loadedRecipes.slice().sort(function (a, b) {
-    return String(a.title || "").localeCompare(String(b.title || ""), undefined, { sensitivity: "base" });
-  });
+  return result;
 }
