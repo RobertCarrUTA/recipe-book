@@ -1,3 +1,5 @@
+import { escapeRegex } from "./normalization.js";
+
 /* ================================
 INGREDIENT GROUP MAP
 ================================ */
@@ -108,7 +110,7 @@ const ingredientGroupKeysByLength = Object.keys(ingredientGroups)
   .slice()
   .sort((a, b) => b.length - a.length);
 
-function determineGroupForKey(canonicalKey) {
+export function determineGroupForKey(canonicalKey) {
   const keyText = String(canonicalKey || "").toLowerCase();
 
   for (const groupKey of ingredientGroupKeysByLength) {

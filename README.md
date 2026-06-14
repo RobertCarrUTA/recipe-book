@@ -2,7 +2,7 @@
 
 A mobile-first recipe book and grocery list app for cooking from saved recipes, managing shopping items, and keeping the phone screen useful while cooking.
 
-The app is intentionally lightweight: no build step, no framework, and no backend. It runs from static files and stores personal state in the browser.
+The app is intentionally lightweight: no build step, no framework, and no backend. It uses native ES modules, runs from static files served by a local web server, and stores personal state in the browser.
 
 ## Features
 
@@ -88,3 +88,47 @@ The app stores personal state in `localStorage`, including:
 - Keep-awake preference
 
 Clearing browser site data will reset these preferences.
+
+## Code Architecture
+
+The code is split by responsibility:
+
+- `js/app.js`: Application composition, event wiring, filtering, mobile view, wake lock, and persistence orchestration.
+- `js/render.js`: DOM rendering only. State changes are sent through injected actions.
+- `js/grocery_model.js`: Grocery aggregation domain model for selected recipes, favorites, checkmarks, and parsed display names.
+- `js/recipe_filter.js`, `js/recipe_formatting.js`, `js/grocery_view_model.js`, `js/cooking_model.js`: Pure UI/domain helper modules used by the renderer and controller.
+- `js/recipe_repository.js`: Recipe loading boundary for bundled recipes and future user/imported recipe sources.
+- `js/recipe_schema.js`: Recipe data normalization, schema defaults, ID de-duplication, and data warnings.
+- `js/storage.js`: Versioned `localStorage` adapter with defensive reads, writes, and migrations.
+- `js/ui_state.js`, `js/mobile_view_controller.js`, `js/wake_lock_controller.js`, `js/cooking_controls.js`: Browser UI controllers isolated from the app composition root.
+- `js/ingredient_parser.js`, `js/normalization.js`, `js/units.js`, `js/grouping.js`: Pure parsing, normalization, unit conversion, and grouping helpers.
+
+The app exposes `window.recipeBookDebug` only when the URL includes `?debug=1`.
+
+## Verification
+
+Run the local verification script after code or data changes:
+
+```bash
+npm run verify
+```
+
+It runs focused unit tests, validates the recipe schema, checks unique IDs, exercises ingredient parsing, and recomputes grocery totals from the real recipe data.
+
+For an optional browser-level smoke test:
+
+```bash
+npm run smoke:browser
+```
+
+The browser smoke test starts a local static server and exercises search, grocery list updates, grouping, cooking mode, and clearing the list when Playwright and a local Chrome/Edge executable are available.
+
+## Asset Cache Busting
+
+`index.html` uses a neutral release-style asset version on local CSS and JS URLs, such as `?v=20260614-1`.
+
+When CSS or JavaScript changes, bump both asset URLs with:
+
+```bash
+npm run set-asset-version -- 20260614-2
+```

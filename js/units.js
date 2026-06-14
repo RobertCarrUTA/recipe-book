@@ -3,7 +3,7 @@ UNIT CONVERSIONS
   - volume base: tsp
   - weight base: oz
 ================================ */
-function convertToBaseUnits(quantityRange, unitKey) {
+export function convertToBaseUnits(quantityRange, unitKey) {
   if (!quantityRange || !unitKey) return null;
 
   const volumeFactorsToTsp = {
@@ -70,14 +70,14 @@ function convertToBaseUnits(quantityRange, unitKey) {
   };
 }
 
-function addRange(existingRange, addRangeValue) {
+export function addRange(existingRange, addRangeValue) {
   return {
     min: (existingRange ? existingRange.min : 0) + addRangeValue.min,
     max: (existingRange ? existingRange.max : 0) + addRangeValue.max,
   };
 }
 
-function subtractRange(existingRange, subtractRangeValue) {
+export function subtractRange(existingRange, subtractRangeValue) {
   const next = {
     min: (existingRange ? existingRange.min : 0) - subtractRangeValue.min,
     max: (existingRange ? existingRange.max : 0) - subtractRangeValue.max,
@@ -89,14 +89,14 @@ function subtractRange(existingRange, subtractRangeValue) {
   return next;
 }
 
-function isEffectivelyZero(rangeValue) {
+export function isEffectivelyZero(rangeValue) {
   return rangeValue.min <= 1e-12 && rangeValue.max <= 1e-12;
 }
 
 /* ================================
 DISPLAY FORMATTING
 ================================ */
-function formatRange(rangeValue) {
+export function formatRange(rangeValue) {
   const min = rangeValue.min;
   const max = rangeValue.max;
 
@@ -113,14 +113,14 @@ function formatRange(rangeValue) {
   return `${minRounded}-${maxRounded}`;
 }
 
-function formatScaledRange(rangeValue, divisor) {
+export function formatScaledRange(rangeValue, divisor) {
   return formatRange({
     min: rangeValue.min / divisor,
     max: rangeValue.max / divisor,
   });
 }
 
-function formatTotalsForKey(totals) {
+export function formatTotalsForKey(totals) {
   const parts = [];
 
   const unitLabels = {

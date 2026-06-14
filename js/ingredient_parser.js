@@ -1,3 +1,13 @@
+import {
+  buildCanonicalIngredient,
+  classifyNonQuantified,
+  extractUsageNotes,
+  normalizeUnicodeFractions,
+  normalizeUnit,
+  normalizeWhitespace,
+  parseQuantityRange,
+} from "./normalization.js";
+
 /* ================================
 PARSE INGREDIENT
 
@@ -14,7 +24,7 @@ The parser is intentionally conservative:
 ================================ */
 
 // Normalize parseIngredient output to a list (supports compound ingredients)
-function normalizeParsedIngredients(parsed) {
+export function normalizeParsedIngredients(parsed) {
   if (!parsed) return [];
   return Array.isArray(parsed) ? parsed : [parsed];
 }
@@ -25,7 +35,7 @@ const ingredientQuantityPattern = "\\d+(?:\\.\\d+)?(?:\\s+\\d+\\/\\d+|\\/\\d+)?(
 const parentheticalWeightQuantityPattern =
   "\\d+(?:\\.\\d+)?(?:\\s+\\d+\\/\\d+|\\/\\d+)?(?:\\s*-\\s*(?:to\\s*)?\\d+(?:\\.\\d+)?(?:\\s+\\d+\\/\\d+|\\/\\d+)?)?";
 
-function makeParsedIngredient(original, canonical, unitKey, quantityRange, optional, nonQuantifiedMarker, notes) {
+export function makeParsedIngredient(original, canonical, unitKey, quantityRange, optional, nonQuantifiedMarker, notes) {
   return {
     original: original,
     canonical: canonical,
@@ -37,7 +47,7 @@ function makeParsedIngredient(original, canonical, unitKey, quantityRange, optio
   };
 }
 
-function parseStructuredGroceryIngredient(entry) {
+export function parseStructuredGroceryIngredient(entry) {
   if (!entry) return null;
   if (typeof entry === "string") return parseIngredient(entry);
 
@@ -74,7 +84,7 @@ function parseStructuredGroceryIngredient(entry) {
   );
 }
 
-function parseIngredient(text) {
+export function parseIngredient(text) {
   const original = String(text || "");
   if (original.toLowerCase().startsWith("optional toppings:")) return null;
   const normalizedText = normalizeWhitespace(
@@ -238,6 +248,6 @@ function parseIngredient(text) {
   return makeParsedIngredient(original, canonical, unitKey, quantityRange, optional, nonQuantifiedMarker, uniqueNotes(notes));
 }
 
-function uniqueNotes(notes) {
+export function uniqueNotes(notes) {
   return [...new Set((notes || []).filter(Boolean))];
 }
