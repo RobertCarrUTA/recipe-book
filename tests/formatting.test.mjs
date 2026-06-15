@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 
-import { formatGrocerySourceSummary, getDisplayNotes } from "../js/grocery_view_model.js";
+import {
+  formatCheckedGroceryGroupMessage,
+  formatGrocerySourceSummary,
+  getDisplayNotes,
+} from "../js/grocery_view_model.js";
 import { formatRatingText, formatServingsText, getRecipeHeaderMeta } from "../js/recipe_formatting.js";
 import { test } from "./test_helpers.mjs";
 
@@ -31,6 +35,8 @@ test("getRecipeHeaderMeta limits and orders compact recipe metadata", () => {
 });
 
 test("grocery view helpers hide noisy notes and summarize sources", () => {
-  assert.deepEqual(getDisplayNotes(["to taste", "optional", "divided"]), ["optional"]);
+  assert.deepEqual(getDisplayNotes(["to taste", "optional", "manual item", "divided"]), ["optional"]);
   assert.equal(formatGrocerySourceSummary([{ title: "Chili" }, { title: "Soup" }], 2), "From 2 recipes");
+  assert.equal(formatCheckedGroceryGroupMessage("Baking"), "Everything in Baking is checked.");
+  assert.equal(formatCheckedGroceryGroupMessage("Manual Items"), "Everything in Manual Items is checked.");
 });

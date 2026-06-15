@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css?v=20260614-1" />
+    <link rel="stylesheet" href="css/styles.css?v=20260615-3" />
     <link rel="icon" href="data:," />
   </head>
   <body class="app-mode-recipes">
@@ -97,16 +97,36 @@
             <div>
               <p class="section-kicker">Shop</p>
               <h2 id="groceryTitle">Grocery List</h2>
-              <p id="grocerySummary" class="grocery-summary">No recipes selected</p>
+              <p id="grocerySummary" class="grocery-summary">No items yet</p>
             </div>
-            <button id="clearGroceryList" class="clear-grocery-button" type="button">Clear</button>
+            <div class="grocery-header-actions">
+              <button id="clearCheckedGroceryItems" class="secondary-button" type="button">Clear checked</button>
+              <button id="clearGroceryList" class="clear-grocery-button" type="button">Clear all</button>
+            </div>
           </div>
+
+          <form id="manualGroceryForm" class="grocery-add-form">
+            <label class="visually-hidden" for="manualGroceryInput">Add grocery item</label>
+            <input
+              id="manualGroceryInput"
+              type="text"
+              placeholder="Add grocery item..."
+              autocomplete="off"
+              maxlength="80"
+            />
+            <button class="primary-button" type="submit">Add</button>
+          </form>
 
           <div class="grocery-toolbar">
             <label class="switch-control compact-switch">
               <input type="checkbox" id="groupToggle" />
               <span class="switch-track" aria-hidden="true"></span>
-              <span>Group items</span>
+              <span>Group sections</span>
+            </label>
+            <label class="switch-control compact-switch">
+              <input type="checkbox" id="hideCheckedGroceryItems" />
+              <span class="switch-track" aria-hidden="true"></span>
+              <span>Hide checked</span>
             </label>
             <button id="addAllRecipesToGroceryList" class="secondary-button" type="button">Add all recipes</button>
           </div>
@@ -175,6 +195,6 @@
       </div>
     </section>
 
-    <script type="module" src="js/app.js?v=20260614-1"></script>
+    <script type="module" src="js/app.js?v=20260615-3"></script>
   </body>
 </html>

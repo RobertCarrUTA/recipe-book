@@ -154,8 +154,62 @@ const browserChecks = [
       await expectText(page, "#grocerySummary", /1 checked/);
 
       await page.locator("#clearGroceryList").click();
-      assert.equal(await page.locator("#grocerySummary").innerText(), "No recipes selected");
+      assert.equal(await page.locator("#grocerySummary").innerText(), "No items yet");
       assert.equal(await page.locator("#groceryList li").count(), 0);
+    },
+  },
+  {
+    name: "manual grocery items support sections, hide checked, and clear checked",
+    async run(page) {
+      await openApp(page);
+
+      await page.fill("#manualGroceryInput", "Paper towels");
+      await page.locator("#manualGroceryForm").evaluate((form) => form.requestSubmit());
+      await page.locator("#groceryList li").filter({ hasText: "Paper towels" }).waitFor({ timeout: 5000 });
+      await expectText(page, "#grocerySummary", /1 item - 1 left/);
+
+      await page.locator("#groupToggle").check();
+      await page.waitForSelector(".grocery-group-header:has-text('Manual Items')", { timeout: 5000 });
+
+      const manualSection = page.locator(".grocery-group").filter({ hasText: "Manual Items" }).first();
+      await manualSection.locator(".grocery-group-header").click();
+      assert.equal(await manualSection.locator("ul").first().evaluate((el) => el.hidden), true);
+      assert.equal(await manualSection.locator("ul").first().isVisible(), false);
+
+      await manualSection.locator(".grocery-group-header").click();
+      await manualSection.locator("li").filter({ hasText: "Paper towels" }).click();
+      await expectText(page, "#grocerySummary", /1 checked/);
+
+      await page.locator("#hideCheckedGroceryItems").check();
+      await expectText(page, "#groceryList", /Everything visible is checked|Everything in Manual Items is checked/);
+
+      await page.locator("#clearCheckedGroceryItems").click();
+      assert.equal(await page.locator("#grocerySummary").innerText(), "No items yet");
+      assert.equal(await page.locator("#groceryList li").count(), 0);
+    },
+  },
+  {
+    name: "checked grocery sections show section-specific empty text",
+    async run(page) {
+      await openApp(page);
+
+      await page.locator("#addAllRecipesToGroceryList").click();
+      await page.locator("#groupToggle").check();
+
+      const firstSection = page.locator(".grocery-group").first();
+      const sectionName = (await firstSection.locator(".grocery-group-title").evaluate((element) => element.textContent)).trim();
+      const itemCount = await firstSection.locator("li:not(.grocery-group-empty)").count();
+
+      for (let index = 0; index < itemCount; index += 1) {
+        await firstSection.locator("li:not(.grocery-group-empty)").nth(index).click();
+      }
+
+      await page.locator("#hideCheckedGroceryItems").check();
+      await firstSection.locator(".grocery-group-empty").waitFor({ timeout: 5000 });
+      assert.equal(
+        await firstSection.locator(".grocery-group-empty").innerText(),
+        `Everything in ${sectionName} is checked.`
+      );
     },
   },
   {
