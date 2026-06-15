@@ -93,8 +93,8 @@ export function parseIngredient(text) {
       .replace(/[–—]/g, "-")
   );
   const textLower = normalizedText.toLowerCase();
-  const nonQuantifiedMarker = classifyNonQuantified(textLower);
   const optional = textLower.startsWith("optional:");
+  const nonQuantifiedMarker = optional ? null : classifyNonQuantified(textLower);
 
   if (/^\d.*\bof the .*(batter|glaze)\b/i.test(normalizedText)) {
     return null;
@@ -146,6 +146,21 @@ export function parseIngredient(text) {
   let workingText = withoutOptional.replace(/\bplus\s+(?:about\s+)?\d.*$/i, " ");
   workingText = normalizeWhitespace(workingText);
 
+  const packageMatch = workingText.match(
+    new RegExp(`^(${ingredientQuantityPattern})\\s*\\((\\d+(?:\\.\\d+)?(?:\\s+\\d+\\/\\d+|\\/\\d+)?)\\s*[- ]?(ounce|ounces|oz|pound|pounds|lb|lbs)\\)\\s+(${ingredientUnitsPattern})\\s+(.*)$`, "i")
+  );
+
+  if (packageMatch) {
+    const quantityRange = parseQuantityRange(packageMatch[1]);
+    const unitKey = normalizeUnit(packageMatch[4]);
+    const namePart = packageMatch[5];
+    const canonical = buildCanonicalIngredient(namePart.toLowerCase());
+    if (!canonical) return null;
+    return makeParsedIngredient(original, canonical, unitKey, quantityRange, optional, nonQuantifiedMarker, [
+      `${packageMatch[2]} ${normalizeUnit(packageMatch[3])} each`,
+    ]);
+  }
+
   const parentheticalWeightMatch = workingText.match(
     new RegExp(`^(\\d+(?:\\.\\d+)?)\\s*\\((?:about\\s*)?(${parentheticalWeightQuantityPattern})\\s*[- ]?(pound|pounds|lb|lbs|ounce|ounces|oz)\\b[^)]*\\)\\s+(.*)$`, "i")
   );
@@ -163,21 +178,6 @@ export function parseIngredient(text) {
       nonQuantifiedMarker,
       uniqueNotes([...extractUsageNotes(original), countText])
     );
-  }
-
-  const packageMatch = workingText.match(
-    new RegExp(`^(${ingredientQuantityPattern})\\s*\\((\\d+(?:\\.\\d+)?(?:\\s+\\d+\\/\\d+|\\/\\d+)?)\\s*[- ]?(ounce|ounces|oz|pound|pounds|lb|lbs)\\)\\s+(${ingredientUnitsPattern})\\s+(.*)$`, "i")
-  );
-
-  if (packageMatch) {
-    const quantityRange = parseQuantityRange(packageMatch[1]);
-    const unitKey = normalizeUnit(packageMatch[4]);
-    const namePart = packageMatch[5];
-    const canonical = buildCanonicalIngredient(namePart.toLowerCase());
-    if (!canonical) return null;
-    return makeParsedIngredient(original, canonical, unitKey, quantityRange, optional, nonQuantifiedMarker, [
-      `${packageMatch[2]} ${normalizeUnit(packageMatch[3])} each`,
-    ]);
   }
 
   let match =

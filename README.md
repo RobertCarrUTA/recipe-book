@@ -94,7 +94,8 @@ Clearing browser site data will reset these preferences.
 The code is split by responsibility:
 
 - `js/app.js`: Application composition, event wiring, filtering, mobile view, wake lock, and persistence orchestration.
-- `js/render.js`: DOM rendering only. State changes are sent through injected actions.
+- `js/render.js`: Renderer composition boundary that joins feature renderers while preserving one renderer API for the app.
+- `js/recipe_renderer.js`, `js/grocery_renderer.js`, `js/cooking_renderer.js`: DOM rendering for recipe cards, the grocery list, and Cooking Mode. State changes are sent through injected actions.
 - `js/grocery_model.js`: Grocery aggregation domain model for selected recipes, favorites, checkmarks, and parsed display names.
 - `js/recipe_filter.js`, `js/recipe_formatting.js`, `js/grocery_view_model.js`, `js/cooking_model.js`: Pure UI/domain helper modules used by the renderer and controller.
 - `js/recipe_repository.js`: Recipe loading boundary for bundled recipes and future user/imported recipe sources.
@@ -127,7 +128,7 @@ For an optional browser-level smoke test:
 npm run smoke:browser
 ```
 
-The browser smoke test starts a local static server and exercises search, grocery list updates, grouping, cooking mode, and clearing the list when Playwright and a local Chrome/Edge executable are available.
+The browser smoke test starts a local static server and runs focused Playwright checks for recipe loading, search/filter behavior, grocery list updates, Cooking Mode, and mobile view tabs when Playwright and a local Chrome/Edge executable are available.
 
 ## Asset Cache Busting
 
