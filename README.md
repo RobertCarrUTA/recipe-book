@@ -13,9 +13,10 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 - Open a full-screen Cooking Mode with ingredients, one instruction step at a time, progress, keyboard navigation, and mobile-friendly controls.
 - Keep the screen awake while cooking when the browser supports Screen Wake Lock.
 - Add selected recipe ingredients to a grocery list.
-- Group grocery items and combine compatible units.
-- Check off grocery items with a progress summary and mobile grocery badge.
-- Persist search, filters, selected recipes, favorites, grocery checks, grouping, and wake-lock preference with `localStorage`.
+- Add one-off manual grocery items.
+- Group grocery items into collapsible shopping sections and combine compatible units.
+- Check off grocery items, hide checked items while shopping, clear checked progress, and track progress with a mobile grocery badge.
+- Persist search, filters, selected recipes, favorites, manual grocery items, grocery checks, grouping, collapsed sections, and wake-lock preference with `localStorage`.
 
 ## How To Use
 
@@ -23,7 +24,7 @@ Use the Recipes view to search, filter, favorite, and open recipes. Expand a rec
 
 Optionally use Cooking Mode when actively cooking. It shows the recipe ingredients alongside one instruction step at a time. Use Previous and Next to move through the recipe, or press Escape to close it. The keep-awake toggle in Cooking Mode is synced with the main keep-awake toggle.
 
-Use the Grocery List view to review combined shopping items, group them, check items off while shopping, or clear the list.
+Use the Grocery List view to add one-off items, review combined shopping items, group them into collapsible sections, hide checked items while shopping, clear checked progress, or clear the list.
 
 ## Recipe Data
 
@@ -79,11 +80,13 @@ The app stores personal state in `localStorage`, including:
 
 - Grocery list recipe selections
 - Grocery item checkmarks
+- Manual grocery items
 - Favorite recipes
 - Search text
 - Active filters
 - Selected-only and favorites-only toggles
 - Grocery grouping
+- Collapsed grocery sections
 - Last mobile view
 - Keep-awake preference
 

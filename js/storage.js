@@ -2,10 +2,13 @@ export const storageKeys = Object.freeze({
   version: "offline_recipebook_storage_version",
   groceryState: "offline_recipebook_grocery_state_v1",
   groceryChecked: "offline_recipebook_grocery_checked_v1",
+  manualGroceryItems: "offline_recipebook_manual_grocery_items_v1",
   favoriteRecipes: "offline_recipebook_favorite_recipes_v1",
   selectedRecipes: "offline_recipebook_selected_recipes_v1",
+  collapsedGroceryGroups: "offline_recipebook_collapsed_grocery_groups_v1",
   showFavoriteRecipesOnly: "offline_recipebook_show_favorite_recipes_only_v1",
   showSelectedRecipesOnly: "offline_recipebook_show_selected_recipes_only_v1",
+  hideCheckedGroceryItems: "offline_recipebook_hide_checked_grocery_items_v1",
   groupToggle: "offline_recipebook_group_toggle_v1",
   keepScreenAwake: "offline_recipebook_keep_screen_awake_v1",
   mobileView: "offline_recipebook_mobile_view_v1",
@@ -75,6 +78,28 @@ function truthyRecord(value) {
   }, {});
 }
 
+function readManualGroceryItems(storage) {
+  const value = readObject(storage, storageKeys.manualGroceryItems);
+
+  return Object.keys(value).reduce((items, id) => {
+    const item = value[id];
+    if (!isPlainObject(item)) return items;
+
+    const name = String(item.name || "").trim();
+    if (!name) return items;
+
+    items[id] = {
+      id: String(item.id || id),
+      name,
+    };
+
+    const note = String(item.note || "").trim();
+    if (note) items[id].note = note;
+
+    return items;
+  }, {});
+}
+
 function writeStorageVersion(storage, version) {
   write(storage, storageKeys.version, String(version));
 }
@@ -107,8 +132,10 @@ export function migratePersistentState(storage = globalThis.localStorage) {
 
 export function createDefaultUiState() {
   return {
+    collapsedGroceryGroups: {},
     filters: {},
     groupItems: false,
+    hideCheckedGroceryItems: false,
     keepScreenAwake: false,
     mobileView: "recipes",
     recipeSearch: "",
@@ -123,6 +150,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
     return {
       favoriteRecipeIds: {},
       groceryCheckedByKey: {},
+      manualGroceryItemsById: {},
       selectedRecipeIds: {},
       ui,
     };
@@ -134,7 +162,9 @@ export function restorePersistentState(storage = globalThis.localStorage) {
   const selectedFromLegacyState = truthyRecord(savedGroceryState.selectedRecipeIds);
 
   ui.filters = readObject(storage, storageKeys.filters);
+  ui.collapsedGroceryGroups = truthyRecord(readObject(storage, storageKeys.collapsedGroceryGroups));
   ui.groupItems = readBoolean(storage, storageKeys.groupToggle);
+  ui.hideCheckedGroceryItems = readBoolean(storage, storageKeys.hideCheckedGroceryItems);
   ui.keepScreenAwake = readBoolean(storage, storageKeys.keepScreenAwake);
   ui.mobileView = read(storage, storageKeys.mobileView) === "grocery" ? "grocery" : "recipes";
   ui.recipeSearch = read(storage, storageKeys.recipeSearch) || "";
@@ -144,6 +174,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
   return {
     favoriteRecipeIds: truthyRecord(readObject(storage, storageKeys.favoriteRecipes)),
     groceryCheckedByKey: truthyRecord(readObject(storage, storageKeys.groceryChecked)),
+    manualGroceryItemsById: readManualGroceryItems(storage),
     selectedRecipeIds: {
       ...selectedFromLegacyState,
       ...truthyRecord(readObject(storage, storageKeys.selectedRecipes)),
@@ -169,9 +200,12 @@ export function savePersistentState(state, storage = globalThis.localStorage) {
     })),
     write(storage, storageKeys.selectedRecipes, JSON.stringify(runtime.selectedRecipeIds || {})),
     write(storage, storageKeys.groceryChecked, JSON.stringify(runtime.groceryCheckedByKey || {})),
+    write(storage, storageKeys.manualGroceryItems, JSON.stringify(runtime.manualGroceryItemsById || {})),
     write(storage, storageKeys.favoriteRecipes, JSON.stringify(runtime.favoriteRecipeIds || {})),
+    write(storage, storageKeys.collapsedGroceryGroups, JSON.stringify(ui.collapsedGroceryGroups || {})),
     write(storage, storageKeys.filters, JSON.stringify(ui.filters || {})),
     write(storage, storageKeys.groupToggle, ui.groupItems ? "1" : "0"),
+    write(storage, storageKeys.hideCheckedGroceryItems, ui.hideCheckedGroceryItems ? "1" : "0"),
     write(storage, storageKeys.keepScreenAwake, ui.keepScreenAwake ? "1" : "0"),
     write(storage, storageKeys.mobileView, ui.mobileView === "grocery" ? "grocery" : "recipes"),
     write(storage, storageKeys.recipeSearch, ui.recipeSearch || ""),
@@ -187,5 +221,6 @@ export function clearGroceryPersistence(storage = globalThis.localStorage) {
 
   remove(storage, storageKeys.groceryState);
   remove(storage, storageKeys.groceryChecked);
+  remove(storage, storageKeys.manualGroceryItems);
   remove(storage, storageKeys.selectedRecipes);
 }

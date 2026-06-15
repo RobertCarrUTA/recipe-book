@@ -3,7 +3,10 @@ import {
   parseIngredient,
   parseStructuredGroceryIngredient,
 } from "./ingredient_parser.js";
+import { normalizeWhitespace } from "./normalization.js";
 import { addRange, convertToBaseUnits } from "./units.js";
+
+const manualGroceryKeyPrefix = "manual:";
 
 export function createEmptyGroceryState() {
   return {
@@ -22,6 +25,7 @@ export function createRecipeRuntimeState(savedState = {}) {
       selectedRecipeIds: { ...(savedState.selectedRecipeIds || {}) },
     },
     groceryCheckedByKey: { ...(savedState.groceryCheckedByKey || {}) },
+    manualGroceryItemsById: { ...(savedState.manualGroceryItemsById || {}) },
     selectedRecipeIds: { ...(savedState.selectedRecipeIds || {}) },
   };
 }
@@ -64,6 +68,73 @@ export function setGroceryChecked(runtimeState, canonicalKey, checked) {
   } else {
     delete runtimeState.groceryCheckedByKey[canonicalKey];
   }
+}
+
+export function getManualGroceryItemKey(id) {
+  return `${manualGroceryKeyPrefix}${id}`;
+}
+
+export function isManualGroceryItemKey(canonicalKey) {
+  return String(canonicalKey || "").startsWith(manualGroceryKeyPrefix);
+}
+
+function createManualGroceryItemId() {
+  const randomPart =
+    globalThis.crypto && typeof globalThis.crypto.randomUUID === "function"
+      ? globalThis.crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  return String(randomPart).replace(/[^a-zA-Z0-9-]/g, "-");
+}
+
+function addManualItemToGroceryState(runtimeState, item) {
+  if (!item || !item.id || !item.name) return;
+
+  const key = getManualGroceryItemKey(item.id);
+  runtimeState.displayNamesByKey[key] = item.name;
+  runtimeState.grocery.notesByKey[key] = item.note ? [item.note] : ["manual item"];
+  runtimeState.grocery.sourcesByKey[key] = [{ id: key, title: "Manual item" }];
+}
+
+export function addManualGroceryItem(runtimeState, name, options = {}) {
+  const itemName = normalizeWhitespace(name);
+  const note = normalizeWhitespace(options.note || "");
+  if (!itemName) return null;
+
+  const id = options.id || createManualGroceryItemId();
+  const item = {
+    id,
+    name: itemName,
+  };
+  if (note) item.note = note;
+
+  runtimeState.manualGroceryItemsById[id] = item;
+  addManualItemToGroceryState(runtimeState, item);
+
+  return item;
+}
+
+export function removeManualGroceryItem(runtimeState, canonicalKey) {
+  if (!isManualGroceryItemKey(canonicalKey)) return false;
+
+  const id = String(canonicalKey).slice(manualGroceryKeyPrefix.length);
+  delete runtimeState.manualGroceryItemsById[id];
+  delete runtimeState.groceryCheckedByKey[canonicalKey];
+  delete runtimeState.displayNamesByKey[canonicalKey];
+  delete runtimeState.grocery.totalsByKey[canonicalKey];
+  delete runtimeState.grocery.notesByKey[canonicalKey];
+  delete runtimeState.grocery.sourcesByKey[canonicalKey];
+  return true;
+}
+
+export function clearCheckedGroceryItems(runtimeState) {
+  Object.keys(runtimeState.groceryCheckedByKey || {}).forEach((canonicalKey) => {
+    if (isManualGroceryItemKey(canonicalKey)) {
+      removeManualGroceryItem(runtimeState, canonicalKey);
+      return;
+    }
+
+    delete runtimeState.groceryCheckedByKey[canonicalKey];
+  });
 }
 
 function addNoteForKey(groceryState, canonicalKey, note) {
@@ -173,6 +244,10 @@ export function recomputeGroceryState(runtimeState, recipes) {
       addParsedIngredientToTotals(runtimeState, parsed, recipe, index);
     });
   });
+
+  Object.values(runtimeState.manualGroceryItemsById || {}).forEach((item) => {
+    addManualItemToGroceryState(runtimeState, item);
+  });
 }
 
 export function selectAllRecipes(runtimeState, recipes) {
@@ -186,6 +261,7 @@ export function selectAllRecipes(runtimeState, recipes) {
 export function clearGroceryState(runtimeState) {
   runtimeState.selectedRecipeIds = {};
   runtimeState.groceryCheckedByKey = {};
+  runtimeState.manualGroceryItemsById = {};
   runtimeState.grocery = createEmptyGroceryState();
   runtimeState.displayNamesByKey = {};
 }

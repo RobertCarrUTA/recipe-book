@@ -23,6 +23,9 @@ test("restorePersistentState returns safe defaults when storage is unavailable",
   const restored = restorePersistentState(null);
   assert.deepEqual(restored.selectedRecipeIds, {});
   assert.deepEqual(restored.groceryCheckedByKey, {});
+  assert.deepEqual(restored.manualGroceryItemsById, {});
+  assert.deepEqual(restored.ui.collapsedGroceryGroups, {});
+  assert.equal(restored.ui.hideCheckedGroceryItems, false);
   assert.equal(restored.ui.mobileView, "recipes");
 });
 
@@ -45,11 +48,14 @@ test("savePersistentState writes versioned runtime and ui state", () => {
         favoriteRecipeIds: { chili: true },
         grocery: { totalsByKey: {}, notesByKey: {}, sourcesByKey: {} },
         groceryCheckedByKey: { beans: true },
+        manualGroceryItemsById: { "manual-1": { id: "manual-1", name: "Paper towels" } },
         selectedRecipeIds: { chili: true },
       },
       ui: {
+        collapsedGroceryGroups: { Produce: true },
         filters: { status: ["tried"] },
         groupItems: true,
+        hideCheckedGroceryItems: true,
         keepScreenAwake: false,
         mobileView: "grocery",
         recipeSearch: "chili",
@@ -63,6 +69,11 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   assert.equal(saved, true);
   assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion));
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.favoriteRecipes)), { chili: true });
+  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.manualGroceryItems)), {
+    "manual-1": { id: "manual-1", name: "Paper towels" },
+  });
+  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.collapsedGroceryGroups)), { Produce: true });
+  assert.equal(storage.getItem(storageKeys.hideCheckedGroceryItems), "1");
   assert.equal(storage.getItem(storageKeys.mobileView), "grocery");
   assert.equal(storage.getItem(storageKeys.showSelectedRecipesOnly), "1");
 });

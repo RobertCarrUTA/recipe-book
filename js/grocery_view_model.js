@@ -2,6 +2,11 @@ export function formatCount(count, singular, plural) {
   return `${count} ${count === 1 ? singular : plural}`;
 }
 
+export function formatCheckedGroceryGroupMessage(group) {
+  const groupName = String(group || "").trim();
+  return groupName ? `Everything in ${groupName} is checked.` : "Everything in this section is checked.";
+}
+
 export function getSortedGrocerySourceNames(sources) {
   return (sources || [])
     .map((source) => source && source.title)
@@ -29,6 +34,7 @@ export function getDisplayNotes(notes) {
     "for frosting",
     "for syrup",
     "for topping",
+    "manual item",
     "plus more",
     "to taste",
   ]);

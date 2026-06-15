@@ -1,10 +1,14 @@
 import {
+  addManualGroceryItem,
+  clearCheckedGroceryItems,
   clearGroceryState,
   createRecipeRuntimeState,
   getRecipeKey,
   isRecipeFavorite,
+  isManualGroceryItemKey,
   isRecipeSelected,
   recomputeGroceryState,
+  removeManualGroceryItem,
   selectAllRecipes,
   setGroceryChecked,
   setRecipeFavorite,
@@ -171,6 +175,23 @@ function createRecipeBookApp() {
     saveAppState();
   }
 
+  function handleGroceryGroupToggle(group, collapsed) {
+    appState.ui.collapsedGroceryGroups = appState.ui.collapsedGroceryGroups || {};
+    if (collapsed) {
+      appState.ui.collapsedGroceryGroups[group] = true;
+    } else {
+      delete appState.ui.collapsedGroceryGroups[group];
+    }
+    renderer.renderGroceryList();
+    saveAppState();
+  }
+
+  function handleManualGroceryRemove(canonicalKey) {
+    if (!removeManualGroceryItem(appState.runtime, canonicalKey)) return;
+    renderer.renderGroceryList();
+    saveAppState();
+  }
+
   function clearGroceryList() {
     clearGroceryState(appState.runtime);
     clearGroceryPersistence();
@@ -180,13 +201,34 @@ function createRecipeBookApp() {
     saveAppState();
   }
 
+  function clearCheckedGroceryListItems() {
+    clearCheckedGroceryItems(appState.runtime);
+    renderer.renderGroceryList();
+    saveAppState();
+  }
+
   function addAllRecipesToGroceryList() {
-    clearGroceryState(appState.runtime);
     selectAllRecipes(appState.runtime, appState.recipes);
     renderer.renderGroceryList();
     renderer.syncRecipeCheckboxes();
     refreshRecipeListFilter();
     saveAppState();
+  }
+
+  function attachManualGroceryForm() {
+    const form = byId("manualGroceryForm");
+    const input = byId("manualGroceryInput");
+    if (!form || !input) return;
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const item = addManualGroceryItem(appState.runtime, input.value);
+      if (!item) return;
+
+      input.value = "";
+      renderer.renderGroceryList();
+      saveAppState();
+    });
   }
 
   function attachRecipeSearch() {
@@ -249,7 +291,9 @@ function createRecipeBookApp() {
     const groupToggle = byId("groupToggle");
     const selectedOnly = byId("showSelectedRecipesOnly");
     const favoriteOnly = byId("showFavoriteRecipesOnly");
+    const hideChecked = byId("hideCheckedGroceryItems");
     const clearButton = byId("clearGroceryList");
+    const clearCheckedButton = byId("clearCheckedGroceryItems");
     const addAllButton = byId("addAllRecipesToGroceryList");
 
     if (groupToggle) {
@@ -276,7 +320,16 @@ function createRecipeBookApp() {
       });
     }
 
+    if (hideChecked) {
+      hideChecked.addEventListener("change", () => {
+        appState.ui.hideCheckedGroceryItems = hideChecked.checked;
+        renderer.renderGroceryList();
+        saveAppState();
+      });
+    }
+
     if (clearButton) clearButton.addEventListener("click", clearGroceryList);
+    if (clearCheckedButton) clearCheckedButton.addEventListener("click", clearCheckedGroceryListItems);
     if (addAllButton) addAllButton.addEventListener("click", addAllRecipesToGroceryList);
   }
 
@@ -306,9 +359,12 @@ function createRecipeBookApp() {
         buildRecipeSearchText,
         getRecipeKey,
         isRecipeFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
+        isManualGroceryItem: (canonicalKey) => isManualGroceryItemKey(canonicalKey),
         isRecipeSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
         onFavoriteRecipe: handleFavoriteRecipe,
         onGroceryCheckedChange: handleGroceryCheckedChange,
+        onGroceryGroupToggle: handleGroceryGroupToggle,
+        onManualGroceryRemove: handleManualGroceryRemove,
         onRecipeTagToggle: handleRecipeTagToggle,
         onRenderError: (error) => logger.error(error),
         onSelectRecipe: handleSelectRecipe,
@@ -332,6 +388,7 @@ function createRecipeBookApp() {
     applyUiStateToControls();
     attachPrimaryControls();
     attachFilterControls();
+    attachManualGroceryForm();
     mobileViewController.attach();
     attachRecipeSearch();
     attachCookingModeControls({ document, renderer, window });
