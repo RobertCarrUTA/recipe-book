@@ -125,6 +125,14 @@ npm.cmd run verify
 
 It syntax-checks JavaScript modules, runs focused unit tests, validates the recipe schema, checks unique IDs, exercises ingredient parsing, and recomputes grocery totals from the real recipe data.
 
+For an advisory recipe data quality report:
+
+```bash
+npm run report:data-quality
+```
+
+The report highlights schema warnings, structured grocery coverage, source link coverage, metadata coverage, parser issues, amountless grocery items, ungrouped grocery labels, and near-duplicate shopping labels worth reviewing.
+
 For an optional browser-level smoke test:
 
 ```bash
