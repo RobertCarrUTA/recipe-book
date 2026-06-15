@@ -7,7 +7,6 @@ import { addRange, convertToBaseUnits } from "./units.js";
 
 export function createEmptyGroceryState() {
   return {
-    selectedRecipeIds: {},
     totalsByKey: {},
     notesByKey: {},
     sourcesByKey: {},
@@ -29,10 +28,6 @@ export function createRecipeRuntimeState(savedState = {}) {
 
 export function getRecipeKey(recipe, index) {
   return recipe && recipe.id ? String(recipe.id) : `recipe-${index}`;
-}
-
-export function getRecipeIndexByKey(recipes, recipeKey) {
-  return recipes.findIndex((recipe, index) => getRecipeKey(recipe, index) === recipeKey);
 }
 
 export function isRecipeSelected(runtimeState, recipe, index) {
@@ -169,10 +164,7 @@ export function getRecipeGroceryIngredients(recipe) {
 }
 
 export function recomputeGroceryState(runtimeState, recipes) {
-  runtimeState.grocery = {
-    ...createEmptyGroceryState(),
-    selectedRecipeIds: runtimeState.selectedRecipeIds,
-  };
+  runtimeState.grocery = createEmptyGroceryState();
   runtimeState.displayNamesByKey = {};
 
   recipes.forEach((recipe, index) => {
