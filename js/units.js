@@ -77,22 +77,6 @@ export function addRange(existingRange, addRangeValue) {
   };
 }
 
-export function subtractRange(existingRange, subtractRangeValue) {
-  const next = {
-    min: (existingRange ? existingRange.min : 0) - subtractRangeValue.min,
-    max: (existingRange ? existingRange.max : 0) - subtractRangeValue.max,
-  };
-
-  next.min = Math.max(0, next.min);
-  next.max = Math.max(0, next.max);
-
-  return next;
-}
-
-export function isEffectivelyZero(rangeValue) {
-  return rangeValue.min <= 1e-12 && rangeValue.max <= 1e-12;
-}
-
 /* ================================
 DISPLAY FORMATTING
 ================================ */

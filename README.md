@@ -113,7 +113,13 @@ Run the local verification script after code or data changes:
 npm run verify
 ```
 
-It runs focused unit tests, validates the recipe schema, checks unique IDs, exercises ingredient parsing, and recomputes grocery totals from the real recipe data.
+On Windows PowerShell, if script execution policy blocks `npm`, use:
+
+```bash
+npm.cmd run verify
+```
+
+It syntax-checks JavaScript modules, runs focused unit tests, validates the recipe schema, checks unique IDs, exercises ingredient parsing, and recomputes grocery totals from the real recipe data.
 
 For an optional browser-level smoke test:
 

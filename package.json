@@ -4,8 +4,12 @@
   "type": "module",
   "scripts": {
     "set-asset-version": "node scripts/set-asset-version.mjs",
+    "check:syntax": "node scripts/check-syntax.mjs",
     "smoke:browser": "node scripts/smoke-browser.mjs",
     "test": "node scripts/run-tests.mjs",
-    "verify": "npm run test && node scripts/verify-app.mjs"
+    "verify": "node scripts/check-syntax.mjs && node scripts/run-tests.mjs && node scripts/verify-app.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0"
   }
 }
