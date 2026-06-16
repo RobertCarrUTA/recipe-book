@@ -229,10 +229,26 @@ h2 {
   backdrop-filter: blur(16px);
 }
 
+.recipe-search-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+}
+
 .recipe-search-label {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+.recipe-controls-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.recipe-controls-panel[hidden] {
+  display: none;
 }
 
 #recipeSearch {
@@ -333,21 +349,30 @@ h2 {
 }
 
 .filter-toggle,
+.recipe-controls-toggle,
 #clearFilters,
 .secondary-button,
 .clear-grocery-button {
   padding: 0 13px;
 }
 
-.filter-toggle {
+.filter-toggle,
+.recipe-controls-toggle {
   border-color: rgba(128, 183, 243, 0.45);
   background: rgba(128, 183, 243, 0.12);
   color: #cfe5ff;
 }
 
-.filter-toggle[aria-expanded="true"] {
+.filter-toggle[aria-expanded="true"],
+.recipe-controls-toggle[aria-expanded="true"] {
   border-color: rgba(128, 183, 243, 0.72);
   background: rgba(128, 183, 243, 0.2);
+}
+
+.recipe-controls-toggle {
+  display: none;
+  min-height: 36px;
+  font-size: 0.84rem;
 }
 
 .recipe-filters {
@@ -792,6 +817,7 @@ li {
 }
 
 .grocery-controls-toggle {
+  display: none;
   position: relative;
   min-height: 38px;
   padding: 0 30px 0 12px;
@@ -1419,6 +1445,28 @@ li {
     align-items: center;
   }
 
+  .recipe-search {
+    top: 8px;
+    padding: 10px 12px;
+  }
+
+  .recipe-search.is-compact {
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .recipe-search.is-compact .recipe-search-label {
+    color: var(--muted-strong);
+  }
+
+  .recipe-controls-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .grocery-list {
     min-height: 100dvh;
     margin: 0 -14px;
@@ -1463,6 +1511,8 @@ li {
   }
 
   .grocery-controls-toggle {
+    display: inline-flex;
+    align-items: center;
     min-height: 36px;
     padding-right: 28px;
   }
@@ -1687,11 +1737,27 @@ li {
     top: 18px;
   }
 
+  .recipe-controls-panel[hidden] {
+    display: grid;
+  }
+
+  .recipe-search.is-compact {
+    gap: 10px;
+  }
+
   .grocery-list {
     position: sticky;
     top: 18px;
     max-height: calc(100vh - 36px);
     overflow: auto;
+  }
+
+  .grocery-controls-panel[hidden] {
+    display: grid;
+  }
+
+  .grocery-shopping-bar.is-compact {
+    gap: 10px;
   }
 
   .cooking-mode {

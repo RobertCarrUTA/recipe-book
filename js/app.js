@@ -39,6 +39,7 @@ import {
 import { createWakeLockController } from "./wake_lock_controller.js";
 
 const DEBOUNCE_MS = 150;
+const COMPACT_CONTROLS_MEDIA = "(max-width: 979px)";
 
 function attachGlobalErrorHandlers(logger) {
   window.addEventListener("error", (event) => {
@@ -81,6 +82,10 @@ function createRecipeBookApp() {
 
   function applyUiStateToControls() {
     applyUiStateToDomControls(document, appState.ui);
+  }
+
+  function isCompactControlsLayout() {
+    return typeof window.matchMedia !== "function" || window.matchMedia(COMPACT_CONTROLS_MEDIA).matches;
   }
 
   function applyRecipeFilter(filterTextRaw) {
@@ -170,18 +175,51 @@ function createRecipeBookApp() {
     if (groceryPanel) groceryPanel.scrollIntoView({ block: "start" });
   }
 
+  function syncRecipeControlsPanel() {
+    const panel = byId("recipeControlsPanel");
+    const toggle = byId("toggleRecipeControls");
+    const recipeSearch = panel ? panel.closest(".recipe-search") : null;
+    const collapsed = Boolean(appState.ui.recipeControlsCollapsed) && isCompactControlsLayout();
+
+    if (panel) panel.hidden = collapsed;
+    if (recipeSearch) recipeSearch.classList.toggle("is-compact", collapsed);
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+      toggle.textContent = collapsed ? "Show" : "Hide";
+      toggle.title = collapsed ? "Show recipe controls" : "Hide recipe controls";
+      toggle.setAttribute("aria-label", collapsed ? "Show recipe controls" : "Hide recipe controls");
+    }
+  }
+
   function syncGroceryControlsPanel() {
     const panel = byId("groceryControlsPanel");
     const toggle = byId("toggleGroceryControls");
     const shoppingBar = panel ? panel.closest(".grocery-shopping-bar") : null;
-    const collapsed = Boolean(appState.ui.groceryControlsCollapsed);
+    const collapsed = Boolean(appState.ui.groceryControlsCollapsed) && isCompactControlsLayout();
 
     if (panel) panel.hidden = collapsed;
     if (shoppingBar) shoppingBar.classList.toggle("is-compact", collapsed);
     if (toggle) {
       toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+      toggle.textContent = collapsed ? "Show" : "Hide";
       toggle.title = collapsed ? "Show grocery controls" : "Hide grocery controls";
       toggle.setAttribute("aria-label", collapsed ? "Show grocery controls" : "Hide grocery controls");
+    }
+  }
+
+  function attachResponsiveControlsSync() {
+    if (typeof window.matchMedia !== "function") return;
+
+    const media = window.matchMedia(COMPACT_CONTROLS_MEDIA);
+    const syncControls = () => {
+      syncRecipeControlsPanel();
+      syncGroceryControlsPanel();
+    };
+
+    if (typeof media.addEventListener === "function") {
+      media.addEventListener("change", syncControls);
+    } else if (typeof media.addListener === "function") {
+      media.addListener(syncControls);
     }
   }
 
@@ -311,8 +349,11 @@ function createRecipeBookApp() {
     const clearCheckedButton = byId("clearCheckedGroceryItems");
     const addAllButton = byId("addAllRecipesToGroceryList");
     const controlsToggle = byId("toggleGroceryControls");
+    const recipeControlsToggle = byId("toggleRecipeControls");
 
+    syncRecipeControlsPanel();
     syncGroceryControlsPanel();
+    attachResponsiveControlsSync();
 
     if (groupToggle) {
       groupToggle.addEventListener("change", () => {
@@ -349,6 +390,13 @@ function createRecipeBookApp() {
     if (clearButton) clearButton.addEventListener("click", clearGroceryList);
     if (clearCheckedButton) clearCheckedButton.addEventListener("click", clearCheckedGroceryListItems);
     if (addAllButton) addAllButton.addEventListener("click", addAllRecipesToGroceryList);
+    if (recipeControlsToggle) {
+      recipeControlsToggle.addEventListener("click", () => {
+        appState.ui.recipeControlsCollapsed = !appState.ui.recipeControlsCollapsed;
+        syncRecipeControlsPanel();
+        saveAppState();
+      });
+    }
     if (controlsToggle) {
       controlsToggle.addEventListener("click", () => {
         appState.ui.groceryControlsCollapsed = !appState.ui.groceryControlsCollapsed;

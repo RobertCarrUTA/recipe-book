@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css?v=20260615-4" />
+    <link rel="stylesheet" href="css/styles.css?v=20260615-5" />
     <link rel="icon" href="data:," />
   </head>
   <body class="app-mode-recipes">
@@ -38,54 +38,69 @@
           </div>
 
           <div class="recipe-search">
-            <label class="recipe-search-label" for="recipeSearch">Search recipes</label>
-            <input id="recipeSearch" type="search" placeholder="Search title, ingredients, notes..." autocomplete="off" />
-
-            <div class="quick-controls" aria-label="Recipe options">
-              <label class="switch-control">
-                <input id="showSelectedRecipesOnly" type="checkbox" />
-                <span class="switch-track" aria-hidden="true"></span>
-                <span>Selected only</span>
-              </label>
-              <label class="switch-control">
-                <input id="showFavoriteRecipesOnly" type="checkbox" />
-                <span class="switch-track" aria-hidden="true"></span>
-                <span>Favorites</span>
-              </label>
-              <label class="switch-control">
-                <input id="keepScreenAwake" type="checkbox" />
-                <span class="switch-track" aria-hidden="true"></span>
-                <span>Keep awake</span>
-              </label>
-              <button id="toggleFilters" class="filter-toggle" type="button" aria-expanded="false" aria-controls="recipeFilters">
-                Filters
+            <div class="recipe-search-header">
+              <span class="recipe-search-label">Search & filters</span>
+              <button
+                id="toggleRecipeControls"
+                class="recipe-controls-toggle"
+                type="button"
+                aria-expanded="true"
+                aria-controls="recipeControlsPanel"
+              >
+                Hide
               </button>
             </div>
 
-            <div class="recipe-filters hidden" id="recipeFilters">
-              <div class="filter-group">
-                <strong>Status</strong>
-                <label><input type="checkbox" data-filter="status" value="tried" /> Tried</label>
-                <label><input type="checkbox" data-filter="status" value="not-tried" /> Not Tried</label>
+            <div id="recipeControlsPanel" class="recipe-controls-panel">
+              <label class="visually-hidden" for="recipeSearch">Search recipes</label>
+              <input id="recipeSearch" type="search" placeholder="Search title, ingredients, notes..." autocomplete="off" />
+
+              <div class="quick-controls" aria-label="Recipe options">
+                <label class="switch-control">
+                  <input id="showSelectedRecipesOnly" type="checkbox" />
+                  <span class="switch-track" aria-hidden="true"></span>
+                  <span>Selected only</span>
+                </label>
+                <label class="switch-control">
+                  <input id="showFavoriteRecipesOnly" type="checkbox" />
+                  <span class="switch-track" aria-hidden="true"></span>
+                  <span>Favorites</span>
+                </label>
+                <label class="switch-control">
+                  <input id="keepScreenAwake" type="checkbox" />
+                  <span class="switch-track" aria-hidden="true"></span>
+                  <span>Keep awake</span>
+                </label>
+                <button id="toggleFilters" class="filter-toggle" type="button" aria-expanded="false" aria-controls="recipeFilters">
+                  Filters
+                </button>
               </div>
-              <div class="filter-group">
-                <strong>Rating</strong>
-                <label><input type="checkbox" data-filter="rating" value="great" /> Great</label>
-                <label><input type="checkbox" data-filter="rating" value="good" /> Good</label>
-                <label><input type="checkbox" data-filter="rating" value="okay" /> Okay</label>
+
+              <div class="recipe-filters hidden" id="recipeFilters">
+                <div class="filter-group">
+                  <strong>Status</strong>
+                  <label><input type="checkbox" data-filter="status" value="tried" /> Tried</label>
+                  <label><input type="checkbox" data-filter="status" value="not-tried" /> Not Tried</label>
+                </div>
+                <div class="filter-group">
+                  <strong>Rating</strong>
+                  <label><input type="checkbox" data-filter="rating" value="great" /> Great</label>
+                  <label><input type="checkbox" data-filter="rating" value="good" /> Good</label>
+                  <label><input type="checkbox" data-filter="rating" value="okay" /> Okay</label>
+                </div>
+                <div class="filter-group">
+                  <strong>Difficulty</strong>
+                  <label><input type="checkbox" data-filter="difficulty" value="easy" /> Easy</label>
+                  <label><input type="checkbox" data-filter="difficulty" value="medium" /> Medium</label>
+                  <label><input type="checkbox" data-filter="difficulty" value="hard" /> Hard</label>
+                </div>
+                <div class="filter-group">
+                  <strong>Equipment</strong>
+                  <label><input type="checkbox" data-filter="equipment" value="dutch-oven" /> Dutch Oven</label>
+                  <label><input type="checkbox" data-filter="equipment" value="instant-pot" /> Instant Pot</label>
+                </div>
+                <button id="clearFilters" type="button">Clear filters</button>
               </div>
-              <div class="filter-group">
-                <strong>Difficulty</strong>
-                <label><input type="checkbox" data-filter="difficulty" value="easy" /> Easy</label>
-                <label><input type="checkbox" data-filter="difficulty" value="medium" /> Medium</label>
-                <label><input type="checkbox" data-filter="difficulty" value="hard" /> Hard</label>
-              </div>
-              <div class="filter-group">
-                <strong>Equipment</strong>
-                <label><input type="checkbox" data-filter="equipment" value="dutch-oven" /> Dutch Oven</label>
-                <label><input type="checkbox" data-filter="equipment" value="instant-pot" /> Instant Pot</label>
-              </div>
-              <button id="clearFilters" type="button">Clear filters</button>
             </div>
           </div>
 
@@ -209,6 +224,6 @@
       </div>
     </section>
 
-    <script type="module" src="js/app.js?v=20260615-4"></script>
+    <script type="module" src="js/app.js?v=20260615-5"></script>
   </body>
 </html>

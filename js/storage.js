@@ -10,6 +10,7 @@ export const storageKeys = Object.freeze({
   showSelectedRecipesOnly: "offline_recipebook_show_selected_recipes_only_v1",
   hideCheckedGroceryItems: "offline_recipebook_hide_checked_grocery_items_v1",
   groceryControlsCollapsed: "offline_recipebook_grocery_controls_collapsed_v1",
+  recipeControlsCollapsed: "offline_recipebook_recipe_controls_collapsed_v1",
   groupToggle: "offline_recipebook_group_toggle_v1",
   keepScreenAwake: "offline_recipebook_keep_screen_awake_v1",
   mobileView: "offline_recipebook_mobile_view_v1",
@@ -140,6 +141,7 @@ export function createDefaultUiState() {
     hideCheckedGroceryItems: false,
     keepScreenAwake: false,
     mobileView: "recipes",
+    recipeControlsCollapsed: false,
     recipeSearch: "",
     showFavoriteRecipesOnly: false,
     showSelectedRecipesOnly: false,
@@ -170,6 +172,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
   ui.hideCheckedGroceryItems = readBoolean(storage, storageKeys.hideCheckedGroceryItems);
   ui.keepScreenAwake = readBoolean(storage, storageKeys.keepScreenAwake);
   ui.mobileView = read(storage, storageKeys.mobileView) === "grocery" ? "grocery" : "recipes";
+  ui.recipeControlsCollapsed = readBoolean(storage, storageKeys.recipeControlsCollapsed);
   ui.recipeSearch = read(storage, storageKeys.recipeSearch) || "";
   ui.showFavoriteRecipesOnly = readBoolean(storage, storageKeys.showFavoriteRecipesOnly);
   ui.showSelectedRecipesOnly = readBoolean(storage, storageKeys.showSelectedRecipesOnly);
@@ -212,6 +215,7 @@ export function savePersistentState(state, storage = globalThis.localStorage) {
     write(storage, storageKeys.hideCheckedGroceryItems, ui.hideCheckedGroceryItems ? "1" : "0"),
     write(storage, storageKeys.keepScreenAwake, ui.keepScreenAwake ? "1" : "0"),
     write(storage, storageKeys.mobileView, ui.mobileView === "grocery" ? "grocery" : "recipes"),
+    write(storage, storageKeys.recipeControlsCollapsed, ui.recipeControlsCollapsed ? "1" : "0"),
     write(storage, storageKeys.recipeSearch, ui.recipeSearch || ""),
     write(storage, storageKeys.showFavoriteRecipesOnly, ui.showFavoriteRecipesOnly ? "1" : "0"),
     write(storage, storageKeys.showSelectedRecipesOnly, ui.showSelectedRecipesOnly ? "1" : "0"),
