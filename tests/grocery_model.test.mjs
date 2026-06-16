@@ -110,7 +110,30 @@ test("grocery sources retain recipe-specific amount notes", () => {
 
   assert.deepEqual(runtime.grocery.totalsByKey.peach.item, { min: 5, max: 5 });
   assert.deepEqual(runtime.grocery.notesByKey.peach, ["optional", "amount not specified"]);
+  assert.deepEqual(runtime.grocery.sourcesByKey.peach[0].totals.item, { min: 5, max: 5 });
   assert.deepEqual(runtime.grocery.sourcesByKey.peach[1].notes, ["optional", "amount not specified"]);
+  assert.equal(runtime.grocery.sourcesByKey.peach[1].totals, undefined);
+});
+
+test("grocery sources aggregate recipe-specific totals for repeated ingredients", () => {
+  const runtime = createRecipeRuntimeState();
+  const sourceRecipes = [
+    {
+      id: "dressing",
+      groceryIngredients: [
+        { item: "olive oil", quantity: 0.5, unit: "cup" },
+        { item: "olive oil", quantity: 2, unit: "tbsp" },
+      ],
+      ingredients: [],
+      instructions: [],
+      title: "Dressing",
+    },
+  ];
+
+  selectAllRecipes(runtime, sourceRecipes);
+
+  assert.deepEqual(runtime.grocery.totalsByKey["olive oil"].tsp, { min: 30, max: 30 });
+  assert.deepEqual(runtime.grocery.sourcesByKey["olive oil"][0].totals.tsp, { min: 30, max: 30 });
 });
 
 test("clearGroceryState resets selected, checked, totals, and display names", () => {

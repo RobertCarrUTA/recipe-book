@@ -1,3 +1,5 @@
+import { formatTotalsForKey } from "./units.js";
+
 export function formatCount(count, singular, plural) {
   return `${count} ${count === 1 ? singular : plural}`;
 }
@@ -76,9 +78,23 @@ export function getSortedGrocerySources(sources) {
     .sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" }));
 }
 
-export function formatGrocerySourceDetail(source) {
-  if (!source || !source.title) return "";
+export function getGrocerySourceDetail(source, options = {}) {
+  const title = source && source.title ? source.title : "";
+  if (!title) return { metaText: "", title: "" };
 
   const notes = getSourceDetailNotes(source.notes);
-  return notes.length ? `${source.title} (${notes.join(", ")})` : source.title;
+  const totalsText = source.totals ? formatTotalsForKey(source.totals, options) : "";
+  const notesText = notes.join(", ");
+  let metaText = "";
+
+  if (totalsText && notesText) metaText = `${totalsText} (${notesText})`;
+  else metaText = totalsText || notesText;
+
+  return { metaText, title };
+}
+
+export function formatGrocerySourceDetail(source, options = {}) {
+  const detail = getGrocerySourceDetail(source, options);
+  if (!detail.title) return "";
+  return detail.metaText ? `${detail.title} - ${detail.metaText}` : detail.title;
 }

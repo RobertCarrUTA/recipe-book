@@ -1,8 +1,8 @@
 import { determineGroupForKey, sortGroceryGroups } from "./grouping.js";
 import {
-  formatGrocerySourceDetail,
   formatCheckedGroceryGroupMessage,
   formatGrocerySourceSummary,
+  getGrocerySourceDetail,
   getDisplayNotes,
   getSortedGrocerySources,
   formatCount,
@@ -11,6 +11,7 @@ import { formatTotalsForKey } from "./units.js";
 
 export function createGroceryRenderer({ document, getRuntimeState, getUiState, actions }) {
   const byId = (id) => document.getElementById(id);
+  let sourceDetailsIdCounter = 0;
 
   function getAllGroceryKeys(groceryState) {
     return new Set([
@@ -94,6 +95,10 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
   }
 
   function renderGrocerySource(content, sources, selectedRecipeCount, canonicalKey) {
+    const runtimeState = getRuntimeState();
+    const displayName = runtimeState.displayNamesByKey[canonicalKey] || canonicalKey;
+    const detailOptions = { canonicalKey, displayName };
+
     if (actions.isManualGroceryItem(canonicalKey)) {
       const source = document.createElement("span");
       source.className = "grocery-item-source";
@@ -107,8 +112,9 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
 
     const sortedSources = getSortedGrocerySources(sources);
     const sourceNames = sortedSources.map((source) => source.title);
+    const shouldRenderDetails = sourceNames.length > 1 || sourceSummary === "From 1 recipe";
 
-    if (sourceNames.length <= 1) {
+    if (!shouldRenderDetails) {
       const source = document.createElement("span");
       source.className = "grocery-item-source";
       source.textContent = sourceSummary;
@@ -123,12 +129,29 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     sourceToggle.setAttribute("aria-expanded", "false");
 
     const sourceDetails = document.createElement("span");
+    const sourceDetailsId = `grocery-source-details-${sourceDetailsIdCounter}`;
+    sourceDetailsIdCounter += 1;
     sourceDetails.className = "grocery-item-source-list";
+    sourceDetails.id = sourceDetailsId;
     sourceDetails.hidden = true;
+    sourceToggle.setAttribute("aria-controls", sourceDetailsId);
+
     sortedSources.forEach((sourceEntry) => {
+      const detail = getGrocerySourceDetail(sourceEntry, detailOptions);
       const sourceItem = document.createElement("span");
+      const sourceTitle = document.createElement("span");
       sourceItem.className = "grocery-item-source-list-item";
-      sourceItem.textContent = formatGrocerySourceDetail(sourceEntry);
+      sourceTitle.className = "grocery-source-title";
+      sourceTitle.textContent = detail.title;
+      sourceItem.appendChild(sourceTitle);
+
+      if (detail.metaText) {
+        const sourceMeta = document.createElement("span");
+        sourceMeta.className = "grocery-source-meta";
+        sourceMeta.textContent = detail.metaText;
+        sourceItem.appendChild(sourceMeta);
+      }
+
       sourceDetails.appendChild(sourceItem);
     });
 

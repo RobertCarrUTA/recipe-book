@@ -214,6 +214,18 @@ const browserChecks = [
     },
   },
   {
+    name: "grocery source expansion shows recipe-specific quantities",
+    async run(page) {
+      await openApp(page);
+
+      await page.locator("#addAllRecipesToGroceryList").click();
+      const potatoItem = page.locator("#groceryList li").filter({ hasText: "potato - 1 potato" }).first();
+      await potatoItem.waitFor({ timeout: 5000 });
+      await potatoItem.locator(".grocery-item-source-toggle").click();
+      await expectLocatorText(potatoItem.locator(".grocery-item-source-list"), /Dutch Oven Chicken Pot Pie[\s\S]*1 potato/);
+    },
+  },
+  {
     name: "cooking mode opens, advances, and closes",
     async run(page) {
       await openApp(page, { debug: true });
@@ -249,6 +261,16 @@ const browserChecks = [
       await page.locator('.mobile-view-tab[data-view="grocery"]').click();
       await assertVisible(page, "#recipesPanel", false);
       await assertVisible(page, "#groceryPanel", true);
+      assert.equal(
+        await page.locator(".grocery-shopping-bar").evaluate((element) => getComputedStyle(element).position),
+        "sticky"
+      );
+
+      await page.locator("#addAllRecipesToGroceryList").click();
+      const firstGroceryItemMinHeight = await page.locator("#groceryList li").first().evaluate((element) =>
+        Number.parseFloat(getComputedStyle(element).minHeight)
+      );
+      assert.ok(firstGroceryItemMinHeight >= 60, "mobile grocery rows should keep a comfortable tap target");
 
       await page.locator('.mobile-view-tab[data-view="recipes"]').click();
       await assertVisible(page, "#recipesPanel", true);
@@ -270,6 +292,12 @@ async function expectText(page, selector, pattern) {
     ({ selector, source, flags }) => new RegExp(source, flags).test(document.querySelector(selector)?.textContent || ""),
     { selector, source: pattern.source, flags: pattern.flags }
   );
+}
+
+async function expectLocatorText(locator, pattern) {
+  await locator.waitFor({ timeout: 5000 });
+  const text = await locator.innerText();
+  assert.match(text, pattern);
 }
 
 async function assertVisible(page, selector, expected) {

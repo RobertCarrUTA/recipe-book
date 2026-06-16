@@ -93,46 +93,48 @@
         </section>
 
         <aside id="groceryPanel" class="workspace grocery-list" aria-labelledby="groceryTitle">
-          <div class="workspace-header grocery-header">
-            <div>
-              <p class="section-kicker">Shop</p>
-              <h2 id="groceryTitle">Grocery List</h2>
-              <p id="grocerySummary" class="grocery-summary">No items yet</p>
+          <div class="grocery-shopping-bar">
+            <div class="workspace-header grocery-header">
+              <div>
+                <p class="section-kicker">Shop</p>
+                <h2 id="groceryTitle">Grocery List</h2>
+                <p id="grocerySummary" class="grocery-summary">No items yet</p>
+              </div>
+              <div class="grocery-header-actions">
+                <button id="clearCheckedGroceryItems" class="secondary-button" type="button">Clear checked</button>
+                <button id="clearGroceryList" class="clear-grocery-button" type="button">Delete all</button>
+              </div>
             </div>
-            <div class="grocery-header-actions">
-              <button id="clearCheckedGroceryItems" class="secondary-button" type="button">Clear checked</button>
-              <button id="clearGroceryList" class="clear-grocery-button" type="button">Delete all</button>
+
+            <form id="manualGroceryForm" class="grocery-add-form">
+              <label class="visually-hidden" for="manualGroceryInput">Add grocery item</label>
+              <input
+                id="manualGroceryInput"
+                type="text"
+                placeholder="Add grocery item..."
+                autocomplete="off"
+                maxlength="80"
+              />
+              <button class="primary-button" type="submit">Add</button>
+            </form>
+
+            <div class="grocery-toolbar">
+              <label class="switch-control compact-switch">
+                <input type="checkbox" id="groupToggle" />
+                <span class="switch-track" aria-hidden="true"></span>
+                <span>Group sections</span>
+              </label>
+              <label class="switch-control compact-switch">
+                <input type="checkbox" id="hideCheckedGroceryItems" />
+                <span class="switch-track" aria-hidden="true"></span>
+                <span>Hide checked</span>
+              </label>
+              <button id="addAllRecipesToGroceryList" class="secondary-button" type="button">Add all recipes</button>
             </div>
-          </div>
 
-          <form id="manualGroceryForm" class="grocery-add-form">
-            <label class="visually-hidden" for="manualGroceryInput">Add grocery item</label>
-            <input
-              id="manualGroceryInput"
-              type="text"
-              placeholder="Add grocery item..."
-              autocomplete="off"
-              maxlength="80"
-            />
-            <button class="primary-button" type="submit">Add</button>
-          </form>
-
-          <div class="grocery-toolbar">
-            <label class="switch-control compact-switch">
-              <input type="checkbox" id="groupToggle" />
-              <span class="switch-track" aria-hidden="true"></span>
-              <span>Group sections</span>
-            </label>
-            <label class="switch-control compact-switch">
-              <input type="checkbox" id="hideCheckedGroceryItems" />
-              <span class="switch-track" aria-hidden="true"></span>
-              <span>Hide checked</span>
-            </label>
-            <button id="addAllRecipesToGroceryList" class="secondary-button" type="button">Add all recipes</button>
-          </div>
-
-          <div class="grocery-progress" aria-hidden="true">
-            <span id="groceryProgressBar"></span>
+            <div class="grocery-progress" aria-hidden="true">
+              <span id="groceryProgressBar"></span>
+            </div>
           </div>
 
           <div id="groceryList" class="grocery-list-body"></div>
