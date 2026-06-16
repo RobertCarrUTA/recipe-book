@@ -145,19 +145,41 @@ function addNoteForKey(groceryState, canonicalKey, note) {
   }
 }
 
-function addSourceForKey(groceryState, canonicalKey, recipe, index) {
+function addUniqueNote(notes, note) {
+  const normalized = normalizeWhitespace(note);
+  if (normalized && !notes.includes(normalized)) notes.push(normalized);
+}
+
+function addSourceForKey(groceryState, canonicalKey, recipe, index, notes = []) {
   if (!recipe || !canonicalKey) return;
 
   const recipeId = getRecipeKey(recipe, index);
   const source = {
     id: recipeId,
+    notes: [],
     title: recipe.title || "Untitled recipe",
   };
 
   groceryState.sourcesByKey[canonicalKey] = groceryState.sourcesByKey[canonicalKey] || [];
-  if (!groceryState.sourcesByKey[canonicalKey].some((existing) => existing.id === recipeId)) {
+  const existingSource = groceryState.sourcesByKey[canonicalKey].find((existing) => existing.id === recipeId);
+  if (existingSource) {
+    existingSource.notes = existingSource.notes || [];
+    notes.forEach((note) => addUniqueNote(existingSource.notes, note));
+  } else {
+    notes.forEach((note) => addUniqueNote(source.notes, note));
     groceryState.sourcesByKey[canonicalKey].push(source);
   }
+}
+
+function getParsedIngredientNotes(parsed) {
+  const notes = [];
+  if (parsed.optional) addUniqueNote(notes, "optional");
+  if (Array.isArray(parsed.notes)) {
+    parsed.notes.forEach((note) => addUniqueNote(notes, note));
+  }
+  if (parsed.nonQuantifiedMarker) addUniqueNote(notes, parsed.nonQuantifiedMarker);
+  if (!parsed.quantityRange) addUniqueNote(notes, "amount not specified");
+  return notes;
 }
 
 function getEffectiveUnit(parsed) {
@@ -187,21 +209,17 @@ function addParsedIngredientToTotals(runtimeState, parsed, sourceRecipe, sourceI
 
   const groceryState = runtimeState.grocery;
   const canonicalKey = parsed.canonical.base;
+  const ingredientNotes = getParsedIngredientNotes(parsed);
   runtimeState.displayNamesByKey[canonicalKey] = parsed.canonical.display || canonicalKey;
-  addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex);
+  addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, ingredientNotes);
 
   if (!groceryState.totalsByKey[canonicalKey]) {
     groceryState.totalsByKey[canonicalKey] = {};
   }
 
-  if (parsed.optional) addNoteForKey(groceryState, canonicalKey, "optional");
-  if (Array.isArray(parsed.notes)) {
-    parsed.notes.forEach((note) => addNoteForKey(groceryState, canonicalKey, note));
-  }
-  if (parsed.nonQuantifiedMarker) addNoteForKey(groceryState, canonicalKey, parsed.nonQuantifiedMarker);
+  ingredientNotes.forEach((note) => addNoteForKey(groceryState, canonicalKey, note));
 
   if (!parsed.quantityRange) {
-    addNoteForKey(groceryState, canonicalKey, "amount not specified");
     if (Object.keys(groceryState.totalsByKey[canonicalKey]).length === 0) {
       delete groceryState.totalsByKey[canonicalKey];
     }

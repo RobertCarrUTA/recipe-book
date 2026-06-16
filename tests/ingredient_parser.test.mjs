@@ -207,3 +207,23 @@ test("parseStructuredGroceryIngredient preserves explicit shopping notes", () =>
     ]
   );
 });
+
+test("parseStructuredGroceryIngredient keeps prepared potato sides separate from raw potatoes", () => {
+  assert.deepEqual(
+    parsedSnapshot(parseStructuredGroceryIngredient({
+      item: "mashed potatoes",
+      optional: true,
+    })),
+    [
+      {
+        base: "mashed potatoes",
+        display: "mashed potatoes",
+        unitKey: null,
+        quantityRange: null,
+        optional: true,
+        nonQuantifiedMarker: null,
+        notes: [],
+      },
+    ]
+  );
+});

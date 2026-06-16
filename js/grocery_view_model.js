@@ -8,10 +8,7 @@ export function formatCheckedGroceryGroupMessage(group) {
 }
 
 export function getSortedGrocerySourceNames(sources) {
-  return (sources || [])
-    .map((source) => source && source.title)
-    .filter(Boolean)
-    .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
+  return getSortedGrocerySources(sources).map((source) => source.title);
 }
 
 export function formatGrocerySourceSummary(sources, selectedRecipeCount) {
@@ -26,7 +23,38 @@ export function formatGrocerySourceSummary(sources, selectedRecipeCount) {
   return `From ${formatCount(sourceNames.length, "recipe", "recipes")}`;
 }
 
-export function getDisplayNotes(notes) {
+function sourceHasNote(source, note) {
+  const target = String(note || "").toLowerCase();
+  return (source?.notes || []).some((sourceNote) => String(sourceNote).toLowerCase() === target);
+}
+
+function shouldShowOptionalNote(sources) {
+  if (!Array.isArray(sources) || sources.length === 0) return true;
+  return sources.every((source) => sourceHasNote(source, "optional"));
+}
+
+export function getDisplayNotes(notes, sources = []) {
+  const hiddenNotes = new Set([
+    "amount not specified",
+    "as needed",
+    "divided",
+    "for filling",
+    "for frosting",
+    "for syrup",
+    "for topping",
+    "manual item",
+    "plus more",
+    "to taste",
+  ]);
+
+  return (notes || []).filter((note) => {
+    const lower = String(note).toLowerCase();
+    if (lower === "optional" && !shouldShowOptionalNote(sources)) return false;
+    return !hiddenNotes.has(lower) && !/^juice of\b/.test(lower);
+  });
+}
+
+export function getSourceDetailNotes(notes) {
   const hiddenNotes = new Set([
     "as needed",
     "divided",
@@ -40,4 +68,17 @@ export function getDisplayNotes(notes) {
   ]);
 
   return (notes || []).filter((note) => !hiddenNotes.has(String(note).toLowerCase()));
+}
+
+export function getSortedGrocerySources(sources) {
+  return (sources || [])
+    .filter((source) => source && source.title)
+    .sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" }));
+}
+
+export function formatGrocerySourceDetail(source) {
+  if (!source || !source.title) return "";
+
+  const notes = getSourceDetailNotes(source.notes);
+  return notes.length ? `${source.title} (${notes.join(", ")})` : source.title;
 }
