@@ -257,6 +257,28 @@ const browserChecks = [
 
       await assertVisible(page, "#recipesPanel", true);
       await assertVisible(page, "#groceryPanel", false);
+      assert.equal(
+        await page.locator(".recipe-search").evaluate((element) => getComputedStyle(element).position),
+        "sticky"
+      );
+      const expandedRecipeSearchHeight = await page.locator(".recipe-search").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+
+      await page.locator("#toggleRecipeControls").click();
+      await assertVisible(page, "#recipeControlsPanel", false);
+      assert.equal(await page.locator("#toggleRecipeControls").getAttribute("aria-expanded"), "false");
+      const compactRecipeSearchHeight = await page.locator(".recipe-search").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+      assert.ok(
+        compactRecipeSearchHeight < expandedRecipeSearchHeight,
+        "collapsed recipe controls should reduce sticky header height"
+      );
+
+      await page.locator("#toggleRecipeControls").click();
+      await assertVisible(page, "#recipeControlsPanel", true);
+      assert.equal(await page.locator("#toggleRecipeControls").getAttribute("aria-expanded"), "true");
 
       await page.locator('.mobile-view-tab[data-view="grocery"]').click();
       await assertVisible(page, "#recipesPanel", false);
