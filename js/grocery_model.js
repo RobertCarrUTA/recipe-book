@@ -150,9 +150,20 @@ function addUniqueNote(notes, note) {
   if (normalized && !notes.includes(normalized)) notes.push(normalized);
 }
 
-function addSourceForKey(groceryState, canonicalKey, recipe, index, notes = []) {
+function addTotalsForSource(source, totals) {
+  if (!totals) return;
+
+  source.totals = source.totals || {};
+  Object.keys(totals).forEach((unit) => {
+    source.totals[unit] = addRange(source.totals[unit], totals[unit]);
+  });
+}
+
+function addSourceForKey(groceryState, canonicalKey, recipe, index, options = {}) {
   if (!recipe || !canonicalKey) return;
 
+  const notes = options.notes || [];
+  const totals = options.totals || null;
   const recipeId = getRecipeKey(recipe, index);
   const source = {
     id: recipeId,
@@ -165,8 +176,10 @@ function addSourceForKey(groceryState, canonicalKey, recipe, index, notes = []) 
   if (existingSource) {
     existingSource.notes = existingSource.notes || [];
     notes.forEach((note) => addUniqueNote(existingSource.notes, note));
+    addTotalsForSource(existingSource, totals);
   } else {
     notes.forEach((note) => addUniqueNote(source.notes, note));
+    addTotalsForSource(source, totals);
     groceryState.sourcesByKey[canonicalKey].push(source);
   }
 }
@@ -211,23 +224,27 @@ function addParsedIngredientToTotals(runtimeState, parsed, sourceRecipe, sourceI
   const canonicalKey = parsed.canonical.base;
   const ingredientNotes = getParsedIngredientNotes(parsed);
   runtimeState.displayNamesByKey[canonicalKey] = parsed.canonical.display || canonicalKey;
-  addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, ingredientNotes);
-
-  if (!groceryState.totalsByKey[canonicalKey]) {
-    groceryState.totalsByKey[canonicalKey] = {};
-  }
 
   ingredientNotes.forEach((note) => addNoteForKey(groceryState, canonicalKey, note));
 
   if (!parsed.quantityRange) {
-    if (Object.keys(groceryState.totalsByKey[canonicalKey]).length === 0) {
-      delete groceryState.totalsByKey[canonicalKey];
-    }
+    addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, { notes: ingredientNotes });
     return;
   }
 
   const converted = convertToBaseUnits(parsed.quantityRange, getEffectiveUnit(parsed));
-  if (!converted) return;
+  if (!converted) {
+    addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, { notes: ingredientNotes });
+    return;
+  }
+
+  const convertedTotals = {
+    [converted.baseUnit]: { min: converted.min, max: converted.max },
+  };
+  addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, {
+    notes: ingredientNotes,
+    totals: convertedTotals,
+  });
 
   if (!groceryState.totalsByKey[canonicalKey]) {
     groceryState.totalsByKey[canonicalKey] = {};

@@ -4,6 +4,7 @@ import {
   formatGrocerySourceDetail,
   formatCheckedGroceryGroupMessage,
   formatGrocerySourceSummary,
+  getGrocerySourceDetail,
   getDisplayNotes,
 } from "../js/grocery_view_model.js";
 import { formatRatingText, formatServingsText, getRecipeHeaderMeta } from "../js/recipe_formatting.js";
@@ -50,7 +51,21 @@ test("grocery view helpers hide noisy notes and summarize sources", () => {
     ["optional"]
   );
   assert.equal(formatGrocerySourceSummary([{ title: "Chili" }, { title: "Soup" }], 2), "From 2 recipes");
-  assert.equal(formatGrocerySourceDetail({ title: "Cake", notes: ["optional", "amount not specified"] }), "Cake (optional, amount not specified)");
+  assert.equal(formatGrocerySourceDetail({ title: "Cake", notes: ["optional", "amount not specified"] }), "Cake - optional, amount not specified");
+  assert.equal(
+    formatGrocerySourceDetail(
+      { title: "Dutch Oven Chicken Pot Pie", totals: { item: { min: 1, max: 1 } } },
+      { canonicalKey: "potato" }
+    ),
+    "Dutch Oven Chicken Pot Pie - 1 potato"
+  );
+  assert.deepEqual(
+    getGrocerySourceDetail(
+      { title: "Cobbler", notes: ["optional"], totals: { item: { min: 5, max: 5 } } },
+      { canonicalKey: "peach" }
+    ),
+    { title: "Cobbler", metaText: "5 peaches (optional)" }
+  );
   assert.equal(formatCheckedGroceryGroupMessage("Baking"), "Everything in Baking is checked.");
   assert.equal(formatCheckedGroceryGroupMessage("Manual Items"), "Everything in Manual Items is checked.");
 });
@@ -62,4 +77,5 @@ test("grocery totals use shopper-friendly quantities", () => {
     "20 cherries"
   );
   assert.equal(formatTotalsForKey({ tsp: { min: 36, max: 36 } }, { canonicalKey: "mozzarella cheese" }), "3/4 cup");
+  assert.equal(formatTotalsForKey({ tsp: { min: 40, max: 40 } }, { canonicalKey: "lemon juice" }), "5/6 cup");
 });

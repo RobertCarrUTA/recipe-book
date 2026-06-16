@@ -100,6 +100,7 @@ export function formatRange(rangeValue) {
       [1 / 2, "1/2"],
       [2 / 3, "2/3"],
       [3 / 4, "3/4"],
+      [5 / 6, "5/6"],
     ];
     const fractionMatch = commonFractions.find(([valuePart]) => Math.abs(fraction - valuePart) < 0.01);
 
