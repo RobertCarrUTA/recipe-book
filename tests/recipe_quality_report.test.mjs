@@ -16,7 +16,7 @@ const recipes = [
     tags: { rating: "great", difficulty: "easy", status: "tried" },
     groceryIngredients: [
       { item: "all-purpose flour", quantity: 1, unit: "cup" },
-      { item: "baking powder", quantity: 2, unit: "tsp" },
+      { item: "mystery crunch", quantity: 2, unit: "tsp" },
     ],
   },
   {
@@ -78,7 +78,7 @@ test("analyzeRecipeDataQuality summarizes structural and advisory recipe data si
   assert.equal(report.grocery.amountlessItems[0].item, "flaky salt");
   assert.equal(report.grocery.noisyStructuredNotes.length, 1);
   assert.equal(report.grocery.noisyStructuredNotes[0].note, "to taste");
-  assert.ok(report.grocery.ungroupedLabels.some((item) => item.key === "baking powder"));
+  assert.ok(report.grocery.ungroupedLabels.some((item) => item.key === "mystery crunch"));
   assert.ok(report.grocery.duplicateLabelReviewGroups.some((group) => group.reviewKey === "baby spinach"));
 });
 

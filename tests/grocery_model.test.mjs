@@ -87,6 +87,32 @@ test("selectAllRecipes preserves manual grocery items", () => {
   assert.deepEqual(runtime.grocery.totalsByKey["kidney beans"].can, { min: 2, max: 2 });
 });
 
+test("grocery sources retain recipe-specific amount notes", () => {
+  const runtime = createRecipeRuntimeState();
+  const sourceRecipes = [
+    {
+      id: "cobbler",
+      groceryIngredients: [{ item: "peach", quantity: 5 }],
+      ingredients: [],
+      instructions: [],
+      title: "Cobbler",
+    },
+    {
+      id: "garnish",
+      groceryIngredients: [{ item: "peach", optional: true }],
+      ingredients: [],
+      instructions: [],
+      title: "Garnish",
+    },
+  ];
+
+  selectAllRecipes(runtime, sourceRecipes);
+
+  assert.deepEqual(runtime.grocery.totalsByKey.peach.item, { min: 5, max: 5 });
+  assert.deepEqual(runtime.grocery.notesByKey.peach, ["optional", "amount not specified"]);
+  assert.deepEqual(runtime.grocery.sourcesByKey.peach[1].notes, ["optional", "amount not specified"]);
+});
+
 test("clearGroceryState resets selected, checked, totals, and display names", () => {
   const runtime = createRecipeRuntimeState();
   setRecipeSelected(runtime, recipes, recipes[0], 0, true);

@@ -1,9 +1,10 @@
-import { determineGroupForKey } from "./grouping.js";
+import { determineGroupForKey, sortGroceryGroups } from "./grouping.js";
 import {
+  formatGrocerySourceDetail,
   formatCheckedGroceryGroupMessage,
   formatGrocerySourceSummary,
   getDisplayNotes,
-  getSortedGrocerySourceNames,
+  getSortedGrocerySources,
   formatCount,
 } from "./grocery_view_model.js";
 import { formatTotalsForKey } from "./units.js";
@@ -104,7 +105,8 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const sourceSummary = formatGrocerySourceSummary(sources, selectedRecipeCount);
     if (!sourceSummary) return;
 
-    const sourceNames = getSortedGrocerySourceNames(sources);
+    const sortedSources = getSortedGrocerySources(sources);
+    const sourceNames = sortedSources.map((source) => source.title);
 
     if (sourceNames.length <= 1) {
       const source = document.createElement("span");
@@ -123,10 +125,10 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const sourceDetails = document.createElement("span");
     sourceDetails.className = "grocery-item-source-list";
     sourceDetails.hidden = true;
-    sourceNames.forEach((sourceName) => {
+    sortedSources.forEach((sourceEntry) => {
       const sourceItem = document.createElement("span");
       sourceItem.className = "grocery-item-source-list-item";
-      sourceItem.textContent = sourceName;
+      sourceItem.textContent = formatGrocerySourceDetail(sourceEntry);
       sourceDetails.appendChild(sourceItem);
     });
 
@@ -148,10 +150,10 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const cb = document.createElement("input");
     const content = document.createElement("span");
     const itemName = document.createElement("span");
-    const totalsText = entry.totals ? formatTotalsForKey(entry.totals) : "";
-    const displayNotes = getDisplayNotes(entry.notes);
+    const displayNotes = getDisplayNotes(entry.notes, entry.sources);
     const notesText = displayNotes.length ? ` (${displayNotes.join(", ")})` : "";
     const displayName = runtimeState.displayNamesByKey[canonicalKey] || canonicalKey;
+    const totalsText = entry.totals ? formatTotalsForKey(entry.totals, { canonicalKey, displayName }) : "";
     const isManual = actions.isManualGroceryItem(canonicalKey);
 
     li.tabIndex = 0;
@@ -345,8 +347,7 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
       return;
     }
 
-    Object.keys(display)
-      .sort()
+    sortGroceryGroups(Object.keys(display))
       .forEach((group) => {
         renderGroceryGroup(
           container,

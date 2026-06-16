@@ -375,6 +375,7 @@ function createRecipeBookApp() {
       document,
       getUiState: () => appState.ui,
       saveState: saveAppState,
+      window,
     });
     wakeLockController = createWakeLockController({
       document,

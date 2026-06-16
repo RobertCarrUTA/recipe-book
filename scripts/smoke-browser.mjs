@@ -73,6 +73,7 @@ async function visibleRecipeCount(page) {
 
 async function runBrowserCheck(browser, check) {
   const context = await browser.newContext({
+    hasTouch: Boolean(check.hasTouch),
     viewport: check.viewport || { width: 1280, height: 900 },
   });
   const page = await context.newPage();
@@ -236,7 +237,8 @@ const browserChecks = [
     },
   },
   {
-    name: "mobile view tabs switch between recipes and grocery panels",
+    name: "mobile view tabs and swipes switch between recipes and grocery panels",
+    hasTouch: true,
     viewport: { width: 390, height: 844 },
     async run(page) {
       await openApp(page);
@@ -249,6 +251,14 @@ const browserChecks = [
       await assertVisible(page, "#groceryPanel", true);
 
       await page.locator('.mobile-view-tab[data-view="recipes"]').click();
+      await assertVisible(page, "#recipesPanel", true);
+      await assertVisible(page, "#groceryPanel", false);
+
+      await swipeApp(page, { endX: 40, startX: 340, y: 420 });
+      await assertVisible(page, "#recipesPanel", false);
+      await assertVisible(page, "#groceryPanel", true);
+
+      await swipeApp(page, { endX: 340, startX: 40, y: 420 });
       await assertVisible(page, "#recipesPanel", true);
       await assertVisible(page, "#groceryPanel", false);
     },
@@ -265,6 +275,26 @@ async function expectText(page, selector, pattern) {
 async function assertVisible(page, selector, expected) {
   const actual = await page.locator(selector).isVisible();
   assert.equal(actual, expected, `${selector} visibility should be ${expected}`);
+}
+
+async function swipeApp(page, coordinates) {
+  await page.evaluate(({ endX, startX, y }) => {
+    const surface = document.querySelector(".app-layout");
+    const startTouch = { clientX: startX, clientY: y };
+    const endTouch = { clientX: endX, clientY: y };
+
+    function dispatchTouch(type, touches, changedTouches) {
+      const event = new Event(type, { bubbles: true, cancelable: true });
+      Object.defineProperties(event, {
+        changedTouches: { value: changedTouches },
+        touches: { value: touches },
+      });
+      surface.dispatchEvent(event);
+    }
+
+    dispatchTouch("touchstart", [startTouch], [startTouch]);
+    dispatchTouch("touchend", [], [endTouch]);
+  }, coordinates);
 }
 
 async function run() {

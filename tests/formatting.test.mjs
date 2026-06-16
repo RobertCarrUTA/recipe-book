@@ -1,11 +1,13 @@
 import assert from "node:assert/strict";
 
 import {
+  formatGrocerySourceDetail,
   formatCheckedGroceryGroupMessage,
   formatGrocerySourceSummary,
   getDisplayNotes,
 } from "../js/grocery_view_model.js";
 import { formatRatingText, formatServingsText, getRecipeHeaderMeta } from "../js/recipe_formatting.js";
+import { formatTotalsForKey } from "../js/units.js";
 import { test } from "./test_helpers.mjs";
 
 test("formatServingsText normalizes simple serving counts", () => {
@@ -35,8 +37,29 @@ test("getRecipeHeaderMeta limits and orders compact recipe metadata", () => {
 });
 
 test("grocery view helpers hide noisy notes and summarize sources", () => {
-  assert.deepEqual(getDisplayNotes(["to taste", "optional", "manual item", "divided"]), ["optional"]);
+  assert.deepEqual(
+    getDisplayNotes(["to taste", "optional", "manual item", "divided", "amount not specified", "juice of 1/2 lemon"]),
+    ["optional"]
+  );
+  assert.deepEqual(
+    getDisplayNotes(["optional"], [{ title: "Required Recipe", notes: [] }, { title: "Optional Recipe", notes: ["optional"] }]),
+    []
+  );
+  assert.deepEqual(
+    getDisplayNotes(["optional"], [{ title: "Optional Recipe", notes: ["optional"] }]),
+    ["optional"]
+  );
   assert.equal(formatGrocerySourceSummary([{ title: "Chili" }, { title: "Soup" }], 2), "From 2 recipes");
+  assert.equal(formatGrocerySourceDetail({ title: "Cake", notes: ["optional", "amount not specified"] }), "Cake (optional, amount not specified)");
   assert.equal(formatCheckedGroceryGroupMessage("Baking"), "Everything in Baking is checked.");
   assert.equal(formatCheckedGroceryGroupMessage("Manual Items"), "Everything in Manual Items is checked.");
+});
+
+test("grocery totals use shopper-friendly quantities", () => {
+  assert.equal(formatTotalsForKey({ item: { min: 8, max: 8 } }, { canonicalKey: "peach" }), "8 peaches");
+  assert.equal(
+    formatTotalsForKey({ item: { min: 20, max: 20 } }, { canonicalKey: "maraschino cherries" }),
+    "20 cherries"
+  );
+  assert.equal(formatTotalsForKey({ tsp: { min: 36, max: 36 } }, { canonicalKey: "mozzarella cheese" }), "3/4 cup");
 });

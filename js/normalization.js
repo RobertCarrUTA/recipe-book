@@ -345,6 +345,7 @@ export function buildCanonicalIngredient(nameLower) {
   }
 
   if (raw.includes("potato")) {
+    if (raw.includes("mashed potatoes")) return { base: "mashed potatoes", display: "mashed potatoes" };
     if (raw.includes("sweet potato")) return { base: "sweet potato", display: "sweet potato" };
     if (raw.includes("yukon gold")) return { base: "yukon gold potato", display: "Yukon gold potato" };
     if (raw.includes("baby yellow")) return { base: "baby yellow potato", display: "baby yellow potato" };
