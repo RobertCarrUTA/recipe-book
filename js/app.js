@@ -170,6 +170,21 @@ function createRecipeBookApp() {
     if (groceryPanel) groceryPanel.scrollIntoView({ block: "start" });
   }
 
+  function syncGroceryControlsPanel() {
+    const panel = byId("groceryControlsPanel");
+    const toggle = byId("toggleGroceryControls");
+    const shoppingBar = panel ? panel.closest(".grocery-shopping-bar") : null;
+    const collapsed = Boolean(appState.ui.groceryControlsCollapsed);
+
+    if (panel) panel.hidden = collapsed;
+    if (shoppingBar) shoppingBar.classList.toggle("is-compact", collapsed);
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+      toggle.title = collapsed ? "Show grocery controls" : "Hide grocery controls";
+      toggle.setAttribute("aria-label", collapsed ? "Show grocery controls" : "Hide grocery controls");
+    }
+  }
+
   function handleGroceryCheckedChange(canonicalKey, checked) {
     setGroceryChecked(appState.runtime, canonicalKey, checked);
     saveAppState();
@@ -295,6 +310,9 @@ function createRecipeBookApp() {
     const clearButton = byId("clearGroceryList");
     const clearCheckedButton = byId("clearCheckedGroceryItems");
     const addAllButton = byId("addAllRecipesToGroceryList");
+    const controlsToggle = byId("toggleGroceryControls");
+
+    syncGroceryControlsPanel();
 
     if (groupToggle) {
       groupToggle.addEventListener("change", () => {
@@ -331,6 +349,13 @@ function createRecipeBookApp() {
     if (clearButton) clearButton.addEventListener("click", clearGroceryList);
     if (clearCheckedButton) clearCheckedButton.addEventListener("click", clearCheckedGroceryListItems);
     if (addAllButton) addAllButton.addEventListener("click", addAllRecipesToGroceryList);
+    if (controlsToggle) {
+      controlsToggle.addEventListener("click", () => {
+        appState.ui.groceryControlsCollapsed = !appState.ui.groceryControlsCollapsed;
+        syncGroceryControlsPanel();
+        saveAppState();
+      });
+    }
   }
 
   function exposeDebugApi() {

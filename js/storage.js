@@ -9,6 +9,7 @@ export const storageKeys = Object.freeze({
   showFavoriteRecipesOnly: "offline_recipebook_show_favorite_recipes_only_v1",
   showSelectedRecipesOnly: "offline_recipebook_show_selected_recipes_only_v1",
   hideCheckedGroceryItems: "offline_recipebook_hide_checked_grocery_items_v1",
+  groceryControlsCollapsed: "offline_recipebook_grocery_controls_collapsed_v1",
   groupToggle: "offline_recipebook_group_toggle_v1",
   keepScreenAwake: "offline_recipebook_keep_screen_awake_v1",
   mobileView: "offline_recipebook_mobile_view_v1",
@@ -134,6 +135,7 @@ export function createDefaultUiState() {
   return {
     collapsedGroceryGroups: {},
     filters: {},
+    groceryControlsCollapsed: false,
     groupItems: false,
     hideCheckedGroceryItems: false,
     keepScreenAwake: false,
@@ -163,6 +165,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
 
   ui.filters = readObject(storage, storageKeys.filters);
   ui.collapsedGroceryGroups = truthyRecord(readObject(storage, storageKeys.collapsedGroceryGroups));
+  ui.groceryControlsCollapsed = readBoolean(storage, storageKeys.groceryControlsCollapsed);
   ui.groupItems = readBoolean(storage, storageKeys.groupToggle);
   ui.hideCheckedGroceryItems = readBoolean(storage, storageKeys.hideCheckedGroceryItems);
   ui.keepScreenAwake = readBoolean(storage, storageKeys.keepScreenAwake);
@@ -204,6 +207,7 @@ export function savePersistentState(state, storage = globalThis.localStorage) {
     write(storage, storageKeys.favoriteRecipes, JSON.stringify(runtime.favoriteRecipeIds || {})),
     write(storage, storageKeys.collapsedGroceryGroups, JSON.stringify(ui.collapsedGroceryGroups || {})),
     write(storage, storageKeys.filters, JSON.stringify(ui.filters || {})),
+    write(storage, storageKeys.groceryControlsCollapsed, ui.groceryControlsCollapsed ? "1" : "0"),
     write(storage, storageKeys.groupToggle, ui.groupItems ? "1" : "0"),
     write(storage, storageKeys.hideCheckedGroceryItems, ui.hideCheckedGroceryItems ? "1" : "0"),
     write(storage, storageKeys.keepScreenAwake, ui.keepScreenAwake ? "1" : "0"),

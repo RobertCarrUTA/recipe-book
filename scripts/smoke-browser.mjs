@@ -265,6 +265,21 @@ const browserChecks = [
         await page.locator(".grocery-shopping-bar").evaluate((element) => getComputedStyle(element).position),
         "sticky"
       );
+      const expandedBarHeight = await page.locator(".grocery-shopping-bar").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+
+      await page.locator("#toggleGroceryControls").click();
+      await assertVisible(page, "#groceryControlsPanel", false);
+      assert.equal(await page.locator("#toggleGroceryControls").getAttribute("aria-expanded"), "false");
+      const compactBarHeight = await page.locator(".grocery-shopping-bar").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+      assert.ok(compactBarHeight < expandedBarHeight, "collapsed grocery controls should reduce sticky header height");
+
+      await page.locator("#toggleGroceryControls").click();
+      await assertVisible(page, "#groceryControlsPanel", true);
+      assert.equal(await page.locator("#toggleGroceryControls").getAttribute("aria-expanded"), "true");
 
       await page.locator("#addAllRecipesToGroceryList").click();
       const firstGroceryItemMinHeight = await page.locator("#groceryList li").first().evaluate((element) =>

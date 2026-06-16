@@ -26,6 +26,7 @@ test("restorePersistentState returns safe defaults when storage is unavailable",
   assert.deepEqual(restored.manualGroceryItemsById, {});
   assert.deepEqual(restored.ui.collapsedGroceryGroups, {});
   assert.equal(restored.ui.hideCheckedGroceryItems, false);
+  assert.equal(restored.ui.groceryControlsCollapsed, false);
   assert.equal(restored.ui.mobileView, "recipes");
 });
 
@@ -54,6 +55,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
       ui: {
         collapsedGroceryGroups: { Produce: true },
         filters: { status: ["tried"] },
+        groceryControlsCollapsed: true,
         groupItems: true,
         hideCheckedGroceryItems: true,
         keepScreenAwake: false,
@@ -73,6 +75,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
     "manual-1": { id: "manual-1", name: "Paper towels" },
   });
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.collapsedGroceryGroups)), { Produce: true });
+  assert.equal(storage.getItem(storageKeys.groceryControlsCollapsed), "1");
   assert.equal(storage.getItem(storageKeys.hideCheckedGroceryItems), "1");
   assert.equal(storage.getItem(storageKeys.mobileView), "grocery");
   assert.equal(storage.getItem(storageKeys.showSelectedRecipesOnly), "1");
