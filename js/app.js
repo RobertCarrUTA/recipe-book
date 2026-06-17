@@ -117,7 +117,9 @@ function createRecipeBookApp() {
 
       if (!matches) {
         const content = recipeElement.querySelector(".accordion-content");
+        const header = recipeElement.querySelector(".accordion-header");
         if (content) content.classList.remove("open");
+        if (header) header.setAttribute("aria-expanded", "false");
       } else {
         visibleCount += 1;
       }
@@ -131,11 +133,35 @@ function createRecipeBookApp() {
         ? `Showing ${visibleCount} of ${recipeElements.length}`
         : `Showing ${recipeElements.length}`;
     }
+
+    const noResults = byId("recipeNoResults");
+    if (noResults) noResults.hidden = !(recipeElements.length && visibleCount === 0);
   }
 
   function refreshRecipeListFilter() {
     const recipeSearch = byId("recipeSearch");
     applyRecipeFilter(recipeSearch ? recipeSearch.value || "" : "");
+  }
+
+  function clearRecipeDiscoveryFilters() {
+    const recipeSearch = byId("recipeSearch");
+    const selectedOnly = byId("showSelectedRecipesOnly");
+    const favoriteOnly = byId("showFavoriteRecipesOnly");
+
+    if (recipeSearch) recipeSearch.value = "";
+    if (selectedOnly) selectedOnly.checked = false;
+    if (favoriteOnly) favoriteOnly.checked = false;
+    document.querySelectorAll(".recipe-filters input").forEach((cb) => {
+      cb.checked = false;
+    });
+
+    appState.ui.recipeSearch = "";
+    appState.ui.filters = {};
+    appState.ui.showSelectedRecipesOnly = false;
+    appState.ui.showFavoriteRecipesOnly = false;
+    refreshRecipeListFilter();
+    saveAppState();
+    if (recipeSearch) recipeSearch.focus();
   }
 
   function findFilterCheckbox(filterKey, filterValue) {
@@ -254,6 +280,20 @@ function createRecipeBookApp() {
     saveAppState();
   }
 
+  function openClearGroceryDialog() {
+    const dialog = byId("confirmClearGroceryDialog");
+    if (!dialog || typeof dialog.showModal !== "function") {
+      if (window.confirm("Delete every grocery item and clear recipe selections for this list?")) {
+        clearGroceryList();
+      }
+      return;
+    }
+
+    if (!dialog.open) dialog.showModal();
+    const cancelButton = byId("cancelClearGroceryList");
+    if (cancelButton) cancelButton.focus();
+  }
+
   function clearCheckedGroceryListItems() {
     clearCheckedGroceryItems(appState.runtime);
     renderer.renderGroceryList();
@@ -271,7 +311,15 @@ function createRecipeBookApp() {
   function attachManualGroceryForm() {
     const form = byId("manualGroceryForm");
     const input = byId("manualGroceryInput");
+    const submitButton = form ? form.querySelector('button[type="submit"]') : null;
     if (!form || !input) return;
+
+    const syncManualGrocerySubmit = () => {
+      if (submitButton) submitButton.disabled = !input.value.trim();
+    };
+
+    input.addEventListener("input", syncManualGrocerySubmit);
+    syncManualGrocerySubmit();
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -279,8 +327,20 @@ function createRecipeBookApp() {
       if (!item) return;
 
       input.value = "";
+      syncManualGrocerySubmit();
       renderer.renderGroceryList();
       saveAppState();
+    });
+  }
+
+  function attachClearGroceryDialog() {
+    const dialog = byId("confirmClearGroceryDialog");
+    const confirmButton = byId("confirmClearGroceryList");
+    if (!dialog || !confirmButton) return;
+
+    confirmButton.addEventListener("click", clearGroceryList);
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close("cancel");
     });
   }
 
@@ -312,6 +372,7 @@ function createRecipeBookApp() {
     const filterToggle = byId("toggleFilters");
     const filters = byId("recipeFilters");
     const clearFiltersButton = byId("clearFilters");
+    const clearDiscoveryButton = byId("clearRecipeDiscoveryFilters");
 
     if (filterToggle && filters) {
       filterToggle.addEventListener("click", () => {
@@ -338,6 +399,8 @@ function createRecipeBookApp() {
         saveAppState();
       });
     }
+
+    if (clearDiscoveryButton) clearDiscoveryButton.addEventListener("click", clearRecipeDiscoveryFilters);
   }
 
   function attachPrimaryControls() {
@@ -387,7 +450,7 @@ function createRecipeBookApp() {
       });
     }
 
-    if (clearButton) clearButton.addEventListener("click", clearGroceryList);
+    if (clearButton) clearButton.addEventListener("click", openClearGroceryDialog);
     if (clearCheckedButton) clearCheckedButton.addEventListener("click", clearCheckedGroceryListItems);
     if (addAllButton) addAllButton.addEventListener("click", addAllRecipesToGroceryList);
     if (recipeControlsToggle) {
@@ -462,6 +525,7 @@ function createRecipeBookApp() {
     applyUiStateToControls();
     attachPrimaryControls();
     attachFilterControls();
+    attachClearGroceryDialog();
     attachManualGroceryForm();
     mobileViewController.attach();
     attachRecipeSearch();
