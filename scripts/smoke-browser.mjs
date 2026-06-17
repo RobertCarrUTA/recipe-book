@@ -143,6 +143,17 @@ const browserChecks = [
       await page.fill("#recipeSearch", "");
       await page.waitForTimeout(250);
       assert.equal(await visibleRecipeCount(page), totalCount, "clearing search and filters should restore all recipes");
+
+      await page.fill("#recipeSearch", "zzzzzzzz-not-a-recipe");
+      await page.waitForTimeout(250);
+      assert.equal(await visibleRecipeCount(page), 0, "unmatched search should hide all recipes");
+      await assertVisible(page, "#recipeNoResults", true);
+
+      await page.locator("#clearRecipeDiscoveryFilters").click();
+      await page.waitForTimeout(250);
+      assert.equal(await page.locator("#recipeSearch").inputValue(), "");
+      await assertVisible(page, "#recipeNoResults", false);
+      assert.equal(await visibleRecipeCount(page), totalCount, "no-results clear action should restore all recipes");
     },
   },
   {
@@ -167,6 +178,14 @@ const browserChecks = [
       );
 
       await page.locator("#clearGroceryList").click();
+      await assertVisible(page, "#confirmClearGroceryDialog", true);
+      await page.locator("#cancelClearGroceryList").click();
+      await assertVisible(page, "#confirmClearGroceryDialog", false);
+      assert.ok(await page.locator("#groceryList li").count(), "canceling delete should keep grocery items");
+
+      await page.locator("#clearGroceryList").click();
+      await page.locator("#confirmClearGroceryList").click();
+      await assertVisible(page, "#confirmClearGroceryDialog", false);
       assert.equal(await page.locator("#grocerySummary").innerText(), "No items yet");
       assert.equal(await page.locator("#groceryList li").count(), 0);
     },
@@ -176,9 +195,12 @@ const browserChecks = [
     async run(page) {
       await openApp(page);
 
+      assert.equal(await page.locator('#manualGroceryForm button[type="submit"]').isDisabled(), true);
       await page.fill("#manualGroceryInput", "Paper towels");
+      assert.equal(await page.locator('#manualGroceryForm button[type="submit"]').isDisabled(), false);
       await page.locator("#manualGroceryForm").evaluate((form) => form.requestSubmit());
       await page.locator("#groceryList li").filter({ hasText: "Paper towels" }).waitFor({ timeout: 5000 });
+      assert.equal(await page.locator('#manualGroceryForm button[type="submit"]').isDisabled(), true);
       await expectText(page, "#grocerySummary", /1 item - 1 left/);
 
       await page.locator("#groupToggle").check();

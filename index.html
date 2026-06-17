@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css?v=20260617-3" />
+    <link rel="stylesheet" href="css/styles.css?v=20260617-4" />
     <link rel="icon" href="data:," />
   </head>
   <body class="app-mode-recipes">
@@ -106,6 +106,13 @@
           </div>
 
           <div id="recipeContainer" class="recipe-list"></div>
+          <div id="recipeNoResults" class="empty-state recipe-no-results" hidden>
+            <strong>No recipes match.</strong>
+            <span>Clear the current search and filters to bring the full list back.</span>
+            <button id="clearRecipeDiscoveryFilters" class="secondary-button" type="button">
+              Clear search and filters
+            </button>
+          </div>
         </section>
 
         <aside id="groceryPanel" class="workspace grocery-list" aria-labelledby="groceryTitle">
@@ -251,6 +258,29 @@
       </div>
     </section>
 
-    <script type="module" src="js/app.js?v=20260617-3"></script>
+    <dialog
+      id="confirmClearGroceryDialog"
+      class="confirm-dialog"
+      aria-labelledby="confirmClearGroceryTitle"
+      aria-describedby="confirmClearGroceryDescription"
+    >
+      <form class="confirm-dialog-card" method="dialog">
+        <div>
+          <p class="section-kicker">Confirm</p>
+          <h2 id="confirmClearGroceryTitle">Delete grocery list?</h2>
+          <p id="confirmClearGroceryDescription" class="confirm-dialog-description">
+            This removes every grocery item and clears recipe selections for this list.
+          </p>
+        </div>
+        <div class="confirm-dialog-actions">
+          <button id="cancelClearGroceryList" class="secondary-button" type="submit" value="cancel">Cancel</button>
+          <button id="confirmClearGroceryList" class="clear-grocery-button" type="submit" value="confirm">
+            Delete all
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="js/app.js?v=20260617-4"></script>
   </body>
 </html>
