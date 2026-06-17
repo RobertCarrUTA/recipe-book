@@ -30,6 +30,7 @@ export function createRenderer({ document, getRecipes, getRuntimeState, getUiSta
     syncRecipeCheckboxes: recipeRenderer.syncRecipeCheckboxes,
     syncRecipeFilterTagStyles: recipeRenderer.syncRecipeFilterTagStyles,
     syncRecipeSelectionIndicators: recipeRenderer.syncRecipeSelectionIndicators,
+    toggleCookingHeader: cookingRenderer.toggleCookingHeader,
     toggleCookingIngredients: cookingRenderer.toggleCookingIngredients,
   };
 }

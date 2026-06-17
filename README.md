@@ -10,7 +10,7 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 - Search recipe titles, authors, ingredients, notes, and instructions.
 - Filter by status, rating, difficulty, equipment, selected recipes, and favorites.
 - Favorite recipes and keep them available with the Favorites filter.
-- Open a full-screen Cooking Mode with ingredients, one instruction step at a time, progress, keyboard navigation, and mobile-friendly controls.
+- Open a full-screen Cooking Mode with a collapsible recipe header, ingredients, one instruction step at a time, progress, keyboard navigation, and mobile-friendly controls.
 - Keep the screen awake while cooking when the browser supports Screen Wake Lock.
 - Add selected recipe ingredients to a grocery list.
 - Add one-off manual grocery items.
@@ -22,7 +22,7 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 
 Use the Recipes view to search, filter, favorite, and open recipes. Expand a recipe card to see details, add it to the grocery list, view the full source recipe when a link is available, or start Cooking Mode.
 
-Optionally use Cooking Mode when actively cooking. It shows the recipe ingredients alongside one instruction step at a time. Use Previous and Next to move through the recipe, or press Escape to close it. The keep-awake toggle in Cooking Mode is synced with the main keep-awake toggle.
+Optionally use Cooking Mode when actively cooking. It shows the recipe ingredients alongside one instruction step at a time, and the recipe header can collapse to make more room for the current step. Use Previous and Next to move through the recipe, or press Escape to close it. The keep-awake toggle in Cooking Mode is synced with the main keep-awake toggle.
 
 Use the Grocery List view to add one-off items, review combined shopping items, group them into collapsible sections, hide checked items while shopping, clear checked progress, or clear the list.
 

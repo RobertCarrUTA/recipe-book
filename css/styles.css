@@ -1220,6 +1220,7 @@ li {
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr) auto;
   gap: 12px;
+  min-width: 0;
   width: min(100%, 1180px);
   height: 100%;
   margin: 0 auto;
@@ -1237,10 +1238,29 @@ li {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  min-width: 0;
+}
+
+.cooking-header {
+  align-items: flex-start;
+}
+
+.cooking-header-copy {
+  min-width: 0;
 }
 
 .cooking-header h2 {
   font-size: 1.35rem;
+}
+
+.cooking-header-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.cooking-header-toggle {
+  padding: 0 13px;
 }
 
 .cooking-meta {
@@ -1251,12 +1271,39 @@ li {
   line-height: 1.35;
 }
 
+.cooking-header-step {
+  margin: 4px 0 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.cooking-shell.is-header-collapsed .cooking-header {
+  align-items: center;
+}
+
+.cooking-shell.is-header-collapsed .cooking-header-copy {
+  overflow: hidden;
+}
+
+.cooking-shell.is-header-collapsed .cooking-header h2 {
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.18;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .icon-button {
   padding: 0 13px;
   flex: 0 0 auto;
 }
 
 .cooking-progress {
+  min-width: 0;
   height: 8px;
   overflow: hidden;
   border: 1px solid rgba(59, 70, 82, 0.72);
@@ -1275,12 +1322,14 @@ li {
 
 .cooking-layout {
   display: grid;
+  min-width: 0;
   min-height: 0;
   gap: 12px;
 }
 
 .cooking-ingredients,
 .cooking-step-panel {
+  min-width: 0;
   min-height: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -1617,6 +1666,11 @@ li {
   .cooking-header h2 {
     font-size: 1.42rem;
     line-height: 1.12;
+  }
+
+  .cooking-shell.is-header-collapsed .cooking-header h2 {
+    font-size: 1rem;
+    line-height: 1.18;
   }
 
   .cooking-meta {

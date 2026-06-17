@@ -1,10 +1,12 @@
 export function attachCookingModeControls({ document, renderer, window }) {
   const closeButton = document.getElementById("closeCookingMode");
+  const headerToggle = document.getElementById("toggleCookingHeader");
   const previousButton = document.getElementById("previousCookingStep");
   const nextButton = document.getElementById("nextCookingStep");
   const ingredientsToggle = document.getElementById("toggleCookingIngredients");
 
   if (closeButton) closeButton.addEventListener("click", renderer.closeCookingMode);
+  if (headerToggle) headerToggle.addEventListener("click", renderer.toggleCookingHeader);
   if (ingredientsToggle) ingredientsToggle.addEventListener("click", renderer.toggleCookingIngredients);
   if (previousButton) previousButton.addEventListener("click", renderer.goToPreviousCookingStep);
   if (nextButton) {

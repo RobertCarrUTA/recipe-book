@@ -240,12 +240,99 @@ const browserChecks = [
       await page.waitForSelector("#cookingMode:not([hidden])", { timeout: 5000 });
 
       assert.match(await page.locator("#cookingStepCount").innerText(), /^Step 1 of \d+$/i);
+      assert.equal(await page.locator("#toggleCookingHeader").getAttribute("aria-expanded"), "true");
+      await assertVisible(page, "#cookingHeaderStep", false);
+      const expandedHeaderHeight = await page.locator("#cookingHeader").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+
+      await page.locator("#toggleCookingHeader").click();
+      assert.equal(await page.locator("#toggleCookingHeader").getAttribute("aria-expanded"), "false");
+      await assertVisible(page, "#cookingHeaderKicker", false);
+      await assertVisible(page, "#cookingHeaderStep", true);
+      assert.match(await page.locator("#cookingHeaderStep").innerText(), /^Step 1 of \d+$/i);
+      const collapsedHeaderHeight = await page.locator("#cookingHeader").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+      assert.ok(collapsedHeaderHeight < expandedHeaderHeight, "collapsed cooking header should free vertical space");
 
       await page.locator("#nextCookingStep").click();
       assert.match(await page.locator("#cookingStepCount").innerText(), /^Step 2 of \d+$/i);
+      assert.match(await page.locator("#cookingHeaderStep").innerText(), /^Step 2 of \d+$/i);
+
+      await page.locator("#toggleCookingHeader").click();
+      assert.equal(await page.locator("#toggleCookingHeader").getAttribute("aria-expanded"), "true");
+      await assertVisible(page, "#cookingHeaderKicker", true);
 
       await page.locator("#closeCookingMode").click();
       await page.waitForFunction(() => document.querySelector("#cookingMode")?.hidden === true);
+    },
+  },
+  {
+    name: "mobile cooking header collapse keeps long recipe titles contained",
+    hasTouch: true,
+    viewport: { width: 390, height: 844 },
+    async run(page) {
+      await openApp(page, { debug: true });
+      const recipeIndex = await page.evaluate(() =>
+        window.recipeBookDebug
+          .getState()
+          .recipes.findIndex((recipe) => recipe.title === "Baklava Croissant Bread Pudding")
+      );
+
+      assert.ok(recipeIndex >= 0, "test data should include Baklava Croissant Bread Pudding");
+      const recipe = page.locator(`.recipe[data-recipe-index="${recipeIndex}"]`);
+      await recipe.locator(".accordion-header").click();
+      await recipe.locator(".cooking-mode-button").click();
+      await page.waitForSelector("#cookingMode:not([hidden])", { timeout: 5000 });
+
+      const expandedHeaderHeight = await page.locator("#cookingHeader").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+
+      await page.locator("#toggleCookingHeader").click();
+      await assertVisible(page, "#cookingHeaderStep", true);
+      const collapsedHeaderHeight = await page.locator("#cookingHeader").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+      assert.ok(collapsedHeaderHeight < expandedHeaderHeight, "collapsed cooking header should be shorter");
+
+      const collapsedTitleStyles = await page.locator("#cookingTitle").evaluate((element) => {
+        const styles = getComputedStyle(element);
+        return {
+          fontSize: Number.parseFloat(styles.fontSize),
+          overflow: styles.overflow,
+          textOverflow: styles.textOverflow,
+          whiteSpace: styles.whiteSpace,
+        };
+      });
+      assert.ok(collapsedTitleStyles.fontSize <= 17, "collapsed mobile title should stay compact");
+      assert.equal(collapsedTitleStyles.overflow, "hidden");
+      assert.equal(collapsedTitleStyles.textOverflow, "ellipsis");
+      assert.equal(collapsedTitleStyles.whiteSpace, "nowrap");
+
+      const overflowReport = await page.evaluate(() => {
+        const viewportWidth = window.innerWidth;
+        const selectors = [
+          "#cookingHeader",
+          "#cookingTitle",
+          ".cooking-progress",
+          "#cookingIngredientsPanel",
+          ".cooking-step-panel",
+          ".cooking-footer",
+        ];
+
+        return selectors
+          .map((selector) => {
+            const element = document.querySelector(selector);
+            if (!element) return null;
+            const rect = element.getBoundingClientRect();
+            return { right: rect.right, selector };
+          })
+          .filter((item) => item && item.right > viewportWidth + 1);
+      });
+
+      assert.deepEqual(overflowReport, []);
     },
   },
   {

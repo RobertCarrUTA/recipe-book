@@ -10,6 +10,7 @@ export function createCookingRenderer({ document }) {
     recipeIndex: -1,
     stepIndex: 0,
     lastRenderedStepIndex: -1,
+    headerCollapsed: false,
     ingredientsExpanded: true,
   };
 
@@ -75,6 +76,15 @@ export function createCookingRenderer({ document }) {
     setCookingIngredientsExpanded(!cookingModeState.ingredientsExpanded);
   }
 
+  function setCookingHeaderCollapsed(isCollapsed) {
+    cookingModeState.headerCollapsed = Boolean(isCollapsed);
+    renderCookingMode();
+  }
+
+  function toggleCookingHeader() {
+    setCookingHeaderCollapsed(!cookingModeState.headerCollapsed);
+  }
+
   function handleCookingResize() {
     if (!isCookingModeOpen()) return;
     if (!isMobileCookingLayout()) cookingModeState.ingredientsExpanded = true;
@@ -112,9 +122,15 @@ export function createCookingRenderer({ document }) {
     const ingredients = getCookingIngredients(recipe);
     const stepIndex = Math.max(0, Math.min(cookingModeState.stepIndex, steps.length - 1));
     const canCollapseIngredients = isMobileCookingLayout();
+    const headerCollapsed = cookingModeState.headerCollapsed;
     const ingredientsExpanded = !canCollapseIngredients || cookingModeState.ingredientsExpanded;
     cookingModeState.stepIndex = stepIndex;
 
+    const shell = document.querySelector(".cooking-shell");
+    const header = byId("cookingHeader");
+    const headerKicker = byId("cookingHeaderKicker");
+    const headerStep = byId("cookingHeaderStep");
+    const headerToggle = byId("toggleCookingHeader");
     const title = byId("cookingTitle");
     const meta = byId("cookingMeta");
     const stepCount = byId("cookingStepCount");
@@ -128,14 +144,31 @@ export function createCookingRenderer({ document }) {
     const ingredientsSummary = byId("cookingIngredientsSummary");
     const ingredientsToggle = byId("toggleCookingIngredients");
 
+    const stepCountText = `Step ${stepIndex + 1} of ${steps.length}`;
+    const metaText = getRecipeHeaderMeta(recipe)
+      .filter((item) => !item.primary)
+      .map((item) => item.text)
+      .join(" - ");
+
+    if (shell) shell.classList.toggle("is-header-collapsed", headerCollapsed);
+    if (header) header.classList.toggle("is-collapsed", headerCollapsed);
+    if (headerKicker) headerKicker.hidden = headerCollapsed;
+    if (headerStep) {
+      headerStep.textContent = stepCountText;
+      headerStep.hidden = !headerCollapsed;
+    }
+    if (headerToggle) {
+      headerToggle.textContent = headerCollapsed ? "Show" : "Hide";
+      headerToggle.setAttribute("aria-label", headerCollapsed ? "Show recipe details" : "Hide recipe details");
+      headerToggle.setAttribute("aria-expanded", headerCollapsed ? "false" : "true");
+      headerToggle.title = headerCollapsed ? "Show recipe details" : "Hide recipe details";
+    }
     if (title) title.textContent = recipe.title || "Recipe";
     if (meta) {
-      meta.textContent = getRecipeHeaderMeta(recipe)
-        .filter((item) => !item.primary)
-        .map((item) => item.text)
-        .join(" - ");
+      meta.textContent = metaText;
+      meta.hidden = headerCollapsed || !metaText;
     }
-    if (stepCount) stepCount.textContent = `Step ${stepIndex + 1} of ${steps.length}`;
+    if (stepCount) stepCount.textContent = stepCountText;
     if (stepText) stepText.textContent = steps[stepIndex];
     if (stepPanel && cookingModeState.lastRenderedStepIndex !== stepIndex) {
       stepPanel.scrollTop = 0;
@@ -168,6 +201,7 @@ export function createCookingRenderer({ document }) {
     handleCookingResize,
     isCookingModeOpen,
     openCookingMode,
+    toggleCookingHeader,
     toggleCookingIngredients,
   };
 }
