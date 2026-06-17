@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css?v=20260615-5" />
+    <link rel="stylesheet" href="css/styles.css?v=20260617-2" />
     <link rel="icon" href="data:," />
   </head>
   <body class="app-mode-recipes">
@@ -171,13 +171,25 @@
 
     <section id="cookingMode" class="cooking-mode" aria-labelledby="cookingTitle" hidden>
       <div class="cooking-shell">
-        <header class="cooking-header">
-          <div>
-            <p class="section-kicker">Cooking Mode</p>
+        <header id="cookingHeader" class="cooking-header">
+          <div class="cooking-header-copy">
+            <p id="cookingHeaderKicker" class="section-kicker cooking-header-kicker">Cooking Mode</p>
             <h2 id="cookingTitle">Recipe</h2>
             <p id="cookingMeta" class="cooking-meta"></p>
+            <p id="cookingHeaderStep" class="cooking-header-step" hidden></p>
           </div>
-          <button id="closeCookingMode" class="icon-button" type="button" aria-label="Close cooking mode">Close</button>
+          <div class="cooking-header-actions">
+            <button
+              id="toggleCookingHeader"
+              class="secondary-button cooking-header-toggle"
+              type="button"
+              aria-expanded="true"
+              aria-controls="cookingHeaderKicker cookingMeta"
+            >
+              Hide
+            </button>
+            <button id="closeCookingMode" class="icon-button" type="button" aria-label="Close cooking mode">Close</button>
+          </div>
         </header>
 
         <div class="cooking-progress" aria-hidden="true">
@@ -224,6 +236,6 @@
       </div>
     </section>
 
-    <script type="module" src="js/app.js?v=20260615-5"></script>
+    <script type="module" src="js/app.js?v=20260617-2"></script>
   </body>
 </html>
