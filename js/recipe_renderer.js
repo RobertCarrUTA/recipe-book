@@ -224,8 +224,9 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
     recipeContainer.innerHTML = "";
     getRecipes().forEach((recipe, recipeIndex) => {
       const recipeKey = actions.getRecipeKey(recipe, recipeIndex);
+      const contentId = `recipe-content-${recipeIndex}`;
       const wrap = document.createElement("div");
-      const header = document.createElement("div");
+      const header = document.createElement("button");
       const headerTop = document.createElement("div");
       const title = document.createElement("span");
       const headerBadges = document.createElement("span");
@@ -241,8 +242,8 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
       wrap.dataset.searchText = actions.buildRecipeSearchText(recipe);
 
       header.className = "accordion-header";
-      header.tabIndex = 0;
-      header.setAttribute("role", "button");
+      header.type = "button";
+      header.setAttribute("aria-controls", contentId);
       header.setAttribute("aria-expanded", "false");
 
       headerTop.className = "recipe-header-top";
@@ -278,6 +279,7 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
       }
 
       content.className = "accordion-content";
+      content.id = contentId;
       content.appendChild(renderRecipeTags(recipe.tags));
       content.appendChild(renderRecipeActions(recipe, recipeIndex));
 

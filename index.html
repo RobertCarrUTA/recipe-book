@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css?v=20260617-2" />
+    <link rel="stylesheet" href="css/styles.css?v=20260617-3" />
     <link rel="icon" href="data:," />
   </head>
   <body class="app-mode-recipes">
+    <a class="skip-link" href="#recipesPanel">Skip to recipes</a>
     <div class="app-shell">
       <header class="app-header">
         <div>
@@ -27,14 +28,14 @@
         </button>
       </nav>
 
-      <main class="app-layout">
+      <main id="mainContent" class="app-layout">
         <section id="recipesPanel" class="workspace recipes-section" aria-labelledby="recipesTitle">
           <div class="workspace-header">
             <div>
               <p class="section-kicker">Browse</p>
               <h2 id="recipesTitle">Recipes</h2>
             </div>
-            <div id="recipeSearchMeta" class="recipe-search-meta"></div>
+            <div id="recipeSearchMeta" class="recipe-search-meta" aria-live="polite"></div>
           </div>
 
           <div class="recipe-search">
@@ -113,7 +114,7 @@
               <div>
                 <p class="section-kicker">Shop</p>
                 <h2 id="groceryTitle">Grocery List</h2>
-                <p id="grocerySummary" class="grocery-summary">No items yet</p>
+                <p id="grocerySummary" class="grocery-summary" aria-live="polite">No items yet</p>
               </div>
               <button
                 id="toggleGroceryControls"
@@ -159,7 +160,14 @@
               </div>
             </div>
 
-            <div class="grocery-progress" aria-hidden="true">
+            <div
+              class="grocery-progress"
+              role="progressbar"
+              aria-label="Grocery progress"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            >
               <span id="groceryProgressBar"></span>
             </div>
           </div>
@@ -192,7 +200,14 @@
           </div>
         </header>
 
-        <div class="cooking-progress" aria-hidden="true">
+        <div
+          class="cooking-progress"
+          role="progressbar"
+          aria-label="Cooking progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
           <span id="cookingProgressBar"></span>
         </div>
 
@@ -236,6 +251,6 @@
       </div>
     </section>
 
-    <script type="module" src="js/app.js?v=20260617-2"></script>
+    <script type="module" src="js/app.js?v=20260617-3"></script>
   </body>
 </html>

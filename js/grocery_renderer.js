@@ -56,7 +56,16 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
 
     if (progressBar) {
       progressBar.style.width = `${progress}%`;
-      if (progressBar.parentElement) progressBar.parentElement.hidden = counts.itemCount === 0;
+      if (progressBar.parentElement) {
+        progressBar.parentElement.hidden = counts.itemCount === 0;
+        progressBar.parentElement.setAttribute("aria-valuenow", String(progress));
+        progressBar.parentElement.setAttribute(
+          "aria-valuetext",
+          counts.itemCount
+            ? `${counts.checkedCount} of ${counts.itemCount} grocery items checked`
+            : "No grocery items"
+        );
+      }
     }
 
     if (mobileBadge) {

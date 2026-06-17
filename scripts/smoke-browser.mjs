@@ -113,6 +113,10 @@ const browserChecks = [
       assert.ok(recipeCount > 0, "debug state should expose loaded recipes");
       assert.equal(await page.locator(".recipe").count(), recipeCount, "rendered card count should match loaded data");
       assert.equal(await page.locator("#recipeSearchMeta").innerText(), `Showing ${recipeCount} of ${recipeCount}`);
+
+      const firstHeader = page.locator(".recipe .accordion-header").first();
+      assert.equal(await firstHeader.evaluate((element) => element.tagName), "BUTTON");
+      assert.ok(await firstHeader.getAttribute("aria-controls"), "recipe headers should control their content panel");
     },
   },
   {
@@ -151,8 +155,16 @@ const browserChecks = [
       await page.waitForSelector("#groceryList li", { timeout: 5000 });
 
       await expectText(page, "#grocerySummary", /from 1 recipe/);
+      assert.match(
+        await page.locator(".grocery-progress").getAttribute("aria-valuetext"),
+        /^0 of \d+ grocery items checked$/
+      );
       await page.locator("#groceryList li").first().click();
       await expectText(page, "#grocerySummary", /1 checked/);
+      assert.match(
+        await page.locator(".grocery-progress").getAttribute("aria-valuetext"),
+        /^1 of \d+ grocery items checked$/
+      );
 
       await page.locator("#clearGroceryList").click();
       assert.equal(await page.locator("#grocerySummary").innerText(), "No items yet");
@@ -240,6 +252,7 @@ const browserChecks = [
       await page.waitForSelector("#cookingMode:not([hidden])", { timeout: 5000 });
 
       assert.match(await page.locator("#cookingStepCount").innerText(), /^Step 1 of \d+$/i);
+      assert.match(await page.locator(".cooking-progress").getAttribute("aria-valuetext"), /^Step 1 of \d+, \d+% complete$/i);
       assert.equal(await page.locator("#toggleCookingHeader").getAttribute("aria-expanded"), "true");
       await assertVisible(page, "#cookingHeaderStep", false);
       const expandedHeaderHeight = await page.locator("#cookingHeader").evaluate((element) =>
@@ -259,6 +272,7 @@ const browserChecks = [
       await page.locator("#nextCookingStep").click();
       assert.match(await page.locator("#cookingStepCount").innerText(), /^Step 2 of \d+$/i);
       assert.match(await page.locator("#cookingHeaderStep").innerText(), /^Step 2 of \d+$/i);
+      assert.match(await page.locator(".cooking-progress").getAttribute("aria-valuetext"), /^Step 2 of \d+, \d+% complete$/i);
 
       await page.locator("#toggleCookingHeader").click();
       assert.equal(await page.locator("#toggleCookingHeader").getAttribute("aria-expanded"), "true");
@@ -344,6 +358,12 @@ const browserChecks = [
 
       await assertVisible(page, "#recipesPanel", true);
       await assertVisible(page, "#groceryPanel", false);
+      await assertNoHorizontalOverflow(page, [
+        ".app-shell",
+        ".recipe-search",
+        "#recipeContainer",
+        ".mobile-view-tabs",
+      ]);
       assert.equal(
         await page.locator(".recipe-search").evaluate((element) => getComputedStyle(element).position),
         "sticky"
@@ -370,6 +390,11 @@ const browserChecks = [
       await page.locator('.mobile-view-tab[data-view="grocery"]').click();
       await assertVisible(page, "#recipesPanel", false);
       await assertVisible(page, "#groceryPanel", true);
+      await assertNoHorizontalOverflow(page, [
+        ".grocery-shopping-bar",
+        "#groceryList",
+        ".mobile-view-tabs",
+      ]);
       assert.equal(
         await page.locator(".grocery-shopping-bar").evaluate((element) => getComputedStyle(element).position),
         "sticky"
@@ -427,6 +452,28 @@ async function expectLocatorText(locator, pattern) {
 async function assertVisible(page, selector, expected) {
   const actual = await page.locator(selector).isVisible();
   assert.equal(actual, expected, `${selector} visibility should be ${expected}`);
+}
+
+async function assertNoHorizontalOverflow(page, selectors) {
+  const overflowReport = await page.evaluate((items) => {
+    const viewportWidth = window.innerWidth;
+
+    return items
+      .map((selector) => {
+        const element = document.querySelector(selector);
+        if (!element) return null;
+
+        const rect = element.getBoundingClientRect();
+        return {
+          left: rect.left,
+          right: rect.right,
+          selector,
+        };
+      })
+      .filter((item) => item && (item.left < -1 || item.right > viewportWidth + 1));
+  }, selectors);
+
+  assert.deepEqual(overflowReport, []);
 }
 
 async function swipeApp(page, coordinates) {
