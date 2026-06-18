@@ -489,11 +489,15 @@ const browserChecks = [
       await assertVisible(page, "#recipesPanel", true);
       await assertVisible(page, "#groceryPanel", false);
 
-      await swipeApp(page, { endX: 40, startX: 340, y: 420 });
+      await swipeApp(page, { endX: 40, selector: ".recipe .accordion-header", startX: 340, y: 420 });
       await assertVisible(page, "#recipesPanel", false);
       await assertVisible(page, "#groceryPanel", true);
 
-      await swipeApp(page, { endX: 340, startX: 40, y: 420 });
+      await swipeApp(page, { endX: 340, selector: "#groceryList li", startX: 40, y: 420 });
+      await assertVisible(page, "#recipesPanel", true);
+      await assertVisible(page, "#groceryPanel", false);
+
+      await swipeApp(page, { endX: 40, selector: "#recipeSearch", startX: 340, y: 120 });
       await assertVisible(page, "#recipesPanel", true);
       await assertVisible(page, "#groceryPanel", false);
     },
@@ -541,8 +545,9 @@ async function assertNoHorizontalOverflow(page, selectors) {
 }
 
 async function swipeApp(page, coordinates) {
-  await page.evaluate(({ endX, startX, y }) => {
+  await page.evaluate(({ endX, selector, startX, y }) => {
     const surface = document.querySelector(".app-layout");
+    const target = selector ? document.querySelector(selector) : surface;
     const startTouch = { clientX: startX, clientY: y };
     const endTouch = { clientX: endX, clientY: y };
 
@@ -552,7 +557,7 @@ async function swipeApp(page, coordinates) {
         changedTouches: { value: changedTouches },
         touches: { value: touches },
       });
-      surface.dispatchEvent(event);
+      (target || surface).dispatchEvent(event);
     }
 
     dispatchTouch("touchstart", [startTouch], [startTouch]);

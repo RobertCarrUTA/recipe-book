@@ -7,11 +7,27 @@ export function createMobileViewController({ document, getUiState, saveState, wi
     return mobileQuery ? mobileQuery.matches : true;
   }
 
-  function isInteractiveTarget(target) {
+  function isSwipeBlockedTarget(target) {
     return Boolean(
       target &&
         target.closest &&
-        target.closest("a, button, input, select, textarea, summary, [contenteditable='true']")
+        target.closest(
+          [
+            "a",
+            "input",
+            "select",
+            "textarea",
+            "summary",
+            "dialog",
+            "[contenteditable='true']",
+            ".recipe-search",
+            ".recipe-actions",
+            ".grocery-shopping-bar",
+            ".grocery-item-remove",
+            ".grocery-item-source-toggle",
+            ".mobile-view-tabs",
+          ].join(", ")
+        )
     );
   }
 
@@ -38,13 +54,14 @@ export function createMobileViewController({ document, getUiState, saveState, wi
     const maxVerticalDrift = 80;
     let startX = 0;
     let startY = 0;
+    let suppressNextClick = false;
     let tracking = false;
 
     surface.addEventListener(
       "touchstart",
       (event) => {
         if (!isMobileViewport() || document.body.classList.contains("is-cooking-mode")) return;
-        if (event.touches.length !== 1 || isInteractiveTarget(event.target)) return;
+        if (event.touches.length !== 1 || isSwipeBlockedTarget(event.target)) return;
 
         const touch = event.touches[0];
         startX = touch.clientX;
@@ -67,9 +84,24 @@ export function createMobileViewController({ document, getUiState, saveState, wi
         const absY = Math.abs(deltaY);
 
         if (absX < minDistance || absY > maxVerticalDrift || absX < absY * 1.35) return;
+        suppressNextClick = true;
+        window.setTimeout(() => {
+          suppressNextClick = false;
+        }, 350);
         setMobileView(deltaX < 0 ? "grocery" : "recipes");
       },
       { passive: true }
+    );
+
+    surface.addEventListener(
+      "click",
+      (event) => {
+        if (!suppressNextClick) return;
+        suppressNextClick = false;
+        event.preventDefault();
+        event.stopPropagation();
+      },
+      true
     );
 
     surface.addEventListener("touchcancel", () => {
