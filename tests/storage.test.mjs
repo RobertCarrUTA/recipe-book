@@ -29,6 +29,7 @@ test("restorePersistentState returns safe defaults when storage is unavailable",
   assert.equal(restored.ui.groceryControlsCollapsed, false);
   assert.equal(restored.ui.mobileView, "recipes");
   assert.equal(restored.ui.recipeControlsCollapsed, false);
+  assert.equal(restored.ui.skipClearGroceryConfirmation, false);
 });
 
 test("migratePersistentState promotes legacy selected recipes", () => {
@@ -65,6 +66,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
         recipeSearch: "chili",
         showFavoriteRecipesOnly: false,
         showSelectedRecipesOnly: true,
+        skipClearGroceryConfirmation: true,
       },
     },
     storage
@@ -82,4 +84,5 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   assert.equal(storage.getItem(storageKeys.mobileView), "grocery");
   assert.equal(storage.getItem(storageKeys.recipeControlsCollapsed), "1");
   assert.equal(storage.getItem(storageKeys.showSelectedRecipesOnly), "1");
+  assert.equal(storage.getItem(storageKeys.skipClearGroceryConfirmation), "1");
 });

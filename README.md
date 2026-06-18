@@ -17,6 +17,7 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 - Group grocery items into collapsible shopping sections and combine compatible units.
 - Check off grocery items, hide checked items while shopping, clear checked progress, and track progress with a mobile grocery badge.
 - Persist search, filters, selected recipes, favorites, manual grocery items, grocery checks, grouping, collapsed sections, and wake-lock preference with `localStorage`.
+- Render recipe cards incrementally as you scroll, with recipe details built only when a card is opened, so the app can grow without paying the full DOM cost up front.
 
 ## How To Use
 
@@ -89,6 +90,7 @@ The app stores personal state in `localStorage`, including:
 - Collapsed grocery sections
 - Last mobile view
 - Keep-awake preference
+- Delete-all grocery confirmation preference
 
 Clearing browser site data will reset these preferences.
 
@@ -99,6 +101,7 @@ The code is split by responsibility:
 - `js/app.js`: Application composition, event wiring, filtering, mobile view, wake lock, and persistence orchestration.
 - `js/render.js`: Renderer composition boundary that joins feature renderers while preserving one renderer API for the app.
 - `js/recipe_renderer.js`, `js/grocery_renderer.js`, `js/cooking_renderer.js`: DOM rendering for recipe cards, the grocery list, and Cooking Mode. State changes are sent through injected actions.
+- Recipe browsing filters against cached recipe data first, then streams matching recipe cards into the DOM in scroll-loaded batches. Hidden recipe details are rendered lazily when the card is expanded.
 - `js/grocery_model.js`: Grocery aggregation domain model for selected recipes, favorites, checkmarks, and parsed display names.
 - `js/recipe_filter.js`, `js/recipe_formatting.js`, `js/grocery_view_model.js`, `js/cooking_model.js`: Pure UI/domain helper modules used by the renderer and controller.
 - `js/recipe_repository.js`: Recipe loading boundary for bundled recipes and future user/imported recipe sources.

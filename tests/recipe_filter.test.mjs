@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 
 import {
   buildRecipeSearchText,
+  getMatchingRecipeIndexes,
   normalizeForSearch,
   recipeMatchesSelectedFilters,
   recipeMatchesVisibilityOptions,
@@ -71,4 +72,47 @@ test("recipeMatchesVisibilityOptions combines search, favorites, selection, and 
 
 test("normalizeForSearch collapses whitespace and case", () => {
   assert.equal(normalizeForSearch("  Dutch   Oven  "), "dutch oven");
+});
+
+test("getMatchingRecipeIndexes filters recipe data without rendered DOM", () => {
+  const recipes = [
+    recipe,
+    {
+      ingredients: ["2 cups flour"],
+      instructions: ["Bake until set"],
+      tags: {
+        difficulty: "medium",
+        status: "not-tried",
+      },
+      title: "Blueberry Cake",
+    },
+  ];
+
+  assert.deepEqual(
+    getMatchingRecipeIndexes({
+      filterText: "blueberry",
+      isFavorite: () => false,
+      isSelected: () => false,
+      recipes,
+      searchTexts: recipes.map(buildRecipeSearchText),
+      selectedFilters: {},
+      showFavoriteOnly: false,
+      showSelectedOnly: false,
+    }),
+    [1]
+  );
+
+  assert.deepEqual(
+    getMatchingRecipeIndexes({
+      filterText: "",
+      isFavorite: (_item, index) => index === 0,
+      isSelected: () => false,
+      recipes,
+      searchTexts: recipes.map(buildRecipeSearchText),
+      selectedFilters: { status: new Set(["tried"]) },
+      showFavoriteOnly: true,
+      showSelectedOnly: false,
+    }),
+    [0]
+  );
 });

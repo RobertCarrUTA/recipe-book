@@ -19,8 +19,8 @@ import { createLogger, isDebugEnabled } from "./logger.js";
 import { createMobileViewController } from "./mobile_view_controller.js";
 import {
   buildRecipeSearchText,
+  getMatchingRecipeIndexes,
   normalizeForSearch,
-  recipeMatchesVisibilityOptions,
 } from "./recipe_filter.js";
 import { createRecipeRepository } from "./recipe_repository.js";
 import { createRenderer } from "./render.js";
@@ -57,6 +57,7 @@ function createRecipeBookApp() {
   const restored = restorePersistentState();
   const appState = {
     recipes: [],
+    recipeSearchTexts: [],
     runtime: createRecipeRuntimeState(restored),
     ui: {
       ...createDefaultUiState(),
@@ -91,51 +92,28 @@ function createRecipeBookApp() {
   function applyRecipeFilter(filterTextRaw) {
     const filterText = normalizeForSearch(filterTextRaw);
     const selected = getSelectedRecipeFilters(document);
-    const recipeElements = Array.from(document.querySelectorAll(".recipe"));
     const selectedOnly = byId("showSelectedRecipesOnly");
     const favoriteOnly = byId("showFavoriteRecipesOnly");
     const showSelectedOnly = Boolean(selectedOnly && selectedOnly.checked);
     const showFavoriteOnly = Boolean(favoriteOnly && favoriteOnly.checked);
-    let visibleCount = 0;
 
-    recipeElements.forEach((recipeElement) => {
-      const recipeIndex = Number(recipeElement.dataset.recipeIndex);
-      const recipe = Number.isFinite(recipeIndex) ? appState.recipes[recipeIndex] : null;
-      const haystack = recipeElement.dataset.searchText || "";
-      const matches = recipeMatchesVisibilityOptions({
-        filterText,
-        isFavorite: recipe ? isRecipeFavorite(appState.runtime, recipe, recipeIndex) : true,
-        isSelected: recipe ? isRecipeSelected(appState.runtime, recipe, recipeIndex) : true,
-        recipe,
-        searchText: haystack,
-        selectedFilters: selected,
-        showFavoriteOnly,
-        showSelectedOnly,
-      });
-
-      recipeElement.style.display = matches ? "" : "none";
-
-      if (!matches) {
-        const content = recipeElement.querySelector(".accordion-content");
-        const header = recipeElement.querySelector(".accordion-header");
-        if (content) content.classList.remove("open");
-        if (header) header.setAttribute("aria-expanded", "false");
-      } else {
-        visibleCount += 1;
-      }
+    const matchingRecipeIndexes = getMatchingRecipeIndexes({
+      filterText,
+      isFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
+      isSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
+      recipes: appState.recipes,
+      searchTexts: appState.recipeSearchTexts,
+      selectedFilters: selected,
+      showFavoriteOnly,
+      showSelectedOnly,
     });
 
+    renderer.renderRecipes({ recipeIndexes: matchingRecipeIndexes });
     renderer.syncRecipeFilterTagStyles(selected);
-
-    const meta = byId("recipeSearchMeta");
-    if (meta) {
-      meta.textContent = recipeElements.length
-        ? `Showing ${visibleCount} of ${recipeElements.length}`
-        : `Showing ${recipeElements.length}`;
-    }
+    updateRecipeSearchMeta(matchingRecipeIndexes.length);
 
     const noResults = byId("recipeNoResults");
-    if (noResults) noResults.hidden = !(recipeElements.length && visibleCount === 0);
+    if (noResults) noResults.hidden = !(appState.recipes.length && matchingRecipeIndexes.length === 0);
   }
 
   function refreshRecipeListFilter() {
@@ -170,6 +148,11 @@ function createRecipeBookApp() {
     );
   }
 
+  function isControlChecked(id) {
+    const control = byId(id);
+    return Boolean(control && control.checked);
+  }
+
   function handleRecipeTagToggle(filterKey, filterValue) {
     const checkbox = findFilterCheckbox(filterKey, filterValue);
     if (!checkbox) return;
@@ -180,10 +163,25 @@ function createRecipeBookApp() {
     saveAppState();
   }
 
+  function updateRecipeSearchMeta(matchCount, renderedCount = renderer ? renderer.getRenderedRecipeCount() : 0) {
+    const meta = byId("recipeSearchMeta");
+    if (!meta) return;
+
+    if (!appState.recipes.length) {
+      meta.textContent = "Showing 0";
+      return;
+    }
+
+    meta.textContent =
+      renderedCount < matchCount
+        ? `Showing ${renderedCount} of ${matchCount}`
+        : `Showing ${matchCount} of ${appState.recipes.length}`;
+  }
+
   function handleFavoriteRecipe(recipe, recipeIndex, favorite) {
     setRecipeFavorite(appState.runtime, recipe, recipeIndex, favorite);
     renderer.syncFavoriteRecipeIndicators();
-    refreshRecipeListFilter();
+    if (isControlChecked("showFavoriteRecipesOnly")) refreshRecipeListFilter();
     saveAppState();
   }
 
@@ -191,7 +189,7 @@ function createRecipeBookApp() {
     setRecipeSelected(appState.runtime, appState.recipes, recipe, recipeIndex, selected);
     renderer.renderGroceryList();
     renderer.syncRecipeSelectionIndicators();
-    refreshRecipeListFilter();
+    if (isControlChecked("showSelectedRecipesOnly")) refreshRecipeListFilter();
     saveAppState();
   }
 
@@ -281,6 +279,11 @@ function createRecipeBookApp() {
   }
 
   function openClearGroceryDialog() {
+    if (appState.ui.skipClearGroceryConfirmation) {
+      clearGroceryList();
+      return;
+    }
+
     const dialog = byId("confirmClearGroceryDialog");
     if (!dialog || typeof dialog.showModal !== "function") {
       if (window.confirm("Delete every grocery item and clear recipe selections for this list?")) {
@@ -290,6 +293,8 @@ function createRecipeBookApp() {
     }
 
     if (!dialog.open) dialog.showModal();
+    const skipConfirmation = byId("skipClearGroceryConfirmation");
+    if (skipConfirmation) skipConfirmation.checked = false;
     const cancelButton = byId("cancelClearGroceryList");
     if (cancelButton) cancelButton.focus();
   }
@@ -338,7 +343,13 @@ function createRecipeBookApp() {
     const confirmButton = byId("confirmClearGroceryList");
     if (!dialog || !confirmButton) return;
 
-    confirmButton.addEventListener("click", clearGroceryList);
+    confirmButton.addEventListener("click", () => {
+      const skipConfirmation = byId("skipClearGroceryConfirmation");
+      if (skipConfirmation && skipConfirmation.checked) {
+        appState.ui.skipClearGroceryConfirmation = true;
+      }
+      clearGroceryList();
+    });
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) dialog.close("cancel");
     });
@@ -494,6 +505,7 @@ function createRecipeBookApp() {
       actions: {
         buildRecipeSearchText,
         getRecipeKey,
+        getRecipeSearchText: (_recipe, index) => appState.recipeSearchTexts[index] || "",
         isRecipeFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
         isManualGroceryItem: (canonicalKey) => isManualGroceryItemKey(canonicalKey),
         isRecipeSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
@@ -501,6 +513,7 @@ function createRecipeBookApp() {
         onGroceryCheckedChange: handleGroceryCheckedChange,
         onGroceryGroupToggle: handleGroceryGroupToggle,
         onManualGroceryRemove: handleManualGroceryRemove,
+        onRecipeBatchRendered: ({ renderedCount, totalCount }) => updateRecipeSearchMeta(totalCount, renderedCount),
         onRecipeTagToggle: handleRecipeTagToggle,
         onRenderError: (error) => logger.error(error),
         onSelectRecipe: handleSelectRecipe,
@@ -534,14 +547,13 @@ function createRecipeBookApp() {
     try {
       const result = await recipeRepository.loadAllRecipes();
       appState.recipes = result.recipes;
+      appState.recipeSearchTexts = appState.recipes.map(buildRecipeSearchText);
       recomputeGroceryState(appState.runtime, appState.recipes);
     } catch (error) {
       renderer.renderRecipeLoadError(error);
       return;
     }
 
-    renderer.renderRecipes();
-    renderer.syncRecipeCheckboxes();
     renderer.renderGroceryList();
     applyRecipeFilter(appState.ui.recipeSearch || "");
     mobileViewController.setMobileView(appState.ui.mobileView, { skipSave: true });

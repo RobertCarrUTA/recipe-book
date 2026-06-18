@@ -6,6 +6,7 @@ export const storageKeys = Object.freeze({
   favoriteRecipes: "offline_recipebook_favorite_recipes_v1",
   selectedRecipes: "offline_recipebook_selected_recipes_v1",
   collapsedGroceryGroups: "offline_recipebook_collapsed_grocery_groups_v1",
+  skipClearGroceryConfirmation: "offline_recipebook_skip_clear_grocery_confirmation_v1",
   showFavoriteRecipesOnly: "offline_recipebook_show_favorite_recipes_only_v1",
   showSelectedRecipesOnly: "offline_recipebook_show_selected_recipes_only_v1",
   hideCheckedGroceryItems: "offline_recipebook_hide_checked_grocery_items_v1",
@@ -145,6 +146,7 @@ export function createDefaultUiState() {
     recipeSearch: "",
     showFavoriteRecipesOnly: false,
     showSelectedRecipesOnly: false,
+    skipClearGroceryConfirmation: false,
   };
 }
 
@@ -176,6 +178,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
   ui.recipeSearch = read(storage, storageKeys.recipeSearch) || "";
   ui.showFavoriteRecipesOnly = readBoolean(storage, storageKeys.showFavoriteRecipesOnly);
   ui.showSelectedRecipesOnly = readBoolean(storage, storageKeys.showSelectedRecipesOnly);
+  ui.skipClearGroceryConfirmation = readBoolean(storage, storageKeys.skipClearGroceryConfirmation);
 
   return {
     favoriteRecipeIds: truthyRecord(readObject(storage, storageKeys.favoriteRecipes)),
@@ -219,6 +222,7 @@ export function savePersistentState(state, storage = globalThis.localStorage) {
     write(storage, storageKeys.recipeSearch, ui.recipeSearch || ""),
     write(storage, storageKeys.showFavoriteRecipesOnly, ui.showFavoriteRecipesOnly ? "1" : "0"),
     write(storage, storageKeys.showSelectedRecipesOnly, ui.showSelectedRecipesOnly ? "1" : "0"),
+    write(storage, storageKeys.skipClearGroceryConfirmation, ui.skipClearGroceryConfirmation ? "1" : "0"),
   ];
 
   return writes.every(Boolean);
