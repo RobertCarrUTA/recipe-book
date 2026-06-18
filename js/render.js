@@ -21,6 +21,7 @@ export function createRenderer({ document, getRecipes, getRuntimeState, getUiSta
     closeCookingMode: cookingRenderer.closeCookingMode,
     goToNextCookingStep: cookingRenderer.goToNextCookingStep,
     goToPreviousCookingStep: cookingRenderer.goToPreviousCookingStep,
+    getRenderedRecipeCount: recipeRenderer.getRenderedRecipeCount,
     handleCookingResize: cookingRenderer.handleCookingResize,
     isCookingModeOpen: cookingRenderer.isCookingModeOpen,
     renderGroceryList: groceryRenderer.renderGroceryList,

@@ -48,3 +48,40 @@ export function recipeMatchesVisibilityOptions({
 
   return matchesSearch && matchesTags && matchesSelectedOnly && matchesFavoriteOnly;
 }
+
+export function getMatchingRecipeIndexes({
+  filterText,
+  isFavorite,
+  isSelected,
+  recipes,
+  searchTexts,
+  selectedFilters,
+  showFavoriteOnly,
+  showSelectedOnly,
+}) {
+  const items = Array.isArray(recipes) ? recipes : [];
+  const indexedSearchTexts = Array.isArray(searchTexts) ? searchTexts : [];
+
+  return items.reduce((matches, recipe, index) => {
+    const searchText = indexedSearchTexts[index] || buildRecipeSearchText(recipe);
+    const isRecipeFavorite = typeof isFavorite === "function" ? isFavorite(recipe, index) : false;
+    const isRecipeSelected = typeof isSelected === "function" ? isSelected(recipe, index) : false;
+
+    if (
+      recipeMatchesVisibilityOptions({
+        filterText,
+        isFavorite: isRecipeFavorite,
+        isSelected: isRecipeSelected,
+        recipe,
+        searchText,
+        selectedFilters,
+        showFavoriteOnly,
+        showSelectedOnly,
+      })
+    ) {
+      matches.push(index);
+    }
+
+    return matches;
+  }, []);
+}

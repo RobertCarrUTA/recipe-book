@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css?v=20260617-4" />
+    <link rel="stylesheet" href="css/styles.css?v=20260618-2" />
     <link rel="icon" href="data:," />
   </head>
   <body class="app-mode-recipes">
@@ -272,6 +272,10 @@
             This removes every grocery item and clears recipe selections for this list.
           </p>
         </div>
+        <label class="confirm-dialog-check">
+          <input id="skipClearGroceryConfirmation" type="checkbox" />
+          <span>Don't ask again</span>
+        </label>
         <div class="confirm-dialog-actions">
           <button id="cancelClearGroceryList" class="secondary-button" type="submit" value="cancel">Cancel</button>
           <button id="confirmClearGroceryList" class="clear-grocery-button" type="submit" value="confirm">
@@ -281,6 +285,6 @@
       </form>
     </dialog>
 
-    <script type="module" src="js/app.js?v=20260617-4"></script>
+    <script type="module" src="js/app.js?v=20260618-2"></script>
   </body>
 </html>

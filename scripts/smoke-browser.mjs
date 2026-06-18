@@ -105,14 +105,19 @@ async function runBrowserCheck(browser, check) {
 
 const browserChecks = [
   {
-    name: "loads recipe data and renders all recipe cards",
+    name: "loads recipe data and renders the initial recipe stream",
     async run(page) {
       await openApp(page, { debug: true });
       const recipeCount = await page.evaluate(() => window.recipeBookDebug.getState().recipes.length);
+      const renderedCount = await page.locator(".recipe").count();
 
       assert.ok(recipeCount > 0, "debug state should expose loaded recipes");
-      assert.equal(await page.locator(".recipe").count(), recipeCount, "rendered card count should match loaded data");
-      assert.equal(await page.locator("#recipeSearchMeta").innerText(), `Showing ${recipeCount} of ${recipeCount}`);
+      assert.ok(renderedCount > 0, "at least one recipe card should render initially");
+      assert.ok(renderedCount <= recipeCount, "rendered card count should not exceed loaded data");
+      assert.equal(
+        await page.locator("#recipeSearchMeta").innerText(),
+        renderedCount < recipeCount ? `Showing ${renderedCount} of ${recipeCount}` : `Showing ${recipeCount} of ${recipeCount}`
+      );
 
       const firstHeader = page.locator(".recipe .accordion-header").first();
       assert.equal(await firstHeader.evaluate((element) => element.tagName), "BUTTON");
@@ -122,8 +127,8 @@ const browserChecks = [
   {
     name: "search and filter controls update recipe visibility",
     async run(page) {
-      await openApp(page);
-      const totalCount = await page.locator(".recipe").count();
+      await openApp(page, { debug: true });
+      const totalCount = await page.evaluate(() => window.recipeBookDebug.getState().recipes.length);
 
       await page.fill("#recipeSearch", "chili");
       await page.waitForTimeout(250);
@@ -142,7 +147,9 @@ const browserChecks = [
       await page.locator("#clearFilters").click();
       await page.fill("#recipeSearch", "");
       await page.waitForTimeout(250);
-      assert.equal(await visibleRecipeCount(page), totalCount, "clearing search and filters should restore all recipes");
+      const restoredCount = await visibleRecipeCount(page);
+      assert.ok(restoredCount > 0, "clearing search and filters should restore rendered recipes");
+      assert.ok(restoredCount <= totalCount, "incremental rendering should not exceed the loaded recipe count");
 
       await page.fill("#recipeSearch", "zzzzzzzz-not-a-recipe");
       await page.waitForTimeout(250);
@@ -153,7 +160,7 @@ const browserChecks = [
       await page.waitForTimeout(250);
       assert.equal(await page.locator("#recipeSearch").inputValue(), "");
       await assertVisible(page, "#recipeNoResults", false);
-      assert.equal(await visibleRecipeCount(page), totalCount, "no-results clear action should restore all recipes");
+      assert.ok(await visibleRecipeCount(page), "no-results clear action should restore rendered recipes");
     },
   },
   {
@@ -224,6 +231,31 @@ const browserChecks = [
     },
   },
   {
+    name: "grocery delete confirmation can be dismissed",
+    async run(page) {
+      await openApp(page);
+
+      await page.fill("#manualGroceryInput", "Paper towels");
+      await page.locator("#manualGroceryForm").evaluate((form) => form.requestSubmit());
+      await page.locator("#groceryList li").filter({ hasText: "Paper towels" }).waitFor({ timeout: 5000 });
+
+      await page.locator("#clearGroceryList").click();
+      await assertVisible(page, "#confirmClearGroceryDialog", true);
+      await page.locator("#skipClearGroceryConfirmation").check();
+      await page.locator("#confirmClearGroceryList").click();
+      await assertVisible(page, "#confirmClearGroceryDialog", false);
+      assert.equal(await page.locator("#grocerySummary").innerText(), "No items yet");
+
+      await page.fill("#manualGroceryInput", "Dish soap");
+      await page.locator("#manualGroceryForm").evaluate((form) => form.requestSubmit());
+      await page.locator("#groceryList li").filter({ hasText: "Dish soap" }).waitFor({ timeout: 5000 });
+
+      await page.locator("#clearGroceryList").click();
+      await expectText(page, "#grocerySummary", /^No items yet$/);
+      await assertVisible(page, "#confirmClearGroceryDialog", false);
+    },
+  },
+  {
     name: "checked grocery sections show section-specific empty text",
     async run(page) {
       await openApp(page);
@@ -263,12 +295,19 @@ const browserChecks = [
     name: "cooking mode opens, advances, and closes",
     async run(page) {
       await openApp(page, { debug: true });
-      const recipeIndex = await page.evaluate(() =>
-        window.recipeBookDebug.getState().recipes.findIndex((recipe) => recipe.instructions.length > 1)
+      const target = await page.evaluate(() =>
+        window.recipeBookDebug
+          .getState()
+          .recipes
+          .map((recipe, index) => ({ index, title: recipe.title, stepCount: recipe.instructions.length }))
+          .find((recipe) => recipe.stepCount > 1)
       );
 
-      assert.ok(recipeIndex >= 0, "test data should include a multi-step recipe");
-      const recipe = page.locator(`.recipe[data-recipe-index="${recipeIndex}"]`);
+      assert.ok(target, "test data should include a multi-step recipe");
+      await page.fill("#recipeSearch", target.title);
+      await page.waitForTimeout(250);
+      const recipe = page.locator(`.recipe[data-recipe-index="${target.index}"]`);
+      await recipe.waitFor({ timeout: 5000 });
       await recipe.locator(".accordion-header").click();
       await recipe.locator(".cooking-mode-button").click();
       await page.waitForSelector("#cookingMode:not([hidden])", { timeout: 5000 });
@@ -317,7 +356,10 @@ const browserChecks = [
       );
 
       assert.ok(recipeIndex >= 0, "test data should include Baklava Croissant Bread Pudding");
+      await page.fill("#recipeSearch", "Baklava Croissant Bread Pudding");
+      await page.waitForTimeout(250);
       const recipe = page.locator(`.recipe[data-recipe-index="${recipeIndex}"]`);
+      await recipe.waitFor({ timeout: 5000 });
       await recipe.locator(".accordion-header").click();
       await recipe.locator(".cooking-mode-button").click();
       await page.waitForSelector("#cookingMode:not([hidden])", { timeout: 5000 });

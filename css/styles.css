@@ -520,6 +520,8 @@ h2 {
 }
 
 .recipe {
+  content-visibility: auto;
+  contain-intrinsic-size: 140px;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -537,6 +539,26 @@ h2 {
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 96px),
     var(--surface);
   box-shadow: var(--shadow-soft);
+}
+
+.recipe-load-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.recipe-load-more[hidden],
+.recipe-load-more-status[hidden],
+.recipe-load-more button[hidden] {
+  display: none;
+}
+
+.recipe-load-more button {
+  min-height: 42px;
 }
 
 .recipe.recipe-selected {
@@ -1409,6 +1431,24 @@ li {
   margin: 8px 0 0;
   color: var(--muted-strong);
   line-height: 1.45;
+}
+
+.confirm-dialog-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: start;
+  color: var(--muted-strong);
+  font-size: 0.9rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.confirm-dialog-check input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
 }
 
 .confirm-dialog-actions {

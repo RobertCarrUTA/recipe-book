@@ -5,9 +5,51 @@ import {
   getRecipeServingsText,
 } from "./recipe_formatting.js";
 
-export function createRecipeRenderer({ document, getRecipes, actions, openCookingMode }) {
+const DEFAULT_RECIPE_BATCH_SIZE = 24;
+const RECIPE_LOAD_AHEAD_MARGIN = "900px 0px";
+
+export function createRecipeRenderer({
+  document,
+  getRecipes,
+  actions,
+  openCookingMode,
+  recipeBatchSize = DEFAULT_RECIPE_BATCH_SIZE,
+}) {
   const byId = (id) => document.getElementById(id);
   const windowLike = document.defaultView || globalThis;
+  const batchSize = Math.max(1, Number(recipeBatchSize) || DEFAULT_RECIPE_BATCH_SIZE);
+  let currentRecipeIndexes = [];
+  let currentSelectedFilters = {};
+  let loadMoreObserver = null;
+  let loadMoreSentinel = null;
+  let renderedCount = 0;
+
+  function disconnectLoadMoreObserver() {
+    if (loadMoreObserver && typeof loadMoreObserver.disconnect === "function") {
+      loadMoreObserver.disconnect();
+    }
+    loadMoreObserver = null;
+  }
+
+  function hasMoreRecipes() {
+    return renderedCount < currentRecipeIndexes.length;
+  }
+
+  function notifyRecipeBatchRendered() {
+    if (typeof actions.onRecipeBatchRendered === "function") {
+      actions.onRecipeBatchRendered({
+        renderedCount,
+        totalCount: currentRecipeIndexes.length,
+      });
+    }
+  }
+
+  function isFilterValueActive(filterKey, filterValue) {
+    const selectedValues = currentSelectedFilters[filterKey];
+    return selectedValues instanceof Set
+      ? selectedValues.has(filterValue)
+      : Array.isArray(selectedValues) && selectedValues.includes(filterValue);
+  }
 
   function renderRecipeTags(tags) {
     const t = tags || {};
@@ -16,11 +58,13 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
 
     function add(label, className, filterKey, filterValue) {
       const el = document.createElement("button");
+      const isActive = isFilterValueActive(filterKey, filterValue);
       el.type = "button";
       el.className = `recipe-tag ${className}`;
+      el.classList.toggle("active", isActive);
       el.dataset.filterKey = filterKey;
       el.dataset.filterValue = filterValue;
-      el.setAttribute("aria-pressed", "false");
+      el.setAttribute("aria-pressed", isActive ? "true" : "false");
       el.textContent = label;
       el.addEventListener("click", (event) => {
         event.stopPropagation();
@@ -217,109 +261,231 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
     content.appendChild(list);
   }
 
-  function renderRecipes() {
+  function ensureRecipeContent(recipe, recipeIndex, content) {
+    if (!content || content.dataset.rendered === "true") return;
+
+    content.dataset.rendered = "true";
+    content.appendChild(renderRecipeTags(recipe.tags));
+    content.appendChild(renderRecipeActions(recipe, recipeIndex));
+
+    if (recipe.category) {
+      const tag = document.createElement("div");
+      tag.className = "category-tag";
+      tag.textContent = recipe.category;
+      content.appendChild(tag);
+    }
+
+    appendRecipeMeta(content, recipe);
+    appendPersonalNotes(content, recipe.personalNotes);
+
+    if (recipe.description) {
+      const p = document.createElement("p");
+      p.className = "recipe-description";
+      p.textContent = recipe.description;
+      content.appendChild(p);
+    }
+
+    appendSectionList(content, "Equipment", recipe.equipment);
+    appendNutrition(content, recipe.nutrition);
+    appendSectionList(content, "Ingredients", recipe.ingredients);
+    appendSectionList(content, "Instructions", recipe.instructions, true);
+    appendSectionList(content, "Notes", recipe.notes);
+  }
+
+  function setRecipeContentOpen(recipe, recipeIndex, header, content, open) {
+    if (open) ensureRecipeContent(recipe, recipeIndex, content);
+    content.classList.toggle("open", open);
+    header.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  function renderRecipeShell(recipeIndex) {
+    const recipes = getRecipes();
+    const recipe = recipes[recipeIndex];
+    const recipeKey = actions.getRecipeKey(recipe, recipeIndex);
+    const contentId = `recipe-content-${recipeIndex}`;
+    const wrap = document.createElement("div");
+    const header = document.createElement("button");
+    const headerTop = document.createElement("div");
+    const title = document.createElement("span");
+    const headerBadges = document.createElement("span");
+    const favoriteBadge = document.createElement("span");
+    const selectedBadge = document.createElement("span");
+    const content = document.createElement("div");
+
+    wrap.className = "recipe";
+    wrap.classList.toggle("recipe-selected", actions.isRecipeSelected(recipe, recipeIndex));
+    wrap.classList.toggle("recipe-favorite", actions.isRecipeFavorite(recipe, recipeIndex));
+    wrap.dataset.recipeIndex = String(recipeIndex);
+    wrap.dataset.recipeId = recipeKey;
+    wrap.dataset.searchText =
+      typeof actions.getRecipeSearchText === "function"
+        ? actions.getRecipeSearchText(recipe, recipeIndex)
+        : actions.buildRecipeSearchText(recipe);
+
+    header.className = "accordion-header";
+    header.type = "button";
+    header.setAttribute("aria-controls", contentId);
+    header.setAttribute("aria-expanded", "false");
+
+    headerTop.className = "recipe-header-top";
+    title.className = "recipe-title";
+    title.textContent = recipe.title;
+    headerTop.appendChild(title);
+
+    headerBadges.className = "recipe-header-badges";
+    favoriteBadge.className = "recipe-favorite-badge";
+    favoriteBadge.textContent = "Favorite";
+    favoriteBadge.hidden = !actions.isRecipeFavorite(recipe, recipeIndex);
+    selectedBadge.className = "recipe-selected-badge";
+    selectedBadge.textContent = "In list";
+    selectedBadge.hidden = !actions.isRecipeSelected(recipe, recipeIndex);
+    headerBadges.appendChild(favoriteBadge);
+    headerBadges.appendChild(selectedBadge);
+    headerTop.appendChild(headerBadges);
+    header.appendChild(headerTop);
+
+    const headerMetaItems = getRecipeHeaderMeta(recipe);
+    if (headerMetaItems.length) {
+      const headerMeta = document.createElement("div");
+      headerMeta.className = "recipe-header-meta";
+      headerMetaItems.forEach((item) => {
+        const chip = document.createElement("span");
+        chip.className = "recipe-header-chip";
+        if (item.primary) chip.classList.add("primary");
+        if (item.variant) chip.classList.add(item.variant);
+        chip.textContent = item.text;
+        headerMeta.appendChild(chip);
+      });
+      header.appendChild(headerMeta);
+    }
+
+    content.className = "accordion-content";
+    content.id = contentId;
+
+    header.addEventListener("click", () => {
+      setRecipeContentOpen(recipe, recipeIndex, header, content, !content.classList.contains("open"));
+    });
+    header.addEventListener("keydown", (event) => handleRecipeHeaderKeydown(event, header));
+
+    wrap.appendChild(header);
+    wrap.appendChild(content);
+    return wrap;
+  }
+
+  function setupLoadMoreObserver() {
+    if (!loadMoreSentinel || loadMoreObserver || typeof windowLike.IntersectionObserver !== "function") return;
+
+    loadMoreObserver = new windowLike.IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) renderNextRecipeBatch();
+      },
+      { rootMargin: RECIPE_LOAD_AHEAD_MARGIN }
+    );
+    loadMoreObserver.observe(loadMoreSentinel);
+  }
+
+  function createLoadMoreSentinel() {
+    const sentinel = document.createElement("div");
+    const status = document.createElement("span");
+    const button = document.createElement("button");
+    sentinel.className = "recipe-load-more";
+    sentinel.setAttribute("aria-live", "polite");
+
+    status.className = "recipe-load-more-status";
+    status.textContent = "Loading more recipes...";
+    sentinel.appendChild(status);
+
+    button.className = "secondary-button";
+    button.type = "button";
+    button.textContent = "Show more recipes";
+    button.addEventListener("click", renderNextRecipeBatch);
+    sentinel.appendChild(button);
+
+    return sentinel;
+  }
+
+  function updateLoadMoreSentinel() {
+    if (!loadMoreSentinel) return;
+
+    const hasMore = hasMoreRecipes();
+    const supportsIntersectionObserver = typeof windowLike.IntersectionObserver === "function";
+    const fallbackButton = loadMoreSentinel.querySelector("button");
+    const status = loadMoreSentinel.querySelector(".recipe-load-more-status");
+
+    loadMoreSentinel.hidden = !hasMore;
+    if (fallbackButton) fallbackButton.hidden = supportsIntersectionObserver;
+    if (status) status.hidden = !supportsIntersectionObserver;
+
+    if (!hasMore) {
+      disconnectLoadMoreObserver();
+      return;
+    }
+
+    setupLoadMoreObserver();
+  }
+
+  function renderNextRecipeBatch() {
+    const recipeContainer = byId("recipeContainer");
+    if (!recipeContainer || !hasMoreRecipes()) {
+      updateLoadMoreSentinel();
+      notifyRecipeBatchRendered();
+      return;
+    }
+
+    const end = Math.min(currentRecipeIndexes.length, renderedCount + batchSize);
+    const fragment = document.createDocumentFragment();
+
+    for (let index = renderedCount; index < end; index += 1) {
+      fragment.appendChild(renderRecipeShell(currentRecipeIndexes[index]));
+    }
+
+    renderedCount = end;
+    if (loadMoreSentinel && loadMoreSentinel.parentElement === recipeContainer) {
+      recipeContainer.insertBefore(fragment, loadMoreSentinel);
+    } else {
+      recipeContainer.appendChild(fragment);
+    }
+
+    updateLoadMoreSentinel();
+    notifyRecipeBatchRendered();
+  }
+
+  function renderAllRecipeBatches() {
+    while (hasMoreRecipes()) {
+      renderNextRecipeBatch();
+    }
+  }
+
+  function renderRecipes(options = {}) {
     const recipeContainer = byId("recipeContainer");
     if (!recipeContainer) return;
 
+    disconnectLoadMoreObserver();
     recipeContainer.innerHTML = "";
-    getRecipes().forEach((recipe, recipeIndex) => {
-      const recipeKey = actions.getRecipeKey(recipe, recipeIndex);
-      const contentId = `recipe-content-${recipeIndex}`;
-      const wrap = document.createElement("div");
-      const header = document.createElement("button");
-      const headerTop = document.createElement("div");
-      const title = document.createElement("span");
-      const headerBadges = document.createElement("span");
-      const favoriteBadge = document.createElement("span");
-      const selectedBadge = document.createElement("span");
-      const content = document.createElement("div");
+    renderedCount = 0;
+    loadMoreSentinel = null;
 
-      wrap.className = "recipe";
-      wrap.classList.toggle("recipe-selected", actions.isRecipeSelected(recipe, recipeIndex));
-      wrap.classList.toggle("recipe-favorite", actions.isRecipeFavorite(recipe, recipeIndex));
-      wrap.dataset.recipeIndex = String(recipeIndex);
-      wrap.dataset.recipeId = recipeKey;
-      wrap.dataset.searchText = actions.buildRecipeSearchText(recipe);
+    const recipes = getRecipes();
+    currentRecipeIndexes = Array.isArray(options.recipeIndexes)
+      ? options.recipeIndexes.filter((index) => Number.isInteger(index) && index >= 0 && index < recipes.length)
+      : recipes.map((_recipe, index) => index);
 
-      header.className = "accordion-header";
-      header.type = "button";
-      header.setAttribute("aria-controls", contentId);
-      header.setAttribute("aria-expanded", "false");
+    if (!currentRecipeIndexes.length) {
+      notifyRecipeBatchRendered();
+      return;
+    }
 
-      headerTop.className = "recipe-header-top";
-      title.className = "recipe-title";
-      title.textContent = recipe.title;
-      headerTop.appendChild(title);
+    loadMoreSentinel = createLoadMoreSentinel();
+    recipeContainer.appendChild(loadMoreSentinel);
+    renderNextRecipeBatch();
+  }
 
-      headerBadges.className = "recipe-header-badges";
-      favoriteBadge.className = "recipe-favorite-badge";
-      favoriteBadge.textContent = "Favorite";
-      favoriteBadge.hidden = !actions.isRecipeFavorite(recipe, recipeIndex);
-      selectedBadge.className = "recipe-selected-badge";
-      selectedBadge.textContent = "In list";
-      selectedBadge.hidden = !actions.isRecipeSelected(recipe, recipeIndex);
-      headerBadges.appendChild(favoriteBadge);
-      headerBadges.appendChild(selectedBadge);
-      headerTop.appendChild(headerBadges);
-      header.appendChild(headerTop);
-
-      const headerMetaItems = getRecipeHeaderMeta(recipe);
-      if (headerMetaItems.length) {
-        const headerMeta = document.createElement("div");
-        headerMeta.className = "recipe-header-meta";
-        headerMetaItems.forEach((item) => {
-          const chip = document.createElement("span");
-          chip.className = "recipe-header-chip";
-          if (item.primary) chip.classList.add("primary");
-          if (item.variant) chip.classList.add(item.variant);
-          chip.textContent = item.text;
-          headerMeta.appendChild(chip);
-        });
-        header.appendChild(headerMeta);
-      }
-
-      content.className = "accordion-content";
-      content.id = contentId;
-      content.appendChild(renderRecipeTags(recipe.tags));
-      content.appendChild(renderRecipeActions(recipe, recipeIndex));
-
-      header.addEventListener("click", () => {
-        const isOpen = content.classList.toggle("open");
-        header.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-      header.addEventListener("keydown", (event) => handleRecipeHeaderKeydown(event, header));
-
-      if (recipe.category) {
-        const tag = document.createElement("div");
-        tag.className = "category-tag";
-        tag.textContent = recipe.category;
-        content.appendChild(tag);
-      }
-
-      appendRecipeMeta(content, recipe);
-      appendPersonalNotes(content, recipe.personalNotes);
-
-      if (recipe.description) {
-        const p = document.createElement("p");
-        p.className = "recipe-description";
-        p.textContent = recipe.description;
-        content.appendChild(p);
-      }
-
-      appendSectionList(content, "Equipment", recipe.equipment);
-      appendNutrition(content, recipe.nutrition);
-      appendSectionList(content, "Ingredients", recipe.ingredients);
-      appendSectionList(content, "Instructions", recipe.instructions, true);
-      appendSectionList(content, "Notes", recipe.notes);
-
-      wrap.appendChild(header);
-      wrap.appendChild(content);
-      recipeContainer.appendChild(wrap);
-    });
+  function getRecipeHeaders() {
+    return Array.from(document.querySelectorAll(".accordion-header"));
   }
 
   function handleRecipeHeaderKeydown(event, header) {
-    const allHeaders = Array.from(document.querySelectorAll(".accordion-header"));
+    let allHeaders = getRecipeHeaders();
     const currentIndex = allHeaders.indexOf(header);
 
     if (event.key === "Enter" || event.key === " ") {
@@ -330,6 +496,10 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
 
     if (event.key === "ArrowDown") {
       event.preventDefault();
+      if (currentIndex === allHeaders.length - 1 && hasMoreRecipes()) {
+        renderNextRecipeBatch();
+        allHeaders = getRecipeHeaders();
+      }
       const next = allHeaders[Math.min(allHeaders.length - 1, currentIndex + 1)];
       if (next) next.focus();
       return;
@@ -350,6 +520,10 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
 
     if (event.key === "End") {
       event.preventDefault();
+      if (hasMoreRecipes()) {
+        renderAllRecipeBatches();
+        allHeaders = getRecipeHeaders();
+      }
       if (allHeaders.length) allHeaders[allHeaders.length - 1].focus();
     }
   }
@@ -364,6 +538,9 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
 
       const badge = recipeElement.querySelector(".recipe-selected-badge");
       if (badge) badge.hidden = !isSelected;
+
+      const checkbox = recipeElement.querySelector('.recipe-add-toggle input[type="checkbox"]');
+      if (checkbox) checkbox.checked = isSelected;
 
       const viewButton = recipeElement.querySelector(".view-grocery-button");
       if (viewButton) viewButton.hidden = !isSelected;
@@ -390,24 +567,15 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
   }
 
   function syncRecipeCheckboxes() {
-    const recipes = getRecipes();
-    document.querySelectorAll('.checkbox-inline input[type="checkbox"][data-recipe-id]').forEach((cb) => {
-      const recipeIndex = Number(cb.closest(".recipe")?.dataset.recipeIndex);
-      const recipe = recipes[recipeIndex];
-      cb.checked = recipe ? actions.isRecipeSelected(recipe, recipeIndex) : false;
-    });
     syncRecipeSelectionIndicators();
   }
 
   function syncRecipeFilterTagStyles(selected) {
+    currentSelectedFilters = selected || {};
     document.querySelectorAll(".recipe-tag[data-filter-key][data-filter-value]").forEach((tagEl) => {
       const key = tagEl.dataset.filterKey;
       const value = tagEl.dataset.filterValue;
-      const selectedValues = selected[key];
-      const isActive =
-        selectedValues instanceof Set
-          ? selectedValues.has(value)
-          : Array.isArray(selectedValues) && selectedValues.includes(value);
+      const isActive = isFilterValueActive(key, value);
       tagEl.classList.toggle("active", isActive);
       tagEl.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
@@ -417,6 +585,7 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
     const recipeContainer = byId("recipeContainer");
     if (!recipeContainer) return;
 
+    disconnectLoadMoreObserver();
     actions.onRenderError(error);
     recipeContainer.innerHTML = "";
 
@@ -433,6 +602,7 @@ export function createRecipeRenderer({ document, getRecipes, actions, openCookin
   }
 
   return {
+    getRenderedRecipeCount: () => renderedCount,
     renderRecipeLoadError,
     renderRecipes,
     syncFavoriteRecipeIndicators,
