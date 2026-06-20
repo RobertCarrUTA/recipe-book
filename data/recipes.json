@@ -1667,7 +1667,7 @@
     "prepTime": "30 minutes",
     "rating": {
       "count": 238,
-      "value": 5.0
+      "value": 5
     },
     "servings": "8",
     "tags": {
@@ -1810,7 +1810,7 @@
     "prepTime": "15 minutes",
     "rating": {
       "count": 33,
-      "value": 5.0
+      "value": 5
     },
     "servings": "6",
     "tags": {
@@ -2588,7 +2588,7 @@
     "prepTime": "10 minutes",
     "rating": {
       "count": 2,
-      "value": 5.0
+      "value": 5
     },
     "servings": "8",
     "tags": {
@@ -3001,7 +3001,7 @@
     "prepTime": "20 minutes",
     "rating": {
       "count": 1,
-      "value": 5.0
+      "value": 5
     },
     "servings": "6-8 (24 hush puppies)",
     "tags": {
@@ -3109,7 +3109,7 @@
     "prepTime": "10 minutes",
     "rating": {
       "count": 6,
-      "value": 5.0
+      "value": 5
     },
     "servings": "6",
     "tags": {
@@ -3207,7 +3207,7 @@
     "prepTime": "10 minutes",
     "rating": {
       "count": 3,
-      "value": 5.0
+      "value": 5
     },
     "servings": "2",
     "tags": {
@@ -3474,7 +3474,7 @@
     "prepTime": "3 hours 30 minutes",
     "rating": {
       "count": 1,
-      "value": 5.0
+      "value": 5
     },
     "servings": "10",
     "tags": {
@@ -3546,7 +3546,7 @@
     "prepTime": "10 minutes",
     "rating": {
       "count": 2,
-      "value": 5.0
+      "value": 5
     },
     "servings": "2-4",
     "tags": {
@@ -4225,7 +4225,7 @@
     "prepTime": "10 minutes",
     "rating": {
       "count": 4,
-      "value": 5.0
+      "value": 5
     },
     "servings": "4",
     "tags": {
@@ -4336,7 +4336,7 @@
     "prepTime": "20 minutes",
     "rating": {
       "count": 6,
-      "value": 5.0
+      "value": 5
     },
     "servings": "12",
     "tags": {
@@ -4497,7 +4497,7 @@
     "prepTime": "20 minutes",
     "rating": {
       "count": 8,
-      "value": 5.0
+      "value": 5
     },
     "servings": "8",
     "tags": {
@@ -8403,5 +8403,598 @@
     },
     "title": "Lemon Poppyseed Sourdough Monkey Bread Skillet",
     "totalTime": "50 minutes"
+  },
+  {
+    "author": "John Kanell",
+    "cookTime": "25 minutes",
+    "description": "Easy Air Fryer Orange Chicken is about to be your new favorite dinner recipe! It comes together quickly with simple ingredients. Serve it with rice for a satisfying dinner.",
+    "equipment": [
+      "Air fryer",
+      "Large bowl",
+      "Medium bowl",
+      "Shallow bowl",
+      "Small bowl",
+      "Small saucepan"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "large egg",
+        "quantity": 1
+      },
+      {
+        "item": "salt",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "boneless skinless chicken breast or thighs",
+        "quantity": 1,
+        "unit": "lb"
+      },
+      {
+        "item": "cornstarch or potato starch",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "non-aerosolized cooking spray"
+      },
+      {
+        "item": "fresh orange juice",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "soy sauce",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "packed light brown sugar",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "rice vinegar",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "orange zest",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "fresh ginger",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "toasted sesame oil",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "red pepper flakes",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "item": "garlic",
+        "quantity": 3,
+        "unit": "clove"
+      },
+      {
+        "item": "water",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "cornstarch",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "sesame seeds",
+        "optional": true
+      },
+      {
+        "item": "green onion",
+        "optional": true
+      }
+    ],
+    "id": "air-fryer-orange-chicken",
+    "ingredients": [
+      "1 large egg, beaten",
+      "1/4 teaspoon salt",
+      "1 pound boneless skinless chicken breast or thighs, cut into 1-inch cubes",
+      "1 cup cornstarch or potato starch",
+      "Non-aerosolized cooking spray",
+      "1/2 cup fresh orange juice",
+      "1/4 cup soy sauce",
+      "1/4 cup packed light brown sugar",
+      "1 tablespoon rice vinegar",
+      "1 tablespoon orange zest",
+      "1 teaspoon minced fresh ginger",
+      "1 teaspoon toasted sesame oil",
+      "1/8 teaspoon red pepper flakes",
+      "3 garlic cloves, minced",
+      "2 tablespoons water",
+      "1 tablespoon cornstarch",
+      "Sesame seeds and sliced green onions, for serving"
+    ],
+    "instructions": [
+      "In a medium bowl, lightly beat the egg and salt together. Add the cubed chicken and stir to coat the chicken well.",
+      "In a shallow bowl, add the cornstarch and stir to break up any large clumps. Work with a few pieces at a time, transfer the chicken pieces to the cornstarch and toss until well coated. (Coat only what will fit in your basket at one time.)",
+      "Preheat the air fryer to 400°F.",
+      "Place the dredged chicken pieces in a single layer in the air fryer basket. Spray the chicken generously with cooking spray.",
+      "Air fry for 6 minutes. Flip the chicken pieces and spray them with cooking spray again. Continue to air fry until golden and crispy, about 6 minutes more. Transfer the cooked chicken to a large bowl, and continue dredging and cooking the remaining pieces.",
+      "While the last batch of chicken cooks, combine the orange juice, soy sauce, sugar, vinegar, zest, ginger, oil, pepper, and garlic in a small saucepan. Bring to a boil over medium-high heat, and cook until the sugar is dissolved.",
+      "Dissolve the cornstarch in the water in a small bowl, and whisk it into the saucepan. Continue cooking, whisking constantly, until thickened and translucent, about 1 minute.",
+      "Pour the sauce over the chicken and toss to coat. Serve immediately, topped with sesame seeds and green onions."
+    ],
+    "link": "https://preppykitchen.com/air-fryer-orange-chicken/#recipe",
+    "notes": [
+      "Try not to leave any dry spots on the coated chicken. Those areas will turn sticky, not crispy, so coat the chicken well with the spray oil.",
+      "Spray the chicken pieces with oil again after flipping them to coat the other side.",
+      "Keep the cooked chicken warm while you finish each batch. If cooking in smaller batches, heat an oven or toaster oven to 200°F and place cooked chicken on a wire rack set over a sheet pan."
+    ],
+    "nutrition": {
+      "calcium": "38 mg",
+      "calories": "367 kcal",
+      "carbohydrates": "50 g",
+      "cholesterol": "119 mg",
+      "fat": "5 g",
+      "fiber": "1 g",
+      "iron": "1 mg",
+      "monounsaturatedFat": "2 g",
+      "polyunsaturatedFat": "1 g",
+      "potassium": "564 mg",
+      "protein": "28 g",
+      "saturatedFat": "1 g",
+      "sodium": "1114 mg",
+      "sugar": "16 g",
+      "transFat": "0.02 g",
+      "vitaminA": "189 IU",
+      "vitaminC": "20 mg"
+    },
+    "personalNotes": [],
+    "prepTime": "15 minutes",
+    "rating": {
+      "count": 6,
+      "value": 4.84
+    },
+    "servings": "4 servings",
+    "tags": {
+      "equipment": [
+        "air-fryer",
+        "saucepan"
+      ],
+      "rating": null,
+      "status": "not-tried"
+    },
+    "title": "Air Fryer Orange Chicken",
+    "totalTime": "40 minutes"
+  },
+  {
+    "author": "John Kanell",
+    "cookTime": "45 minutes",
+    "description": "My easy Chicken Parmesan recipe is so easy to make at home. It cooks in under 30 minutes for a dinner of crispy chicken cutlets topped with tomato sauce and melty cheese!",
+    "equipment": [
+      "3 medium shallow bowls",
+      "Baking sheet",
+      "Large frying pan",
+      "Meat mallet or rolling pin",
+      "Plastic wrap"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "boneless skinless chicken breast",
+        "quantity": 3
+      },
+      {
+        "item": "salt"
+      },
+      {
+        "item": "black pepper"
+      },
+      {
+        "item": "all-purpose flour",
+        "quantity": 0.333,
+        "unit": "cup"
+      },
+      {
+        "item": "large egg",
+        "quantity": 2
+      },
+      {
+        "item": "Italian breadcrumbs",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "panko breadcrumbs",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "Parmesan",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "parsley",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "item": "olive oil",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "low-moisture mozzarella",
+        "quantity": 2,
+        "unit": "cup"
+      },
+      {
+        "item": "marinara sauce",
+        "quantity": 2,
+        "unit": "cup"
+      },
+      {
+        "item": "fresh basil",
+        "optional": true
+      },
+      {
+        "item": "fresh parsley",
+        "optional": true
+      }
+    ],
+    "id": "chicken-parmesan",
+    "ingredients": [
+      "3 boneless, skinless chicken breasts (about 2 pounds, 900g)",
+      "Salt and freshly ground black pepper",
+      "1/3 cup all-purpose flour (40g)",
+      "2 large eggs, beaten",
+      "1/2 cup Italian breadcrumbs (56g)",
+      "1 cup panko bread crumbs (120g)",
+      "1 cup freshly grated Parmesan (56g)",
+      "3 tablespoons chopped parsley",
+      "1 cup olive oil (240mL)",
+      "2 cups low-moisture mozzarella, shredded or thinly sliced (8 ounces, 226g)",
+      "2 cups marinara sauce (500g)",
+      "Fresh basil and parsley leaves for garnish"
+    ],
+    "instructions": [
+      "Preheat the oven to 425°F. Butterfly the chicken breasts by cutting through the middle of each lengthwise to create six cutlets. Pound each piece between sheets of plastic wrap using a rolling pin or meat mallet until they are an even thickness.",
+      "In a medium bowl, whisk together the eggs with a pinch of salt and pepper. In a separate medium bowl, whisk to combine the flour with 1 teaspoon of salt and ½ teaspoon of pepper. In a third medium bowl, combine the Panko and seasoned breadcrumbs with ½ cup grated Parmesan (28g), chopped parsley and mix together.",
+      "Dredge each piece of chicken in the flour mixture and tap off any excess. Dip in the egg and let the excess drip off. Dredge on both sides in the breadcrumb mixture and press down so the breadcrumbs stick and form a nice layer.",
+      "In a large skillet, pour the olive oil and heat over medium-high heat until the oil shimmers. Working in batches, add 2 to 3 pieces of chicken to the pan and cook until golden brown on both sides, about 4 minutes per side, adjusting the heat as needed. Transfer to a paper-towel-lined plate to absorb any excess grease.",
+      "Transfer to a baking sheet and top each breast with ¼ to ⅓ cup marinara sauce, a generous sprinkle of mozzarella, and about a tablespoon of Parmesan.",
+      "Bake in the oven until the chicken is cooked through and the cheese is melted and golden, 15-20 minutes. Remove from the oven and garnish with basil and parsley leaves. Serve over spaghetti."
+    ],
+    "link": "https://preppykitchen.com/chicken-parmesan/#recipe",
+    "notes": [
+      "Pound the chicken cutlets evenly. This ensures they are all roughly the same thickness for even cooking.",
+      "Don't have mozzarella? Shredded or sliced provolone cheese works well too!",
+      "Chicken breasts are the best cut of chicken for this recipe. Chicken thighs are not recommended.",
+      "Have a wet hand and a dry hand when breading the chicken. Use one hand for dry ingredients and the other for the beaten eggs.",
+      "If serving with spaghetti, toss the noodles with more marinara sauce or try 2 tablespoons of melted butter and the juice of half a lemon for a brighter, lighter flavor."
+    ],
+    "nutrition": {
+      "calcium": "523 mg",
+      "calories": "707 kcal",
+      "carbohydrates": "26 g",
+      "cholesterol": "134 mg",
+      "fat": "52 g",
+      "fiber": "2 g",
+      "iron": "3 mg",
+      "monounsaturatedFat": "31 g",
+      "polyunsaturatedFat": "5 g",
+      "potassium": "595 mg",
+      "protein": "33 g",
+      "saturatedFat": "13 g",
+      "sodium": "1215 mg",
+      "sugar": "5 g",
+      "transFat": "0.01 g",
+      "vitaminA": "1006 IU",
+      "vitaminC": "9 mg"
+    },
+    "personalNotes": [],
+    "prepTime": "15 minutes",
+    "rating": {
+      "count": 40,
+      "value": 4.98
+    },
+    "servings": "6 servings",
+    "tags": {
+      "equipment": [
+        "baking-sheet",
+        "frying-pan",
+        "oven"
+      ],
+      "rating": null,
+      "status": "not-tried"
+    },
+    "title": "Chicken Parmesan",
+    "totalTime": "1 hour"
+  },
+  {
+    "author": "John Kanell",
+    "cookTime": "15 minutes",
+    "description": "All you need are a few simple ingredients and one pan to make this Chicken Piccata recipe. Filled with bold flavors thanks to the tangy lemon sauce, you'll want to make this again and again.",
+    "equipment": [
+      "Large pan",
+      "Meat mallet",
+      "Sharp knife"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "chicken breast",
+        "quantity": 2
+      },
+      {
+        "item": "all-purpose flour",
+        "quantity": 0.333,
+        "unit": "cup"
+      },
+      {
+        "item": "salt",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "olive oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "lemon juice",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "chicken stock",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "white wine",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 4,
+        "unit": "tbsp"
+      },
+      {
+        "item": "capers",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "salt"
+      },
+      {
+        "item": "black pepper"
+      },
+      {
+        "item": "parsley",
+        "quantity": 0.25,
+        "unit": "cup"
+      }
+    ],
+    "id": "chicken-piccata",
+    "ingredients": [
+      "2 chicken breasts",
+      "1/3 cup all-purpose flour",
+      "1 teaspoon salt",
+      "1/2 teaspoon pepper",
+      "2 tablespoons olive oil",
+      "1/2 cup lemon juice, freshly squeezed",
+      "1/2 cup chicken stock",
+      "1 cup white wine",
+      "4 tablespoons unsalted butter, divided",
+      "1/4 cup capers, drained",
+      "Salt and pepper to taste",
+      "1/4 cup parsley"
+    ],
+    "instructions": [
+      "Cut chicken breasts in half lengthwise then pound the chicken to flatten out.",
+      "Season chicken with salt and pepper then dredge in flour.",
+      "Add 2 tablespoons of olive oil and two tbsp butter to a large pan and warm on medium-high heat.",
+      "Cook on each side for about 3 minutes or until golden brown.",
+      "Add the stock, wine, lemon juice, salt and pepper to the pan then bring to a boil while stirring to deglaze ,reduce to a simmer and add the capers. Allow to reduce by half while stirring occasionally. Remove from heat and stir in 2 tbsp butter. Season to taste with salt and pepper.",
+      "Return the chicken to the pan and spoon sauce over the chicken cutlets. You can warm the chicken through on low if needed then sprinkle with parsley and serve."
+    ],
+    "link": "https://preppykitchen.com/chicken-piccata/#recipe",
+    "notes": [
+      "Slicing the chicken breasts in half and then pounding them ensures that they are thin and will cook through quickly.",
+      "If you have a smaller skillet, pan fry the chicken in two batches so the chicken browns instead of steaming.",
+      "To get more juice out of a lemon, bring it to room temperature and roll it on the counter under your palm before squeezing.",
+      "Don't skip coating the chicken breasts with flour; it gives the chicken a nice crust that the sauce can cling to.",
+      "Be careful not to overcook the chicken breasts since they are thin. They are cooked when the internal temperature is 165°F."
+    ],
+    "nutrition": {
+      "calcium": "24 mg",
+      "calories": "400 kcal",
+      "carbohydrates": "14 g",
+      "cholesterol": "103 mg",
+      "fat": "22 g",
+      "fiber": "1 g",
+      "iron": "2 mg",
+      "potassium": "556 mg",
+      "protein": "26 g",
+      "saturatedFat": "9 g",
+      "sodium": "1066 mg",
+      "sugar": "2 g",
+      "vitaminA": "715 IU",
+      "vitaminC": "19 mg"
+    },
+    "personalNotes": [],
+    "prepTime": "10 minutes",
+    "rating": {
+      "count": 24,
+      "value": 5
+    },
+    "servings": "4 servings",
+    "tags": {
+      "equipment": [
+        "stovetop"
+      ],
+      "rating": null,
+      "status": "not-tried"
+    },
+    "title": "Chicken Piccata",
+    "totalTime": "25 minutes"
+  },
+  {
+    "author": "John Kanell",
+    "cookTime": "20 minutes",
+    "description": "This Chicken Francese recipe comes together quickly with only a few simple ingredients. An easy chicken dinner for a busy weeknight or for entertaining guests, this chicken recipe is perfect!",
+    "equipment": [
+      "Large skillet",
+      "Meat mallet or rolling pin",
+      "Plastic wrap"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "boneless skinless chicken breast",
+        "quantity": 4
+      },
+      {
+        "item": "all-purpose flour",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "salt",
+        "quantity": 1.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.75,
+        "unit": "tsp"
+      },
+      {
+        "item": "large egg",
+        "quantity": 2
+      },
+      {
+        "item": "olive oil",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "lemon",
+        "quantity": 1
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "item": "all-purpose flour",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "chicken broth",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "white wine",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "fresh lemon juice",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "flat-leaf parsley",
+        "quantity": 2,
+        "unit": "tbsp"
+      }
+    ],
+    "id": "chicken-francese",
+    "ingredients": [
+      "4 6-ounce boneless, skinless chicken breasts (675g)",
+      "1/4 cup all-purpose flour (30g)",
+      "1 1/4 teaspoons salt, divided",
+      "3/4 teaspoon ground black pepper, divided",
+      "2 large eggs, beaten",
+      "1/4 cup olive oil (60mL)",
+      "1 lemon, thinly sliced",
+      "3 tablespoons unsalted butter",
+      "1 tablespoon all-purpose flour",
+      "1 cup chicken broth (240mL)",
+      "1/2 cup white wine (120mL)",
+      "1 tablespoon fresh lemon juice",
+      "2 tablespoons chopped flat-leaf parsley"
+    ],
+    "instructions": [
+      "Place the chicken breasts between 2 pieces of plastic wrap. Pound the breasts with a mallet or rolling pin to about ½-inch thickness.",
+      "In a shallow dish, combine ¼ cup flour, 1 teaspoon salt, and ½ teaspoon pepper. Place the beaten eggs in another shallow dish.",
+      "In a large nonstick skillet, heat the oil over medium-high heat. Dredge two chicken breasts in the flour mixture, then dip in the beaten eggs. Add the chicken to the pan, and cook until golden brown, about 4 minutes. Flip and repeat. Cook until the chicken has an internal temperature of 165F/75C. Remove the cooked chicken to a plate. Keep warm. Repeat the procedure with the remaining two breasts.",
+      "Add the lemon slices to the skillet. Cook for 1 minute or until the lemons begin to brown. Transfer the lemon slices to the plate.",
+      "Carefully wipe out the skillet with a paper towel. Place the skillet over medium heat. Add the butter and cook until melted. Add 1 tablespoon flour and cook for 1 minute, stirring constantly. Gradually whisk in the broth and wine and simmer until the sauce is just thickened, about 4 minutes.",
+      "Stir in the lemon juice, remaining ¼ teaspoon salt, and remaining ¼ teaspoon pepper. Return the chicken and lemon slices to the skillet, spooning the sauce over the chicken. Sprinkle with parsley and serve immediately."
+    ],
+    "link": "https://preppykitchen.com/chicken-francese/#recipe",
+    "notes": [
+      "Do not skip pounding the chicken breasts. Doing so ensures that they will cook through quickly. Even breasts will stay moist as you don’t risk the exterior drying out as the interior cooks through.",
+      "To get more juice out of a lemon, bring it to room temperature and roll it on the counter under your palm. Doing so will loosen up the juices so you can more easily squeeze the lemon.",
+      "If you had frozen the chicken beforehand, make sure to pat them dry of any moisture. Doing so will help the flour coating stick better to the chicken.",
+      "To ensure the chicken is cooked all the way through, use a meat thermometer to check that the chicken has an internal temperature of 165F/75C.",
+      "You can use either chicken or vegetable stock for the sauce.",
+      "Place cooked chicken in a 200F oven to keep warm while cooking the remaining chicken, lemon slices, and sauce."
+    ],
+    "nutrition": {
+      "calcium": "44 mg",
+      "calories": "496 kcal",
+      "carbohydrates": "12 g",
+      "cholesterol": "225 mg",
+      "fat": "29 g",
+      "fiber": "1 g",
+      "iron": "2 mg",
+      "monounsaturatedFat": "14 g",
+      "polyunsaturatedFat": "3 g",
+      "potassium": "761 mg",
+      "protein": "41 g",
+      "saturatedFat": "9 g",
+      "sodium": "1181 mg",
+      "sugar": "1 g",
+      "transFat": "1 g",
+      "vitaminA": "626 IU",
+      "vitaminC": "20 mg"
+    },
+    "personalNotes": [],
+    "prepTime": "15 minutes",
+    "rating": {
+      "count": 16,
+      "value": 5
+    },
+    "servings": "4 servings",
+    "tags": {
+      "equipment": [
+        "stovetop"
+      ],
+      "rating": null,
+      "status": "not-tried"
+    },
+    "title": "Chicken Francese",
+    "totalTime": "35 minutes"
   }
 ]
