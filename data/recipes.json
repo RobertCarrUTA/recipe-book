@@ -8954,7 +8954,7 @@
     ],
     "link": "https://preppykitchen.com/chicken-francese/#recipe",
     "notes": [
-      "Do not skip pounding the chicken breasts. Doing so ensures that they will cook through quickly. Even breasts will stay moist as you don’t risk the exterior drying out as the interior cooks through.",
+      "Do not skip pounding the chicken breasts. Doing so ensures that they will cook through quickly. Even breasts will stay moist as you don't risk the exterior drying out as the interior cooks through.",
       "To get more juice out of a lemon, bring it to room temperature and roll it on the counter under your palm. Doing so will loosen up the juices so you can more easily squeeze the lemon.",
       "If you had frozen the chicken beforehand, make sure to pat them dry of any moisture. Doing so will help the flour coating stick better to the chicken.",
       "To ensure the chicken is cooked all the way through, use a meat thermometer to check that the chicken has an internal temperature of 165F/75C.",
@@ -8995,6 +8995,390 @@
       "status": "not-tried"
     },
     "title": "Chicken Francese",
+    "totalTime": "35 minutes"
+  },
+  {
+    "author": "John Kanell",
+    "cookTime": "30 minutes",
+    "description": "My 30-minute corn chowder recipe is a must-try for busy weeknights. Thick, creamy, and loaded with sweetness from fresh corn and savoriness from crispy bacon.",
+    "equipment": [
+      "Blender",
+      "Large pot or Dutch oven",
+      "Paper towel",
+      "Plate"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "bacon",
+        "quantity": 4,
+        "unit": "slice"
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1
+      },
+      {
+        "item": "celery",
+        "quantity": 2,
+        "unit": "stalk"
+      },
+      {
+        "item": "large carrot",
+        "quantity": 1
+      },
+      {
+        "item": "garlic",
+        "quantity": 3,
+        "unit": "clove"
+      },
+      {
+        "item": "corn kernels",
+        "quantity": 3,
+        "unit": "cup"
+      },
+      {
+        "item": "Yukon gold potato",
+        "quantity": 2
+      },
+      {
+        "item": "chicken broth",
+        "quantity": 3,
+        "unit": "cup"
+      },
+      {
+        "item": "whole milk",
+        "quantity": 2,
+        "unit": "cup"
+      },
+      {
+        "item": "salt",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "fresh thyme",
+        "quantity": 1.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "chives",
+        "optional": true
+      }
+    ],
+    "id": "corn-chowder",
+    "ingredients": [
+      "4 slices bacon, chopped",
+      "1 tablespoon unsalted butter",
+      "1 yellow onion, diced",
+      "2 stalks celery, diced",
+      "1 large carrot, diced",
+      "3 garlic cloves, minced",
+      "3 cups corn kernels, cobs reserved if using fresh (482g)",
+      "2 medium Yukon gold potatoes, peeled and diced (369g)",
+      "3 cups chicken broth (720mL)",
+      "2 cups whole milk (480mL)",
+      "2 teaspoons salt",
+      "1 1/2 teaspoons chopped thyme",
+      "1/2 teaspoon ground black pepper",
+      "Chopped chives, for garnish"
+    ],
+    "instructions": [
+      "In a large pot or Dutch oven, add the bacon and cook over medium-high heat until crisp, about 6 minutes, stirring occasionally. Remove the bacon pieces with a slotted spoon and drain on paper towels, reserving the dripping in the pot.",
+      "Add the butter to the pot and heat until melted. Add the onion, celery, and carrot and cook until tender, about 7 minutes, stirring occasionally. Stir in the garlic and cook for 1 minute.",
+      "Add the corn kernels, corn cobs (if using fresh corn), potatoes, broth, milk, salt, thyme, and pepper. (For an extra creamy chowder, replace ½ cup of the milk with heavy cream.) Bring to a simmer, reduce the heat to medium-low, and cook until the potatoes are tender, about 15 minutes, stirring occasionally. Remove from the heat. Remove and discard the corn cobs.",
+      "Place 2 cups of the soup mixture in a blender and blend until smooth. Return to pot and stir in the cooked bacon. Serve hot, garnishing each bowl with chopped chives and black pepper."
+    ],
+    "link": "https://preppykitchen.com/corn-chowder/#recipe",
+    "notes": [
+      "Watch the heat: Make sure not to bring the soup to a full boil. If boiled, the milk can scorch on the bottom of the pot or curdle.",
+      "No-mess method to cut corn off the cob: Use a bundt pan to cut the corn off the cob by standing the cob upright in the hole of the pan. Cut downward with a sharp knife. The corn kernels will fall into the pan and not all over the counter.",
+      "If you need to use frozen corn: 3 cups of frozen corn can be substituted if fresh corn is out of season. No need to thaw before adding. Since there will be no corn cobs if you use frozen corn, add a 15-ounce can of creamed corn to the pot when you add the frozen corn. This will give your chowder a more intense corn flavor.",
+      "To make vegetarian corn chowder: Water, vegetable stock, or both can be substituted for chicken broth. Leave out the bacon and replace the drippings with 1 tablespoon of butter or olive oil for a vegetarian chowder!",
+      "For an extra creamy chowder: Replace 1/2 cup of the milk with half-and-half or heavy cream.",
+      "If using a regular blender: Remove the center piece of the lid and place a kitchen towel on top to ensure that there is a way for steam to escape. Otherwise, the top can blow off the top and create a big, steamy mess."
+    ],
+    "nutrition": {
+      "calcium": "129 mg",
+      "calories": "247 kcal",
+      "carbohydrates": "30 g",
+      "cholesterol": "27 mg",
+      "fat": "12 g",
+      "fiber": "4 g",
+      "iron": "1 mg",
+      "monounsaturatedFat": "4 g",
+      "polyunsaturatedFat": "2 g",
+      "potassium": "594 mg",
+      "protein": "9 g",
+      "saturatedFat": "5 g",
+      "sodium": "1520 mg",
+      "sugar": "10 g",
+      "transFat": "0.1 g",
+      "vitaminA": "1965 IU",
+      "vitaminC": "16 mg"
+    },
+    "personalNotes": [],
+    "prepTime": "10 minutes",
+    "rating": {
+      "count": 21,
+      "value": 4.91
+    },
+    "servings": "6-8 servings",
+    "tags": {
+      "equipment": [
+        "blender",
+        "dutch-oven",
+        "stovetop"
+      ],
+      "rating": null,
+      "status": "not-tried"
+    },
+    "title": "Corn Chowder",
+    "totalTime": "40 minutes"
+  },
+  {
+    "author": "John Kanell",
+    "cookTime": "1 hour 10 minutes",
+    "description": "A cozy one-pot Potato Soup recipe the whole family will love! Loaded with bacon bits, hearty potatoes, and the perfect amount of creaminess, all you need is a few simple ingredients for this tasty meal!",
+    "equipment": [
+      "Dutch oven",
+      "Paper towel",
+      "Plate",
+      "Slotted spoon",
+      "Wooden spoon"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "bacon",
+        "quantity": 8,
+        "unit": "slice"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1
+      },
+      {
+        "item": "garlic",
+        "quantity": 6,
+        "unit": "clove"
+      },
+      {
+        "item": "gold potato",
+        "quantity": 3,
+        "unit": "lb"
+      },
+      {
+        "item": "all-purpose flour",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "chicken broth",
+        "quantity": 4,
+        "unit": "cup"
+      },
+      {
+        "item": "milk",
+        "quantity": 1.5,
+        "unit": "cup"
+      },
+      {
+        "item": "salt",
+        "quantity": 1.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.75,
+        "unit": "tsp"
+      },
+      {
+        "item": "heavy cream",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "sour cream",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "shredded cheddar cheese",
+        "optional": true
+      },
+      {
+        "item": "chives or green onion",
+        "optional": true
+      },
+      {
+        "item": "sour cream",
+        "optional": true
+      }
+    ],
+    "id": "potato-soup",
+    "ingredients": [
+      "8 slices bacon, chopped (about 8oz/225g)",
+      "1 yellow onion, chopped",
+      "6 garlic cloves, minced",
+      "3 pounds gold potatoes, peeled and chopped into 1-inch pieces (1350g)",
+      "1/4 cup all-purpose flour (30g)",
+      "4 cups chicken broth (960ml/907g)",
+      "1 1/2 cups milk (360ml)",
+      "1 1/2 teaspoons salt",
+      "3/4 teaspoon ground black pepper",
+      "1 cup heavy cream (240ml), room temperature",
+      "1/2 cup sour cream (120g), room temperature",
+      "Shredded cheddar cheese",
+      "Chopped chives or green onion",
+      "Sour cream"
+    ],
+    "instructions": [
+      "Place the bacon in a large Dutch oven. Cook over medium-high heat, stirring frequently until crisp, about 12 minutes. Using a slotted spoon, remove the bacon pieces and drain on a paper-towel lined plate, leaving the drippings in the pot. Set aside. Reduce the heat to medium.",
+      "Remove and reserve half of the bacon drippings. Add the onion and garlic. Cook until the onion turns translucent, about 5 minutes. Stir in the potatoes. Cook for 5 minutes, stirring occasionally. Add some reserved bacon drippings if the potatoes start to stick. Sprinkle in the flour and cook, stirring frequently for 2 minutes. Slowly pour in the chicken broth while stirring, scraping the bottom of the pot with the spoon to loosen any stuck on flour or vegetables.",
+      "Add the milk, salt, and black pepper. Bring to a simmer. Reduce the heat just high enough to maintain a low simmer, low to medium-low. (Try to keep it from boiling hard.) Partially cover and continue simmering until the potatoes are very tender, about 40 minutes. For a thicker and less chunky soup, mash the potatoes with the back of a spoon or a potato masher to your desired consistency. Stir in the cream and sour cream. Taste and add more salt and pepper, if desired. Serve immediately topped with sour cream, cheese, chives, and the cooked bacon."
+    ],
+    "link": "https://preppykitchen.com/potato-soup/#recipe",
+    "notes": [
+      "Don't toss the bacon drippings! After you cook the bacon, be sure to save the drippings to cook the onion and garlic in. It adds a lot of great flavor to the soup. If you don't want to use bacon in the soup, skip this step and melt 4 tablespoons of butter in the pot before adding the veggies.",
+      "Create a smooth texture. If you prefer a smooth soup texture rather than chunky, use an immersion blender to blend the soup to your desired consistency once it's cooked.",
+      "Make it gluten-free. Omit the flour and instead whisk in one tablespoon of cornstarch into the milk. Then add the milk to the recipe as outlined. Or, you can substitute your favorite brand of 1-to-1 gluten-free flour. Either option will make the soup just as thick!",
+      "Add extra toppings. Load it up! Try adding seasonings like fresh thyme, red chili flakes, and extra black pepper, or add a dash of hot sauce. Use a mix of shredded cheeses like cheddar and smoked Gouda, or try shredded goat cheese. Or stick to the classics- sour cream, chives or green onions, and cheddar cheese!",
+      "Options variations. Sneak in some extra veggies by adding chopped cabbage, spinach, broccoli, cauliflower, carrots, corn, peas, or leeks when you add the potatoes to the pot. Additionally, you can add a blend of seasonings, such as Cajun or Italian seasoning mix, for different flavors."
+    ],
+    "nutrition": {
+      "calcium": "202 mg",
+      "calories": "470 kcal",
+      "carbohydrates": "40 g",
+      "cholesterol": "80 mg",
+      "fat": "29 g",
+      "fiber": "4 g",
+      "iron": "2 mg",
+      "monounsaturatedFat": "9 g",
+      "polyunsaturatedFat": "2 g",
+      "potassium": "968 mg",
+      "protein": "13 g",
+      "saturatedFat": "15 g",
+      "sodium": "1118 mg",
+      "sugar": "7 g",
+      "transFat": "0.03 g",
+      "vitaminA": "994 IU",
+      "vitaminC": "39 mg"
+    },
+    "personalNotes": [],
+    "prepTime": "10 minutes",
+    "rating": {
+      "count": 47,
+      "value": 4.98
+    },
+    "servings": "8 servings",
+    "tags": {
+      "equipment": [
+        "dutch-oven",
+        "stovetop"
+      ],
+      "rating": null,
+      "status": "not-tried"
+    },
+    "title": "Potato Soup",
+    "totalTime": "1 hour 20 minutes"
+  },
+  {
+    "author": "Amanda Cooks & Styles",
+    "cookTime": "20 minutes",
+    "description": "Super simple homemade breakfast potato recipe made with fresh potatoes, herbs and seasonings. Serve with fresh cooked eggs, toast, in a breakfast burrito and more.",
+    "equipment": [
+      "Lid",
+      "Skillet",
+      "Spatula"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "potato",
+        "quantity": 4
+      },
+      {
+        "item": "salt",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "garlic powder",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "onion powder",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "butter",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "oil",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "chopped parsley",
+        "quantity": 1,
+        "unit": "tbsp"
+      }
+    ],
+    "id": "easy-breakfast-potatoes",
+    "ingredients": [
+      "4 Potatoes, cut into 1/2-inch cubes",
+      "1/4 teaspoon Salt",
+      "1/4 teaspoon Black Pepper",
+      "1/4 teaspoon Garlic Powder",
+      "1/4 teaspoon Onion Powder",
+      "1 tablespoon Butter",
+      "1 tablespoon Oil",
+      "1 tablespoon Chopped Parsley, fresh, or 1/2 teaspoon dried"
+    ],
+    "instructions": [
+      "Cut all potatoes into small 1/2-inch cubes.",
+      "Heat skillet to medium high heat and add butter and oil.",
+      "Add chopped potatoes to the hot skillet and toss around to fully coat in butter/oil combination. Sprinkle potatoes with seasonings except for the parsley. Cover to let potatoes lightly steam for about 3-4 minutes.",
+      "Remove lid and stir potatoes. Continue to cook potatoes with lid off, turning potatoes around with spatula to ensure an even cook on all sides.",
+      "When potatoes are done they will have a light crisp on the outside, soft on the inside.",
+      "Sprinkle potatoes with fresh parsley and serve."
+    ],
+    "link": "https://amandacooksandstyles.com/easy-breakfast-potatoes/#recipe",
+    "notes": [],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "15 minutes",
+    "rating": {
+      "count": 36,
+      "value": 4.98
+    },
+    "servings": "4 people",
+    "tags": {
+      "equipment": [
+        "skillet",
+        "stovetop"
+      ],
+      "rating": null,
+      "status": "not-tried"
+    },
+    "title": "Easy Breakfast Potatoes",
     "totalTime": "35 minutes"
   }
 ]
