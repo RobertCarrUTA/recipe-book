@@ -18,6 +18,7 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 - Check off grocery items, hide checked items while shopping, clear checked progress, and track progress with a mobile grocery badge.
 - Persist search, filters, selected recipes, favorites, manual grocery items, grocery checks, grouping, collapsed sections, and wake-lock preference with `localStorage`.
 - Render recipe cards incrementally as you scroll, with recipe details built only when a card is opened, so the app can grow without paying the full DOM cost up front.
+- Fetch recipe data with a per-load cache-busting URL so phone browsers and static hosts do not keep stale `data/recipes.json` around after recipe updates.
 
 ## How To Use
 
@@ -144,9 +145,10 @@ npm run smoke:browser
 
 The browser smoke test starts a local static server and runs focused Playwright checks for recipe loading, search/filter behavior, grocery list updates, Cooking Mode, and mobile view tabs when Playwright and a local Chrome/Edge executable are available.
 
-## Asset Cache Busting
+## Cache Busting
 
 `index.html` uses a neutral release-style asset version on local CSS and JS URLs, such as `?v=20260614-1`.
+Recipe data is fetched with `cache: "no-store"` and a per-load cache-busting query string, so refreshing the app asks for the newest `data/recipes.json` instead of reusing a stale copy.
 
 When CSS or JavaScript changes, bump both asset URLs with:
 

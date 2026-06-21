@@ -1,0 +1,31 @@
+# Agent Notes
+
+This project is a static recipe book app with no build step. Keep changes small, verify locally, and preserve the lightweight architecture.
+
+## Cache Busting
+
+- When changing JavaScript or CSS, bump the asset version in `index.html` before finishing:
+
+```bash
+npm run set-asset-version -- YYYYMMDD-N
+```
+
+- Use the current date and increment `N` if multiple app/CSS changes happen on the same day.
+- Recipe-only changes in `data/recipes.json` do not require an asset-version bump. Recipe data is fetched with a per-load cache-busting query string in `js/recipes.js`.
+- If `index.html`, `js/app.js`, any imported JS module, or `css/styles.css` changes, assume the asset version should be bumped.
+
+## Verification
+
+- Run the full local check after code or data changes:
+
+```bash
+npm run verify
+```
+
+- Run the browser smoke test after user-facing UI, rendering, or browser-loading changes:
+
+```bash
+npm run smoke:browser
+```
+
+On Windows PowerShell, use `npm.cmd` if needed.

@@ -1,7 +1,25 @@
 import { normalizeRecipeBook } from "./recipe_schema.js";
 
+const defaultRecipeUrl = "data/recipes.json";
+
+export function addRecipeDataCacheBuster(url, cacheBuster = Date.now()) {
+  const rawUrl = String(url || defaultRecipeUrl);
+  const rawCacheBuster = String(cacheBuster || "").trim();
+  if (!rawCacheBuster) return rawUrl;
+
+  const hashIndex = rawUrl.indexOf("#");
+  const baseUrl = hashIndex === -1 ? rawUrl : rawUrl.slice(0, hashIndex);
+  const hash = hashIndex === -1 ? "" : rawUrl.slice(hashIndex);
+  const separator = baseUrl.includes("?") ? "&" : "?";
+
+  return `${baseUrl}${separator}_=${encodeURIComponent(rawCacheBuster)}${hash}`;
+}
+
 export async function loadRecipes(options = {}) {
-  const url = options.url || "data/recipes.json";
+  const baseUrl = options.url || defaultRecipeUrl;
+  const url = options.cacheBust === false
+    ? baseUrl
+    : addRecipeDataCacheBuster(baseUrl, options.cacheBuster === undefined ? Date.now() : options.cacheBuster);
   const logger = options.logger || console;
   const response = await fetch(url, { cache: "no-store" });
 

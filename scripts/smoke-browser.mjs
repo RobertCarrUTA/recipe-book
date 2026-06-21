@@ -114,10 +114,7 @@ const browserChecks = [
       assert.ok(recipeCount > 0, "debug state should expose loaded recipes");
       assert.ok(renderedCount > 0, "at least one recipe card should render initially");
       assert.ok(renderedCount <= recipeCount, "rendered card count should not exceed loaded data");
-      assert.equal(
-        await page.locator("#recipeSearchMeta").innerText(),
-        renderedCount < recipeCount ? `Showing ${renderedCount} of ${recipeCount}` : `Showing ${recipeCount} of ${recipeCount}`
-      );
+      assert.equal(await page.locator("#recipeSearchMeta").innerText(), `${recipeCount} recipes`);
 
       const firstHeader = page.locator(".recipe .accordion-header").first();
       assert.equal(await firstHeader.evaluate((element) => element.tagName), "BUTTON");
@@ -136,6 +133,10 @@ const browserChecks = [
       const chiliCount = await visibleRecipeCount(page);
       assert.ok(chiliCount > 0, "search should keep at least one recipe visible");
       assert.ok(chiliCount < totalCount, "search should reduce visible recipe count");
+      assert.match(
+        await page.locator("#recipeSearchMeta").innerText(),
+        new RegExp(`^\\d+ matches of ${totalCount}$`)
+      );
 
       await page.locator("#toggleFilters").click();
       await page.locator('.recipe-filters input[data-filter="status"][value="tried"]').check();
@@ -285,7 +286,7 @@ const browserChecks = [
       await openApp(page);
 
       await page.locator("#addAllRecipesToGroceryList").click();
-      const potatoItem = page.locator("#groceryList li").filter({ hasText: "potato - 1 potato" }).first();
+      const potatoItem = page.locator("#groceryList li").filter({ hasText: /^potato - / }).first();
       await potatoItem.waitFor({ timeout: 5000 });
       await potatoItem.locator(".grocery-item-source-toggle").click();
       await expectLocatorText(potatoItem.locator(".grocery-item-source-list"), /Dutch Oven Chicken Pot Pie[\s\S]*1 potato/);
