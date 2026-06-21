@@ -163,19 +163,19 @@ function createRecipeBookApp() {
     saveAppState();
   }
 
-  function updateRecipeSearchMeta(matchCount, renderedCount = renderer ? renderer.getRenderedRecipeCount() : 0) {
+  function updateRecipeSearchMeta(matchCount) {
     const meta = byId("recipeSearchMeta");
     if (!meta) return;
 
     if (!appState.recipes.length) {
-      meta.textContent = "Showing 0";
+      meta.textContent = "0 recipes";
       return;
     }
 
     meta.textContent =
-      renderedCount < matchCount
-        ? `Showing ${renderedCount} of ${matchCount}`
-        : `Showing ${matchCount} of ${appState.recipes.length}`;
+      matchCount === appState.recipes.length
+        ? `${appState.recipes.length} recipes`
+        : `${matchCount} matches of ${appState.recipes.length}`;
   }
 
   function handleFavoriteRecipe(recipe, recipeIndex, favorite) {
@@ -513,7 +513,7 @@ function createRecipeBookApp() {
         onGroceryCheckedChange: handleGroceryCheckedChange,
         onGroceryGroupToggle: handleGroceryGroupToggle,
         onManualGroceryRemove: handleManualGroceryRemove,
-        onRecipeBatchRendered: ({ renderedCount, totalCount }) => updateRecipeSearchMeta(totalCount, renderedCount),
+        onRecipeBatchRendered: ({ totalCount }) => updateRecipeSearchMeta(totalCount),
         onRecipeTagToggle: handleRecipeTagToggle,
         onRenderError: (error) => logger.error(error),
         onSelectRecipe: handleSelectRecipe,

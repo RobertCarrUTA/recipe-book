@@ -598,7 +598,7 @@ export function createRecipeRenderer({
     recipeContainer.appendChild(message);
 
     const meta = byId("recipeSearchMeta");
-    if (meta) meta.textContent = "Showing 0";
+    if (meta) meta.textContent = "0 recipes";
   }
 
   return {
