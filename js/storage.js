@@ -23,6 +23,8 @@ export const storageKeys = Object.freeze({
 });
 
 export const currentStorageVersion = 3;
+export const backupAppId = "robert-recipe-book";
+export const backupSchemaVersion = 1;
 
 function isPlainObject(value) {
   return Boolean(value && typeof value === "object" && !Array.isArray(value));
@@ -75,6 +77,18 @@ function readObject(storage, key) {
   return isPlainObject(value) ? value : {};
 }
 
+function normalizeStringList(value) {
+  if (!Array.isArray(value)) return [];
+
+  return Array.from(
+    new Set(
+      value
+        .map((item) => String(item || "").trim())
+        .filter(Boolean)
+    )
+  );
+}
+
 function truthyRecord(value) {
   if (!isPlainObject(value)) return {};
 
@@ -84,9 +98,8 @@ function truthyRecord(value) {
   }, {});
 }
 
-function readManualGroceryItems(storage) {
-  const value = readObject(storage, storageKeys.manualGroceryItems);
-
+function normalizeManualGroceryItems(value) {
+  if (!isPlainObject(value)) return {};
   return Object.keys(value).reduce((items, id) => {
     const item = value[id];
     if (!isPlainObject(item)) return items;
@@ -104,6 +117,42 @@ function readManualGroceryItems(storage) {
 
     return items;
   }, {});
+}
+
+function readManualGroceryItems(storage) {
+  return normalizeManualGroceryItems(readObject(storage, storageKeys.manualGroceryItems));
+}
+
+function normalizeFilterData(value) {
+  if (!isPlainObject(value)) return {};
+
+  return Object.keys(value).reduce((filters, key) => {
+    const normalizedKey = String(key || "").trim();
+    const selected = normalizeStringList(value[key]);
+    if (normalizedKey && selected.length) filters[normalizedKey] = selected;
+    return filters;
+  }, {});
+}
+
+function normalizeUiState(uiState) {
+  const ui = isPlainObject(uiState) ? uiState : {};
+  const defaults = createDefaultUiState();
+
+  return {
+    ...defaults,
+    collapsedGroceryGroups: truthyRecord(ui.collapsedGroceryGroups),
+    filters: normalizeFilterData(ui.filters),
+    groceryControlsCollapsed: Boolean(ui.groceryControlsCollapsed),
+    groupItems: Boolean(ui.groupItems),
+    hideCheckedGroceryItems: Boolean(ui.hideCheckedGroceryItems),
+    keepScreenAwake: Boolean(ui.keepScreenAwake),
+    mobileView: ui.mobileView === "grocery" ? "grocery" : "recipes",
+    recipeControlsCollapsed: Boolean(ui.recipeControlsCollapsed),
+    recipeSearch: String(ui.recipeSearch || "").trim(),
+    showFavoriteRecipesOnly: Boolean(ui.showFavoriteRecipesOnly),
+    showSelectedRecipesOnly: Boolean(ui.showSelectedRecipesOnly),
+    skipClearGroceryConfirmation: Boolean(ui.skipClearGroceryConfirmation),
+  };
 }
 
 function writeStorageVersion(storage, version) {
@@ -150,6 +199,47 @@ export function createDefaultUiState() {
     showFavoriteRecipesOnly: false,
     showSelectedRecipesOnly: false,
     skipClearGroceryConfirmation: false,
+  };
+}
+
+export function createPersistentStateBackup(state, options = {}) {
+  const runtime = state && state.runtime ? state.runtime : {};
+  const ui = normalizeUiState(state && state.ui);
+  const exportedAt = options.exportedAt || new Date().toISOString();
+
+  return {
+    app: backupAppId,
+    schemaVersion: backupSchemaVersion,
+    storageVersion: currentStorageVersion,
+    exportedAt,
+    data: {
+      favoriteRecipeIds: truthyRecord(runtime.favoriteRecipeIds),
+      groceryCheckedByKey: truthyRecord(runtime.groceryCheckedByKey),
+      manualGroceryItemsById: normalizeManualGroceryItems(runtime.manualGroceryItemsById),
+      recipeMultipliersById: normalizeRecipeMultiplierRecord(runtime.recipeMultipliersById),
+      selectedRecipeIds: truthyRecord(runtime.selectedRecipeIds),
+      ui,
+    },
+  };
+}
+
+export function normalizePersistentStateBackup(backup) {
+  if (!isPlainObject(backup)) {
+    throw new Error("Backup file is not a recipe book backup.");
+  }
+
+  if (backup.app !== backupAppId || backup.schemaVersion !== backupSchemaVersion) {
+    throw new Error("Backup file is not compatible with this recipe book.");
+  }
+
+  const data = isPlainObject(backup.data) ? backup.data : {};
+  return {
+    favoriteRecipeIds: truthyRecord(data.favoriteRecipeIds),
+    groceryCheckedByKey: truthyRecord(data.groceryCheckedByKey),
+    manualGroceryItemsById: normalizeManualGroceryItems(data.manualGroceryItemsById),
+    recipeMultipliersById: normalizeRecipeMultiplierRecord(data.recipeMultipliersById),
+    selectedRecipeIds: truthyRecord(data.selectedRecipeIds),
+    ui: normalizeUiState(data.ui),
   };
 }
 

@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/styles.css?v=20260626-1" />
+    <meta name="theme-color" content="#101214" />
+    <link rel="stylesheet" href="css/styles.css?v=20260626-2" />
+    <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="data:," />
   </head>
   <body class="app-mode-recipes">
@@ -15,6 +17,12 @@
           <p class="app-kicker">Robert's kitchen</p>
           <h1>Recipe Book</h1>
           <p class="app-subtitle">Cook from saved recipes and build a grocery list without losing your place.</p>
+        </div>
+        <div class="app-header-actions">
+          <span id="offlineStatus" class="offline-status" role="status" aria-live="polite" hidden></span>
+          <button id="refreshAppUpdate" class="secondary-button app-update-button" type="button" hidden>
+            Refresh
+          </button>
         </div>
       </header>
 
@@ -165,6 +173,13 @@
                 </label>
                 <button id="addAllRecipesToGroceryList" class="secondary-button" type="button">Add all recipes</button>
               </div>
+
+              <div class="state-tools" aria-label="Backup tools">
+                <button id="exportStateBackup" class="secondary-button" type="button">Export backup</button>
+                <button id="importStateBackup" class="secondary-button" type="button">Import backup</button>
+                <input id="stateBackupInput" type="file" accept="application/json,.json" hidden />
+                <span id="stateBackupStatus" class="state-tools-status" role="status" aria-live="polite" hidden></span>
+              </div>
             </div>
 
             <div
@@ -285,6 +300,6 @@
       </form>
     </dialog>
 
-    <script type="module" src="js/app.js?v=20260626-1"></script>
+    <script type="module" src="js/app.js?v=20260626-2"></script>
   </body>
 </html>

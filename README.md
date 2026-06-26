@@ -12,10 +12,12 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 - Favorite recipes and keep them available with the Favorites filter.
 - Open a full-screen Cooking Mode with a collapsible recipe header, ingredients, one instruction step at a time, progress, keyboard navigation, and mobile-friendly controls.
 - Keep the screen awake while cooking when the browser supports Screen Wake Lock.
+- Install the app from supported browsers and keep the recipe book/grocery list usable after the app shell and recipe data have been cached.
 - Add selected recipe ingredients to a grocery list.
 - Add one-off manual grocery items.
 - Group grocery items into collapsible shopping sections and combine compatible units.
 - Check off grocery items, hide checked items while shopping, clear checked progress, and track progress with a mobile grocery badge.
+- Export and import a backup of browser state for moving favorites, grocery selections, manual items, and preferences between browsers or devices.
 - Persist search, filters, selected recipes, favorites, manual grocery items, grocery checks, grouping, collapsed sections, and wake-lock preference with `localStorage`.
 - Render recipe cards incrementally as you scroll, with recipe details built only when a card is opened, so the app can grow without paying the full DOM cost up front.
 - Fetch recipe data with a per-load cache-busting URL so phone browsers and static hosts do not keep stale `data/recipes.json` around after recipe updates.
@@ -27,6 +29,8 @@ Use the Recipes view to search, filter, favorite, and open recipes. Expand a rec
 Optionally use Cooking Mode when actively cooking. It shows the recipe ingredients alongside one instruction step at a time, and the recipe header can collapse to make more room for the current step. Use Previous and Next to move through the recipe, or press Escape to close it. The keep-awake toggle in Cooking Mode is synced with the main keep-awake toggle.
 
 Use the Grocery List view to add one-off items, review combined shopping items, group them into collapsible sections, hide checked items while shopping, clear checked progress, or clear the list.
+
+Use Export backup and Import backup in the Grocery List controls when moving browser state to another browser or preserving a local copy before clearing site data.
 
 ## Recipe Data
 
@@ -95,6 +99,14 @@ The app stores personal state in `localStorage`, including:
 
 Clearing browser site data will reset these preferences.
 
+The backup controls export these preferences and grocery selections to a JSON file. Imports are validated before the app applies them, and grocery totals are recomputed from the current recipe data after restore.
+
+## Offline App
+
+The app registers a service worker when served over `http://localhost`, `https`, or another service-worker-capable origin. It caches the static app shell and the latest successful `data/recipes.json` response so the app can reopen without a network connection after the first successful load.
+
+When a newer service worker is ready, the header shows an update status with a Refresh button.
+
 ## Code Architecture
 
 The code is split by responsibility:
@@ -108,6 +120,7 @@ The code is split by responsibility:
 - `js/recipe_repository.js`: Recipe loading boundary for bundled recipes and future user/imported recipe sources.
 - `js/recipe_schema.js`: Recipe data normalization, schema defaults, ID de-duplication, and data warnings.
 - `js/storage.js`: Versioned `localStorage` adapter with defensive reads, writes, and migrations.
+- `js/backup_controller.js`, `js/offline_controller.js`, `sw.js`: Browser-state backup/import, service-worker registration, and offline cache behavior.
 - `js/ui_state.js`, `js/mobile_view_controller.js`, `js/wake_lock_controller.js`, `js/cooking_controls.js`: Browser UI controllers isolated from the app composition root.
 - `js/ingredient_parser.js`, `js/normalization.js`, `js/units.js`, `js/grouping.js`: Pure parsing, normalization, unit conversion, and grouping helpers.
 

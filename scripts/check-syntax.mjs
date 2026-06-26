@@ -4,6 +4,7 @@ import path from "node:path";
 
 const rootDir = path.resolve(new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
 const checkDirs = ["js", "scripts", "tests"];
+const checkFiles = ["sw.js"];
 
 async function collectJavaScriptFiles(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -23,7 +24,7 @@ async function collectJavaScriptFiles(dir) {
 
 const files = (
   await Promise.all(checkDirs.map((dir) => collectJavaScriptFiles(path.join(rootDir, dir))))
-).flat();
+).flat().concat(checkFiles.map((file) => path.join(rootDir, file)));
 
 for (const file of files) {
   const result = spawnSync(process.execPath, ["--check", file], {

@@ -146,6 +146,10 @@ a {
 }
 
 .app-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
   padding: 8px 2px 16px;
 }
 
@@ -186,6 +190,58 @@ h2 {
   margin: 10px 0 0;
   color: var(--muted-strong);
   line-height: 1.45;
+}
+
+.app-header-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  max-width: min(100%, 340px);
+}
+
+.offline-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid rgba(122, 199, 163, 0.42);
+  border-radius: 999px;
+  background: rgba(122, 199, 163, 0.1);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.offline-status[data-state="offline"] {
+  border-color: rgba(241, 189, 105, 0.5);
+  background: rgba(241, 189, 105, 0.12);
+  color: #ffe0a8;
+}
+
+.offline-status[data-state="update"] {
+  border-color: rgba(128, 183, 243, 0.52);
+  background: rgba(128, 183, 243, 0.14);
+  color: #cfe5ff;
+}
+
+.offline-status[data-state="error"] {
+  border-color: rgba(240, 138, 138, 0.52);
+  background: rgba(240, 138, 138, 0.12);
+  color: #ffcaca;
+}
+
+.offline-status[hidden] {
+  display: none;
+}
+
+.app-update-button {
+  min-height: 34px;
+  padding: 0 11px;
+  font-size: 0.78rem;
 }
 
 .mobile-view-tabs {
@@ -1048,6 +1104,7 @@ li {
 .grocery-shopping-bar .grocery-controls-panel,
 .grocery-shopping-bar .grocery-add-form,
 .grocery-shopping-bar .grocery-toolbar,
+.grocery-shopping-bar .state-tools,
 .grocery-shopping-bar .grocery-progress {
   margin-bottom: 0;
 }
@@ -1144,6 +1201,34 @@ li {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, max-content));
   margin-bottom: 12px;
+}
+
+.state-tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  align-items: center;
+  gap: 8px;
+}
+
+.state-tools button {
+  min-height: 40px;
+}
+
+.state-tools-status {
+  grid-column: 1 / -1;
+  min-height: 20px;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.state-tools-status.is-error {
+  color: #ffcaca;
+}
+
+.state-tools-status[hidden] {
+  display: none;
 }
 
 .grocery-progress {
@@ -1957,6 +2042,16 @@ li {
     min-height: 44px;
   }
 
+  .state-tools {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .state-tools button {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 10px;
+  }
+
   .compact-switch {
     min-height: 44px;
     padding-right: 8px;
@@ -2150,7 +2245,14 @@ li {
 
 @media (max-width: 480px) {
   .app-header {
+    display: grid;
+    gap: 10px;
     padding-bottom: 14px;
+  }
+
+  .app-header-actions {
+    justify-content: flex-start;
+    max-width: 100%;
   }
 
   h1 {
