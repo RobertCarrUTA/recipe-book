@@ -4,6 +4,15 @@ import {
   getRecipeHeaderMeta,
   getRecipeServingsText,
 } from "./recipe_formatting.js";
+import {
+  DEFAULT_RECIPE_MULTIPLIER,
+  MAX_RECIPE_MULTIPLIER,
+  MIN_RECIPE_MULTIPLIER,
+  RECIPE_MULTIPLIER_STEP,
+  formatRecipeMultiplier,
+  formatRecipeMultiplierInputValue,
+  stepRecipeMultiplier,
+} from "./recipe_multiplier.js";
 
 const DEFAULT_RECIPE_BATCH_SIZE = 24;
 const RECIPE_LOAD_AHEAD_MARGIN = "900px 0px";
@@ -51,6 +60,98 @@ export function createRecipeRenderer({
       : Array.isArray(selectedValues) && selectedValues.includes(filterValue);
   }
 
+  function getRecipeMultiplier(recipe, recipeIndex) {
+    return typeof actions.getRecipeMultiplier === "function"
+      ? actions.getRecipeMultiplier(recipe, recipeIndex)
+      : DEFAULT_RECIPE_MULTIPLIER;
+  }
+
+  function getSelectedBadgeText(recipe, recipeIndex) {
+    const multiplier = getRecipeMultiplier(recipe, recipeIndex);
+    return Math.abs(multiplier - DEFAULT_RECIPE_MULTIPLIER) > 1e-9
+      ? `In list ${formatRecipeMultiplier(multiplier)}`
+      : "In list";
+  }
+
+  function syncRecipeScaleControl(control, recipe, recipeIndex, selected) {
+    if (!control) return;
+
+    const multiplier = getRecipeMultiplier(recipe, recipeIndex);
+    const input = control.querySelector(".recipe-scale-input");
+    control.hidden = !selected;
+    control.querySelectorAll("button, input").forEach((field) => {
+      field.disabled = !selected;
+    });
+
+    if (input && document.activeElement !== input) {
+      input.value = formatRecipeMultiplierInputValue(multiplier);
+    }
+  }
+
+  function createRecipeScaleControl(recipe, recipeIndex) {
+    const control = document.createElement("div");
+    const label = document.createElement("label");
+    const decreaseButton = document.createElement("button");
+    const input = document.createElement("input");
+    const increaseButton = document.createElement("button");
+    const inputId = `recipe-scale-${recipeIndex}`;
+
+    function commitMultiplier(nextValue) {
+      const normalized =
+        typeof actions.onRecipeMultiplierChange === "function"
+          ? actions.onRecipeMultiplierChange(recipe, recipeIndex, nextValue)
+          : getRecipeMultiplier(recipe, recipeIndex);
+      input.value = formatRecipeMultiplierInputValue(normalized);
+    }
+
+    control.className = "recipe-scale-control";
+    label.className = "recipe-scale-label";
+    label.htmlFor = inputId;
+    label.textContent = "Qty";
+
+    decreaseButton.className = "recipe-scale-step";
+    decreaseButton.type = "button";
+    decreaseButton.textContent = "-";
+    decreaseButton.setAttribute("aria-label", `Decrease quantity for ${recipe.title || "recipe"}`);
+    decreaseButton.addEventListener("click", () => commitMultiplier(stepRecipeMultiplier(input.value, -1)));
+
+    input.className = "recipe-scale-input";
+    input.id = inputId;
+    input.type = "number";
+    input.inputMode = "decimal";
+    input.min = String(MIN_RECIPE_MULTIPLIER);
+    input.max = String(MAX_RECIPE_MULTIPLIER);
+    input.step = String(RECIPE_MULTIPLIER_STEP);
+    input.value = formatRecipeMultiplierInputValue(getRecipeMultiplier(recipe, recipeIndex));
+    input.setAttribute("aria-label", `Quantity multiplier for ${recipe.title || "recipe"}`);
+    input.addEventListener("change", () => commitMultiplier(input.value));
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        commitMultiplier(input.value);
+        input.blur();
+      }
+      if (event.key === "Escape") {
+        input.value = formatRecipeMultiplierInputValue(getRecipeMultiplier(recipe, recipeIndex));
+        input.blur();
+      }
+    });
+
+    increaseButton.className = "recipe-scale-step";
+    increaseButton.type = "button";
+    increaseButton.textContent = "+";
+    increaseButton.setAttribute("aria-label", `Increase quantity for ${recipe.title || "recipe"}`);
+    increaseButton.addEventListener("click", () => commitMultiplier(stepRecipeMultiplier(input.value, 1)));
+
+    control.appendChild(label);
+    control.appendChild(decreaseButton);
+    control.appendChild(input);
+    control.appendChild(increaseButton);
+    syncRecipeScaleControl(control, recipe, recipeIndex, actions.isRecipeSelected(recipe, recipeIndex));
+
+    return control;
+  }
+
   function renderRecipeTags(tags) {
     const t = tags || {};
     const wrap = document.createElement("div");
@@ -94,6 +195,7 @@ export function createRecipeRenderer({
     const toggle = document.createElement("label");
     const addToListCheckbox = document.createElement("input");
     const addToListText = document.createElement("span");
+    const scaleControl = createRecipeScaleControl(recipe, recipeIndex);
     const viewGroceryButton = document.createElement("button");
 
     actionsWrap.className = "recipe-actions";
@@ -121,6 +223,7 @@ export function createRecipeRenderer({
     toggle.appendChild(addToListCheckbox);
     toggle.appendChild(addToListText);
     actionsWrap.appendChild(toggle);
+    actionsWrap.appendChild(scaleControl);
 
     viewGroceryButton.className = "view-grocery-button";
     viewGroceryButton.type = "button";
@@ -132,6 +235,7 @@ export function createRecipeRenderer({
     addToListCheckbox.addEventListener("change", () => {
       actions.onSelectRecipe(recipe, recipeIndex, addToListCheckbox.checked);
       viewGroceryButton.hidden = !addToListCheckbox.checked;
+      syncRecipeScaleControl(scaleControl, recipe, recipeIndex, addToListCheckbox.checked);
     });
 
     if (recipe.link) {
@@ -337,7 +441,7 @@ export function createRecipeRenderer({
     favoriteBadge.textContent = "Favorite";
     favoriteBadge.hidden = !actions.isRecipeFavorite(recipe, recipeIndex);
     selectedBadge.className = "recipe-selected-badge";
-    selectedBadge.textContent = "In list";
+    selectedBadge.textContent = getSelectedBadgeText(recipe, recipeIndex);
     selectedBadge.hidden = !actions.isRecipeSelected(recipe, recipeIndex);
     headerBadges.appendChild(favoriteBadge);
     headerBadges.appendChild(selectedBadge);
@@ -537,10 +641,15 @@ export function createRecipeRenderer({
       recipeElement.classList.toggle("recipe-selected", isSelected);
 
       const badge = recipeElement.querySelector(".recipe-selected-badge");
-      if (badge) badge.hidden = !isSelected;
+      if (badge) {
+        badge.hidden = !isSelected;
+        badge.textContent = getSelectedBadgeText(recipe, recipeIndex);
+      }
 
       const checkbox = recipeElement.querySelector('.recipe-add-toggle input[type="checkbox"]');
       if (checkbox) checkbox.checked = isSelected;
+
+      syncRecipeScaleControl(recipeElement.querySelector(".recipe-scale-control"), recipe, recipeIndex, isSelected);
 
       const viewButton = recipeElement.querySelector(".view-grocery-button");
       if (viewButton) viewButton.hidden = !isSelected;

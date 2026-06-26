@@ -51,7 +51,12 @@ test("grocery view helpers hide noisy notes and summarize sources", () => {
     ["optional"]
   );
   assert.equal(formatGrocerySourceSummary([{ title: "Chili" }, { title: "Soup" }], 2), "From 2 recipes");
+  assert.equal(formatGrocerySourceSummary([{ title: "Chili", multiplier: 2 }], 1), "From Chili x2");
   assert.equal(formatGrocerySourceDetail({ title: "Cake", notes: ["optional", "amount not specified"] }), "Cake - optional, amount not specified");
+  assert.equal(
+    formatGrocerySourceDetail({ title: "Chili", multiplier: 2, totals: { can: { min: 4, max: 4 } } }),
+    "Chili - 4 cans (x2)"
+  );
   assert.equal(
     formatGrocerySourceDetail(
       { title: "Dutch Oven Chicken Pot Pie", totals: { item: { min: 1, max: 1 } } },

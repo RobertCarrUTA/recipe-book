@@ -4,6 +4,11 @@ import {
   parseStructuredGroceryIngredient,
 } from "./ingredient_parser.js";
 import { normalizeWhitespace } from "./normalization.js";
+import {
+  DEFAULT_RECIPE_MULTIPLIER,
+  normalizeRecipeMultiplier,
+  normalizeRecipeMultiplierRecord,
+} from "./recipe_multiplier.js";
 import { addRange, convertToBaseUnits } from "./units.js";
 
 const manualGroceryKeyPrefix = "manual:";
@@ -26,6 +31,7 @@ export function createRecipeRuntimeState(savedState = {}) {
     },
     groceryCheckedByKey: { ...(savedState.groceryCheckedByKey || {}) },
     manualGroceryItemsById: { ...(savedState.manualGroceryItemsById || {}) },
+    recipeMultipliersById: normalizeRecipeMultiplierRecord(savedState.recipeMultipliersById),
     selectedRecipeIds: { ...(savedState.selectedRecipeIds || {}) },
   };
 }
@@ -40,6 +46,11 @@ export function isRecipeSelected(runtimeState, recipe, index) {
 
 export function isRecipeFavorite(runtimeState, recipe, index) {
   return Boolean(runtimeState.favoriteRecipeIds[getRecipeKey(recipe, index)]);
+}
+
+export function getRecipeMultiplier(runtimeState, recipe, index) {
+  const recipeKey = getRecipeKey(recipe, index);
+  return normalizeRecipeMultiplier(runtimeState.recipeMultipliersById?.[recipeKey]);
 }
 
 export function setRecipeFavorite(runtimeState, recipe, index, favorite) {
@@ -57,9 +68,24 @@ export function setRecipeSelected(runtimeState, recipes, recipe, index, selected
     runtimeState.selectedRecipeIds[recipeKey] = true;
   } else {
     delete runtimeState.selectedRecipeIds[recipeKey];
+    delete runtimeState.recipeMultipliersById[recipeKey];
   }
 
   recomputeGroceryState(runtimeState, recipes);
+}
+
+export function setRecipeMultiplier(runtimeState, recipes, recipe, index, multiplier) {
+  const recipeKey = getRecipeKey(recipe, index);
+  const normalized = normalizeRecipeMultiplier(multiplier, getRecipeMultiplier(runtimeState, recipe, index));
+
+  if (Math.abs(normalized - DEFAULT_RECIPE_MULTIPLIER) < 1e-9) {
+    delete runtimeState.recipeMultipliersById[recipeKey];
+  } else {
+    runtimeState.recipeMultipliersById[recipeKey] = normalized;
+  }
+
+  recomputeGroceryState(runtimeState, recipes);
+  return normalized;
 }
 
 export function setGroceryChecked(runtimeState, canonicalKey, checked) {
@@ -159,23 +185,34 @@ function addTotalsForSource(source, totals) {
   });
 }
 
+function applySourceMultiplier(source, multiplier) {
+  if (Math.abs(multiplier - DEFAULT_RECIPE_MULTIPLIER) < 1e-9) {
+    delete source.multiplier;
+    return;
+  }
+  source.multiplier = multiplier;
+}
+
 function addSourceForKey(groceryState, canonicalKey, recipe, index, options = {}) {
   if (!recipe || !canonicalKey) return;
 
   const notes = options.notes || [];
   const totals = options.totals || null;
+  const multiplier = normalizeRecipeMultiplier(options.multiplier);
   const recipeId = getRecipeKey(recipe, index);
   const source = {
     id: recipeId,
     notes: [],
     title: recipe.title || "Untitled recipe",
   };
+  applySourceMultiplier(source, multiplier);
 
   groceryState.sourcesByKey[canonicalKey] = groceryState.sourcesByKey[canonicalKey] || [];
   const existingSource = groceryState.sourcesByKey[canonicalKey].find((existing) => existing.id === recipeId);
   if (existingSource) {
     existingSource.notes = existingSource.notes || [];
     notes.forEach((note) => addUniqueNote(existingSource.notes, note));
+    applySourceMultiplier(existingSource, multiplier);
     addTotalsForSource(existingSource, totals);
   } else {
     notes.forEach((note) => addUniqueNote(source.notes, note));
@@ -217,31 +254,41 @@ function getEffectiveUnit(parsed) {
   return "item";
 }
 
+function scaleRange(range, multiplier) {
+  return {
+    min: range.min * multiplier,
+    max: range.max * multiplier,
+  };
+}
+
 function addParsedIngredientToTotals(runtimeState, parsed, sourceRecipe, sourceIndex) {
   if (!parsed || !parsed.canonical || !parsed.canonical.base) return;
 
   const groceryState = runtimeState.grocery;
   const canonicalKey = parsed.canonical.base;
   const ingredientNotes = getParsedIngredientNotes(parsed);
+  const multiplier = getRecipeMultiplier(runtimeState, sourceRecipe, sourceIndex);
   runtimeState.displayNamesByKey[canonicalKey] = parsed.canonical.display || canonicalKey;
 
   ingredientNotes.forEach((note) => addNoteForKey(groceryState, canonicalKey, note));
 
   if (!parsed.quantityRange) {
-    addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, { notes: ingredientNotes });
+    addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, { multiplier, notes: ingredientNotes });
     return;
   }
 
   const converted = convertToBaseUnits(parsed.quantityRange, getEffectiveUnit(parsed));
   if (!converted) {
-    addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, { notes: ingredientNotes });
+    addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, { multiplier, notes: ingredientNotes });
     return;
   }
 
+  const scaledRange = scaleRange({ min: converted.min, max: converted.max }, multiplier);
   const convertedTotals = {
-    [converted.baseUnit]: { min: converted.min, max: converted.max },
+    [converted.baseUnit]: scaledRange,
   };
   addSourceForKey(groceryState, canonicalKey, sourceRecipe, sourceIndex, {
+    multiplier,
     notes: ingredientNotes,
     totals: convertedTotals,
   });
@@ -256,7 +303,7 @@ function addParsedIngredientToTotals(runtimeState, parsed, sourceRecipe, sourceI
 
   groceryState.totalsByKey[canonicalKey][converted.baseUnit] = addRange(
     groceryState.totalsByKey[canonicalKey][converted.baseUnit],
-    { min: converted.min, max: converted.max }
+    scaledRange
   );
 }
 
@@ -295,6 +342,7 @@ export function selectAllRecipes(runtimeState, recipes) {
 
 export function clearGroceryState(runtimeState) {
   runtimeState.selectedRecipeIds = {};
+  runtimeState.recipeMultipliersById = {};
   runtimeState.groceryCheckedByKey = {};
   runtimeState.manualGroceryItemsById = {};
   runtimeState.grocery = createEmptyGroceryState();

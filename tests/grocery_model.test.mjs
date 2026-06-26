@@ -5,11 +5,13 @@ import {
   clearCheckedGroceryItems,
   clearGroceryState,
   createRecipeRuntimeState,
+  getRecipeMultiplier,
   getManualGroceryItemKey,
   isRecipeSelected,
   removeManualGroceryItem,
   selectAllRecipes,
   setGroceryChecked,
+  setRecipeMultiplier,
   setRecipeSelected,
 } from "../js/grocery_model.js";
 import { test } from "./test_helpers.mjs";
@@ -35,6 +37,30 @@ test("setRecipeSelected recomputes grocery totals from structured ingredients", 
   assert.deepEqual(runtime.grocery.totalsByKey["kidney beans"].can, { min: 2, max: 2 });
   assert.deepEqual(runtime.grocery.totalsByKey.garlic.clove, { min: 3, max: 3 });
   assert.equal(runtime.displayNamesByKey.garlic, "garlic");
+});
+
+test("recipe multipliers scale grocery totals and source details", () => {
+  const runtime = createRecipeRuntimeState();
+  setRecipeSelected(runtime, recipes, recipes[0], 0, true);
+  const multiplier = setRecipeMultiplier(runtime, recipes, recipes[0], 0, 2.5);
+
+  assert.equal(multiplier, 2.5);
+  assert.equal(getRecipeMultiplier(runtime, recipes[0], 0), 2.5);
+  assert.deepEqual(runtime.grocery.totalsByKey["kidney beans"].can, { min: 5, max: 5 });
+  assert.deepEqual(runtime.grocery.totalsByKey.garlic.clove, { min: 7.5, max: 7.5 });
+  assert.equal(runtime.grocery.sourcesByKey.garlic[0].multiplier, 2.5);
+  assert.deepEqual(runtime.grocery.sourcesByKey.garlic[0].totals.clove, { min: 7.5, max: 7.5 });
+});
+
+test("deselecting a recipe clears its multiplier", () => {
+  const runtime = createRecipeRuntimeState();
+  setRecipeSelected(runtime, recipes, recipes[0], 0, true);
+  setRecipeMultiplier(runtime, recipes, recipes[0], 0, 2);
+  setRecipeSelected(runtime, recipes, recipes[0], 0, false);
+
+  assert.equal(isRecipeSelected(runtime, recipes[0], 0), false);
+  assert.deepEqual(runtime.recipeMultipliersById, {});
+  assert.equal(getRecipeMultiplier(runtime, recipes[0], 0), 1);
 });
 
 test("setGroceryChecked toggles checked keys", () => {
@@ -139,12 +165,14 @@ test("grocery sources aggregate recipe-specific totals for repeated ingredients"
 test("clearGroceryState resets selected, checked, totals, and display names", () => {
   const runtime = createRecipeRuntimeState();
   setRecipeSelected(runtime, recipes, recipes[0], 0, true);
+  setRecipeMultiplier(runtime, recipes, recipes[0], 0, 2);
   addManualGroceryItem(runtime, "Seltzer", { id: "manual-1" });
   setGroceryChecked(runtime, "garlic", true);
 
   clearGroceryState(runtime);
 
   assert.deepEqual(runtime.selectedRecipeIds, {});
+  assert.deepEqual(runtime.recipeMultipliersById, {});
   assert.deepEqual(runtime.groceryCheckedByKey, {});
   assert.deepEqual(runtime.manualGroceryItemsById, {});
   assert.deepEqual(runtime.grocery.totalsByKey, {});

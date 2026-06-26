@@ -3,6 +3,7 @@ import {
   clearCheckedGroceryItems,
   clearGroceryState,
   createRecipeRuntimeState,
+  getRecipeMultiplier,
   getRecipeKey,
   isRecipeFavorite,
   isManualGroceryItemKey,
@@ -12,6 +13,7 @@ import {
   selectAllRecipes,
   setGroceryChecked,
   setRecipeFavorite,
+  setRecipeMultiplier,
   setRecipeSelected,
 } from "./grocery_model.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
@@ -191,6 +193,14 @@ function createRecipeBookApp() {
     renderer.syncRecipeSelectionIndicators();
     if (isControlChecked("showSelectedRecipesOnly")) refreshRecipeListFilter();
     saveAppState();
+  }
+
+  function handleRecipeMultiplierChange(recipe, recipeIndex, multiplier) {
+    const normalized = setRecipeMultiplier(appState.runtime, appState.recipes, recipe, recipeIndex, multiplier);
+    renderer.renderGroceryList();
+    renderer.syncRecipeSelectionIndicators();
+    saveAppState();
+    return normalized;
   }
 
   function handleViewGroceryList() {
@@ -505,6 +515,7 @@ function createRecipeBookApp() {
       actions: {
         buildRecipeSearchText,
         getRecipeKey,
+        getRecipeMultiplier: (recipe, index) => getRecipeMultiplier(appState.runtime, recipe, index),
         getRecipeSearchText: (_recipe, index) => appState.recipeSearchTexts[index] || "",
         isRecipeFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
         isManualGroceryItem: (canonicalKey) => isManualGroceryItemKey(canonicalKey),
@@ -514,6 +525,7 @@ function createRecipeBookApp() {
         onGroceryGroupToggle: handleGroceryGroupToggle,
         onManualGroceryRemove: handleManualGroceryRemove,
         onRecipeBatchRendered: ({ totalCount }) => updateRecipeSearchMeta(totalCount),
+        onRecipeMultiplierChange: handleRecipeMultiplierChange,
         onRecipeTagToggle: handleRecipeTagToggle,
         onRenderError: (error) => logger.error(error),
         onSelectRecipe: handleSelectRecipe,
