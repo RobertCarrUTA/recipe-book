@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title>Robert's Recipe Book</title>
+  <rect width="512" height="512" rx="96" fill="#101214"/>
+  <rect x="68" y="68" width="376" height="376" rx="70" fill="#1b2026" stroke="#3b4652" stroke-width="12"/>
+  <path d="M162 146h148c34 0 62 28 62 62v158H188c-36 0-66-30-66-66V186c0-22 18-40 40-40Z" fill="#7ac7a3"/>
+  <path d="M188 188h146v32H188v-32Zm0 68h118v32H188v-32Zm0 68h88v32h-88v-32Z" fill="#092017"/>
+  <path d="M366 140c22 20 34 49 34 80 0 58-47 106-106 106h-20v-46h20c34 0 61-27 61-60 0-18-8-36-22-47l33-33Z" fill="#f1bd69"/>
+  <circle cx="160" cy="368" r="28" fill="#092017"/>
+</svg>

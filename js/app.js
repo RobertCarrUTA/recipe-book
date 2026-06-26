@@ -16,9 +16,11 @@ import {
   setRecipeMultiplier,
   setRecipeSelected,
 } from "./grocery_model.js";
+import { createBackupController } from "./backup_controller.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
 import { createLogger, isDebugEnabled } from "./logger.js";
 import { createMobileViewController } from "./mobile_view_controller.js";
+import { createOfflineController } from "./offline_controller.js";
 import {
   buildRecipeSearchText,
   getMatchingRecipeIndexes,
@@ -85,6 +87,23 @@ function createRecipeBookApp() {
 
   function applyUiStateToControls() {
     applyUiStateToDomControls(document, appState.ui);
+  }
+
+  function applyRestoredPersistentState(restoredState) {
+    appState.runtime = createRecipeRuntimeState(restoredState);
+    appState.ui = {
+      ...createDefaultUiState(),
+      ...(restoredState.ui || {}),
+    };
+
+    recomputeGroceryState(appState.runtime, appState.recipes);
+    applyUiStateToControls();
+    syncRecipeControlsPanel();
+    syncGroceryControlsPanel();
+    renderer.renderGroceryList();
+    refreshRecipeListFilter();
+    mobileViewController.setMobileView(appState.ui.mobileView, { skipSave: true });
+    savePersistentState(appState);
   }
 
   function isCompactControlsLayout() {
@@ -552,6 +571,17 @@ function createRecipeBookApp() {
     attachFilterControls();
     attachClearGroceryDialog();
     attachManualGroceryForm();
+    createBackupController({
+      document,
+      getState: () => {
+        syncUiStateFromControls();
+        return appState;
+      },
+      logger,
+      onRestore: applyRestoredPersistentState,
+      window,
+    }).attach();
+    createOfflineController({ document, logger, navigator, window }).attach();
     mobileViewController.attach();
     attachRecipeSearch();
     attachCookingModeControls({ document, renderer, window });

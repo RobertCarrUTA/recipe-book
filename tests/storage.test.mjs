@@ -1,8 +1,12 @@
 import assert from "node:assert/strict";
 
 import {
+  backupAppId,
+  backupSchemaVersion,
+  createPersistentStateBackup,
   currentStorageVersion,
   migratePersistentState,
+  normalizePersistentStateBackup,
   restorePersistentState,
   savePersistentState,
   storageKeys,
@@ -98,4 +102,81 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   assert.equal(storage.getItem(storageKeys.recipeControlsCollapsed), "1");
   assert.equal(storage.getItem(storageKeys.showSelectedRecipesOnly), "1");
   assert.equal(storage.getItem(storageKeys.skipClearGroceryConfirmation), "1");
+});
+
+test("createPersistentStateBackup exports portable runtime and ui state", () => {
+  const backup = createPersistentStateBackup(
+    {
+      runtime: {
+        favoriteRecipeIds: { chili: true, soup: false },
+        groceryCheckedByKey: { beans: true },
+        manualGroceryItemsById: {
+          manual1: { id: "manual1", name: " Paper towels ", note: " 2 rolls " },
+          ignored: { id: "ignored", name: " " },
+        },
+        recipeMultipliersById: { chili: 2, soup: 1 },
+        selectedRecipeIds: { chili: true },
+      },
+      ui: {
+        collapsedGroceryGroups: { Produce: true, Dairy: false },
+        filters: { status: ["tried", "tried", ""], empty: [] },
+        groupItems: true,
+        mobileView: "grocery",
+        recipeSearch: " chili ",
+        showSelectedRecipesOnly: true,
+      },
+    },
+    { exportedAt: "2026-06-26T12:00:00.000Z" }
+  );
+
+  assert.equal(backup.app, backupAppId);
+  assert.equal(backup.schemaVersion, backupSchemaVersion);
+  assert.equal(backup.storageVersion, currentStorageVersion);
+  assert.equal(backup.exportedAt, "2026-06-26T12:00:00.000Z");
+  assert.deepEqual(backup.data.favoriteRecipeIds, { chili: true });
+  assert.deepEqual(backup.data.manualGroceryItemsById, {
+    manual1: { id: "manual1", name: "Paper towels", note: "2 rolls" },
+  });
+  assert.deepEqual(backup.data.recipeMultipliersById, { chili: 2 });
+  assert.deepEqual(backup.data.ui.collapsedGroceryGroups, { Produce: true });
+  assert.deepEqual(backup.data.ui.filters, { status: ["tried"] });
+  assert.equal(backup.data.ui.mobileView, "grocery");
+});
+
+test("normalizePersistentStateBackup rejects incompatible files", () => {
+  assert.throws(() => normalizePersistentStateBackup(null), /not a recipe book backup/);
+  assert.throws(
+    () => normalizePersistentStateBackup({ app: "other", schemaVersion: backupSchemaVersion }),
+    /not compatible/
+  );
+});
+
+test("normalizePersistentStateBackup returns safe restored state", () => {
+  const restored = normalizePersistentStateBackup({
+    app: backupAppId,
+    schemaVersion: backupSchemaVersion,
+    data: {
+      favoriteRecipeIds: { chili: true, soup: 0 },
+      groceryCheckedByKey: { beans: true },
+      manualGroceryItemsById: { manual1: { id: "manual1", name: "Dish soap" } },
+      recipeMultipliersById: { chili: 3, soup: "bad" },
+      selectedRecipeIds: { chili: true },
+      ui: {
+        filters: { difficulty: ["easy", ""] },
+        hideCheckedGroceryItems: true,
+        mobileView: "bad",
+        recipeSearch: "beans",
+      },
+    },
+  });
+
+  assert.deepEqual(restored.favoriteRecipeIds, { chili: true });
+  assert.deepEqual(restored.groceryCheckedByKey, { beans: true });
+  assert.deepEqual(restored.manualGroceryItemsById, { manual1: { id: "manual1", name: "Dish soap" } });
+  assert.deepEqual(restored.recipeMultipliersById, { chili: 3 });
+  assert.deepEqual(restored.selectedRecipeIds, { chili: true });
+  assert.deepEqual(restored.ui.filters, { difficulty: ["easy"] });
+  assert.equal(restored.ui.hideCheckedGroceryItems, true);
+  assert.equal(restored.ui.mobileView, "recipes");
+  assert.equal(restored.ui.recipeSearch, "beans");
 });
