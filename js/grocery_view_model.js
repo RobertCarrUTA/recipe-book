@@ -1,3 +1,8 @@
+import {
+  DEFAULT_RECIPE_MULTIPLIER,
+  formatRecipeMultiplier,
+  normalizeRecipeMultiplier,
+} from "./recipe_multiplier.js";
 import { formatTotalsForKey } from "./units.js";
 
 export function formatCount(count, singular, plural) {
@@ -14,15 +19,25 @@ export function getSortedGrocerySourceNames(sources) {
 }
 
 export function formatGrocerySourceSummary(sources, selectedRecipeCount) {
-  if (!Array.isArray(sources) || sources.length === 0 || selectedRecipeCount <= 1) return "";
+  if (!Array.isArray(sources) || sources.length === 0) return "";
 
   const sourceNames = getSortedGrocerySourceNames(sources);
+  const sortedSources = getSortedGrocerySources(sources);
+  const scaledSource = sortedSources.find((source) => isScaledSource(source));
   if (!sourceNames.length) return "";
+  if (selectedRecipeCount <= 1 && !scaledSource) return "";
   if (sourceNames.length === 1) {
-    return selectedRecipeCount > 8 ? "From 1 recipe" : `From ${sourceNames[0]}`;
+    const multiplierText = scaledSource ? ` ${formatRecipeMultiplier(scaledSource.multiplier)}` : "";
+    if (selectedRecipeCount <= 1) return `From ${sourceNames[0]}${multiplierText}`;
+    return selectedRecipeCount > 8 ? `From 1 recipe${multiplierText}` : `From ${sourceNames[0]}${multiplierText}`;
   }
 
   return `From ${formatCount(sourceNames.length, "recipe", "recipes")}`;
+}
+
+function isScaledSource(source) {
+  const multiplier = normalizeRecipeMultiplier(source?.multiplier);
+  return Math.abs(multiplier - DEFAULT_RECIPE_MULTIPLIER) > 1e-9;
 }
 
 function sourceHasNote(source, note) {
@@ -84,7 +99,8 @@ export function getGrocerySourceDetail(source, options = {}) {
 
   const notes = getSourceDetailNotes(source.notes);
   const totalsText = source.totals ? formatTotalsForKey(source.totals, options) : "";
-  const notesText = notes.join(", ");
+  const multiplierText = isScaledSource(source) ? formatRecipeMultiplier(source.multiplier) : "";
+  const notesText = [...notes, multiplierText].filter(Boolean).join(", ");
   let metaText = "";
 
   if (totalsText && notesText) metaText = `${totalsText} (${notesText})`;

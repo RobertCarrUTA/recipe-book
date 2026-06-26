@@ -24,12 +24,23 @@ test("restorePersistentState returns safe defaults when storage is unavailable",
   assert.deepEqual(restored.selectedRecipeIds, {});
   assert.deepEqual(restored.groceryCheckedByKey, {});
   assert.deepEqual(restored.manualGroceryItemsById, {});
+  assert.deepEqual(restored.recipeMultipliersById, {});
   assert.deepEqual(restored.ui.collapsedGroceryGroups, {});
   assert.equal(restored.ui.hideCheckedGroceryItems, false);
   assert.equal(restored.ui.groceryControlsCollapsed, false);
   assert.equal(restored.ui.mobileView, "recipes");
   assert.equal(restored.ui.recipeControlsCollapsed, false);
   assert.equal(restored.ui.skipClearGroceryConfirmation, false);
+});
+
+test("restorePersistentState reads safe recipe multipliers", () => {
+  const storage = createMemoryStorage({
+    [storageKeys.recipeMultipliers]: JSON.stringify({ chili: 2, soup: "bad", stew: 0.5 }),
+  });
+
+  const restored = restorePersistentState(storage);
+
+  assert.deepEqual(restored.recipeMultipliersById, { chili: 2, stew: 0.5 });
 });
 
 test("migratePersistentState promotes legacy selected recipes", () => {
@@ -52,6 +63,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
         grocery: { totalsByKey: {}, notesByKey: {}, sourcesByKey: {} },
         groceryCheckedByKey: { beans: true },
         manualGroceryItemsById: { "manual-1": { id: "manual-1", name: "Paper towels" } },
+        recipeMultipliersById: { chili: 2 },
         selectedRecipeIds: { chili: true },
       },
       ui: {
@@ -78,6 +90,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.manualGroceryItems)), {
     "manual-1": { id: "manual-1", name: "Paper towels" },
   });
+  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.recipeMultipliers)), { chili: 2 });
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.collapsedGroceryGroups)), { Produce: true });
   assert.equal(storage.getItem(storageKeys.groceryControlsCollapsed), "1");
   assert.equal(storage.getItem(storageKeys.hideCheckedGroceryItems), "1");

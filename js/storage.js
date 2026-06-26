@@ -1,9 +1,12 @@
+import { normalizeRecipeMultiplierRecord } from "./recipe_multiplier.js";
+
 export const storageKeys = Object.freeze({
   version: "offline_recipebook_storage_version",
   groceryState: "offline_recipebook_grocery_state_v1",
   groceryChecked: "offline_recipebook_grocery_checked_v1",
   manualGroceryItems: "offline_recipebook_manual_grocery_items_v1",
   favoriteRecipes: "offline_recipebook_favorite_recipes_v1",
+  recipeMultipliers: "offline_recipebook_recipe_multipliers_v1",
   selectedRecipes: "offline_recipebook_selected_recipes_v1",
   collapsedGroceryGroups: "offline_recipebook_collapsed_grocery_groups_v1",
   skipClearGroceryConfirmation: "offline_recipebook_skip_clear_grocery_confirmation_v1",
@@ -19,7 +22,7 @@ export const storageKeys = Object.freeze({
   filters: "offline_recipebook_filters_v1",
 });
 
-export const currentStorageVersion = 2;
+export const currentStorageVersion = 3;
 
 function isPlainObject(value) {
   return Boolean(value && typeof value === "object" && !Array.isArray(value));
@@ -157,6 +160,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
       favoriteRecipeIds: {},
       groceryCheckedByKey: {},
       manualGroceryItemsById: {},
+      recipeMultipliersById: {},
       selectedRecipeIds: {},
       ui,
     };
@@ -166,6 +170,10 @@ export function restorePersistentState(storage = globalThis.localStorage) {
 
   const savedGroceryState = readObject(storage, storageKeys.groceryState);
   const selectedFromLegacyState = truthyRecord(savedGroceryState.selectedRecipeIds);
+  const recipeMultipliers = normalizeRecipeMultiplierRecord({
+    ...(savedGroceryState.recipeMultipliersById || {}),
+    ...readObject(storage, storageKeys.recipeMultipliers),
+  });
 
   ui.filters = readObject(storage, storageKeys.filters);
   ui.collapsedGroceryGroups = truthyRecord(readObject(storage, storageKeys.collapsedGroceryGroups));
@@ -184,6 +192,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
     favoriteRecipeIds: truthyRecord(readObject(storage, storageKeys.favoriteRecipes)),
     groceryCheckedByKey: truthyRecord(readObject(storage, storageKeys.groceryChecked)),
     manualGroceryItemsById: readManualGroceryItems(storage),
+    recipeMultipliersById: recipeMultipliers,
     selectedRecipeIds: {
       ...selectedFromLegacyState,
       ...truthyRecord(readObject(storage, storageKeys.selectedRecipes)),
@@ -206,8 +215,10 @@ export function savePersistentState(state, storage = globalThis.localStorage) {
       totalsByKey: grocery.totalsByKey || {},
       notesByKey: grocery.notesByKey || {},
       sourcesByKey: grocery.sourcesByKey || {},
+      recipeMultipliersById: runtime.recipeMultipliersById || {},
     })),
     write(storage, storageKeys.selectedRecipes, JSON.stringify(runtime.selectedRecipeIds || {})),
+    write(storage, storageKeys.recipeMultipliers, JSON.stringify(runtime.recipeMultipliersById || {})),
     write(storage, storageKeys.groceryChecked, JSON.stringify(runtime.groceryCheckedByKey || {})),
     write(storage, storageKeys.manualGroceryItems, JSON.stringify(runtime.manualGroceryItemsById || {})),
     write(storage, storageKeys.favoriteRecipes, JSON.stringify(runtime.favoriteRecipeIds || {})),
@@ -234,5 +245,6 @@ export function clearGroceryPersistence(storage = globalThis.localStorage) {
   remove(storage, storageKeys.groceryState);
   remove(storage, storageKeys.groceryChecked);
   remove(storage, storageKeys.manualGroceryItems);
+  remove(storage, storageKeys.recipeMultipliers);
   remove(storage, storageKeys.selectedRecipes);
 }

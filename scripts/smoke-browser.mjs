@@ -293,6 +293,33 @@ const browserChecks = [
     },
   },
   {
+    name: "recipe grocery quantity controls scale grocery totals",
+    async run(page) {
+      await openApp(page, { debug: true });
+      const recipeIndex = await page.evaluate(() =>
+        window.recipeBookDebug
+          .getState()
+          .recipes.findIndex((recipe) => recipe.title === "Dutch Oven Chicken Pot Pie")
+      );
+
+      assert.ok(recipeIndex >= 0, "test data should include Dutch Oven Chicken Pot Pie");
+      await page.fill("#recipeSearch", "Dutch Oven Chicken Pot Pie");
+      await page.waitForTimeout(250);
+      const recipe = page.locator(`.recipe[data-recipe-index="${recipeIndex}"]`);
+      await recipe.waitFor({ timeout: 5000 });
+      await recipe.locator(".accordion-header").click();
+      await recipe.locator(".recipe-add-toggle input").check();
+
+      await recipe.locator(".recipe-scale-input").fill("2");
+      await recipe.locator(".recipe-scale-input").press("Enter");
+
+      await expectLocatorText(recipe.locator(".recipe-selected-badge"), /in list x2/i);
+      const potatoItem = page.locator("#groceryList li").filter({ hasText: /^potato - 2 potatoes/ }).first();
+      await potatoItem.waitFor({ timeout: 5000 });
+      await expectLocatorText(potatoItem, /From Dutch Oven Chicken Pot Pie x2/);
+    },
+  },
+  {
     name: "cooking mode opens, advances, and closes",
     async run(page) {
       await openApp(page, { debug: true });

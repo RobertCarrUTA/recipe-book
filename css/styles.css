@@ -786,7 +786,8 @@ h2 {
 
 .recipe-actions>button,
 .recipe-actions>a,
-.recipe-actions>label {
+.recipe-actions>label,
+.recipe-actions>.recipe-scale-control {
   min-width: 0;
 }
 
@@ -816,6 +817,75 @@ h2 {
 
 .recipe-add-toggle input {
   accent-color: var(--accent);
+}
+
+.recipe-scale-control {
+  display: inline-grid;
+  grid-template-columns: auto 34px 64px 34px;
+  align-items: center;
+  min-height: 42px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+}
+
+.recipe-scale-control[hidden] {
+  display: none;
+}
+
+.recipe-scale-label {
+  padding: 0 9px 0 10px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.recipe-scale-step {
+  width: 34px;
+  min-width: 34px;
+  min-height: 40px;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--accent-strong);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.recipe-scale-step:hover {
+  background: rgba(122, 199, 163, 0.1);
+  color: var(--fg);
+}
+
+.recipe-scale-input {
+  width: 64px;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0 6px;
+  border: 0;
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+  background: rgba(15, 19, 23, 0.86);
+  color: var(--fg);
+  font-weight: 850;
+  text-align: center;
+}
+
+.recipe-scale-input::-webkit-outer-spin-button,
+.recipe-scale-input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.recipe-scale-input[type="number"] {
+  appearance: textfield;
 }
 
 .recipe-action-link {
@@ -1949,7 +2019,8 @@ li {
 
   .recipe-actions>button,
   .recipe-actions>a,
-  .recipe-actions>label {
+  .recipe-actions>label,
+  .recipe-actions>.recipe-scale-control {
     width: 100%;
   }
 
@@ -2118,6 +2189,14 @@ li {
 
   .recipe-header-badges {
     justify-content: flex-start;
+  }
+
+  .recipe-scale-control {
+    grid-template-columns: auto 36px minmax(0, 1fr) 36px;
+  }
+
+  .recipe-scale-input {
+    width: 100%;
   }
 }
 
