@@ -604,6 +604,9 @@
       "Storage: Best enjoyed immediately, but leftovers can be refrigerated for up to 5 days or frozen for up to 2 months.",
       "Savory Version: Reduce sugar to 1 tablespoon and increase salt to 1/4 teaspoon. Add chives, parsley, sour cream, garlic powder, and black pepper. Top with smoked salmon, arugula, or pickled onions."
     ],
+    "personalNotes": [
+      "These are good and easy to make. I like to add lemon juice on top of the powdered sugar and fold the dutch baby over like they do it at Ol' South Pancake House. I would add enough powdered sugar and warmed up fresh squeezed lemon juice onto the Dutch baby, but just enough to make the sugar/juice mix a powdery liquid mix. Doing that with cut up strawberries, blackberries, and blueberries is really good."
+    ],
     "prepTime": "20 minutes",
     "rating": {
       "count": 433,
@@ -611,11 +614,13 @@
     },
     "servings": "4",
     "tags": {
+      "difficulty": "easy",
       "equipment": [
         "oven-safe-skillet",
         "blender"
       ],
-      "status": "not-tried"
+      "rating": "great",
+      "status": "tried"
     },
     "title": "Dutch Baby Pancake",
     "totalTime": "45 minutes"
@@ -1556,6 +1561,9 @@
       "vitaminA": "3503 IU",
       "vitaminC": "8 mg"
     },
+    "personalNotes": [
+      "Honestly it wasn't that great. I used a enameled cast iron and I think it was too hot. Also it will be a bit of work to clean the cast iron after cooking if the pan is too hot and food/sauce on the surface burns. I would cook it again but it was just okay. The leftovers were better with rice. I may have liked it with a little more cheese. Also it took me 2 hours to prep and cook this for some reason."
+    ],
     "prepTime": "10 minutes",
     "rating": {
       "count": 19,
@@ -1566,7 +1574,8 @@
       "equipment": [
         "skillet"
       ],
-      "status": "not-tried"
+      "rating": "okay",
+      "status": "tried"
     },
     "title": "Chicken Florentine",
     "totalTime": "40 minutes"
@@ -8838,7 +8847,9 @@
       "vitaminA": "715 IU",
       "vitaminC": "19 mg"
     },
-    "personalNotes": [],
+    "personalNotes": [
+      "This was okay, I think the pan was too hot when cooking. I would try it again."
+    ],
     "prepTime": "10 minutes",
     "rating": {
       "count": 24,
@@ -8849,8 +8860,8 @@
       "equipment": [
         "stovetop"
       ],
-      "rating": null,
-      "status": "not-tried"
+      "rating": "okay",
+      "status": "tried"
     },
     "title": "Chicken Piccata",
     "totalTime": "25 minutes"
@@ -9380,5 +9391,134 @@
     },
     "title": "Easy Breakfast Potatoes",
     "totalTime": "35 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "35 minutes",
+    "description": "A reverse-seared thick-cut Wagyu-style ribeye using a measured salt dry brine, low oven cook, final dry pat, and hard stainless steel pan sear with an optional brief garlic-thyme butter baste.",
+    "equipment": [
+      "Stainless steel pan",
+      "Baking sheet",
+      "Paper towels",
+      "Tongs",
+      "Instant-read thermometer",
+      "Wire rack"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "thick-cut ribeye steak",
+        "quantity": 1,
+        "unit": "lb"
+      },
+      {
+        "item": "kosher salt",
+        "quantity": 3.4,
+        "unit": "g"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "avocado oil",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "garlic clove",
+        "quantity": 2
+      },
+      {
+        "item": "fresh thyme sprig",
+        "quantity": 2
+      },
+      {
+        "item": "flaky salt",
+        "quantity": 1,
+        "unit": "pinch"
+      }
+    ],
+    "id": "oven-reverse-seared-wagyu-ribeye",
+    "ingredients": [
+      "1 thick-cut ribeye steak, about 1 pound and at least 1 1/2 inches thick",
+      "3.4 grams kosher salt, about 0.75% of the steak weight",
+      "1/2 teaspoon black pepper, freshly ground, added after searing or lightly before oven step",
+      "1 to 2 teaspoons avocado oil, or another neutral high-heat oil",
+      "1 tablespoon unsalted butter, optional",
+      "2 garlic cloves, smashed",
+      "2 fresh thyme sprigs, optional",
+      "1 pinch flaky salt, optional, for finishing"
+    ],
+    "instructions": [
+      "Thaw steak fully in the refrigerator if frozen.",
+      "Weigh the steak in grams if possible.",
+      "Calculate kosher salt as 0.75% of the steak weight. Use the formula: steak weight in grams multiplied by 0.0075 equals salt in grams.",
+      "For a 1 pound steak, use about 3.4 grams kosher salt total for the top, bottom, edges, and fat cap.",
+      "Remove steak from packaging and pat very dry on all sides with paper towels.",
+      "Season steak evenly on all sides with the measured kosher salt only.",
+      "Place a wire rack over a baking sheet or plate, then place the steak on the wire rack uncovered.",
+      "Refrigerate uncovered for 4 to 8 hours, or up to 12 hours if using the conservative 0.75% salt amount. This dry-brines the steak and dries the surface for a better crust.",
+      "Remove steak from the refrigerator 30 to 45 minutes before cooking.",
+      "Pat steak dry again if any surface moisture appears.",
+      "Preheat oven to 225°F.",
+      "Place steak on a wire rack over a baking sheet and cook in the oven until the center reaches 115°F to 118°F for classic medium-rare, or 118°F to 120°F for medium-rare leaning medium.",
+      "Begin checking the internal temperature around 20 minutes using an instant-read thermometer inserted into the center from the side. Continue checking every 5 minutes, then every 2 to 3 minutes once close to the target temperature.",
+      "Remove steak from oven and rest for 5 to 10 minutes on a wire rack or cutting board while preheating the stainless steel pan.",
+      "Preheat a stainless steel pan on induction level 6.5 to 7 until a few drops of water bead and glide across the pan.",
+      "Just before searing, pat the steak very dry on all sides again.",
+      "Wipe out any water from the pan, add avocado oil, and heat until shimmering.",
+      "If the steak has a pronounced fat cap, hold it with tongs and render the fat cap for 30 to 60 seconds first.",
+      "Place steak in the pan and sear the broad sides for 45 to 75 seconds per side, pressing gently to ensure good pan contact.",
+      "Sear any remaining edges using tongs until browned.",
+      "Reduce heat slightly, add butter, smashed garlic, and thyme if using, then baste briefly for 20 to 30 seconds so the butter flavors the crust without overwhelming the beef.",
+      "Remove steak from pan and rest for 5 minutes on a wire rack or cutting board.",
+      "Slice against the grain.",
+      "Finish with flaky salt and black pepper if desired."
+    ],
+    "link": null,
+    "notes": [
+      "Best target for this steak is medium-rare leaning medium, around 132°F to 137°F final internal temperature.",
+      "This method works best with a steak at least 1 1/2 inches thick, and even better around 1 3/4 to 2 inches thick.",
+      "Pull from the oven around 115°F to 120°F, then use the hot pan sear and rest to finish around 132°F to 137°F.",
+      "For a fattier Wagyu-style ribeye, avoid rare because the fat may stay waxy instead of softening and rendering.",
+      "Use 0.75% salt by steak weight for a conservative dry brine. Formula: steak weight in grams multiplied by 0.0075 equals salt in grams.",
+      "For this 1 pound steak, 0.75% salt is about 3.4 grams total.",
+      "A lighter 0.5% salt level would be about 2.27 grams for this steak. A normal 1.0% level would be about 4.54 grams.",
+      "If using volume instead of weight, 3.4 grams is roughly 1 heaping teaspoon Diamond Crystal kosher salt or about 2/3 to 3/4 teaspoon Morton kosher salt.",
+      "Salt before the refrigerator dry brine. Add black pepper after searing or lightly before the oven step because pepper can burn during a hard sear.",
+      "The wire rack matters because it lets air circulate around the steak. A plate traps moisture underneath and keeps the bottom wet.",
+      "The uncovered refrigerator step dries the surface. A drier surface browns faster and forms a better crust.",
+      "The final dry pat before searing is important because moisture from the oven step can soften the surface and slow browning.",
+      "The salt dry brine seasons the steak more deeply. Salt first draws out a little moisture, dissolves, then gets pulled back into the meat over time.",
+      "For best texture, dry brine this steak for 4 to 8 hours. Up to 12 hours is reasonable with the conservative 0.75% salt amount.",
+      "Avoid pushing the dry brine much past 12 hours for this steak unless using a very light salt level, because longer or heavier dry brines can make the outer texture seem slightly cured.",
+      "If short on time, even 1 hour uncovered in the fridge helps. If there is no time, salt right before cooking and pat the steak extremely dry.",
+      "Do not braise this steak. Use the oven only for the low-temperature reverse sear step, then finish in the stainless steel pan.",
+      "For the cleanest beef flavor, skip the butter baste or keep it very brief. For a steakhouse finish, use the butter, garlic, and thyme for only the last 20 to 30 seconds.",
+      "A laser thermometer is less reliable on shiny stainless steel; the water bead test and steak internal temperature are more useful.",
+      "If the pan smokes violently before the steak goes in, lower the induction level slightly."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "10 minutes",
+    "rating": null,
+    "servings": "1",
+    "tags": {
+      "equipment": [
+        "oven",
+        "stainless steel pan",
+        "stovetop"
+      ],
+      "rating": null,
+      "status": "not-tried"
+    },
+    "title": "Reverse-Seared Wagyu Ribeye",
+    "totalTime": "45 minutes plus 4 to 8 hours dry-brine time"
   }
 ]
