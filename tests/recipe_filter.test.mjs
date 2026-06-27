@@ -83,6 +83,10 @@ test("recipeSearchTextMatches supports out-of-order search terms", () => {
   assert.equal(recipeSearchTextMatches(searchText, "dutch cake"), false);
 });
 
+test("recipeSearchTextMatches accepts raw search text", () => {
+  assert.equal(recipeSearchTextMatches("Dutch Oven Chili with Beans", "oven beans"), true);
+});
+
 test("getMatchingRecipeIndexes filters recipe data without rendered DOM", () => {
   const recipes = [
     recipe,
@@ -124,4 +128,33 @@ test("getMatchingRecipeIndexes filters recipe data without rendered DOM", () => 
     }),
     [0]
   );
+});
+
+test("getMatchingRecipeIndexes skips runtime state checks when visibility toggles are off", () => {
+  let favoriteChecks = 0;
+  let selectedChecks = 0;
+
+  assert.deepEqual(
+    getMatchingRecipeIndexes({
+      filterText: "",
+      isFavorite: () => {
+        favoriteChecks += 1;
+        return false;
+      },
+      isSelected: () => {
+        selectedChecks += 1;
+        return false;
+      },
+      recipes: [recipe],
+      searchTexts: [buildRecipeSearchText(recipe)],
+      searchTextsAreNormalized: true,
+      selectedFilters: {},
+      showFavoriteOnly: false,
+      showSelectedOnly: false,
+    }),
+    [0]
+  );
+
+  assert.equal(favoriteChecks, 0);
+  assert.equal(selectedChecks, 0);
 });

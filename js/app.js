@@ -168,6 +168,20 @@ function createRecipeBookApp() {
     }, 0);
   }
 
+  function countActiveDiscoveryFilters({
+    filterText,
+    selected,
+    showFavoriteOnly,
+    showSelectedOnly,
+  }) {
+    return (
+      countSelectedRecipeFilters(selected) +
+      (normalizeForSearch(filterText) ? 1 : 0) +
+      (showFavoriteOnly ? 1 : 0) +
+      (showSelectedOnly ? 1 : 0)
+    );
+  }
+
   function isRecipeListRuntimeSorted() {
     return appState.ui.recipeSort === recipeSortModes.favoritesFirst ||
       appState.ui.recipeSort === recipeSortModes.selectedFirst;
@@ -191,22 +205,43 @@ function createRecipeBookApp() {
     renderer.syncMealPlanIndicators();
   }
 
-  function syncRecipeFilterControls(selected) {
+  function syncRecipeFilterControls({
+    filterText,
+    selected,
+    showFavoriteOnly,
+    showSelectedOnly,
+  }) {
     const filterToggle = byId("toggleFilters");
     const clearFiltersButton = byId("clearFilters");
-    const activeFilterCount = countSelectedRecipeFilters(selected);
-    const filterText = activeFilterCount ? `Filters (${activeFilterCount})` : "Filters";
+    const recipeSearch = byId("recipeSearch");
+    const recipeSearchWrap = recipeSearch ? recipeSearch.closest(".recipe-search") : null;
+    const activeDiscoveryFilterCount = countActiveDiscoveryFilters({
+      filterText,
+      selected,
+      showFavoriteOnly,
+      showSelectedOnly,
+    });
+    const filterToggleText = activeDiscoveryFilterCount
+      ? `Filters (${activeDiscoveryFilterCount})`
+      : "Filters";
 
     if (filterToggle) {
-      filterToggle.textContent = filterText;
-      filterToggle.classList.toggle("has-active-filters", activeFilterCount > 0);
+      filterToggle.textContent = filterToggleText;
+      filterToggle.classList.toggle("has-active-filters", activeDiscoveryFilterCount > 0);
       filterToggle.setAttribute(
         "aria-label",
-        activeFilterCount ? `${activeFilterCount} recipe filters active` : "Show recipe filters"
+        activeDiscoveryFilterCount
+          ? `${activeDiscoveryFilterCount} recipe filters active`
+          : "Show recipe filters"
       );
     }
 
-    if (clearFiltersButton) clearFiltersButton.disabled = activeFilterCount === 0;
+    if (clearFiltersButton) clearFiltersButton.disabled = activeDiscoveryFilterCount === 0;
+
+    if (recipeSearchWrap) {
+      recipeSearchWrap.classList.toggle("has-active-discovery-filters", activeDiscoveryFilterCount > 0);
+      recipeSearchWrap.classList.toggle("has-search-text", Boolean(normalizeForSearch(filterText)));
+    }
   }
 
   function setStateToolsStatus(message, options = {}) {
@@ -271,6 +306,7 @@ function createRecipeBookApp() {
       isSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
       recipes: appState.recipes,
       searchTexts: appState.recipeSearchTexts,
+      searchTextsAreNormalized: true,
       selectedFilters: selected,
       showFavoriteOnly,
       showSelectedOnly,
@@ -284,7 +320,12 @@ function createRecipeBookApp() {
 
     renderFilteredRecipes(sortedRecipeIndexes);
     renderer.syncRecipeFilterTagStyles(selected);
-    syncRecipeFilterControls(selected);
+    syncRecipeFilterControls({
+      filterText,
+      selected,
+      showFavoriteOnly,
+      showSelectedOnly,
+    });
     updateRecipeSearchMeta(matchingRecipeIndexes.length);
 
     const noResults = byId("recipeNoResults");
@@ -926,14 +967,7 @@ function createRecipeBookApp() {
     });
 
     if (clearFiltersButton) {
-      clearFiltersButton.addEventListener("click", () => {
-        document.querySelectorAll(".recipe-filters input").forEach((cb) => {
-          cb.checked = false;
-        });
-        appState.ui.filters = {};
-        refreshRecipeListFilter();
-        saveAppState();
-      });
+      clearFiltersButton.addEventListener("click", () => clearRecipeDiscoveryFilters());
     }
 
     if (clearDiscoveryButton) clearDiscoveryButton.addEventListener("click", clearRecipeDiscoveryFilters);
@@ -1041,12 +1075,10 @@ function createRecipeBookApp() {
       getRuntimeState: () => appState.runtime,
       getUiState: () => appState.ui,
       actions: {
-        buildRecipeSearchText,
         getRecipeKey,
         getRecipeMultiplier: (recipe, index) => getRecipeMultiplier(appState.runtime, recipe, index),
         getRecipePlannedDayKeys: (recipe, index) =>
           getRecipePlannedDayKeys(appState.mealPlan, getRecipeKey(recipe, index)),
-        getRecipeSearchText: (_recipe, index) => appState.recipeSearchTexts[index] || "",
         isRecipeFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
         isManualGroceryItem: (canonicalKey) => isManualGroceryItemKey(canonicalKey),
         isRecipeSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),

@@ -504,10 +504,6 @@ export function createRecipeRenderer({
     wrap.classList.toggle("recipe-favorite", actions.isRecipeFavorite(recipe, recipeIndex));
     wrap.dataset.recipeIndex = String(recipeIndex);
     wrap.dataset.recipeId = recipeKey;
-    wrap.dataset.searchText =
-      typeof actions.getRecipeSearchText === "function"
-        ? actions.getRecipeSearchText(recipe, recipeIndex)
-        : actions.buildRecipeSearchText(recipe);
 
     header.className = "accordion-header";
     header.type = "button";

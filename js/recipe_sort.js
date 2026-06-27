@@ -128,6 +128,15 @@ function compareIndex(leftIndex, rightIndex) {
   return leftIndex - rightIndex;
 }
 
+function createIndexCache(computeValue) {
+  const cache = new Map();
+
+  return (index) => {
+    if (!cache.has(index)) cache.set(index, computeValue(index));
+    return cache.get(index);
+  };
+}
+
 export function sortRecipeIndexes(recipeIndexes, recipes, options = {}) {
   const indexes = Array.isArray(recipeIndexes) ? recipeIndexes.slice() : [];
   const items = Array.isArray(recipes) ? recipes : [];
@@ -137,48 +146,53 @@ export function sortRecipeIndexes(recipeIndexes, recipes, options = {}) {
 
   if (sortMode === recipeSortModes.default) return indexes;
 
-  return indexes.sort((leftIndex, rightIndex) => {
-    const leftRecipe = items[leftIndex];
-    const rightRecipe = items[rightIndex];
+  const recipeAt = (index) => items[index];
+  const difficultyScoreAt = createIndexCache((index) => getRecipeDifficultyScore(recipeAt(index)));
+  const durationMinutesAt = createIndexCache((index) => getRecipeDurationMinutes(recipeAt(index)));
+  const favoriteAt = createIndexCache((index) => isFavorite(recipeAt(index), index));
+  const ratingScoreAt = createIndexCache((index) => getRecipeRatingScore(recipeAt(index)));
+  const reviewCountAt = createIndexCache((index) => getRecipeReviewCount(recipeAt(index)));
+  const selectedAt = createIndexCache((index) => isSelected(recipeAt(index), index));
 
+  return indexes.sort((leftIndex, rightIndex) => {
     if (sortMode === recipeSortModes.favoritesFirst) {
       return (
-        compareBooleanDescending(isFavorite(leftRecipe, leftIndex), isFavorite(rightRecipe, rightIndex)) ||
-        compareBooleanDescending(isSelected(leftRecipe, leftIndex), isSelected(rightRecipe, rightIndex)) ||
+        compareBooleanDescending(favoriteAt(leftIndex), favoriteAt(rightIndex)) ||
+        compareBooleanDescending(selectedAt(leftIndex), selectedAt(rightIndex)) ||
         compareIndex(leftIndex, rightIndex)
       );
     }
 
     if (sortMode === recipeSortModes.selectedFirst) {
       return (
-        compareBooleanDescending(isSelected(leftRecipe, leftIndex), isSelected(rightRecipe, rightIndex)) ||
-        compareBooleanDescending(isFavorite(leftRecipe, leftIndex), isFavorite(rightRecipe, rightIndex)) ||
+        compareBooleanDescending(selectedAt(leftIndex), selectedAt(rightIndex)) ||
+        compareBooleanDescending(favoriteAt(leftIndex), favoriteAt(rightIndex)) ||
         compareIndex(leftIndex, rightIndex)
       );
     }
 
     if (sortMode === recipeSortModes.fastest) {
       return (
-        compareNullableAscending(getRecipeDurationMinutes(leftRecipe), getRecipeDurationMinutes(rightRecipe)) ||
-        compareNullableDescending(getRecipeRatingScore(leftRecipe), getRecipeRatingScore(rightRecipe)) ||
+        compareNullableAscending(durationMinutesAt(leftIndex), durationMinutesAt(rightIndex)) ||
+        compareNullableDescending(ratingScoreAt(leftIndex), ratingScoreAt(rightIndex)) ||
         compareIndex(leftIndex, rightIndex)
       );
     }
 
     if (sortMode === recipeSortModes.highestRated) {
       return (
-        compareNullableDescending(getRecipeRatingScore(leftRecipe), getRecipeRatingScore(rightRecipe)) ||
-        getRecipeReviewCount(rightRecipe) - getRecipeReviewCount(leftRecipe) ||
-        compareNullableAscending(getRecipeDurationMinutes(leftRecipe), getRecipeDurationMinutes(rightRecipe)) ||
+        compareNullableDescending(ratingScoreAt(leftIndex), ratingScoreAt(rightIndex)) ||
+        reviewCountAt(rightIndex) - reviewCountAt(leftIndex) ||
+        compareNullableAscending(durationMinutesAt(leftIndex), durationMinutesAt(rightIndex)) ||
         compareIndex(leftIndex, rightIndex)
       );
     }
 
     if (sortMode === recipeSortModes.easiest) {
       return (
-        compareNullableAscending(getRecipeDifficultyScore(leftRecipe), getRecipeDifficultyScore(rightRecipe)) ||
-        compareNullableAscending(getRecipeDurationMinutes(leftRecipe), getRecipeDurationMinutes(rightRecipe)) ||
-        compareNullableDescending(getRecipeRatingScore(leftRecipe), getRecipeRatingScore(rightRecipe)) ||
+        compareNullableAscending(difficultyScoreAt(leftIndex), difficultyScoreAt(rightIndex)) ||
+        compareNullableAscending(durationMinutesAt(leftIndex), durationMinutesAt(rightIndex)) ||
+        compareNullableDescending(ratingScoreAt(leftIndex), ratingScoreAt(rightIndex)) ||
         compareIndex(leftIndex, rightIndex)
       );
     }
