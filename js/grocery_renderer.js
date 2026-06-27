@@ -105,6 +105,19 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     summary.textContent = parts.join(" - ");
   }
 
+  function syncGroceryGroupCountFromRow(row) {
+    const group = row ? row.closest(".grocery-group") : null;
+    const count = group ? group.querySelector(".grocery-group-count") : null;
+    if (!group || !count) return;
+
+    const checkboxes = Array.from(group.querySelectorAll('li:not(.grocery-group-empty) input[type="checkbox"]'));
+    const checkedCount = checkboxes.filter((checkbox) => checkbox.checked).length;
+
+    count.textContent = checkedCount
+      ? `${checkedCount}/${checkboxes.length} checked`
+      : formatCount(checkboxes.length, "item", "items");
+  }
+
   function renderGrocerySource(content, sources, selectedRecipeCount, canonicalKey) {
     const runtimeState = getRuntimeState();
     const displayName = runtimeState.displayNamesByKey[canonicalKey] || canonicalKey;
@@ -203,7 +216,14 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     li.classList.toggle("checked", cb.checked);
     cb.addEventListener("change", () => {
       actions.onGroceryCheckedChange(canonicalKey, cb.checked);
-      renderGroceryList();
+      if (getUiState().hideCheckedGroceryItems) {
+        renderGroceryList();
+        return;
+      }
+
+      li.classList.toggle("checked", cb.checked);
+      updateGrocerySummary(allKeys);
+      syncGroceryGroupCountFromRow(li);
     });
 
     li.addEventListener("click", (event) => {
@@ -343,6 +363,7 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const entries = [];
 
     container.innerHTML = "";
+    sourceDetailsIdCounter = 0;
     updateGrocerySummary(allKeys);
 
     Array.from(allKeys).forEach((canonicalKey) => {

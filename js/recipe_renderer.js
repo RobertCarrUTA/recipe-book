@@ -122,6 +122,11 @@ export function createRecipeRenderer({
     }
   }
 
+  function syncRecipeAddToggleText(toggle, selected) {
+    const text = toggle ? toggle.querySelector(".recipe-add-toggle-text") : null;
+    if (text) text.textContent = selected ? "Added to grocery list" : "Add to grocery list";
+  }
+
   function createRecipeScaleControl(recipe, recipeIndex) {
     const control = document.createElement("div");
     const label = document.createElement("label");
@@ -284,9 +289,11 @@ export function createRecipeRenderer({
     addToListCheckbox.type = "checkbox";
     addToListCheckbox.dataset.recipeId = actions.getRecipeKey(recipe, recipeIndex);
     addToListCheckbox.checked = actions.isRecipeSelected(recipe, recipeIndex);
+    addToListText.className = "recipe-add-toggle-text";
     addToListText.textContent = "Add to grocery list";
     toggle.appendChild(addToListCheckbox);
     toggle.appendChild(addToListText);
+    syncRecipeAddToggleText(toggle, addToListCheckbox.checked);
     actionsWrap.appendChild(toggle);
     actionsWrap.appendChild(scaleControl);
 
@@ -308,6 +315,7 @@ export function createRecipeRenderer({
       actions.onSelectRecipe(recipe, recipeIndex, addToListCheckbox.checked);
       viewGroceryButton.hidden = !addToListCheckbox.checked;
       syncRecipeScaleControl(scaleControl, recipe, recipeIndex, addToListCheckbox.checked);
+      syncRecipeAddToggleText(toggle, addToListCheckbox.checked);
     });
 
     if (recipe.link) {
@@ -725,6 +733,7 @@ export function createRecipeRenderer({
 
       const checkbox = recipeElement.querySelector('.recipe-add-toggle input[type="checkbox"]');
       if (checkbox) checkbox.checked = isSelected;
+      syncRecipeAddToggleText(recipeElement.querySelector(".recipe-add-toggle"), isSelected);
 
       syncRecipeScaleControl(recipeElement.querySelector(".recipe-scale-control"), recipe, recipeIndex, isSelected);
 
