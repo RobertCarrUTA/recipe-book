@@ -430,6 +430,48 @@ const browserChecks = [
     },
   },
   {
+    name: "single-source grocery labels open their recipe",
+    async run(page) {
+      await openApp(page, { debug: true });
+      const targets = await page.evaluate(() => {
+        const recipes = window.recipeBookDebug.getState().recipes;
+        return ["Dutch Baby Pancake", "Best-Ever Chocolate Chip Cookies"].map((title) => {
+          const index = recipes.findIndex((recipe) => recipe.title === title);
+          return { index, title };
+        });
+      });
+
+      assert.deepEqual(
+        targets.map((target) => target.index >= 0),
+        [true, true],
+        "test data should include recipes for a small grocery list"
+      );
+
+      for (const target of targets) {
+        await page.fill("#recipeSearch", target.title);
+        await page.waitForTimeout(250);
+        const recipe = page.locator(`.recipe[data-recipe-index="${target.index}"]`);
+        await recipe.waitFor({ timeout: 5000 });
+        await recipe.locator(".accordion-header").click();
+        await recipe.locator(".recipe-add-toggle input").check();
+      }
+
+      const milkItem = page.locator("#groceryList li").filter({ hasText: /^whole milk - / }).first();
+      await milkItem.waitFor({ timeout: 5000 });
+      await expectLocatorText(milkItem.locator(".grocery-source-single-link"), /From Dutch Baby Pancake/);
+
+      await page.fill("#recipeSearch", "zzzzzzzz-not-a-recipe");
+      await page.waitForTimeout(250);
+      assert.equal(await visibleRecipeCount(page), 0, "setup search should hide every recipe before source navigation");
+      await milkItem.locator(".grocery-source-single-link").click();
+      assert.equal(await page.locator("#recipeSearch").inputValue(), "");
+
+      const dutchBabyRecipe = page.locator(".recipe").filter({ hasText: "Dutch Baby Pancake" }).first();
+      await dutchBabyRecipe.waitFor({ timeout: 5000 });
+      assert.equal(await dutchBabyRecipe.locator(".accordion-header").getAttribute("aria-expanded"), "true");
+    },
+  },
+  {
     name: "recipe grocery quantity controls scale grocery totals",
     async run(page) {
       await openApp(page, { debug: true });
@@ -698,12 +740,21 @@ const browserChecks = [
         .locator(".grocery-source-link")
         .filter({ hasText: "Dutch Oven Chicken Pot Pie" });
       await scrollLocatorToViewportCenter(mobilePotPieSource);
-      await mobilePotPieSource.click();
+      const groceryScrollBeforeSource = await page.evaluate(() => window.scrollY);
+      await clickLocatorInPlace(mobilePotPieSource);
       await assertVisible(page, "#recipesPanel", true);
       await assertVisible(page, "#groceryPanel", false);
       const mobilePotPieRecipe = page.locator(".recipe").filter({ hasText: "Dutch Oven Chicken Pot Pie" }).first();
       await mobilePotPieRecipe.waitFor({ timeout: 5000 });
       assert.equal(await mobilePotPieRecipe.locator(".accordion-header").getAttribute("aria-expanded"), "true");
+
+      await page.goBack();
+      await assertVisible(page, "#recipesPanel", false);
+      await assertVisible(page, "#groceryPanel", true);
+      await page.waitForFunction(
+        (expectedScrollY) => Math.abs(window.scrollY - expectedScrollY) <= 8,
+        groceryScrollBeforeSource
+      );
 
       await page.locator('.mobile-view-tab[data-view="recipes"]').click();
       await assertVisible(page, "#recipesPanel", true);
@@ -775,6 +826,21 @@ async function assertNoHorizontalOverflow(page, selectors) {
 async function scrollLocatorToViewportCenter(locator) {
   await locator.evaluate((element) => {
     element.scrollIntoView({ block: "center", inline: "nearest" });
+  });
+}
+
+async function clickLocatorInPlace(locator) {
+  await locator.waitFor({ timeout: 5000 });
+  await locator.evaluate((element) => {
+    const PointerEventCtor = window.PointerEvent || window.Event;
+    element.dispatchEvent(
+      new PointerEventCtor("pointerdown", {
+        bubbles: true,
+        cancelable: true,
+        pointerType: "touch",
+      })
+    );
+    element.click();
   });
 }
 

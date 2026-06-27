@@ -84,9 +84,18 @@ test("sortRecipeIndexes ranks favorites and selected recipes first without losin
 });
 
 test("sortRecipeIndexes ranks by rating and difficulty signals", () => {
+  const recipesWithUnrated = [
+    ...recipes,
+    {
+      id: "unrated",
+      title: "No-Rating Snack",
+      totalTime: "5 mins",
+    },
+  ];
+
   assert.deepEqual(
-    sortRecipeIndexes([0, 1, 2, 3], recipes, { sortMode: recipeSortModes.highestRated }),
-    [0, 2, 1, 3]
+    sortRecipeIndexes([0, 1, 2, 3, 4], recipesWithUnrated, { sortMode: recipeSortModes.highestRated }),
+    [0, 2, 1, 3, 4]
   );
   assert.deepEqual(
     sortRecipeIndexes([0, 1, 2, 3], recipes, { sortMode: recipeSortModes.easiest }),

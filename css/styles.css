@@ -98,6 +98,7 @@ select:focus-visible,
 .grocery-list li:focus-visible,
 .grocery-list li:has(input:focus-visible),
 .grocery-source-link:focus-visible,
+.grocery-source-single-link:focus-visible,
 .recipe-action-link:focus-visible,
 .recipe-tag:focus-visible,
 .skip-link:focus-visible,
@@ -1799,6 +1800,27 @@ li {
   transform: translateY(-25%) rotate(225deg);
 }
 
+.grocery-source-single-link {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted-strong);
+  text-decoration: underline;
+  text-decoration-color: rgba(159, 226, 191, 0.74);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.grocery-source-single-link:hover {
+  background: transparent;
+  color: var(--accent-strong);
+}
+
+.grocery-source-single-link:active:not(:disabled) {
+  transform: none;
+}
+
 .grocery-item-source-list {
   display: grid;
   gap: 6px;
@@ -1892,7 +1914,8 @@ li {
   color: var(--fg);
 }
 
-.grocery-list li.checked .grocery-source-link {
+.grocery-list li.checked .grocery-source-link,
+.grocery-list li.checked .grocery-source-single-link {
   color: var(--accent-strong);
 }
 

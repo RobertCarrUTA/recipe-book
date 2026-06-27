@@ -118,6 +118,17 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
       : formatCount(checkboxes.length, "item", "items");
   }
 
+  function prepareRecipeSourceNavigation(canonicalKey) {
+    if (typeof actions.onPrepareRecipeSourceNavigation === "function") {
+      actions.onPrepareRecipeSourceNavigation(canonicalKey);
+    }
+  }
+
+  function attachRecipeSourcePreparation(sourceControl, canonicalKey) {
+    sourceControl.addEventListener("pointerdown", () => prepareRecipeSourceNavigation(canonicalKey));
+    sourceControl.addEventListener("touchstart", () => prepareRecipeSourceNavigation(canonicalKey), { passive: true });
+  }
+
   function renderGrocerySource(content, sources, selectedRecipeCount, canonicalKey) {
     const runtimeState = getRuntimeState();
     const displayName = runtimeState.displayNamesByKey[canonicalKey] || canonicalKey;
@@ -137,11 +148,27 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const sortedSources = getSortedGrocerySources(sources);
     const sourceNames = sortedSources.map((source) => source.title);
     const shouldRenderDetails = sourceNames.length > 1 || sourceSummary === "From 1 recipe";
+    const singleSource = sortedSources.length === 1 ? sortedSources[0] : null;
+    const canOpenSingleSource =
+      singleSource && singleSource.id && typeof actions.onViewRecipeSource === "function";
 
     if (!shouldRenderDetails) {
-      const source = document.createElement("span");
-      source.className = "grocery-item-source";
+      const source = document.createElement(canOpenSingleSource ? "button" : "span");
+      source.className = canOpenSingleSource
+        ? "grocery-item-source grocery-source-single-link"
+        : "grocery-item-source";
       source.textContent = sourceSummary;
+      if (canOpenSingleSource) {
+        source.type = "button";
+        source.title = `Open ${singleSource.title}`;
+        source.setAttribute("aria-label", `Open ${singleSource.title} in recipes`);
+        attachRecipeSourcePreparation(source, canonicalKey);
+        source.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          actions.onViewRecipeSource(singleSource.id, { canonicalKey });
+        });
+      }
       content.appendChild(source);
       return;
     }
@@ -176,10 +203,11 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
         sourceTitle.type = "button";
         sourceTitle.title = `Open ${detail.title}`;
         sourceTitle.setAttribute("aria-label", `Open ${detail.title} in recipes`);
+        attachRecipeSourcePreparation(sourceTitle, canonicalKey);
         sourceTitle.addEventListener("click", (event) => {
           event.preventDefault();
           event.stopPropagation();
-          actions.onViewRecipeSource(sourceEntry.id);
+          actions.onViewRecipeSource(sourceEntry.id, { canonicalKey });
         });
       }
 
@@ -220,6 +248,7 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const isManual = actions.isManualGroceryItem(canonicalKey);
 
     li.tabIndex = 0;
+    li.dataset.groceryKey = canonicalKey;
     li.classList.toggle("manual-item", isManual);
     cb.type = "checkbox";
     cb.checked = Boolean(runtimeState.groceryCheckedByKey[canonicalKey]);

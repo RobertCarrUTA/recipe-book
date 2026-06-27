@@ -21,8 +21,8 @@ export function getSortedGrocerySourceNames(sources) {
 export function formatGrocerySourceSummary(sources, selectedRecipeCount) {
   if (!Array.isArray(sources) || sources.length === 0) return "";
 
-  const sourceNames = getSortedGrocerySourceNames(sources);
   const sortedSources = getSortedGrocerySources(sources);
+  const sourceNames = sortedSources.map((source) => source.title);
   const scaledSource = sortedSources.find((source) => isScaledSource(source));
   if (!sourceNames.length) return "";
   if (selectedRecipeCount <= 1 && !scaledSource) return "";

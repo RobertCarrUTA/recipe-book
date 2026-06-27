@@ -1,4 +1,4 @@
-export function createMobileViewController({ document, getUiState, saveState, window }) {
+export function createMobileViewController({ document, getUiState, onViewChange, saveState, window }) {
   const viewOrder = ["recipes", "grocery"];
   const mobileQuery = window && typeof window.matchMedia === "function"
     ? window.matchMedia("(max-width: 979px)")
@@ -30,6 +30,7 @@ export function createMobileViewController({ document, getUiState, saveState, wi
             ".grocery-item-remove",
             ".grocery-item-source-toggle",
             ".grocery-source-link",
+            ".grocery-source-single-link",
             ".mobile-view-tabs",
           ].join(", ")
         )
@@ -42,6 +43,7 @@ export function createMobileViewController({ document, getUiState, saveState, wi
 
   function setMobileView(view, options = {}) {
     const nextView = normalizeView(view);
+    const previousView = normalizeView(getUiState().mobileView);
     viewOrder.forEach((viewName) => {
       document.body.classList.toggle(`app-mode-${viewName}`, nextView === viewName);
     });
@@ -54,6 +56,13 @@ export function createMobileViewController({ document, getUiState, saveState, wi
 
     getUiState().mobileView = nextView;
     if (!options.skipSave) saveState();
+    if (typeof onViewChange === "function") {
+      onViewChange({
+        previousView,
+        trigger: options.trigger || "set",
+        view: nextView,
+      });
+    }
   }
 
   function attachSwipeNavigation() {
@@ -102,7 +111,7 @@ export function createMobileViewController({ document, getUiState, saveState, wi
         const nextIndex = deltaX < 0
           ? Math.min(viewOrder.length - 1, currentIndex + 1)
           : Math.max(0, currentIndex - 1);
-        setMobileView(viewOrder[nextIndex]);
+        setMobileView(viewOrder[nextIndex], { trigger: "swipe" });
       },
       { passive: true }
     );
@@ -126,7 +135,7 @@ export function createMobileViewController({ document, getUiState, saveState, wi
   function attach() {
     document.querySelectorAll(".mobile-view-tab").forEach((button) => {
       button.setAttribute("aria-pressed", button.classList.contains("active") ? "true" : "false");
-      button.addEventListener("click", () => setMobileView(button.dataset.view));
+      button.addEventListener("click", () => setMobileView(button.dataset.view, { trigger: "tab" }));
     });
     attachSwipeNavigation();
   }
