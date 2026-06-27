@@ -227,3 +227,59 @@ test("parseStructuredGroceryIngredient keeps prepared potato sides separate from
     ]
   );
 });
+
+test("parseStructuredGroceryIngredient preserves shopping-critical burger labels", () => {
+  assert.deepEqual(
+    [
+      parseStructuredGroceryIngredient({ item: "80/20 ground beef", quantity: 1.5, unit: "lb" }),
+      parseStructuredGroceryIngredient({ item: "potato bun", quantity: 4 }),
+      parseStructuredGroceryIngredient({ item: "American cheese slice", quantity: 8 }),
+      parseStructuredGroceryIngredient({ item: "iceberg lettuce", quantity: 2, unit: "cup" }),
+      parseStructuredGroceryIngredient({ item: "dill pickle chips", quantity: 1, unit: "cup" }),
+      parseStructuredGroceryIngredient({ item: "Louisiana-style cayenne hot sauce", quantity: 1, unit: "tsp" }),
+    ].map((entry) => ({
+      base: entry.canonical.base,
+      display: entry.canonical.display,
+      unitKey: entry.unitKey,
+      quantityRange: entry.quantityRange,
+    })),
+    [
+      {
+        base: "80/20 ground beef",
+        display: "80/20 ground beef",
+        unitKey: "lb",
+        quantityRange: { min: 1.5, max: 1.5 },
+      },
+      {
+        base: "potato bun",
+        display: "potato bun",
+        unitKey: null,
+        quantityRange: { min: 4, max: 4 },
+      },
+      {
+        base: "american cheese slice",
+        display: "American cheese slice",
+        unitKey: null,
+        quantityRange: { min: 8, max: 8 },
+      },
+      {
+        base: "iceberg lettuce",
+        display: "iceberg lettuce",
+        unitKey: "cup",
+        quantityRange: { min: 2, max: 2 },
+      },
+      {
+        base: "dill pickle chips",
+        display: "dill pickle chips",
+        unitKey: "cup",
+        quantityRange: { min: 1, max: 1 },
+      },
+      {
+        base: "louisiana-style cayenne hot sauce",
+        display: "Louisiana-style cayenne hot sauce",
+        unitKey: "tsp",
+        quantityRange: { min: 1, max: 1 },
+      },
+    ]
+  );
+});
