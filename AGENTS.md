@@ -2,6 +2,11 @@
 
 This project is a static recipe book app with no build step. Keep changes small, verify locally, and preserve the lightweight architecture.
 
+## Recipe Naming
+
+- Keep recipe titles and recipe ids literal and modest. Do not add hype words like "ultimate", "best", "perfect", "phenomenal", "maximum flavor", "restaurant-style", or "from scratch" to titles or ids unless the user explicitly asks for that exact wording.
+- Use ids as simple slugs of the dish name, such as `chicken-fried-steak`. Let the ingredients, instructions, and results carry the quality.
+
 ## Cache Busting
 
 - When changing JavaScript or CSS, bump the asset version in `index.html` before finishing:

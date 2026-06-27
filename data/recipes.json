@@ -10025,5 +10025,233 @@
     },
     "title": "Double Onion Smash Burgers",
     "totalTime": "40 minutes plus 15 minutes beef chill time"
+  },
+  {
+    "additionalTime": "30 minutes to 4 hours buttermilk soak plus 15 minutes coating rest",
+    "author": "Robert Carr",
+    "cookTime": "35 minutes",
+    "description": "Chicken fried steak with tenderized top round or cube steak, a hot sauce buttermilk soak, craggy double dredge, shallow-fried golden crust, and deeply peppered cream gravy built from the seasoned pan drippings.",
+    "equipment": [
+      "Cast-iron skillet or heavy saute pan",
+      "Oven, optional for holding steaks warm",
+      "Wire rack",
+      "Rimmed baking sheet",
+      "Deep-fry thermometer or instant-read thermometer",
+      "Meat mallet or rolling pin",
+      "Large shallow bowls",
+      "Whisk",
+      "Tongs",
+      "Paper towels"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "tenderized top round steak or cube steak",
+        "quantity": 2,
+        "unit": "lb"
+      },
+      {
+        "item": "buttermilk",
+        "quantity": 1.5,
+        "unit": "cup"
+      },
+      {
+        "item": "large egg",
+        "quantity": 2
+      },
+      {
+        "item": "Louisiana-style cayenne hot sauce",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "kosher salt",
+        "quantity": 4.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "all-purpose flour",
+        "quantity": 2.667,
+        "unit": "cup"
+      },
+      {
+        "item": "cornstarch",
+        "quantity": 0.333,
+        "unit": "cup"
+      },
+      {
+        "item": "baking powder",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 4,
+        "unit": "tsp"
+      },
+      {
+        "item": "smoked paprika",
+        "quantity": 1.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "garlic powder",
+        "quantity": 1.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "onion powder",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "cayenne pepper",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "mustard powder",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "MSG",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "optional": true
+      },
+      {
+        "item": "neutral frying oil",
+        "quantity": 4,
+        "unit": "cup"
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "whole milk",
+        "quantity": 3,
+        "unit": "cup"
+      },
+      {
+        "item": "heavy cream",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "beef broth",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "Worcestershire sauce",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "fresh parsley",
+        "quantity": 2,
+        "unit": "tbsp",
+        "optional": true
+      }
+    ],
+    "id": "chicken-fried-steak",
+    "ingredients": [
+      "2 pounds tenderized top round steak or cube steak, usually 4 steaks about 1/3 to 1/2 inch thick",
+      "1 1/2 cups buttermilk",
+      "2 large eggs",
+      "1 tablespoon Louisiana-style cayenne hot sauce, such as Frank's RedHot, Crystal, or Texas Pete",
+      "4 1/2 teaspoons Diamond Crystal kosher salt or 2 3/4 teaspoons Morton kosher salt, divided",
+      "2 2/3 cups all-purpose flour, divided",
+      "1/3 cup cornstarch",
+      "1 teaspoon baking powder",
+      "4 teaspoons black pepper, freshly ground if possible, divided",
+      "1 1/2 teaspoons smoked paprika",
+      "1 1/2 teaspoons garlic powder, divided",
+      "1 teaspoon onion powder",
+      "1/2 teaspoon cayenne pepper",
+      "1/2 teaspoon mustard powder",
+      "1/2 teaspoon MSG, optional",
+      "4 cups neutral frying oil, such as peanut, canola, or vegetable oil, or enough for 1/2 inch depth in the skillet",
+      "2 tablespoons unsalted butter",
+      "3 cups whole milk, divided",
+      "1/2 cup heavy cream",
+      "1/2 cup low-sodium beef broth",
+      "1 teaspoon Worcestershire sauce",
+      "2 tablespoons finely chopped fresh parsley, optional, for finishing"
+    ],
+    "instructions": [
+      "Place a wire rack inside a rimmed baking sheet.",
+      "If you want every steak hot at serving time, heat the oven to 200 degrees F now so finished steaks can hold on the wire rack while the remaining batches and gravy finish.",
+      "Pat the 2 pounds tenderized top round steak or cube steak very dry with paper towels.",
+      "If starting with plain top round instead of already-tenderized cube steak, cover each steak with plastic wrap or parchment and pound it with the textured side of a meat mallet until it is evenly tenderized and 1/3 to 1/2 inch thick.",
+      "If any already-tenderized steak is thicker than 1/2 inch, cover it with plastic wrap or parchment and gently pound it to an even 1/3 to 1/2 inch thickness with a meat mallet or rolling pin.",
+      "Season both sides of the steaks with 1 teaspoon Diamond Crystal kosher salt and 1/2 teaspoon black pepper total, using a light even sprinkle across all 4 steaks.",
+      "In a large shallow bowl, whisk together 1 1/2 cups buttermilk, 2 large eggs, 1 tablespoon Louisiana-style cayenne hot sauce, and 1 teaspoon Diamond Crystal kosher salt.",
+      "Add the seasoned steaks to the buttermilk mixture and turn each steak until fully coated.",
+      "Cover and refrigerate the steaks in the buttermilk mixture for at least 30 minutes, or up to 4 hours for deeper seasoning.",
+      "Before breading, measure 1/3 cup all-purpose flour into a clean small bowl and reserve it for the gravy so it never touches raw steak.",
+      "Make the dredge in a large shallow bowl by whisking together the remaining 2 1/3 cups all-purpose flour, 1/3 cup cornstarch, 1 teaspoon baking powder, 1 1/2 teaspoons Diamond Crystal kosher salt, 2 teaspoons black pepper, 1 1/2 teaspoons smoked paprika, 1 teaspoon garlic powder, 1 teaspoon onion powder, 1/2 teaspoon cayenne pepper, 1/2 teaspoon mustard powder, and 1/2 teaspoon MSG if using.",
+      "Drizzle 3 tablespoons of the buttermilk mixture into the dredge and rub it through the flour with your fingers until the flour has pea-size shaggy bits. Those bits become the extra-crunchy ridges.",
+      "Remove 1 steak from the buttermilk mixture and let the excess drip back into the bowl for 5 seconds.",
+      "Press the steak firmly into the dredge on both sides, making sure flour gets into every tenderized groove.",
+      "Dip the floured steak back into the buttermilk mixture for 1 to 2 seconds, then let the excess drip off again.",
+      "Press the steak into the dredge a second time, packing the clumpy flour onto both sides until there are no damp bare spots.",
+      "Shake off only loose dusty flour, then place the breaded steak on the wire rack.",
+      "Repeat the dip, dredge, dip, and second dredge with the remaining steaks.",
+      "Let the breaded steaks rest on the wire rack for 15 minutes so the coating hydrates and sticks during frying.",
+      "While the coating rests, add 4 cups neutral frying oil to a cast-iron skillet or heavy saute pan, or use enough oil to reach 1/2 inch depth.",
+      "Heat the oil over medium-high heat to 350 degrees F.",
+      "Fry 1 or 2 steaks at a time so the pan is not crowded and the oil stays between 325 degrees F and 350 degrees F.",
+      "Cook each steak for 3 to 4 minutes on the first side, until the bottom is deep golden brown and crisp.",
+      "Flip with tongs and cook the second side for 2 to 4 minutes more, until deep golden brown and the center reaches at least 145 degrees F.",
+      "Transfer each fried steak to the wire rack and immediately sprinkle the batch with a tiny pinch from the remaining 1/2 teaspoon Diamond Crystal kosher salt.",
+      "If using the 200 degrees F oven hold, keep the fried steaks on the wire rack in the oven, uncovered and not stacked, while frying the remaining steaks and making the gravy.",
+      "Let the oil return to 350 degrees F before frying the next batch.",
+      "When all steaks are fried, carefully pour the hot oil into a heat-safe bowl or measuring cup, leaving the browned bits in the skillet.",
+      "Return 4 tablespoons of the frying oil to the skillet with the browned bits and place the skillet over medium heat.",
+      "Add 2 tablespoons unsalted butter to the 4 tablespoons frying oil and let it melt.",
+      "Whisk the reserved 1/3 cup clean all-purpose flour into the oil and butter until no dry flour remains.",
+      "Cook the flour and fat mixture for 2 to 3 minutes, whisking constantly, until it smells toasted and turns light tan.",
+      "Slowly whisk in 2 1/2 cups whole milk, adding about 1/2 cup at a time and whisking smooth after each addition.",
+      "Whisk in 1/2 cup heavy cream, 1/2 cup low-sodium beef broth, 1 teaspoon Worcestershire sauce, the remaining 1/2 teaspoon garlic powder, the remaining 1 1/2 teaspoons black pepper, and 1/2 teaspoon Diamond Crystal kosher salt.",
+      "Simmer the gravy for 4 to 6 minutes, whisking often and scraping the browned bits from the bottom of the skillet, until thick enough to coat a spoon.",
+      "If the gravy becomes thicker than you like, whisk in the remaining 1/2 cup whole milk a few tablespoons at a time until it is creamy and pourable.",
+      "Taste the gravy and adjust only if needed with a small pinch of kosher salt or black pepper.",
+      "Spoon hot pepper gravy over the chicken fried steaks right before serving.",
+      "Finish with 2 tablespoons finely chopped fresh parsley if using."
+    ],
+    "link": null,
+    "notes": [
+      "Best meat choice: ask the butcher for top round cutlets tenderized once or twice, about 1/3 to 1/2 inch thick. That is essentially fresh, higher-control cube steak.",
+      "Packaged cube steak is still the right classic option if it looks fresh, evenly tenderized, and about 1/3 to 1/2 inch thick. Avoid grey, wet-looking, ragged, paper-thin pieces.",
+      "Do not use cubed stew meat. Cube steak should look like thin steak with small tenderized marks across the surface, not chunks of beef.",
+      "If using Morton kosher salt instead of Diamond Crystal, use about two-thirds of the salt amounts listed in the instructions because Morton is denser by volume.",
+      "Do not skip reserving clean flour for the gravy. Flour from the steak dredge has touched raw beef and should not be used for quick gravy unless it is cooked thoroughly for food safety.",
+      "The biggest flavor moves are seasoning the meat before soaking, using hot sauce in the buttermilk, making clumps in the dredge, double dredging, frying on a rack instead of paper towels, and building the gravy from the seasoned pan drippings.",
+      "The 15 minute coating rest matters because dry flour patches hydrate and the crust is less likely to slide off in the oil.",
+      "The oil temperature will drop when steak goes in. Start at 350 degrees F, then manage the burner so the oil stays mostly between 325 degrees F and 350 degrees F.",
+      "A wire rack keeps the bottom crust crisp. Paper towels trap steam and can soften the breading.",
+      "The optional 200 degrees F oven hold keeps the steaks hot without steaming the crust. Keep them uncovered on the rack and avoid holding longer than about 20 minutes.",
+      "Tenderized round steak and cube steak are lean and thin, so the quality risk is overcooking after the crust is already brown. Pull the steaks once the coating is deep golden and the center is at least 145 degrees F.",
+      "The beef broth and Worcestershire sauce are small but important. They make the cream gravy taste savory instead of flat.",
+      "For a thicker diner-style gravy, simmer the gravy 1 to 2 minutes longer before adding any extra milk. For a looser gravy, use the reserved 1/2 cup whole milk.",
+      "Serve immediately with mashed potatoes, buttered corn, green beans, or a simple salad."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "40 minutes",
+    "rating": null,
+    "servings": "4",
+    "tags": {
+      "equipment": [
+        "cast-iron skillet",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Chicken Fried Steak",
+    "totalTime": "1 hour 15 minutes plus 30 minutes to 4 hours buttermilk soak"
   }
 ]
