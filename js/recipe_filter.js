@@ -15,6 +15,26 @@ export function buildRecipeSearchText(recipe) {
   return normalizeForSearch(parts.join(" "));
 }
 
+function getSearchTerms(normalizedFilterText) {
+  return String(normalizedFilterText || "")
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+function normalizedRecipeSearchTextMatches(searchText, normalizedFilterText, searchTerms) {
+  if (!normalizedFilterText) return true;
+
+  const normalizedSearchText = normalizeForSearch(searchText);
+  if (normalizedSearchText.includes(normalizedFilterText)) return true;
+
+  return searchTerms.every((term) => normalizedSearchText.includes(term));
+}
+
+export function recipeSearchTextMatches(searchText, filterText) {
+  const normalizedFilterText = normalizeForSearch(filterText);
+  return normalizedRecipeSearchTextMatches(searchText, normalizedFilterText, getSearchTerms(normalizedFilterText));
+}
+
 export function recipeMatchesSelectedFilters(recipe, selected) {
   const tags = recipe && recipe.tags ? recipe.tags : {};
   const statusValue = tags.status ? String(tags.status) : "not-tried";
@@ -40,8 +60,7 @@ export function recipeMatchesVisibilityOptions({
   showFavoriteOnly,
   showSelectedOnly,
 }) {
-  const normalizedFilterText = normalizeForSearch(filterText);
-  const matchesSearch = !normalizedFilterText || String(searchText || "").includes(normalizedFilterText);
+  const matchesSearch = recipeSearchTextMatches(searchText, filterText);
   const matchesTags = recipe ? recipeMatchesSelectedFilters(recipe, selectedFilters || {}) : true;
   const matchesSelectedOnly = !showSelectedOnly || Boolean(isSelected);
   const matchesFavoriteOnly = !showFavoriteOnly || Boolean(isFavorite);
@@ -61,6 +80,8 @@ export function getMatchingRecipeIndexes({
 }) {
   const items = Array.isArray(recipes) ? recipes : [];
   const indexedSearchTexts = Array.isArray(searchTexts) ? searchTexts : [];
+  const normalizedFilterText = normalizeForSearch(filterText);
+  const searchTerms = getSearchTerms(normalizedFilterText);
 
   return items.reduce((matches, recipe, index) => {
     const searchText = indexedSearchTexts[index] || buildRecipeSearchText(recipe);
@@ -68,16 +89,10 @@ export function getMatchingRecipeIndexes({
     const isRecipeSelected = typeof isSelected === "function" ? isSelected(recipe, index) : false;
 
     if (
-      recipeMatchesVisibilityOptions({
-        filterText,
-        isFavorite: isRecipeFavorite,
-        isSelected: isRecipeSelected,
-        recipe,
-        searchText,
-        selectedFilters,
-        showFavoriteOnly,
-        showSelectedOnly,
-      })
+      normalizedRecipeSearchTextMatches(searchText, normalizedFilterText, searchTerms) &&
+      recipeMatchesSelectedFilters(recipe, selectedFilters || {}) &&
+      (!showFavoriteOnly || isRecipeFavorite) &&
+      (!showSelectedOnly || isRecipeSelected)
     ) {
       matches.push(index);
     }

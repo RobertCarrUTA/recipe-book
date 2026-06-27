@@ -377,8 +377,8 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const allKeys = getAllGroceryKeys(groceryState);
     const display = {};
     const entries = [];
+    const fragment = document.createDocumentFragment();
 
-    container.innerHTML = "";
     sourceDetailsIdCounter = 0;
     updateGrocerySummary(allKeys);
 
@@ -399,35 +399,39 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     });
 
     if (!entries.length) {
-      renderEmptyState(container);
+      renderEmptyState(fragment);
+      container.replaceChildren(fragment);
       return;
     }
 
     if (uiState.hideCheckedGroceryItems && entries.every((entry) => entry.checked)) {
-      renderHiddenCheckedEmptyState(container);
+      renderHiddenCheckedEmptyState(fragment);
+      container.replaceChildren(fragment);
       return;
     }
 
     if (!uiState.groupItems) {
       renderUngroupedGroceryList(
-        container,
+        fragment,
         entries.sort((a, b) => a.canonicalKey.localeCompare(b.canonicalKey)),
         allKeys,
         selectedRecipeCount
       );
+      container.replaceChildren(fragment);
       return;
     }
 
     sortGroceryGroups(Object.keys(display))
       .forEach((group) => {
         renderGroceryGroup(
-          container,
+          fragment,
           group,
           display[group].sort((a, b) => a.canonicalKey.localeCompare(b.canonicalKey)),
           allKeys,
           selectedRecipeCount
         );
       });
+    container.replaceChildren(fragment);
   }
 
   return { renderGroceryList };

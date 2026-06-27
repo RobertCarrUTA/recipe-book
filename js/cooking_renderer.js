@@ -10,8 +10,10 @@ export function createCookingRenderer({ document }) {
     recipeIndex: -1,
     stepIndex: 0,
     lastRenderedStepIndex: -1,
+    lastIngredientsRenderKey: "",
     headerCollapsed: false,
     ingredientsExpanded: true,
+    returnFocusTarget: null,
   };
 
   function isMobileCookingLayout() {
@@ -19,11 +21,17 @@ export function createCookingRenderer({ document }) {
   }
 
   function openCookingMode(recipe, recipeIndex) {
+    const HTMLElementCtor = windowLike.HTMLElement;
     cookingModeState.recipe = recipe;
     cookingModeState.recipeIndex = recipeIndex;
     cookingModeState.stepIndex = 0;
     cookingModeState.lastRenderedStepIndex = -1;
+    cookingModeState.lastIngredientsRenderKey = "";
     cookingModeState.ingredientsExpanded = !isMobileCookingLayout();
+    cookingModeState.returnFocusTarget =
+      HTMLElementCtor && document.activeElement instanceof HTMLElementCtor
+        ? document.activeElement
+        : null;
 
     const cookingMode = byId("cookingMode");
     if (!cookingMode) return;
@@ -40,6 +48,16 @@ export function createCookingRenderer({ document }) {
     const cookingMode = byId("cookingMode");
     if (cookingMode) cookingMode.hidden = true;
     document.body.classList.remove("is-cooking-mode");
+
+    const focusTarget = cookingModeState.returnFocusTarget;
+    cookingModeState.returnFocusTarget = null;
+    if (!focusTarget || !document.contains(focusTarget) || typeof focusTarget.focus !== "function") return;
+
+    try {
+      focusTarget.focus({ preventScroll: true });
+    } catch (error) {
+      focusTarget.focus();
+    }
   }
 
   function isCookingModeOpen() {
@@ -91,17 +109,19 @@ export function createCookingRenderer({ document }) {
     renderCookingMode();
   }
 
-  function renderCookingIngredients(recipe) {
+  function renderCookingIngredients(recipe, ingredients) {
     const container = byId("cookingIngredients");
     if (!container) return;
 
-    container.innerHTML = "";
-    const ingredients = getCookingIngredients(recipe);
+    const renderKey = `${cookingModeState.recipeIndex}:${ingredients.length}:${ingredients.join("\n")}`;
+    if (renderKey === cookingModeState.lastIngredientsRenderKey) return;
+
+    cookingModeState.lastIngredientsRenderKey = renderKey;
     if (!ingredients.length) {
       const empty = document.createElement("p");
       empty.className = "cooking-empty";
       empty.textContent = "No ingredients are listed for this recipe.";
-      container.appendChild(empty);
+      container.replaceChildren(empty);
       return;
     }
 
@@ -111,7 +131,7 @@ export function createCookingRenderer({ document }) {
       li.textContent = ingredient;
       ul.appendChild(li);
     });
-    container.appendChild(ul);
+    container.replaceChildren(ul);
   }
 
   function renderCookingMode() {
@@ -198,7 +218,7 @@ export function createCookingRenderer({ document }) {
       ingredientsToggle.setAttribute("aria-expanded", ingredientsExpanded ? "true" : "false");
     }
 
-    renderCookingIngredients(recipe);
+    renderCookingIngredients(recipe, ingredients);
   }
 
   return {

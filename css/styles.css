@@ -644,7 +644,7 @@ h2 {
 .recipe {
   position: relative;
   content-visibility: auto;
-  contain-intrinsic-size: 140px;
+  contain-intrinsic-size: auto 140px;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -903,7 +903,6 @@ h2 {
 
 .recipe-tag:hover {
   border-color: rgba(255, 255, 255, 0.12);
-  filter: brightness(1.06);
 }
 
 .recipe-tag.active {
@@ -949,6 +948,7 @@ h2 {
 }
 
 .recipe-actions {
+  align-items: stretch;
   margin: 0 0 12px;
 }
 
@@ -957,10 +957,12 @@ h2 {
 .recipe-actions>label,
 .recipe-actions>select,
 .recipe-actions>.recipe-scale-control {
+  max-width: 100%;
   min-width: 0;
 }
 
 .recipe-plan-select {
+  min-width: min(100%, 128px);
   min-height: 42px;
   padding: 0 34px 0 12px;
   border: 1px solid rgba(128, 183, 243, 0.42);
@@ -981,6 +983,7 @@ h2 {
 
 .recipe-add-toggle {
   justify-content: center;
+  min-width: min(100%, 156px);
   padding: 0 12px;
   border: 1px solid rgba(122, 199, 163, 0.45);
   border-radius: var(--radius);
@@ -1076,6 +1079,8 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--fg);
+  line-height: 1.15;
+  text-align: center;
   text-decoration: none;
   font-weight: 800;
   transition:
@@ -1109,6 +1114,7 @@ h2 {
 }
 
 .favorite-recipe-button {
+  min-width: min(100%, 96px);
   padding: 0 12px;
   border-color: rgba(241, 189, 105, 0.38);
   background: rgba(241, 189, 105, 0.1);
@@ -1122,12 +1128,14 @@ h2 {
 }
 
 .cooking-mode-button {
+  min-width: min(100%, 104px);
   padding: 0 13px;
 }
 
 .view-plan-button,
 .view-grocery-button {
   display: none;
+  min-width: min(100%, 86px);
   padding: 0 12px;
   border-color: rgba(128, 183, 243, 0.45);
   background: rgba(128, 183, 243, 0.12);
@@ -1211,6 +1219,7 @@ li {
   display: none;
   min-height: 320px;
   padding: 14px;
+  scrollbar-gutter: stable;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: rgba(21, 25, 29, 0.78);
@@ -1385,6 +1394,8 @@ li {
 .grocery-list {
   min-height: 320px;
   padding: 14px;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: rgba(21, 25, 29, 0.82);
@@ -1606,6 +1617,7 @@ li {
   padding: 0 12px 0 34px;
   border-color: rgba(59, 70, 82, 0.74);
   background: rgba(20, 24, 28, 0.96);
+  box-shadow: 0 1px 0 rgba(45, 54, 63, 0.72);
   color: var(--fg);
   text-align: left;
   backdrop-filter: blur(12px);
@@ -1658,6 +1670,7 @@ li {
 }
 
 .grocery-list li {
+  position: relative;
   display: grid;
   grid-template-columns: 28px minmax(0, 1fr) auto;
   align-items: start;
@@ -1665,6 +1678,8 @@ li {
   min-height: 48px;
   margin: 0;
   padding: 11px 12px;
+  contain: layout paint;
+  overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: #12171b;
@@ -1673,6 +1688,17 @@ li {
     background var(--transition-fast),
     border-color var(--transition-fast),
     opacity var(--transition-fast);
+}
+
+.grocery-list li::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: transparent;
+  transition:
+    background var(--transition-fast),
+    width var(--transition-fast);
 }
 
 .grocery-list li:hover {
@@ -1685,6 +1711,11 @@ li {
   background:
     linear-gradient(90deg, rgba(128, 183, 243, 0.08), transparent 120px),
     #12171b;
+}
+
+.grocery-list li.manual-item::before {
+  width: 4px;
+  background: var(--blue);
 }
 
 .grocery-list li input {
@@ -1774,6 +1805,8 @@ li {
   max-height: 128px;
   overflow: auto;
   padding: 2px 4px 0 0;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   color: var(--muted);
   font-size: 0.74rem;
   font-weight: 650;
@@ -1843,6 +1876,11 @@ li {
   background:
     linear-gradient(90deg, rgba(122, 199, 163, 0.14), transparent 160px),
     rgba(122, 199, 163, 0.08);
+}
+
+.grocery-list li.checked::before {
+  width: 4px;
+  background: var(--accent);
 }
 
 .grocery-list li.checked .grocery-item-source,
@@ -2187,7 +2225,9 @@ li {
 .cooking-ingredients-body {
   min-height: 0;
   overflow: auto;
+  overscroll-behavior: contain;
   padding: 0 12px 12px;
+  scrollbar-gutter: stable;
 }
 
 .cooking-ingredients-body[hidden] {
@@ -2215,6 +2255,7 @@ li {
   overflow: auto;
   overscroll-behavior: contain;
   padding: 22px;
+  scrollbar-gutter: stable;
   touch-action: pan-y;
 }
 

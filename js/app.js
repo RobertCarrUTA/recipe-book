@@ -37,7 +37,7 @@ import {
 } from "./recipe_filter.js";
 import { createGroceryListText } from "./grocery_list_exporter.js";
 import { createRecipeRepository } from "./recipe_repository.js";
-import { sortRecipeIndexes } from "./recipe_sort.js";
+import { recipeSortModes, sortRecipeIndexes } from "./recipe_sort.js";
 import { createRenderer } from "./render.js";
 import {
   clearGroceryPersistence,
@@ -84,6 +84,7 @@ function createRecipeBookApp() {
   let renderer = null;
   let mobileViewController = null;
   let mealPlanReturnFocus = null;
+  let lastRenderedRecipeIndexes = null;
   let stateToolsStatusTimer = null;
   let wakeLockController = null;
 
@@ -109,6 +110,29 @@ function createRecipeBookApp() {
       if (values instanceof Set) return count + values.size;
       return count + (Array.isArray(values) ? values.length : 0);
     }, 0);
+  }
+
+  function isRecipeListRuntimeSorted() {
+    return appState.ui.recipeSort === recipeSortModes.favoritesFirst ||
+      appState.ui.recipeSort === recipeSortModes.selectedFirst;
+  }
+
+  function areRecipeIndexesEqual(left, right) {
+    if (!Array.isArray(left) || !Array.isArray(right) || left.length !== right.length) return false;
+
+    return left.every((value, index) => value === right[index]);
+  }
+
+  function renderFilteredRecipes(recipeIndexes) {
+    if (!areRecipeIndexesEqual(lastRenderedRecipeIndexes, recipeIndexes)) {
+      renderer.renderRecipes({ recipeIndexes });
+      lastRenderedRecipeIndexes = recipeIndexes.slice();
+      return;
+    }
+
+    renderer.syncFavoriteRecipeIndicators();
+    renderer.syncRecipeSelectionIndicators();
+    renderer.syncMealPlanIndicators();
   }
 
   function syncRecipeFilterControls(selected) {
@@ -202,7 +226,7 @@ function createRecipeBookApp() {
       sortMode: appState.ui.recipeSort,
     });
 
-    renderer.renderRecipes({ recipeIndexes: sortedRecipeIndexes });
+    renderFilteredRecipes(sortedRecipeIndexes);
     renderer.syncRecipeFilterTagStyles(selected);
     syncRecipeFilterControls(selected);
     updateRecipeSearchMeta(matchingRecipeIndexes.length);
@@ -277,16 +301,22 @@ function createRecipeBookApp() {
 
   function handleFavoriteRecipe(recipe, recipeIndex, favorite) {
     setRecipeFavorite(appState.runtime, recipe, recipeIndex, favorite);
-    renderer.syncFavoriteRecipeIndicators();
-    if (isControlChecked("showFavoriteRecipesOnly")) refreshRecipeListFilter();
+    if (isControlChecked("showFavoriteRecipesOnly") || isRecipeListRuntimeSorted()) {
+      refreshRecipeListFilter();
+    } else {
+      renderer.syncFavoriteRecipeIndicators();
+    }
     saveAppState();
   }
 
   function handleSelectRecipe(recipe, recipeIndex, selected) {
     setRecipeSelected(appState.runtime, appState.recipes, recipe, recipeIndex, selected);
     renderer.renderGroceryList();
-    renderer.syncRecipeSelectionIndicators();
-    if (isControlChecked("showSelectedRecipesOnly")) refreshRecipeListFilter();
+    if (isControlChecked("showSelectedRecipesOnly") || isRecipeListRuntimeSorted()) {
+      refreshRecipeListFilter();
+    } else {
+      renderer.syncRecipeSelectionIndicators();
+    }
     saveAppState();
   }
 
@@ -339,7 +369,7 @@ function createRecipeBookApp() {
 
     renderer.renderGroceryList();
     renderer.syncRecipeSelectionIndicators();
-    if (isControlChecked("showSelectedRecipesOnly")) refreshRecipeListFilter();
+    if (isControlChecked("showSelectedRecipesOnly") || isRecipeListRuntimeSorted()) refreshRecipeListFilter();
     saveAppState();
     closeMealPlanPanel({ restoreFocus: false });
     handleViewGroceryList();
