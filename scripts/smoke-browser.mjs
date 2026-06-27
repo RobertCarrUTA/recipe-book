@@ -167,6 +167,47 @@ const browserChecks = [
     },
   },
   {
+    name: "weekly meal planner schedules recipes and builds grocery list",
+    async run(page) {
+      await openApp(page, { debug: true });
+      const target = await page.evaluate(() => {
+        const recipes = window.recipeBookDebug.getState().recipes;
+        const index = recipes.findIndex((recipe) => recipe.title === "Dutch Oven Chicken Pot Pie");
+        const fallbackIndex = index >= 0 ? index : 0;
+        return {
+          id: recipes[fallbackIndex].id,
+          index: fallbackIndex,
+          title: recipes[fallbackIndex].title,
+        };
+      });
+
+      await page.fill("#recipeSearch", target.title);
+      await page.waitForTimeout(250);
+      const recipe = page.locator(`.recipe[data-recipe-index="${target.index}"]`);
+      await recipe.waitFor({ timeout: 5000 });
+      await recipe.locator(".accordion-header").click();
+      await recipe.locator(".recipe-plan-select").selectOption("monday");
+
+      await expectText(page, "#mealPlanSummary", /^1 meal - 1 day$/);
+      await expectLocatorText(recipe.locator(".recipe-planned-badge"), /Planned Mon/i);
+      await page
+        .locator('.meal-plan-day[data-day="monday"] .meal-plan-item')
+        .filter({ hasText: target.title })
+        .waitFor({ timeout: 5000 });
+
+      await page.locator("#buildGroceryListFromMealPlan").click();
+      await expectText(page, "#grocerySummary", /from 1 recipe/);
+      const selectedRecipeIds = await page.evaluate(() =>
+        Object.keys(window.recipeBookDebug.getState().runtime.selectedRecipeIds)
+      );
+      assert.deepEqual(selectedRecipeIds, [target.id]);
+
+      await page.locator("#clearMealPlan").click();
+      await expectText(page, "#mealPlanSummary", /^No meals planned$/);
+      await assertVisible(page, "#mobileMealPlanBadge", false);
+    },
+  },
+  {
     name: "adding and checking grocery items updates summary state",
     async run(page) {
       await openApp(page);
@@ -444,13 +485,14 @@ const browserChecks = [
     },
   },
   {
-    name: "mobile view tabs and swipes switch between recipes and grocery panels",
+    name: "mobile view tabs and swipes switch directly between recipes and grocery",
     hasTouch: true,
     viewport: { width: 390, height: 844 },
     async run(page) {
       await openApp(page);
 
       await assertVisible(page, "#recipesPanel", true);
+      await assertVisible(page, "#mealPlanPanel", false);
       await assertVisible(page, "#groceryPanel", false);
       await assertNoHorizontalOverflow(page, [
         ".app-shell",
@@ -481,8 +523,29 @@ const browserChecks = [
       await assertVisible(page, "#recipeControlsPanel", true);
       assert.equal(await page.locator("#toggleRecipeControls").getAttribute("aria-expanded"), "true");
 
+      await page.locator("#openMealPlan").click();
+      assert.equal(await page.locator("body").evaluate((element) => element.classList.contains("is-meal-plan-open")), true);
+      assert.equal(await page.locator("#recipesPanel").getAttribute("aria-hidden"), "true");
+      await assertVisible(page, "#mealPlanPanel", true);
+      await assertVisible(page, "#groceryPanel", false);
+      await assertNoHorizontalOverflow(page, [
+        ".meal-plan-bar",
+        "#mealPlanBoard",
+        ".mobile-view-tabs",
+      ]);
+      assert.equal(
+        await page.locator(".meal-plan-bar").evaluate((element) => getComputedStyle(element).position),
+        "sticky"
+      );
+
+      await page.locator("#closeMealPlanPanel").click();
+      assert.equal(await page.locator("body").evaluate((element) => element.classList.contains("is-meal-plan-open")), false);
+      assert.equal(await page.locator("#recipesPanel").getAttribute("aria-hidden"), null);
+      await assertVisible(page, "#mealPlanPanel", false);
+
       await page.locator('.mobile-view-tab[data-view="grocery"]').click();
       await assertVisible(page, "#recipesPanel", false);
+      await assertVisible(page, "#mealPlanPanel", false);
       await assertVisible(page, "#groceryPanel", true);
       await assertNoHorizontalOverflow(page, [
         ".grocery-shopping-bar",
@@ -517,18 +580,22 @@ const browserChecks = [
 
       await page.locator('.mobile-view-tab[data-view="recipes"]').click();
       await assertVisible(page, "#recipesPanel", true);
+      await assertVisible(page, "#mealPlanPanel", false);
       await assertVisible(page, "#groceryPanel", false);
 
       await swipeApp(page, { endX: 40, selector: ".recipe .accordion-header", startX: 340, y: 420 });
       await assertVisible(page, "#recipesPanel", false);
+      await assertVisible(page, "#mealPlanPanel", false);
       await assertVisible(page, "#groceryPanel", true);
 
       await swipeApp(page, { endX: 340, selector: "#groceryList li", startX: 40, y: 420 });
       await assertVisible(page, "#recipesPanel", true);
+      await assertVisible(page, "#mealPlanPanel", false);
       await assertVisible(page, "#groceryPanel", false);
 
       await swipeApp(page, { endX: 40, selector: "#recipeSearch", startX: 340, y: 120 });
       await assertVisible(page, "#recipesPanel", true);
+      await assertVisible(page, "#mealPlanPanel", false);
       await assertVisible(page, "#groceryPanel", false);
     },
   },

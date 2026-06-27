@@ -1,4 +1,5 @@
 export function createMobileViewController({ document, getUiState, saveState, window }) {
+  const viewOrder = ["recipes", "grocery"];
   const mobileQuery = window && typeof window.matchMedia === "function"
     ? window.matchMedia("(max-width: 979px)")
     : null;
@@ -22,6 +23,9 @@ export function createMobileViewController({ document, getUiState, saveState, wi
             "[contenteditable='true']",
             ".recipe-search",
             ".recipe-actions",
+            ".meal-plan-add-form",
+            ".meal-plan-bar",
+            ".meal-plan-item-actions",
             ".grocery-shopping-bar",
             ".grocery-item-remove",
             ".grocery-item-source-toggle",
@@ -31,10 +35,15 @@ export function createMobileViewController({ document, getUiState, saveState, wi
     );
   }
 
+  function normalizeView(view) {
+    return viewOrder.includes(view) ? view : "recipes";
+  }
+
   function setMobileView(view, options = {}) {
-    const nextView = view === "grocery" ? "grocery" : "recipes";
-    document.body.classList.toggle("app-mode-grocery", nextView === "grocery");
-    document.body.classList.toggle("app-mode-recipes", nextView === "recipes");
+    const nextView = normalizeView(view);
+    viewOrder.forEach((viewName) => {
+      document.body.classList.toggle(`app-mode-${viewName}`, nextView === viewName);
+    });
 
     document.querySelectorAll(".mobile-view-tab").forEach((button) => {
       const isActive = button.dataset.view === nextView;
@@ -88,7 +97,11 @@ export function createMobileViewController({ document, getUiState, saveState, wi
         window.setTimeout(() => {
           suppressNextClick = false;
         }, 350);
-        setMobileView(deltaX < 0 ? "grocery" : "recipes");
+        const currentIndex = viewOrder.indexOf(normalizeView(getUiState().mobileView));
+        const nextIndex = deltaX < 0
+          ? Math.min(viewOrder.length - 1, currentIndex + 1)
+          : Math.max(0, currentIndex - 1);
+        setMobileView(viewOrder[nextIndex]);
       },
       { passive: true }
     );

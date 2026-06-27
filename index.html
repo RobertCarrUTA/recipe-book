@@ -5,7 +5,7 @@
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#101214" />
-    <link rel="stylesheet" href="css/styles.css?v=20260626-2" />
+    <link rel="stylesheet" href="css/styles.css?v=20260627-1" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="data:," />
   </head>
@@ -80,6 +80,10 @@
                   <span class="switch-track" aria-hidden="true"></span>
                   <span>Keep awake</span>
                 </label>
+                <button id="openMealPlan" class="secondary-button meal-plan-open-button" type="button" aria-controls="mealPlanPanel">
+                  Plan
+                  <span id="mobileMealPlanBadge" class="mobile-tab-badge" hidden>0</span>
+                </button>
                 <button id="toggleFilters" class="filter-toggle" type="button" aria-expanded="false" aria-controls="recipeFilters">
                   Filters
                 </button>
@@ -122,6 +126,28 @@
             </button>
           </div>
         </section>
+
+        <aside id="mealPlanPanel" class="workspace meal-plan" aria-labelledby="mealPlanTitle">
+          <div class="meal-plan-bar">
+            <div class="workspace-header meal-plan-header">
+              <div>
+                <p class="section-kicker">Plan</p>
+                <h2 id="mealPlanTitle">Meal Plan</h2>
+                <p id="mealPlanSummary" class="meal-plan-summary" aria-live="polite">No meals planned</p>
+              </div>
+              <div class="meal-plan-actions">
+                <button id="buildGroceryListFromMealPlan" class="primary-button" type="button" disabled>
+                  Build list
+                </button>
+                <button id="clearMealPlan" class="secondary-button" type="button" disabled>Clear plan</button>
+                <button id="closeMealPlanPanel" class="secondary-button meal-plan-close-button" type="button">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="mealPlanBoard" class="meal-plan-board"></div>
+        </aside>
 
         <aside id="groceryPanel" class="workspace grocery-list" aria-labelledby="groceryTitle">
           <div class="grocery-shopping-bar">
@@ -300,6 +326,6 @@
       </form>
     </dialog>
 
-    <script type="module" src="js/app.js?v=20260626-2"></script>
+    <script type="module" src="js/app.js?v=20260627-1"></script>
   </body>
 </html>
