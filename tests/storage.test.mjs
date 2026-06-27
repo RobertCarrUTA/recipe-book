@@ -35,6 +35,7 @@ test("restorePersistentState returns safe defaults when storage is unavailable",
   assert.equal(restored.ui.groceryControlsCollapsed, false);
   assert.equal(restored.ui.mobileView, "recipes");
   assert.equal(restored.ui.recipeControlsCollapsed, false);
+  assert.equal(restored.ui.recipeSort, "default");
   assert.equal(restored.ui.skipClearGroceryConfirmation, false);
 });
 
@@ -82,6 +83,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
         mobileView: "grocery",
         recipeControlsCollapsed: true,
         recipeSearch: "chili",
+        recipeSort: "fastest",
         showFavoriteRecipesOnly: false,
         showSelectedRecipesOnly: true,
         skipClearGroceryConfirmation: true,
@@ -103,6 +105,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   assert.equal(storage.getItem(storageKeys.hideCheckedGroceryItems), "1");
   assert.equal(storage.getItem(storageKeys.mobileView), "grocery");
   assert.equal(storage.getItem(storageKeys.recipeControlsCollapsed), "1");
+  assert.equal(storage.getItem(storageKeys.recipeSort), "fastest");
   assert.equal(storage.getItem(storageKeys.showSelectedRecipesOnly), "1");
   assert.equal(storage.getItem(storageKeys.skipClearGroceryConfirmation), "1");
 });
@@ -126,6 +129,7 @@ test("createPersistentStateBackup exports portable runtime and ui state", () => 
         filters: { status: ["tried", "tried", ""], empty: [] },
         groupItems: true,
         mobileView: "grocery",
+        recipeSort: "highest-rated",
         recipeSearch: " chili ",
         showSelectedRecipesOnly: true,
       },
@@ -147,6 +151,7 @@ test("createPersistentStateBackup exports portable runtime and ui state", () => 
   assert.deepEqual(backup.data.ui.collapsedGroceryGroups, { Produce: true });
   assert.deepEqual(backup.data.ui.filters, { status: ["tried"] });
   assert.equal(backup.data.ui.mobileView, "grocery");
+  assert.equal(backup.data.ui.recipeSort, "highest-rated");
 });
 
 test("normalizePersistentStateBackup rejects incompatible files", () => {
@@ -172,6 +177,7 @@ test("normalizePersistentStateBackup returns safe restored state", () => {
         filters: { difficulty: ["easy", ""] },
         hideCheckedGroceryItems: true,
         mobileView: "bad",
+        recipeSort: "selected-first",
         recipeSearch: "beans",
       },
     },
@@ -187,5 +193,6 @@ test("normalizePersistentStateBackup returns safe restored state", () => {
   assert.deepEqual(restored.ui.filters, { difficulty: ["easy"] });
   assert.equal(restored.ui.hideCheckedGroceryItems, true);
   assert.equal(restored.ui.mobileView, "recipes");
+  assert.equal(restored.ui.recipeSort, "selected-first");
   assert.equal(restored.ui.recipeSearch, "beans");
 });

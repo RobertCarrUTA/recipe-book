@@ -16,6 +16,7 @@ export function createBackupController({
   getState,
   logger = console,
   onRestore,
+  setStatus: reportExternalStatus,
   urlApi = globalThis.URL,
   window = globalThis.window,
 } = {}) {
@@ -23,6 +24,11 @@ export function createBackupController({
   let statusTimer = null;
 
   function setStatus(message, options = {}) {
+    if (typeof reportExternalStatus === "function") {
+      reportExternalStatus(message, options);
+      return;
+    }
+
     const status = byId("stateBackupStatus");
     if (!status) return;
 

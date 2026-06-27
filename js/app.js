@@ -35,7 +35,9 @@ import {
   getMatchingRecipeIndexes,
   normalizeForSearch,
 } from "./recipe_filter.js";
+import { createGroceryListText } from "./grocery_list_exporter.js";
 import { createRecipeRepository } from "./recipe_repository.js";
+import { sortRecipeIndexes } from "./recipe_sort.js";
 import { createRenderer } from "./render.js";
 import {
   clearGroceryPersistence,
@@ -53,6 +55,7 @@ import { createWakeLockController } from "./wake_lock_controller.js";
 
 const DEBOUNCE_MS = 150;
 const COMPACT_CONTROLS_MEDIA = "(max-width: 979px)";
+const STATUS_TIMEOUT_MS = 3600;
 
 function attachGlobalErrorHandlers(logger) {
   window.addEventListener("error", (event) => {
@@ -81,6 +84,7 @@ function createRecipeBookApp() {
   let renderer = null;
   let mobileViewController = null;
   let mealPlanReturnFocus = null;
+  let stateToolsStatusTimer = null;
   let wakeLockController = null;
 
   function byId(id) {
@@ -98,6 +102,28 @@ function createRecipeBookApp() {
 
   function applyUiStateToControls() {
     applyUiStateToDomControls(document, appState.ui);
+  }
+
+  function setStateToolsStatus(message, options = {}) {
+    const status = byId("stateBackupStatus");
+    if (!status) return;
+
+    if (stateToolsStatusTimer) {
+      window.clearTimeout(stateToolsStatusTimer);
+      stateToolsStatusTimer = null;
+    }
+
+    status.textContent = message || "";
+    status.hidden = !message;
+    status.classList.toggle("is-error", options.kind === "error");
+
+    if (message && !options.sticky) {
+      stateToolsStatusTimer = window.setTimeout(() => {
+        status.textContent = "";
+        status.hidden = true;
+        status.classList.remove("is-error");
+      }, STATUS_TIMEOUT_MS);
+    }
   }
 
   function applyRestoredPersistentState(restoredState) {
@@ -145,7 +171,13 @@ function createRecipeBookApp() {
       showSelectedOnly,
     });
 
-    renderer.renderRecipes({ recipeIndexes: matchingRecipeIndexes });
+    const sortedRecipeIndexes = sortRecipeIndexes(matchingRecipeIndexes, appState.recipes, {
+      isFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
+      isSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
+      sortMode: appState.ui.recipeSort,
+    });
+
+    renderer.renderRecipes({ recipeIndexes: sortedRecipeIndexes });
     renderer.syncRecipeFilterTagStyles(selected);
     updateRecipeSearchMeta(matchingRecipeIndexes.length);
 
@@ -300,6 +332,7 @@ function createRecipeBookApp() {
   }
 
   function setMealPlanBackgroundInert(inert) {
+    setElementInert(document.querySelector(".app-header"), inert);
     setElementInert(byId("recipesPanel"), inert);
     setElementInert(byId("groceryPanel"), inert);
     setElementInert(document.querySelector(".mobile-view-tabs"), inert);
@@ -308,11 +341,6 @@ function createRecipeBookApp() {
   function openMealPlanPanel() {
     const mealPlanPanel = byId("mealPlanPanel");
     if (!mealPlanPanel) return;
-
-    if (!isCompactControlsLayout()) {
-      mealPlanPanel.scrollIntoView({ block: "start" });
-      return;
-    }
 
     const HTMLElementCtor = document.defaultView && document.defaultView.HTMLElement;
     mealPlanReturnFocus = HTMLElementCtor && document.activeElement instanceof HTMLElementCtor
@@ -466,6 +494,43 @@ function createRecipeBookApp() {
     saveAppState();
   }
 
+  async function writeTextToClipboard(text) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+      try {
+        await navigator.clipboard.writeText(text);
+        return;
+      } catch (error) {
+        logger.warn("Clipboard API failed; trying copy fallback", error);
+      }
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.top = "0";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    const copied = document.execCommand && document.execCommand("copy");
+    textarea.remove();
+    if (!copied) throw new Error("Clipboard copy failed.");
+  }
+
+  async function handleCopyGroceryList() {
+    syncUiStateFromControls();
+    const text = createGroceryListText(appState.runtime, appState.ui);
+
+    try {
+      await writeTextToClipboard(text);
+      setStateToolsStatus("Grocery list copied.");
+    } catch (error) {
+      logger.warn("Grocery list copy failed", error);
+      setStateToolsStatus("Grocery list could not be copied.", { kind: "error", sticky: true });
+    }
+  }
+
   function attachManualGroceryForm() {
     const form = byId("manualGroceryForm");
     const input = byId("manualGroceryInput");
@@ -595,7 +660,9 @@ function createRecipeBookApp() {
     const clearCheckedButton = byId("clearCheckedGroceryItems");
     const addAllButton = byId("addAllRecipesToGroceryList");
     const controlsToggle = byId("toggleGroceryControls");
+    const copyGroceryListButton = byId("copyGroceryList");
     const recipeControlsToggle = byId("toggleRecipeControls");
+    const recipeSort = byId("recipeSort");
 
     syncRecipeControlsPanel();
     syncGroceryControlsPanel();
@@ -636,6 +703,14 @@ function createRecipeBookApp() {
     if (clearButton) clearButton.addEventListener("click", openClearGroceryDialog);
     if (clearCheckedButton) clearCheckedButton.addEventListener("click", clearCheckedGroceryListItems);
     if (addAllButton) addAllButton.addEventListener("click", addAllRecipesToGroceryList);
+    if (copyGroceryListButton) copyGroceryListButton.addEventListener("click", handleCopyGroceryList);
+    if (recipeSort) {
+      recipeSort.addEventListener("change", () => {
+        appState.ui.recipeSort = recipeSort.value;
+        refreshRecipeListFilter();
+        saveAppState();
+      });
+    }
     if (recipeControlsToggle) {
       recipeControlsToggle.addEventListener("click", () => {
         appState.ui.recipeControlsCollapsed = !appState.ui.recipeControlsCollapsed;
@@ -731,6 +806,7 @@ function createRecipeBookApp() {
       },
       logger,
       onRestore: applyRestoredPersistentState,
+      setStatus: setStateToolsStatus,
       window,
     }).attach();
     createOfflineController({ document, logger, navigator, window }).attach();

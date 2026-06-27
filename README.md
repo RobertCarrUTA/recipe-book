@@ -9,6 +9,7 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 - Browse saved recipes from `data/recipes.json`.
 - Search recipe titles, authors, ingredients, notes, and instructions.
 - Filter by status, rating, difficulty, equipment, selected recipes, and favorites.
+- Sort recipes by favorites, grocery-list selections, fastest total time, rating, or easiest difficulty.
 - Favorite recipes and keep them available with the Favorites filter.
 - Plan recipes across a weekly meal plan and build the grocery list from the planned week.
 - Open a full-screen Cooking Mode with a collapsible recipe header, ingredients, one instruction step at a time, progress, keyboard navigation, and mobile-friendly controls.
@@ -18,8 +19,9 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 - Add one-off manual grocery items.
 - Group grocery items into collapsible shopping sections and combine compatible units.
 - Check off grocery items, hide checked items while shopping, clear checked progress, and track progress with a mobile grocery badge.
+- Copy the current grocery list as clean text for notes, messages, or printing.
 - Export and import a backup of browser state for moving favorites, meal plans, grocery selections, manual items, and preferences between browsers or devices.
-- Persist search, filters, selected recipes, weekly meal plan, favorites, manual grocery items, grocery checks, grouping, collapsed sections, and wake-lock preference with `localStorage`.
+- Persist search, sort, filters, selected recipes, weekly meal plan, favorites, manual grocery items, grocery checks, grouping, collapsed sections, and wake-lock preference with `localStorage`.
 - Render recipe cards incrementally as you scroll, with recipe details built only when a card is opened, so the app can grow without paying the full DOM cost up front.
 - Fetch recipe data with a per-load cache-busting URL so phone browsers and static hosts do not keep stale `data/recipes.json` around after recipe updates.
 
@@ -119,7 +121,9 @@ The code is split by responsibility:
 - `js/render.js`: Renderer composition boundary that joins feature renderers while preserving one renderer API for the app.
 - `js/recipe_renderer.js`, `js/meal_plan_renderer.js`, `js/grocery_renderer.js`, `js/cooking_renderer.js`: DOM rendering for recipe cards, the meal plan, the grocery list, and Cooking Mode. State changes are sent through injected actions.
 - Recipe browsing filters against cached recipe data first, then streams matching recipe cards into the DOM in scroll-loaded batches. Hidden recipe details are rendered lazily when the card is expanded.
+- `js/recipe_sort.js`: Recipe list ranking for the browse sort control without requiring rendered recipe cards.
 - `js/grocery_model.js`: Grocery aggregation domain model for selected recipes, favorites, checkmarks, and parsed display names.
+- `js/grocery_list_exporter.js`: Plain-text grocery list export built from the same runtime grocery state used by the renderer.
 - `js/meal_plan_model.js`: Weekly meal-plan domain model for scheduled recipes and grocery-list generation from a plan.
 - `js/recipe_filter.js`, `js/recipe_formatting.js`, `js/grocery_view_model.js`, `js/cooking_model.js`: Pure UI/domain helper modules used by the renderer and controller.
 - `js/recipe_repository.js`: Recipe loading boundary for bundled recipes and future user/imported recipe sources.

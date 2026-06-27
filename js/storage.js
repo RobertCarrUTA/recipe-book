@@ -1,5 +1,6 @@
 import { normalizeMealPlan } from "./meal_plan_model.js";
 import { normalizeRecipeMultiplierRecord } from "./recipe_multiplier.js";
+import { normalizeRecipeSort, recipeSortModes } from "./recipe_sort.js";
 
 export const storageKeys = Object.freeze({
   version: "offline_recipebook_storage_version",
@@ -20,11 +21,12 @@ export const storageKeys = Object.freeze({
   groupToggle: "offline_recipebook_group_toggle_v1",
   keepScreenAwake: "offline_recipebook_keep_screen_awake_v1",
   mobileView: "offline_recipebook_mobile_view_v1",
+  recipeSort: "offline_recipebook_recipe_sort_v1",
   recipeSearch: "offline_recipebook_recipe_search_v1",
   filters: "offline_recipebook_filters_v1",
 });
 
-export const currentStorageVersion = 4;
+export const currentStorageVersion = 5;
 export const backupAppId = "robert-recipe-book";
 export const backupSchemaVersion = 1;
 const mobileViews = new Set(["recipes", "grocery"]);
@@ -156,6 +158,7 @@ function normalizeUiState(uiState) {
     mobileView: normalizeMobileView(ui.mobileView),
     recipeControlsCollapsed: Boolean(ui.recipeControlsCollapsed),
     recipeSearch: String(ui.recipeSearch || "").trim(),
+    recipeSort: normalizeRecipeSort(ui.recipeSort),
     showFavoriteRecipesOnly: Boolean(ui.showFavoriteRecipesOnly),
     showSelectedRecipesOnly: Boolean(ui.showSelectedRecipesOnly),
     skipClearGroceryConfirmation: Boolean(ui.skipClearGroceryConfirmation),
@@ -203,6 +206,7 @@ export function createDefaultUiState() {
     mobileView: "recipes",
     recipeControlsCollapsed: false,
     recipeSearch: "",
+    recipeSort: recipeSortModes.default,
     showFavoriteRecipesOnly: false,
     showSelectedRecipesOnly: false,
     skipClearGroceryConfirmation: false,
@@ -284,6 +288,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
   ui.mobileView = normalizeMobileView(read(storage, storageKeys.mobileView));
   ui.recipeControlsCollapsed = readBoolean(storage, storageKeys.recipeControlsCollapsed);
   ui.recipeSearch = read(storage, storageKeys.recipeSearch) || "";
+  ui.recipeSort = normalizeRecipeSort(read(storage, storageKeys.recipeSort));
   ui.showFavoriteRecipesOnly = readBoolean(storage, storageKeys.showFavoriteRecipesOnly);
   ui.showSelectedRecipesOnly = readBoolean(storage, storageKeys.showSelectedRecipesOnly);
   ui.skipClearGroceryConfirmation = readBoolean(storage, storageKeys.skipClearGroceryConfirmation);
@@ -333,6 +338,7 @@ export function savePersistentState(state, storage = globalThis.localStorage) {
     write(storage, storageKeys.mobileView, normalizeMobileView(ui.mobileView)),
     write(storage, storageKeys.recipeControlsCollapsed, ui.recipeControlsCollapsed ? "1" : "0"),
     write(storage, storageKeys.recipeSearch, ui.recipeSearch || ""),
+    write(storage, storageKeys.recipeSort, normalizeRecipeSort(ui.recipeSort)),
     write(storage, storageKeys.showFavoriteRecipesOnly, ui.showFavoriteRecipesOnly ? "1" : "0"),
     write(storage, storageKeys.showSelectedRecipesOnly, ui.showSelectedRecipesOnly ? "1" : "0"),
     write(storage, storageKeys.skipClearGroceryConfirmation, ui.skipClearGroceryConfirmation ? "1" : "0"),

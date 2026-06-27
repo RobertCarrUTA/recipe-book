@@ -37,10 +37,12 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
   function syncGroceryControls(counts) {
     const clearButton = byId("clearGroceryList");
     const clearCheckedButton = byId("clearCheckedGroceryItems");
+    const copyButton = byId("copyGroceryList");
     const hideCheckedToggle = byId("hideCheckedGroceryItems");
 
     if (clearButton) clearButton.disabled = counts.itemCount === 0;
     if (clearCheckedButton) clearCheckedButton.disabled = counts.checkedCount === 0;
+    if (copyButton) copyButton.disabled = counts.itemCount === 0;
     if (hideCheckedToggle) hideCheckedToggle.disabled = counts.itemCount === 0;
   }
 
