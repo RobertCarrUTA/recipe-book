@@ -667,6 +667,7 @@ h2 {
   position: relative;
   content-visibility: auto;
   contain-intrinsic-size: auto 140px;
+  scroll-margin-top: 120px;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -747,6 +748,15 @@ h2 {
 .recipe.recipe-planned:not(.recipe-selected):not(.recipe-favorite)::before {
   background: var(--blue);
   transform: scaleX(1);
+}
+
+.recipe:not(.recipe-selected):not(.recipe-favorite):not(.recipe-planned):has(.accordion-header[aria-expanded="true"]) {
+  border-color: rgba(122, 199, 163, 0.4);
+  box-shadow: var(--shadow-soft);
+}
+
+.recipe:has(.accordion-header[aria-expanded="true"]) .accordion-header {
+  background: rgba(122, 199, 163, 0.04);
 }
 
 .recipe.recipe-reveal-highlight {
@@ -972,6 +982,8 @@ h2 {
 }
 
 .recipe-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
   align-items: stretch;
   margin: 0 0 12px;
 }
@@ -981,12 +993,12 @@ h2 {
 .recipe-actions>label,
 .recipe-actions>select,
 .recipe-actions>.recipe-scale-control {
+  width: 100%;
   max-width: 100%;
   min-width: 0;
 }
 
 .recipe-plan-select {
-  min-width: min(100%, 128px);
   min-height: 42px;
   padding: 0 34px 0 12px;
   border: 1px solid rgba(128, 183, 243, 0.42);
@@ -1007,7 +1019,6 @@ h2 {
 
 .recipe-add-toggle {
   justify-content: center;
-  min-width: min(100%, 156px);
   padding: 0 12px;
   border: 1px solid rgba(122, 199, 163, 0.45);
   border-radius: var(--radius);
@@ -1028,8 +1039,9 @@ h2 {
 
 .recipe-scale-control {
   display: inline-grid;
-  grid-template-columns: auto 34px 64px 34px;
+  grid-template-columns: auto 34px minmax(48px, 1fr) 34px;
   align-items: center;
+  width: 100%;
   min-height: 42px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -1072,7 +1084,7 @@ h2 {
 }
 
 .recipe-scale-input {
-  width: 64px;
+  width: 100%;
   min-width: 0;
   min-height: 40px;
   padding: 0 6px;
