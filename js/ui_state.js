@@ -35,6 +35,7 @@ export function readUiStateFromControls(document, currentUiState = {}) {
   const hideChecked = byId("hideCheckedGroceryItems");
   const keepAwake = byId("keepScreenAwake");
   const recipeSearch = byId("recipeSearch");
+  const recipeSort = byId("recipeSort");
 
   return {
     ...currentUiState,
@@ -45,6 +46,7 @@ export function readUiStateFromControls(document, currentUiState = {}) {
       : Boolean(currentUiState.hideCheckedGroceryItems),
     keepScreenAwake: keepAwake ? Boolean(keepAwake.checked) : Boolean(currentUiState.keepScreenAwake),
     recipeSearch: recipeSearch ? recipeSearch.value || "" : currentUiState.recipeSearch || "",
+    recipeSort: recipeSort ? recipeSort.value : currentUiState.recipeSort,
     showFavoriteRecipesOnly: favoriteOnly
       ? Boolean(favoriteOnly.checked)
       : Boolean(currentUiState.showFavoriteRecipesOnly),
@@ -62,6 +64,7 @@ export function applyUiStateToControls(document, uiState) {
   const hideChecked = byId("hideCheckedGroceryItems");
   const keepAwake = byId("keepScreenAwake");
   const recipeSearch = byId("recipeSearch");
+  const recipeSort = byId("recipeSort");
 
   if (groupToggle) groupToggle.checked = Boolean(uiState.groupItems);
   if (selectedOnly) selectedOnly.checked = Boolean(uiState.showSelectedRecipesOnly);
@@ -69,5 +72,6 @@ export function applyUiStateToControls(document, uiState) {
   if (hideChecked) hideChecked.checked = Boolean(uiState.hideCheckedGroceryItems);
   if (keepAwake) keepAwake.checked = Boolean(uiState.keepScreenAwake);
   if (recipeSearch) recipeSearch.value = uiState.recipeSearch || "";
+  if (recipeSort) recipeSort.value = uiState.recipeSort || "default";
   applyFilterDataToDom(document, uiState.filters);
 }

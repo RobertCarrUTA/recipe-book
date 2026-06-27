@@ -190,6 +190,9 @@ const browserChecks = [
 
       await expectText(page, "#mealPlanSummary", /^1 meal - 1 day$/);
       await expectLocatorText(recipe.locator(".recipe-planned-badge"), /Planned Mon/i);
+      await assertVisible(page, "#mealPlanPanel", false);
+      await page.locator("#openMealPlan").click();
+      await assertVisible(page, "#mealPlanPanel", true);
       await page
         .locator('.meal-plan-day[data-day="monday"] .meal-plan-item')
         .filter({ hasText: target.title })
@@ -202,6 +205,8 @@ const browserChecks = [
       );
       assert.deepEqual(selectedRecipeIds, [target.id]);
 
+      await page.locator("#openMealPlan").click();
+      await assertVisible(page, "#mealPlanPanel", true);
       await page.locator("#clearMealPlan").click();
       await expectText(page, "#mealPlanSummary", /^No meals planned$/);
       await assertVisible(page, "#mobileMealPlanBadge", false);

@@ -5,7 +5,7 @@
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#101214" />
-    <link rel="stylesheet" href="css/styles.css?v=20260627-1" />
+    <link rel="stylesheet" href="css/styles.css?v=20260627-4" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="data:," />
   </head>
@@ -63,6 +63,18 @@
             <div id="recipeControlsPanel" class="recipe-controls-panel">
               <label class="visually-hidden" for="recipeSearch">Search recipes</label>
               <input id="recipeSearch" type="search" placeholder="Search title, ingredients, notes..." autocomplete="off" />
+
+              <label class="recipe-sort-control" for="recipeSort">
+                <span>Sort</span>
+                <select id="recipeSort">
+                  <option value="default">Default</option>
+                  <option value="favorites-first">Favorites first</option>
+                  <option value="selected-first">In list first</option>
+                  <option value="fastest">Fastest</option>
+                  <option value="highest-rated">Best rated</option>
+                  <option value="easiest">Easiest</option>
+                </select>
+              </label>
 
               <div class="quick-controls" aria-label="Recipe options">
                 <label class="switch-control">
@@ -200,7 +212,8 @@
                 <button id="addAllRecipesToGroceryList" class="secondary-button" type="button">Add all recipes</button>
               </div>
 
-              <div class="state-tools" aria-label="Backup tools">
+              <div class="state-tools" aria-label="List and backup tools">
+                <button id="copyGroceryList" class="secondary-button" type="button" disabled>Copy list</button>
                 <button id="exportStateBackup" class="secondary-button" type="button">Export backup</button>
                 <button id="importStateBackup" class="secondary-button" type="button">Import backup</button>
                 <input id="stateBackupInput" type="file" accept="application/json,.json" hidden />
@@ -326,6 +339,6 @@
       </form>
     </dialog>
 
-    <script type="module" src="js/app.js?v=20260627-1"></script>
+    <script type="module" src="js/app.js?v=20260627-4"></script>
   </body>
 </html>

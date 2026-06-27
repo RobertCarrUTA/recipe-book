@@ -382,6 +382,38 @@ h2 {
   outline: none;
 }
 
+.recipe-sort-control {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 6px 8px 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+}
+
+.recipe-sort-control span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.recipe-sort-control select {
+  width: 100%;
+  min-height: 36px;
+  padding: 0 34px 0 10px;
+  border: 1px solid rgba(59, 70, 82, 0.72);
+  border-radius: var(--radius-sm);
+  background: var(--field);
+  color: var(--fg);
+  font-weight: 800;
+}
+
 .recipe-search-meta {
   flex: 0 0 auto;
   min-height: 28px;
@@ -1116,12 +1148,25 @@ li {
 }
 
 .meal-plan {
+  display: none;
   min-height: 320px;
   padding: 14px;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: rgba(21, 25, 29, 0.78);
   box-shadow: var(--shadow);
+}
+
+.is-meal-plan-open {
+  overflow: hidden;
+}
+
+.is-meal-plan-open .meal-plan {
+  display: block;
+}
+
+.is-meal-plan-open .meal-plan-close-button {
+  display: inline-flex;
 }
 
 .meal-plan-bar {
@@ -1395,19 +1440,33 @@ li {
 
 .grocery-toolbar {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, max-content));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 12px;
+}
+
+.grocery-toolbar .switch-control,
+.grocery-toolbar button {
+  width: 100%;
+}
+
+.grocery-toolbar #addAllRecipesToGroceryList {
+  grid-column: 1 / -1;
 }
 
 .state-tools {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, max-content));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   gap: 8px;
 }
 
 .state-tools button {
+  width: 100%;
   min-height: 40px;
+}
+
+#copyGroceryList {
+  grid-column: 1 / -1;
 }
 
 .state-tools-status {
@@ -2142,10 +2201,6 @@ li {
     display: none;
   }
 
-  .is-meal-plan-open {
-    overflow: hidden;
-  }
-
   .view-plan-button:not([hidden]),
   .view-grocery-button:not([hidden]) {
     display: inline-flex;
@@ -2241,10 +2296,6 @@ li {
     width: 100%;
     min-height: 42px;
     padding: 0 10px;
-  }
-
-  .meal-plan-close-button {
-    display: inline-flex;
   }
 
   .meal-plan-day {
@@ -2556,7 +2607,8 @@ li {
   }
 
   .quick-controls>button,
-  .quick-controls>.switch-control {
+  .quick-controls>.switch-control,
+  .recipe-sort-control {
     width: 100%;
   }
 
@@ -2613,7 +2665,7 @@ li {
   }
 
   .app-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr) minmax(320px, 0.42fr);
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.42fr);
     align-items: start;
     gap: 22px;
   }
@@ -2626,16 +2678,58 @@ li {
     display: grid;
   }
 
+  .recipe-controls-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 240px);
+    align-items: center;
+  }
+
+  .recipe-controls-panel .quick-controls,
+  .recipe-controls-panel .recipe-filters {
+    grid-column: 1 / -1;
+  }
+
   .recipe-search.is-compact {
     gap: 10px;
   }
 
-  .meal-plan,
   .grocery-list {
     position: sticky;
     top: 18px;
     max-height: calc(100vh - 36px);
     overflow: auto;
+  }
+
+  .is-meal-plan-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgba(5, 7, 9, 0.48);
+    backdrop-filter: blur(6px);
+  }
+
+  .is-meal-plan-open .meal-plan {
+    position: fixed;
+    top: 18px;
+    right: 28px;
+    bottom: 18px;
+    z-index: 60;
+    width: min(440px, calc(100vw - 56px));
+    min-height: 0;
+    max-height: none;
+    overflow: auto;
+    background: rgba(21, 25, 29, 0.96);
+  }
+
+  .meal-plan-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin: -14px -14px 12px;
+    padding: 14px;
+    border-bottom: 1px solid rgba(45, 54, 63, 0.92);
+    background: rgba(21, 25, 29, 0.98);
+    backdrop-filter: blur(16px);
   }
 
   .grocery-controls-panel[hidden] {
