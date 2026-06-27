@@ -19,6 +19,15 @@ import {
 import { createBackupController } from "./backup_controller.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
 import { createLogger, isDebugEnabled } from "./logger.js";
+import {
+  addRecipeToMealPlan,
+  applyMealPlanToGroceryList,
+  clearMealPlan as clearMealPlanState,
+  getRecipePlannedDayKeys,
+  normalizeMealPlan,
+  pruneMealPlanForRecipes,
+  removeRecipeFromMealPlan,
+} from "./meal_plan_model.js";
 import { createMobileViewController } from "./mobile_view_controller.js";
 import { createOfflineController } from "./offline_controller.js";
 import {
@@ -61,6 +70,7 @@ function createRecipeBookApp() {
   const restored = restorePersistentState();
   const appState = {
     recipes: [],
+    mealPlan: normalizeMealPlan(restored.mealPlan),
     recipeSearchTexts: [],
     runtime: createRecipeRuntimeState(restored),
     ui: {
@@ -70,6 +80,7 @@ function createRecipeBookApp() {
   };
   let renderer = null;
   let mobileViewController = null;
+  let mealPlanReturnFocus = null;
   let wakeLockController = null;
 
   function byId(id) {
@@ -91,17 +102,22 @@ function createRecipeBookApp() {
 
   function applyRestoredPersistentState(restoredState) {
     appState.runtime = createRecipeRuntimeState(restoredState);
+    appState.mealPlan = normalizeMealPlan(restoredState.mealPlan);
     appState.ui = {
       ...createDefaultUiState(),
       ...(restoredState.ui || {}),
     };
 
+    pruneMealPlanForRecipes(appState.mealPlan, appState.recipes);
     recomputeGroceryState(appState.runtime, appState.recipes);
     applyUiStateToControls();
     syncRecipeControlsPanel();
     syncGroceryControlsPanel();
     renderer.renderGroceryList();
+    renderer.renderMealPlan();
+    renderer.syncMealPlanIndicators();
     refreshRecipeListFilter();
+    closeMealPlanPanel({ restoreFocus: false });
     mobileViewController.setMobileView(appState.ui.mobileView, { skipSave: true });
     savePersistentState(appState);
   }
@@ -220,6 +236,114 @@ function createRecipeBookApp() {
     renderer.syncRecipeSelectionIndicators();
     saveAppState();
     return normalized;
+  }
+
+  function refreshMealPlanUi() {
+    renderer.renderMealPlan();
+    renderer.syncMealPlanIndicators();
+  }
+
+  function handlePlanRecipe(recipe, recipeIndex, dayKey) {
+    const added = addRecipeToMealPlan(appState.mealPlan, dayKey, getRecipeKey(recipe, recipeIndex));
+    if (!added) return;
+
+    refreshMealPlanUi();
+    saveAppState();
+  }
+
+  function handleAddRecipeToMealPlan(dayKey, recipeKey) {
+    const added = addRecipeToMealPlan(appState.mealPlan, dayKey, recipeKey);
+    if (!added) return;
+
+    refreshMealPlanUi();
+    saveAppState();
+  }
+
+  function handleRemoveRecipeFromMealPlan(dayKey, recipeKey) {
+    const removed = removeRecipeFromMealPlan(appState.mealPlan, dayKey, recipeKey);
+    if (!removed) return;
+
+    refreshMealPlanUi();
+    saveAppState();
+  }
+
+  function handleClearMealPlan() {
+    clearMealPlanState(appState.mealPlan);
+    refreshMealPlanUi();
+    saveAppState();
+  }
+
+  function handleBuildGroceryListFromMealPlan() {
+    const selectedCount = applyMealPlanToGroceryList(appState.runtime, appState.recipes, appState.mealPlan);
+    if (!selectedCount) return;
+
+    renderer.renderGroceryList();
+    renderer.syncRecipeSelectionIndicators();
+    if (isControlChecked("showSelectedRecipesOnly")) refreshRecipeListFilter();
+    saveAppState();
+    closeMealPlanPanel({ restoreFocus: false });
+    handleViewGroceryList();
+  }
+
+  function setElementInert(element, inert) {
+    if (!element) return;
+
+    if ("inert" in element) {
+      element.inert = inert;
+    }
+
+    if (inert) {
+      element.setAttribute("aria-hidden", "true");
+    } else {
+      element.removeAttribute("aria-hidden");
+    }
+  }
+
+  function setMealPlanBackgroundInert(inert) {
+    setElementInert(byId("recipesPanel"), inert);
+    setElementInert(byId("groceryPanel"), inert);
+    setElementInert(document.querySelector(".mobile-view-tabs"), inert);
+  }
+
+  function openMealPlanPanel() {
+    const mealPlanPanel = byId("mealPlanPanel");
+    if (!mealPlanPanel) return;
+
+    if (!isCompactControlsLayout()) {
+      mealPlanPanel.scrollIntoView({ block: "start" });
+      return;
+    }
+
+    const HTMLElementCtor = document.defaultView && document.defaultView.HTMLElement;
+    mealPlanReturnFocus = HTMLElementCtor && document.activeElement instanceof HTMLElementCtor
+      ? document.activeElement
+      : byId("openMealPlan");
+    setMealPlanBackgroundInert(true);
+    document.body.classList.add("is-meal-plan-open");
+    const closeButton = byId("closeMealPlanPanel");
+    if (closeButton) closeButton.focus();
+  }
+
+  function closeMealPlanPanel(options = {}) {
+    if (!document.body.classList.contains("is-meal-plan-open")) return;
+
+    document.body.classList.remove("is-meal-plan-open");
+    setMealPlanBackgroundInert(false);
+
+    if (options.restoreFocus === false) {
+      mealPlanReturnFocus = null;
+      return;
+    }
+
+    const focusTarget = mealPlanReturnFocus && document.contains(mealPlanReturnFocus)
+      ? mealPlanReturnFocus
+      : byId("openMealPlan");
+    mealPlanReturnFocus = null;
+    if (focusTarget) focusTarget.focus();
+  }
+
+  function handleViewMealPlan() {
+    openMealPlanPanel();
   }
 
   function handleViewGroceryList() {
@@ -364,6 +488,25 @@ function createRecipeBookApp() {
       syncManualGrocerySubmit();
       renderer.renderGroceryList();
       saveAppState();
+    });
+  }
+
+  function attachMealPlanControls() {
+    const openButton = byId("openMealPlan");
+    const buildButton = byId("buildGroceryListFromMealPlan");
+    const clearButton = byId("clearMealPlan");
+    const closeButton = byId("closeMealPlanPanel");
+
+    if (openButton) openButton.addEventListener("click", openMealPlanPanel);
+    if (buildButton) buildButton.addEventListener("click", handleBuildGroceryListFromMealPlan);
+    if (clearButton) clearButton.addEventListener("click", handleClearMealPlan);
+    if (closeButton) closeButton.addEventListener("click", closeMealPlanPanel);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && document.body.classList.contains("is-meal-plan-open")) {
+        event.preventDefault();
+        closeMealPlanPanel();
+      }
     });
   }
 
@@ -515,6 +658,7 @@ function createRecipeBookApp() {
     window.recipeBookDebug = Object.freeze({
       getState: () => ({
         recipes: appState.recipes,
+        mealPlan: appState.mealPlan,
         runtime: appState.runtime,
         ui: appState.ui,
       }),
@@ -528,6 +672,7 @@ function createRecipeBookApp() {
 
     renderer = createRenderer({
       document,
+      getMealPlanState: () => appState.mealPlan,
       getRecipes: () => appState.recipes,
       getRuntimeState: () => appState.runtime,
       getUiState: () => appState.ui,
@@ -535,6 +680,8 @@ function createRecipeBookApp() {
         buildRecipeSearchText,
         getRecipeKey,
         getRecipeMultiplier: (recipe, index) => getRecipeMultiplier(appState.runtime, recipe, index),
+        getRecipePlannedDayKeys: (recipe, index) =>
+          getRecipePlannedDayKeys(appState.mealPlan, getRecipeKey(recipe, index)),
         getRecipeSearchText: (_recipe, index) => appState.recipeSearchTexts[index] || "",
         isRecipeFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
         isManualGroceryItem: (canonicalKey) => isManualGroceryItemKey(canonicalKey),
@@ -543,12 +690,16 @@ function createRecipeBookApp() {
         onGroceryCheckedChange: handleGroceryCheckedChange,
         onGroceryGroupToggle: handleGroceryGroupToggle,
         onManualGroceryRemove: handleManualGroceryRemove,
+        onAddRecipeToMealPlan: handleAddRecipeToMealPlan,
+        onPlanRecipe: handlePlanRecipe,
         onRecipeBatchRendered: ({ totalCount }) => updateRecipeSearchMeta(totalCount),
         onRecipeMultiplierChange: handleRecipeMultiplierChange,
+        onRemoveRecipeFromMealPlan: handleRemoveRecipeFromMealPlan,
         onRecipeTagToggle: handleRecipeTagToggle,
         onRenderError: (error) => logger.error(error),
         onSelectRecipe: handleSelectRecipe,
         onViewGroceryList: handleViewGroceryList,
+        onViewMealPlan: handleViewMealPlan,
       },
     });
     mobileViewController = createMobileViewController({
@@ -571,6 +722,7 @@ function createRecipeBookApp() {
     attachFilterControls();
     attachClearGroceryDialog();
     attachManualGroceryForm();
+    attachMealPlanControls();
     createBackupController({
       document,
       getState: () => {
@@ -590,6 +742,7 @@ function createRecipeBookApp() {
       const result = await recipeRepository.loadAllRecipes();
       appState.recipes = result.recipes;
       appState.recipeSearchTexts = appState.recipes.map(buildRecipeSearchText);
+      pruneMealPlanForRecipes(appState.mealPlan, appState.recipes);
       recomputeGroceryState(appState.runtime, appState.recipes);
     } catch (error) {
       renderer.renderRecipeLoadError(error);
@@ -597,6 +750,7 @@ function createRecipeBookApp() {
     }
 
     renderer.renderGroceryList();
+    renderer.renderMealPlan();
     applyRecipeFilter(appState.ui.recipeSearch || "");
     mobileViewController.setMobileView(appState.ui.mobileView, { skipSave: true });
     wakeLockController.attach();

@@ -1,14 +1,22 @@
 import { createCookingRenderer } from "./cooking_renderer.js";
 import { createGroceryRenderer } from "./grocery_renderer.js";
+import { createMealPlanRenderer } from "./meal_plan_renderer.js";
 import { createRecipeRenderer } from "./recipe_renderer.js";
 
-export function createRenderer({ document, getRecipes, getRuntimeState, getUiState, actions }) {
+export function createRenderer({ document, getMealPlanState, getRecipes, getRuntimeState, getUiState, actions }) {
   const cookingRenderer = createCookingRenderer({ document });
   const groceryRenderer = createGroceryRenderer({
     actions,
     document,
     getRuntimeState,
     getUiState,
+  });
+  const mealPlanRenderer = createMealPlanRenderer({
+    actions,
+    document,
+    getMealPlanState,
+    getRecipes,
+    openCookingMode: cookingRenderer.openCookingMode,
   });
   const recipeRenderer = createRecipeRenderer({
     actions,
@@ -25,8 +33,10 @@ export function createRenderer({ document, getRecipes, getRuntimeState, getUiSta
     handleCookingResize: cookingRenderer.handleCookingResize,
     isCookingModeOpen: cookingRenderer.isCookingModeOpen,
     renderGroceryList: groceryRenderer.renderGroceryList,
+    renderMealPlan: mealPlanRenderer.renderMealPlan,
     renderRecipeLoadError: recipeRenderer.renderRecipeLoadError,
     renderRecipes: recipeRenderer.renderRecipes,
+    syncMealPlanIndicators: recipeRenderer.syncMealPlanIndicators,
     syncFavoriteRecipeIndicators: recipeRenderer.syncFavoriteRecipeIndicators,
     syncRecipeCheckboxes: recipeRenderer.syncRecipeCheckboxes,
     syncRecipeFilterTagStyles: recipeRenderer.syncRecipeFilterTagStyles,

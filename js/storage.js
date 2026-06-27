@@ -1,3 +1,4 @@
+import { normalizeMealPlan } from "./meal_plan_model.js";
 import { normalizeRecipeMultiplierRecord } from "./recipe_multiplier.js";
 
 export const storageKeys = Object.freeze({
@@ -7,6 +8,7 @@ export const storageKeys = Object.freeze({
   manualGroceryItems: "offline_recipebook_manual_grocery_items_v1",
   favoriteRecipes: "offline_recipebook_favorite_recipes_v1",
   recipeMultipliers: "offline_recipebook_recipe_multipliers_v1",
+  mealPlan: "offline_recipebook_meal_plan_v1",
   selectedRecipes: "offline_recipebook_selected_recipes_v1",
   collapsedGroceryGroups: "offline_recipebook_collapsed_grocery_groups_v1",
   skipClearGroceryConfirmation: "offline_recipebook_skip_clear_grocery_confirmation_v1",
@@ -22,9 +24,10 @@ export const storageKeys = Object.freeze({
   filters: "offline_recipebook_filters_v1",
 });
 
-export const currentStorageVersion = 3;
+export const currentStorageVersion = 4;
 export const backupAppId = "robert-recipe-book";
 export const backupSchemaVersion = 1;
+const mobileViews = new Set(["recipes", "grocery"]);
 
 function isPlainObject(value) {
   return Boolean(value && typeof value === "object" && !Array.isArray(value));
@@ -134,6 +137,10 @@ function normalizeFilterData(value) {
   }, {});
 }
 
+function normalizeMobileView(value) {
+  return mobileViews.has(value) ? value : "recipes";
+}
+
 function normalizeUiState(uiState) {
   const ui = isPlainObject(uiState) ? uiState : {};
   const defaults = createDefaultUiState();
@@ -146,7 +153,7 @@ function normalizeUiState(uiState) {
     groupItems: Boolean(ui.groupItems),
     hideCheckedGroceryItems: Boolean(ui.hideCheckedGroceryItems),
     keepScreenAwake: Boolean(ui.keepScreenAwake),
-    mobileView: ui.mobileView === "grocery" ? "grocery" : "recipes",
+    mobileView: normalizeMobileView(ui.mobileView),
     recipeControlsCollapsed: Boolean(ui.recipeControlsCollapsed),
     recipeSearch: String(ui.recipeSearch || "").trim(),
     showFavoriteRecipesOnly: Boolean(ui.showFavoriteRecipesOnly),
@@ -216,6 +223,7 @@ export function createPersistentStateBackup(state, options = {}) {
       favoriteRecipeIds: truthyRecord(runtime.favoriteRecipeIds),
       groceryCheckedByKey: truthyRecord(runtime.groceryCheckedByKey),
       manualGroceryItemsById: normalizeManualGroceryItems(runtime.manualGroceryItemsById),
+      mealPlan: normalizeMealPlan(state && state.mealPlan),
       recipeMultipliersById: normalizeRecipeMultiplierRecord(runtime.recipeMultipliersById),
       selectedRecipeIds: truthyRecord(runtime.selectedRecipeIds),
       ui,
@@ -237,6 +245,7 @@ export function normalizePersistentStateBackup(backup) {
     favoriteRecipeIds: truthyRecord(data.favoriteRecipeIds),
     groceryCheckedByKey: truthyRecord(data.groceryCheckedByKey),
     manualGroceryItemsById: normalizeManualGroceryItems(data.manualGroceryItemsById),
+    mealPlan: normalizeMealPlan(data.mealPlan),
     recipeMultipliersById: normalizeRecipeMultiplierRecord(data.recipeMultipliersById),
     selectedRecipeIds: truthyRecord(data.selectedRecipeIds),
     ui: normalizeUiState(data.ui),
@@ -250,6 +259,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
       favoriteRecipeIds: {},
       groceryCheckedByKey: {},
       manualGroceryItemsById: {},
+      mealPlan: normalizeMealPlan(),
       recipeMultipliersById: {},
       selectedRecipeIds: {},
       ui,
@@ -271,7 +281,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
   ui.groupItems = readBoolean(storage, storageKeys.groupToggle);
   ui.hideCheckedGroceryItems = readBoolean(storage, storageKeys.hideCheckedGroceryItems);
   ui.keepScreenAwake = readBoolean(storage, storageKeys.keepScreenAwake);
-  ui.mobileView = read(storage, storageKeys.mobileView) === "grocery" ? "grocery" : "recipes";
+  ui.mobileView = normalizeMobileView(read(storage, storageKeys.mobileView));
   ui.recipeControlsCollapsed = readBoolean(storage, storageKeys.recipeControlsCollapsed);
   ui.recipeSearch = read(storage, storageKeys.recipeSearch) || "";
   ui.showFavoriteRecipesOnly = readBoolean(storage, storageKeys.showFavoriteRecipesOnly);
@@ -282,6 +292,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
     favoriteRecipeIds: truthyRecord(readObject(storage, storageKeys.favoriteRecipes)),
     groceryCheckedByKey: truthyRecord(readObject(storage, storageKeys.groceryChecked)),
     manualGroceryItemsById: readManualGroceryItems(storage),
+    mealPlan: normalizeMealPlan(readObject(storage, storageKeys.mealPlan)),
     recipeMultipliersById: recipeMultipliers,
     selectedRecipeIds: {
       ...selectedFromLegacyState,
@@ -312,13 +323,14 @@ export function savePersistentState(state, storage = globalThis.localStorage) {
     write(storage, storageKeys.groceryChecked, JSON.stringify(runtime.groceryCheckedByKey || {})),
     write(storage, storageKeys.manualGroceryItems, JSON.stringify(runtime.manualGroceryItemsById || {})),
     write(storage, storageKeys.favoriteRecipes, JSON.stringify(runtime.favoriteRecipeIds || {})),
+    write(storage, storageKeys.mealPlan, JSON.stringify(normalizeMealPlan(state.mealPlan))),
     write(storage, storageKeys.collapsedGroceryGroups, JSON.stringify(ui.collapsedGroceryGroups || {})),
     write(storage, storageKeys.filters, JSON.stringify(ui.filters || {})),
     write(storage, storageKeys.groceryControlsCollapsed, ui.groceryControlsCollapsed ? "1" : "0"),
     write(storage, storageKeys.groupToggle, ui.groupItems ? "1" : "0"),
     write(storage, storageKeys.hideCheckedGroceryItems, ui.hideCheckedGroceryItems ? "1" : "0"),
     write(storage, storageKeys.keepScreenAwake, ui.keepScreenAwake ? "1" : "0"),
-    write(storage, storageKeys.mobileView, ui.mobileView === "grocery" ? "grocery" : "recipes"),
+    write(storage, storageKeys.mobileView, normalizeMobileView(ui.mobileView)),
     write(storage, storageKeys.recipeControlsCollapsed, ui.recipeControlsCollapsed ? "1" : "0"),
     write(storage, storageKeys.recipeSearch, ui.recipeSearch || ""),
     write(storage, storageKeys.showFavoriteRecipesOnly, ui.showFavoriteRecipesOnly ? "1" : "0"),

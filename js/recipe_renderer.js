@@ -4,6 +4,7 @@ import {
   getRecipeHeaderMeta,
   getRecipeServingsText,
 } from "./recipe_formatting.js";
+import { mealPlanDays } from "./meal_plan_model.js";
 import {
   DEFAULT_RECIPE_MULTIPLIER,
   MAX_RECIPE_MULTIPLIER,
@@ -71,6 +72,39 @@ export function createRecipeRenderer({
     return Math.abs(multiplier - DEFAULT_RECIPE_MULTIPLIER) > 1e-9
       ? `In list ${formatRecipeMultiplier(multiplier)}`
       : "In list";
+  }
+
+  function getRecipePlanDayKeys(recipe, recipeIndex) {
+    return typeof actions.getRecipePlannedDayKeys === "function"
+      ? actions.getRecipePlannedDayKeys(recipe, recipeIndex)
+      : [];
+  }
+
+  function isRecipePlanned(recipe, recipeIndex) {
+    return getRecipePlanDayKeys(recipe, recipeIndex).length > 0;
+  }
+
+  function getPlannedBadgeText(recipe, recipeIndex) {
+    const plannedDayKeys = getRecipePlanDayKeys(recipe, recipeIndex);
+    if (!plannedDayKeys.length) return "Planned";
+    if (plannedDayKeys.length > 2) return `Planned x${plannedDayKeys.length}`;
+
+    const labels = plannedDayKeys
+      .map((dayKey) => mealPlanDays.find((day) => day.key === dayKey))
+      .filter(Boolean)
+      .map((day) => day.shortLabel);
+
+    return labels.length ? `Planned ${labels.join(", ")}` : "Planned";
+  }
+
+  function syncRecipePlanSelect(select, recipe, recipeIndex) {
+    if (!select) return;
+
+    const plannedDayKeys = new Set(getRecipePlanDayKeys(recipe, recipeIndex));
+    select.value = "";
+    select.querySelectorAll("option[data-day]").forEach((option) => {
+      option.disabled = plannedDayKeys.has(option.dataset.day);
+    });
   }
 
   function syncRecipeScaleControl(control, recipe, recipeIndex, selected) {
@@ -152,6 +186,34 @@ export function createRecipeRenderer({
     return control;
   }
 
+  function createRecipePlanSelect(recipe, recipeIndex) {
+    const select = document.createElement("select");
+    const placeholder = document.createElement("option");
+
+    select.className = "recipe-plan-select";
+    select.setAttribute("aria-label", `Plan ${recipe.title || "recipe"}`);
+    placeholder.value = "";
+    placeholder.textContent = "Plan meal";
+    select.appendChild(placeholder);
+
+    mealPlanDays.forEach((day) => {
+      const option = document.createElement("option");
+      option.value = day.key;
+      option.dataset.day = day.key;
+      option.textContent = day.label;
+      select.appendChild(option);
+    });
+
+    select.addEventListener("change", () => {
+      if (!select.value || typeof actions.onPlanRecipe !== "function") return;
+      actions.onPlanRecipe(recipe, recipeIndex, select.value);
+      syncRecipePlanSelect(select, recipe, recipeIndex);
+    });
+    syncRecipePlanSelect(select, recipe, recipeIndex);
+
+    return select;
+  }
+
   function renderRecipeTags(tags) {
     const t = tags || {};
     const wrap = document.createElement("div");
@@ -192,10 +254,12 @@ export function createRecipeRenderer({
     const actionsWrap = document.createElement("div");
     const favoriteButton = document.createElement("button");
     const cookButton = document.createElement("button");
+    const planSelect = createRecipePlanSelect(recipe, recipeIndex);
     const toggle = document.createElement("label");
     const addToListCheckbox = document.createElement("input");
     const addToListText = document.createElement("span");
     const scaleControl = createRecipeScaleControl(recipe, recipeIndex);
+    const viewPlanButton = document.createElement("button");
     const viewGroceryButton = document.createElement("button");
 
     actionsWrap.className = "recipe-actions";
@@ -214,6 +278,7 @@ export function createRecipeRenderer({
     cookButton.textContent = "Cook mode";
     cookButton.addEventListener("click", () => openCookingMode(recipe, recipeIndex));
     actionsWrap.appendChild(cookButton);
+    actionsWrap.appendChild(planSelect);
 
     toggle.className = "checkbox-inline recipe-add-toggle";
     addToListCheckbox.type = "checkbox";
@@ -224,6 +289,13 @@ export function createRecipeRenderer({
     toggle.appendChild(addToListText);
     actionsWrap.appendChild(toggle);
     actionsWrap.appendChild(scaleControl);
+
+    viewPlanButton.className = "view-plan-button";
+    viewPlanButton.type = "button";
+    viewPlanButton.textContent = "View plan";
+    viewPlanButton.hidden = !isRecipePlanned(recipe, recipeIndex);
+    viewPlanButton.addEventListener("click", actions.onViewMealPlan);
+    actionsWrap.appendChild(viewPlanButton);
 
     viewGroceryButton.className = "view-grocery-button";
     viewGroceryButton.type = "button";
@@ -413,6 +485,7 @@ export function createRecipeRenderer({
     const title = document.createElement("span");
     const headerBadges = document.createElement("span");
     const favoriteBadge = document.createElement("span");
+    const plannedBadge = document.createElement("span");
     const selectedBadge = document.createElement("span");
     const content = document.createElement("div");
 
@@ -440,10 +513,14 @@ export function createRecipeRenderer({
     favoriteBadge.className = "recipe-favorite-badge";
     favoriteBadge.textContent = "Favorite";
     favoriteBadge.hidden = !actions.isRecipeFavorite(recipe, recipeIndex);
+    plannedBadge.className = "recipe-planned-badge";
+    plannedBadge.textContent = getPlannedBadgeText(recipe, recipeIndex);
+    plannedBadge.hidden = !isRecipePlanned(recipe, recipeIndex);
     selectedBadge.className = "recipe-selected-badge";
     selectedBadge.textContent = getSelectedBadgeText(recipe, recipeIndex);
     selectedBadge.hidden = !actions.isRecipeSelected(recipe, recipeIndex);
     headerBadges.appendChild(favoriteBadge);
+    headerBadges.appendChild(plannedBadge);
     headerBadges.appendChild(selectedBadge);
     headerTop.appendChild(headerBadges);
     header.appendChild(headerTop);
@@ -675,6 +752,27 @@ export function createRecipeRenderer({
     });
   }
 
+  function syncMealPlanIndicators() {
+    const recipes = getRecipes();
+    document.querySelectorAll(".recipe[data-recipe-id]").forEach((recipeElement) => {
+      const recipeIndex = Number(recipeElement.dataset.recipeIndex);
+      const recipe = recipes[recipeIndex];
+      const planned = recipe ? isRecipePlanned(recipe, recipeIndex) : false;
+      recipeElement.classList.toggle("recipe-planned", planned);
+
+      const badge = recipeElement.querySelector(".recipe-planned-badge");
+      if (badge) {
+        badge.hidden = !planned;
+        if (planned) badge.textContent = getPlannedBadgeText(recipe, recipeIndex);
+      }
+
+      syncRecipePlanSelect(recipeElement.querySelector(".recipe-plan-select"), recipe, recipeIndex);
+
+      const viewButton = recipeElement.querySelector(".view-plan-button");
+      if (viewButton) viewButton.hidden = !planned;
+    });
+  }
+
   function syncRecipeCheckboxes() {
     syncRecipeSelectionIndicators();
   }
@@ -714,6 +812,7 @@ export function createRecipeRenderer({
     getRenderedRecipeCount: () => renderedCount,
     renderRecipeLoadError,
     renderRecipes,
+    syncMealPlanIndicators,
     syncFavoriteRecipeIndicators,
     syncRecipeCheckboxes,
     syncRecipeFilterTagStyles,

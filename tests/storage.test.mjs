@@ -28,6 +28,7 @@ test("restorePersistentState returns safe defaults when storage is unavailable",
   assert.deepEqual(restored.selectedRecipeIds, {});
   assert.deepEqual(restored.groceryCheckedByKey, {});
   assert.deepEqual(restored.manualGroceryItemsById, {});
+  assert.deepEqual(restored.mealPlan.days.monday, []);
   assert.deepEqual(restored.recipeMultipliersById, {});
   assert.deepEqual(restored.ui.collapsedGroceryGroups, {});
   assert.equal(restored.ui.hideCheckedGroceryItems, false);
@@ -70,6 +71,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
         recipeMultipliersById: { chili: 2 },
         selectedRecipeIds: { chili: true },
       },
+      mealPlan: { days: { monday: ["chili"] } },
       ui: {
         collapsedGroceryGroups: { Produce: true },
         filters: { status: ["tried"] },
@@ -94,6 +96,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.manualGroceryItems)), {
     "manual-1": { id: "manual-1", name: "Paper towels" },
   });
+  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.mealPlan)).days.monday, ["chili"]);
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.recipeMultipliers)), { chili: 2 });
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.collapsedGroceryGroups)), { Produce: true });
   assert.equal(storage.getItem(storageKeys.groceryControlsCollapsed), "1");
@@ -117,6 +120,7 @@ test("createPersistentStateBackup exports portable runtime and ui state", () => 
         recipeMultipliersById: { chili: 2, soup: 1 },
         selectedRecipeIds: { chili: true },
       },
+      mealPlan: { days: { monday: ["chili", "soup"], tuesday: ["soup"] } },
       ui: {
         collapsedGroceryGroups: { Produce: true, Dairy: false },
         filters: { status: ["tried", "tried", ""], empty: [] },
@@ -137,6 +141,8 @@ test("createPersistentStateBackup exports portable runtime and ui state", () => 
   assert.deepEqual(backup.data.manualGroceryItemsById, {
     manual1: { id: "manual1", name: "Paper towels", note: "2 rolls" },
   });
+  assert.deepEqual(backup.data.mealPlan.days.monday, ["chili", "soup"]);
+  assert.deepEqual(backup.data.mealPlan.days.tuesday, ["soup"]);
   assert.deepEqual(backup.data.recipeMultipliersById, { chili: 2 });
   assert.deepEqual(backup.data.ui.collapsedGroceryGroups, { Produce: true });
   assert.deepEqual(backup.data.ui.filters, { status: ["tried"] });
@@ -159,6 +165,7 @@ test("normalizePersistentStateBackup returns safe restored state", () => {
       favoriteRecipeIds: { chili: true, soup: 0 },
       groceryCheckedByKey: { beans: true },
       manualGroceryItemsById: { manual1: { id: "manual1", name: "Dish soap" } },
+      mealPlan: { days: { monday: ["chili", "chili", ""], friday: ["soup"] } },
       recipeMultipliersById: { chili: 3, soup: "bad" },
       selectedRecipeIds: { chili: true },
       ui: {
@@ -173,6 +180,8 @@ test("normalizePersistentStateBackup returns safe restored state", () => {
   assert.deepEqual(restored.favoriteRecipeIds, { chili: true });
   assert.deepEqual(restored.groceryCheckedByKey, { beans: true });
   assert.deepEqual(restored.manualGroceryItemsById, { manual1: { id: "manual1", name: "Dish soap" } });
+  assert.deepEqual(restored.mealPlan.days.monday, ["chili"]);
+  assert.deepEqual(restored.mealPlan.days.friday, ["soup"]);
   assert.deepEqual(restored.recipeMultipliersById, { chili: 3 });
   assert.deepEqual(restored.selectedRecipeIds, { chili: true });
   assert.deepEqual(restored.ui.filters, { difficulty: ["easy"] });
