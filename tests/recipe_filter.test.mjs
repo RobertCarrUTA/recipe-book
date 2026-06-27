@@ -4,6 +4,7 @@ import {
   buildRecipeSearchText,
   getMatchingRecipeIndexes,
   normalizeForSearch,
+  recipeSearchTextMatches,
   recipeMatchesSelectedFilters,
   recipeMatchesVisibilityOptions,
 } from "../js/recipe_filter.js";
@@ -72,6 +73,14 @@ test("recipeMatchesVisibilityOptions combines search, favorites, selection, and 
 
 test("normalizeForSearch collapses whitespace and case", () => {
   assert.equal(normalizeForSearch("  Dutch   Oven  "), "dutch oven");
+});
+
+test("recipeSearchTextMatches supports out-of-order search terms", () => {
+  const searchText = buildRecipeSearchText(recipe);
+
+  assert.equal(recipeSearchTextMatches(searchText, "dutch chili"), true);
+  assert.equal(recipeSearchTextMatches(searchText, "oven dutch"), true);
+  assert.equal(recipeSearchTextMatches(searchText, "dutch cake"), false);
 });
 
 test("getMatchingRecipeIndexes filters recipe data without rendered DOM", () => {

@@ -743,7 +743,7 @@ export function createRecipeRenderer({
     if (!recipeContainer) return;
 
     disconnectLoadMoreObserver();
-    recipeContainer.innerHTML = "";
+    recipeContainer.replaceChildren();
     renderedCount = 0;
     loadMoreSentinel = null;
 
@@ -896,7 +896,6 @@ export function createRecipeRenderer({
 
     disconnectLoadMoreObserver();
     actions.onRenderError(error);
-    recipeContainer.innerHTML = "";
 
     const message = document.createElement("p");
     message.className = "recipe-description";
@@ -904,7 +903,7 @@ export function createRecipeRenderer({
       windowLike.location?.protocol === "file:"
         ? "Recipe data could not be loaded from data/recipes.json. Start a local web server for this folder, then refresh."
         : "Recipe data could not be loaded from data/recipes.json.";
-    recipeContainer.appendChild(message);
+    recipeContainer.replaceChildren(message);
 
     const meta = byId("recipeSearchMeta");
     if (meta) meta.textContent = "0 recipes";

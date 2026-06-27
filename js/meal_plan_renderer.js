@@ -201,8 +201,9 @@ export function createMealPlanRenderer({
     if (!board) return;
 
     const lookup = getRecipeLookup();
-    board.innerHTML = "";
-    mealPlanDays.forEach((day) => renderDay(board, day, lookup));
+    const fragment = document.createDocumentFragment();
+    mealPlanDays.forEach((day) => renderDay(fragment, day, lookup));
+    board.replaceChildren(fragment);
     updateMealPlanSummary();
   }
 

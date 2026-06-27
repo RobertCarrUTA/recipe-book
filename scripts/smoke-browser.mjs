@@ -177,6 +177,45 @@ const browserChecks = [
     },
   },
   {
+    name: "favorite and selected sorts update when recipe state changes",
+    async run(page) {
+      await openApp(page, { debug: true });
+      const targets = await page.evaluate(() => {
+        const recipes = window.recipeBookDebug.getState().recipes;
+        return {
+          favorite: {
+            index: Math.min(5, recipes.length - 1),
+            title: recipes[Math.min(5, recipes.length - 1)].title,
+          },
+          selected: {
+            index: Math.min(6, recipes.length - 1),
+            title: recipes[Math.min(6, recipes.length - 1)].title,
+          },
+        };
+      });
+
+      await page.selectOption("#recipeSort", "favorites-first");
+      const favoriteRecipe = page.locator(`.recipe[data-recipe-index="${targets.favorite.index}"]`);
+      await favoriteRecipe.waitFor({ timeout: 5000 });
+      await favoriteRecipe.locator(".accordion-header").click();
+      await favoriteRecipe.locator(".favorite-recipe-button").click();
+      await expectLocatorText(
+        page.locator(".recipe .recipe-title").first(),
+        new RegExp(`^${escapeRegExp(targets.favorite.title)}$`)
+      );
+
+      await page.selectOption("#recipeSort", "selected-first");
+      const selectedRecipe = page.locator(`.recipe[data-recipe-index="${targets.selected.index}"]`);
+      await selectedRecipe.waitFor({ timeout: 5000 });
+      await selectedRecipe.locator(".accordion-header").click();
+      await selectedRecipe.locator(".recipe-add-toggle").click();
+      await expectLocatorText(
+        page.locator(".recipe .recipe-title").first(),
+        new RegExp(`^${escapeRegExp(targets.selected.title)}$`)
+      );
+    },
+  },
+  {
     name: "weekly meal planner schedules recipes and builds grocery list",
     async run(page) {
       await openApp(page, { debug: true });
@@ -425,23 +464,32 @@ const browserChecks = [
         window.recipeBookDebug
           .getState()
           .recipes
-          .map((recipe, index) => ({ index, title: recipe.title, stepCount: recipe.instructions.length }))
-          .find((recipe) => recipe.stepCount > 1)
+          .map((recipe, index) => ({
+            index,
+            ingredientCount: recipe.ingredients.length,
+            title: recipe.title,
+            stepCount: recipe.instructions.length,
+          }))
+          .find((recipe) => recipe.stepCount > 1 && recipe.ingredientCount > 0)
       );
 
-      assert.ok(target, "test data should include a multi-step recipe");
+      assert.ok(target, "test data should include a multi-step recipe with ingredients");
       await page.fill("#recipeSearch", target.title);
       await page.waitForTimeout(250);
       const recipe = page.locator(`.recipe[data-recipe-index="${target.index}"]`);
       await recipe.waitFor({ timeout: 5000 });
       await recipe.locator(".accordion-header").click();
-      await recipe.locator(".cooking-mode-button").click();
+      const cookButton = recipe.locator(".cooking-mode-button");
+      await cookButton.click();
       await page.waitForSelector("#cookingMode:not([hidden])", { timeout: 5000 });
 
       assert.match(await page.locator("#cookingStepCount").innerText(), /^Step 1 of \d+$/i);
       assert.match(await page.locator(".cooking-progress").getAttribute("aria-valuetext"), /^Step 1 of \d+, \d+% complete$/i);
       assert.equal(await page.locator("#toggleCookingHeader").getAttribute("aria-expanded"), "true");
       await assertVisible(page, "#cookingHeaderStep", false);
+      await page.locator("#cookingIngredients li").first().evaluate((element) => {
+        element.dataset.renderToken = "kept";
+      });
       const expandedHeaderHeight = await page.locator("#cookingHeader").evaluate((element) =>
         Math.round(element.getBoundingClientRect().height)
       );
@@ -460,6 +508,11 @@ const browserChecks = [
       assert.match(await page.locator("#cookingStepCount").innerText(), /^Step 2 of \d+$/i);
       assert.match(await page.locator("#cookingHeaderStep").innerText(), /^Step 2 of \d+$/i);
       assert.match(await page.locator(".cooking-progress").getAttribute("aria-valuetext"), /^Step 2 of \d+, \d+% complete$/i);
+      assert.equal(
+        await page.locator("#cookingIngredients li").first().evaluate((element) => element.dataset.renderToken),
+        "kept",
+        "step navigation should not rebuild the unchanged ingredient list"
+      );
 
       await page.locator("#toggleCookingHeader").click();
       assert.equal(await page.locator("#toggleCookingHeader").getAttribute("aria-expanded"), "true");
@@ -467,6 +520,11 @@ const browserChecks = [
 
       await page.locator("#closeCookingMode").click();
       await page.waitForFunction(() => document.querySelector("#cookingMode")?.hidden === true);
+      assert.equal(
+        await cookButton.evaluate((element) => document.activeElement === element),
+        true,
+        "closing cooking mode should restore focus to the opener"
+      );
     },
   },
   {
@@ -675,6 +733,10 @@ async function expectText(page, selector, pattern) {
     ({ selector, source, flags }) => new RegExp(source, flags).test(document.querySelector(selector)?.textContent || ""),
     { selector, source: pattern.source, flags: pattern.flags }
   );
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 async function expectLocatorText(locator, pattern) {
