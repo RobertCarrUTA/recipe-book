@@ -57,7 +57,7 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     syncGroceryControls(counts);
 
     if (progressBar) {
-      progressBar.style.width = `${progress}%`;
+      progressBar.style.transform = `scaleX(${progress / 100})`;
       if (progressBar.parentElement) {
         progressBar.parentElement.hidden = counts.itemCount === 0;
         progressBar.parentElement.setAttribute("aria-valuenow", String(progress));

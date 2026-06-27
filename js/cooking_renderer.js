@@ -196,7 +196,7 @@ export function createCookingRenderer({ document }) {
     }
     if (progressBar) {
       const progress = Math.round(((stepIndex + 1) / steps.length) * 100);
-      progressBar.style.width = `${progress}%`;
+      progressBar.style.transform = `scaleX(${progress / 100})`;
       if (progressBar.parentElement) {
         progressBar.parentElement.setAttribute("aria-valuenow", String(progress));
         progressBar.parentElement.setAttribute("aria-valuetext", `${stepCountText}, ${progress}% complete`);
