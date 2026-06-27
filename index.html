@@ -5,7 +5,7 @@
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#101214" />
-    <link rel="stylesheet" href="css/styles.css?v=20260627-13" />
+    <link rel="stylesheet" href="css/styles.css?v=20260627-14" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="data:," />
   </head>
@@ -62,7 +62,13 @@
 
             <div id="recipeControlsPanel" class="recipe-controls-panel">
               <label class="visually-hidden" for="recipeSearch">Search recipes</label>
-              <input id="recipeSearch" type="search" placeholder="Search title, ingredients, notes..." autocomplete="off" />
+              <input
+                id="recipeSearch"
+                type="search"
+                placeholder="Search title, ingredients, notes..."
+                autocomplete="off"
+                enterkeyhint="search"
+              />
 
               <label class="recipe-sort-control" for="recipeSort">
                 <span>Sort</span>
@@ -193,6 +199,7 @@
                   type="text"
                   placeholder="Add grocery item..."
                   autocomplete="off"
+                  enterkeyhint="done"
                   maxlength="80"
                 />
                 <button class="primary-button" type="submit">Add</button>
@@ -339,6 +346,6 @@
       </form>
     </dialog>
 
-    <script type="module" src="js/app.js?v=20260627-13"></script>
+    <script type="module" src="js/app.js?v=20260627-14"></script>
   </body>
 </html>

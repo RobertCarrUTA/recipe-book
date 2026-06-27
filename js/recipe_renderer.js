@@ -16,18 +16,22 @@ import {
 } from "./recipe_multiplier.js";
 
 const DEFAULT_RECIPE_BATCH_SIZE = 24;
-const RECIPE_LOAD_AHEAD_MARGIN = "900px 0px";
+const COMPACT_RECIPE_BATCH_SIZE = 16;
+const COMPACT_RECIPE_BATCH_QUERY = "(max-width: 979px)";
+const DEFAULT_RECIPE_LOAD_AHEAD_MARGIN = "900px 0px";
+const COMPACT_RECIPE_LOAD_AHEAD_MARGIN = "120px 0px";
 
 export function createRecipeRenderer({
   document,
   getRecipes,
   actions,
   openCookingMode,
-  recipeBatchSize = DEFAULT_RECIPE_BATCH_SIZE,
+  recipeBatchSize,
 }) {
   const byId = (id) => document.getElementById(id);
   const windowLike = document.defaultView || globalThis;
-  const batchSize = Math.max(1, Number(recipeBatchSize) || DEFAULT_RECIPE_BATCH_SIZE);
+  const configuredBatchSize = Math.max(1, Number(recipeBatchSize) || DEFAULT_RECIPE_BATCH_SIZE);
+  const shouldAdaptBatchSize = recipeBatchSize === undefined;
   let currentRecipeIndexes = [];
   let currentSelectedFilters = {};
   let loadMoreObserver = null;
@@ -45,6 +49,24 @@ export function createRecipeRenderer({
 
   function hasMoreRecipes() {
     return renderedCount < currentRecipeIndexes.length;
+  }
+
+  function isCompactRecipeViewport() {
+    return (
+      typeof windowLike.matchMedia === "function" &&
+      windowLike.matchMedia(COMPACT_RECIPE_BATCH_QUERY).matches
+    );
+  }
+
+  function getRecipeBatchSize() {
+    if (!shouldAdaptBatchSize || !isCompactRecipeViewport()) return configuredBatchSize;
+    return Math.min(configuredBatchSize, COMPACT_RECIPE_BATCH_SIZE);
+  }
+
+  function getRecipeLoadAheadMargin() {
+    return isCompactRecipeViewport()
+      ? COMPACT_RECIPE_LOAD_AHEAD_MARGIN
+      : DEFAULT_RECIPE_LOAD_AHEAD_MARGIN;
   }
 
   function notifyRecipeBatchRendered() {
@@ -566,7 +588,7 @@ export function createRecipeRenderer({
       (entries) => {
         if (entries.some((entry) => entry.isIntersecting)) renderNextRecipeBatch();
       },
-      { rootMargin: RECIPE_LOAD_AHEAD_MARGIN }
+      { rootMargin: getRecipeLoadAheadMargin() }
     );
     loadMoreObserver.observe(loadMoreSentinel);
   }
@@ -619,7 +641,7 @@ export function createRecipeRenderer({
       return;
     }
 
-    const end = Math.min(currentRecipeIndexes.length, renderedCount + batchSize);
+    const end = Math.min(currentRecipeIndexes.length, renderedCount + getRecipeBatchSize());
     const fragment = document.createDocumentFragment();
 
     for (let index = renderedCount; index < end; index += 1) {
