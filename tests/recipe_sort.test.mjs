@@ -83,6 +83,26 @@ test("sortRecipeIndexes ranks favorites and selected recipes first without losin
   );
 });
 
+test("sortRecipeIndexes caches runtime recipe state during a sort", () => {
+  let favoriteChecks = 0;
+  let selectedChecks = 0;
+
+  sortRecipeIndexes([0, 1, 2, 3], recipes, {
+    isFavorite: (_recipe, index) => {
+      favoriteChecks += 1;
+      return index === 2;
+    },
+    isSelected: (_recipe, index) => {
+      selectedChecks += 1;
+      return index === 1;
+    },
+    sortMode: recipeSortModes.favoritesFirst,
+  });
+
+  assert.ok(favoriteChecks <= recipes.length);
+  assert.ok(selectedChecks <= recipes.length);
+});
+
 test("sortRecipeIndexes ranks by rating and difficulty signals", () => {
   const recipesWithUnrated = [
     ...recipes,

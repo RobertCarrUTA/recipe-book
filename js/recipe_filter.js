@@ -21,10 +21,9 @@ function getSearchTerms(normalizedFilterText) {
     .filter(Boolean);
 }
 
-function normalizedRecipeSearchTextMatches(searchText, normalizedFilterText, searchTerms) {
+function normalizedRecipeSearchTextMatches(normalizedSearchText, normalizedFilterText, searchTerms) {
   if (!normalizedFilterText) return true;
 
-  const normalizedSearchText = normalizeForSearch(searchText);
   if (normalizedSearchText.includes(normalizedFilterText)) return true;
 
   return searchTerms.every((term) => normalizedSearchText.includes(term));
@@ -32,7 +31,12 @@ function normalizedRecipeSearchTextMatches(searchText, normalizedFilterText, sea
 
 export function recipeSearchTextMatches(searchText, filterText) {
   const normalizedFilterText = normalizeForSearch(filterText);
-  return normalizedRecipeSearchTextMatches(searchText, normalizedFilterText, getSearchTerms(normalizedFilterText));
+  const normalizedSearchText = normalizeForSearch(searchText);
+  return normalizedRecipeSearchTextMatches(
+    normalizedSearchText,
+    normalizedFilterText,
+    getSearchTerms(normalizedFilterText)
+  );
 }
 
 export function recipeMatchesSelectedFilters(recipe, selected) {
@@ -74,6 +78,7 @@ export function getMatchingRecipeIndexes({
   isSelected,
   recipes,
   searchTexts,
+  searchTextsAreNormalized = false,
   selectedFilters,
   showFavoriteOnly,
   showSelectedOnly,
@@ -85,14 +90,13 @@ export function getMatchingRecipeIndexes({
 
   return items.reduce((matches, recipe, index) => {
     const searchText = indexedSearchTexts[index] || buildRecipeSearchText(recipe);
-    const isRecipeFavorite = typeof isFavorite === "function" ? isFavorite(recipe, index) : false;
-    const isRecipeSelected = typeof isSelected === "function" ? isSelected(recipe, index) : false;
+    const normalizedSearchText = searchTextsAreNormalized ? String(searchText || "") : normalizeForSearch(searchText);
 
     if (
-      normalizedRecipeSearchTextMatches(searchText, normalizedFilterText, searchTerms) &&
+      normalizedRecipeSearchTextMatches(normalizedSearchText, normalizedFilterText, searchTerms) &&
       recipeMatchesSelectedFilters(recipe, selectedFilters || {}) &&
-      (!showFavoriteOnly || isRecipeFavorite) &&
-      (!showSelectedOnly || isRecipeSelected)
+      (!showFavoriteOnly || (typeof isFavorite === "function" && isFavorite(recipe, index))) &&
+      (!showSelectedOnly || (typeof isSelected === "function" && isSelected(recipe, index)))
     ) {
       matches.push(index);
     }
