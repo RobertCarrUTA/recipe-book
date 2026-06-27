@@ -344,6 +344,18 @@ export function buildCanonicalIngredient(nameLower) {
     return { base: "celery", display: "celery" };
   }
 
+  if (raw.includes("potato bun") && raw.includes("brioche bun")) {
+    return { base: "potato bun or brioche bun", display: "potato bun or brioche bun" };
+  }
+
+  if (raw.includes("potato bun")) {
+    return { base: "potato bun", display: "potato bun" };
+  }
+
+  if (raw.includes("brioche bun")) {
+    return { base: "brioche bun", display: "brioche bun" };
+  }
+
   if (raw.includes("potato")) {
     if (raw.includes("mashed potatoes")) return { base: "mashed potatoes", display: "mashed potatoes" };
     if (raw.includes("sweet potato")) return { base: "sweet potato", display: "sweet potato" };
@@ -362,6 +374,22 @@ export function buildCanonicalIngredient(nameLower) {
 
   if (raw.includes("new york strip") || raw.includes("ribeye") || raw.includes("top sirloin")) {
     return { base: "steak", display: "steak" };
+  }
+
+  if (raw.includes("80/20 ground beef")) {
+    return { base: "80/20 ground beef", display: "80/20 ground beef" };
+  }
+
+  if (raw.includes("85/15 ground beef")) {
+    return { base: "85/15 ground beef", display: "85/15 ground beef" };
+  }
+
+  if (raw.includes("lean ground beef")) {
+    return { base: "lean ground beef", display: "lean ground beef" };
+  }
+
+  if (raw.includes("grass-fed ground beef")) {
+    return { base: "grass-fed ground beef", display: "grass-fed ground beef" };
   }
 
   if (raw.includes("ground beef")) {
@@ -430,6 +458,14 @@ export function buildCanonicalIngredient(nameLower) {
 
   if (raw.includes("egg yolk")) {
     return { base: "egg yolk", display: "egg yolk" };
+  }
+
+  if (raw.includes("american cheese slice")) {
+    return { base: "american cheese slice", display: "American cheese slice" };
+  }
+
+  if (raw.includes("american cheese")) {
+    return { base: "american cheese", display: "American cheese" };
   }
 
   if (raw.includes("brown sugar")) {
@@ -517,12 +553,32 @@ export function buildCanonicalIngredient(nameLower) {
     return { base: "mayonnaise", display: "mayonnaise" };
   }
 
+  if (raw.includes("yellow mustard")) {
+    return { base: "yellow mustard", display: "yellow mustard" };
+  }
+
+  if (raw.includes("louisiana-style cayenne hot sauce")) {
+    return { base: "louisiana-style cayenne hot sauce", display: "Louisiana-style cayenne hot sauce" };
+  }
+
+  if (raw.includes("louisiana-style hot sauce")) {
+    return { base: "louisiana-style hot sauce", display: "Louisiana-style hot sauce" };
+  }
+
+  if (raw.includes("hot sauce")) {
+    return { base: "hot sauce", display: "hot sauce" };
+  }
+
   if (raw.includes("pizza sauce")) {
     return { base: "pizza sauce", display: "pizza sauce" };
   }
 
   if (raw.includes("cheese of choice")) {
     return { base: "cheese", display: "cheese" };
+  }
+
+  if (raw.includes("iceberg lettuce")) {
+    return { base: "iceberg lettuce", display: "iceberg lettuce" };
   }
 
   if (raw.includes("lettuce")) {
@@ -619,7 +675,11 @@ export function buildCanonicalIngredient(nameLower) {
     return { base: "freeze-dried strawberries", display: "freeze-dried strawberries" };
   }
 
-  if (raw.includes("pickles")) {
+  if (raw.includes("dill pickle chips") || raw.includes("hamburger dill pickle chips") || raw.includes("crinkle-cut dill pickles")) {
+    return { base: "dill pickle chips", display: "dill pickle chips" };
+  }
+
+  if (raw.includes("pickle chips") || raw.includes("pickles")) {
     return { base: "pickles", display: "pickles" };
   }
 
