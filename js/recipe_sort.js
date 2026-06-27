@@ -112,7 +112,12 @@ function compareNullableAscending(left, right) {
 }
 
 function compareNullableDescending(left, right) {
-  return compareNullableAscending(right, left);
+  const leftMissing = left === null || left === undefined || Number.isNaN(left);
+  const rightMissing = right === null || right === undefined || Number.isNaN(right);
+  if (leftMissing && rightMissing) return 0;
+  if (leftMissing) return 1;
+  if (rightMissing) return -1;
+  return right - left;
 }
 
 function compareBooleanDescending(left, right) {
