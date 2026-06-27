@@ -104,6 +104,31 @@ function createRecipeBookApp() {
     applyUiStateToDomControls(document, appState.ui);
   }
 
+  function countSelectedRecipeFilters(selected) {
+    return Object.values(selected || {}).reduce((count, values) => {
+      if (values instanceof Set) return count + values.size;
+      return count + (Array.isArray(values) ? values.length : 0);
+    }, 0);
+  }
+
+  function syncRecipeFilterControls(selected) {
+    const filterToggle = byId("toggleFilters");
+    const clearFiltersButton = byId("clearFilters");
+    const activeFilterCount = countSelectedRecipeFilters(selected);
+    const filterText = activeFilterCount ? `Filters (${activeFilterCount})` : "Filters";
+
+    if (filterToggle) {
+      filterToggle.textContent = filterText;
+      filterToggle.classList.toggle("has-active-filters", activeFilterCount > 0);
+      filterToggle.setAttribute(
+        "aria-label",
+        activeFilterCount ? `${activeFilterCount} recipe filters active` : "Show recipe filters"
+      );
+    }
+
+    if (clearFiltersButton) clearFiltersButton.disabled = activeFilterCount === 0;
+  }
+
   function setStateToolsStatus(message, options = {}) {
     const status = byId("stateBackupStatus");
     if (!status) return;
@@ -179,6 +204,7 @@ function createRecipeBookApp() {
 
     renderer.renderRecipes({ recipeIndexes: sortedRecipeIndexes });
     renderer.syncRecipeFilterTagStyles(selected);
+    syncRecipeFilterControls(selected);
     updateRecipeSearchMeta(matchingRecipeIndexes.length);
 
     const noResults = byId("recipeNoResults");
@@ -238,9 +264,11 @@ function createRecipeBookApp() {
 
     if (!appState.recipes.length) {
       meta.textContent = "0 recipes";
+      meta.classList.remove("is-filtered");
       return;
     }
 
+    meta.classList.toggle("is-filtered", matchCount !== appState.recipes.length);
     meta.textContent =
       matchCount === appState.recipes.length
         ? `${appState.recipes.length} recipes`

@@ -415,7 +415,11 @@ h2 {
 }
 
 .recipe-search-meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
+  min-width: 8.75rem;
   min-height: 28px;
   padding: 5px 8px;
   border: 1px solid rgba(59, 70, 82, 0.72);
@@ -425,7 +429,14 @@ h2 {
   font-size: 0.82rem;
   font-weight: 700;
   line-height: 1;
+  text-align: center;
   white-space: nowrap;
+}
+
+.recipe-search-meta.is-filtered {
+  border-color: rgba(122, 199, 163, 0.72);
+  background: rgba(122, 199, 163, 0.13);
+  color: var(--accent-strong);
 }
 
 .quick-controls,
@@ -538,6 +549,17 @@ h2 {
   background: rgba(128, 183, 243, 0.2);
 }
 
+.filter-toggle.has-active-filters {
+  border-color: rgba(122, 199, 163, 0.78);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.filter-toggle.has-active-filters:hover {
+  border-color: rgba(159, 226, 191, 0.86);
+  background: var(--accent-strong);
+}
+
 .meal-plan-open-button {
   gap: 4px;
 }
@@ -550,6 +572,8 @@ h2 {
 
 .recipe-filters {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  align-items: start;
   gap: 10px;
   padding-top: 4px;
 }
@@ -606,6 +630,7 @@ h2 {
 }
 
 #clearFilters {
+  grid-column: 1 / -1;
   justify-self: start;
   background: transparent;
 }
@@ -616,6 +641,7 @@ h2 {
 }
 
 .recipe {
+  position: relative;
   content-visibility: auto;
   contain-intrinsic-size: 140px;
   overflow: hidden;
@@ -627,6 +653,17 @@ h2 {
     background var(--transition-fast),
     border-color var(--transition-fast),
     box-shadow var(--transition-fast);
+}
+
+.recipe::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: transparent;
+  transition:
+    background var(--transition-fast),
+    width var(--transition-fast);
 }
 
 .recipe:hover {
@@ -664,12 +701,27 @@ h2 {
     var(--surface);
 }
 
+.recipe.recipe-selected::before {
+  width: 5px;
+  background: var(--accent);
+}
+
 .recipe.recipe-favorite {
   border-color: rgba(241, 189, 105, 0.48);
 }
 
+.recipe.recipe-favorite:not(.recipe-selected)::before {
+  width: 5px;
+  background: var(--amber);
+}
+
 .recipe.recipe-planned {
   border-color: rgba(128, 183, 243, 0.48);
+}
+
+.recipe.recipe-planned:not(.recipe-selected):not(.recipe-favorite)::before {
+  width: 5px;
+  background: var(--blue);
 }
 
 .accordion-header {
@@ -1746,18 +1798,30 @@ li {
 }
 
 .grocery-list li.checked .grocery-item-name {
-  color: var(--muted);
+  color: #b8c7bf;
   text-decoration: line-through;
+  text-decoration-color: rgba(122, 199, 163, 0.82);
+  text-decoration-thickness: 2px;
 }
 
 .grocery-list li.checked {
-  border-color: rgba(122, 199, 163, 0.24);
-  background: rgba(122, 199, 163, 0.06);
+  border-color: rgba(122, 199, 163, 0.52);
+  background:
+    linear-gradient(90deg, rgba(122, 199, 163, 0.14), transparent 160px),
+    rgba(122, 199, 163, 0.08);
 }
 
 .grocery-list li.checked .grocery-item-source,
 .grocery-list li.checked .grocery-item-source-list {
-  color: #748078;
+  color: var(--muted-strong);
+}
+
+.grocery-list li.checked .grocery-source-title {
+  color: var(--fg);
+}
+
+.grocery-list li.checked .grocery-source-meta {
+  color: var(--muted-strong);
 }
 
 .grocery-list li.grocery-group-empty {

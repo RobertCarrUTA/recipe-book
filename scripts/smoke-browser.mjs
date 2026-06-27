@@ -135,6 +135,11 @@ const browserChecks = [
       const chiliCount = await visibleRecipeCount(page);
       assert.ok(chiliCount > 0, "search should keep at least one recipe visible");
       assert.ok(chiliCount < totalCount, "search should reduce visible recipe count");
+      assert.equal(
+        await page.locator("#recipeSearchMeta").evaluate((element) => element.classList.contains("is-filtered")),
+        true,
+        "filtered recipe count should have a visible state"
+      );
       assert.match(
         await page.locator("#recipeSearchMeta").innerText(),
         new RegExp(`^\\d+ matches of ${totalCount}$`)
@@ -162,6 +167,11 @@ const browserChecks = [
       await page.locator("#clearRecipeDiscoveryFilters").click();
       await page.waitForTimeout(250);
       assert.equal(await page.locator("#recipeSearch").inputValue(), "");
+      assert.equal(
+        await page.locator("#recipeSearchMeta").evaluate((element) => element.classList.contains("is-filtered")),
+        false,
+        "clearing discovery filters should restore the neutral count state"
+      );
       await assertVisible(page, "#recipeNoResults", false);
       assert.ok(await visibleRecipeCount(page), "no-results clear action should restore rendered recipes");
     },
@@ -218,7 +228,9 @@ const browserChecks = [
       await openApp(page);
 
       await page.locator(".recipe .accordion-header").first().click();
-      await page.locator(".recipe .recipe-add-toggle input").first().check();
+      const firstAddToggle = page.locator(".recipe .recipe-add-toggle").first();
+      await firstAddToggle.locator("input").check();
+      await expectLocatorText(firstAddToggle, /Added to grocery list/);
       await page.waitForSelector("#groceryList li", { timeout: 5000 });
 
       await expectText(page, "#grocerySummary", /from 1 recipe/);
@@ -226,7 +238,16 @@ const browserChecks = [
         await page.locator(".grocery-progress").getAttribute("aria-valuetext"),
         /^0 of \d+ grocery items checked$/
       );
-      await page.locator("#groceryList li").first().click();
+      const firstGroceryItem = page.locator("#groceryList li").first();
+      await firstGroceryItem.evaluate((element) => {
+        element.dataset.renderToken = "kept";
+      });
+      await firstGroceryItem.click();
+      assert.equal(
+        await page.locator("#groceryList li").first().evaluate((element) => element.dataset.renderToken),
+        "kept",
+        "checking visible grocery items should not rebuild the row"
+      );
       await expectText(page, "#grocerySummary", /1 checked/);
       assert.match(
         await page.locator(".grocery-progress").getAttribute("aria-valuetext"),
@@ -334,6 +355,21 @@ const browserChecks = [
       await openApp(page);
 
       await page.locator("#addAllRecipesToGroceryList").click();
+      const yeastItem = page.locator("#groceryList li").filter({ hasText: /^active dry yeast - / }).first();
+      await yeastItem.waitFor({ timeout: 5000 });
+      await expectLocatorText(yeastItem.locator(".grocery-item-source-toggle"), /From \d+ recipes/);
+      await yeastItem.locator(".grocery-item-source-toggle").click();
+      await expectLocatorText(
+        yeastItem.locator(".grocery-item-source-list"),
+        /Cinnamon Rolls[\s\S]*(Homemade Beignets with French Hot Chocolate|Homemade Honey Buns)/
+      );
+      await yeastItem.locator('input[type="checkbox"]').check();
+      await assertVisible(page, "#groceryList li:has-text('active dry yeast') .grocery-item-source-list", true);
+      await expectLocatorText(
+        page.locator("#groceryList li").filter({ hasText: /^active dry yeast - / }).first().locator(".grocery-item-source-list"),
+        /Cinnamon Rolls[\s\S]*(Homemade Beignets with French Hot Chocolate|Homemade Honey Buns)/
+      );
+
       const potatoItem = page.locator("#groceryList li").filter({ hasText: /^potato - / }).first();
       await potatoItem.waitFor({ timeout: 5000 });
       await potatoItem.locator(".grocery-item-source-toggle").click();
