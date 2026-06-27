@@ -374,6 +374,20 @@ const browserChecks = [
       await potatoItem.waitFor({ timeout: 5000 });
       await potatoItem.locator(".grocery-item-source-toggle").click();
       await expectLocatorText(potatoItem.locator(".grocery-item-source-list"), /Dutch Oven Chicken Pot Pie[\s\S]*1 potato/);
+
+      await page.fill("#recipeSearch", "zzzzzzzz-not-a-recipe");
+      await page.waitForTimeout(250);
+      assert.equal(await visibleRecipeCount(page), 0, "setup search should hide every recipe before source navigation");
+      await potatoItem.locator(".grocery-source-link").filter({ hasText: "Dutch Oven Chicken Pot Pie" }).click();
+      assert.equal(await page.locator("#recipeSearch").inputValue(), "");
+      const potPieRecipe = page.locator(".recipe").filter({ hasText: "Dutch Oven Chicken Pot Pie" }).first();
+      await potPieRecipe.waitFor({ timeout: 5000 });
+      assert.equal(await potPieRecipe.locator(".accordion-header").getAttribute("aria-expanded"), "true");
+      assert.equal(
+        await potPieRecipe.evaluate((element) => element.classList.contains("recipe-reveal-highlight")),
+        true,
+        "source navigation should visibly highlight the target recipe"
+      );
     },
   },
   {
@@ -619,6 +633,20 @@ const browserChecks = [
       );
       assert.ok(firstGroceryItemMinHeight >= 60, "mobile grocery rows should keep a comfortable tap target");
 
+      const mobilePotatoItem = page.locator("#groceryList li").filter({ hasText: /^potato - / }).first();
+      await scrollLocatorToViewportCenter(mobilePotatoItem);
+      await mobilePotatoItem.locator(".grocery-item-source-toggle").click();
+      const mobilePotPieSource = mobilePotatoItem
+        .locator(".grocery-source-link")
+        .filter({ hasText: "Dutch Oven Chicken Pot Pie" });
+      await scrollLocatorToViewportCenter(mobilePotPieSource);
+      await mobilePotPieSource.click();
+      await assertVisible(page, "#recipesPanel", true);
+      await assertVisible(page, "#groceryPanel", false);
+      const mobilePotPieRecipe = page.locator(".recipe").filter({ hasText: "Dutch Oven Chicken Pot Pie" }).first();
+      await mobilePotPieRecipe.waitFor({ timeout: 5000 });
+      assert.equal(await mobilePotPieRecipe.locator(".accordion-header").getAttribute("aria-expanded"), "true");
+
       await page.locator('.mobile-view-tab[data-view="recipes"]').click();
       await assertVisible(page, "#recipesPanel", true);
       await assertVisible(page, "#mealPlanPanel", false);
@@ -680,6 +708,12 @@ async function assertNoHorizontalOverflow(page, selectors) {
   }, selectors);
 
   assert.deepEqual(overflowReport, []);
+}
+
+async function scrollLocatorToViewportCenter(locator) {
+  await locator.evaluate((element) => {
+    element.scrollIntoView({ block: "center", inline: "nearest" });
+  });
 }
 
 async function swipeApp(page, coordinates) {

@@ -216,7 +216,7 @@ function createRecipeBookApp() {
     applyRecipeFilter(recipeSearch ? recipeSearch.value || "" : "");
   }
 
-  function clearRecipeDiscoveryFilters() {
+  function clearRecipeDiscoveryFilters(options = {}) {
     const recipeSearch = byId("recipeSearch");
     const selectedOnly = byId("showSelectedRecipesOnly");
     const favoriteOnly = byId("showFavoriteRecipesOnly");
@@ -234,7 +234,7 @@ function createRecipeBookApp() {
     appState.ui.showFavoriteRecipesOnly = false;
     refreshRecipeListFilter();
     saveAppState();
-    if (recipeSearch) recipeSearch.focus();
+    if (options.focusSearch !== false && recipeSearch) recipeSearch.focus();
   }
 
   function findFilterCheckbox(filterKey, filterValue) {
@@ -406,6 +406,25 @@ function createRecipeBookApp() {
     mobileViewController.setMobileView("grocery");
     const groceryPanel = byId("groceryPanel");
     if (groceryPanel) groceryPanel.scrollIntoView({ block: "start" });
+  }
+
+  function handleViewRecipeSource(recipeKey) {
+    const targetRecipeKey = String(recipeKey || "");
+    if (!targetRecipeKey) return;
+
+    const hasRecipe = appState.recipes.some((recipe, index) => getRecipeKey(recipe, index) === targetRecipeKey);
+    if (!hasRecipe) {
+      logger.warn("Grocery source recipe was not found", targetRecipeKey);
+      return;
+    }
+
+    mobileViewController.setMobileView("recipes");
+    if (renderer.revealRecipeById(targetRecipeKey)) return;
+
+    clearRecipeDiscoveryFilters({ focusSearch: false });
+    if (!renderer.revealRecipeById(targetRecipeKey)) {
+      logger.warn("Grocery source recipe could not be revealed", targetRecipeKey);
+    }
   }
 
   function syncRecipeControlsPanel() {
@@ -803,6 +822,7 @@ function createRecipeBookApp() {
         onSelectRecipe: handleSelectRecipe,
         onViewGroceryList: handleViewGroceryList,
         onViewMealPlan: handleViewMealPlan,
+        onViewRecipeSource: handleViewRecipeSource,
       },
     });
     mobileViewController = createMobileViewController({

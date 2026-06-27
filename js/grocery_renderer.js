@@ -163,10 +163,26 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     sortedSources.forEach((sourceEntry) => {
       const detail = getGrocerySourceDetail(sourceEntry, detailOptions);
       const sourceItem = document.createElement("span");
-      const sourceTitle = document.createElement("span");
+      const canOpenSourceRecipe =
+        sourceEntry.id && typeof actions.onViewRecipeSource === "function";
+      const sourceTitle = document.createElement(canOpenSourceRecipe ? "button" : "span");
       sourceItem.className = "grocery-item-source-list-item";
-      sourceTitle.className = "grocery-source-title";
+      sourceTitle.className = canOpenSourceRecipe
+        ? "grocery-source-title grocery-source-link"
+        : "grocery-source-title";
       sourceTitle.textContent = detail.title;
+
+      if (canOpenSourceRecipe) {
+        sourceTitle.type = "button";
+        sourceTitle.title = `Open ${detail.title}`;
+        sourceTitle.setAttribute("aria-label", `Open ${detail.title} in recipes`);
+        sourceTitle.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          actions.onViewRecipeSource(sourceEntry.id);
+        });
+      }
+
       sourceItem.appendChild(sourceTitle);
 
       if (detail.metaText) {

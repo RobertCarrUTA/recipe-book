@@ -36,6 +36,7 @@ export function createRenderer({ document, getMealPlanState, getRecipes, getRunt
     renderMealPlan: mealPlanRenderer.renderMealPlan,
     renderRecipeLoadError: recipeRenderer.renderRecipeLoadError,
     renderRecipes: recipeRenderer.renderRecipes,
+    revealRecipeById: recipeRenderer.revealRecipeById,
     syncMealPlanIndicators: recipeRenderer.syncMealPlanIndicators,
     syncFavoriteRecipeIndicators: recipeRenderer.syncFavoriteRecipeIndicators,
     syncRecipeCheckboxes: recipeRenderer.syncRecipeCheckboxes,

@@ -29,6 +29,7 @@ export function createMobileViewController({ document, getUiState, saveState, wi
             ".grocery-shopping-bar",
             ".grocery-item-remove",
             ".grocery-item-source-toggle",
+            ".grocery-source-link",
             ".mobile-view-tabs",
           ].join(", ")
         )

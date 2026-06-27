@@ -32,6 +32,8 @@ export function createRecipeRenderer({
   let currentSelectedFilters = {};
   let loadMoreObserver = null;
   let loadMoreSentinel = null;
+  let revealedRecipeElement = null;
+  let revealHighlightTimer = null;
   let renderedCount = 0;
 
   function disconnectLoadMoreObserver() {
@@ -645,6 +647,97 @@ export function createRecipeRenderer({
     }
   }
 
+  function findRenderedRecipeElement(recipeId) {
+    const targetRecipeId = String(recipeId || "");
+    if (!targetRecipeId) return null;
+
+    return Array.from(document.querySelectorAll(".recipe[data-recipe-id]"))
+      .find((recipeElement) => recipeElement.dataset.recipeId === targetRecipeId) || null;
+  }
+
+  function ensureRecipeRendered(recipeId) {
+    const targetRecipeId = String(recipeId || "");
+    if (!targetRecipeId) return null;
+
+    const renderedElement = findRenderedRecipeElement(targetRecipeId);
+    if (renderedElement) return renderedElement;
+
+    const recipes = getRecipes();
+    const targetPosition = currentRecipeIndexes.findIndex((recipeIndex) => {
+      const recipe = recipes[recipeIndex];
+      return recipe && actions.getRecipeKey(recipe, recipeIndex) === targetRecipeId;
+    });
+    if (targetPosition < 0) return null;
+
+    while (renderedCount <= targetPosition && hasMoreRecipes()) {
+      renderNextRecipeBatch();
+    }
+
+    return findRenderedRecipeElement(targetRecipeId);
+  }
+
+  function getRevealScrollBehavior() {
+    const prefersReducedMotion =
+      typeof windowLike.matchMedia === "function" &&
+      windowLike.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    return prefersReducedMotion ? "auto" : "smooth";
+  }
+
+  function focusWithoutScrolling(element) {
+    if (!element || typeof element.focus !== "function") return;
+
+    try {
+      element.focus({ preventScroll: true });
+    } catch (error) {
+      element.focus();
+    }
+  }
+
+  function highlightRevealedRecipe(recipeElement) {
+    if (!recipeElement) return;
+    if (revealedRecipeElement && revealedRecipeElement !== recipeElement) {
+      revealedRecipeElement.classList.remove("recipe-reveal-highlight");
+    }
+
+    recipeElement.classList.remove("recipe-reveal-highlight");
+    recipeElement.getBoundingClientRect();
+    recipeElement.classList.add("recipe-reveal-highlight");
+    revealedRecipeElement = recipeElement;
+
+    if (revealHighlightTimer && typeof windowLike.clearTimeout === "function") {
+      windowLike.clearTimeout(revealHighlightTimer);
+    }
+
+    if (typeof windowLike.setTimeout === "function") {
+      revealHighlightTimer = windowLike.setTimeout(() => {
+        recipeElement.classList.remove("recipe-reveal-highlight");
+        if (revealedRecipeElement === recipeElement) revealedRecipeElement = null;
+        revealHighlightTimer = null;
+      }, 1800);
+    }
+  }
+
+  function revealRecipeById(recipeId) {
+    const recipeElement = ensureRecipeRendered(recipeId);
+    if (!recipeElement) return false;
+
+    const recipeIndex = Number(recipeElement.dataset.recipeIndex);
+    const recipe = getRecipes()[recipeIndex];
+    const header = recipeElement.querySelector(".accordion-header");
+    const content = recipeElement.querySelector(".accordion-content");
+    if (!recipe || !header || !content) return false;
+
+    setRecipeContentOpen(recipe, recipeIndex, header, content, true);
+    header.scrollIntoView({
+      block: "center",
+      behavior: getRevealScrollBehavior(),
+      inline: "nearest",
+    });
+    focusWithoutScrolling(header);
+    highlightRevealedRecipe(recipeElement);
+    return true;
+  }
+
   function renderRecipes(options = {}) {
     const recipeContainer = byId("recipeContainer");
     if (!recipeContainer) return;
@@ -821,6 +914,7 @@ export function createRecipeRenderer({
     getRenderedRecipeCount: () => renderedCount,
     renderRecipeLoadError,
     renderRecipes,
+    revealRecipeById,
     syncMealPlanIndicators,
     syncFavoriteRecipeIndicators,
     syncRecipeCheckboxes,
