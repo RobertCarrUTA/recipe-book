@@ -289,6 +289,14 @@ export function buildCanonicalIngredient(nameLower) {
     };
   }
 
+  if (raw.includes("butter lettuce") && raw.includes("red leaf lettuce")) {
+    return { base: "butter lettuce or red leaf lettuce", display: "butter lettuce or red leaf lettuce" };
+  }
+
+  if (raw.includes("lard") && raw.includes("unsalted butter")) {
+    return { base: "lard or unsalted butter", display: "lard or unsalted butter" };
+  }
+
   const commodity = extractCommodityBaseStrict(raw);
   const notes = extractNotesStrict(raw);
 
@@ -336,8 +344,16 @@ export function buildCanonicalIngredient(nameLower) {
     return { base: "bell pepper", display: "bell pepper" };
   }
 
+  if (raw.includes("cabbage and carrot coleslaw mix") || raw.includes("coleslaw mix")) {
+    return { base: "plain shredded cabbage and carrot coleslaw mix", display: "plain shredded cabbage and carrot coleslaw mix" };
+  }
+
   if (raw.includes("carrot")) {
     return { base: "carrot", display: "carrot" };
+  }
+
+  if (raw.includes("celery seed")) {
+    return { base: "celery seed", display: "celery seed" };
   }
 
   if (raw.includes("celery")) {
@@ -365,6 +381,9 @@ export function buildCanonicalIngredient(nameLower) {
   }
 
   if (raw.includes("chicken breast")) {
+    if (raw.includes("boneless skinless")) {
+      return { base: "boneless skinless chicken breast", display: "boneless skinless chicken breast" };
+    }
     return { base: "chicken breast", display: "chicken breast" };
   }
 
@@ -372,8 +391,40 @@ export function buildCanonicalIngredient(nameLower) {
     return { base: "flank steak", display: "flank steak" };
   }
 
-  if (raw.includes("new york strip") || raw.includes("ribeye") || raw.includes("top sirloin")) {
-    return { base: "steak", display: "steak" };
+  if (raw.includes("top sirloin steak") && raw.includes("strip steak") && raw.includes("flat iron steak")) {
+    return { base: "top sirloin steak, strip steak, or flat iron steak", display: "top sirloin steak, strip steak, or flat iron steak" };
+  }
+
+  if (raw.includes("ribeye") && raw.includes("top sirloin") && raw.includes("skirt steak")) {
+    return { base: "boneless ribeye, top sirloin, or skirt steak", display: "boneless ribeye, top sirloin, or skirt steak" };
+  }
+
+  if (raw.includes("thick-cut ribeye steak")) {
+    return { base: "thick-cut ribeye steak", display: "thick-cut ribeye steak" };
+  }
+
+  if (raw.includes("ribeye")) {
+    return { base: "ribeye steak", display: "ribeye steak" };
+  }
+
+  if (raw.includes("top sirloin")) {
+    return { base: "top sirloin steak", display: "top sirloin steak" };
+  }
+
+  if (raw.includes("new york strip")) {
+    return { base: "new york strip steak", display: "New York strip steak" };
+  }
+
+  if (raw.includes("strip steak")) {
+    return { base: "strip steak", display: "strip steak" };
+  }
+
+  if (raw.includes("flat iron steak")) {
+    return { base: "flat iron steak", display: "flat iron steak" };
+  }
+
+  if (raw.includes("skirt steak")) {
+    return { base: "skirt steak", display: "skirt steak" };
   }
 
   if (raw.includes("80/20 ground beef")) {
@@ -517,8 +568,16 @@ export function buildCanonicalIngredient(nameLower) {
     return { base: "pasta", display: "pasta" };
   }
 
+  if (raw.includes("low-sodium beef broth")) {
+    return { base: "low-sodium beef broth", display: "low-sodium beef broth" };
+  }
+
   if (raw.includes("beef broth")) {
     return { base: "beef broth", display: "beef broth" };
+  }
+
+  if (raw.includes("low-sodium chicken broth")) {
+    return { base: "low-sodium chicken broth", display: "low-sodium chicken broth" };
   }
 
   if (raw.includes("chicken broth")) {
@@ -553,6 +612,10 @@ export function buildCanonicalIngredient(nameLower) {
     return { base: "mayonnaise", display: "mayonnaise" };
   }
 
+  if (raw.includes("yellow mustard seed")) {
+    return { base: "yellow mustard seed", display: "yellow mustard seed" };
+  }
+
   if (raw.includes("yellow mustard")) {
     return { base: "yellow mustard", display: "yellow mustard" };
   }
@@ -581,6 +644,14 @@ export function buildCanonicalIngredient(nameLower) {
     return { base: "iceberg lettuce", display: "iceberg lettuce" };
   }
 
+  if (raw.includes("red leaf lettuce")) {
+    return { base: "red leaf lettuce", display: "red leaf lettuce" };
+  }
+
+  if (raw.includes("butter lettuce")) {
+    return { base: "butter lettuce", display: "butter lettuce" };
+  }
+
   if (raw.includes("lettuce")) {
     return { base: "lettuce", display: "lettuce" };
   }
@@ -604,6 +675,9 @@ export function buildCanonicalIngredient(nameLower) {
   }
 
   if (raw.includes("olive oil")) {
+    if (raw.includes("extra-virgin")) {
+      return { base: "extra-virgin olive oil", display: "extra-virgin olive oil" };
+    }
     return { base: "olive oil", display: "olive oil" };
   }
 
@@ -625,6 +699,10 @@ export function buildCanonicalIngredient(nameLower) {
 
   if (raw.includes("onion")) {
     return { base: "onion", display: "onion" };
+  }
+
+  if (raw.includes("fresh ginger")) {
+    return { base: "fresh ginger", display: "fresh ginger" };
   }
 
   if (raw.includes("ginger")) {
