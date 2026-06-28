@@ -729,7 +729,7 @@ function createRecipeBookApp() {
     const panel = byId("groceryControlsPanel");
     const toggle = byId("toggleGroceryControls");
     const shoppingBar = panel ? panel.closest(".grocery-shopping-bar") : null;
-    const collapsed = Boolean(appState.ui.groceryControlsCollapsed) && isCompactControlsLayout();
+    const collapsed = Boolean(appState.ui.groceryControlsCollapsed);
 
     if (panel) panel.hidden = collapsed;
     if (shoppingBar) shoppingBar.classList.toggle("is-compact", collapsed);
@@ -926,14 +926,22 @@ function createRecipeBookApp() {
     if (!recipeSearch) return;
 
     let debounceTimer = null;
+    const clearRecipeSearchDebounce = () => {
+      if (debounceTimer) {
+        window.clearTimeout(debounceTimer);
+        debounceTimer = null;
+      }
+    };
+
     const runFilter = () => {
+      clearRecipeSearchDebounce();
       appState.ui.recipeSearch = recipeSearch.value || "";
       applyRecipeFilter(appState.ui.recipeSearch);
       saveAppState();
     };
 
     recipeSearch.addEventListener("input", () => {
-      if (debounceTimer) window.clearTimeout(debounceTimer);
+      clearRecipeSearchDebounce();
       debounceTimer = window.setTimeout(runFilter, DEBOUNCE_MS);
     });
 

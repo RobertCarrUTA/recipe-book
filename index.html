@@ -5,7 +5,7 @@
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#101214" />
-    <link rel="stylesheet" href="css/styles.css?v=20260627-20" />
+    <link rel="stylesheet" href="css/styles.css?v=20260628-4" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="data:," />
   </head>
@@ -175,15 +175,17 @@
                 <h2 id="groceryTitle">Grocery List</h2>
                 <p id="grocerySummary" class="grocery-summary" aria-live="polite">No items yet</p>
               </div>
-              <button
-                id="toggleGroceryControls"
-                class="grocery-controls-toggle"
-                type="button"
-                aria-expanded="true"
-                aria-controls="groceryControlsPanel"
-              >
-                Controls
-              </button>
+              <div class="grocery-header-buttons">
+                <button
+                  id="toggleGroceryControls"
+                  class="grocery-controls-toggle"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="groceryControlsPanel"
+                >
+                  Controls
+                </button>
+              </div>
             </div>
 
             <div id="groceryControlsPanel" class="grocery-controls-panel">
@@ -346,6 +348,6 @@
       </form>
     </dialog>
 
-    <script type="module" src="js/app.js?v=20260627-20"></script>
+    <script type="module" src="js/app.js?v=20260628-4"></script>
   </body>
 </html>
