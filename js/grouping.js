@@ -119,6 +119,7 @@ const ingredientGroups = {
   pork: "Meat",
   "pork shoulder": "Meat",
   steak: "Meat",
+  turkey: "Meat",
   "avocado oil": "Pantry",
   "avocado oil or coconut oil": "Pantry",
   beans: "Pantry",
