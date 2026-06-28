@@ -162,6 +162,44 @@ test("grocery sources aggregate recipe-specific totals for repeated ingredients"
   assert.deepEqual(runtime.grocery.sourcesByKey["olive oil"][0].totals.tsp, { min: 30, max: 30 });
 });
 
+test("specific steak grocery items do not collapse into vague steak totals", () => {
+  const runtime = createRecipeRuntimeState();
+  const sourceRecipes = [
+    {
+      id: "garlic-steak-sandwiches",
+      groceryIngredients: [{ item: "top sirloin steak, strip steak, or flat iron steak", quantity: 1.25, unit: "lb" }],
+      ingredients: [],
+      instructions: [],
+      title: "Garlic Steak Sandwiches",
+    },
+    {
+      id: "korean-bbq-bulgogi",
+      groceryIngredients: [{ item: "boneless ribeye, top sirloin, or skirt steak", quantity: 2, unit: "lb" }],
+      ingredients: [],
+      instructions: [],
+      title: "Korean BBQ Bulgogi",
+    },
+    {
+      id: "oven-reverse-seared-wagyu-ribeye",
+      groceryIngredients: [{ item: "thick-cut ribeye steak", quantity: 1, unit: "lb" }],
+      ingredients: [],
+      instructions: [],
+      title: "Reverse-Seared Wagyu Ribeye",
+    },
+  ];
+
+  selectAllRecipes(runtime, sourceRecipes);
+
+  assert.equal(runtime.grocery.totalsByKey.steak, undefined);
+  assert.deepEqual(runtime.grocery.totalsByKey["top sirloin steak, strip steak, or flat iron steak"].oz, { min: 20, max: 20 });
+  assert.deepEqual(runtime.grocery.totalsByKey["boneless ribeye, top sirloin, or skirt steak"].oz, { min: 32, max: 32 });
+  assert.deepEqual(runtime.grocery.totalsByKey["thick-cut ribeye steak"].oz, { min: 16, max: 16 });
+  assert.equal(
+    runtime.displayNamesByKey["top sirloin steak, strip steak, or flat iron steak"],
+    "top sirloin steak, strip steak, or flat iron steak"
+  );
+});
+
 test("clearGroceryState resets selected, checked, totals, and display names", () => {
   const runtime = createRecipeRuntimeState();
   setRecipeSelected(runtime, recipes, recipes[0], 0, true);

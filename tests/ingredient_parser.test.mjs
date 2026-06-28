@@ -283,3 +283,115 @@ test("parseStructuredGroceryIngredient preserves shopping-critical burger labels
     ]
   );
 });
+
+test("parseStructuredGroceryIngredient preserves shopping-critical specific labels", () => {
+  assert.deepEqual(
+    [
+      parseStructuredGroceryIngredient({ item: "thick-cut ribeye steak", quantity: 1, unit: "lb" }),
+      parseStructuredGroceryIngredient({ item: "top sirloin steak, strip steak, or flat iron steak", quantity: 1.25, unit: "lb" }),
+      parseStructuredGroceryIngredient({ item: "boneless ribeye, top sirloin, or skirt steak", quantity: 2, unit: "lb" }),
+      parseStructuredGroceryIngredient({ item: "plain shredded cabbage and carrot coleslaw mix", quantity: 10, unit: "oz" }),
+      parseStructuredGroceryIngredient({ item: "celery seed", quantity: 0.5, unit: "tsp" }),
+      parseStructuredGroceryIngredient({ item: "yellow mustard seed", quantity: 1, unit: "tsp" }),
+      parseStructuredGroceryIngredient({ item: "butter lettuce or red leaf lettuce", quantity: 1, unit: "head" }),
+      parseStructuredGroceryIngredient({ item: "red leaf lettuce", quantity: 1, unit: "head" }),
+      parseStructuredGroceryIngredient({ item: "low-sodium beef broth", quantity: 0.5, unit: "cup" }),
+      parseStructuredGroceryIngredient({ item: "low-sodium chicken broth", quantity: 0.5, unit: "cup" }),
+      parseStructuredGroceryIngredient({ item: "boneless skinless chicken breast", quantity: 1.5, unit: "lb" }),
+      parseStructuredGroceryIngredient({ item: "fresh ginger", quantity: 1, unit: "tbsp" }),
+      parseStructuredGroceryIngredient({ item: "extra-virgin olive oil", quantity: 1, unit: "tsp" }),
+      parseStructuredGroceryIngredient({ item: "lard or unsalted butter", quantity: 3, unit: "tbsp" }),
+    ].map((entry) => ({
+      base: entry.canonical.base,
+      display: entry.canonical.display,
+      unitKey: entry.unitKey,
+      quantityRange: entry.quantityRange,
+    })),
+    [
+      {
+        base: "thick-cut ribeye steak",
+        display: "thick-cut ribeye steak",
+        unitKey: "lb",
+        quantityRange: { min: 1, max: 1 },
+      },
+      {
+        base: "top sirloin steak, strip steak, or flat iron steak",
+        display: "top sirloin steak, strip steak, or flat iron steak",
+        unitKey: "lb",
+        quantityRange: { min: 1.25, max: 1.25 },
+      },
+      {
+        base: "boneless ribeye, top sirloin, or skirt steak",
+        display: "boneless ribeye, top sirloin, or skirt steak",
+        unitKey: "lb",
+        quantityRange: { min: 2, max: 2 },
+      },
+      {
+        base: "plain shredded cabbage and carrot coleslaw mix",
+        display: "plain shredded cabbage and carrot coleslaw mix",
+        unitKey: "oz",
+        quantityRange: { min: 10, max: 10 },
+      },
+      {
+        base: "celery seed",
+        display: "celery seed",
+        unitKey: "tsp",
+        quantityRange: { min: 0.5, max: 0.5 },
+      },
+      {
+        base: "yellow mustard seed",
+        display: "yellow mustard seed",
+        unitKey: "tsp",
+        quantityRange: { min: 1, max: 1 },
+      },
+      {
+        base: "butter lettuce or red leaf lettuce",
+        display: "butter lettuce or red leaf lettuce",
+        unitKey: "head",
+        quantityRange: { min: 1, max: 1 },
+      },
+      {
+        base: "red leaf lettuce",
+        display: "red leaf lettuce",
+        unitKey: "head",
+        quantityRange: { min: 1, max: 1 },
+      },
+      {
+        base: "low-sodium beef broth",
+        display: "low-sodium beef broth",
+        unitKey: "cup",
+        quantityRange: { min: 0.5, max: 0.5 },
+      },
+      {
+        base: "low-sodium chicken broth",
+        display: "low-sodium chicken broth",
+        unitKey: "cup",
+        quantityRange: { min: 0.5, max: 0.5 },
+      },
+      {
+        base: "boneless skinless chicken breast",
+        display: "boneless skinless chicken breast",
+        unitKey: "lb",
+        quantityRange: { min: 1.5, max: 1.5 },
+      },
+      {
+        base: "fresh ginger",
+        display: "fresh ginger",
+        unitKey: "tbsp",
+        quantityRange: { min: 1, max: 1 },
+      },
+      {
+        base: "extra-virgin olive oil",
+        display: "extra-virgin olive oil",
+        unitKey: "tsp",
+        quantityRange: { min: 1, max: 1 },
+      },
+      {
+        base: "lard or unsalted butter",
+        display: "lard or unsalted butter",
+        unitKey: "tbsp",
+        quantityRange: { min: 3, max: 3 },
+      },
+    ]
+  );
+});
