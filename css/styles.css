@@ -673,6 +673,28 @@ h2 {
   gap: 10px;
 }
 
+.recipe-list[aria-busy="true"] {
+  cursor: progress;
+}
+
+.recipe-list-state {
+  padding: 18px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(122, 199, 163, 0.035), transparent),
+    rgba(255, 255, 255, 0.025);
+  color: var(--muted-strong);
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.recipe-list-state strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--fg);
+}
+
 .recipe {
   position: relative;
   content-visibility: auto;
@@ -714,7 +736,12 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 72px;
+  min-height: 58px;
+  padding: 8px 12px;
+  overflow-anchor: none;
+  border: 1px dashed rgba(59, 70, 82, 0.72);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
   color: var(--muted);
   font-size: 0.86rem;
   font-weight: 750;
@@ -2926,6 +2953,13 @@ li {
     max-height: calc(100vh - 36px);
     overflow: auto;
     scroll-padding-top: 92px;
+  }
+
+  @supports (content-visibility: auto) {
+    .grocery-list li {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 64px;
+    }
   }
 
   .grocery-shopping-bar {

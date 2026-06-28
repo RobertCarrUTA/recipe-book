@@ -36,14 +36,35 @@ export function createRecipeRenderer({
   let currentSelectedFilters = {};
   let loadMoreObserver = null;
   let loadMoreSentinel = null;
+  let pendingRecipeBatchHandle = null;
   let revealedRecipeElement = null;
   let revealHighlightTimer = null;
   let renderedCount = 0;
+
+  function setRecipeContainerBusy(recipeContainer, busy) {
+    if (recipeContainer) recipeContainer.setAttribute("aria-busy", busy ? "true" : "false");
+  }
+
+  function cancelScheduledRecipeBatch() {
+    if (!pendingRecipeBatchHandle) return;
+
+    if (
+      pendingRecipeBatchHandle.type === "animationFrame" &&
+      typeof windowLike.cancelAnimationFrame === "function"
+    ) {
+      windowLike.cancelAnimationFrame(pendingRecipeBatchHandle.id);
+    } else if (typeof windowLike.clearTimeout === "function") {
+      windowLike.clearTimeout(pendingRecipeBatchHandle.id);
+    }
+
+    pendingRecipeBatchHandle = null;
+  }
 
   function disconnectLoadMoreObserver() {
     if (loadMoreObserver && typeof loadMoreObserver.disconnect === "function") {
       loadMoreObserver.disconnect();
     }
+    cancelScheduledRecipeBatch();
     loadMoreObserver = null;
   }
 
@@ -586,7 +607,7 @@ export function createRecipeRenderer({
 
     loadMoreObserver = new windowLike.IntersectionObserver(
       (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) renderNextRecipeBatch();
+        if (entries.some((entry) => entry.isIntersecting)) scheduleNextRecipeBatch();
       },
       { rootMargin: getRecipeLoadAheadMargin() }
     );
@@ -613,6 +634,31 @@ export function createRecipeRenderer({
     return sentinel;
   }
 
+  function scheduleNextRecipeBatch() {
+    if (pendingRecipeBatchHandle || !hasMoreRecipes()) return;
+
+    const recipeContainer = byId("recipeContainer");
+    setRecipeContainerBusy(recipeContainer, true);
+
+    const render = () => {
+      pendingRecipeBatchHandle = null;
+      renderNextRecipeBatch();
+    };
+
+    if (typeof windowLike.requestAnimationFrame === "function") {
+      pendingRecipeBatchHandle = {
+        id: windowLike.requestAnimationFrame(render),
+        type: "animationFrame",
+      };
+      return;
+    }
+
+    pendingRecipeBatchHandle = {
+      id: windowLike.setTimeout(render, 0),
+      type: "timeout",
+    };
+  }
+
   function updateLoadMoreSentinel() {
     if (!loadMoreSentinel) return;
 
@@ -633,15 +679,25 @@ export function createRecipeRenderer({
     setupLoadMoreObserver();
   }
 
-  function renderNextRecipeBatch() {
+  function renderNextRecipeBatch(options = {}) {
+    cancelScheduledRecipeBatch();
     const recipeContainer = byId("recipeContainer");
     if (!recipeContainer || !hasMoreRecipes()) {
+      setRecipeContainerBusy(recipeContainer, false);
       updateLoadMoreSentinel();
       notifyRecipeBatchRendered();
       return;
     }
 
-    const end = Math.min(currentRecipeIndexes.length, renderedCount + getRecipeBatchSize());
+    setRecipeContainerBusy(recipeContainer, true);
+    const minimumRenderedCount = Number(options.minimumRenderedCount);
+    const end = Math.min(
+      currentRecipeIndexes.length,
+      Math.max(
+        renderedCount + getRecipeBatchSize(),
+        Number.isFinite(minimumRenderedCount) ? minimumRenderedCount : 0
+      )
+    );
     const fragment = document.createDocumentFragment();
 
     for (let index = renderedCount; index < end; index += 1) {
@@ -657,17 +713,23 @@ export function createRecipeRenderer({
 
     updateLoadMoreSentinel();
     notifyRecipeBatchRendered();
+    setRecipeContainerBusy(recipeContainer, false);
   }
 
   function renderAllRecipeBatches() {
-    while (hasMoreRecipes()) {
-      renderNextRecipeBatch();
-    }
+    renderNextRecipeBatch({ minimumRenderedCount: currentRecipeIndexes.length });
   }
 
   function findRenderedRecipeElement(recipeId) {
     const targetRecipeId = String(recipeId || "");
     if (!targetRecipeId) return null;
+
+    if (windowLike.CSS && typeof windowLike.CSS.escape === "function") {
+      const directMatch = document.querySelector(
+        `.recipe[data-recipe-id="${windowLike.CSS.escape(targetRecipeId)}"]`
+      );
+      if (directMatch) return directMatch;
+    }
 
     return Array.from(document.querySelectorAll(".recipe[data-recipe-id]"))
       .find((recipeElement) => recipeElement.dataset.recipeId === targetRecipeId) || null;
@@ -687,8 +749,8 @@ export function createRecipeRenderer({
     });
     if (targetPosition < 0) return null;
 
-    while (renderedCount <= targetPosition && hasMoreRecipes()) {
-      renderNextRecipeBatch();
+    if (renderedCount <= targetPosition && hasMoreRecipes()) {
+      renderNextRecipeBatch({ minimumRenderedCount: targetPosition + 1 });
     }
 
     return findRenderedRecipeElement(targetRecipeId);
@@ -808,6 +870,7 @@ export function createRecipeRenderer({
     if (!recipeContainer) return;
 
     disconnectLoadMoreObserver();
+    setRecipeContainerBusy(recipeContainer, true);
     recipeContainer.replaceChildren();
     renderedCount = 0;
     loadMoreSentinel = null;
@@ -818,6 +881,7 @@ export function createRecipeRenderer({
       : recipes.map((_recipe, index) => index);
 
     if (!currentRecipeIndexes.length) {
+      setRecipeContainerBusy(recipeContainer, false);
       notifyRecipeBatchRendered();
       return;
     }
@@ -960,14 +1024,20 @@ export function createRecipeRenderer({
     if (!recipeContainer) return;
 
     disconnectLoadMoreObserver();
+    setRecipeContainerBusy(recipeContainer, false);
     actions.onRenderError(error);
 
-    const message = document.createElement("p");
-    message.className = "recipe-description";
-    message.textContent =
+    const message = document.createElement("div");
+    const title = document.createElement("strong");
+    const body = document.createElement("span");
+    message.className = "empty-state recipe-list-state";
+    title.textContent = "Recipes could not load.";
+    body.textContent =
       windowLike.location?.protocol === "file:"
         ? "Recipe data could not be loaded from data/recipes.json. Start a local web server for this folder, then refresh."
         : "Recipe data could not be loaded from data/recipes.json.";
+    message.appendChild(title);
+    message.appendChild(body);
     recipeContainer.replaceChildren(message);
 
     const meta = byId("recipeSearchMeta");
