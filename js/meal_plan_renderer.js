@@ -12,13 +12,26 @@ export function createMealPlanRenderer({
   openCookingMode,
 }) {
   const byId = (id) => document.getElementById(id);
+  let recipeCache = null;
 
-  function getRecipeLookup() {
+  function getRecipeCache() {
+    const recipes = getRecipes();
+    if (recipeCache && recipeCache.recipes === recipes) return recipeCache;
+
     const lookup = new Map();
-    getRecipes().forEach((recipe, index) => {
-      lookup.set(actions.getRecipeKey(recipe, index), { index, recipe });
+    const optionsFragment = document.createDocumentFragment();
+
+    recipes.forEach((recipe, index) => {
+      const recipeKey = actions.getRecipeKey(recipe, index);
+      const option = document.createElement("option");
+      option.value = recipeKey;
+      option.textContent = recipe.title || "Untitled recipe";
+      lookup.set(recipeKey, { index, recipe });
+      optionsFragment.appendChild(option);
     });
-    return lookup;
+
+    recipeCache = { lookup, optionsFragment, recipes };
+    return recipeCache;
   }
 
   function formatCount(count, singular, plural) {
@@ -57,17 +70,6 @@ export function createMealPlanRenderer({
     const hasMeals = summary.plannedRecipeCount > 0;
     if (buildButton) buildButton.disabled = !hasMeals;
     if (clearButton) clearButton.disabled = !hasMeals;
-  }
-
-  function createRecipeOptionsFragment() {
-    const fragment = document.createDocumentFragment();
-    getRecipes().forEach((recipe, index) => {
-      const option = document.createElement("option");
-      option.value = actions.getRecipeKey(recipe, index);
-      option.textContent = recipe.title || "Untitled recipe";
-      fragment.appendChild(option);
-    });
-    return fragment;
   }
 
   function appendRecipeOptions(select, recipeOptionsFragment) {
@@ -204,10 +206,9 @@ export function createMealPlanRenderer({
     const board = byId("mealPlanBoard");
     if (!board) return;
 
-    const lookup = getRecipeLookup();
-    const recipeOptionsFragment = createRecipeOptionsFragment();
+    const { lookup, optionsFragment } = getRecipeCache();
     const fragment = document.createDocumentFragment();
-    mealPlanDays.forEach((day) => renderDay(fragment, day, lookup, recipeOptionsFragment));
+    mealPlanDays.forEach((day) => renderDay(fragment, day, lookup, optionsFragment));
     board.replaceChildren(fragment);
     updateMealPlanSummary();
   }

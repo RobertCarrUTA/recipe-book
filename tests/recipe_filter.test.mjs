@@ -158,3 +158,27 @@ test("getMatchingRecipeIndexes skips runtime state checks when visibility toggle
   assert.equal(favoriteChecks, 0);
   assert.equal(selectedChecks, 0);
 });
+
+test("getMatchingRecipeIndexes skips search text work when search is blank", () => {
+  const searchTexts = [];
+  Object.defineProperty(searchTexts, "0", {
+    get() {
+      throw new Error("blank searches should not read indexed search text");
+    },
+  });
+
+  assert.deepEqual(
+    getMatchingRecipeIndexes({
+      filterText: "",
+      isFavorite: () => false,
+      isSelected: () => false,
+      recipes: [recipe],
+      searchTexts,
+      searchTextsAreNormalized: true,
+      selectedFilters: {},
+      showFavoriteOnly: false,
+      showSelectedOnly: false,
+    }),
+    [0]
+  );
+});

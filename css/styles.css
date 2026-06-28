@@ -63,6 +63,8 @@ button {
   color: var(--fg);
   cursor: pointer;
   font-weight: 700;
+  line-height: 1.12;
+  text-align: center;
   touch-action: manipulation;
   transition:
     background var(--transition-fast),
@@ -203,6 +205,11 @@ h2 {
   justify-content: flex-end;
   gap: 8px;
   max-width: min(100%, 340px);
+}
+
+.app-header > div:first-child,
+.workspace-header > div:first-child {
+  min-width: 0;
 }
 
 .offline-status {
@@ -477,8 +484,14 @@ h2 {
 .recipe-actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   gap: 8px;
+}
+
+.quick-controls > button,
+.quick-controls > .switch-control {
+  flex: 1 1 148px;
+  min-width: min(100%, 148px);
 }
 
 .switch-control {
@@ -699,6 +712,7 @@ h2 {
   position: relative;
   content-visibility: auto;
   contain-intrinsic-size: auto 140px;
+  contain: layout paint;
   scroll-margin-top: 120px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -729,6 +743,11 @@ h2 {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 96px),
     var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.recipe:focus-within {
+  border-color: rgba(122, 199, 163, 0.58);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1593,6 +1612,7 @@ li {
 
 .grocery-toolbar .switch-control,
 .grocery-toolbar button {
+  min-width: 0;
   width: 100%;
 }
 
@@ -1785,6 +1805,11 @@ li {
 .grocery-list li:hover {
   border-color: rgba(122, 199, 163, 0.28);
   background: #151b20;
+}
+
+.grocery-list li:focus-within {
+  border-color: rgba(122, 199, 163, 0.48);
+  box-shadow: 0 0 0 1px rgba(122, 199, 163, 0.14);
 }
 
 .grocery-list li.manual-item {

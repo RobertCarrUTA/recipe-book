@@ -129,8 +129,7 @@ export function createRecipeRenderer({
     return getRecipePlanDayKeys(recipe, recipeIndex).length > 0;
   }
 
-  function getPlannedBadgeText(recipe, recipeIndex) {
-    const plannedDayKeys = getRecipePlanDayKeys(recipe, recipeIndex);
+  function formatPlannedBadgeText(plannedDayKeys) {
     if (!plannedDayKeys.length) return "Planned";
     if (plannedDayKeys.length > 2) return `Planned x${plannedDayKeys.length}`;
 
@@ -140,6 +139,10 @@ export function createRecipeRenderer({
       .map((day) => day.shortLabel);
 
     return labels.length ? `Planned ${labels.join(", ")}` : "Planned";
+  }
+
+  function getPlannedBadgeText(recipe, recipeIndex) {
+    return formatPlannedBadgeText(getRecipePlanDayKeys(recipe, recipeIndex));
   }
 
   function syncRecipePlanSelect(select, recipe, recipeIndex) {
@@ -541,10 +544,15 @@ export function createRecipeRenderer({
     const plannedBadge = document.createElement("span");
     const selectedBadge = document.createElement("span");
     const content = document.createElement("div");
+    const isSelected = actions.isRecipeSelected(recipe, recipeIndex);
+    const isFavorite = actions.isRecipeFavorite(recipe, recipeIndex);
+    const plannedDayKeys = getRecipePlanDayKeys(recipe, recipeIndex);
+    const planned = plannedDayKeys.length > 0;
 
     wrap.className = "recipe";
-    wrap.classList.toggle("recipe-selected", actions.isRecipeSelected(recipe, recipeIndex));
-    wrap.classList.toggle("recipe-favorite", actions.isRecipeFavorite(recipe, recipeIndex));
+    wrap.classList.toggle("recipe-selected", isSelected);
+    wrap.classList.toggle("recipe-favorite", isFavorite);
+    wrap.classList.toggle("recipe-planned", planned);
     wrap.dataset.recipeIndex = String(recipeIndex);
     wrap.dataset.recipeId = recipeKey;
 
@@ -561,13 +569,13 @@ export function createRecipeRenderer({
     headerBadges.className = "recipe-header-badges";
     favoriteBadge.className = "recipe-favorite-badge";
     favoriteBadge.textContent = "Favorite";
-    favoriteBadge.hidden = !actions.isRecipeFavorite(recipe, recipeIndex);
+    favoriteBadge.hidden = !isFavorite;
     plannedBadge.className = "recipe-planned-badge";
-    plannedBadge.textContent = getPlannedBadgeText(recipe, recipeIndex);
-    plannedBadge.hidden = !isRecipePlanned(recipe, recipeIndex);
+    plannedBadge.textContent = formatPlannedBadgeText(plannedDayKeys);
+    plannedBadge.hidden = !planned;
     selectedBadge.className = "recipe-selected-badge";
     selectedBadge.textContent = getSelectedBadgeText(recipe, recipeIndex);
-    selectedBadge.hidden = !actions.isRecipeSelected(recipe, recipeIndex);
+    selectedBadge.hidden = !isSelected;
     headerBadges.appendChild(favoriteBadge);
     headerBadges.appendChild(plannedBadge);
     headerBadges.appendChild(selectedBadge);
