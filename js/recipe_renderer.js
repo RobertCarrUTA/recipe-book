@@ -711,6 +711,57 @@ export function createRecipeRenderer({
     }
   }
 
+  function getRevealScrollOffset() {
+    const searchPanel = document.querySelector(".recipe-search");
+    if (!searchPanel) return 0;
+
+    const styles = typeof windowLike.getComputedStyle === "function"
+      ? windowLike.getComputedStyle(searchPanel)
+      : null;
+    if (styles && (styles.display === "none" || styles.visibility === "hidden")) return 0;
+
+    const rect = searchPanel.getBoundingClientRect();
+    if (!rect.height) return 0;
+
+    const stickyTop = styles ? Number.parseFloat(styles.top) : 0;
+    return Math.ceil((Number.isFinite(stickyTop) ? Math.max(0, stickyTop) : 0) + rect.height + 8);
+  }
+
+  function scrollRecipeToRevealPosition(recipeElement) {
+    if (!recipeElement || typeof windowLike.scrollTo !== "function") {
+      recipeElement?.scrollIntoView({
+        block: "start",
+        behavior: getRevealScrollBehavior(),
+        inline: "nearest",
+      });
+      return;
+    }
+
+    const scrollToCurrentRecipeTop = () => {
+      const currentScrollY = Number.isFinite(windowLike.scrollY)
+        ? windowLike.scrollY
+        : Number(windowLike.pageYOffset) || 0;
+      const targetTop = Math.max(
+        0,
+        currentScrollY + recipeElement.getBoundingClientRect().top - getRevealScrollOffset()
+      );
+
+      windowLike.scrollTo({
+        behavior: "auto",
+        left: 0,
+        top: targetTop,
+      });
+    };
+
+    scrollToCurrentRecipeTop();
+    // Offscreen cards use content-visibility, so their measured position can settle after the first jump.
+    if (typeof windowLike.requestAnimationFrame === "function") {
+      windowLike.requestAnimationFrame(() => windowLike.requestAnimationFrame(scrollToCurrentRecipeTop));
+    } else {
+      windowLike.setTimeout(scrollToCurrentRecipeTop, 0);
+    }
+  }
+
   function highlightRevealedRecipe(recipeElement) {
     if (!recipeElement) return;
     if (revealedRecipeElement && revealedRecipeElement !== recipeElement) {
@@ -746,11 +797,7 @@ export function createRecipeRenderer({
     if (!recipe || !header || !content) return false;
 
     setRecipeContentOpen(recipe, recipeIndex, header, content, true);
-    header.scrollIntoView({
-      block: "center",
-      behavior: getRevealScrollBehavior(),
-      inline: "nearest",
-    });
+    scrollRecipeToRevealPosition(recipeElement);
     focusWithoutScrolling(header);
     highlightRevealedRecipe(recipeElement);
     return true;

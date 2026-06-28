@@ -78,6 +78,29 @@ async function runBrowserCheck(browser, check) {
     hasTouch: Boolean(check.hasTouch),
     viewport: check.viewport || { width: 1280, height: 900 },
   });
+  await context.addInitScript(() => {
+    function formatUnhandledRejectionReason(reason) {
+      if (reason && typeof reason === "object") {
+        if (reason.stack) return reason.stack;
+        if (reason.message) return reason.message;
+
+        try {
+          const json = JSON.stringify(reason);
+          if (json && json !== "{}") return json;
+        } catch (error) {
+          // Fall through to the generic object label.
+        }
+
+        return Object.prototype.toString.call(reason);
+      }
+
+      return String(reason);
+    }
+
+    window.addEventListener("unhandledrejection", (event) => {
+      console.error(`Unhandled rejection detail: ${formatUnhandledRejectionReason(event.reason)}`);
+    });
+  });
   const page = await context.newPage();
   const consoleMessages = [];
   const pageErrors = [];
@@ -87,7 +110,7 @@ async function runBrowserCheck(browser, check) {
       consoleMessages.push(`${message.type()}: ${message.text()}`);
     }
   });
-  page.on("pageerror", (error) => pageErrors.push(error.message));
+  page.on("pageerror", (error) => pageErrors.push(error.stack || error.message || String(error)));
 
   try {
     await check.run(page);
@@ -226,6 +249,7 @@ const browserChecks = [
         return {
           id: recipes[fallbackIndex].id,
           index: fallbackIndex,
+          recipeCount: recipes.length,
           title: recipes[fallbackIndex].title,
         };
       });
@@ -242,6 +266,14 @@ const browserChecks = [
       await assertVisible(page, "#mealPlanPanel", false);
       await page.locator("#openMealPlan").click();
       await assertVisible(page, "#mealPlanPanel", true);
+      const mealPlanOptionCounts = await page.locator(".meal-plan-add-form select").evaluateAll((selects) =>
+        selects.map((select) => select.options.length)
+      );
+      assert.deepEqual(
+        mealPlanOptionCounts,
+        Array(7).fill(target.recipeCount + 1),
+        "each meal-plan add select should include the placeholder and every recipe"
+      );
       await page
         .locator('.meal-plan-day[data-day="monday"] .meal-plan-item')
         .filter({ hasText: target.title })
@@ -259,6 +291,35 @@ const browserChecks = [
       await page.locator("#clearMealPlan").click();
       await expectText(page, "#mealPlanSummary", /^No meals planned$/);
       await assertVisible(page, "#mobileMealPlanBadge", false);
+    },
+  },
+  {
+    name: "desktop grocery controls can be collapsed and restored",
+    async run(page) {
+      await openApp(page);
+
+      await assertVisible(page, "#groceryPanel", true);
+      await assertVisible(page, "#toggleGroceryControls", true);
+      await assertVisible(page, "#groceryControlsPanel", true);
+      const expandedBarHeight = await page.locator(".grocery-shopping-bar").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+
+      await page.locator("#toggleGroceryControls").click();
+      await assertVisible(page, "#groceryPanel", true);
+      await assertVisible(page, "#groceryControlsPanel", false);
+      assert.equal(await page.locator("#toggleGroceryControls").getAttribute("aria-expanded"), "false");
+      await expectLocatorText(page.locator("#toggleGroceryControls"), /^Show$/);
+      const collapsedBarHeight = await page.locator(".grocery-shopping-bar").evaluate((element) =>
+        Math.round(element.getBoundingClientRect().height)
+      );
+      assert.ok(collapsedBarHeight < expandedBarHeight, "collapsed desktop grocery controls should free vertical space");
+
+      await page.locator("#toggleGroceryControls").click();
+      await assertVisible(page, "#groceryPanel", true);
+      await assertVisible(page, "#groceryControlsPanel", true);
+      assert.equal(await page.locator("#toggleGroceryControls").getAttribute("aria-expanded"), "true");
+      await expectLocatorText(page.locator("#toggleGroceryControls"), /^Hide$/);
     },
   },
   {
@@ -422,6 +483,7 @@ const browserChecks = [
       const potPieRecipe = page.locator(".recipe").filter({ hasText: "Dutch Oven Chicken Pot Pie" }).first();
       await potPieRecipe.waitFor({ timeout: 5000 });
       assert.equal(await potPieRecipe.locator(".accordion-header").getAttribute("aria-expanded"), "true");
+      await waitForRecipeAlignedBelowSearch(page, "Dutch Oven Chicken Pot Pie");
       assert.equal(
         await potPieRecipe.evaluate((element) => element.classList.contains("recipe-reveal-highlight")),
         true,
@@ -747,6 +809,7 @@ const browserChecks = [
       const mobilePotPieRecipe = page.locator(".recipe").filter({ hasText: "Dutch Oven Chicken Pot Pie" }).first();
       await mobilePotPieRecipe.waitFor({ timeout: 5000 });
       assert.equal(await mobilePotPieRecipe.locator(".accordion-header").getAttribute("aria-expanded"), "true");
+      await waitForRecipeAlignedBelowSearch(page, "Dutch Oven Chicken Pot Pie");
 
       await page.goBack();
       await assertVisible(page, "#recipesPanel", false);
@@ -821,6 +884,72 @@ async function assertNoHorizontalOverflow(page, selectors) {
   }, selectors);
 
   assert.deepEqual(overflowReport, []);
+}
+
+async function waitForRecipeAlignedBelowSearch(page, recipeTitle, options = {}) {
+  const tolerance = options.tolerance || 18;
+
+  function getAlignmentReportScript(title) {
+    const recipe = Array.from(document.querySelectorAll(".recipe"))
+      .find((element) => (element.textContent || "").includes(title));
+    const searchPanel = document.querySelector(".recipe-search");
+    let expectedTop = 0;
+    let searchPanelReport = null;
+
+    if (searchPanel) {
+      const styles = getComputedStyle(searchPanel);
+      const rect = searchPanel.getBoundingClientRect();
+      const stickyTop = Number.parseFloat(styles.top);
+      searchPanelReport = {
+        display: styles.display,
+        height: rect.height,
+        stickyTop: Number.isFinite(stickyTop) ? stickyTop : null,
+        top: rect.top,
+        visibility: styles.visibility,
+      };
+
+      if (styles.display !== "none" && styles.visibility !== "hidden" && rect.height) {
+        expectedTop = Math.ceil((Number.isFinite(stickyTop) ? Math.max(0, stickyTop) : 0) + rect.height + 8);
+      }
+    }
+
+    return {
+      delta: recipe ? recipe.getBoundingClientRect().top - expectedTop : null,
+      expectedTop,
+      recipeTop: recipe ? recipe.getBoundingClientRect().top : null,
+      scrollY: window.scrollY,
+      searchPanel: searchPanelReport,
+    };
+  }
+
+  try {
+    await page.waitForFunction(
+      ({ recipeTitle, tolerance }) => {
+        const recipe = Array.from(document.querySelectorAll(".recipe"))
+          .find((element) => (element.textContent || "").includes(recipeTitle));
+        if (!recipe) return false;
+
+        const searchPanel = document.querySelector(".recipe-search");
+        let expectedTop = 0;
+
+        if (searchPanel) {
+          const styles = getComputedStyle(searchPanel);
+          const rect = searchPanel.getBoundingClientRect();
+          if (styles.display !== "none" && styles.visibility !== "hidden" && rect.height) {
+            const stickyTop = Number.parseFloat(styles.top);
+            expectedTop = Math.ceil((Number.isFinite(stickyTop) ? Math.max(0, stickyTop) : 0) + rect.height + 8);
+          }
+        }
+
+        return Math.abs(recipe.getBoundingClientRect().top - expectedTop) <= tolerance;
+      },
+      { recipeTitle, tolerance },
+      { timeout: 5000 }
+    );
+  } catch (error) {
+    const report = await page.evaluate(getAlignmentReportScript, recipeTitle);
+    throw new Error(`Recipe alignment failed for ${recipeTitle}: ${JSON.stringify(report)}`);
+  }
 }
 
 async function scrollLocatorToViewportCenter(locator) {

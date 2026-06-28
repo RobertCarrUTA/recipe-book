@@ -59,7 +59,7 @@ export function createMealPlanRenderer({
     if (clearButton) clearButton.disabled = !hasMeals;
   }
 
-  function appendRecipeOptions(select) {
+  function createRecipeOptionsFragment() {
     const fragment = document.createDocumentFragment();
     getRecipes().forEach((recipe, index) => {
       const option = document.createElement("option");
@@ -67,10 +67,14 @@ export function createMealPlanRenderer({
       option.textContent = recipe.title || "Untitled recipe";
       fragment.appendChild(option);
     });
-    select.appendChild(fragment);
+    return fragment;
   }
 
-  function createDayAddForm(day) {
+  function appendRecipeOptions(select, recipeOptionsFragment) {
+    if (recipeOptionsFragment) select.appendChild(recipeOptionsFragment.cloneNode(true));
+  }
+
+  function createDayAddForm(day, recipeOptionsFragment) {
     const form = document.createElement("form");
     const label = document.createElement("label");
     const select = document.createElement("select");
@@ -87,7 +91,7 @@ export function createMealPlanRenderer({
     placeholder.value = "";
     placeholder.textContent = "Add recipe...";
     select.appendChild(placeholder);
-    appendRecipeOptions(select);
+    appendRecipeOptions(select, recipeOptionsFragment);
 
     select.addEventListener("change", () => {
       if (!select.value) return;
@@ -163,7 +167,7 @@ export function createMealPlanRenderer({
     list.appendChild(empty);
   }
 
-  function renderDay(container, day, lookup) {
+  function renderDay(container, day, lookup, recipeOptionsFragment) {
     const mealPlan = getMealPlanState();
     const recipeIds = mealPlan.days[day.key] || [];
     const section = document.createElement("section");
@@ -192,7 +196,7 @@ export function createMealPlanRenderer({
 
     section.appendChild(header);
     section.appendChild(list);
-    section.appendChild(createDayAddForm(day));
+    section.appendChild(createDayAddForm(day, recipeOptionsFragment));
     container.appendChild(section);
   }
 
@@ -201,8 +205,9 @@ export function createMealPlanRenderer({
     if (!board) return;
 
     const lookup = getRecipeLookup();
+    const recipeOptionsFragment = createRecipeOptionsFragment();
     const fragment = document.createDocumentFragment();
-    mealPlanDays.forEach((day) => renderDay(fragment, day, lookup));
+    mealPlanDays.forEach((day) => renderDay(fragment, day, lookup, recipeOptionsFragment));
     board.replaceChildren(fragment);
     updateMealPlanSummary();
   }
