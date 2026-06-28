@@ -11371,5 +11371,671 @@
     },
     "title": "Korean BBQ Galbi",
     "totalTime": "55 minutes plus 30 minutes short-rib soak and 6 to 24 hours marinating"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "30 minutes",
+    "description": "A hot oven-finished meatball sub with tender beef-pork meatballs, quick tomato sauce, garlic-Parmesan toasted rolls, provolone, mozzarella, and fresh basil.",
+    "equipment": [
+      "Oven with broiler",
+      "Rimmed baking sheet",
+      "Aluminum foil",
+      "Large mixing bowl",
+      "Medium saucepan or small Dutch oven",
+      "Microplane or box grater",
+      "Instant-read thermometer",
+      "Tongs or slotted spoon"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "80/20 ground beef",
+        "quantity": 1,
+        "unit": "lb"
+      },
+      {
+        "item": "ground pork",
+        "quantity": 0.5,
+        "unit": "lb"
+      },
+      {
+        "item": "Italian sub roll or sturdy hoagie roll",
+        "quantity": 4
+      },
+      {
+        "item": "provolone cheese slice",
+        "quantity": 8
+      },
+      {
+        "item": "low-moisture whole-milk mozzarella cheese",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "item": "Parmesan cheese",
+        "quantity": 3,
+        "unit": "oz"
+      },
+      {
+        "item": "crushed tomatoes",
+        "quantity": 28,
+        "unit": "oz"
+      },
+      {
+        "item": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "panko breadcrumbs",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "whole milk",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "large egg",
+        "quantity": 1
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1
+      },
+      {
+        "item": "garlic clove",
+        "quantity": 5
+      },
+      {
+        "item": "fresh flat-leaf parsley",
+        "quantity": 1,
+        "unit": "bunch"
+      },
+      {
+        "item": "fresh basil",
+        "quantity": 1,
+        "unit": "bunch"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Worcestershire sauce",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "red wine vinegar",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "dried oregano",
+        "quantity": 1.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "fennel seeds",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "kosher salt",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.75,
+        "unit": "tsp"
+      }
+    ],
+    "id": "skillet-meatball-subs",
+    "ingredients": [
+      "1 pound 80/20 ground beef",
+      "8 ounces ground pork",
+      "1/2 cup panko breadcrumbs",
+      "1/4 cup whole milk",
+      "1 large egg",
+      "3 ounces Parmesan cheese, finely grated to make about 1 cup, divided",
+      "5 garlic cloves, divided",
+      "2 tablespoons finely chopped fresh flat-leaf parsley",
+      "2 teaspoons Diamond Crystal kosher salt or 1 1/4 teaspoons Morton kosher salt, divided",
+      "3/4 teaspoon black pepper, freshly ground if possible, divided",
+      "1 1/2 teaspoons dried oregano, divided",
+      "1/2 teaspoon fennel seeds, lightly crushed",
+      "2 teaspoons Worcestershire sauce, divided",
+      "2 tablespoons extra-virgin olive oil, divided",
+      "1 small yellow onion, finely diced",
+      "2 tablespoons tomato paste",
+      "1 (28-ounce) can crushed tomatoes",
+      "1/4 cup water",
+      "1 teaspoon red wine vinegar",
+      "1/4 cup fresh basil leaves, torn, divided",
+      "2 tablespoons unsalted butter, softened",
+      "4 Italian sub rolls or sturdy hoagie rolls, 6 to 8 inches long, split",
+      "8 slices provolone cheese",
+      "4 ounces low-moisture whole-milk mozzarella cheese, shredded, about 1 cup"
+    ],
+    "instructions": [
+      "Move an oven rack 6 inches below the broiler and heat the broiler on high.",
+      "Line a rimmed baking sheet with aluminum foil and brush the foil with 1 tablespoon extra-virgin olive oil.",
+      "In a large mixing bowl, stir together 1/2 cup panko breadcrumbs and 1/4 cup whole milk.",
+      "Let the panko and milk sit for 5 minutes so the breadcrumbs soften into a panade.",
+      "Add 1 pound 80/20 ground beef, 8 ounces ground pork, 1 large egg, 1/2 cup finely grated Parmesan cheese, 2 finely grated garlic cloves, 2 tablespoons finely chopped parsley, 1 teaspoon Diamond Crystal kosher salt, 1/2 teaspoon black pepper, 1 teaspoon dried oregano, 1/2 teaspoon lightly crushed fennel seeds, and 1 teaspoon Worcestershire sauce to the softened panko.",
+      "Mix the meatball mixture gently with your hands just until the beef, pork, egg, cheese, garlic, parsley, and seasonings are evenly distributed.",
+      "Divide the meatball mixture into 16 meatballs, using about 2 tablespoons mixture for each meatball.",
+      "Roll each meatball lightly so it holds together without being packed tight, then place the 16 meatballs on the oiled foil.",
+      "Broil the meatballs for 7 to 9 minutes, rotating the baking sheet once, until the tops are browned in spots; the centers do not need to be fully cooked yet.",
+      "While the meatballs broil, warm the remaining 1 tablespoon extra-virgin olive oil in a medium saucepan or small Dutch oven over medium heat.",
+      "Add the 1 finely diced yellow onion, 1/2 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper to the hot oil.",
+      "Cook the onion for 5 to 6 minutes, stirring often, until softened and lightly golden at the edges.",
+      "Stir in 2 minced garlic cloves, 2 tablespoons tomato paste, and the remaining 1/2 teaspoon dried oregano.",
+      "Cook the garlic and tomato paste for 1 minute, stirring constantly, until the tomato paste darkens slightly and smells savory.",
+      "Add the 28-ounce can crushed tomatoes, 1/4 cup water, the remaining 1/2 teaspoon Diamond Crystal kosher salt, and the remaining 1 teaspoon Worcestershire sauce to the saucepan.",
+      "Bring the sauce to a steady simmer over medium heat, stirring the bottom of the pan so the tomato paste dissolves into the crushed tomatoes.",
+      "Transfer the browned meatballs and any juices from the foil into the simmering sauce.",
+      "Reduce the heat to medium-low, partially cover the saucepan, and simmer the meatballs in the sauce for 10 to 12 minutes.",
+      "Gently turn the meatballs once halfway through simmering so all sides are coated in sauce.",
+      "Check that the center of the largest meatball reaches 160 degrees F on an instant-read thermometer.",
+      "Stir 2 tablespoons finely grated Parmesan cheese, 1 teaspoon red wine vinegar, and 2 tablespoons torn fresh basil into the sauce.",
+      "Reduce the sauce to low heat so the meatballs stay hot while the rolls toast.",
+      "Discard the first sheet of foil from the baking sheet, line the baking sheet with fresh foil, and place the 4 split sub rolls cut-side up on the clean foil.",
+      "In a small bowl, stir together 2 tablespoons softened unsalted butter, the remaining 1 finely grated garlic clove, and 2 tablespoons finely grated Parmesan cheese.",
+      "Spread the garlic-Parmesan butter evenly over the cut sides of the 4 split rolls, using about 3/4 teaspoon butter mixture on each cut side.",
+      "Broil the buttered rolls for 1 to 2 minutes, watching constantly, until the cut sides are lightly toasted around the edges.",
+      "Move the 4 toasted top rolls to a plate and leave the 4 toasted bottom rolls cut-side up on the baking sheet.",
+      "Place 1 slice provolone cheese on each toasted bottom roll.",
+      "Use a slotted spoon to place 4 hot meatballs on each bottom roll.",
+      "Spoon about 1/3 cup hot tomato sauce over the meatballs on each sandwich.",
+      "Tear the remaining 4 slices provolone cheese over the sauced meatballs, dividing 1 slice provolone per sandwich.",
+      "Sprinkle 1/4 cup shredded low-moisture mozzarella cheese and 1 tablespoon finely grated Parmesan cheese over each open sandwich.",
+      "Broil the open sandwiches for 2 to 3 minutes, until the provolone and mozzarella are melted and lightly browned in spots.",
+      "Scatter the remaining 2 tablespoons torn fresh basil over the hot cheese.",
+      "Close the sandwiches with the toasted top rolls and serve immediately while the meatballs, sauce, and cheese are hot."
+    ],
+    "link": null,
+    "notes": [
+      "This sandwich is hot by temperature, not spice; the flavor comes from browning, garlic, Parmesan, tomato paste, Worcestershire sauce, fennel, basil, and melted cheese.",
+      "Broiling the meatballs first gives fast browned edges, then the sauce finishes them gently so they stay juicy.",
+      "Use 80/20 ground beef and ground pork. Very lean beef can make the meatballs firm before the sauce has time to season them.",
+      "Mix the meatball mixture gently and stop as soon as it looks even. Overmixed meatballs can turn springy.",
+      "Lightly crushed fennel seeds give the meatballs a subtle Italian sausage flavor without needing store-bought sausage.",
+      "The rolls should be sturdy enough to hold hot sauce. Soft sandwich rolls work if they are toasted well before filling.",
+      "If the sauce bubbles aggressively after the meatballs are added, lower the heat so the meatballs simmer instead of bouncing around and breaking.",
+      "The final broil should be quick. Pull the sandwiches as soon as the cheese melts and browns in spots so the bread stays crisp instead of drying out.",
+      "Serve right away with extra tomato sauce on the side for spooning over each bite."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "25 minutes",
+    "rating": null,
+    "servings": "4 sandwiches",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Skillet Meatball Subs",
+    "totalTime": "55 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "30 minutes",
+    "description": "A hot Italian sausage sub with from-scratch sweet Italian-style pork patties, browned peppers and onions, quick tomato pan sauce, garlic-toasted rolls, provolone, mozzarella, and basil.",
+    "equipment": [
+      "Cast-iron skillet or heavy saute pan",
+      "Oven with broiler",
+      "Rimmed baking sheet",
+      "Aluminum foil",
+      "Large mixing bowl",
+      "Small bowl",
+      "Instant-read thermometer",
+      "Tongs or spatula"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "ground pork",
+        "quantity": 1.5,
+        "unit": "lb"
+      },
+      {
+        "item": "Italian sub roll or sturdy hoagie roll",
+        "quantity": 4
+      },
+      {
+        "item": "provolone cheese slice",
+        "quantity": 8
+      },
+      {
+        "item": "low-moisture whole-milk mozzarella cheese",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "item": "Parmesan cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "item": "crushed tomatoes",
+        "quantity": 14.5,
+        "unit": "oz"
+      },
+      {
+        "item": "tomato paste",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1
+      },
+      {
+        "item": "green bell pepper",
+        "quantity": 1
+      },
+      {
+        "item": "red bell pepper",
+        "quantity": 1
+      },
+      {
+        "item": "garlic clove",
+        "quantity": 5
+      },
+      {
+        "item": "fresh basil",
+        "quantity": 1,
+        "unit": "bunch"
+      },
+      {
+        "item": "fresh flat-leaf parsley",
+        "quantity": 1,
+        "unit": "bunch"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "red wine vinegar",
+        "quantity": 4,
+        "unit": "tsp"
+      },
+      {
+        "item": "Worcestershire sauce",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "fennel seeds",
+        "quantity": 1.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "dried oregano",
+        "quantity": 1.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "garlic powder",
+        "quantity": 0.75,
+        "unit": "tsp"
+      },
+      {
+        "item": "onion powder",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "sweet paprika",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "red pepper flakes",
+        "optional": true,
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "kosher salt",
+        "quantity": 2.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 1,
+        "unit": "tsp"
+      }
+    ],
+    "id": "hot-italian-sausage-subs",
+    "ingredients": [
+      "1 1/2 pounds ground pork, 80/20 if available",
+      "2 ounces Parmesan cheese, finely grated to make about 2/3 cup, divided",
+      "5 garlic cloves, divided",
+      "2 tablespoons finely chopped fresh flat-leaf parsley",
+      "2 1/4 teaspoons Diamond Crystal kosher salt or 1 1/3 teaspoons Morton kosher salt, divided",
+      "1 teaspoon black pepper, freshly ground if possible, divided",
+      "1 1/2 teaspoons fennel seeds, lightly crushed",
+      "1 1/2 teaspoons dried oregano, divided",
+      "3/4 teaspoon garlic powder",
+      "1/2 teaspoon onion powder",
+      "1/2 teaspoon sweet paprika",
+      "1/4 teaspoon red pepper flakes, optional",
+      "2 teaspoons Worcestershire sauce",
+      "4 teaspoons red wine vinegar, divided",
+      "3 tablespoons extra-virgin olive oil, divided",
+      "1 medium yellow onion, thinly sliced",
+      "1 green bell pepper, thinly sliced",
+      "1 red bell pepper, thinly sliced",
+      "2 tablespoons tomato paste",
+      "1 (14.5-ounce) can crushed tomatoes",
+      "1/4 cup water",
+      "1/4 cup fresh basil leaves, torn, divided",
+      "2 tablespoons unsalted butter, softened",
+      "4 Italian sub rolls or sturdy hoagie rolls, 6 to 8 inches long, split",
+      "8 slices provolone cheese",
+      "4 ounces low-moisture whole-milk mozzarella cheese, shredded, about 1 cup"
+    ],
+    "instructions": [
+      "Move an oven rack 6 inches below the broiler and heat the broiler on high.",
+      "Line a rimmed baking sheet with aluminum foil.",
+      "In a large mixing bowl, combine 1 1/2 pounds ground pork, 1/3 cup finely grated Parmesan cheese, 2 finely grated garlic cloves, 2 tablespoons finely chopped parsley, 1 1/4 teaspoons Diamond Crystal kosher salt, 3/4 teaspoon black pepper, 1 1/2 teaspoons lightly crushed fennel seeds, 1 teaspoon dried oregano, 3/4 teaspoon garlic powder, 1/2 teaspoon onion powder, 1/2 teaspoon sweet paprika, 1/4 teaspoon red pepper flakes if using, 2 teaspoons Worcestershire sauce, 2 teaspoons red wine vinegar, and 1 tablespoon extra-virgin olive oil.",
+      "Mix the pork gently with your hands for 30 to 45 seconds, just until the Parmesan, garlic, herbs, spices, Worcestershire sauce, vinegar, and oil are evenly distributed.",
+      "Divide the seasoned pork into 8 equal portions, using about 3 ounces pork mixture for each portion.",
+      "Shape each portion into a flat 4-inch-long oval patty so 2 patties will fit neatly in each sub roll.",
+      "Heat a cast-iron skillet or heavy saute pan over medium-high heat for 2 minutes.",
+      "Add 1 tablespoon extra-virgin olive oil to the hot skillet.",
+      "Place as many of the 8 pork patties in the skillet as will fit in a single uncrowded layer, working in 2 batches if needed so they brown instead of steaming.",
+      "Cook the pork patties for 3 to 4 minutes on the first side, until deeply browned.",
+      "Flip the pork patties and cook the second side for 3 to 4 minutes, until deeply browned and the centers reach 160 degrees F.",
+      "Transfer the cooked pork patties to a plate and leave about 1 tablespoon rendered fat in the skillet.",
+      "Reduce the heat to medium and add the 1 thinly sliced yellow onion, 1 thinly sliced green bell pepper, 1 thinly sliced red bell pepper, 1/2 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper to the skillet.",
+      "Cook the peppers and onion for 7 to 9 minutes, stirring every minute, until softened, browned at the edges, and sweet-smelling.",
+      "Stir in 2 minced garlic cloves, 2 tablespoons tomato paste, and the remaining 1/2 teaspoon dried oregano.",
+      "Cook the garlic and tomato paste for 1 minute, stirring constantly, until the tomato paste darkens and coats the peppers and onion.",
+      "Add the 14.5-ounce can crushed tomatoes, 1/4 cup water, the remaining 1/2 teaspoon Diamond Crystal kosher salt, and the remaining 2 teaspoons red wine vinegar.",
+      "Bring the tomato-pepper sauce to a simmer over medium heat, scraping the browned pork bits from the bottom of the skillet.",
+      "Return the 8 cooked pork patties and any juices from the plate to the skillet.",
+      "Spoon tomato-pepper sauce over the pork patties and simmer for 3 to 4 minutes, until the patties are hot and coated.",
+      "Stir 2 tablespoons torn fresh basil into the tomato-pepper sauce.",
+      "Turn the heat to low so the pork patties and sauce stay hot while the rolls toast.",
+      "In a small bowl, stir together 2 tablespoons softened unsalted butter, the remaining 1 finely grated garlic clove, and 2 tablespoons finely grated Parmesan cheese.",
+      "Place the 4 split sub rolls cut-side up on the foil-lined baking sheet.",
+      "Spread the garlic-Parmesan butter evenly over the cut sides of the 4 split rolls, using about 3/4 teaspoon butter mixture on each cut side.",
+      "Broil the buttered rolls for 1 to 2 minutes, watching constantly, until the cut sides are lightly toasted around the edges.",
+      "Move the 4 toasted top rolls to a plate and leave the 4 toasted bottom rolls cut-side up on the baking sheet.",
+      "Place 1 slice provolone cheese on each toasted bottom roll.",
+      "Place 2 hot pork patties on each bottom roll.",
+      "Spoon about 1/3 cup hot tomato-pepper sauce over the pork patties on each sandwich.",
+      "Tear the remaining 4 slices provolone cheese over the sauced pork patties, dividing 1 slice provolone per sandwich.",
+      "Sprinkle 1/4 cup shredded low-moisture mozzarella cheese and 1 tablespoon finely grated Parmesan cheese over each open sandwich.",
+      "Broil the open sandwiches for 2 to 3 minutes, until the provolone and mozzarella are melted and lightly browned in spots.",
+      "Scatter the remaining 2 tablespoons torn fresh basil over the hot cheese.",
+      "Close the sandwiches with the toasted top rolls and serve immediately while the sausage patties, sauce, peppers, onions, and cheese are hot."
+    ],
+    "link": null,
+    "notes": [
+      "This sandwich is hot by temperature, not spice. The pork is seasoned like sweet Italian sausage with fennel, garlic, oregano, paprika, Parmesan, vinegar, and Worcestershire sauce.",
+      "Ground pork makes this fast and from scratch because it skips sausage casings while keeping the flavor and texture of an Italian sausage sub.",
+      "Use 80/20 ground pork if you can find it. Extra-lean pork can taste dry by the time the cheese melts.",
+      "Shape the pork into flat oval patties instead of round meatballs so each bite gets browned pork, peppers, sauce, bread, and cheese.",
+      "The red pepper flakes are optional. Skip them for a fully mild sandwich.",
+      "Browning the pork first builds the pan drippings that season the peppers, onions, and tomato sauce.",
+      "Cook the peppers and onion until the edges brown. That sweetness is what keeps the quick sauce from tasting flat.",
+      "Use sturdy Italian sub rolls or hoagie rolls. Very soft rolls can collapse under hot sauce unless they are toasted thoroughly.",
+      "Watch the broiler closely for both toasting and melting because buttered bread and cheese can go from browned to burned quickly.",
+      "Serve immediately; the best texture is toasted bread, hot sausage patties, saucy peppers, melted cheese, and fresh basil all at once."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "25 minutes",
+    "rating": null,
+    "servings": "4 sandwiches",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "cast-iron skillet",
+        "oven",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Hot Italian Sausage Subs",
+    "totalTime": "55 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "25 minutes",
+    "description": "A hot turkey provolone sandwich with seared turkey cutlets, garlic-Dijon mayo, mushroom-onion pan sauce, roasted red peppers, dressed arugula, and toasted ciabatta or hoagie rolls.",
+    "equipment": [
+      "Cast-iron skillet or heavy saute pan",
+      "Oven with broiler",
+      "Rimmed baking sheet",
+      "Aluminum foil",
+      "Meat mallet or rolling pin",
+      "Small bowl",
+      "Tongs",
+      "Instant-read thermometer"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "boneless skinless turkey breast cutlets",
+        "quantity": 1.5,
+        "unit": "lb"
+      },
+      {
+        "item": "ciabatta roll or sturdy hoagie roll",
+        "quantity": 4
+      },
+      {
+        "item": "provolone cheese slice",
+        "quantity": 8
+      },
+      {
+        "item": "fresh cremini mushrooms",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1
+      },
+      {
+        "item": "roasted red peppers",
+        "quantity": 12,
+        "unit": "oz"
+      },
+      {
+        "item": "baby arugula",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "item": "garlic clove",
+        "quantity": 4
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "low-sodium chicken broth",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "all-purpose flour",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Worcestershire sauce",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "red wine vinegar",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "smoked paprika",
+        "quantity": 0.75,
+        "unit": "tsp"
+      },
+      {
+        "item": "garlic powder",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "kosher salt",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 1,
+        "unit": "tsp"
+      }
+    ],
+    "id": "hot-turkey-provolone-sandwiches",
+    "ingredients": [
+      "1 1/2 pounds boneless skinless turkey breast cutlets, usually 4 cutlets",
+      "2 teaspoons Diamond Crystal kosher salt or 1 1/4 teaspoons Morton kosher salt, divided",
+      "1 teaspoon black pepper, freshly ground if possible, divided",
+      "3/4 teaspoon smoked paprika",
+      "1/2 teaspoon garlic powder",
+      "1 teaspoon dried thyme, divided",
+      "1/4 cup all-purpose flour",
+      "3 tablespoons extra-virgin olive oil, divided",
+      "3 tablespoons unsalted butter, divided",
+      "8 ounces fresh cremini mushrooms, sliced 1/4 inch thick",
+      "1 medium yellow onion, thinly sliced",
+      "4 garlic cloves, divided",
+      "1/2 cup low-sodium chicken broth",
+      "2 teaspoons Worcestershire sauce, divided",
+      "1 tablespoon red wine vinegar, divided",
+      "1/2 cup mayonnaise",
+      "1 tablespoon Dijon mustard",
+      "1 (12-ounce) jar roasted red peppers, using 1/2 cup drained strips and 1 teaspoon pepper brine",
+      "4 ciabatta rolls or sturdy hoagie rolls, split",
+      "8 slices provolone cheese",
+      "2 ounces baby arugula, about 2 packed cups"
+    ],
+    "instructions": [
+      "Move an oven rack 6 inches below the broiler and heat the broiler on high.",
+      "Line a rimmed baking sheet with aluminum foil.",
+      "Pat the 1 1/2 pounds turkey breast cutlets very dry with paper towels.",
+      "If any turkey cutlet is thicker than 1/2 inch, place it between sheets of parchment or plastic wrap and pound it to an even 1/2 inch thickness.",
+      "Season both sides of the turkey cutlets with 1 teaspoon Diamond Crystal kosher salt, 1/2 teaspoon black pepper, 3/4 teaspoon smoked paprika, 1/2 teaspoon garlic powder, and 1/2 teaspoon dried thyme.",
+      "Sprinkle 1/4 cup all-purpose flour over a plate.",
+      "Press each seasoned turkey cutlet lightly into the flour on both sides, then shake off the excess flour so only a thin coating remains.",
+      "Make the garlic-Dijon mayo by stirring together 1/2 cup mayonnaise, 1 tablespoon Dijon mustard, 1 finely grated garlic clove, 1 teaspoon Worcestershire sauce, 1 teaspoon red wine vinegar, 1 teaspoon roasted red pepper brine, 1/8 teaspoon Diamond Crystal kosher salt, and 1/8 teaspoon black pepper in a small bowl.",
+      "Refrigerate the garlic-Dijon mayo until assembly.",
+      "Heat a cast-iron skillet or heavy saute pan over medium-high heat for 2 minutes.",
+      "Add 1 tablespoon extra-virgin olive oil to the hot skillet.",
+      "Add as many floured turkey cutlets as will fit in a single uncrowded layer.",
+      "Cook the turkey cutlets for 2 to 3 minutes on the first side, until golden brown.",
+      "Flip the turkey cutlets with tongs and cook the second side for 2 to 3 minutes, until golden brown and the thickest part reaches 160 degrees F.",
+      "Transfer the cooked turkey cutlets to a plate.",
+      "If any turkey cutlets remain, add 1 tablespoon extra-virgin olive oil to the skillet and repeat the 2 to 3 minutes per side cooking process with the remaining turkey cutlets.",
+      "Loosely cover the cooked turkey cutlets with foil while making the pan sauce.",
+      "Reduce the skillet heat to medium and add 1 tablespoon unsalted butter.",
+      "Add the 8 ounces sliced cremini mushrooms, the 1 thinly sliced yellow onion, 1/2 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
+      "Cook the mushrooms and onion for 7 to 8 minutes, stirring every minute, until the mushrooms are browned, the onion is softened, and most of the moisture has cooked off.",
+      "Stir in 2 minced garlic cloves and the remaining 1/2 teaspoon dried thyme.",
+      "Cook the garlic and thyme for 30 seconds, stirring constantly, until fragrant.",
+      "Add 1/2 cup low-sodium chicken broth, the remaining 1 teaspoon Worcestershire sauce, and 1 teaspoon red wine vinegar.",
+      "Simmer the mushroom-onion pan sauce for 2 to 3 minutes, scraping the browned turkey bits from the skillet, until the liquid reduces by about half and looks glossy.",
+      "Return the turkey cutlets and any juices from the plate to the skillet.",
+      "Turn the turkey cutlets in the mushroom-onion pan sauce for 30 seconds so they are coated and hot.",
+      "Turn the heat to low so the turkey and mushroom-onion pan sauce stay warm while the rolls toast.",
+      "In a small bowl, stir together the remaining 2 tablespoons softened unsalted butter, the remaining 1 finely grated garlic clove, and 1/8 teaspoon Diamond Crystal kosher salt.",
+      "Place the 4 split ciabatta rolls or hoagie rolls cut-side up on the foil-lined baking sheet.",
+      "Spread the garlic butter evenly over the cut sides of the 4 split rolls, using about 3/4 teaspoon garlic butter on each cut side.",
+      "Broil the buttered rolls for 1 to 2 minutes, watching constantly, until the cut sides are lightly toasted around the edges.",
+      "Move the 4 toasted top rolls to a plate and leave the 4 toasted bottom rolls cut-side up on the baking sheet.",
+      "Spread about 1 tablespoon garlic-Dijon mayo on each toasted bottom roll.",
+      "Place 1 slice provolone cheese on each mayo-coated bottom roll.",
+      "Place 1 hot turkey cutlet on each bottom roll, folding or trimming the turkey as needed so it fits the bread.",
+      "Spoon about 1/4 cup mushroom-onion pan sauce over each turkey cutlet.",
+      "Add about 2 tablespoons drained roasted red pepper strips to each sandwich.",
+      "Tear the remaining 4 slices provolone cheese over the roasted red peppers, dividing 1 slice provolone per sandwich.",
+      "Broil the open sandwiches for 2 to 3 minutes, until the provolone is melted and lightly browned in spots.",
+      "While the cheese melts, toss 2 ounces baby arugula with the remaining 1 teaspoon red wine vinegar, 1 teaspoon extra-virgin olive oil, 1/8 teaspoon Diamond Crystal kosher salt, and 1/8 teaspoon black pepper.",
+      "Top each hot sandwich with about 1/2 cup dressed arugula.",
+      "Spread about 1 tablespoon garlic-Dijon mayo on each toasted top roll.",
+      "Close the sandwiches and serve immediately while the turkey, mushroom-onion pan sauce, and provolone are hot."
+    ],
+    "link": null,
+    "notes": [
+      "This sandwich is hot by temperature, not spice; the flavor comes from browned turkey, mushroom-onion pan sauce, roasted red peppers, garlic-Dijon mayo, toasted bread, and melted provolone.",
+      "Turkey breast cutlets cook quickly and keep this recipe inside an hour while still tasting like a cooked-from-scratch sandwich.",
+      "Pounding any thick turkey pieces to 1/2 inch helps them cook evenly before the flour coating over-browns.",
+      "The thin flour coating gives the turkey better browning and helps the chicken broth reduce into a light pan sauce instead of tasting watery.",
+      "Use low-sodium chicken broth so the pan sauce can reduce without becoming too salty.",
+      "Roasted red pepper brine seasons the mayo with a little sweetness and acidity; use the liquid from the jar, not extra vinegar.",
+      "Do not crowd the turkey cutlets in the skillet. Crowding traps steam and makes turkey taste pale and flat instead of browned and savory.",
+      "The turkey is pulled at 160 degrees F because it will stay hot in the skillet and under the broiler during assembly.",
+      "Dress the arugula right before serving so it stays peppery and fresh against the hot turkey and cheese.",
+      "Serve immediately. The best texture is crisp toasted bread, juicy turkey, glossy mushrooms and onions, melted provolone, roasted peppers, and fresh arugula all at once."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "25 minutes",
+    "rating": null,
+    "servings": "4 sandwiches",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "cast-iron skillet",
+        "oven",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Hot Turkey Provolone Sandwiches",
+    "totalTime": "50 minutes"
   }
 ]
