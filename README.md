@@ -15,25 +15,26 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 - Open a full-screen Cooking Mode with a collapsible recipe header, ingredients, one instruction step at a time, progress, keyboard navigation, and mobile-friendly controls.
 - Keep the screen awake while cooking when the browser supports Screen Wake Lock.
 - Install the app from supported browsers and keep the recipe book/grocery list usable after the app shell and recipe data have been cached.
-- Add selected recipe ingredients to a grocery list.
+- Add selected recipe ingredients to a grocery list, adjust per-recipe quantities, or add all recipes at once.
 - Add one-off manual grocery items.
 - Group grocery items into collapsible shopping sections and combine compatible units.
 - Check off grocery items, hide checked items while shopping, clear checked progress, and track progress with a mobile grocery badge.
+- Review recipe sources for grocery items and jump back from a grocery item to its source recipe.
 - Copy the current grocery list as clean text for notes, messages, or printing.
 - Export and import a backup of browser state for moving favorites, meal plans, grocery selections, manual items, and preferences between browsers or devices.
-- Persist search, sort, filters, selected recipes, weekly meal plan, favorites, manual grocery items, grocery checks, grouping, collapsed sections, and wake-lock preference with `localStorage`.
+- Persist search, sort, filters, selected recipes, recipe quantity multipliers, weekly meal plan, favorites, manual grocery items, grocery checks, grouping, collapsed controls/sections, and wake-lock preference with `localStorage`.
 - Render recipe cards incrementally as you scroll, with recipe details built only when a card is opened, so the app can grow without paying the full DOM cost up front.
 - Fetch recipe data with a per-load cache-busting URL so phone browsers and static hosts do not keep stale `data/recipes.json` around after recipe updates.
 
 ## How To Use
 
-Use the Recipes view to search, filter, favorite, and open recipes. Expand a recipe card to see details, add it to the grocery list, view the full source recipe when a link is available, or start Cooking Mode.
+Use the Recipes view to search, filter, favorite, and open recipes. Expand a recipe card to see details, add it to the grocery list, adjust the recipe quantity used for grocery math, view the full source recipe when a link is available, or start Cooking Mode.
 
 Use the Meal Plan panel to schedule recipes across the week. Recipe cards also include a day picker for quickly adding a recipe to the plan. Build list turns the planned week into recipe selections and grocery quantities.
 
 Optionally use Cooking Mode when actively cooking. It shows the recipe ingredients alongside one instruction step at a time, and the recipe header can collapse to make more room for the current step. Use Previous and Next to move through the recipe, or press Escape to close it. The keep-awake toggle in Cooking Mode is synced with the main keep-awake toggle.
 
-Use the Grocery List view to add one-off items, review combined shopping items, group them into collapsible sections, hide checked items while shopping, clear checked progress, or clear the list.
+Use the Grocery List view to add one-off items, add all recipes, review combined shopping items, inspect which recipes contributed an item, group items into collapsible sections, hide checked items while shopping, clear checked progress, or clear the list.
 
 Use Export backup and Import backup in the Grocery List controls when moving browser state to another browser or preserving a local copy before clearing site data.
 
@@ -90,6 +91,7 @@ Avoid noisy notes like `to taste` or `plus more` in structured grocery data unle
 The app stores personal state in `localStorage`, including:
 
 - Grocery list recipe selections
+- Recipe quantity multipliers
 - Grocery item checkmarks
 - Manual grocery items
 - Weekly meal plan
@@ -98,6 +100,7 @@ The app stores personal state in `localStorage`, including:
 - Active filters
 - Selected-only and favorites-only toggles
 - Grocery grouping
+- Collapsed recipe and grocery controls
 - Collapsed grocery sections
 - Last mobile view
 - Keep-awake preference
@@ -122,8 +125,8 @@ The code is split by responsibility:
 - `js/recipe_renderer.js`, `js/meal_plan_renderer.js`, `js/grocery_renderer.js`, `js/cooking_renderer.js`: DOM rendering for recipe cards, the meal plan, the grocery list, and Cooking Mode. State changes are sent through injected actions.
 - Recipe browsing filters against cached recipe data first, then streams matching recipe cards into the DOM in scroll-loaded batches. Hidden recipe details are rendered lazily when the card is expanded.
 - `js/recipe_sort.js`: Recipe list ranking for the browse sort control without requiring rendered recipe cards.
-- `js/grocery_model.js`: Grocery aggregation domain model for selected recipes, favorites, checkmarks, and parsed display names.
-- `js/grocery_list_exporter.js`: Plain-text grocery list export built from the same runtime grocery state used by the renderer.
+- `js/grocery_model.js`: Grocery aggregation domain model for selected recipes, recipe quantity multipliers, favorites, checkmarks, source details, and parsed display names.
+- `js/grocery_list_exporter.js`: Plain-text grocery list export built from the same runtime grocery state and source-aware display helpers used by the renderer.
 - `js/meal_plan_model.js`: Weekly meal-plan domain model for scheduled recipes and grocery-list generation from a plan.
 - `js/recipe_filter.js`, `js/recipe_formatting.js`, `js/grocery_view_model.js`, `js/cooking_model.js`: Pure UI/domain helper modules used by the renderer and controller.
 - `js/recipe_repository.js`: Recipe loading boundary for bundled recipes and future user/imported recipe sources.
