@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#101214" />
-    <link rel="stylesheet" href="css/styles.css?v=20260628-4" />
+    <link rel="stylesheet" href="css/styles.css?v=20260628-5" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="data:," />
   </head>
@@ -43,7 +44,7 @@
               <p class="section-kicker">Browse</p>
               <h2 id="recipesTitle">Recipes</h2>
             </div>
-            <div id="recipeSearchMeta" class="recipe-search-meta" aria-live="polite"></div>
+            <div id="recipeSearchMeta" class="recipe-search-meta" aria-live="polite">Loading...</div>
           </div>
 
           <div class="recipe-search">
@@ -135,7 +136,9 @@
             </div>
           </div>
 
-          <div id="recipeContainer" class="recipe-list"></div>
+          <div id="recipeContainer" class="recipe-list" aria-busy="true">
+            <div class="recipe-list-state recipe-list-loading" role="status">Loading recipes...</div>
+          </div>
           <div id="recipeNoResults" class="empty-state recipe-no-results" hidden>
             <strong>No recipes match.</strong>
             <span>Clear the current search and filters to bring the full list back.</span>
@@ -348,6 +351,6 @@
       </form>
     </dialog>
 
-    <script type="module" src="js/app.js?v=20260628-4"></script>
+    <script type="module" src="js/app.js?v=20260628-5"></script>
   </body>
 </html>
