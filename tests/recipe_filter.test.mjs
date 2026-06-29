@@ -12,10 +12,13 @@ import { test } from "./test_helpers.mjs";
 
 const recipe = {
   author: "Robert",
+  category: "Dinner",
   description: "Weeknight dinner",
+  equipment: ["Dutch oven"],
   ingredients: ["1 can beans", "2 tbsp chili powder"],
   instructions: ["Simmer until thick"],
   notes: ["freezes well"],
+  personalNotes: ["Add extra chipotle next time"],
   tags: {
     difficulty: "easy",
     equipment: ["dutch-oven"],
@@ -29,7 +32,10 @@ test("buildRecipeSearchText includes searchable recipe fields", () => {
   const searchText = buildRecipeSearchText(recipe);
   assert.ok(searchText.includes("dutch oven chili"));
   assert.ok(searchText.includes("beans"));
+  assert.ok(searchText.includes("dinner"));
+  assert.ok(searchText.includes("dutch oven"));
   assert.ok(searchText.includes("simmer"));
+  assert.ok(searchText.includes("extra chipotle"));
   assert.ok(searchText.includes("freezes well"));
 });
 
@@ -108,6 +114,10 @@ test("normalizeForSearch collapses whitespace and case", () => {
   assert.equal(normalizeForSearch("  Dutch   Oven  "), "dutch oven");
 });
 
+test("normalizeForSearch makes common separators searchable as spaces", () => {
+  assert.equal(normalizeForSearch("Instant-Pot/Slow_Cooker"), "instant pot slow cooker");
+});
+
 test("recipeSearchTextMatches supports out-of-order search terms", () => {
   const searchText = buildRecipeSearchText(recipe);
 
@@ -118,6 +128,10 @@ test("recipeSearchTextMatches supports out-of-order search terms", () => {
 
 test("recipeSearchTextMatches accepts raw search text", () => {
   assert.equal(recipeSearchTextMatches("Dutch Oven Chili with Beans", "oven beans"), true);
+});
+
+test("recipeSearchTextMatches matches hyphenated recipe text with spaced search terms", () => {
+  assert.equal(recipeSearchTextMatches("semi-sweet chocolate chips", "semi sweet"), true);
 });
 
 test("getMatchingRecipeIndexes filters recipe data without rendered DOM", () => {
@@ -237,6 +251,38 @@ test("getMatchingRecipeIndexes skips runtime state checks when visibility toggle
 
   assert.equal(favoriteChecks, 0);
   assert.equal(selectedChecks, 0);
+});
+
+test("getMatchingRecipeIndexes skips recipe reads when discovery controls are neutral", () => {
+  const recipes = new Array(2);
+  Object.defineProperty(recipes, "0", {
+    get() {
+      throw new Error("neutral filtering should not inspect recipe data");
+    },
+  });
+  Object.defineProperty(recipes, "1", {
+    get() {
+      throw new Error("neutral filtering should not inspect recipe data");
+    },
+  });
+
+  assert.deepEqual(
+    getMatchingRecipeIndexes({
+      filterText: "",
+      isFavorite: () => {
+        throw new Error("neutral filtering should not inspect favorite state");
+      },
+      isSelected: () => {
+        throw new Error("neutral filtering should not inspect selected state");
+      },
+      recipes,
+      searchTexts: [],
+      selectedFilters: {},
+      showFavoriteOnly: false,
+      showSelectedOnly: false,
+    }),
+    [0, 1]
+  );
 });
 
 test("getMatchingRecipeIndexes skips search text work when tag filters exclude a recipe", () => {
