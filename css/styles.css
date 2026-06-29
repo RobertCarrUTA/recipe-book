@@ -1039,7 +1039,7 @@ h2 {
 
 .recipe-actions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 144px), 1fr));
   align-items: stretch;
   margin: 0 0 12px;
 }
@@ -1166,6 +1166,7 @@ h2 {
 .recipe-action-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 42px;
   padding: 0 12px;
   border: 1px solid var(--border);
@@ -2727,6 +2728,11 @@ li {
   .recipe-actions {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recipe-add-toggle,
+  .recipe-actions>.recipe-scale-control {
+    grid-column: 1 / -1;
   }
 
   .recipe-actions>button,

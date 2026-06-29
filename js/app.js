@@ -176,7 +176,7 @@ function createRecipeBookApp() {
   }) {
     return (
       countSelectedRecipeFilters(selected) +
-      (normalizeForSearch(filterText) ? 1 : 0) +
+      (filterText ? 1 : 0) +
       (showFavoriteOnly ? 1 : 0) +
       (showSelectedOnly ? 1 : 0)
     );
@@ -240,7 +240,7 @@ function createRecipeBookApp() {
 
     if (recipeSearchWrap) {
       recipeSearchWrap.classList.toggle("has-active-discovery-filters", activeDiscoveryFilterCount > 0);
-      recipeSearchWrap.classList.toggle("has-search-text", Boolean(normalizeForSearch(filterText)));
+      recipeSearchWrap.classList.toggle("has-search-text", Boolean(filterText));
     }
   }
 
@@ -302,6 +302,7 @@ function createRecipeBookApp() {
 
     const matchingRecipeIndexes = getMatchingRecipeIndexes({
       filterText,
+      filterTextIsNormalized: true,
       isFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
       isSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
       recipes: appState.recipes,
@@ -312,11 +313,14 @@ function createRecipeBookApp() {
       showSelectedOnly,
     });
 
-    const sortedRecipeIndexes = sortRecipeIndexes(matchingRecipeIndexes, appState.recipes, {
-      isFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
-      isSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
-      sortMode: appState.ui.recipeSort,
-    });
+    let sortedRecipeIndexes = matchingRecipeIndexes;
+    if (appState.ui.recipeSort !== recipeSortModes.default) {
+      sortedRecipeIndexes = sortRecipeIndexes(matchingRecipeIndexes, appState.recipes, {
+        isFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
+        isSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
+        sortMode: appState.ui.recipeSort,
+      });
+    }
 
     renderFilteredRecipes(sortedRecipeIndexes);
     renderer.syncRecipeFilterTagStyles(selected);
