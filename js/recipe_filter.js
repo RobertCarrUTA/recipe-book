@@ -1,17 +1,33 @@
 import { normalizeWhitespace } from "./normalization.js";
 
+const searchSeparatorPattern = /[\u2010-\u2015/_-]+/g;
+
 export function normalizeForSearch(text) {
-  return normalizeWhitespace(String(text || "")).toLowerCase();
+  return normalizeWhitespace(String(text || "").replace(searchSeparatorPattern, " ")).toLowerCase();
+}
+
+function addSearchParts(parts, value) {
+  if (Array.isArray(value)) {
+    if (value.length) parts.push(value.join(" "));
+    return;
+  }
+
+  if (value) parts.push(value);
 }
 
 export function buildRecipeSearchText(recipe) {
   const parts = [];
-  if (recipe.title) parts.push(recipe.title);
-  if (recipe.author) parts.push(recipe.author);
-  if (recipe.description) parts.push(recipe.description);
-  if (recipe.ingredients && recipe.ingredients.length) parts.push(recipe.ingredients.join(" "));
-  if (recipe.notes && recipe.notes.length) parts.push(recipe.notes.join(" "));
-  if (recipe.instructions && recipe.instructions.length) parts.push(recipe.instructions.join(" "));
+
+  addSearchParts(parts, recipe.title);
+  addSearchParts(parts, recipe.author);
+  addSearchParts(parts, recipe.category);
+  addSearchParts(parts, recipe.description);
+  addSearchParts(parts, recipe.equipment);
+  addSearchParts(parts, recipe.ingredients);
+  addSearchParts(parts, recipe.personalNotes);
+  addSearchParts(parts, recipe.notes);
+  addSearchParts(parts, recipe.instructions);
+
   return normalizeForSearch(parts.join(" "));
 }
 
@@ -36,6 +52,10 @@ function selectedFilterIncludes(values, value) {
 
 function hasSelectedFilterValues(selected) {
   return Object.values(selected || {}).some((values) => getSelectedFilterValueCount(values) > 0);
+}
+
+function getAllRecipeIndexes(items) {
+  return Array.from({ length: items.length }, (_item, index) => index);
 }
 
 function normalizedRecipeSearchTextMatches(normalizedSearchText, normalizedFilterText, searchTerms) {
@@ -128,6 +148,10 @@ export function getMatchingRecipeIndexes({
   const canCheckFavorite = typeof isFavorite === "function";
   const canCheckSelected = typeof isSelected === "function";
   const matches = [];
+
+  if (!hasSearchText && !shouldCheckTags && !showFavoriteOnly && !showSelectedOnly) {
+    return getAllRecipeIndexes(items);
+  }
 
   for (let index = 0; index < items.length; index += 1) {
     const recipe = items[index];
