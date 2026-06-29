@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#101214" />
-    <link rel="stylesheet" href="css/styles.css?v=20260628-10" />
+    <link rel="stylesheet" href="css/styles.css?v=20260629-1" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="data:," />
   </head>
@@ -62,14 +62,26 @@
             </div>
 
             <div id="recipeControlsPanel" class="recipe-controls-panel">
-              <label class="visually-hidden" for="recipeSearch">Search recipes</label>
-              <input
-                id="recipeSearch"
-                type="search"
-                placeholder="Search title, ingredients, notes..."
-                autocomplete="off"
-                enterkeyhint="search"
-              />
+              <div class="recipe-search-field">
+                <label class="visually-hidden" for="recipeSearch">Search recipes</label>
+                <input
+                  id="recipeSearch"
+                  type="search"
+                  placeholder="Search title, ingredients, notes..."
+                  autocomplete="off"
+                  enterkeyhint="search"
+                />
+                <button
+                  id="clearRecipeSearch"
+                  class="recipe-search-clear"
+                  type="button"
+                  aria-label="Clear recipe search"
+                  title="Clear recipe search"
+                  hidden
+                >
+                  &times;
+                </button>
+              </div>
 
               <label class="recipe-sort-control" for="recipeSort">
                 <span>Sort</span>
@@ -131,7 +143,7 @@
                   <label><input type="checkbox" data-filter="equipment" value="dutch-oven" /> Dutch Oven</label>
                   <label><input type="checkbox" data-filter="equipment" value="instant-pot" /> Instant Pot</label>
                 </div>
-                <button id="clearFilters" type="button">Clear all filters</button>
+                <button id="clearFilters" type="button">Clear search and filters</button>
               </div>
             </div>
           </div>
@@ -351,6 +363,6 @@
       </form>
     </dialog>
 
-    <script type="module" src="js/app.js?v=20260628-10"></script>
+    <script type="module" src="js/app.js?v=20260629-1"></script>
   </body>
 </html>

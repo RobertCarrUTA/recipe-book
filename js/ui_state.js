@@ -1,3 +1,5 @@
+import { normalizeRecipeSort } from "./recipe_sort.js";
+
 export function readFilterDataFromDom(document) {
   const data = {};
   document.querySelectorAll(".recipe-filters input:checked").forEach((checkbox) => {
@@ -46,7 +48,7 @@ export function readUiStateFromControls(document, currentUiState = {}) {
       : Boolean(currentUiState.hideCheckedGroceryItems),
     keepScreenAwake: keepAwake ? Boolean(keepAwake.checked) : Boolean(currentUiState.keepScreenAwake),
     recipeSearch: recipeSearch ? recipeSearch.value || "" : currentUiState.recipeSearch || "",
-    recipeSort: recipeSort ? recipeSort.value : currentUiState.recipeSort,
+    recipeSort: normalizeRecipeSort(recipeSort ? recipeSort.value : currentUiState.recipeSort),
     showFavoriteRecipesOnly: favoriteOnly
       ? Boolean(favoriteOnly.checked)
       : Boolean(currentUiState.showFavoriteRecipesOnly),
@@ -72,6 +74,6 @@ export function applyUiStateToControls(document, uiState) {
   if (hideChecked) hideChecked.checked = Boolean(uiState.hideCheckedGroceryItems);
   if (keepAwake) keepAwake.checked = Boolean(uiState.keepScreenAwake);
   if (recipeSearch) recipeSearch.value = uiState.recipeSearch || "";
-  if (recipeSort) recipeSort.value = uiState.recipeSort || "default";
+  if (recipeSort) recipeSort.value = normalizeRecipeSort(uiState.recipeSort);
   applyFilterDataToDom(document, uiState.filters);
 }

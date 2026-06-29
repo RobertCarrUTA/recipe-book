@@ -11,6 +11,7 @@ import "../tests/recipe_sort.test.mjs";
 import "../tests/recipes.test.mjs";
 import "../tests/recipe_schema.test.mjs";
 import "../tests/storage.test.mjs";
+import "../tests/ui_state.test.mjs";
 
 import { runRegisteredTests } from "../tests/test_helpers.mjs";
 
