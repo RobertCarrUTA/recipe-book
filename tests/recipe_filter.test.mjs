@@ -39,6 +39,19 @@ test("recipeMatchesSelectedFilters applies tag groups", () => {
   assert.equal(recipeMatchesSelectedFilters(recipe, { equipment: new Set(["dutch-oven"]) }), true);
 });
 
+test("recipeMatchesSelectedFilters accepts array-backed selected filters", () => {
+  assert.equal(
+    recipeMatchesSelectedFilters(recipe, {
+      equipment: ["dutch-oven"],
+      rating: ["great"],
+      status: ["tried"],
+    }),
+    true
+  );
+  assert.equal(recipeMatchesSelectedFilters(recipe, { status: ["not-tried"] }), false);
+  assert.equal(recipeMatchesSelectedFilters(recipe, { equipment: ["instant-pot"] }), false);
+});
+
 test("recipeMatchesVisibilityOptions combines search, favorites, selection, and tags", () => {
   const searchText = buildRecipeSearchText(recipe);
 
@@ -68,6 +81,26 @@ test("recipeMatchesVisibilityOptions combines search, favorites, selection, and 
       showSelectedOnly: true,
     }),
     false
+  );
+});
+
+test("recipeMatchesVisibilityOptions skips search text work when search is blank", () => {
+  assert.equal(
+    recipeMatchesVisibilityOptions({
+      filterText: "",
+      isFavorite: false,
+      isSelected: false,
+      recipe,
+      searchText: {
+        toString() {
+          throw new Error("blank searches should not normalize recipe search text");
+        },
+      },
+      selectedFilters: {},
+      showFavoriteOnly: false,
+      showSelectedOnly: false,
+    }),
+    true
   );
 });
 
@@ -130,6 +163,53 @@ test("getMatchingRecipeIndexes filters recipe data without rendered DOM", () => 
   );
 });
 
+test("getMatchingRecipeIndexes honors array-backed selected filters", () => {
+  const recipes = [
+    recipe,
+    {
+      ingredients: ["2 cups flour"],
+      instructions: ["Bake until set"],
+      tags: {
+        difficulty: "medium",
+        status: "not-tried",
+      },
+      title: "Blueberry Cake",
+    },
+  ];
+
+  assert.deepEqual(
+    getMatchingRecipeIndexes({
+      filterText: "",
+      isFavorite: () => false,
+      isSelected: () => false,
+      recipes,
+      searchTexts: recipes.map(buildRecipeSearchText),
+      selectedFilters: { difficulty: ["medium"] },
+      showFavoriteOnly: false,
+      showSelectedOnly: false,
+    }),
+    [1]
+  );
+});
+
+test("getMatchingRecipeIndexes can reuse normalized filter and search text", () => {
+  assert.deepEqual(
+    getMatchingRecipeIndexes({
+      filterText: "dutch chili",
+      filterTextIsNormalized: true,
+      isFavorite: () => false,
+      isSelected: () => false,
+      recipes: [recipe],
+      searchTexts: [buildRecipeSearchText(recipe)],
+      searchTextsAreNormalized: true,
+      selectedFilters: {},
+      showFavoriteOnly: false,
+      showSelectedOnly: false,
+    }),
+    [0]
+  );
+});
+
 test("getMatchingRecipeIndexes skips runtime state checks when visibility toggles are off", () => {
   let favoriteChecks = 0;
   let selectedChecks = 0;
@@ -157,6 +237,30 @@ test("getMatchingRecipeIndexes skips runtime state checks when visibility toggle
 
   assert.equal(favoriteChecks, 0);
   assert.equal(selectedChecks, 0);
+});
+
+test("getMatchingRecipeIndexes skips search text work when tag filters exclude a recipe", () => {
+  const searchTexts = [];
+  Object.defineProperty(searchTexts, "0", {
+    get() {
+      throw new Error("tag-excluded recipes should not read indexed search text");
+    },
+  });
+
+  assert.deepEqual(
+    getMatchingRecipeIndexes({
+      filterText: "chili",
+      isFavorite: () => false,
+      isSelected: () => false,
+      recipes: [recipe],
+      searchTexts,
+      searchTextsAreNormalized: true,
+      selectedFilters: { status: new Set(["not-tried"]) },
+      showFavoriteOnly: false,
+      showSelectedOnly: false,
+    }),
+    []
+  );
 });
 
 test("getMatchingRecipeIndexes skips search text work when search is blank", () => {

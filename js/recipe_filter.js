@@ -16,16 +16,26 @@ export function buildRecipeSearchText(recipe) {
 }
 
 function getSearchTerms(normalizedFilterText) {
-  return String(normalizedFilterText || "")
+  const terms = String(normalizedFilterText || "")
     .split(/\s+/)
     .filter(Boolean);
+
+  return terms.length > 1 ? Array.from(new Set(terms)) : terms;
+}
+
+function getSelectedFilterValueCount(values) {
+  if (values instanceof Set) return values.size;
+  return Array.isArray(values) ? values.length : 0;
+}
+
+function selectedFilterIncludes(values, value) {
+  const normalizedValue = String(value);
+  if (values instanceof Set) return values.has(normalizedValue);
+  return Array.isArray(values) && values.includes(normalizedValue);
 }
 
 function hasSelectedFilterValues(selected) {
-  return Object.values(selected || {}).some((values) => {
-    if (values instanceof Set) return values.size > 0;
-    return Array.isArray(values) && values.length > 0;
-  });
+  return Object.values(selected || {}).some((values) => getSelectedFilterValueCount(values) > 0);
 }
 
 function normalizedRecipeSearchTextMatches(normalizedSearchText, normalizedFilterText, searchTerms) {
@@ -53,10 +63,17 @@ export function recipeMatchesSelectedFilters(recipe, selected) {
   const difficultyValue = tags.difficulty ? String(tags.difficulty) : "";
   const equipmentValues = Array.isArray(tags.equipment) ? tags.equipment.map((value) => String(value)) : [];
 
-  if (selected.status?.size && !selected.status.has(statusValue)) return false;
-  if (selected.rating?.size && !selected.rating.has(ratingValue)) return false;
-  if (selected.difficulty?.size && !selected.difficulty.has(difficultyValue)) return false;
-  if (selected.equipment?.size && !equipmentValues.some((value) => selected.equipment.has(value))) return false;
+  if (getSelectedFilterValueCount(selected.status) && !selectedFilterIncludes(selected.status, statusValue)) return false;
+  if (getSelectedFilterValueCount(selected.rating) && !selectedFilterIncludes(selected.rating, ratingValue)) return false;
+  if (getSelectedFilterValueCount(selected.difficulty) && !selectedFilterIncludes(selected.difficulty, difficultyValue)) {
+    return false;
+  }
+  if (
+    getSelectedFilterValueCount(selected.equipment) &&
+    !equipmentValues.some((value) => selectedFilterIncludes(selected.equipment, value))
+  ) {
+    return false;
+  }
 
   return true;
 }
@@ -71,7 +88,17 @@ export function recipeMatchesVisibilityOptions({
   showFavoriteOnly,
   showSelectedOnly,
 }) {
-  const matchesSearch = recipeSearchTextMatches(searchText, filterText);
+  const normalizedFilterText = normalizeForSearch(filterText);
+  let matchesSearch = true;
+
+  if (normalizedFilterText) {
+    matchesSearch = normalizedRecipeSearchTextMatches(
+      normalizeForSearch(searchText),
+      normalizedFilterText,
+      getSearchTerms(normalizedFilterText)
+    );
+  }
+
   const matchesTags = recipe ? recipeMatchesSelectedFilters(recipe, selectedFilters || {}) : true;
   const matchesSelectedOnly = !showSelectedOnly || Boolean(isSelected);
   const matchesFavoriteOnly = !showFavoriteOnly || Boolean(isFavorite);
@@ -81,6 +108,7 @@ export function recipeMatchesVisibilityOptions({
 
 export function getMatchingRecipeIndexes({
   filterText,
+  filterTextIsNormalized = false,
   isFavorite,
   isSelected,
   recipes,
@@ -93,7 +121,7 @@ export function getMatchingRecipeIndexes({
   const items = Array.isArray(recipes) ? recipes : [];
   const indexedSearchTexts = Array.isArray(searchTexts) ? searchTexts : [];
   const selected = selectedFilters || {};
-  const normalizedFilterText = normalizeForSearch(filterText);
+  const normalizedFilterText = filterTextIsNormalized ? String(filterText || "") : normalizeForSearch(filterText);
   const hasSearchText = Boolean(normalizedFilterText);
   const searchTerms = hasSearchText ? getSearchTerms(normalizedFilterText) : [];
   const shouldCheckTags = hasSelectedFilterValues(selected);
