@@ -32,6 +32,10 @@ export function createRecipeRenderer({
   const windowLike = document.defaultView || globalThis;
   const configuredBatchSize = Math.max(1, Number(recipeBatchSize) || DEFAULT_RECIPE_BATCH_SIZE);
   const shouldAdaptBatchSize = recipeBatchSize === undefined;
+  const compactRecipeBatchMedia =
+    typeof windowLike.matchMedia === "function"
+      ? windowLike.matchMedia(COMPACT_RECIPE_BATCH_QUERY)
+      : null;
   let currentRecipeIndexes = [];
   let currentSelectedFilters = {};
   let loadMoreObserver = null;
@@ -73,10 +77,7 @@ export function createRecipeRenderer({
   }
 
   function isCompactRecipeViewport() {
-    return (
-      typeof windowLike.matchMedia === "function" &&
-      windowLike.matchMedia(COMPACT_RECIPE_BATCH_QUERY).matches
-    );
+    return Boolean(compactRecipeBatchMedia && compactRecipeBatchMedia.matches);
   }
 
   function getRecipeBatchSize() {
@@ -687,6 +688,13 @@ export function createRecipeRenderer({
     setupLoadMoreObserver();
   }
 
+  function refreshLoadMoreObserverForViewportChange() {
+    if (!loadMoreSentinel || !hasMoreRecipes()) return;
+
+    disconnectLoadMoreObserver();
+    updateLoadMoreSentinel();
+  }
+
   function renderNextRecipeBatch(options = {}) {
     cancelScheduledRecipeBatch();
     const recipeContainer = byId("recipeContainer");
@@ -1050,6 +1058,12 @@ export function createRecipeRenderer({
 
     const meta = byId("recipeSearchMeta");
     if (meta) meta.textContent = "0 recipes";
+  }
+
+  if (compactRecipeBatchMedia && typeof compactRecipeBatchMedia.addEventListener === "function") {
+    compactRecipeBatchMedia.addEventListener("change", refreshLoadMoreObserverForViewportChange);
+  } else if (compactRecipeBatchMedia && typeof compactRecipeBatchMedia.addListener === "function") {
+    compactRecipeBatchMedia.addListener(refreshLoadMoreObserverForViewportChange);
   }
 
   return {

@@ -152,6 +152,14 @@ const browserChecks = [
       await openApp(page, { debug: true });
       const totalCount = await page.evaluate(() => window.recipeBookDebug.getState().recipes.length);
 
+      await assertVisible(page, "#clearRecipeSearch", false);
+      await page.fill("#recipeSearch", "chili");
+      await assertVisible(page, "#clearRecipeSearch", true);
+      await page.locator("#clearRecipeSearch").click();
+      await page.waitForTimeout(250);
+      assert.equal(await page.locator("#recipeSearch").inputValue(), "");
+      await assertVisible(page, "#clearRecipeSearch", false);
+
       await page.fill("#recipeSearch", "chili");
       await page.waitForTimeout(250);
 

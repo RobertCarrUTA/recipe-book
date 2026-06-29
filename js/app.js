@@ -37,7 +37,7 @@ import {
 } from "./recipe_filter.js";
 import { createGroceryListText } from "./grocery_list_exporter.js";
 import { createRecipeRepository } from "./recipe_repository.js";
-import { recipeSortModes, sortRecipeIndexes } from "./recipe_sort.js";
+import { normalizeRecipeSort, recipeSortModes, sortRecipeIndexes } from "./recipe_sort.js";
 import { createRenderer } from "./render.js";
 import {
   clearGroceryPersistence,
@@ -83,6 +83,7 @@ function createRecipeBookApp() {
       ...(restored.ui || {}),
     },
   };
+  appState.ui.recipeSort = normalizeRecipeSort(appState.ui.recipeSort);
   let renderer = null;
   let mobileViewController = null;
   let mealPlanReturnFocus = null;
@@ -231,7 +232,7 @@ function createRecipeBookApp() {
       filterToggle.setAttribute(
         "aria-label",
         activeDiscoveryFilterCount
-          ? `${activeDiscoveryFilterCount} recipe filters active`
+          ? `${activeDiscoveryFilterCount} recipe discovery controls active`
           : "Show recipe filters"
       );
     }
@@ -242,6 +243,16 @@ function createRecipeBookApp() {
       recipeSearchWrap.classList.toggle("has-active-discovery-filters", activeDiscoveryFilterCount > 0);
       recipeSearchWrap.classList.toggle("has-search-text", Boolean(filterText));
     }
+
+    syncRecipeSearchClearButton();
+  }
+
+  function syncRecipeSearchClearButton() {
+    const recipeSearch = byId("recipeSearch");
+    const clearSearchButton = byId("clearRecipeSearch");
+    if (!clearSearchButton) return;
+
+    clearSearchButton.hidden = !(recipeSearch && recipeSearch.value);
   }
 
   function setStateToolsStatus(message, options = {}) {
@@ -273,6 +284,7 @@ function createRecipeBookApp() {
       ...createDefaultUiState(),
       ...(restoredState.ui || {}),
     };
+    appState.ui.recipeSort = normalizeRecipeSort(appState.ui.recipeSort);
 
     pruneMealPlanForRecipes(appState.mealPlan, appState.recipes);
     recomputeGroceryState(appState.runtime, appState.recipes);
@@ -927,6 +939,7 @@ function createRecipeBookApp() {
 
   function attachRecipeSearch() {
     const recipeSearch = byId("recipeSearch");
+    const clearSearchButton = byId("clearRecipeSearch");
     if (!recipeSearch) return;
 
     let debounceTimer = null;
@@ -946,6 +959,7 @@ function createRecipeBookApp() {
 
     recipeSearch.addEventListener("input", () => {
       clearRecipeSearchDebounce();
+      syncRecipeSearchClearButton();
       debounceTimer = window.setTimeout(runFilter, DEBOUNCE_MS);
     });
 
@@ -955,6 +969,17 @@ function createRecipeBookApp() {
       runFilter();
       recipeSearch.blur();
     });
+
+    if (clearSearchButton) {
+      clearSearchButton.addEventListener("click", () => {
+        if (!recipeSearch.value) return;
+        recipeSearch.value = "";
+        runFilter();
+        recipeSearch.focus();
+      });
+    }
+
+    syncRecipeSearchClearButton();
   }
 
   function attachFilterControls() {
@@ -1040,7 +1065,7 @@ function createRecipeBookApp() {
     if (copyGroceryListButton) copyGroceryListButton.addEventListener("click", handleCopyGroceryList);
     if (recipeSort) {
       recipeSort.addEventListener("change", () => {
-        appState.ui.recipeSort = recipeSort.value;
+        appState.ui.recipeSort = normalizeRecipeSort(recipeSort.value);
         refreshRecipeListFilter();
         saveAppState();
       });
