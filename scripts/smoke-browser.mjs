@@ -3,6 +3,8 @@ import fs from "node:fs/promises";
 import http from "node:http";
 import path from "node:path";
 
+import { resolveSmokePrerequisiteFailure } from "./smoke-prerequisites.mjs";
+
 const rootDir = path.resolve(new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
 const port = Number(process.env.RECIPE_BOOK_SMOKE_PORT || 8787);
 const url = `http://127.0.0.1:${port}/`;
@@ -1007,13 +1009,13 @@ async function run() {
   try {
     playwright = await import("playwright");
   } catch (error) {
-    console.log("Skipping browser smoke test: Playwright is not available.");
+    console.log(resolveSmokePrerequisiteFailure("Playwright is not available.").message);
     return;
   }
 
   const executablePath = await findBrowserExecutable();
   if (!executablePath) {
-    console.log("Skipping browser smoke test: no Chrome or Edge executable was found.");
+    console.log(resolveSmokePrerequisiteFailure("no Chrome or Edge executable was found.").message);
     return;
   }
 
