@@ -1,4 +1,4 @@
-const CACHE_VERSION = "20260627-1";
+const CACHE_VERSION = "20260701-1";
 const CACHE_PREFIX = "recipe-book-";
 const SHELL_CACHE = `recipe-book-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `recipe-book-data-${CACHE_VERSION}`;
@@ -16,6 +16,7 @@ const SHELL_URLS = [
   "./js/cooking_model.js",
   "./js/cooking_renderer.js",
   "./js/grocery_model.js",
+  "./js/grocery_list_exporter.js",
   "./js/grocery_renderer.js",
   "./js/grocery_view_model.js",
   "./js/grouping.js",
@@ -33,6 +34,7 @@ const SHELL_URLS = [
   "./js/recipe_renderer.js",
   "./js/recipe_repository.js",
   "./js/recipe_schema.js",
+  "./js/recipe_sort.js",
   "./js/recipes.js",
   "./js/render.js",
   "./js/storage.js",
