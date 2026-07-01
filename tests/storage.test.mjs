@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   backupAppId,
   backupSchemaVersion,
+  clearGroceryPersistence,
   createPersistentStateBackup,
   currentStorageVersion,
   migratePersistentState,
@@ -47,6 +48,28 @@ test("restorePersistentState reads safe recipe multipliers", () => {
   const restored = restorePersistentState(storage);
 
   assert.deepEqual(restored.recipeMultipliersById, { chili: 2, stew: 0.5 });
+});
+
+test("restorePersistentState normalizes persisted UI filters", () => {
+  const storage = createMemoryStorage({
+    [storageKeys.filters]: JSON.stringify({
+      difficulty: ["easy", "", "easy"],
+      empty: [],
+      rating: "great",
+      status: ["tried", "not-tried"],
+    }),
+    [storageKeys.mobileView]: "menu",
+    [storageKeys.recipeSort]: "old-sort",
+  });
+
+  const restored = restorePersistentState(storage);
+
+  assert.deepEqual(restored.ui.filters, {
+    difficulty: ["easy"],
+    status: ["tried", "not-tried"],
+  });
+  assert.equal(restored.ui.mobileView, "recipes");
+  assert.equal(restored.ui.recipeSort, "default");
 });
 
 test("migratePersistentState promotes legacy selected recipes", () => {
@@ -108,6 +131,30 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   assert.equal(storage.getItem(storageKeys.recipeSort), "fastest");
   assert.equal(storage.getItem(storageKeys.showSelectedRecipesOnly), "1");
   assert.equal(storage.getItem(storageKeys.skipClearGroceryConfirmation), "1");
+});
+
+test("clearGroceryPersistence removes list state without clearing preferences", () => {
+  const storage = createMemoryStorage({
+    [storageKeys.favoriteRecipes]: JSON.stringify({ chili: true }),
+    [storageKeys.groceryChecked]: JSON.stringify({ beans: true }),
+    [storageKeys.groceryControlsCollapsed]: "1",
+    [storageKeys.groceryState]: JSON.stringify({ selectedRecipeIds: { chili: true } }),
+    [storageKeys.groupToggle]: "1",
+    [storageKeys.manualGroceryItems]: JSON.stringify({ manual1: { id: "manual1", name: "Dish soap" } }),
+    [storageKeys.recipeMultipliers]: JSON.stringify({ chili: 2 }),
+    [storageKeys.selectedRecipes]: JSON.stringify({ chili: true }),
+  });
+
+  clearGroceryPersistence(storage);
+
+  assert.equal(storage.getItem(storageKeys.groceryState), null);
+  assert.equal(storage.getItem(storageKeys.groceryChecked), null);
+  assert.equal(storage.getItem(storageKeys.manualGroceryItems), null);
+  assert.equal(storage.getItem(storageKeys.recipeMultipliers), null);
+  assert.equal(storage.getItem(storageKeys.selectedRecipes), null);
+  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.favoriteRecipes)), { chili: true });
+  assert.equal(storage.getItem(storageKeys.groupToggle), "1");
+  assert.equal(storage.getItem(storageKeys.groceryControlsCollapsed), "1");
 });
 
 test("createPersistentStateBackup exports portable runtime and ui state", () => {

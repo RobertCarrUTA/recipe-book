@@ -279,7 +279,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
     ...readObject(storage, storageKeys.recipeMultipliers),
   });
 
-  ui.filters = readObject(storage, storageKeys.filters);
+  ui.filters = normalizeFilterData(readObject(storage, storageKeys.filters));
   ui.collapsedGroceryGroups = truthyRecord(readObject(storage, storageKeys.collapsedGroceryGroups));
   ui.groceryControlsCollapsed = readBoolean(storage, storageKeys.groceryControlsCollapsed);
   ui.groupItems = readBoolean(storage, storageKeys.groupToggle);

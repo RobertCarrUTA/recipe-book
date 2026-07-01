@@ -22,6 +22,12 @@ function extractAttributeValues(html, tagName, attributeName) {
   return Array.from(html.matchAll(pattern), (match) => match[1]);
 }
 
+function extractAllAttributeValues(html, attributeName) {
+  const escapedAttributeName = attributeName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pattern = new RegExp(`\\b${escapedAttributeName}="([^"]*)"`, "gi");
+  return Array.from(html.matchAll(pattern), (match) => match[1]);
+}
+
 function isLocalReference(reference) {
   return !/^(?:[a-z][a-z0-9+.-]*:|#)/i.test(reference);
 }
@@ -37,6 +43,10 @@ function getLocalIndexReferences(indexHtml) {
     ...extractAttributeValues(indexHtml, "link", "href"),
     ...extractAttributeValues(indexHtml, "script", "src"),
   ].filter(isLocalReference);
+}
+
+function getDuplicateValues(values) {
+  return Array.from(new Set(values.filter((value, index) => values.indexOf(value) !== index))).sort();
 }
 
 function getAssetVersion(indexHtml) {
@@ -60,6 +70,17 @@ function extractServiceWorkerShellUrls(serviceWorkerJs) {
   const match = serviceWorkerJs.match(/const\s+SHELL_URLS\s*=\s*\[([\s\S]*?)\];/);
   assert.ok(match, "sw.js should define a SHELL_URLS array");
   return Array.from(match[1].matchAll(/"([^"]+)"/g), (item) => item[1]);
+}
+
+function getIdReferenceTokens(values) {
+  return values.flatMap((value) => String(value || "").trim().split(/\s+/).filter(Boolean));
+}
+
+function extractStaticElementIdLookups(source) {
+  return Array.from(
+    source.matchAll(/\b(?:getElementById|byId)\(\s*"([^"]+)"\s*\)/g),
+    (match) => match[1]
+  );
 }
 
 async function collectStaticModuleGraph(entryPath, seen = new Set()) {
@@ -102,6 +123,56 @@ test("index.html local shell references are versioned and point to files", async
   }
 
   getAssetVersion(indexHtml);
+});
+
+test("index.html static DOM references stay wired", async () => {
+  const indexHtml = await readProjectFile("index.html");
+  const ids = extractAllAttributeValues(indexHtml, "id").filter(Boolean);
+  const idSet = new Set(ids);
+
+  assert.deepEqual(getDuplicateValues(ids), [], "index.html should not contain duplicate ids");
+
+  const labelAndAriaReferences = getIdReferenceTokens([
+    ...extractAllAttributeValues(indexHtml, "aria-controls"),
+    ...extractAllAttributeValues(indexHtml, "aria-describedby"),
+    ...extractAllAttributeValues(indexHtml, "aria-labelledby"),
+    ...extractAllAttributeValues(indexHtml, "for"),
+  ]);
+  const missingLabelAndAriaReferences = labelAndAriaReferences
+    .filter((id) => !idSet.has(id))
+    .sort();
+  assert.deepEqual(
+    missingLabelAndAriaReferences,
+    [],
+    "label and ARIA id references should point to existing elements"
+  );
+
+  const missingHashLinks = extractAllAttributeValues(indexHtml, "href")
+    .filter((href) => href.startsWith("#") && href.length > 1)
+    .map((href) => href.slice(1))
+    .filter((id) => !idSet.has(id))
+    .sort();
+  assert.deepEqual(missingHashLinks, [], "in-page hash links should point to existing elements");
+});
+
+test("static controller element lookups exist in index.html", async () => {
+  const indexHtml = await readProjectFile("index.html");
+  const idSet = new Set(extractAllAttributeValues(indexHtml, "id").filter(Boolean));
+  const appModulePaths = await collectStaticModuleGraph("js/app.js");
+  const missingLookups = [];
+
+  for (const modulePath of appModulePaths) {
+    const source = await readProjectFile(modulePath);
+    extractStaticElementIdLookups(source).forEach((id) => {
+      if (!idSet.has(id)) missingLookups.push(`${id} (${modulePath})`);
+    });
+  }
+
+  assert.deepEqual(
+    missingLookups.sort(),
+    [],
+    "static getElementById/byId lookups should point to elements in index.html"
+  );
 });
 
 test("service worker shell cache tracks current static app assets", async () => {
