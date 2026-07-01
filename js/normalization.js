@@ -91,6 +91,9 @@ const unicodeFractionMap = {
   "\u00bc": "1/4",
   "\u00bd": "1/2",
   "\u00be": "3/4",
+  "\u00c2\u00bc": "1/4",
+  "\u00c2\u00bd": "1/2",
+  "\u00c2\u00be": "3/4",
   "\u2150": "1/7",
   "\u2151": "1/9",
   "\u2152": "1/10",
@@ -125,6 +128,7 @@ const unicodeFractionMap = {
   "⅝": "5/8",
   "⅞": "7/8",
 };
+const unicodeFractionSymbols = Object.keys(unicodeFractionMap).sort((a, b) => b.length - a.length);
 
 export function normalizeWhitespace(text) {
   return String(text || "")
@@ -134,7 +138,7 @@ export function normalizeWhitespace(text) {
 
 export function normalizeUnicodeFractions(text) {
   let result = String(text || "");
-  Object.keys(unicodeFractionMap).forEach((symbol) => {
+  unicodeFractionSymbols.forEach((symbol) => {
     result = result.replace(new RegExp(`(\\d)${symbol}`, "g"), `$1 ${unicodeFractionMap[symbol]}`);
     result = result.replace(new RegExp(symbol, "g"), unicodeFractionMap[symbol]);
   });
