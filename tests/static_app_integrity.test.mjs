@@ -78,7 +78,7 @@ function getIdReferenceTokens(values) {
 
 function extractStaticElementIdLookups(source) {
   return Array.from(
-    source.matchAll(/\b(?:getElementById|byId)\(\s*"([^"]+)"\s*\)/g),
+    source.matchAll(/\b(?:getElementById|byId|onControlChange|onId)\(\s*"([^"]+)"\s*\)/g),
     (match) => match[1]
   );
 }

@@ -4,6 +4,12 @@ export function appendChildren(parent, children) {
   return parent;
 }
 
+export function listen(target, type, listener, options) {
+  if (!target || typeof target.addEventListener !== "function") return null;
+  target.addEventListener(type, listener, options);
+  return target;
+}
+
 export function createElement(document, tagName, options = {}) {
   const element = document.createElement(tagName);
   if (options.className) element.className = options.className;

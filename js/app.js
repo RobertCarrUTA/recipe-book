@@ -19,7 +19,7 @@ import {
 import { createAppStatePersistenceController } from "./app_state_persistence.js";
 import { createBackupController } from "./backup_controller.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
-import { syncDisclosureToggle } from "./dom.js";
+import { listen, syncDisclosureToggle } from "./dom.js";
 import { createLogger, isDebugEnabled } from "./logger.js";
 import {
   addRecipeToMealPlan,
@@ -95,6 +95,20 @@ function createRecipeBookApp() {
 
   function byId(id) {
     return document.getElementById(id);
+  }
+
+  function onId(id, type, listener, options) {
+    return listen(byId(id), type, listener, options);
+  }
+
+  function onControlChange(id, listener) {
+    const control = byId(id);
+    listen(control, "change", (event) => listener(control, event));
+    return control;
+  }
+
+  function queryAll(selector) {
+    return Array.from(document.querySelectorAll(selector));
   }
 
   function syncUiStateFromControls() {
@@ -316,7 +330,7 @@ function createRecipeBookApp() {
     if (recipeSearch) recipeSearch.value = "";
     if (selectedOnly) selectedOnly.checked = false;
     if (favoriteOnly) favoriteOnly.checked = false;
-    document.querySelectorAll(".recipe-filters input").forEach((cb) => {
+    queryAll(".recipe-filters input").forEach((cb) => {
       cb.checked = false;
     });
 
@@ -330,7 +344,7 @@ function createRecipeBookApp() {
   }
 
   function findFilterCheckbox(filterKey, filterValue) {
-    return Array.from(document.querySelectorAll(".recipe-filters input")).find(
+    return queryAll(".recipe-filters input").find(
       (input) => input.dataset.filter === filterKey && input.value === filterValue
     );
   }
@@ -700,10 +714,10 @@ function createRecipeBookApp() {
       if (submitButton) submitButton.disabled = !input.value.trim();
     };
 
-    input.addEventListener("input", syncManualGrocerySubmit);
+    listen(input, "input", syncManualGrocerySubmit);
     syncManualGrocerySubmit();
 
-    form.addEventListener("submit", (event) => {
+    listen(form, "submit", (event) => {
       event.preventDefault();
       const item = addManualGroceryItem(appState.runtime, input.value);
       if (!item) return;
@@ -716,17 +730,12 @@ function createRecipeBookApp() {
   }
 
   function attachMealPlanControls() {
-    const openButton = byId("openMealPlan");
-    const buildButton = byId("buildGroceryListFromMealPlan");
-    const clearButton = byId("clearMealPlan");
-    const closeButton = byId("closeMealPlanPanel");
+    onId("openMealPlan", "click", openMealPlanPanel);
+    onId("buildGroceryListFromMealPlan", "click", handleBuildGroceryListFromMealPlan);
+    onId("clearMealPlan", "click", handleClearMealPlan);
+    onId("closeMealPlanPanel", "click", closeMealPlanPanel);
 
-    if (openButton) openButton.addEventListener("click", openMealPlanPanel);
-    if (buildButton) buildButton.addEventListener("click", handleBuildGroceryListFromMealPlan);
-    if (clearButton) clearButton.addEventListener("click", handleClearMealPlan);
-    if (closeButton) closeButton.addEventListener("click", closeMealPlanPanel);
-
-    document.addEventListener("keydown", (event) => {
+    listen(document, "keydown", (event) => {
       if (event.key === "Escape" && document.body.classList.contains("is-meal-plan-open")) {
         event.preventDefault();
         closeMealPlanPanel();
@@ -739,14 +748,14 @@ function createRecipeBookApp() {
     const confirmButton = byId("confirmClearGroceryList");
     if (!dialog || !confirmButton) return;
 
-    confirmButton.addEventListener("click", () => {
+    listen(confirmButton, "click", () => {
       const skipConfirmation = byId("skipClearGroceryConfirmation");
       if (skipConfirmation && skipConfirmation.checked) {
         appState.ui.skipClearGroceryConfirmation = true;
       }
       clearGroceryList();
     });
-    dialog.addEventListener("click", (event) => {
+    listen(dialog, "click", (event) => {
       if (event.target === dialog) dialog.close("cancel");
     });
   }
@@ -771,27 +780,25 @@ function createRecipeBookApp() {
       saveAppState();
     };
 
-    recipeSearch.addEventListener("input", () => {
+    listen(recipeSearch, "input", () => {
       clearRecipeSearchDebounce();
       syncRecipeSearchClearButton();
       debounceTimer = window.setTimeout(runFilter, DEBOUNCE_MS);
     });
 
-    recipeSearch.addEventListener("keydown", (event) => {
+    listen(recipeSearch, "keydown", (event) => {
       if (event.key !== "Escape") return;
       recipeSearch.value = "";
       runFilter();
       recipeSearch.blur();
     });
 
-    if (clearSearchButton) {
-      clearSearchButton.addEventListener("click", () => {
-        if (!recipeSearch.value) return;
-        recipeSearch.value = "";
-        runFilter();
-        recipeSearch.focus();
-      });
-    }
+    listen(clearSearchButton, "click", () => {
+      if (!recipeSearch.value) return;
+      recipeSearch.value = "";
+      runFilter();
+      recipeSearch.focus();
+    });
 
     syncRecipeSearchClearButton();
   }
@@ -803,101 +810,73 @@ function createRecipeBookApp() {
     const clearDiscoveryButton = byId("clearRecipeDiscoveryFilters");
 
     if (filterToggle && filters) {
-      filterToggle.addEventListener("click", () => {
+      listen(filterToggle, "click", () => {
         const isHidden = filters.classList.toggle("hidden");
         filterToggle.setAttribute("aria-expanded", isHidden ? "false" : "true");
       });
     }
 
-    document.querySelectorAll(".recipe-filters input").forEach((cb) => {
-      cb.addEventListener("change", () => {
+    queryAll(".recipe-filters input").forEach((cb) => {
+      listen(cb, "change", () => {
         appState.ui.filters = readFilterDataFromDom(document);
         refreshRecipeListFilter();
         saveAppState();
       });
     });
 
-    if (clearFiltersButton) {
-      clearFiltersButton.addEventListener("click", () => clearRecipeDiscoveryFilters());
-    }
-
-    if (clearDiscoveryButton) clearDiscoveryButton.addEventListener("click", clearRecipeDiscoveryFilters);
+    listen(clearFiltersButton, "click", () => clearRecipeDiscoveryFilters());
+    listen(clearDiscoveryButton, "click", clearRecipeDiscoveryFilters);
   }
 
   function attachPrimaryControls() {
-    const groupToggle = byId("groupToggle");
-    const selectedOnly = byId("showSelectedRecipesOnly");
-    const favoriteOnly = byId("showFavoriteRecipesOnly");
-    const hideChecked = byId("hideCheckedGroceryItems");
-    const clearButton = byId("clearGroceryList");
-    const clearCheckedButton = byId("clearCheckedGroceryItems");
-    const addAllButton = byId("addAllRecipesToGroceryList");
-    const controlsToggle = byId("toggleGroceryControls");
-    const copyGroceryListButton = byId("copyGroceryList");
-    const recipeControlsToggle = byId("toggleRecipeControls");
-    const recipeSort = byId("recipeSort");
-
     syncRecipeControlsPanel();
     syncGroceryControlsPanel();
     attachResponsiveControlsSync();
 
-    if (groupToggle) {
-      groupToggle.addEventListener("change", () => {
-        appState.ui.groupItems = groupToggle.checked;
-        renderer.renderGroceryList();
-        saveAppState();
-      });
-    }
+    onControlChange("groupToggle", (control) => {
+      appState.ui.groupItems = control.checked;
+      renderer.renderGroceryList();
+      saveAppState();
+    });
 
-    if (selectedOnly) {
-      selectedOnly.addEventListener("change", () => {
-        appState.ui.showSelectedRecipesOnly = selectedOnly.checked;
-        refreshRecipeListFilter();
-        saveAppState();
-      });
-    }
+    onControlChange("showSelectedRecipesOnly", (control) => {
+      appState.ui.showSelectedRecipesOnly = control.checked;
+      refreshRecipeListFilter();
+      saveAppState();
+    });
 
-    if (favoriteOnly) {
-      favoriteOnly.addEventListener("change", () => {
-        appState.ui.showFavoriteRecipesOnly = favoriteOnly.checked;
-        refreshRecipeListFilter();
-        saveAppState();
-      });
-    }
+    onControlChange("showFavoriteRecipesOnly", (control) => {
+      appState.ui.showFavoriteRecipesOnly = control.checked;
+      refreshRecipeListFilter();
+      saveAppState();
+    });
 
-    if (hideChecked) {
-      hideChecked.addEventListener("change", () => {
-        appState.ui.hideCheckedGroceryItems = hideChecked.checked;
-        renderer.renderGroceryList();
-        saveAppState();
-      });
-    }
+    onControlChange("hideCheckedGroceryItems", (control) => {
+      appState.ui.hideCheckedGroceryItems = control.checked;
+      renderer.renderGroceryList();
+      saveAppState();
+    });
 
-    if (clearButton) clearButton.addEventListener("click", openClearGroceryDialog);
-    if (clearCheckedButton) clearCheckedButton.addEventListener("click", clearCheckedGroceryListItems);
-    if (addAllButton) addAllButton.addEventListener("click", addAllRecipesToGroceryList);
-    if (copyGroceryListButton) copyGroceryListButton.addEventListener("click", handleCopyGroceryList);
-    if (recipeSort) {
-      recipeSort.addEventListener("change", () => {
-        appState.ui.recipeSort = normalizeRecipeSort(recipeSort.value);
-        refreshRecipeListFilter();
-        saveAppState();
-      });
-    }
-    if (recipeControlsToggle) {
-      recipeControlsToggle.addEventListener("click", () => {
-        appState.ui.recipeControlsCollapsed = !appState.ui.recipeControlsCollapsed;
-        syncRecipeControlsPanel();
-        saveAppState();
-      });
-    }
-    if (controlsToggle) {
-      controlsToggle.addEventListener("click", () => {
-        appState.ui.groceryControlsCollapsed = !appState.ui.groceryControlsCollapsed;
-        syncGroceryControlsPanel();
-        saveAppState();
-      });
-    }
+    onControlChange("recipeSort", (control) => {
+      appState.ui.recipeSort = normalizeRecipeSort(control.value);
+      refreshRecipeListFilter();
+      saveAppState();
+    });
+
+    onId("clearGroceryList", "click", openClearGroceryDialog);
+    onId("clearCheckedGroceryItems", "click", clearCheckedGroceryListItems);
+    onId("addAllRecipesToGroceryList", "click", addAllRecipesToGroceryList);
+    onId("copyGroceryList", "click", handleCopyGroceryList);
+    onId("toggleRecipeControls", "click", () => {
+      appState.ui.recipeControlsCollapsed = !appState.ui.recipeControlsCollapsed;
+      syncRecipeControlsPanel();
+      saveAppState();
+    });
+    onId("toggleGroceryControls", "click", () => {
+      appState.ui.groceryControlsCollapsed = !appState.ui.groceryControlsCollapsed;
+      syncGroceryControlsPanel();
+      saveAppState();
+    });
   }
 
   function exposeDebugApi() {

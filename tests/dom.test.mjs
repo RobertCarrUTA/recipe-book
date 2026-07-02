@@ -5,9 +5,10 @@ import {
   createElement,
   createEmptyState,
   createTextElement,
+  listen,
   syncDisclosureToggle,
 } from "../js/dom.js";
-import { createFakeDocument, createFakeElement } from "./dom_test_helpers.mjs";
+import { createFakeDocument, createFakeElement, createFakeEvent } from "./dom_test_helpers.mjs";
 import { test } from "./test_helpers.mjs";
 
 test("createTextElement applies concise text element options", () => {
@@ -56,6 +57,20 @@ test("appendChildren skips empty children and preserves parent linkage", () => {
 
   assert.deepEqual(parent.children, [child]);
   assert.equal(child.parentElement, parent);
+});
+
+test("listen attaches optional DOM listeners and returns the target", () => {
+  const button = createFakeElement({ tagName: "button" });
+  let clicked = false;
+
+  const result = listen(button, "click", () => {
+    clicked = true;
+  });
+
+  assert.equal(result, button);
+  button.dispatchEvent(createFakeEvent("click"));
+  assert.equal(clicked, true);
+  assert.equal(listen(null, "click", () => {}), null);
 });
 
 test("createEmptyState renders a standard empty-state block", () => {
