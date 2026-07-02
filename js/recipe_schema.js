@@ -33,6 +33,27 @@ function normalizeOptionalString(target, key, value) {
   if (normalized) target[key] = normalized;
 }
 
+function isHttpUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch (error) {
+    return false;
+  }
+}
+
+function normalizeOptionalSourceLink(target, value, title, warnings) {
+  const normalized = normalizeString(value);
+  if (!normalized) return;
+
+  if (isHttpUrl(normalized)) {
+    target.link = normalized;
+    return;
+  }
+
+  warnings.push(`"${title}" has an invalid source link and it was ignored.`);
+}
+
 function slugify(value, fallback) {
   const slug = normalizeString(value)
     .toLowerCase()
@@ -148,7 +169,7 @@ export function normalizeRecipe(recipe, index, warnings = []) {
   normalizeOptionalString(normalized, "totalTime", recipe.totalTime);
   normalizeOptionalString(normalized, "servings", recipe.servings);
   normalizeOptionalString(normalized, "yield", recipe.yield);
-  normalizeOptionalString(normalized, "link", recipe.link);
+  normalizeOptionalSourceLink(normalized, recipe.link, title, warnings);
 
   const equipment = normalizeStringArray(recipe.equipment);
   if (equipment.length) normalized.equipment = equipment;

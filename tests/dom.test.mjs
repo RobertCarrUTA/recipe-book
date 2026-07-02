@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 
 import {
+  appendChildren,
+  createElement,
   createEmptyState,
   createTextElement,
   syncDisclosureToggle,
@@ -21,6 +23,39 @@ test("createTextElement applies concise text element options", () => {
   assert.equal(element.className, "recipe-section-item");
   assert.equal(element.tabIndex, 0);
   assert.equal(element.textContent, "Ingredients");
+});
+
+test("createElement applies common DOM options and appends children", () => {
+  const document = createFakeDocument();
+  const child = createTextElement(document, "span", "Save");
+  const button = createElement(document, "button", {
+    attributes: { "aria-label": "Save recipe" },
+    children: child,
+    className: "primary-button",
+    dataset: { recipeId: "chili" },
+    id: "saveRecipe",
+    title: "Save",
+    type: "button",
+  });
+
+  assert.equal(button.tagName, "BUTTON");
+  assert.equal(button.id, "saveRecipe");
+  assert.equal(button.className, "primary-button");
+  assert.equal(button.type, "button");
+  assert.equal(button.title, "Save");
+  assert.equal(button.getAttribute("aria-label"), "Save recipe");
+  assert.equal(button.dataset.recipeId, "chili");
+  assert.deepEqual(button.children, [child]);
+});
+
+test("appendChildren skips empty children and preserves parent linkage", () => {
+  const parent = createFakeElement({ tagName: "div" });
+  const child = createFakeElement({ tagName: "span" });
+
+  appendChildren(parent, [null, child, undefined]);
+
+  assert.deepEqual(parent.children, [child]);
+  assert.equal(child.parentElement, parent);
 });
 
 test("createEmptyState renders a standard empty-state block", () => {
