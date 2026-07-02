@@ -61,12 +61,13 @@ test("meal plan add, remove, clear, and summary operations are stable", () => {
   assert.equal(removeRecipeFromMealPlan(plan, "monday", "chili"), true);
   assert.deepEqual(getRecipePlannedDayKeys(plan, "chili"), ["tuesday"]);
 
-  clearMealPlan(plan);
+  assert.equal(clearMealPlan(plan), true);
   assert.deepEqual(getMealPlanSummary(plan), {
     dayCount: 0,
     plannedRecipeCount: 0,
     uniqueRecipeCount: 0,
   });
+  assert.equal(clearMealPlan(plan), false);
 });
 
 test("pruneMealPlanForRecipes removes recipe ids that are no longer available", () => {

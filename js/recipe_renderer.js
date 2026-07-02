@@ -1015,10 +1015,6 @@ export function createRecipeRenderer({
     });
   }
 
-  function syncRecipeCheckboxes() {
-    syncRecipeSelectionIndicators();
-  }
-
   function syncRecipeFilterTagStyles(selected) {
     currentSelectedFilters = selected || {};
     document.querySelectorAll(".recipe-tag[data-filter-key][data-filter-value]").forEach((tagEl) => {
@@ -1064,7 +1060,6 @@ export function createRecipeRenderer({
     revealRecipeById,
     syncMealPlanIndicators,
     syncFavoriteRecipeIndicators,
-    syncRecipeCheckboxes,
     syncRecipeFilterTagStyles,
     syncRecipeSelectionIndicators,
   };

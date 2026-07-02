@@ -100,7 +100,10 @@ export function removeRecipeFromMealPlan(mealPlan, dayKey, recipeId) {
 }
 
 export function clearMealPlan(mealPlan) {
+  const plan = normalizeMealPlan(mealPlan);
+  const changed = mealPlanDays.some((day) => plan.days[day.key].length > 0);
   mealPlan.days = createEmptyMealPlan().days;
+  return changed;
 }
 
 export function getRecipePlannedDayKeys(mealPlan, recipeId) {

@@ -340,6 +340,32 @@ function createRecipeBookApp() {
     return Boolean(control && control.checked);
   }
 
+  function shouldRefreshRecipesForFavoriteChange() {
+    return isControlChecked("showFavoriteRecipesOnly") || isRecipeListRuntimeSorted();
+  }
+
+  function shouldRefreshRecipesForSelectionChange() {
+    return isControlChecked("showSelectedRecipesOnly") || isRecipeListRuntimeSorted();
+  }
+
+  function syncFavoriteRecipeUi() {
+    if (shouldRefreshRecipesForFavoriteChange()) {
+      refreshRecipeListFilter();
+    } else {
+      renderer.syncFavoriteRecipeIndicators();
+    }
+  }
+
+  function syncRecipeSelectionUi(options = {}) {
+    if (options.renderGroceryList !== false) renderer.renderGroceryList();
+
+    if (options.refreshRecipeList) {
+      refreshRecipeListFilter();
+    } else {
+      renderer.syncRecipeSelectionIndicators();
+    }
+  }
+
   function handleRecipeTagToggle(filterKey, filterValue) {
     const checkbox = findFilterCheckbox(filterKey, filterValue);
     if (!checkbox) return;
@@ -369,29 +395,21 @@ function createRecipeBookApp() {
 
   function handleFavoriteRecipe(recipe, recipeIndex, favorite) {
     setRecipeFavorite(appState.runtime, recipe, recipeIndex, favorite);
-    if (isControlChecked("showFavoriteRecipesOnly") || isRecipeListRuntimeSorted()) {
-      refreshRecipeListFilter();
-    } else {
-      renderer.syncFavoriteRecipeIndicators();
-    }
+    syncFavoriteRecipeUi();
     saveAppState();
   }
 
   function handleSelectRecipe(recipe, recipeIndex, selected) {
     setRecipeSelected(appState.runtime, appState.recipes, recipe, recipeIndex, selected);
-    renderer.renderGroceryList();
-    if (isControlChecked("showSelectedRecipesOnly") || isRecipeListRuntimeSorted()) {
-      refreshRecipeListFilter();
-    } else {
-      renderer.syncRecipeSelectionIndicators();
-    }
+    syncRecipeSelectionUi({
+      refreshRecipeList: shouldRefreshRecipesForSelectionChange(),
+    });
     saveAppState();
   }
 
   function handleRecipeMultiplierChange(recipe, recipeIndex, multiplier) {
     const normalized = setRecipeMultiplier(appState.runtime, appState.recipes, recipe, recipeIndex, multiplier);
-    renderer.renderGroceryList();
-    renderer.syncRecipeSelectionIndicators();
+    syncRecipeSelectionUi();
     saveAppState();
     return normalized;
   }
@@ -401,43 +419,36 @@ function createRecipeBookApp() {
     renderer.syncMealPlanIndicators();
   }
 
-  function handlePlanRecipe(recipe, recipeIndex, dayKey) {
-    const added = addRecipeToMealPlan(appState.mealPlan, dayKey, getRecipeKey(recipe, recipeIndex));
-    if (!added) return;
+  function commitMealPlanChange(changed) {
+    if (!changed) return;
 
     refreshMealPlanUi();
     saveAppState();
+  }
+
+  function handlePlanRecipe(recipe, recipeIndex, dayKey) {
+    commitMealPlanChange(addRecipeToMealPlan(appState.mealPlan, dayKey, getRecipeKey(recipe, recipeIndex)));
   }
 
   function handleAddRecipeToMealPlan(dayKey, recipeKey) {
-    const added = addRecipeToMealPlan(appState.mealPlan, dayKey, recipeKey);
-    if (!added) return;
-
-    refreshMealPlanUi();
-    saveAppState();
+    commitMealPlanChange(addRecipeToMealPlan(appState.mealPlan, dayKey, recipeKey));
   }
 
   function handleRemoveRecipeFromMealPlan(dayKey, recipeKey) {
-    const removed = removeRecipeFromMealPlan(appState.mealPlan, dayKey, recipeKey);
-    if (!removed) return;
-
-    refreshMealPlanUi();
-    saveAppState();
+    commitMealPlanChange(removeRecipeFromMealPlan(appState.mealPlan, dayKey, recipeKey));
   }
 
   function handleClearMealPlan() {
-    clearMealPlanState(appState.mealPlan);
-    refreshMealPlanUi();
-    saveAppState();
+    commitMealPlanChange(clearMealPlanState(appState.mealPlan));
   }
 
   function handleBuildGroceryListFromMealPlan() {
     const selectedCount = applyMealPlanToGroceryList(appState.runtime, appState.recipes, appState.mealPlan);
     if (!selectedCount) return;
 
-    renderer.renderGroceryList();
-    renderer.syncRecipeSelectionIndicators();
-    if (isControlChecked("showSelectedRecipesOnly") || isRecipeListRuntimeSorted()) refreshRecipeListFilter();
+    syncRecipeSelectionUi({
+      refreshRecipeList: shouldRefreshRecipesForSelectionChange(),
+    });
     saveAppState();
     closeMealPlanPanel({ restoreFocus: false });
     handleViewGroceryList();
@@ -605,9 +616,7 @@ function createRecipeBookApp() {
   function clearGroceryList() {
     clearGroceryState(appState.runtime);
     clearGroceryPersistence();
-    renderer.renderGroceryList();
-    renderer.syncRecipeCheckboxes();
-    refreshRecipeListFilter();
+    syncRecipeSelectionUi({ refreshRecipeList: true });
     saveAppState();
   }
 
@@ -640,9 +649,7 @@ function createRecipeBookApp() {
 
   function addAllRecipesToGroceryList() {
     selectAllRecipes(appState.runtime, appState.recipes);
-    renderer.renderGroceryList();
-    renderer.syncRecipeCheckboxes();
-    refreshRecipeListFilter();
+    syncRecipeSelectionUi({ refreshRecipeList: true });
     saveAppState();
   }
 
