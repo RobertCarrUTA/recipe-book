@@ -1,5 +1,27 @@
 import { normalizeRecipeSort } from "./recipe_sort.js";
 
+const checkedControlBindings = Object.freeze([
+  ["groupItems", "groupToggle"],
+  ["hideCheckedGroceryItems", "hideCheckedGroceryItems"],
+  ["keepScreenAwake", "keepScreenAwake"],
+  ["showFavoriteRecipesOnly", "showFavoriteRecipesOnly"],
+  ["showSelectedRecipesOnly", "showSelectedRecipesOnly"],
+]);
+
+function byId(document, id) {
+  return document.getElementById(id);
+}
+
+function readCheckedControl(document, id, fallback) {
+  const control = byId(document, id);
+  return control ? Boolean(control.checked) : Boolean(fallback);
+}
+
+function writeCheckedControl(document, id, checked) {
+  const control = byId(document, id);
+  if (control) control.checked = Boolean(checked);
+}
+
 export function readFilterDataFromDom(document) {
   const data = {};
   document.querySelectorAll(".recipe-filters input:checked").forEach((checkbox) => {
@@ -30,49 +52,29 @@ export function getSelectedRecipeFilters(document) {
 }
 
 export function readUiStateFromControls(document, currentUiState = {}) {
-  const byId = (id) => document.getElementById(id);
-  const groupToggle = byId("groupToggle");
-  const selectedOnly = byId("showSelectedRecipesOnly");
-  const favoriteOnly = byId("showFavoriteRecipesOnly");
-  const hideChecked = byId("hideCheckedGroceryItems");
-  const keepAwake = byId("keepScreenAwake");
-  const recipeSearch = byId("recipeSearch");
-  const recipeSort = byId("recipeSort");
-
-  return {
+  const recipeSearch = byId(document, "recipeSearch");
+  const recipeSort = byId(document, "recipeSort");
+  const nextState = {
     ...currentUiState,
     filters: readFilterDataFromDom(document),
-    groupItems: groupToggle ? Boolean(groupToggle.checked) : Boolean(currentUiState.groupItems),
-    hideCheckedGroceryItems: hideChecked
-      ? Boolean(hideChecked.checked)
-      : Boolean(currentUiState.hideCheckedGroceryItems),
-    keepScreenAwake: keepAwake ? Boolean(keepAwake.checked) : Boolean(currentUiState.keepScreenAwake),
     recipeSearch: recipeSearch ? recipeSearch.value || "" : currentUiState.recipeSearch || "",
     recipeSort: normalizeRecipeSort(recipeSort ? recipeSort.value : currentUiState.recipeSort),
-    showFavoriteRecipesOnly: favoriteOnly
-      ? Boolean(favoriteOnly.checked)
-      : Boolean(currentUiState.showFavoriteRecipesOnly),
-    showSelectedRecipesOnly: selectedOnly
-      ? Boolean(selectedOnly.checked)
-      : Boolean(currentUiState.showSelectedRecipesOnly),
   };
+
+  checkedControlBindings.forEach(([key, id]) => {
+    nextState[key] = readCheckedControl(document, id, currentUiState[key]);
+  });
+
+  return nextState;
 }
 
 export function applyUiStateToControls(document, uiState) {
-  const byId = (id) => document.getElementById(id);
-  const groupToggle = byId("groupToggle");
-  const selectedOnly = byId("showSelectedRecipesOnly");
-  const favoriteOnly = byId("showFavoriteRecipesOnly");
-  const hideChecked = byId("hideCheckedGroceryItems");
-  const keepAwake = byId("keepScreenAwake");
-  const recipeSearch = byId("recipeSearch");
-  const recipeSort = byId("recipeSort");
+  const recipeSearch = byId(document, "recipeSearch");
+  const recipeSort = byId(document, "recipeSort");
 
-  if (groupToggle) groupToggle.checked = Boolean(uiState.groupItems);
-  if (selectedOnly) selectedOnly.checked = Boolean(uiState.showSelectedRecipesOnly);
-  if (favoriteOnly) favoriteOnly.checked = Boolean(uiState.showFavoriteRecipesOnly);
-  if (hideChecked) hideChecked.checked = Boolean(uiState.hideCheckedGroceryItems);
-  if (keepAwake) keepAwake.checked = Boolean(uiState.keepScreenAwake);
+  checkedControlBindings.forEach(([key, id]) => {
+    writeCheckedControl(document, id, uiState[key]);
+  });
   if (recipeSearch) recipeSearch.value = uiState.recipeSearch || "";
   if (recipeSort) recipeSort.value = normalizeRecipeSort(uiState.recipeSort);
   applyFilterDataToDom(document, uiState.filters);

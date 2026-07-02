@@ -72,6 +72,38 @@ test("restorePersistentState normalizes persisted UI filters", () => {
   assert.equal(restored.ui.recipeSort, "default");
 });
 
+test("restorePersistentState reads persisted UI preferences", () => {
+  const storage = createMemoryStorage({
+    [storageKeys.collapsedGroceryGroups]: JSON.stringify({ Produce: true, Dairy: false }),
+    [storageKeys.groceryControlsCollapsed]: "1",
+    [storageKeys.groupToggle]: "1",
+    [storageKeys.hideCheckedGroceryItems]: "1",
+    [storageKeys.keepScreenAwake]: "1",
+    [storageKeys.mobileView]: "grocery",
+    [storageKeys.recipeControlsCollapsed]: "1",
+    [storageKeys.recipeSearch]: "beans",
+    [storageKeys.recipeSort]: "selected-first",
+    [storageKeys.showFavoriteRecipesOnly]: "1",
+    [storageKeys.showSelectedRecipesOnly]: "1",
+    [storageKeys.skipClearGroceryConfirmation]: "1",
+  });
+
+  const restored = restorePersistentState(storage);
+
+  assert.deepEqual(restored.ui.collapsedGroceryGroups, { Produce: true });
+  assert.equal(restored.ui.groceryControlsCollapsed, true);
+  assert.equal(restored.ui.groupItems, true);
+  assert.equal(restored.ui.hideCheckedGroceryItems, true);
+  assert.equal(restored.ui.keepScreenAwake, true);
+  assert.equal(restored.ui.mobileView, "grocery");
+  assert.equal(restored.ui.recipeControlsCollapsed, true);
+  assert.equal(restored.ui.recipeSearch, "beans");
+  assert.equal(restored.ui.recipeSort, "selected-first");
+  assert.equal(restored.ui.showFavoriteRecipesOnly, true);
+  assert.equal(restored.ui.showSelectedRecipesOnly, true);
+  assert.equal(restored.ui.skipClearGroceryConfirmation, true);
+});
+
 test("migratePersistentState promotes legacy selected recipes", () => {
   const storage = createMemoryStorage({
     [storageKeys.groceryState]: JSON.stringify({ selectedRecipeIds: { chili: true } }),
