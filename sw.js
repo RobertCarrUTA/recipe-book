@@ -1,4 +1,4 @@
-const CACHE_VERSION = "20260701-3";
+const CACHE_VERSION = "20260701-4";
 const CACHE_PREFIX = "recipe-book-";
 const SHELL_CACHE = `recipe-book-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `recipe-book-data-${CACHE_VERSION}`;
@@ -35,6 +35,7 @@ const SHELL_URLS = [
   "./js/recipe_repository.js",
   "./js/recipe_schema.js",
   "./js/recipe_sort.js",
+  "./js/recipe_source_navigation.js",
   "./js/recipes.js",
   "./js/render.js",
   "./js/storage.js",

@@ -37,6 +37,7 @@ import {
 } from "./recipe_filter.js";
 import { createGroceryListText } from "./grocery_list_exporter.js";
 import { createRecipeRepository } from "./recipe_repository.js";
+import { createRecipeSourceNavigationController } from "./recipe_source_navigation.js";
 import { normalizeRecipeSort, recipeSortModes, sortRecipeIndexes } from "./recipe_sort.js";
 import { createRenderer } from "./render.js";
 import {
@@ -55,7 +56,6 @@ import { createWakeLockController } from "./wake_lock_controller.js";
 
 const DEBOUNCE_MS = 150;
 const COMPACT_CONTROLS_MEDIA = "(max-width: 979px)";
-const HISTORY_STATE_KEY = "recipeBook";
 const SAVE_DEBOUNCE_MS = 180;
 const STATUS_TIMEOUT_MS = 3600;
 
@@ -90,9 +90,9 @@ function createRecipeBookApp() {
   let lastRenderedRecipeIndexes = null;
   let pendingIdleSaveHandle = null;
   let pendingSaveTimer = null;
+  let recipeSourceNavigationController = null;
   let stateToolsStatusTimer = null;
   let wakeLockController = null;
-  let groceryReturnPosition = null;
 
   function byId(id) {
     return document.getElementById(id);
@@ -546,183 +546,23 @@ function createRecipeBookApp() {
   }
 
   function handleViewGroceryList() {
-    mobileViewController.setMobileView("grocery");
-    const groceryPanel = byId("groceryPanel");
-    if (groceryPanel) groceryPanel.scrollIntoView({ block: "start" });
-  }
-
-  function findGroceryRowByKey(canonicalKey) {
-    const targetKey = String(canonicalKey || "");
-    if (!targetKey) return null;
-
-    return Array.from(document.querySelectorAll("#groceryList li[data-grocery-key]"))
-      .find((row) => row.dataset.groceryKey === targetKey) || null;
-  }
-
-  function normalizeGroceryReturnPosition(position) {
-    if (!position || typeof position !== "object") return null;
-
-    const scrollY = Number(position.scrollY);
-    const rowTop = Number(position.rowTop);
-    return {
-      canonicalKey: String(position.canonicalKey || ""),
-      rowTop: Number.isFinite(rowTop) ? rowTop : null,
-      scrollY: Number.isFinite(scrollY) ? scrollY : 0,
-    };
-  }
-
-  function captureGroceryReturnPosition(canonicalKey) {
-    const row = findGroceryRowByKey(canonicalKey);
-    return {
-      canonicalKey: String(canonicalKey || ""),
-      rowTop: row ? row.getBoundingClientRect().top : null,
-      scrollY: Number.isFinite(window.scrollY) ? window.scrollY : 0,
-    };
-  }
-
-  function restoreGroceryReturnPosition(position = groceryReturnPosition) {
-    const targetPosition = normalizeGroceryReturnPosition(position);
-    if (!targetPosition) return;
-    groceryReturnPosition = null;
-
-    const restore = () => {
-      const row = findGroceryRowByKey(targetPosition.canonicalKey);
-      let nextScrollY = targetPosition.scrollY;
-
-      if (row && Number.isFinite(targetPosition.rowTop)) {
-        nextScrollY = window.scrollY + row.getBoundingClientRect().top - targetPosition.rowTop;
-      }
-
-      window.scrollTo({
-        behavior: "auto",
-        left: 0,
-        top: Math.max(0, nextScrollY),
-      });
-    };
-
-    if (typeof window.requestAnimationFrame === "function") {
-      window.requestAnimationFrame(() => window.requestAnimationFrame(restore));
-    } else {
-      window.setTimeout(restore, 0);
-    }
-  }
-
-  function createHistoryState(recipeBookState) {
-    const currentState = window.history && window.history.state;
-    const nextState =
-      currentState && typeof currentState === "object" && !Array.isArray(currentState)
-        ? { ...currentState }
-        : {};
-    nextState[HISTORY_STATE_KEY] = recipeBookState;
-    return nextState;
-  }
-
-  function syncRecipeSourceHistory(recipeKey, returnPosition) {
-    if (
-      !returnPosition ||
-      !isCompactControlsLayout() ||
-      !window.history ||
-      typeof window.history.pushState !== "function" ||
-      typeof window.history.replaceState !== "function"
-    ) {
-      return;
-    }
-
-    try {
-      window.history.replaceState(
-        createHistoryState({
-          groceryReturnPosition: returnPosition,
-          view: "grocery",
-        }),
-        "",
-        window.location.href
-      );
-      window.history.pushState(
-        createHistoryState({
-          groceryReturnPosition: returnPosition,
-          sourceRecipeId: String(recipeKey),
-          view: "recipes",
-        }),
-        "",
-        window.location.href
-      );
-    } catch (error) {
-      logger.warn("Recipe source history navigation could not be updated", error);
-    }
-  }
-
-  function revealRecipeSourceById(recipeKey) {
-    const targetRecipeKey = String(recipeKey || "");
-    if (!targetRecipeKey) return false;
-
-    const hasRecipe = appState.recipes.some((recipe, index) => getRecipeKey(recipe, index) === targetRecipeKey);
-    if (!hasRecipe) {
-      logger.warn("Grocery source recipe was not found", targetRecipeKey);
-      return false;
-    }
-
-    if (renderer.revealRecipeById(targetRecipeKey)) return true;
-
-    clearRecipeDiscoveryFilters({ focusSearch: false });
-    if (!renderer.revealRecipeById(targetRecipeKey)) {
-      logger.warn("Grocery source recipe could not be revealed", targetRecipeKey);
-      return false;
-    }
-    return true;
+    recipeSourceNavigationController?.viewGroceryList();
   }
 
   function handlePrepareRecipeSourceNavigation(canonicalKey) {
-    if (isCompactControlsLayout()) {
-      groceryReturnPosition = captureGroceryReturnPosition(canonicalKey);
-    }
+    recipeSourceNavigationController?.prepareRecipeSourceNavigation(canonicalKey);
   }
 
   function handleViewRecipeSource(recipeKey, options = {}) {
-    let returnPosition = null;
-    if (isCompactControlsLayout()) {
-      const preparedPosition = normalizeGroceryReturnPosition(groceryReturnPosition);
-      returnPosition =
-        preparedPosition && preparedPosition.canonicalKey === String(options.canonicalKey || "")
-          ? preparedPosition
-          : captureGroceryReturnPosition(options.canonicalKey);
-    }
-    groceryReturnPosition = returnPosition;
-    syncRecipeSourceHistory(recipeKey, returnPosition);
-    mobileViewController.setMobileView("recipes");
-    revealRecipeSourceById(recipeKey);
-  }
-
-  function getRecipeBookHistoryState(state) {
-    if (!state || typeof state !== "object") return null;
-    const recipeBookState = state[HISTORY_STATE_KEY];
-    return recipeBookState && typeof recipeBookState === "object" ? recipeBookState : null;
+    recipeSourceNavigationController?.viewRecipeSource(recipeKey, options);
   }
 
   function handleRecipeBookHistoryNavigation(event) {
-    const recipeBookState = getRecipeBookHistoryState(event.state);
-    if (!recipeBookState || !mobileViewController) return;
-
-    groceryReturnPosition =
-      normalizeGroceryReturnPosition(recipeBookState.groceryReturnPosition) || groceryReturnPosition;
-
-    if (recipeBookState.view === "grocery") {
-      mobileViewController.setMobileView("grocery", { trigger: "history" });
-      restoreGroceryReturnPosition();
-      return;
-    }
-
-    if (recipeBookState.view === "recipes") {
-      mobileViewController.setMobileView("recipes", { trigger: "history" });
-      if (recipeBookState.sourceRecipeId) {
-        window.requestAnimationFrame(() => revealRecipeSourceById(recipeBookState.sourceRecipeId));
-      }
-    }
+    recipeSourceNavigationController?.handleHistoryNavigation(event);
   }
 
-  function handleMobileViewChange({ view }) {
-    if (view === "grocery" && groceryReturnPosition) {
-      restoreGroceryReturnPosition();
-    }
+  function handleMobileViewChange(event) {
+    recipeSourceNavigationController?.handleMobileViewChange(event);
   }
 
   function syncRecipeControlsPanel() {
@@ -1142,6 +982,17 @@ function createRecipeBookApp() {
       getUiState: () => appState.ui,
       onViewChange: handleMobileViewChange,
       saveState: saveAppState,
+      window,
+    });
+    recipeSourceNavigationController = createRecipeSourceNavigationController({
+      clearRecipeDiscoveryFilters,
+      compactLayoutQuery: COMPACT_CONTROLS_MEDIA,
+      document,
+      getRecipeKey,
+      getRecipes: () => appState.recipes,
+      logger,
+      revealRecipeById: (recipeKey) => renderer.revealRecipeById(recipeKey),
+      setMobileView: (view, options) => mobileViewController.setMobileView(view, options),
       window,
     });
     wakeLockController = createWakeLockController({
