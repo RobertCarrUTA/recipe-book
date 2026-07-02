@@ -58,6 +58,26 @@ test("readUiStateFromControls normalizes stale recipe sort values", () => {
   assert.deepEqual(uiState.filters, { status: ["tried"] });
 });
 
+test("readUiStateFromControls preserves current booleans when controls are missing", () => {
+  const uiState = readUiStateFromControls(createFakeDocument(), {
+    groupItems: true,
+    hideCheckedGroceryItems: true,
+    keepScreenAwake: true,
+    recipeSearch: "soup",
+    recipeSort: recipeSortModes.selectedFirst,
+    showFavoriteRecipesOnly: true,
+    showSelectedRecipesOnly: true,
+  });
+
+  assert.equal(uiState.groupItems, true);
+  assert.equal(uiState.hideCheckedGroceryItems, true);
+  assert.equal(uiState.keepScreenAwake, true);
+  assert.equal(uiState.recipeSearch, "soup");
+  assert.equal(uiState.recipeSort, recipeSortModes.selectedFirst);
+  assert.equal(uiState.showFavoriteRecipesOnly, true);
+  assert.equal(uiState.showSelectedRecipesOnly, true);
+});
+
 test("applyUiStateToControls restores controls and falls back to default sort", () => {
   const controls = {
     groupToggle: createElement(),

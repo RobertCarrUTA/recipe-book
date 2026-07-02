@@ -30,6 +30,16 @@ export const currentStorageVersion = 5;
 export const backupAppId = "robert-recipe-book";
 export const backupSchemaVersion = 1;
 const mobileViews = new Set(["recipes", "grocery"]);
+const uiBooleanStorageBindings = Object.freeze([
+  ["groceryControlsCollapsed", storageKeys.groceryControlsCollapsed],
+  ["groupItems", storageKeys.groupToggle],
+  ["hideCheckedGroceryItems", storageKeys.hideCheckedGroceryItems],
+  ["keepScreenAwake", storageKeys.keepScreenAwake],
+  ["recipeControlsCollapsed", storageKeys.recipeControlsCollapsed],
+  ["showFavoriteRecipesOnly", storageKeys.showFavoriteRecipesOnly],
+  ["showSelectedRecipesOnly", storageKeys.showSelectedRecipesOnly],
+  ["skipClearGroceryConfirmation", storageKeys.skipClearGroceryConfirmation],
+]);
 
 function isPlainObject(value) {
   return Boolean(value && typeof value === "object" && !Array.isArray(value));
@@ -60,6 +70,14 @@ function write(storage, key, value) {
   } catch (error) {
     return false;
   }
+}
+
+function writeJson(storage, key, value) {
+  return write(storage, key, JSON.stringify(value));
+}
+
+function writeBoolean(storage, key, value) {
+  return write(storage, key, value ? "1" : "0");
 }
 
 function remove(storage, key) {
@@ -213,6 +231,22 @@ export function createDefaultUiState() {
   };
 }
 
+function readPersistedUiState(storage) {
+  const ui = createDefaultUiState();
+
+  ui.filters = normalizeFilterData(readObject(storage, storageKeys.filters));
+  ui.collapsedGroceryGroups = truthyRecord(readObject(storage, storageKeys.collapsedGroceryGroups));
+  ui.mobileView = normalizeMobileView(read(storage, storageKeys.mobileView));
+  ui.recipeSearch = read(storage, storageKeys.recipeSearch) || "";
+  ui.recipeSort = normalizeRecipeSort(read(storage, storageKeys.recipeSort));
+
+  uiBooleanStorageBindings.forEach(([key, storageKey]) => {
+    ui[key] = readBoolean(storage, storageKey);
+  });
+
+  return ui;
+}
+
 export function createPersistentStateBackup(state, options = {}) {
   const runtime = state && state.runtime ? state.runtime : {};
   const ui = normalizeUiState(state && state.ui);
@@ -257,7 +291,6 @@ export function normalizePersistentStateBackup(backup) {
 }
 
 export function restorePersistentState(storage = globalThis.localStorage) {
-  const ui = createDefaultUiState();
   if (!storage) {
     return {
       favoriteRecipeIds: {},
@@ -266,7 +299,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
       mealPlan: normalizeMealPlan(),
       recipeMultipliersById: {},
       selectedRecipeIds: {},
-      ui,
+      ui: createDefaultUiState(),
     };
   }
 
@@ -279,20 +312,6 @@ export function restorePersistentState(storage = globalThis.localStorage) {
     ...readObject(storage, storageKeys.recipeMultipliers),
   });
 
-  ui.filters = normalizeFilterData(readObject(storage, storageKeys.filters));
-  ui.collapsedGroceryGroups = truthyRecord(readObject(storage, storageKeys.collapsedGroceryGroups));
-  ui.groceryControlsCollapsed = readBoolean(storage, storageKeys.groceryControlsCollapsed);
-  ui.groupItems = readBoolean(storage, storageKeys.groupToggle);
-  ui.hideCheckedGroceryItems = readBoolean(storage, storageKeys.hideCheckedGroceryItems);
-  ui.keepScreenAwake = readBoolean(storage, storageKeys.keepScreenAwake);
-  ui.mobileView = normalizeMobileView(read(storage, storageKeys.mobileView));
-  ui.recipeControlsCollapsed = readBoolean(storage, storageKeys.recipeControlsCollapsed);
-  ui.recipeSearch = read(storage, storageKeys.recipeSearch) || "";
-  ui.recipeSort = normalizeRecipeSort(read(storage, storageKeys.recipeSort));
-  ui.showFavoriteRecipesOnly = readBoolean(storage, storageKeys.showFavoriteRecipesOnly);
-  ui.showSelectedRecipesOnly = readBoolean(storage, storageKeys.showSelectedRecipesOnly);
-  ui.skipClearGroceryConfirmation = readBoolean(storage, storageKeys.skipClearGroceryConfirmation);
-
   return {
     favoriteRecipeIds: truthyRecord(readObject(storage, storageKeys.favoriteRecipes)),
     groceryCheckedByKey: truthyRecord(readObject(storage, storageKeys.groceryChecked)),
@@ -303,7 +322,7 @@ export function restorePersistentState(storage = globalThis.localStorage) {
       ...selectedFromLegacyState,
       ...truthyRecord(readObject(storage, storageKeys.selectedRecipes)),
     },
-    ui,
+    ui: readPersistedUiState(storage),
   };
 }
 
@@ -316,32 +335,25 @@ export function savePersistentState(state, storage = globalThis.localStorage) {
 
   const writes = [
     write(storage, storageKeys.version, String(currentStorageVersion)),
-    write(storage, storageKeys.groceryState, JSON.stringify({
+    writeJson(storage, storageKeys.groceryState, {
       selectedRecipeIds: runtime.selectedRecipeIds || {},
       totalsByKey: grocery.totalsByKey || {},
       notesByKey: grocery.notesByKey || {},
       sourcesByKey: grocery.sourcesByKey || {},
       recipeMultipliersById: runtime.recipeMultipliersById || {},
-    })),
-    write(storage, storageKeys.selectedRecipes, JSON.stringify(runtime.selectedRecipeIds || {})),
-    write(storage, storageKeys.recipeMultipliers, JSON.stringify(runtime.recipeMultipliersById || {})),
-    write(storage, storageKeys.groceryChecked, JSON.stringify(runtime.groceryCheckedByKey || {})),
-    write(storage, storageKeys.manualGroceryItems, JSON.stringify(runtime.manualGroceryItemsById || {})),
-    write(storage, storageKeys.favoriteRecipes, JSON.stringify(runtime.favoriteRecipeIds || {})),
-    write(storage, storageKeys.mealPlan, JSON.stringify(normalizeMealPlan(state.mealPlan))),
-    write(storage, storageKeys.collapsedGroceryGroups, JSON.stringify(ui.collapsedGroceryGroups || {})),
-    write(storage, storageKeys.filters, JSON.stringify(ui.filters || {})),
-    write(storage, storageKeys.groceryControlsCollapsed, ui.groceryControlsCollapsed ? "1" : "0"),
-    write(storage, storageKeys.groupToggle, ui.groupItems ? "1" : "0"),
-    write(storage, storageKeys.hideCheckedGroceryItems, ui.hideCheckedGroceryItems ? "1" : "0"),
-    write(storage, storageKeys.keepScreenAwake, ui.keepScreenAwake ? "1" : "0"),
+    }),
+    writeJson(storage, storageKeys.selectedRecipes, runtime.selectedRecipeIds || {}),
+    writeJson(storage, storageKeys.recipeMultipliers, runtime.recipeMultipliersById || {}),
+    writeJson(storage, storageKeys.groceryChecked, runtime.groceryCheckedByKey || {}),
+    writeJson(storage, storageKeys.manualGroceryItems, runtime.manualGroceryItemsById || {}),
+    writeJson(storage, storageKeys.favoriteRecipes, runtime.favoriteRecipeIds || {}),
+    writeJson(storage, storageKeys.mealPlan, normalizeMealPlan(state.mealPlan)),
+    writeJson(storage, storageKeys.collapsedGroceryGroups, ui.collapsedGroceryGroups || {}),
+    writeJson(storage, storageKeys.filters, ui.filters || {}),
     write(storage, storageKeys.mobileView, normalizeMobileView(ui.mobileView)),
-    write(storage, storageKeys.recipeControlsCollapsed, ui.recipeControlsCollapsed ? "1" : "0"),
     write(storage, storageKeys.recipeSearch, ui.recipeSearch || ""),
     write(storage, storageKeys.recipeSort, normalizeRecipeSort(ui.recipeSort)),
-    write(storage, storageKeys.showFavoriteRecipesOnly, ui.showFavoriteRecipesOnly ? "1" : "0"),
-    write(storage, storageKeys.showSelectedRecipesOnly, ui.showSelectedRecipesOnly ? "1" : "0"),
-    write(storage, storageKeys.skipClearGroceryConfirmation, ui.skipClearGroceryConfirmation ? "1" : "0"),
+    ...uiBooleanStorageBindings.map(([key, storageKey]) => writeBoolean(storage, storageKey, ui[key])),
   ];
 
   return writes.every(Boolean);
