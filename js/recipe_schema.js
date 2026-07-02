@@ -173,6 +173,10 @@ export function normalizeRecipe(recipe, index, warnings = []) {
     warnings.push(`"${normalized.title}" has no ingredient lines.`);
   }
 
+  if (!normalized.groceryIngredients?.length) {
+    warnings.push(`"${normalized.title}" has no grocery ingredient entries.`);
+  }
+
   if (!normalized.instructions.length) {
     warnings.push(`"${normalized.title}" has no instruction steps.`);
   }

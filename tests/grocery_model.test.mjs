@@ -5,6 +5,7 @@ import {
   clearCheckedGroceryItems,
   clearGroceryState,
   createRecipeRuntimeState,
+  getRecipeGroceryIngredients,
   getRecipeMultiplier,
   getManualGroceryItemKey,
   isRecipeSelected,
@@ -37,6 +38,16 @@ test("setRecipeSelected recomputes grocery totals from structured ingredients", 
   assert.deepEqual(runtime.grocery.totalsByKey["kidney beans"].can, { min: 2, max: 2 });
   assert.deepEqual(runtime.grocery.totalsByKey.garlic.clove, { min: 3, max: 3 });
   assert.equal(runtime.displayNamesByKey.garlic, "garlic");
+});
+
+test("getRecipeGroceryIngredients ignores display ingredients when structured grocery data is missing", () => {
+  const parsed = getRecipeGroceryIngredients({
+    ingredients: ["3 garlic cloves"],
+    instructions: ["Cook."],
+    title: "Garlic Test",
+  });
+
+  assert.deepEqual(parsed, []);
 });
 
 test("recipe multipliers scale grocery totals and source details", () => {

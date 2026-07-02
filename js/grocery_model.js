@@ -1,6 +1,5 @@
 import {
   normalizeParsedIngredients,
-  parseIngredient,
   parseStructuredGroceryIngredient,
 } from "./ingredient_parser.js";
 import { normalizeWhitespace } from "./normalization.js";
@@ -308,12 +307,8 @@ function addParsedIngredientToTotals(runtimeState, parsed, sourceRecipe, sourceI
 }
 
 export function getRecipeGroceryIngredients(recipe) {
-  if (Array.isArray(recipe.groceryIngredients) && recipe.groceryIngredients.length) {
-    return recipe.groceryIngredients.flatMap((entry) => normalizeParsedIngredients(parseStructuredGroceryIngredient(entry)));
-  }
-
-  if (!Array.isArray(recipe.ingredients)) return [];
-  return recipe.ingredients.flatMap((ingredient) => normalizeParsedIngredients(parseIngredient(ingredient)));
+  const groceryIngredients = Array.isArray(recipe?.groceryIngredients) ? recipe.groceryIngredients : [];
+  return groceryIngredients.flatMap((entry) => normalizeParsedIngredients(parseStructuredGroceryIngredient(entry)));
 }
 
 export function recomputeGroceryState(runtimeState, recipes) {

@@ -27,20 +27,21 @@ const recipes = [
     link: "notaurl",
     tags: { status: "not-tried" },
     groceryIngredients: [
+      { note: "missing item" },
       { item: "fresh baby spinach", quantity: 2, unit: "bundle", note: "to taste" },
       { item: "flaky salt" },
     ],
   },
   {
-    id: "fallback",
-    title: "Fallback Recipe",
+    id: "missing-grocery",
+    title: "Missing Grocery Recipe",
     ingredients: ["3 garlic cloves"],
     instructions: ["Cook."],
     tags: { status: "not-tried" },
   },
   {
-    id: "empty-fallback",
-    title: "Empty Fallback Recipe",
+    id: "empty-grocery",
+    title: "Empty Grocery Recipe",
     ingredients: ["Optional toppings: sour cream"],
     instructions: ["Top."],
     link: "https://example.com/empty",
@@ -65,13 +66,13 @@ test("analyzeRecipeDataQuality summarizes structural and advisory recipe data si
   assert.equal(report.recipeCount, 5);
   assert.deepEqual(report.schemaWarnings, ["Example warning"]);
   assert.equal(report.coverage.structuredGrocery.count, 3);
-  assert.deepEqual(report.coverage.structuredGrocery.missing.map((item) => item.id), ["fallback", "empty-fallback"]);
+  assert.deepEqual(report.coverage.structuredGrocery.missing.map((item) => item.id), ["missing-grocery", "empty-grocery"]);
   assert.equal(report.coverage.sourceLinks.count, 3);
   assert.deepEqual(report.coverage.sourceLinks.invalid.map((item) => item.title), ["Review Recipe"]);
   assert.equal(report.coverage.ratings.count, 1);
   assert.equal(report.coverage.difficulties.count, 2);
   assert.equal(report.grocery.parseFailures.length, 1);
-  assert.equal(report.grocery.parseFailures[0].title, "Empty Fallback Recipe");
+  assert.equal(report.grocery.parseFailures[0].title, "Review Recipe");
   assert.equal(report.grocery.unknownUnits.length, 1);
   assert.equal(report.grocery.unknownUnits[0].unit, "bundle");
   assert.equal(report.grocery.amountlessItems.length, 1);

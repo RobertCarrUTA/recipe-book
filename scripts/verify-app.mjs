@@ -16,6 +16,10 @@ recipes.forEach((recipe) => {
   assert.ok(recipe.id, "recipe id should be present");
   assert.ok(recipe.title, `recipe ${recipe.id} should have a title`);
   assert.ok(Array.isArray(recipe.ingredients), `${recipe.title} ingredients should be an array`);
+  assert.ok(
+    Array.isArray(recipe.groceryIngredients) && recipe.groceryIngredients.length > 0,
+    `${recipe.title} should have grocery ingredient entries`
+  );
   assert.ok(Array.isArray(recipe.instructions), `${recipe.title} instructions should be an array`);
   assert.ok(recipe.tags && recipe.tags.status, `${recipe.title} should have normalized tags`);
 });
