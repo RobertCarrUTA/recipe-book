@@ -1091,7 +1091,8 @@ h2 {
 .recipe-actions>a,
 .recipe-actions>label,
 .recipe-actions>select,
-.recipe-actions>.recipe-scale-control {
+.recipe-actions>.recipe-scale-control,
+.recipe-actions>.recipe-export-actions {
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -1106,6 +1107,47 @@ h2 {
   color: #cfe5ff;
   cursor: pointer;
   font-weight: 800;
+}
+
+.recipe-export-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 4px 5px 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+}
+
+.recipe-export-label {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.recipe-export-button {
+  min-height: 32px;
+  padding: 0 7px;
+  border-color: rgba(59, 70, 82, 0.82);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--muted-strong);
+  font-size: 0.74rem;
+  font-weight: 850;
+}
+
+.recipe-export-button:hover {
+  border-color: rgba(122, 199, 163, 0.46);
+  background: rgba(122, 199, 163, 0.08);
+  color: var(--fg);
 }
 
 .checkbox-inline {
@@ -2774,7 +2816,8 @@ li {
   }
 
   .recipe-add-toggle,
-  .recipe-actions>.recipe-scale-control {
+  .recipe-actions>.recipe-scale-control,
+  .recipe-actions>.recipe-export-actions {
     grid-column: 1 / -1;
   }
 
@@ -2782,7 +2825,8 @@ li {
   .recipe-actions>a,
   .recipe-actions>label,
   .recipe-actions>select,
-  .recipe-actions>.recipe-scale-control {
+  .recipe-actions>.recipe-scale-control,
+  .recipe-actions>.recipe-export-actions {
     width: 100%;
   }
 
@@ -3021,6 +3065,35 @@ li {
     gap: 10px;
   }
 
+  .recipe-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .recipe-actions>button,
+  .recipe-actions>a,
+  .recipe-actions>label,
+  .recipe-actions>select {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .recipe-actions>.recipe-scale-control,
+  .recipe-actions>.recipe-export-actions {
+    width: 174px;
+    flex: 0 0 174px;
+  }
+
+  .recipe-add-toggle {
+    min-width: 154px;
+  }
+
+  .recipe-plan-select {
+    min-width: 128px;
+  }
+
   .grocery-list {
     position: sticky;
     top: 18px;
@@ -3046,6 +3119,41 @@ li {
     background: rgba(21, 25, 29, 0.97);
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(16px);
+  }
+
+  .grocery-controls-panel {
+    gap: 8px;
+  }
+
+  .grocery-header-actions,
+  .grocery-toolbar,
+  .state-tools {
+    gap: 6px;
+  }
+
+  .grocery-header-actions button,
+  .grocery-toolbar button,
+  .state-tools button {
+    min-height: 36px;
+    padding: 0 9px;
+    font-size: 0.78rem;
+  }
+
+  .grocery-toolbar .switch-control {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 7px;
+    min-height: 36px;
+    padding-right: 8px;
+    padding-left: 7px;
+    font-size: 0.78rem;
+  }
+
+  .state-tools {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #copyGroceryList {
+    grid-column: auto;
   }
 
   .is-meal-plan-open::before {

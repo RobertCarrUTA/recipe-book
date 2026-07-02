@@ -43,6 +43,7 @@ import {
   getMatchingRecipeIndexes,
   normalizeForSearch,
 } from "./recipe_filter.js";
+import { createRecipeExportPayload } from "./recipe_exporter.js";
 import { createGroceryListText } from "./grocery_list_exporter.js";
 import { createRecipeRepository } from "./recipe_repository.js";
 import { createRecipeSourceNavigationController } from "./recipe_source_navigation.js";
@@ -643,6 +644,33 @@ function createRecipeBookApp() {
     }
   }
 
+  function downloadTextFile(payload) {
+    const link = document.createElement("a");
+    const blob = new Blob([payload.text], { type: payload.mimeType });
+    const urlApi = window.URL || URL;
+    const objectUrl = urlApi.createObjectURL(blob);
+
+    link.href = objectUrl;
+    link.download = payload.fileName;
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    window.setTimeout(() => urlApi.revokeObjectURL(objectUrl), 0);
+  }
+
+  function handleExportRecipe(recipe, recipeIndex, format) {
+    try {
+      const payload = createRecipeExportPayload(recipe, format);
+      downloadTextFile(payload);
+      setStateToolsStatus(`Recipe exported as ${payload.format.toUpperCase()}.`);
+    } catch (error) {
+      logger.warn("Recipe export failed", { error, recipeIndex });
+      setStateToolsStatus("Recipe could not be exported.", { kind: "error", sticky: true });
+    }
+  }
+
   function attachManualGroceryForm() {
     const form = byId("manualGroceryForm");
     const input = byId("manualGroceryInput");
@@ -859,6 +887,7 @@ function createRecipeBookApp() {
         onPlanRecipe: handlePlanRecipe,
         onPrepareRecipeSourceNavigation: handlePrepareRecipeSourceNavigation,
         onRecipeBatchRendered: ({ totalCount }) => updateRecipeSearchMeta(totalCount),
+        onExportRecipe: handleExportRecipe,
         onRecipeMultiplierChange: handleRecipeMultiplierChange,
         onRemoveRecipeFromMealPlan: handleRemoveRecipeFromMealPlan,
         onRecipeTagToggle: handleRecipeTagToggle,

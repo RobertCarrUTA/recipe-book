@@ -305,6 +305,34 @@ export function createRecipeRenderer({
     return wrap;
   }
 
+  function createRecipeExportActions(recipe, recipeIndex) {
+    const wrap = document.createElement("div");
+    const label = document.createElement("span");
+    const recipeTitle = recipe.title || "recipe";
+
+    function addButton(format, text, exportLabel) {
+      const button = document.createElement("button");
+      button.className = "recipe-export-button";
+      button.type = "button";
+      button.textContent = text;
+      button.title = exportLabel;
+      button.setAttribute("aria-label", `${exportLabel} for ${recipeTitle}`);
+      button.addEventListener("click", () => actions.onExportRecipe(recipe, recipeIndex, format));
+      wrap.appendChild(button);
+    }
+
+    wrap.className = "recipe-export-actions";
+    wrap.setAttribute("role", "group");
+    wrap.setAttribute("aria-label", `Export ${recipeTitle}`);
+    label.className = "recipe-export-label";
+    label.textContent = "Export";
+    wrap.appendChild(label);
+    addButton("text", "Text", "Export formatted text");
+    addButton("json", "JSON", "Export JSON");
+
+    return wrap;
+  }
+
   function renderRecipeActions(recipe, recipeIndex) {
     const actionsWrap = document.createElement("div");
     const favoriteButton = document.createElement("button");
@@ -346,6 +374,10 @@ export function createRecipeRenderer({
     syncRecipeAddToggleText(toggle, addToListCheckbox.checked);
     actionsWrap.appendChild(toggle);
     actionsWrap.appendChild(scaleControl);
+
+    if (typeof actions.onExportRecipe === "function") {
+      actionsWrap.appendChild(createRecipeExportActions(recipe, recipeIndex));
+    }
 
     viewPlanButton.className = "view-plan-button";
     viewPlanButton.type = "button";
