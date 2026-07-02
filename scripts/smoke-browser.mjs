@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import http from "node:http";
 import path from "node:path";
 
+import { findBrowserExecutable } from "./browser-executable.mjs";
 import { resolveSmokePrerequisiteFailure } from "./smoke-prerequisites.mjs";
 
 const rootDir = path.resolve(new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
@@ -17,27 +18,6 @@ const mimeTypes = new Map([
   [".svg", "image/svg+xml; charset=utf-8"],
   [".webmanifest", "application/manifest+json; charset=utf-8"],
 ]);
-
-async function findBrowserExecutable() {
-  const candidates = [
-    process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE,
-    "C:/Program Files/Google/Chrome/Application/chrome.exe",
-    "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
-    "C:/Program Files/Microsoft/Edge/Application/msedge.exe",
-    "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
-  ].filter(Boolean);
-
-  for (const candidate of candidates) {
-    try {
-      await fs.access(candidate);
-      return candidate;
-    } catch (error) {
-      // Try the next browser candidate.
-    }
-  }
-
-  return null;
-}
 
 function createStaticServer() {
   return http.createServer(async (request, response) => {
@@ -1013,9 +993,9 @@ async function run() {
     return;
   }
 
-  const executablePath = await findBrowserExecutable();
+  const executablePath = await findBrowserExecutable({ playwright });
   if (!executablePath) {
-    console.log(resolveSmokePrerequisiteFailure("no Chrome or Edge executable was found.").message);
+    console.log(resolveSmokePrerequisiteFailure("no Chromium, Chrome, or Edge executable was found.").message);
     return;
   }
 

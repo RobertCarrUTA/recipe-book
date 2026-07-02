@@ -168,7 +168,7 @@ For an optional browser-level smoke test:
 npm run smoke:browser
 ```
 
-The browser smoke test starts a local static server and runs focused Playwright checks for recipe loading, search/filter behavior, grocery list updates, Cooking Mode, and mobile view tabs. It requires Playwright and a local Chrome/Edge executable by default; set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` to a Chromium-based browser when auto-detection is not enough.
+The browser smoke test starts a local static server and runs focused Playwright checks for recipe loading, search/filter behavior, grocery list updates, Cooking Mode, and mobile view tabs. It uses `PLAYWRIGHT_CHROMIUM_EXECUTABLE` when set, then local Chrome/Edge, then Playwright's managed Chromium when installed.
 
 For the strictest local gate before a PR:
 
@@ -177,6 +177,8 @@ npm run verify:full
 ```
 
 If a constrained environment intentionally cannot run browser smoke tests, set `RECIPE_BOOK_ALLOW_SMOKE_SKIP=1` before `npm run smoke:browser` or `npm run verify:full`.
+
+Pull requests and pushes to `main` run `npm run verify:full` in GitHub Actions, including a Playwright Chromium install for the browser smoke checks.
 
 ## Cache Busting
 
