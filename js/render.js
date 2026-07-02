@@ -39,7 +39,6 @@ export function createRenderer({ document, getMealPlanState, getRecipes, getRunt
     revealRecipeById: recipeRenderer.revealRecipeById,
     syncMealPlanIndicators: recipeRenderer.syncMealPlanIndicators,
     syncFavoriteRecipeIndicators: recipeRenderer.syncFavoriteRecipeIndicators,
-    syncRecipeCheckboxes: recipeRenderer.syncRecipeCheckboxes,
     syncRecipeFilterTagStyles: recipeRenderer.syncRecipeFilterTagStyles,
     syncRecipeSelectionIndicators: recipeRenderer.syncRecipeSelectionIndicators,
     toggleCookingHeader: cookingRenderer.toggleCookingHeader,
