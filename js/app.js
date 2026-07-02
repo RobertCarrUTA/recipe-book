@@ -18,6 +18,7 @@ import {
 } from "./grocery_model.js";
 import { createBackupController } from "./backup_controller.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
+import { syncDisclosureToggle } from "./dom.js";
 import { createLogger, isDebugEnabled } from "./logger.js";
 import {
   addRecipeToMealPlan,
@@ -565,36 +566,48 @@ function createRecipeBookApp() {
     recipeSourceNavigationController?.handleMobileViewChange(event);
   }
 
-  function syncRecipeControlsPanel() {
-    const panel = byId("recipeControlsPanel");
-    const toggle = byId("toggleRecipeControls");
-    const recipeSearch = panel ? panel.closest(".recipe-search") : null;
-    const collapsed = Boolean(appState.ui.recipeControlsCollapsed) && isCompactControlsLayout();
+  function syncCollapsibleControlsPanel(options) {
+    const panel = byId(options.panelId);
+    const toggle = byId(options.toggleId);
+    const container = panel && options.containerSelector
+      ? panel.closest(options.containerSelector)
+      : null;
+    const collapsed = Boolean(options.collapsed);
 
     if (panel) panel.hidden = collapsed;
-    if (recipeSearch) recipeSearch.classList.toggle("is-compact", collapsed);
-    if (toggle) {
-      toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
-      toggle.textContent = collapsed ? "Show" : "Hide";
-      toggle.title = collapsed ? "Show recipe controls" : "Hide recipe controls";
-      toggle.setAttribute("aria-label", collapsed ? "Show recipe controls" : "Hide recipe controls");
-    }
+    if (container) container.classList.toggle(options.collapsedClass, collapsed);
+    syncDisclosureToggle(toggle, !collapsed, {
+      collapsedLabel: options.collapsedLabel,
+      collapsedText: "Show",
+      collapsedTitle: options.collapsedLabel,
+      expandedLabel: options.expandedLabel,
+      expandedText: "Hide",
+      expandedTitle: options.expandedLabel,
+    });
+  }
+
+  function syncRecipeControlsPanel() {
+    syncCollapsibleControlsPanel({
+      collapsed: Boolean(appState.ui.recipeControlsCollapsed) && isCompactControlsLayout(),
+      collapsedClass: "is-compact",
+      collapsedLabel: "Show recipe controls",
+      containerSelector: ".recipe-search",
+      expandedLabel: "Hide recipe controls",
+      panelId: "recipeControlsPanel",
+      toggleId: "toggleRecipeControls",
+    });
   }
 
   function syncGroceryControlsPanel() {
-    const panel = byId("groceryControlsPanel");
-    const toggle = byId("toggleGroceryControls");
-    const shoppingBar = panel ? panel.closest(".grocery-shopping-bar") : null;
-    const collapsed = Boolean(appState.ui.groceryControlsCollapsed);
-
-    if (panel) panel.hidden = collapsed;
-    if (shoppingBar) shoppingBar.classList.toggle("is-compact", collapsed);
-    if (toggle) {
-      toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
-      toggle.textContent = collapsed ? "Show" : "Hide";
-      toggle.title = collapsed ? "Show grocery controls" : "Hide grocery controls";
-      toggle.setAttribute("aria-label", collapsed ? "Show grocery controls" : "Hide grocery controls");
-    }
+    syncCollapsibleControlsPanel({
+      collapsed: Boolean(appState.ui.groceryControlsCollapsed),
+      collapsedClass: "is-compact",
+      collapsedLabel: "Show grocery controls",
+      containerSelector: ".grocery-shopping-bar",
+      expandedLabel: "Hide grocery controls",
+      panelId: "groceryControlsPanel",
+      toggleId: "toggleGroceryControls",
+    });
   }
 
   function attachResponsiveControlsSync() {

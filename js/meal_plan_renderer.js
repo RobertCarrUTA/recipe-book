@@ -2,6 +2,7 @@ import {
   getMealPlanSummary,
   mealPlanDays,
 } from "./meal_plan_model.js";
+import { createTextElement } from "./dom.js";
 import { getRecipeHeaderMeta } from "./recipe_formatting.js";
 
 export function createMealPlanRenderer({
@@ -114,10 +115,9 @@ export function createMealPlanRenderer({
     const metaItems = getRecipeHeaderMeta(recipe).slice(0, 3);
     if (!metaItems.length) return null;
 
-    const meta = document.createElement("span");
-    meta.className = "meal-plan-item-meta";
-    meta.textContent = metaItems.map((item) => item.text).join(" - ");
-    return meta;
+    return createTextElement(document, "span", metaItems.map((item) => item.text).join(" - "), {
+      className: "meal-plan-item-meta",
+    });
   }
 
   function createPlanItem(day, recipeId, lookup) {
@@ -163,10 +163,9 @@ export function createMealPlanRenderer({
   }
 
   function renderEmptyDay(list) {
-    const empty = document.createElement("li");
-    empty.className = "meal-plan-empty-day";
-    empty.textContent = "No meals planned.";
-    list.appendChild(empty);
+    list.appendChild(createTextElement(document, "li", "No meals planned.", {
+      className: "meal-plan-empty-day",
+    }));
   }
 
   function renderDay(container, day, lookup, recipeOptionsFragment) {

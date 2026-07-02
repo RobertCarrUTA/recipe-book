@@ -1,4 +1,5 @@
 import { getCookingIngredients, getCookingSteps } from "./cooking_model.js";
+import { syncDisclosureToggle } from "./dom.js";
 import { getRecipeHeaderMeta } from "./recipe_formatting.js";
 
 export function createCookingRenderer({ document }) {
@@ -177,12 +178,14 @@ export function createCookingRenderer({ document }) {
       headerStep.textContent = stepCountText;
       headerStep.hidden = !headerCollapsed;
     }
-    if (headerToggle) {
-      headerToggle.textContent = headerCollapsed ? "Show" : "Hide";
-      headerToggle.setAttribute("aria-label", headerCollapsed ? "Show recipe details" : "Hide recipe details");
-      headerToggle.setAttribute("aria-expanded", headerCollapsed ? "false" : "true");
-      headerToggle.title = headerCollapsed ? "Show recipe details" : "Hide recipe details";
-    }
+    syncDisclosureToggle(headerToggle, !headerCollapsed, {
+      collapsedLabel: "Show recipe details",
+      collapsedText: "Show",
+      collapsedTitle: "Show recipe details",
+      expandedLabel: "Hide recipe details",
+      expandedText: "Hide",
+      expandedTitle: "Hide recipe details",
+    });
     if (title) title.textContent = recipe.title || "Recipe";
     if (meta) {
       meta.textContent = metaText;

@@ -7,6 +7,7 @@ import {
   getSortedGrocerySources,
   formatCount,
 } from "./grocery_view_model.js";
+import { createEmptyState } from "./dom.js";
 import { formatTotalsForKey } from "./units.js";
 
 export function createGroceryRenderer({ document, getRuntimeState, getUiState, actions }) {
@@ -370,29 +371,17 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
   }
 
   function renderHiddenCheckedEmptyState(container) {
-    const empty = document.createElement("div");
-    const title = document.createElement("strong");
-    const body = document.createElement("span");
-
-    empty.className = "empty-state";
-    title.textContent = "Everything visible is checked.";
-    body.textContent = "Turn off Hide checked to review completed items.";
-    empty.appendChild(title);
-    empty.appendChild(body);
-    container.appendChild(empty);
+    container.appendChild(createEmptyState(document, {
+      body: "Turn off Hide checked to review completed items.",
+      title: "Everything visible is checked.",
+    }));
   }
 
   function renderEmptyState(container) {
-    const empty = document.createElement("div");
-    const title = document.createElement("strong");
-    const body = document.createElement("span");
-
-    empty.className = "empty-state";
-    title.textContent = "Your grocery list is empty.";
-    body.textContent = "Add recipes or type a one-off item above.";
-    empty.appendChild(title);
-    empty.appendChild(body);
-    container.appendChild(empty);
+    container.appendChild(createEmptyState(document, {
+      body: "Add recipes or type a one-off item above.",
+      title: "Your grocery list is empty.",
+    }));
   }
 
   function renderGroceryList() {
