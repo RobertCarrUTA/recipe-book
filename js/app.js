@@ -665,9 +665,25 @@ function createRecipeBookApp() {
       const payload = createRecipeExportPayload(recipe, format);
       downloadTextFile(payload);
       setStateToolsStatus(`Recipe exported as ${payload.format.toUpperCase()}.`);
+      return true;
     } catch (error) {
       logger.warn("Recipe export failed", { error, recipeIndex });
       setStateToolsStatus("Recipe could not be exported.", { kind: "error", sticky: true });
+      return false;
+    }
+  }
+
+  async function handleCopyRecipeText(recipe, recipeIndex) {
+    const payload = createRecipeExportPayload(recipe, "text");
+
+    try {
+      await writeTextToClipboard(payload.text, { document, logger, navigator });
+      setStateToolsStatus("Recipe text copied.");
+      return true;
+    } catch (error) {
+      logger.warn("Recipe text copy failed", { error, recipeIndex });
+      setStateToolsStatus("Recipe text could not be copied.", { kind: "error", sticky: true });
+      return false;
     }
   }
 
@@ -887,6 +903,7 @@ function createRecipeBookApp() {
         onPlanRecipe: handlePlanRecipe,
         onPrepareRecipeSourceNavigation: handlePrepareRecipeSourceNavigation,
         onRecipeBatchRendered: ({ totalCount }) => updateRecipeSearchMeta(totalCount),
+        onCopyRecipeText: handleCopyRecipeText,
         onExportRecipe: handleExportRecipe,
         onRecipeMultiplierChange: handleRecipeMultiplierChange,
         onRemoveRecipeFromMealPlan: handleRemoveRecipeFromMealPlan,

@@ -1111,7 +1111,7 @@ h2 {
 
 .recipe-export-actions {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
   align-items: center;
   gap: 6px;
   min-height: 42px;
@@ -1148,6 +1148,22 @@ h2 {
   border-color: rgba(122, 199, 163, 0.46);
   background: rgba(122, 199, 163, 0.08);
   color: var(--fg);
+}
+
+.recipe-export-status {
+  grid-column: 1 / -1;
+  color: var(--accent-strong);
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.recipe-export-status.is-error {
+  color: #ffcaca;
+}
+
+.recipe-export-status[hidden] {
+  display: none;
 }
 
 .checkbox-inline {
@@ -3084,6 +3100,14 @@ li {
   .recipe-actions>.recipe-export-actions {
     width: 174px;
     flex: 0 0 174px;
+  }
+
+  .recipe-export-actions {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+
+  .recipe-export-copy-button {
+    display: none;
   }
 
   .recipe-add-toggle {
