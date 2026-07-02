@@ -4,6 +4,7 @@ import {
   getRecipeHeaderMeta,
   getRecipeServingsText,
 } from "./recipe_formatting.js";
+import { createEmptyState, createTextElement } from "./dom.js";
 import { mealPlanDays } from "./meal_plan_model.js";
 import {
   DEFAULT_RECIPE_MULTIPLIER,
@@ -389,10 +390,7 @@ export function createRecipeRenderer({
     title.textContent = titleText;
 
     items.forEach((item) => {
-      const li = document.createElement("li");
-      li.tabIndex = 0;
-      li.textContent = item;
-      list.appendChild(li);
+      list.appendChild(createTextElement(document, "li", item, { tabIndex: 0 }));
     });
 
     content.appendChild(title);
@@ -483,10 +481,7 @@ export function createRecipeRenderer({
 
     nutritionLabelOrder.forEach(([key, label]) => {
       if (!nutrition[key]) return;
-      const li = document.createElement("li");
-      li.tabIndex = 0;
-      li.textContent = `${label}: ${nutrition[key]}`;
-      list.appendChild(li);
+      list.appendChild(createTextElement(document, "li", `${label}: ${nutrition[key]}`, { tabIndex: 0 }));
     });
 
     if (!list.children.length) return;
@@ -625,13 +620,13 @@ export function createRecipeRenderer({
 
   function createLoadMoreSentinel() {
     const sentinel = document.createElement("div");
-    const status = document.createElement("span");
+    const status = createTextElement(document, "span", "Loading more recipes...", {
+      className: "recipe-load-more-status",
+    });
     const button = document.createElement("button");
     sentinel.className = "recipe-load-more";
     sentinel.setAttribute("aria-live", "polite");
 
-    status.className = "recipe-load-more-status";
-    status.textContent = "Loading more recipes...";
     sentinel.appendChild(status);
 
     button.className = "secondary-button";
@@ -1043,17 +1038,13 @@ export function createRecipeRenderer({
     setRecipeContainerBusy(recipeContainer, false);
     actions.onRenderError(error);
 
-    const message = document.createElement("div");
-    const title = document.createElement("strong");
-    const body = document.createElement("span");
-    message.className = "empty-state recipe-list-state";
-    title.textContent = "Recipes could not load.";
-    body.textContent =
-      windowLike.location?.protocol === "file:"
+    const message = createEmptyState(document, {
+      body: windowLike.location?.protocol === "file:"
         ? "Recipe data could not be loaded from data/recipes.json. Start a local web server for this folder, then refresh."
-        : "Recipe data could not be loaded from data/recipes.json.";
-    message.appendChild(title);
-    message.appendChild(body);
+        : "Recipe data could not be loaded from data/recipes.json.",
+      className: "empty-state recipe-list-state",
+      title: "Recipes could not load.",
+    });
     recipeContainer.replaceChildren(message);
 
     const meta = byId("recipeSearchMeta");

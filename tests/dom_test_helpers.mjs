@@ -1,7 +1,9 @@
 export function createFakeElement(options = {}) {
   const listeners = new Map();
   const classes = new Set(options.classes || []);
+  const attributes = { ...(options.attributes || {}) };
   const element = {
+    attributes,
     children: [],
     checked: Boolean(options.checked),
     dataset: { ...(options.dataset || {}) },
@@ -51,11 +53,20 @@ export function createFakeElement(options = {}) {
       (listeners.get(event.type) || []).forEach((listener) => listener(event));
       return !event.defaultPrevented;
     },
+    getAttribute(name) {
+      return Object.hasOwn(attributes, name) ? attributes[name] : null;
+    },
     remove() {
       element.removed = true;
       if (!element.parentElement) return;
       element.parentElement.children = element.parentElement.children.filter((child) => child !== element);
       element.parentElement = null;
+    },
+    removeAttribute(name) {
+      delete attributes[name];
+    },
+    setAttribute(name, value) {
+      attributes[name] = String(value);
     },
   };
 
