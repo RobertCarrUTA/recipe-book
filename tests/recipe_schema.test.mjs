@@ -30,3 +30,18 @@ test("normalizeRecipeBook repairs text, defaults tags, and de-duplicates ids", (
 test("normalizeRecipeBook rejects non-array data", () => {
   assert.throws(() => normalizeRecipeBook({}), /recipes\.json must contain an array/);
 });
+
+test("normalizeRecipeBook rejects free-text grocery ingredient entries", () => {
+  const { recipes, warnings } = normalizeRecipeBook([
+    {
+      groceryIngredients: ["1 cup flour"],
+      ingredients: ["1 cup flour"],
+      instructions: ["Mix."],
+      title: "String Grocery",
+    },
+  ]);
+
+  assert.equal(recipes[0].groceryIngredients, undefined);
+  assert.ok(warnings.some((warning) => warning.includes("invalid grocery ingredient entries")));
+  assert.ok(warnings.some((warning) => warning.includes("no grocery ingredient entries")));
+});

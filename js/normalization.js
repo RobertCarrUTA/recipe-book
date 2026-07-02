@@ -3,7 +3,7 @@ NORMALIZATION OVERVIEW
 
 These helpers are deliberately free of DOM and storage dependencies.
 They normalize inconsistent recipe text into stable strings and canonical
-ingredient labels used by the parser and grocery aggregation model.
+ingredient labels used by structured grocery parsing and aggregation.
 
 =============================================================================*/
 
@@ -81,7 +81,7 @@ function extractNotesStrict(raw) {
 /* ================================
 NORMALIZATION HELPERS
 
-Ingredient text is highly inconsistent across recipes. These helpers
+Ingredient labels are still inconsistent across recipe sources. These helpers
 exist to aggressively normalize input before aggregation.
   - Treat visually different but semantically identical inputs as equal
   - Preserve distinctions that affect shopping decisions
@@ -245,40 +245,6 @@ export function removeParentheticalsAndTrailingNotes(nameText) {
   name = name.replace(/,/g, " ");
 
   return normalizeWhitespace(name + preservedWeight);
-}
-
-export function classifyNonQuantified(textLower) {
-  const markers = ["to taste", "as needed", "as desired", "pinch", "dash", "optional:"];
-
-  for (const marker of markers) {
-    if (textLower.includes(marker)) return marker;
-  }
-  return null;
-}
-
-export function extractUsageNotes(ingredientText) {
-  const lowered = String(ingredientText || "").toLowerCase();
-
-  const usagePhrases = [
-    "to taste",
-    "for garnish",
-    "for serving",
-    "for frying",
-    "for greasing",
-    "for topping",
-    "for rolling",
-    "as needed",
-    "as required",
-    "plus more",
-    "optional",
-    "divided",
-  ];
-
-  const notes = [];
-  for (const phrase of usagePhrases) {
-    if (lowered.includes(phrase)) notes.push(phrase);
-  }
-  return notes;
 }
 
 export function buildCanonicalIngredient(nameLower) {

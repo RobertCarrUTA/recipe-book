@@ -1,7 +1,7 @@
 import {
   normalizeParsedIngredients,
   parseStructuredGroceryIngredient,
-} from "./ingredient_parser.js";
+} from "./grocery_ingredient_parser.js";
 import { normalizeWhitespace } from "./normalization.js";
 import {
   DEFAULT_RECIPE_MULTIPLIER,

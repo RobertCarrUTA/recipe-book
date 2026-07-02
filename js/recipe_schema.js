@@ -97,7 +97,6 @@ function normalizeQuantity(value) {
 }
 
 function normalizeGroceryIngredient(entry) {
-  if (typeof entry === "string") return normalizeString(entry);
   if (!isPlainObject(entry)) return null;
 
   const item = normalizeString(entry.item || entry.name || entry.canonical || entry.display);
@@ -161,6 +160,9 @@ export function normalizeRecipe(recipe, index, warnings = []) {
   if (personalNotes.length) normalized.personalNotes = personalNotes;
 
   const groceryIngredients = normalizeGroceryIngredients(recipe.groceryIngredients);
+  if (Array.isArray(recipe.groceryIngredients) && groceryIngredients.length < recipe.groceryIngredients.length) {
+    warnings.push(`"${title}" has invalid grocery ingredient entries.`);
+  }
   if (groceryIngredients.length) normalized.groceryIngredients = groceryIngredients;
 
   const rating = normalizeRatingObject(recipe.rating);
