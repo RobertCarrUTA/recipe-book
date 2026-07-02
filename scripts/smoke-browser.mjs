@@ -844,9 +844,22 @@ function escapeRegExp(value) {
 }
 
 async function expectLocatorText(locator, pattern) {
-  await locator.waitFor({ timeout: 5000 });
-  const text = await locator.innerText();
-  assert.match(text, pattern);
+  const timeoutMs = 5000;
+  const retryDelayMs = 50;
+  const deadline = Date.now() + timeoutMs;
+  let lastText = "";
+
+  await locator.waitFor({ timeout: timeoutMs });
+
+  while (Date.now() < deadline) {
+    lastText = await locator.innerText();
+    if (new RegExp(pattern.source, pattern.flags).test(lastText)) return;
+    await new Promise((resolve) => {
+      setTimeout(resolve, retryDelayMs);
+    });
+  }
+
+  assert.match(lastText, pattern);
 }
 
 async function assertVisible(page, selector, expected) {
