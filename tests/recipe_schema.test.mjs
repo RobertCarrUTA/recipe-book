@@ -45,3 +45,29 @@ test("normalizeRecipeBook rejects free-text grocery ingredient entries", () => {
   assert.ok(warnings.some((warning) => warning.includes("invalid grocery ingredient entries")));
   assert.ok(warnings.some((warning) => warning.includes("no grocery ingredient entries")));
 });
+
+test("normalizeRecipeBook keeps only http source links", () => {
+  const { recipes, warnings } = normalizeRecipeBook([
+    {
+      groceryIngredients: [{ item: "egg", quantity: 1 }],
+      ingredients: ["1 egg"],
+      instructions: ["Cook."],
+      link: "https://example.com/eggs#recipe",
+      title: "Linked Eggs",
+    },
+    {
+      groceryIngredients: [{ item: "flour", quantity: 1, unit: "cup" }],
+      ingredients: ["1 cup flour"],
+      instructions: ["Mix."],
+      link: "javascript:alert(1)",
+      title: "Unsafe Link",
+    },
+  ]);
+
+  const linkedRecipe = recipes.find((recipe) => recipe.title === "Linked Eggs");
+  const unsafeRecipe = recipes.find((recipe) => recipe.title === "Unsafe Link");
+
+  assert.equal(linkedRecipe.link, "https://example.com/eggs#recipe");
+  assert.equal(unsafeRecipe.link, undefined);
+  assert.ok(warnings.some((warning) => warning.includes("invalid source link")));
+});
