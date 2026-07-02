@@ -16,6 +16,7 @@ import {
   setRecipeMultiplier,
   setRecipeSelected,
 } from "./grocery_model.js";
+import { createAppStatePersistenceController } from "./app_state_persistence.js";
 import { createBackupController } from "./backup_controller.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
 import { syncDisclosureToggle } from "./dom.js";
@@ -57,7 +58,6 @@ import { createWakeLockController } from "./wake_lock_controller.js";
 
 const DEBOUNCE_MS = 150;
 const COMPACT_CONTROLS_MEDIA = "(max-width: 979px)";
-const SAVE_DEBOUNCE_MS = 180;
 const STATUS_TIMEOUT_MS = 3600;
 
 function attachGlobalErrorHandlers(logger) {
@@ -89,8 +89,6 @@ function createRecipeBookApp() {
   let mobileViewController = null;
   let mealPlanReturnFocus = null;
   let lastRenderedRecipeIndexes = null;
-  let pendingIdleSaveHandle = null;
-  let pendingSaveTimer = null;
   let recipeSourceNavigationController = null;
   let stateToolsStatusTimer = null;
   let wakeLockController = null;
@@ -103,61 +101,17 @@ function createRecipeBookApp() {
     appState.ui = readUiStateFromControls(document, appState.ui);
   }
 
-  function clearPendingAppStateSave() {
-    if (pendingSaveTimer) {
-      window.clearTimeout(pendingSaveTimer);
-      pendingSaveTimer = null;
-    }
-
-    if (pendingIdleSaveHandle && typeof window.cancelIdleCallback === "function") {
-      window.cancelIdleCallback(pendingIdleSaveHandle);
-    }
-    pendingIdleSaveHandle = null;
-  }
-
   function persistAppState() {
     syncUiStateFromControls();
     savePersistentState(appState);
   }
 
-  function flushPendingAppStateSave() {
-    if (!pendingSaveTimer && !pendingIdleSaveHandle) return;
-    clearPendingAppStateSave();
-    persistAppState();
-  }
-
-  function saveAppState(options = {}) {
-    clearPendingAppStateSave();
-
-    if (options.immediate) {
-      persistAppState();
-      return;
-    }
-
-    pendingSaveTimer = window.setTimeout(() => {
-      pendingSaveTimer = null;
-
-      if (typeof window.requestIdleCallback === "function") {
-        pendingIdleSaveHandle = window.requestIdleCallback(
-          () => {
-            pendingIdleSaveHandle = null;
-            persistAppState();
-          },
-          { timeout: 700 }
-        );
-        return;
-      }
-
-      persistAppState();
-    }, SAVE_DEBOUNCE_MS);
-  }
-
-  function attachPendingStateSaveFlush() {
-    window.addEventListener("pagehide", flushPendingAppStateSave);
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "hidden") flushPendingAppStateSave();
-    });
-  }
+  const appStatePersistence = createAppStatePersistenceController({
+    document,
+    persist: persistAppState,
+    window,
+  });
+  const saveAppState = appStatePersistence.save;
 
   function applyUiStateToControls() {
     applyUiStateToDomControls(document, appState.ui);
@@ -956,7 +910,7 @@ function createRecipeBookApp() {
 
   async function start() {
     attachGlobalErrorHandlers(logger);
-    attachPendingStateSaveFlush();
+    appStatePersistence.attachFlushHandlers();
 
     renderer = createRenderer({
       document,
