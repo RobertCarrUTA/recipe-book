@@ -18,8 +18,14 @@ import {
 } from "./grocery_model.js";
 import { createAppStatePersistenceController } from "./app_state_persistence.js";
 import { createBackupController } from "./backup_controller.js";
+import { writeTextToClipboard } from "./clipboard.js";
+import {
+  isMediaQueryActive,
+  listenToMediaQueryChanges,
+  syncCollapsibleControlsPanel,
+} from "./collapsible_controls.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
-import { listen, syncDisclosureToggle } from "./dom.js";
+import { listen } from "./dom.js";
 import { createLogger, isDebugEnabled } from "./logger.js";
 import {
   addRecipeToMealPlan,
@@ -48,6 +54,7 @@ import {
   restorePersistentState,
   savePersistentState,
 } from "./storage.js";
+import { createStatusMessageController } from "./status_message_controller.js";
 import {
   applyUiStateToControls as applyUiStateToDomControls,
   getSelectedRecipeFilters,
@@ -90,8 +97,14 @@ function createRecipeBookApp() {
   let mealPlanReturnFocus = null;
   let lastRenderedRecipeIndexes = null;
   let recipeSourceNavigationController = null;
-  let stateToolsStatusTimer = null;
   let wakeLockController = null;
+  const stateToolsStatus = createStatusMessageController({
+    document,
+    statusId: "stateBackupStatus",
+    timeoutMs: STATUS_TIMEOUT_MS,
+    window,
+  });
+  const setStateToolsStatus = stateToolsStatus.set;
 
   function byId(id) {
     return document.getElementById(id);
@@ -224,28 +237,6 @@ function createRecipeBookApp() {
     clearSearchButton.hidden = !(recipeSearch && recipeSearch.value);
   }
 
-  function setStateToolsStatus(message, options = {}) {
-    const status = byId("stateBackupStatus");
-    if (!status) return;
-
-    if (stateToolsStatusTimer) {
-      window.clearTimeout(stateToolsStatusTimer);
-      stateToolsStatusTimer = null;
-    }
-
-    status.textContent = message || "";
-    status.hidden = !message;
-    status.classList.toggle("is-error", options.kind === "error");
-
-    if (message && !options.sticky) {
-      stateToolsStatusTimer = window.setTimeout(() => {
-        status.textContent = "";
-        status.hidden = true;
-        status.classList.remove("is-error");
-      }, STATUS_TIMEOUT_MS);
-    }
-  }
-
   function applyRestoredPersistentState(restoredState) {
     appState.runtime = createRecipeRuntimeState(restoredState);
     appState.mealPlan = normalizeMealPlan(restoredState.mealPlan);
@@ -270,7 +261,7 @@ function createRecipeBookApp() {
   }
 
   function isCompactControlsLayout() {
-    return typeof window.matchMedia !== "function" || window.matchMedia(COMPACT_CONTROLS_MEDIA).matches;
+    return isMediaQueryActive(window, COMPACT_CONTROLS_MEDIA);
   }
 
   function applyRecipeFilter(filterTextRaw) {
@@ -545,28 +536,8 @@ function createRecipeBookApp() {
     recipeSourceNavigationController?.handleMobileViewChange(event);
   }
 
-  function syncCollapsibleControlsPanel(options) {
-    const panel = byId(options.panelId);
-    const toggle = byId(options.toggleId);
-    const container = panel && options.containerSelector
-      ? panel.closest(options.containerSelector)
-      : null;
-    const collapsed = Boolean(options.collapsed);
-
-    if (panel) panel.hidden = collapsed;
-    if (container) container.classList.toggle(options.collapsedClass, collapsed);
-    syncDisclosureToggle(toggle, !collapsed, {
-      collapsedLabel: options.collapsedLabel,
-      collapsedText: "Show",
-      collapsedTitle: options.collapsedLabel,
-      expandedLabel: options.expandedLabel,
-      expandedText: "Hide",
-      expandedTitle: options.expandedLabel,
-    });
-  }
-
   function syncRecipeControlsPanel() {
-    syncCollapsibleControlsPanel({
+    syncCollapsibleControlsPanel(document, {
       collapsed: Boolean(appState.ui.recipeControlsCollapsed) && isCompactControlsLayout(),
       collapsedClass: "is-compact",
       collapsedLabel: "Show recipe controls",
@@ -578,7 +549,7 @@ function createRecipeBookApp() {
   }
 
   function syncGroceryControlsPanel() {
-    syncCollapsibleControlsPanel({
+    syncCollapsibleControlsPanel(document, {
       collapsed: Boolean(appState.ui.groceryControlsCollapsed),
       collapsedClass: "is-compact",
       collapsedLabel: "Show grocery controls",
@@ -590,19 +561,11 @@ function createRecipeBookApp() {
   }
 
   function attachResponsiveControlsSync() {
-    if (typeof window.matchMedia !== "function") return;
-
-    const media = window.matchMedia(COMPACT_CONTROLS_MEDIA);
     const syncControls = () => {
       syncRecipeControlsPanel();
       syncGroceryControlsPanel();
     };
-
-    if (typeof media.addEventListener === "function") {
-      media.addEventListener("change", syncControls);
-    } else if (typeof media.addListener === "function") {
-      media.addListener(syncControls);
-    }
+    listenToMediaQueryChanges(window, COMPACT_CONTROLS_MEDIA, syncControls);
   }
 
   function handleGroceryCheckedChange(canonicalKey, checked) {
@@ -667,36 +630,12 @@ function createRecipeBookApp() {
     saveAppState();
   }
 
-  async function writeTextToClipboard(text) {
-    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
-      try {
-        await navigator.clipboard.writeText(text);
-        return;
-      } catch (error) {
-        logger.warn("Clipboard API failed; trying copy fallback", error);
-      }
-    }
-
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    textarea.setAttribute("readonly", "");
-    textarea.style.position = "fixed";
-    textarea.style.top = "0";
-    textarea.style.left = "-9999px";
-    document.body.appendChild(textarea);
-    textarea.select();
-
-    const copied = document.execCommand && document.execCommand("copy");
-    textarea.remove();
-    if (!copied) throw new Error("Clipboard copy failed.");
-  }
-
   async function handleCopyGroceryList() {
     syncUiStateFromControls();
     const text = createGroceryListText(appState.runtime, appState.ui);
 
     try {
-      await writeTextToClipboard(text);
+      await writeTextToClipboard(text, { document, logger, navigator });
       setStateToolsStatus("Grocery list copied.");
     } catch (error) {
       logger.warn("Grocery list copy failed", error);

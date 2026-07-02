@@ -133,7 +133,7 @@ The code is split by responsibility:
 - `js/recipe_schema.js`: Recipe data normalization, schema defaults, ID de-duplication, and data warnings.
 - `js/storage.js`: Versioned `localStorage` adapter with defensive reads, writes, and migrations.
 - `js/backup_controller.js`, `js/offline_controller.js`, `sw.js`: Browser-state backup/import, service-worker registration, and offline cache behavior.
-- `js/ui_state.js`, `js/mobile_view_controller.js`, `js/wake_lock_controller.js`, `js/cooking_controls.js`: Browser UI controllers isolated from the app composition root.
+- `js/ui_state.js`, `js/mobile_view_controller.js`, `js/wake_lock_controller.js`, `js/cooking_controls.js`, `js/collapsible_controls.js`, `js/status_message_controller.js`, `js/clipboard.js`: Browser UI controllers and browser API adapters isolated from the app composition root.
 - `js/grocery_ingredient_parser.js`, `js/normalization.js`, `js/units.js`, `js/grouping.js`: Pure parsing, normalization, unit conversion, and grouping helpers.
 
 The app exposes `window.recipeBookDebug` only when the URL includes `?debug=1`.
