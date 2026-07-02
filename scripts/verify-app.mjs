@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 
 import { getRecipeGroceryIngredients, createRecipeRuntimeState, selectAllRecipes } from "../js/grocery_model.js";
-import { parseIngredient } from "../js/ingredient_parser.js";
+import { parseStructuredGroceryIngredient } from "../js/grocery_ingredient_parser.js";
 import { normalizeRecipeBook } from "../js/recipe_schema.js";
 
 const recipeDataUrl = new URL("../data/recipes.json", import.meta.url);
@@ -16,11 +16,15 @@ recipes.forEach((recipe) => {
   assert.ok(recipe.id, "recipe id should be present");
   assert.ok(recipe.title, `recipe ${recipe.id} should have a title`);
   assert.ok(Array.isArray(recipe.ingredients), `${recipe.title} ingredients should be an array`);
+  assert.ok(
+    Array.isArray(recipe.groceryIngredients) && recipe.groceryIngredients.length > 0,
+    `${recipe.title} should have grocery ingredient entries`
+  );
   assert.ok(Array.isArray(recipe.instructions), `${recipe.title} instructions should be an array`);
   assert.ok(recipe.tags && recipe.tags.status, `${recipe.title} should have normalized tags`);
 });
 
-const flour = parseIngredient("2 cups all-purpose flour");
+const flour = parseStructuredGroceryIngredient({ item: "all-purpose flour", quantity: 2, unit: "cup" });
 assert.equal(flour.canonical.base, "all-purpose flour");
 assert.equal(flour.unitKey, "cup");
 assert.deepEqual(flour.quantityRange, { min: 2, max: 2 });

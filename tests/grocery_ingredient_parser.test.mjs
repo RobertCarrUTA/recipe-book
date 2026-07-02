@@ -2,9 +2,8 @@ import assert from "node:assert/strict";
 
 import {
   normalizeParsedIngredients,
-  parseIngredient,
   parseStructuredGroceryIngredient,
-} from "../js/ingredient_parser.js";
+} from "../js/grocery_ingredient_parser.js";
 import { test } from "./test_helpers.mjs";
 
 function parsedSnapshot(parsed) {
@@ -19,171 +18,8 @@ function parsedSnapshot(parsed) {
   }));
 }
 
-const ingredientCases = [
-  {
-    name: "simple measured staple",
-    input: "2 cups all-purpose flour",
-    expected: [
-      {
-        base: "all-purpose flour",
-        display: "all-purpose flour",
-        unitKey: "cup",
-        quantityRange: { min: 2, max: 2 },
-        optional: false,
-        nonQuantifiedMarker: null,
-        notes: [],
-      },
-    ],
-  },
-  {
-    name: "mixed fraction quantity",
-    input: "1 1/2 cups granulated sugar",
-    expected: [
-      {
-        base: "granulated sugar",
-        display: "granulated sugar",
-        unitKey: "cup",
-        quantityRange: { min: 1.5, max: 1.5 },
-        optional: false,
-        nonQuantifiedMarker: null,
-        notes: [],
-      },
-    ],
-  },
-  {
-    name: "split quantities for one ingredient",
-    input: "1/2 cup + 2 tbsp olive oil",
-    expected: [
-      {
-        base: "olive oil",
-        display: "olive oil",
-        unitKey: "cup",
-        quantityRange: { min: 0.5, max: 0.5 },
-        optional: false,
-        nonQuantifiedMarker: null,
-        notes: [],
-      },
-      {
-        base: "olive oil",
-        display: "olive oil",
-        unitKey: "tbsp",
-        quantityRange: { min: 2, max: 2 },
-        optional: false,
-        nonQuantifiedMarker: null,
-        notes: [],
-      },
-    ],
-  },
-  {
-    name: "optional ingredient marker",
-    input: "Optional: 1 cup chopped walnuts",
-    expected: [
-      {
-        base: "walnuts",
-        display: "walnuts",
-        unitKey: "cup",
-        quantityRange: { min: 1, max: 1 },
-        optional: true,
-        nonQuantifiedMarker: null,
-        notes: ["optional"],
-      },
-    ],
-  },
-  {
-    name: "salt and pepper to taste split",
-    input: "Salt and black pepper to taste",
-    expected: [
-      {
-        base: "salt",
-        display: "salt",
-        unitKey: null,
-        quantityRange: null,
-        optional: false,
-        nonQuantifiedMarker: "to taste",
-        notes: ["to taste"],
-      },
-      {
-        base: "black pepper",
-        display: "black pepper",
-        unitKey: null,
-        quantityRange: null,
-        optional: false,
-        nonQuantifiedMarker: "to taste",
-        notes: ["to taste"],
-      },
-    ],
-  },
-  {
-    name: "parenthetical package weight",
-    input: "1 (4-pound) chicken breast",
-    expected: [
-      {
-        base: "chicken breast",
-        display: "chicken breast",
-        unitKey: "lb",
-        quantityRange: { min: 4, max: 4 },
-        optional: false,
-        nonQuantifiedMarker: null,
-        notes: ["1 piece"],
-      },
-    ],
-  },
-  {
-    name: "counted cans with per-package weight note",
-    input: "2 (15 ounce) cans kidney beans",
-    expected: [
-      {
-        base: "kidney beans",
-        display: "kidney beans",
-        unitKey: "can",
-        quantityRange: { min: 2, max: 2 },
-        optional: false,
-        nonQuantifiedMarker: null,
-        notes: ["15 oz each"],
-      },
-    ],
-  },
-  {
-    name: "juice of lemons with approximate volume",
-    input: "juice of 2 lemons, about 3 tbsp",
-    expected: [
-      {
-        base: "lemon juice",
-        display: "lemon juice",
-        unitKey: "tbsp",
-        quantityRange: { min: 3, max: 3 },
-        optional: false,
-        nonQuantifiedMarker: null,
-        notes: ["juice of 2 lemon"],
-      },
-    ],
-  },
-  {
-    name: "trailing count unit",
-    input: "3 garlic cloves",
-    expected: [
-      {
-        base: "garlic",
-        display: "garlic",
-        unitKey: "clove",
-        quantityRange: { min: 3, max: 3 },
-        optional: false,
-        nonQuantifiedMarker: null,
-        notes: [],
-      },
-    ],
-  },
-  {
-    name: "ignored optional toppings heading",
-    input: "Optional toppings: sour cream, cheese, green onions",
-    expected: [],
-  },
-];
-
-ingredientCases.forEach((item) => {
-  test(`parseIngredient golden - ${item.name}`, () => {
-    assert.deepEqual(parsedSnapshot(parseIngredient(item.input)), item.expected);
-  });
+test("parseStructuredGroceryIngredient rejects free-text grocery entries", () => {
+  assert.equal(parseStructuredGroceryIngredient("3 garlic cloves"), null);
 });
 
 test("parseStructuredGroceryIngredient preserves explicit shopping notes", () => {
@@ -203,6 +39,27 @@ test("parseStructuredGroceryIngredient preserves explicit shopping notes", () =>
         optional: false,
         nonQuantifiedMarker: null,
         notes: ["28 oz can"],
+      },
+    ]
+  );
+});
+
+test("parseStructuredGroceryIngredient normalizes structured quantities", () => {
+  assert.deepEqual(
+    parsedSnapshot(parseStructuredGroceryIngredient({
+      item: "all-purpose flour",
+      quantity: "1 1/2",
+      unit: "cups",
+    })),
+    [
+      {
+        base: "all-purpose flour",
+        display: "all-purpose flour",
+        unitKey: "cup",
+        quantityRange: { min: 1.5, max: 1.5 },
+        optional: false,
+        nonQuantifiedMarker: null,
+        notes: [],
       },
     ]
   );

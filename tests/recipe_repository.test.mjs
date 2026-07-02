@@ -34,6 +34,7 @@ test("createRecipeRepository loads bundled recipes and tags their source", async
           return [
             {
               id: "toast",
+              groceryIngredients: [{ item: "bread", quantity: 1, unit: "slice" }],
               ingredients: ["1 slice bread"],
               instructions: ["Toast bread."],
               title: "Toast",

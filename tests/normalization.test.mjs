@@ -2,8 +2,6 @@ import assert from "node:assert/strict";
 
 import {
   buildCanonicalIngredient,
-  classifyNonQuantified,
-  extractUsageNotes,
   normalizeUnicodeFractions,
   normalizeUnit,
   normalizeWhitespace,
@@ -14,7 +12,7 @@ import {
 } from "../js/normalization.js";
 import { test } from "./test_helpers.mjs";
 
-test("normalizeWhitespace and normalizeUnicodeFractions make ingredient text parseable", () => {
+test("normalizeWhitespace and normalizeUnicodeFractions make quantity text parseable", () => {
   assert.equal(normalizeWhitespace("  1\n\tcup   flour  "), "1 cup flour");
   assert.equal(normalizeUnicodeFractions("1\u00bd cups sugar"), "1 1/2 cups sugar");
   assert.equal(normalizeUnicodeFractions("\u00bd cup milk"), "1/2 cup milk");
@@ -40,18 +38,6 @@ test("normalizeUnit canonicalizes common units and keeps unknown shopping units"
   assert.equal(normalizeUnit("Egg whites"), "egg white");
   assert.equal(normalizeUnit("head"), "head");
   assert.equal(normalizeUnit(""), null);
-});
-
-test("ingredient note helpers preserve useful shopping context", () => {
-  assert.equal(classifyNonQuantified("salt and pepper to taste"), "to taste");
-  assert.equal(classifyNonQuantified("pinch of cinnamon"), "pinch");
-  assert.equal(classifyNonQuantified("2 cups flour"), null);
-
-  assert.deepEqual(extractUsageNotes("Optional parsley for garnish, divided"), [
-    "for garnish",
-    "optional",
-    "divided",
-  ]);
 });
 
 test("removeParentheticalsAndTrailingNotes keeps primary package weights", () => {

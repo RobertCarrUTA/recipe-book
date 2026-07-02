@@ -1,8 +1,7 @@
 import {
   normalizeParsedIngredients,
-  parseIngredient,
   parseStructuredGroceryIngredient,
-} from "./ingredient_parser.js";
+} from "./grocery_ingredient_parser.js";
 import { determineGroupForKey } from "./grouping.js";
 import { normalizeWhitespace } from "./normalization.js";
 
@@ -96,18 +95,12 @@ function describeEntry(entry) {
 }
 
 function collectRecipeEntries(recipe) {
-  if (hasStructuredGroceryIngredients(recipe)) {
-    return recipe.groceryIngredients.map((entry) => ({
-      input: describeEntry(entry),
-      parsed: normalizeParsedIngredients(parseStructuredGroceryIngredient(entry)),
-      source: "structured",
-    }));
-  }
+  if (!hasStructuredGroceryIngredients(recipe)) return [];
 
-  return (Array.isArray(recipe.ingredients) ? recipe.ingredients : []).map((ingredient) => ({
-    input: describeEntry(ingredient),
-    parsed: normalizeParsedIngredients(parseIngredient(ingredient)),
-    source: "fallback",
+  return recipe.groceryIngredients.map((entry) => ({
+    input: describeEntry(entry),
+    parsed: normalizeParsedIngredients(parseStructuredGroceryIngredient(entry)),
+    source: "structured",
   }));
 }
 
@@ -242,7 +235,6 @@ export function analyzeRecipeDataQuality(recipes, options = {}) {
       unknownUnits: [],
       ungroupedLabels: [],
       duplicateLabelReviewGroups: [],
-      fallbackRecipes: [],
     },
   };
 
@@ -254,7 +246,6 @@ export function analyzeRecipeDataQuality(recipes, options = {}) {
       report.coverage.structuredGrocery.count += 1;
     } else {
       report.coverage.structuredGrocery.missing.push(ref);
-      report.grocery.fallbackRecipes.push(ref);
     }
 
     if (recipe.link) {
