@@ -305,6 +305,103 @@ export function createRecipeRenderer({
     return wrap;
   }
 
+  function createRecipeExportActions(recipe, recipeIndex) {
+    const wrap = document.createElement("div");
+    const label = document.createElement("span");
+    const status = document.createElement("span");
+    const recipeTitle = recipe.title || "recipe";
+    let statusTimer = null;
+
+    function setStatus(message, options = {}) {
+      if (statusTimer && typeof windowLike.clearTimeout === "function") {
+        windowLike.clearTimeout(statusTimer);
+        statusTimer = null;
+      }
+
+      status.textContent = message || "";
+      status.hidden = !message;
+      status.classList.toggle("is-error", options.kind === "error");
+
+      if (message && typeof windowLike.setTimeout === "function") {
+        statusTimer = windowLike.setTimeout(() => {
+          status.textContent = "";
+          status.hidden = true;
+          status.classList.remove("is-error");
+          statusTimer = null;
+        }, 2600);
+      }
+    }
+
+    async function runAction(action, successText, errorText) {
+      try {
+        const result = await action();
+        setStatus(result === false ? errorText : successText, {
+          kind: result === false ? "error" : "success",
+        });
+      } catch (error) {
+        setStatus(errorText, { kind: "error" });
+      }
+    }
+
+    function addButton(text, exportLabel, action, className = "") {
+      const button = document.createElement("button");
+      button.className = `recipe-export-button${className ? ` ${className}` : ""}`;
+      button.type = "button";
+      button.textContent = text;
+      button.title = exportLabel;
+      button.setAttribute("aria-label", `${exportLabel} for ${recipeTitle}`);
+      button.addEventListener("click", action);
+      wrap.appendChild(button);
+    }
+
+    wrap.className = "recipe-export-actions";
+    wrap.setAttribute("role", "group");
+    wrap.setAttribute("aria-label", `Export ${recipeTitle}`);
+    label.className = "recipe-export-label";
+    label.textContent = "Export";
+    status.className = "recipe-export-status";
+    status.setAttribute("aria-live", "polite");
+    status.hidden = true;
+
+    wrap.appendChild(label);
+    if (typeof actions.onCopyRecipeText === "function") {
+      addButton(
+        "Copy",
+        "Copy formatted text",
+        () =>
+          runAction(
+            () => actions.onCopyRecipeText(recipe, recipeIndex),
+            "Copied.",
+            "Copy failed."
+          ),
+        "recipe-export-copy-button"
+      );
+    }
+    addButton(
+      "Text",
+      "Export formatted text",
+      () =>
+        runAction(
+          () => actions.onExportRecipe(recipe, recipeIndex, "text"),
+          "Downloaded text.",
+          "Download failed."
+        )
+    );
+    addButton(
+      "JSON",
+      "Export JSON",
+      () =>
+        runAction(
+          () => actions.onExportRecipe(recipe, recipeIndex, "json"),
+          "Downloaded JSON.",
+          "Download failed."
+        )
+    );
+    wrap.appendChild(status);
+
+    return wrap;
+  }
+
   function renderRecipeActions(recipe, recipeIndex) {
     const actionsWrap = document.createElement("div");
     const favoriteButton = document.createElement("button");
@@ -346,6 +443,10 @@ export function createRecipeRenderer({
     syncRecipeAddToggleText(toggle, addToListCheckbox.checked);
     actionsWrap.appendChild(toggle);
     actionsWrap.appendChild(scaleControl);
+
+    if (typeof actions.onExportRecipe === "function") {
+      actionsWrap.appendChild(createRecipeExportActions(recipe, recipeIndex));
+    }
 
     viewPlanButton.className = "view-plan-button";
     viewPlanButton.type = "button";
