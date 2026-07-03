@@ -1,0 +1,148 @@
+{
+  "author": "John Kanell",
+  "cookTime": "30 minutes",
+  "description": "My 30-minute corn chowder recipe is a must-try for busy weeknights. Thick, creamy, and loaded with sweetness from fresh corn and savoriness from crispy bacon.",
+  "equipment": [
+    "Blender",
+    "Large pot or Dutch oven",
+    "Paper towel",
+    "Plate"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "bacon",
+      "quantity": 4,
+      "unit": "slice"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1
+    },
+    {
+      "item": "celery",
+      "quantity": 2,
+      "unit": "stalk"
+    },
+    {
+      "item": "large carrot",
+      "quantity": 1
+    },
+    {
+      "item": "garlic",
+      "quantity": 3,
+      "unit": "clove"
+    },
+    {
+      "item": "corn kernels",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "item": "Yukon gold potato",
+      "quantity": 2
+    },
+    {
+      "item": "chicken broth",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "item": "whole milk",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "fresh thyme",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "chives",
+      "optional": true
+    }
+  ],
+  "id": "corn-chowder",
+  "ingredients": [
+    "4 slices bacon, chopped",
+    "1 tablespoon unsalted butter",
+    "1 yellow onion, diced",
+    "2 stalks celery, diced",
+    "1 large carrot, diced",
+    "3 garlic cloves, minced",
+    "3 cups corn kernels, cobs reserved if using fresh (482g)",
+    "2 medium Yukon gold potatoes, peeled and diced (369g)",
+    "3 cups chicken broth (720mL)",
+    "2 cups whole milk (480mL)",
+    "2 teaspoons salt",
+    "1 1/2 teaspoons chopped thyme",
+    "1/2 teaspoon ground black pepper",
+    "Chopped chives, for garnish"
+  ],
+  "instructions": [
+    "In a large pot or Dutch oven, add the bacon and cook over medium-high heat until crisp, about 6 minutes, stirring occasionally. Remove the bacon pieces with a slotted spoon and drain on paper towels, reserving the dripping in the pot.",
+    "Add the butter to the pot and heat until melted. Add the onion, celery, and carrot and cook until tender, about 7 minutes, stirring occasionally. Stir in the garlic and cook for 1 minute.",
+    "Add the corn kernels, corn cobs (if using fresh corn), potatoes, broth, milk, salt, thyme, and pepper. (For an extra creamy chowder, replace ½ cup of the milk with heavy cream.) Bring to a simmer, reduce the heat to medium-low, and cook until the potatoes are tender, about 15 minutes, stirring occasionally. Remove from the heat. Remove and discard the corn cobs.",
+    "Place 2 cups of the soup mixture in a blender and blend until smooth. Return to pot and stir in the cooked bacon. Serve hot, garnishing each bowl with chopped chives and black pepper."
+  ],
+  "link": "https://preppykitchen.com/corn-chowder/#recipe",
+  "notes": [
+    "Watch the heat: Make sure not to bring the soup to a full boil. If boiled, the milk can scorch on the bottom of the pot or curdle.",
+    "No-mess method to cut corn off the cob: Use a bundt pan to cut the corn off the cob by standing the cob upright in the hole of the pan. Cut downward with a sharp knife. The corn kernels will fall into the pan and not all over the counter.",
+    "If you need to use frozen corn: 3 cups of frozen corn can be substituted if fresh corn is out of season. No need to thaw before adding. Since there will be no corn cobs if you use frozen corn, add a 15-ounce can of creamed corn to the pot when you add the frozen corn. This will give your chowder a more intense corn flavor.",
+    "To make vegetarian corn chowder: Water, vegetable stock, or both can be substituted for chicken broth. Leave out the bacon and replace the drippings with 1 tablespoon of butter or olive oil for a vegetarian chowder!",
+    "For an extra creamy chowder: Replace 1/2 cup of the milk with half-and-half or heavy cream.",
+    "If using a regular blender: Remove the center piece of the lid and place a kitchen towel on top to ensure that there is a way for steam to escape. Otherwise, the top can blow off the top and create a big, steamy mess."
+  ],
+  "nutrition": {
+    "calcium": "129 mg",
+    "calories": "247 kcal",
+    "carbohydrates": "30 g",
+    "cholesterol": "27 mg",
+    "fat": "12 g",
+    "fiber": "4 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "4 g",
+    "polyunsaturatedFat": "2 g",
+    "potassium": "594 mg",
+    "protein": "9 g",
+    "saturatedFat": "5 g",
+    "sodium": "1520 mg",
+    "sugar": "10 g",
+    "transFat": "0.1 g",
+    "vitaminA": "1965 IU",
+    "vitaminC": "16 mg"
+  },
+  "personalNotes": [],
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 21,
+    "value": 4.91
+  },
+  "servings": "6-8 servings",
+  "tags": {
+    "equipment": [
+      "blender",
+      "dutch-oven",
+      "stovetop"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Corn Chowder",
+  "totalTime": "40 minutes"
+}

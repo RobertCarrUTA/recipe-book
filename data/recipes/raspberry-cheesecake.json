@@ -1,0 +1,161 @@
+{
+  "additionalTime": "7 hours",
+  "author": "John Kanell",
+  "cookTime": "1 hour 10 minutes",
+  "description": "This baked Raspberry Cheesecake is ultra-creamy and swirled with a bright, sweet-tart raspberry sauce. With a buttery graham cracker crust and a smooth, elegant finish, it's a stunning dessert that's perfect for special occasions.",
+  "equipment": [
+    "9-inch springform pan",
+    "Stand mixer with paddle attachment or handheld electric mixer",
+    "Wire mesh strainer",
+    "Saucepan",
+    "Mixing bowls",
+    "Wire rack"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "raspberries",
+      "quantity": 18,
+      "unit": "oz"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.333333,
+      "unit": "cup"
+    },
+    {
+      "item": "lemon juice",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cornstarch",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "graham cracker crumbs",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": {
+        "max": 8,
+        "min": 6
+      },
+      "unit": "tbsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "cream cheese",
+      "quantity": 24,
+      "unit": "oz"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "sour cream",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "egg",
+      "quantity": 3
+    }
+  ],
+  "id": "raspberry-cheesecake",
+  "ingredients": [
+    "18 ounces raspberries (fresh or frozen)",
+    "1/3 cup granulated sugar (for raspberry sauce)",
+    "1 tablespoon lemon juice",
+    "2 teaspoons cornstarch",
+    "1 1/2 cups graham cracker crumbs",
+    "6 to 8 tablespoons unsalted butter, melted",
+    "1/4 cup granulated sugar (for crust)",
+    "1/4 teaspoon salt",
+    "3 (8-ounce) blocks cream cheese, room temperature",
+    "1 cup granulated sugar (for filling)",
+    "1/2 cup sour cream, room temperature",
+    "1/4 teaspoon salt (for filling)",
+    "2 teaspoons vanilla extract",
+    "3 large eggs, room temperature"
+  ],
+  "instructions": [
+    "In a small saucepan, combine the raspberries, 1/3 cup sugar, and lemon juice. Cook over medium heat, stirring frequently, for 8-10 minutes until bubbling and saucy. Reduce heat to low.",
+    "In a small bowl, whisk the cornstarch with 1 tablespoon water until dissolved. Stir into the raspberry sauce, increase heat to medium, and simmer for 1-2 minutes until slightly thickened. Strain immediately through a fine mesh strainer to remove seeds. Set aside to cool.",
+    "Preheat the oven to 350°F and spray a 9-inch springform pan with nonstick spray.",
+    "In a medium bowl, mix graham cracker crumbs, melted butter, 1/4 cup sugar, and 1/4 teaspoon salt until the texture resembles wet sand. Press evenly into the bottom and 1 1/2 to 2 inches up the sides of the pan. Bake for 10-12 minutes until lightly golden. Cool on a wire rack.",
+    "In a large bowl or stand mixer, beat the cream cheese and 1 cup sugar on medium-low speed until smooth, about 2 minutes.",
+    "Add the sour cream, salt, and vanilla. Beat until fully combined and smooth, scraping down the bowl as needed.",
+    "Add the eggs one at a time, mixing on low speed just until incorporated.",
+    "Pour half of the filling into the cooled crust. Drizzle 1/4 cup of raspberry sauce over the batter and swirl gently with a toothpick.",
+    "Carefully pour the remaining batter over the top, then drizzle another 1/4 cup of raspberry sauce over the surface and lightly swirl.",
+    "Bake for 15 minutes, then reduce oven temperature to 300°F and bake for an additional 30-35 minutes, until the edges are set and the center wobbles slightly.",
+    "Turn off the oven and leave the cheesecake inside with the door closed for 1 hour.",
+    "Remove and cool at room temperature for 1 hour, then refrigerate for at least 6 hours before serving."
+  ],
+  "link": "https://preppykitchen.com/raspberry-cheesecake/",
+  "notes": [
+    "Strain the raspberry sauce while very hot; it thickens as it cools, making it harder to remove seeds later.",
+    "Avoid large pools of raspberry sauce when swirling, as this can cause sinking or cracking.",
+    "For clean slices, warm a sharp knife in hot water, wipe dry, and clean between cuts.",
+    "The cheesecake can be made up to 3 days in advance and stored loosely covered in the refrigerator."
+  ],
+  "nutrition": {
+    "calcium": "139 mg",
+    "calories": "686 kcal",
+    "carbohydrates": "65 g",
+    "cholesterol": "187 mg",
+    "fat": "44 g",
+    "fiber": "5 g",
+    "iron": "2 mg",
+    "monounsaturatedFat": "12 g",
+    "polyunsaturatedFat": "2 g",
+    "potassium": "287 mg",
+    "protein": "10 g",
+    "saturatedFat": "25 g",
+    "sodium": "550 mg",
+    "sugar": "50 g",
+    "transFat": "0.4 g",
+    "vitaminA": "1617 IU",
+    "vitaminC": "18 mg"
+  },
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 8,
+    "value": 5
+  },
+  "servings": "8",
+  "tags": {
+    "equipment": [
+      "oven",
+      "springform-pan",
+      "mixer"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Raspberry Cheesecake",
+  "totalTime": "8 hours 30 minutes"
+}

@@ -1,0 +1,169 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "25 minutes",
+  "description": "This easy one-pot Chili Mac has tons of melty cheese, hearty ground beef, and the perfect amount of spice. It's a comforting, family-friendly dinner that's ready in under 40 minutes and great for make-ahead meals.",
+  "equipment": [
+    "Large pot or Dutch oven",
+    "Wooden spoon"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "olive oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "lean ground beef",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "item": "onion",
+      "quantity": 1
+    },
+    {
+      "item": "green bell pepper",
+      "quantity": 1
+    },
+    {
+      "item": "garlic",
+      "quantity": 3,
+      "unit": "clove"
+    },
+    {
+      "item": "chicken broth",
+      "quantity": 2.5,
+      "unit": "cup"
+    },
+    {
+      "item": "kidney beans",
+      "note": "15.5 oz can",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "diced tomatoes",
+      "note": "14.5 oz can",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "tomato sauce",
+      "note": "8 oz can",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "chili powder",
+      "quantity": 1.5,
+      "unit": "tbsp"
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "ground cumin",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "elbow macaroni pasta",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "item": "cheddar cheese",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "sour cream"
+    },
+    {
+      "item": "fresh parsley"
+    }
+  ],
+  "id": "chili-mac",
+  "ingredients": [
+    "1 tablespoon olive oil",
+    "1 pound lean ground beef",
+    "1 onion, diced",
+    "1 green bell pepper, seeded and diced",
+    "3 garlic cloves, minced",
+    "2 1/2 cups chicken broth",
+    "1 (15.5-ounce) can kidney beans, drained",
+    "1 (14.5-ounce) can diced tomatoes",
+    "1 (8-ounce) can tomato sauce",
+    "1 1/2 tablespoons chili powder",
+    "1 tablespoon tomato paste",
+    "2 teaspoons ground cumin",
+    "1 1/2 teaspoons salt",
+    "1/2 teaspoon ground black pepper",
+    "8 ounces elbow macaroni pasta (uncooked)",
+    "2 cups shredded cheddar cheese",
+    "Sour cream, for serving",
+    "Fresh parsley, for serving"
+  ],
+  "instructions": [
+    "Heat the olive oil in a large pot over medium-high heat. Add the ground beef, onion, bell pepper, and garlic. Cook, stirring occasionally, until the beef is browned and the onion is tender, about 6 minutes.",
+    "Stir in the chicken broth, kidney beans, diced tomatoes, tomato sauce, chili powder, tomato paste, cumin, salt, and black pepper. Bring to a simmer over medium heat.",
+    "Stir in the pasta and cook, stirring frequently to prevent sticking, until the pasta is tender but still slightly firm, about 12 minutes.",
+    "Remove the pot from the heat. Sprinkle the shredded cheddar cheese evenly over the top and cover with a lid. Let sit for about 5 minutes, until the cheese is melted and the sauce thickens.",
+    "Serve immediately with sour cream and fresh parsley, if desired."
+  ],
+  "link": "https://preppykitchen.com/chili-mac/",
+  "notes": [
+    "Use freshly grated cheese for the best melting and texture; pre-shredded cheese may not melt as smoothly.",
+    "Stir the pasta frequently while cooking to prevent it from sticking to the bottom of the pot.",
+    "Cook the pasta just until al dente, as it will continue to soften as it sits.",
+    "For variations, substitute black beans for kidney beans, omit the beans, or add vegetables like corn or spinach.",
+    "Top with jalapeños, hot sauce, green onions, avocado, or a squeeze of lime for extra flavor."
+  ],
+  "nutrition": {
+    "calcium": "246 mg",
+    "calories": "344 kcal",
+    "carbohydrates": "29 g",
+    "cholesterol": "65 mg",
+    "fat": "16 g",
+    "fiber": "3 g",
+    "iron": "3 mg",
+    "monounsaturatedFat": "5 g",
+    "polyunsaturatedFat": "1 g",
+    "potassium": "523 mg",
+    "protein": "23 g",
+    "saturatedFat": "7 g",
+    "sodium": "1197 mg",
+    "sugar": "4 g",
+    "transFat": "0.2 g",
+    "vitaminA": "1005 IU",
+    "vitaminC": "21 mg"
+  },
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 2,
+    "value": 5
+  },
+  "servings": "8",
+  "tags": {
+    "equipment": [
+      "pot",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Chili Mac",
+  "totalTime": "35 minutes"
+}

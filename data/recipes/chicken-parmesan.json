@@ -1,0 +1,144 @@
+{
+  "author": "John Kanell",
+  "cookTime": "45 minutes",
+  "description": "My easy Chicken Parmesan recipe is so easy to make at home. It cooks in under 30 minutes for a dinner of crispy chicken cutlets topped with tomato sauce and melty cheese!",
+  "equipment": [
+    "3 medium shallow bowls",
+    "Baking sheet",
+    "Large frying pan",
+    "Meat mallet or rolling pin",
+    "Plastic wrap"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "boneless skinless chicken breast",
+      "quantity": 3
+    },
+    {
+      "item": "salt"
+    },
+    {
+      "item": "black pepper"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.333,
+      "unit": "cup"
+    },
+    {
+      "item": "large egg",
+      "quantity": 2
+    },
+    {
+      "item": "Italian breadcrumbs",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "panko breadcrumbs",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "Parmesan",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "parsley",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "olive oil",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "low-moisture mozzarella",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "marinara sauce",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "fresh basil",
+      "optional": true
+    },
+    {
+      "item": "fresh parsley",
+      "optional": true
+    }
+  ],
+  "id": "chicken-parmesan",
+  "ingredients": [
+    "3 boneless, skinless chicken breasts (about 2 pounds, 900g)",
+    "Salt and freshly ground black pepper",
+    "1/3 cup all-purpose flour (40g)",
+    "2 large eggs, beaten",
+    "1/2 cup Italian breadcrumbs (56g)",
+    "1 cup panko bread crumbs (120g)",
+    "1 cup freshly grated Parmesan (56g)",
+    "3 tablespoons chopped parsley",
+    "1 cup olive oil (240mL)",
+    "2 cups low-moisture mozzarella, shredded or thinly sliced (8 ounces, 226g)",
+    "2 cups marinara sauce (500g)",
+    "Fresh basil and parsley leaves for garnish"
+  ],
+  "instructions": [
+    "Preheat the oven to 425°F. Butterfly the chicken breasts by cutting through the middle of each lengthwise to create six cutlets. Pound each piece between sheets of plastic wrap using a rolling pin or meat mallet until they are an even thickness.",
+    "In a medium bowl, whisk together the eggs with a pinch of salt and pepper. In a separate medium bowl, whisk to combine the flour with 1 teaspoon of salt and ½ teaspoon of pepper. In a third medium bowl, combine the Panko and seasoned breadcrumbs with ½ cup grated Parmesan (28g), chopped parsley and mix together.",
+    "Dredge each piece of chicken in the flour mixture and tap off any excess. Dip in the egg and let the excess drip off. Dredge on both sides in the breadcrumb mixture and press down so the breadcrumbs stick and form a nice layer.",
+    "In a large skillet, pour the olive oil and heat over medium-high heat until the oil shimmers. Working in batches, add 2 to 3 pieces of chicken to the pan and cook until golden brown on both sides, about 4 minutes per side, adjusting the heat as needed. Transfer to a paper-towel-lined plate to absorb any excess grease.",
+    "Transfer to a baking sheet and top each breast with ¼ to ⅓ cup marinara sauce, a generous sprinkle of mozzarella, and about a tablespoon of Parmesan.",
+    "Bake in the oven until the chicken is cooked through and the cheese is melted and golden, 15-20 minutes. Remove from the oven and garnish with basil and parsley leaves. Serve over spaghetti."
+  ],
+  "link": "https://preppykitchen.com/chicken-parmesan/#recipe",
+  "notes": [
+    "Pound the chicken cutlets evenly. This ensures they are all roughly the same thickness for even cooking.",
+    "Don't have mozzarella? Shredded or sliced provolone cheese works well too!",
+    "Chicken breasts are the best cut of chicken for this recipe. Chicken thighs are not recommended.",
+    "Have a wet hand and a dry hand when breading the chicken. Use one hand for dry ingredients and the other for the beaten eggs.",
+    "If serving with spaghetti, toss the noodles with more marinara sauce or try 2 tablespoons of melted butter and the juice of half a lemon for a brighter, lighter flavor."
+  ],
+  "nutrition": {
+    "calcium": "523 mg",
+    "calories": "707 kcal",
+    "carbohydrates": "26 g",
+    "cholesterol": "134 mg",
+    "fat": "52 g",
+    "fiber": "2 g",
+    "iron": "3 mg",
+    "monounsaturatedFat": "31 g",
+    "polyunsaturatedFat": "5 g",
+    "potassium": "595 mg",
+    "protein": "33 g",
+    "saturatedFat": "13 g",
+    "sodium": "1215 mg",
+    "sugar": "5 g",
+    "transFat": "0.01 g",
+    "vitaminA": "1006 IU",
+    "vitaminC": "9 mg"
+  },
+  "personalNotes": [],
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 40,
+    "value": 4.98
+  },
+  "servings": "6 servings",
+  "tags": {
+    "equipment": [
+      "baking-sheet",
+      "frying-pan",
+      "oven"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Chicken Parmesan",
+  "totalTime": "1 hour"
+}

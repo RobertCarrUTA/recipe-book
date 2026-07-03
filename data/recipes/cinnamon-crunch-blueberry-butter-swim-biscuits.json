@@ -1,0 +1,132 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "20 minutes",
+  "description": "These Cinnamon Crunch Blueberry Butter Swim Biscuits are soft, fluffy, and unbelievably buttery, with juicy, tart blueberries bursting through every bite. Baked until golden and topped with a brown sugar cinnamon crunch for the perfect contrast of texture, these cozy biscuits are best served warm with a pat of butter, flaky sea salt, and a hot cup of coffee.",
+  "equipment": [
+    "8x8-inch, 9x9-inch, or 10.5x7.5-inch baking dish",
+    "Baking sheet",
+    "Bench scraper or knife",
+    "Large bowl",
+    "Medium bowl",
+    "Spatula",
+    "Whisk",
+    "Wooden spoon"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 2.75,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 4,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "blueberries",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "buttermilk",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "Greek yogurt",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "brown sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 2,
+      "unit": "tsp"
+    }
+  ],
+  "id": "cinnamon-crunch-blueberry-butter-swim-biscuits",
+  "ingredients": [
+    "2 3/4 cups (330g) all-purpose flour",
+    "3 tbsp (40g) granulated sugar",
+    "4 tsp (16g) baking powder",
+    "1/4 tsp (2g) baking soda",
+    "1/2 tsp (3g) salt",
+    "1 cup (220g) blueberries, fresh or frozen",
+    "1 1/2 cups (360ml) buttermilk, cold [substitution: 1 1/2 cups (360ml) milk of choice mixed with 1 1/2 tbsp (22ml) apple cider vinegar or lemon juice]",
+    "1/2 cup (120g) Greek yogurt",
+    "1 tsp (4g) vanilla bean paste or extract",
+    "1/2 cup (113g) salted butter",
+    "1/2 cup (110g) brown sugar",
+    "2 tsp (4g) cinnamon"
+  ],
+  "instructions": [
+    "Preheat the oven to 450F.",
+    "Start by preparing the biscuit dough. In a large bowl, whisk together the flour, sugar, baking powder, baking soda, and salt. Then add the blueberries and toss until evenly dispersed. Set aside.",
+    "In a separate medium bowl, whisk together the buttermilk, Greek yogurt, and vanilla until well combined.",
+    "Make a well in the center of the flour mixture, and pour in the wet mixture. Use a wooden spoon or spatula to stir until just combined, being careful not to overwork the dough. The dough WILL be sticky and almost wet, but trust the process!",
+    "Add the butter to a 10.5x7.5”, 8x8” or 9x9” baking pan or dish. If using a square baking pan, I recommend a 9x9”. Place the pan into the oven (it's okay if it's still preheating), and allow the butter to sit in the oven for a few minutes to fully melt. I like to let it sit until it's just starting to brown for a little extra toastiness!",
+    "While the butter is melting in the oven, prepare the cinnamon crunch topping by mixing the brown sugar and cinnamon together in a small bowl. Set aside.",
+    "Remove the pan from the oven and pour/drop the biscuit dough into the hot butter. Use a spatula to spread the dough evenly out to the edges of the pan.",
+    "Using a knife or a bench scraper, score the unbaked dough into 6 or 8 equal rectangles or squares, depending on how large you want the biscuits. As you do this, try to almost drag the butter down with the score, this will help to separate the biscuits as they bake.",
+    "Then, sprinkle the cinnamon brown sugar all over the tops of the biscuits.",
+    "Place the pan onto the middle rack of your oven, and place a baking sheet on the rack below to catch any drippings. Bake at 450F for 25-30 minutes, or until the biscuits are deeply golden, crispy, and bubbling.",
+    "Remove the biscuits from the oven and let rest for at least 5-10 minutes so the butter can continue to absorb.",
+    "Serve the biscuits warm with some butter, flaky sea salt, and a hot cup of coffee, if desired."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/cinnamon-crunch-blueberry-butter-swim-biscuits#recipe",
+  "notes": [
+    "Frozen blueberries can be used in place of fresh.",
+    "Milk mixed with apple cider vinegar or lemon juice can substitute for buttermilk.",
+    "The dough will be sticky and almost wet; this is expected.",
+    "Allowing the butter to brown slightly adds extra flavor.",
+    "Let the biscuits rest 5-10 minutes after baking so the butter can absorb."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 3,
+    "value": 5
+  },
+  "servings": "6-8 biscuits",
+  "tags": {
+    "equipment": [
+      "baking-dish",
+      "oven"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Cinnamon Crunch Blueberry Butter Swim Biscuits",
+  "totalTime": "45 minutes"
+}

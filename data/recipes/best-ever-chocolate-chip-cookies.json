@@ -1,0 +1,121 @@
+{
+  "additionalTime": "2 hours",
+  "author": "Eric King",
+  "cookTime": "10 minutes",
+  "description": "These Best-Ever Chocolate Chip Cookies have crisp edges, gooey centers, and an indulgent amount of chocolate. Using melted butter and a rest period creates deep flavor and the perfect chewy texture.",
+  "equipment": [
+    "Saucepan",
+    "Mixing bowls",
+    "Whisk",
+    "Rubber spatula",
+    "Half sheet pans",
+    "Parchment paper",
+    "Wire rack",
+    "Cookie scoop"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 2.25,
+      "unit": "cup"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "dark brown sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 14,
+      "unit": "tbsp"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "dark or semi-sweet chocolate",
+      "quantity": 10.5,
+      "unit": "oz"
+    },
+    {
+      "item": "flaky salt",
+      "optional": true
+    }
+  ],
+  "id": "best-ever-chocolate-chip-cookies",
+  "ingredients": [
+    "2 1/4 cups all-purpose flour",
+    "3/4 teaspoon baking soda",
+    "1/4 teaspoon baking powder",
+    "1 teaspoon kosher salt",
+    "1/2 cup granulated sugar",
+    "1 cup dark brown sugar, lightly packed",
+    "14 tablespoons unsalted butter",
+    "1 large egg",
+    "2 teaspoons vanilla extract",
+    "10.5 ounces dark or semi-sweet chocolate, chopped into chunks",
+    "Flaky salt, for finishing (optional)"
+  ],
+  "instructions": [
+    "Gently melt the butter in a saucepan over low heat. Set aside to cool slightly.",
+    "In a small bowl, whisk together the flour, baking powder, baking soda, and salt.",
+    "In a medium bowl, whisk together the brown sugar and granulated sugar. Pour in the melted butter and stir just until combined.",
+    "Whisk in the egg and vanilla until smooth and creamy, then whisk vigorously until the mixture lightens in color.",
+    "Using a rubber spatula, fold the flour mixture into the wet ingredients until a few streaks of flour remain.",
+    "Add the chopped chocolate and continue folding just until evenly dispersed.",
+    "Portion the dough into about 18 balls using roughly 2 1/2 tablespoons each or a 1.5-ounce cookie scoop.",
+    "Chill the dough balls uncovered in the refrigerator for 2 hours.",
+    "Preheat the oven to 350°F and position racks in the top and bottom thirds. Line two half sheet pans with parchment paper.",
+    "Place 6 to 7 dough balls per pan and bake for 6 minutes.",
+    "Remove the pans and firmly bang them on the oven rack or stovetop to deflate the cookies. Rotate pans and return to the oven.",
+    "Bake for an additional 4 minutes, banging the pans once halfway through and once when removed.",
+    "Let cookies cool on the pans for 2-3 minutes, then transfer to a wire rack. Sprinkle with flaky salt if desired."
+  ],
+  "link": null,
+  "notes": [
+    "Banging the pan during baking creates ripples and improves texture.",
+    "Cookies should look slightly underbaked in the center when removed.",
+    "Dough balls can be refrigerated or frozen and baked later.",
+    "Weighing ingredients yields the most consistent results."
+  ],
+  "nutrition": null,
+  "prepTime": "45 minutes",
+  "rating": null,
+  "servings": "18 cookies",
+  "tags": {
+    "equipment": [
+      "oven",
+      "baking-sheet",
+      "saucepan"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Best-Ever Chocolate Chip Cookies",
+  "totalTime": "2 hours 45 minutes"
+}

@@ -1,0 +1,122 @@
+{
+  "additionalTime": "15 minutes dried chile soak plus 10 minutes flavor rest",
+  "author": "Robert Carr",
+  "cookTime": "25 minutes",
+  "description": "Smooth simmered guajillo-arbol salsa for spooning over burrito bites, with roasted tomatoes, tomatillos, garlic, onion, toasted dried chiles, a little vinegar and lime, honey, and oil.",
+  "equipment": [
+    "12-inch cast-iron skillet or comal",
+    "Blender",
+    "Fine-mesh strainer, optional",
+    "Small saucepan",
+    "Tongs"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "apple cider vinegar",
+      "quantity": 1.5,
+      "unit": "tbsp"
+    },
+    {
+      "item": "avocado oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "dried chile de arbol",
+      "quantity": 4
+    },
+    {
+      "item": "dried guajillo chile",
+      "quantity": 2
+    },
+    {
+      "item": "garlic",
+      "quantity": 4,
+      "unit": "clove"
+    },
+    {
+      "item": "honey",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "lime",
+      "quantity": 1
+    },
+    {
+      "item": "Roma tomato",
+      "quantity": 3
+    },
+    {
+      "item": "tomatillo",
+      "quantity": 2
+    },
+    {
+      "item": "white onion",
+      "quantity": 1
+    }
+  ],
+  "id": "simmered-guajillo-arbol-drip-salsa",
+  "ingredients": [
+    "2 dried guajillo chiles, stemmed and seeded",
+    "4 dried chile de arbol peppers, stemmed",
+    "3 Roma tomatoes",
+    "2 tomatillos, husked and rinsed",
+    "1/4 small white onion",
+    "4 garlic cloves, unpeeled",
+    "1/2 cup hot chile soaking water, plus more as needed",
+    "1 1/2 tablespoons apple cider vinegar",
+    "1 tablespoon fresh lime juice",
+    "2 tablespoons avocado oil",
+    "1 teaspoon honey",
+    "1 teaspoon Diamond Crystal kosher salt, or 1/2 teaspoon Morton kosher salt",
+    "1/2 teaspoon black pepper"
+  ],
+  "instructions": [
+    "Toast 2 stemmed and seeded dried guajillo chiles and 4 stemmed dried chile de arbol peppers in a dry skillet over medium heat for 15 to 30 seconds per side, just until fragrant and slightly softened, not blackened.",
+    "Place the toasted chiles in a small bowl, cover with very hot water, and soak for 15 minutes.",
+    "While the chiles soak, place 3 Roma tomatoes, 2 tomatillos, 1/4 small white onion, and 4 unpeeled garlic cloves in a dry cast-iron skillet or comal over medium-high heat.",
+    "Roast for 10 to 14 minutes, turning occasionally, until the tomatoes and tomatillos soften, the onion chars in spots, and the garlic is browned and soft inside.",
+    "Peel the roasted garlic cloves.",
+    "Drain the soaked chiles, reserving the soaking water.",
+    "Add the soaked chiles, roasted tomatoes, tomatillos, onion, peeled garlic, 1/2 cup hot chile soaking water, 1 1/2 tablespoons apple cider vinegar, 1 tablespoon fresh lime juice, 2 tablespoons avocado oil, 1 teaspoon honey, 1 teaspoon Diamond Crystal kosher salt, and 1/2 teaspoon black pepper to a blender.",
+    "Blend on high for 35 to 60 seconds until very smooth.",
+    "For a smoother sauce, pass the salsa through a fine-mesh strainer; for a slightly rustic sauce, leave it unstrained.",
+    "Pour the salsa into a small saucepan and simmer over medium-low heat for 5 to 7 minutes, stirring often, until it lightly coats a spoon but still drips easily.",
+    "If the salsa gets too thick, whisk in reserved chile soaking water 1 tablespoon at a time until it is thin enough to drip from a spoon.",
+    "Taste and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a few drops of honey.",
+    "Let the salsa rest for 10 minutes before serving."
+  ],
+  "notes": [
+    "This salsa is smoother and more chile-forward than the everyday roja, so it works well spooned onto burrito bites.",
+    "Four chile de arbol peppers gives a useful medium-hot default. Use 2 for mild, 6 for hot, or 8 for very hot.",
+    "Simmering after blending matters. It makes the dried chile flavor rounder, mixes the oil into the sauce, and softens the sharp vinegar and lime flavor.",
+    "Aim for a sauce loose enough to drip from a spoon but thick enough to briefly coat eggs, potatoes, steak, or tortilla.",
+    "Do not use scorched chiles. A few blackened spots on roasted vegetables are good, but blackened dried chiles taste bitter.",
+    "This salsa works especially well with sausage breakfast burritos, carne asada burritos, eggs, potatoes, tacos, quesadillas, and grilled meats."
+  ],
+  "nutrition": null,
+  "prepTime": "15 minutes",
+  "rating": null,
+  "servings": "about 2 cups",
+  "source": "original",
+  "tags": {
+    "equipment": [
+      "cast-iron-skillet",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Simmered Guajillo-Arbol Drip Salsa",
+  "totalTime": "1 hour 5 minutes"
+}

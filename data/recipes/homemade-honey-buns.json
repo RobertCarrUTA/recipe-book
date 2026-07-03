@@ -1,0 +1,195 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "30 minutes",
+  "description": "These Homemade Honey Buns are soft, pillowy, and tender in the center with a perfectly golden, slightly chewy exterior. Filled with warm, gooey swirls of honey butter and cinnamon brown sugar, then fried to golden perfection and coated in a silky honey glaze, these bakery-style honey buns are best enjoyed warm with a hot cup of coffee.",
+  "equipment": [
+    "2-3 baking sheets",
+    "Large bowl",
+    "Large heavy-bottomed pot or Dutch oven",
+    "Parchment paper",
+    "Pizza cutter or sharp knife",
+    "Slotted spoon",
+    "Stand mixer with dough hook",
+    "Thermometer",
+    "Wire cooling racks",
+    "Wooden spoon"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "milk",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "active dry yeast",
+      "quantity": 2.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "Greek yogurt or sour cream",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 2
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "bread flour",
+      "quantity": 4.5,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "avocado oil"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "honey",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "brown sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "powdered sugar",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "honey",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "milk",
+      "quantity": {
+        "max": 2,
+        "min": 1
+      },
+      "unit": "tbsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "homemade-honey-buns",
+  "ingredients": [
+    "3/4 cup (180ml) milk of choice, warmed to 110F",
+    "1/2 cup (100g) granulated sugar, divided",
+    "2 1/2 tsp (11g) active dry yeast",
+    "1/2 cup (120g) Greek yogurt or sour cream, at room temperature",
+    "1/2 cup (113g) salted butter, very softened (almost melted)",
+    "2 eggs, at room temperature",
+    "1 tsp (4g) vanilla bean paste or extract",
+    "4 1/2 cups (540g) bread flour",
+    "1 tsp (6g) salt",
+    "Avocado oil (or neutral oil of choice), for frying",
+    "1/2 cup (113g) salted butter, softened",
+    "1/4 cup (84g) honey",
+    "1 tsp (4g) vanilla bean paste or extract",
+    "Pinch of salt",
+    "1/2 cup (110g) brown sugar, light or dark",
+    "2 tbsp (12g) cinnamon",
+    "3 cups (360g) powdered sugar",
+    "1/4 cup (58g) salted butter, melted",
+    "1/4 cup (82g) honey",
+    "1-2 tbsp (15-30ml) milk of choice",
+    "1 tsp vanilla bean paste or extract",
+    "Large pinch of salt"
+  ],
+  "instructions": [
+    "Start by activating the yeast for the dough. If using instant yeast, do not follow these instructions for activating the yeast, see the notes section below. Pour the warm milk into a small bowl or glass measuring cup. Add 1 tbsp (12g) of the sugar and sprinkle the yeast overtop. Stir and allow to sit for 5-7 minutes, until frothy and activated.",
+    "In a large bowl, whisk together the flour and salt. Set aside.",
+    "Once activated, pour the yeast mixture into the bowl of a stand mixer (or a large bowl if mixing/kneading the dough by hand). Add the rest of the sugar (1/2 cup minus the 1 tbsp that was used to activate the yeast), Greek yogurt or sour cream, butter, eggs, vanilla, and the flour mixture.",
+    "With the dough hook attachment (or with a wooden spoon if mixing by hand), mix on low speed for 1 minute, until barely combined. Allow to rest for 5 minutes so the flour can soak up the liquids.",
+    "Then, mix on medium speed for 5-7 minutes, until the dough is elastic, smooth, and is pulling away from the sides of the bowl. If the dough seems a little too sticky, you can add 1 tbsp more flour at a time, until it starts to pull away from the sides of the bowl. Don't be tempted to add too much, you want the dough to be slightly sticky! I ended up adding about 1-2 tbsp more flour. If you are mixing and kneading by hand, pour the dough onto a floured surface and knead for 7-9 minutes by hand, or until smooth and elastic.",
+    "Transfer the dough to a lightly greased bowl. Cover and allow to rise in a warm environment for 1-1.5 hours, or until doubled in size. I did a full 1.5 hours!",
+    "While the dough is rising, prepare the fillings. For the honey butter filling, mix together the softened butter, honey, vanilla, and salt in a medium bowl, until well combined. Set aside.",
+    "For the cinnamon brown sugar filling, mix together the brown sugar and cinnamon in a small bowl. Set aside.",
+    "Once the dough is almost finished rising, cut out 12 squares of parchment paper and spread them across 2-3 baking sheets. Lightly dust each square of parchment paper with flour. These will be used for the honey buns to sit on once shaped and make it easier to transfer the buns to the oil once ready to fry.",
+    "Once the dough is done rising and is doubled, punch it down and turn it onto a floured surface. Roll the dough out to a 15x24” rectangle.",
+    "Disperse the honey butter filling all over the surface of the dough, and spread/smooth it out evenly, leaving a very small border around the edges. Then, sprinkle the cinnamon brown sugar filling all over the surface, on top of the honey butter. Use your hands to slightly press the cinnamon brown sugar filling into the honey butter.",
+    "On the long end, use a sharp knife or pizza butter to cut the dough into 12 equal strips, each strip should be 2” in width and 15” long.",
+    "Then starting on the short end for each strip, tightly roll them up into a coiled roll, and tuck the last 1” of the strip under the bottom side of the roll, pinching to seal. PLEASE make sure to roll tightly and pinch very well and tightly, this will ensure that the honey buns will not unravel when frying.",
+    "Place the buns onto the prepared parchment paper squares on the baking sheets. Then, use a piece of parchment paper to place on top of each bun and press down to slightly flatten.",
+    "Loosely cover the buns with a kitchen towel and allow to proof for 30-45 minutes in a warm environment, until puffy but not doubled in size.",
+    "While the buns are proofing, prepare the honey glaze. In a large bowl, whisk together the powdered sugar, melted butter, honey, milk, vanilla, and salt until smooth. If the mixture seems a little thick, add 1 tbsp (15ml) of milk at a time.",
+    "Once the buns are almost done proofing, fill a large, heavy-bottomed pot or Dutch oven with oil, filling ~2” in the pan. Heat on medium-high until it reaches 360F-370F.",
+    "Line a wire cooling rack with a thick layer of paper towels.",
+    "If you really want to ensure that the buns don't unravel, you can take a toothpick and push it into the seam end of each donut to secure the seam in place while frying.",
+    "Once the oil is hot enough, carefully transfer the parchment paper squares with the buns on them slowly into the hot oil, 2-3 at a time. I recommend inverting them into the oil, top-side down, so the parchment paper is on the top (this will help to keep them together). After 10-15 seconds, pull the parchment paper away from the buns (it should almost immediately release). Fry the donuts for 1-2 minutes on each side (2-4 minutes total), until golden brown. *NOTE: some of the filling will leak out as they cook - this is completely normal!*",
+    "Using a slotted spoon, carefully remove the buns from the oil and to the rack with paper towels. Repeat with the remaining buns.",
+    "While the other buns are frying, dip the warm buns into the glaze, making sure to generously coat both sides. Then place onto a cooling rack that's positioned on top of a baking sheet to let the glaze set.",
+    "Serve warm with a cup of coffee."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/homemade-honey-buns#recipe",
+  "notes": [
+    "If using instant yeast, do not activate it separately. Add it directly to the dry ingredients and use slightly warmed milk.",
+    "I HIGHLY recommend weighing your ingredients always (it's much more accurate).",
+    "If using cups, scoop and level the flour properly to avoid over-measuring.",
+    "A thermometer helps maintain proper frying temperature.",
+    "Some filling leaking during frying is completely normal."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "45 minutes",
+  "rating": {
+    "count": 1,
+    "value": 5
+  },
+  "servings": "12 honey buns",
+  "tags": {
+    "equipment": [
+      "dutch-oven",
+      "stand-mixer"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Homemade Honey Buns",
+  "totalTime": "3 hours 30 minutes"
+}

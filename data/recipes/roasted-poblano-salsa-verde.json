@@ -1,0 +1,112 @@
+{
+  "additionalTime": "10 minutes poblano steam time plus 20 minutes flavor rest",
+  "author": "Robert Carr",
+  "cookTime": "25 minutes",
+  "description": "Roasted green salsa with tomatillos, poblano, jalapeno, serrano, garlic, onion, cilantro, lime, and a small amount of honey.",
+  "equipment": [
+    "12-inch cast-iron skillet or comal",
+    "Blender",
+    "Bowl or foil for steaming poblano",
+    "Cutting board",
+    "Knife",
+    "Tongs"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "cilantro",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "garlic",
+      "quantity": 4,
+      "unit": "clove"
+    },
+    {
+      "item": "honey",
+      "optional": true,
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "jalapeno",
+      "quantity": 2
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "lime",
+      "quantity": 1
+    },
+    {
+      "item": "poblano pepper",
+      "quantity": 1
+    },
+    {
+      "item": "serrano pepper",
+      "optional": true,
+      "quantity": 1
+    },
+    {
+      "item": "tomatillo",
+      "quantity": 1.5,
+      "unit": "lb"
+    },
+    {
+      "item": "white onion",
+      "quantity": 1
+    }
+  ],
+  "id": "roasted-poblano-salsa-verde",
+  "ingredients": [
+    "1 1/2 pounds tomatillos, husked and rinsed",
+    "1 large poblano pepper",
+    "2 jalapenos",
+    "1 serrano pepper, optional for extra heat",
+    "1/2 small white onion",
+    "4 garlic cloves, unpeeled",
+    "1/2 cup packed cilantro leaves and tender stems",
+    "1 1/2 tablespoons fresh lime juice",
+    "1 teaspoon Diamond Crystal kosher salt, or 1/2 teaspoon Morton kosher salt",
+    "1/2 teaspoon honey, optional"
+  ],
+  "instructions": [
+    "Place 1 large poblano pepper in a dry cast-iron skillet or directly over a gas flame and char it for 6 to 8 minutes, turning often, until the skin is blistered and blackened in patches.",
+    "Transfer the poblano to a covered bowl or wrap it loosely in foil and let it steam for 10 minutes.",
+    "While the poblano steams, place 1 1/2 pounds tomatillos, 2 jalapenos, 1 serrano pepper if using, 1/2 small white onion, and 4 unpeeled garlic cloves in a dry cast-iron skillet or comal over medium-high heat.",
+    "Roast for 10 to 14 minutes, turning occasionally, until the tomatillos soften and turn olive-green, the peppers blister, the onion chars in spots, and the garlic is browned and soft inside.",
+    "Rub most of the blackened skin from the poblano, then remove the stem and seeds.",
+    "Peel the roasted garlic cloves.",
+    "Add the roasted tomatillos, peeled poblano, jalapenos, serrano if using, onion, peeled garlic, 1/2 cup cilantro, 1 1/2 tablespoons fresh lime juice, 1 teaspoon Diamond Crystal kosher salt, and 1/2 teaspoon honey if using to a blender.",
+    "For a rustic salsa verde, pulse or blend on low speed for 10 to 20 seconds, stopping before it becomes fully smooth.",
+    "For a smooth taqueria-style salsa verde, blend on medium-high speed for 20 to 30 seconds.",
+    "Taste and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a few drops of honey if the tomatillos are very sharp.",
+    "Let the salsa rest for at least 20 minutes before serving."
+  ],
+  "notes": [
+    "The poblano is the upgrade. It adds roasted green chile depth without making the salsa taste heavy or overly spicy.",
+    "Do not rinse the poblano after charring. Rinsing washes away roasted flavor.",
+    "Black pepper is intentionally omitted because it can muddy the clean tomatillo, chile, cilantro, and lime flavor.",
+    "If the salsa tastes too tart, use the optional honey before adding more salt. Tomatillos can vary a lot in sharpness.",
+    "If using a Vitamix 5200, low pulses around Variable 2 to 4 keep the salsa rustic, while Variable 6 or 7 makes it smoother.",
+    "For a mild salsa verde, skip the serrano and remove the jalapeno seeds before blending.",
+    "This salsa works especially well with breakfast burritos, pork, chicken, eggs, grilled vegetables, tacos, and chips."
+  ],
+  "nutrition": null,
+  "prepTime": "15 minutes",
+  "rating": null,
+  "servings": "about 3 cups",
+  "source": "original",
+  "tags": {
+    "equipment": [
+      "cast-iron-skillet",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Roasted Poblano Salsa Verde",
+  "totalTime": "1 hour 10 minutes"
+}

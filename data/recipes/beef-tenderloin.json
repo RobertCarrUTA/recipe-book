@@ -1,0 +1,117 @@
+{
+  "additionalTime": "20 minutes",
+  "author": "John Kanell",
+  "cookTime": "25 minutes",
+  "description": "This gourmet-style Beef Tenderloin is incredibly tender, juicy, and melt-in-your-mouth delicious. The whole tenderloin is pan-seared, slathered in garlic herb butter, and roasted to perfection for an elegant yet approachable main dish.",
+  "equipment": [
+    "Butcher's twine",
+    "Meat probe thermometer or instant-read thermometer",
+    "Large rimmed baking sheet",
+    "Wire rack",
+    "Aluminum foil",
+    "Large heavy-bottomed skillet"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "beef tenderloin",
+      "quantity": 4,
+      "unit": "lb"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 6,
+      "unit": "tbsp"
+    },
+    {
+      "item": "garlic",
+      "quantity": 2,
+      "unit": "clove"
+    },
+    {
+      "item": "fresh rosemary",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "fresh thyme",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "id": "beef-tenderloin",
+  "ingredients": [
+    "1 (4-pound / 1.8 kg) beef tenderloin roast",
+    "1 tablespoon kosher salt",
+    "1 teaspoon ground black pepper",
+    "6 tablespoons unsalted butter, softened",
+    "2 garlic cloves, minced",
+    "2 teaspoons fresh rosemary, minced",
+    "1 teaspoon fresh thyme, minced",
+    "2 tablespoons olive oil"
+  ],
+  "instructions": [
+    "Pat the tenderloin very dry with paper towels. Trim away excess fat and silver skin with a sharp knife.",
+    "Cut the roast in half crosswise. If the ends are thinner, tuck them under so each piece is evenly thick.",
+    "Tie the tenderloins with butcher's twine at 1-inch intervals to form a tight cylinder. Season all over with salt and pepper.",
+    "Line a large rimmed baking sheet with foil and fit with a wire rack. Place the tenderloins on the rack and rest at room temperature for 1 hour.",
+    "Meanwhile, mix the softened butter, garlic, rosemary, and thyme until well combined.",
+    "Preheat the oven to 425°F.",
+    "Heat a large skillet over medium-high heat. Pat the tenderloins dry again, add olive oil to the skillet, and sear the meat on all sides, about 2 minutes per side.",
+    "Return the seared tenderloins to the wire rack and let cool slightly, about 10 minutes. Spread the garlic herb butter evenly over the meat.",
+    "Roast for 20-25 minutes, until the internal temperature reaches 125°F for medium-rare.",
+    "Tent with foil and rest for 10 minutes. Remove twine, slice into 1-inch pieces, and serve."
+  ],
+  "link": "https://preppykitchen.com/beef-tenderloin/",
+  "notes": [
+    "Many butchers sell tenderloins already trimmed and tied, which can save prep time.",
+    "Use about 1 teaspoon of salt per pound of tied tenderloin.",
+    "An instant-read thermometer is essential for perfect doneness.",
+    "Herbs in the butter can be swapped for oregano, tarragon, or roasted garlic."
+  ],
+  "nutrition": {
+    "calcium": "5 mg",
+    "calories": "842 kcal",
+    "carbohydrates": "0.2 g",
+    "cholesterol": "175 mg",
+    "fat": "27 g",
+    "fiber": "0.1 g",
+    "iron": "4 mg",
+    "monounsaturatedFat": "11 g",
+    "polyunsaturatedFat": "1 g",
+    "potassium": "795 mg",
+    "protein": "50 g",
+    "saturatedFat": "11 g",
+    "sodium": "1000 mg",
+    "sugar": "0.01 g",
+    "transFat": "0.3 g",
+    "vitaminA": "276 IU",
+    "vitaminC": "0.4 mg"
+  },
+  "prepTime": "1 hour 10 minutes",
+  "rating": null,
+  "servings": "8",
+  "tags": {
+    "equipment": [
+      "oven",
+      "skillet"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Beef Tenderloin",
+  "totalTime": "1 hour 55 minutes"
+}

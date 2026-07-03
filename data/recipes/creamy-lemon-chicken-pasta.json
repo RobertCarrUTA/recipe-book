@@ -1,0 +1,180 @@
+{
+  "author": "Jamie Vespa MS, RD",
+  "cookTime": "30 minutes",
+  "description": "This restaurant-worthy Creamy Lemon Chicken Pasta is easy enough for weeknights, yet impressive enough for company. It's a family-favorite recipe and a guaranteed crowd pleaser.",
+  "equipment": [
+    "Large sauté pan or high-sided skillet",
+    "Stockpot or Dutch oven",
+    "Tongs"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "chicken breast",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "lemon zest",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "dried oregano",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "smoked paprika",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic powder",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "onion powder",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "pasta",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "item": "butter",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "garlic",
+      "quantity": 6,
+      "unit": "clove"
+    },
+    {
+      "item": "heavy cream",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "chicken broth",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "fresh parsley",
+      "quantity": 0.333333,
+      "unit": "cup"
+    },
+    {
+      "item": "Parmigiano Reggiano cheese",
+      "quantity": 0.333333,
+      "unit": "cup"
+    },
+    {
+      "item": "lemon zest",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "lemon juice",
+      "quantity": 3,
+      "unit": "tbsp"
+    }
+  ],
+  "id": "creamy-lemon-chicken-pasta",
+  "ingredients": [
+    "1 lb boneless, skinless chicken breasts, thinly sliced into cutlets",
+    "2 tablespoons extra-virgin olive oil",
+    "2 teaspoons lemon zest",
+    "2 teaspoons dried oregano",
+    "1 1/2 teaspoons smoked paprika",
+    "1 teaspoon garlic powder",
+    "1 teaspoon onion powder",
+    "3/4 teaspoon kosher salt",
+    "3/4 teaspoon black pepper",
+    "1 lb pasta of choice (bucatini, spaghetti, pappardelle, or fettuccine)",
+    "1 tablespoon butter",
+    "1 1/2 cups finely chopped yellow onion",
+    "6 garlic cloves, minced",
+    "1 cup heavy cream",
+    "3/4 cup chicken broth",
+    "3/4 teaspoon kosher salt",
+    "1/2 teaspoon black pepper",
+    "1/3 cup finely chopped fresh parsley, plus more for garnish",
+    "1/3 cup grated Parmigiano Reggiano cheese, plus more for garnish",
+    "1 tablespoon lemon zest plus 3 tablespoons fresh lemon juice"
+  ],
+  "instructions": [
+    "Bring a large pot of generously salted water to a boil.",
+    "Prepare the chicken: Place chicken in a bowl with olive oil, lemon zest, and spices. Toss to coat. Heat a large sauté pan over medium heat and cook chicken until golden and internal temperature reaches 165°F, about 7-10 minutes. Transfer to a plate and keep warm.",
+    "Cook pasta until just shy of al dente. Reserve 1 cup of pasta cooking water before draining.",
+    "Prepare the sauce: Add butter to the same pan along with onion. Cook over medium heat for 4-5 minutes until softened. Add garlic and cook 1-2 minutes until fragrant.",
+    "Add heavy cream, chicken broth, salt, and black pepper. Bring to a simmer and cook uncovered until slightly thickened, about 5-6 minutes. Stir in parsley, Parmesan, lemon zest, and lemon juice.",
+    "Add pasta to the sauce along with 1/2 cup reserved pasta water. Increase heat to medium-high and toss vigorously until pasta is coated in a glossy sauce, about 2 minutes. Add more pasta water if needed.",
+    "Slice chicken and place on top of pasta. Garnish with extra parsley, Parmesan, cracked black pepper, and a squeeze of lemon juice."
+  ],
+  "link": "https://dishingouthealth.com/lemon-chicken-pasta/",
+  "notes": [
+    "Optional add-ins: fresh baby spinach or arugula, sun-dried tomatoes, roasted broccoli, or sautéed mushrooms. Add vegetables to the sauce after stirring in parsley, Parmesan, and lemon.",
+    "Storage: Store leftovers in an airtight container in the refrigerator for up to 3 days.",
+    "Reheating: Gently rewarm in a skillet over medium heat with a splash of broth to loosen the sauce. Finish with fresh lemon juice."
+  ],
+  "nutrition": {
+    "calories": "612 kcal",
+    "carbohydrates": "58 g",
+    "fat": "27 g",
+    "fiber": "3 g",
+    "protein": "31 g",
+    "saturatedFat": "12 g",
+    "sodium": "920 mg",
+    "sugar": "6 g"
+  },
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 39,
+    "value": 4.93
+  },
+  "servings": "6",
+  "tags": {
+    "equipment": [
+      "skillet",
+      "stockpot"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Creamy Lemon Chicken Pasta",
+  "totalTime": "45 minutes"
+}

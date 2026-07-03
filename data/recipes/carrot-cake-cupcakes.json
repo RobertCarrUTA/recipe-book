@@ -1,0 +1,178 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "17 minutes",
+  "description": "These moist carrot cake cupcakes are packed with warm spices, fresh grated carrots, and chopped walnuts, then topped with a rich cream cheese frosting. Perfect when you want all the flavors of carrot cake in cupcake form.",
+  "equipment": [
+    "Mixing bowls",
+    "Electric mixer",
+    "Muffin pan",
+    "Wire rack"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 1.25,
+      "unit": "cup"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground cinnamon",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground ginger",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground nutmeg",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "vegetable oil",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "light brown sugar",
+      "quantity": 0.333333,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 2
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "carrot",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "walnuts",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "cream cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "powdered sugar",
+      "quantity": 6,
+      "unit": "cup"
+    }
+  ],
+  "id": "carrot-cake-cupcakes",
+  "ingredients": [
+    "1 1/4 cups all-purpose flour",
+    "1 teaspoon baking powder",
+    "1 teaspoon baking soda",
+    "3/4 teaspoon salt",
+    "1/4 teaspoon ground cinnamon",
+    "1/4 teaspoon ground ginger",
+    "1/4 teaspoon ground nutmeg",
+    "3/4 cup vegetable oil",
+    "1/2 cup granulated sugar",
+    "1/3 cup packed light brown sugar",
+    "2 large eggs",
+    "1 teaspoon vanilla extract",
+    "2 cups grated carrots",
+    "1/2 cup chopped walnuts",
+    "8 ounces cream cheese, room temperature",
+    "1/2 cup unsalted butter, softened",
+    "1 teaspoon vanilla extract (for frosting)",
+    "6 cups powdered sugar",
+    "Pinch of salt"
+  ],
+  "instructions": [
+    "Preheat the oven to 350°F and line a 12-cup muffin pan with paper liners.",
+    "In a large bowl, whisk together flour, baking powder, baking soda, salt, cinnamon, ginger, and nutmeg.",
+    "In a medium bowl, whisk together oil, granulated sugar, brown sugar, eggs, and vanilla until well combined.",
+    "Add the wet ingredients to the dry ingredients and stir until almost combined. Fold in grated carrots and walnuts until evenly distributed.",
+    "Divide the batter evenly among the cupcake liners, filling each about three-quarters full.",
+    "Bake for 17-20 minutes, until the centers spring back when lightly touched or a toothpick inserted comes out clean.",
+    "Cool briefly in the pan, then transfer cupcakes to a wire rack to cool completely.",
+    "To make the frosting, beat cream cheese and butter together until smooth. Gradually add powdered sugar on low speed, then add vanilla and salt and beat until light and fluffy.",
+    "Frost cooled cupcakes using a spatula or piping bag. Store covered in the refrigerator for up to 5 days."
+  ],
+  "link": "https://preppykitchen.com/carrot-cake-cupcakes/",
+  "notes": [
+    "For best results, weigh the flour or spoon and level it to avoid dense cupcakes.",
+    "Grate carrots by hand for better moisture and texture; pre-shredded carrots tend to be dry.",
+    "Let cupcakes cool completely before frosting to prevent melting.",
+    "Vegetable or canola oil works best; melted butter can be substituted but results in a slightly less tender crumb."
+  ],
+  "nutrition": {
+    "calcium": "65 mg",
+    "calories": "646 kcal",
+    "carbohydrates": "88 g",
+    "cholesterol": "70 mg",
+    "fat": "32 g",
+    "fiber": "1 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "8 g",
+    "polyunsaturatedFat": "11 g",
+    "potassium": "154 mg",
+    "protein": "5 g",
+    "saturatedFat": "11 g",
+    "sodium": "365 mg",
+    "sugar": "75 g",
+    "transFat": "0.4 g",
+    "vitaminA": "4100 IU",
+    "vitaminC": "1 mg"
+  },
+  "prepTime": "30 minutes",
+  "rating": {
+    "count": 243,
+    "value": 4.93
+  },
+  "servings": "12",
+  "tags": {
+    "equipment": [
+      "oven",
+      "muffin-pan",
+      "electric-mixer"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Carrot Cake Cupcakes",
+  "totalTime": "47 minutes"
+}

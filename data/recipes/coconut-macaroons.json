@@ -1,0 +1,105 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "20 minutes",
+  "description": "These homemade Coconut Macaroons come together quickly with simple ingredients and minimal effort. They're chewy, lightly crisp on the outside, and optionally dipped or drizzled with chocolate for an extra indulgent treat.",
+  "equipment": [
+    "Mixing bowls",
+    "Electric or stand mixer",
+    "Baking sheets",
+    "Parchment paper"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "sweetened shredded coconut",
+      "quantity": 14,
+      "unit": "oz"
+    },
+    {
+      "item": "sweetened condensed milk",
+      "quantity": 0.666667,
+      "unit": "cup"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "egg",
+      "quantity": 2
+    },
+    {
+      "item": "semi-sweet chocolate chips",
+      "optional": true,
+      "quantity": 6,
+      "unit": "oz"
+    }
+  ],
+  "id": "coconut-macaroons",
+  "ingredients": [
+    "1 (14-ounce) bag sweetened shredded coconut",
+    "2/3 cup sweetened condensed milk",
+    "1 teaspoon vanilla extract",
+    "1/2 teaspoon salt",
+    "2 large egg whites, room temperature",
+    "6 ounces semi-sweet chocolate chips or chopped chocolate (optional)"
+  ],
+  "instructions": [
+    "Preheat the oven to 325°F. Line two rimmed baking sheets with parchment paper.",
+    "In a large bowl, stir together the coconut, sweetened condensed milk, vanilla extract, and salt.",
+    "In a separate bowl, beat the egg whites on high speed until stiff peaks form, about 3 minutes.",
+    "Gently fold the beaten egg whites into the coconut mixture until just combined.",
+    "Using a 1 1/2-tablespoon scoop, portion the batter onto the prepared baking sheets, spacing cookies about 1 inch apart.",
+    "Bake one sheet at a time for 20-25 minutes, until the tops and bottom edges are golden brown. Let cool completely on the pan.",
+    "If using chocolate, melt it in a microwave-safe bowl in 30-second intervals, stirring between each, until smooth.",
+    "Dip the bottoms of the cooled cookies into the melted chocolate or drizzle chocolate over the tops. Let set at room temperature or chill briefly to firm."
+  ],
+  "link": "https://preppykitchen.com/coconut-macaroons/",
+  "notes": [
+    "Using the entire can of sweetened condensed milk will result in extra gooey macaroons that spread slightly more.",
+    "Chocolate can be skipped entirely; the cookies are delicious on their own.",
+    "To set chocolate quickly, place the tray in the refrigerator or freezer for 10-20 minutes.",
+    "Store cookies in an airtight container at room temperature for up to 1 week."
+  ],
+  "nutrition": {
+    "calcium": "31 mg",
+    "calories": "153 kcal",
+    "carbohydrates": "16 g",
+    "cholesterol": "3 mg",
+    "fat": "9 g",
+    "fiber": "1 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "1 g",
+    "polyunsaturatedFat": "0.2 g",
+    "potassium": "132 mg",
+    "protein": "2 g",
+    "saturatedFat": "7 g",
+    "sodium": "107 mg",
+    "sugar": "14 g",
+    "transFat": "0.01 g",
+    "vitaminA": "26 IU",
+    "vitaminC": "0.3 mg"
+  },
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 98,
+    "value": 4.85
+  },
+  "servings": "24 cookies",
+  "tags": {
+    "equipment": [
+      "oven",
+      "mixer",
+      "baking-sheet"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Coconut Macaroons",
+  "totalTime": "40 minutes"
+}

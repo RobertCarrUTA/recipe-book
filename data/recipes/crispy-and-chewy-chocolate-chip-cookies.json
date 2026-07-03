@@ -1,0 +1,132 @@
+{
+  "additionalTime": "20 minutes",
+  "author": "Jess Smith",
+  "cookTime": "12 minutes",
+  "description": "These crispy and chewy chocolate chip cookies have golden, crisp edges with soft, chewy centers. Chilling the dough briefly and using properly softened butter are the keys to achieving the perfect texture every time.",
+  "equipment": [
+    "Stand mixer",
+    "Mixing bowls",
+    "Half sheet pan",
+    "Parchment paper or silicone baking mat",
+    "Cooling rack"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "light brown sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 2
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "semi-sweet chocolate chips",
+      "quantity": 2.5,
+      "unit": "cup"
+    },
+    {
+      "item": "flaked sea salt",
+      "optional": true,
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "crispy-and-chewy-chocolate-chip-cookies",
+  "ingredients": [
+    "3 cups all-purpose flour (375 g)",
+    "1 teaspoon baking soda",
+    "3/4 teaspoon kosher salt",
+    "1 cup unsalted butter, softened (2 sticks)",
+    "1 cup packed light brown sugar (200 g)",
+    "1 cup granulated sugar (200 g)",
+    "2 large eggs",
+    "2 teaspoons vanilla extract",
+    "2 1/2 cups semi-sweet chocolate chips",
+    "1 teaspoon flaked sea salt (optional)"
+  ],
+  "instructions": [
+    "In a small bowl, whisk together the flour, baking soda, and salt. Set aside.",
+    "In a stand mixer fitted with the paddle attachment, beat the butter, brown sugar, and granulated sugar on medium-high speed until light and creamy, about 3 minutes.",
+    "Add the eggs and vanilla extract and mix on low speed until fully combined, scraping down the bowl as needed.",
+    "Add the flour mixture all at once and mix on low speed just until no dry spots remain. Do not overmix.",
+    "Add the chocolate chips and mix on low just until evenly incorporated.",
+    "Refrigerate the dough for 20 minutes while preheating the oven to 350°F.",
+    "Line a half sheet pan with parchment paper or a silicone baking mat.",
+    "Scoop heaping tablespoon-sized portions of dough (about golf-ball sized) and place on the baking sheet with space for spreading.",
+    "Bake for 9-12 minutes, until edges are lightly golden and centers are pale and soft.",
+    "Immediately tap the baking sheet firmly on the counter a few times to deflate the cookies.",
+    "Sprinkle with flaked sea salt if using.",
+    "Cool on the baking sheet for 5 minutes, then transfer to a cooling rack to cool completely."
+  ],
+  "link": "https://inquiringchef.com/crispy-and-chewy-chocolate-chip-cookies/",
+  "notes": [
+    "Measuring flour and sugar by weight yields the most consistent results.",
+    "Butter should be soft but still cool to the touch for proper creaming.",
+    "Do not skip chilling the dough; it helps create chewy centers.",
+    "Cookies will continue to firm up as they cool."
+  ],
+  "nutrition": {
+    "calcium": "21 mg",
+    "calories": "253 kcal",
+    "carbohydrates": "49 g",
+    "cholesterol": "16 mg",
+    "fat": "8 g",
+    "fiber": "2 g",
+    "iron": "2 mg",
+    "potassium": "115 mg",
+    "protein": "4 g",
+    "saturatedFat": "4 g",
+    "sodium": "426 mg",
+    "sugar": "24 g",
+    "vitaminA": "27 IU"
+  },
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 1320,
+    "value": 4.41
+  },
+  "servings": "24 cookies",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "oven",
+      "baking-sheet",
+      "mixer"
+    ],
+    "rating": "great",
+    "status": "tried"
+  },
+  "title": "Crispy and Chewy Chocolate Chip Cookies",
+  "totalTime": "27 minutes"
+}

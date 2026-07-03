@@ -1,0 +1,103 @@
+{
+  "author": "Natasha of NatashasKitchen.com",
+  "cookTime": "15 minutes",
+  "description": "This pan-seared steak with garlic butter delivers steakhouse-quality flavor at home. The steaks are beautifully seared on the outside, tender on the inside, and finished with an aromatic garlic butter baste.",
+  "equipment": [
+    "Cast iron skillet",
+    "Tongs",
+    "Instant-read thermometer",
+    "Cutting board"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "steak",
+      "note": "2 steaks",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "item": "vegetable oil",
+      "quantity": 0.25,
+      "unit": "tbsp"
+    },
+    {
+      "item": "sea salt",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "garlic",
+      "quantity": 1,
+      "unit": "clove"
+    },
+    {
+      "item": "fresh rosemary",
+      "quantity": 0.5,
+      "unit": "sprig"
+    }
+  ],
+  "id": "pan-seared-steak-garlic-butter",
+  "ingredients": [
+    "1 lb New York strip steaks (2 steaks), ribeye, or top sirloin steaks (about 1 1/4-inch thick)",
+    "1/4 tablespoon vegetable oil or other high-heat cooking oil",
+    "3/4 teaspoon sea salt",
+    "1/2 teaspoon freshly ground black pepper",
+    "1 tablespoon unsalted butter",
+    "1 clove garlic, peeled and quartered",
+    "1/2 sprig fresh rosemary"
+  ],
+  "instructions": [
+    "Thoroughly pat steaks dry with paper towels. Just before cooking, season generously with salt and black pepper.",
+    "Heat a cast iron skillet over medium-high heat until very hot. Add oil and swirl to coat the pan.",
+    "Add steaks to the skillet and sear on the first side for about 4 minutes until a deep brown crust forms. Flip and cook another 3-4 minutes.",
+    "Using tongs, turn steaks onto their sides to render and sear the fat edges, about 1 minute per edge.",
+    "Reduce heat to medium. Add butter, garlic, and rosemary to the pan. Tilt the pan and spoon the melted butter over the steaks continuously for about 1 minute, until the steaks are 5-10°F below desired doneness.",
+    "Transfer steaks to a cutting board, loosely cover, and rest for 10 minutes before slicing. Spoon extra garlic butter over the steaks to serve."
+  ],
+  "link": "https://natashaskitchen.com/pan-seared-steak/",
+  "notes": [
+    "Doneness Guide: Medium-rare remove at 125°F (final 130°F); Medium remove at 135°F (final 140°F); Medium-well remove at 145°F (final 150°F); Well-done remove at 155°F (final 160°F).",
+    "The internal temperature will continue to rise while the steaks rest.",
+    "Serve sliced against the grain for maximum tenderness."
+  ],
+  "nutrition": {
+    "calcium": "19 mg",
+    "calories": "542 kcal",
+    "carbohydrates": "1 g",
+    "cholesterol": "154 mg",
+    "fat": "40 g",
+    "fiber": "1 g",
+    "iron": "4 mg",
+    "potassium": "608 mg",
+    "protein": "46 g",
+    "saturatedFat": "19 g",
+    "sodium": "991 mg",
+    "sugar": "1 g",
+    "vitaminA": "211 IU",
+    "vitaminC": "1 mg"
+  },
+  "prepTime": "5 minutes",
+  "rating": {
+    "count": 611,
+    "value": 4.99
+  },
+  "servings": "2",
+  "tags": {
+    "equipment": [
+      "cast-iron"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Pan-Seared Steak with Garlic Butter",
+  "totalTime": "20 minutes"
+}

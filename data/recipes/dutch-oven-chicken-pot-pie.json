@@ -1,0 +1,140 @@
+{
+  "additionalTime": "5 minutes",
+  "author": "Alison",
+  "cookTime": "1 hour 10 minutes",
+  "description": "This Dutch Oven Chicken Pot Pie is an easy, comforting dinner that feeds a crowd. Using puff pastry, rotisserie chicken, and frozen vegetables makes this a delicious home-cooked meal with minimal prep.",
+  "equipment": [
+    "Dutch oven",
+    "Whisk",
+    "Oven"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "olive oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "garlic",
+      "quantity": 1,
+      "unit": "clove"
+    },
+    {
+      "item": "onion",
+      "quantity": 0.5
+    },
+    {
+      "item": "milk",
+      "quantity": 2.25,
+      "unit": "cup"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "condensed cream of chicken soup",
+      "quantity": 2,
+      "unit": "can"
+    },
+    {
+      "item": "potato",
+      "quantity": 1
+    },
+    {
+      "item": "frozen corn and carrots",
+      "quantity": 12,
+      "unit": "oz"
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "rotisserie chicken",
+      "quantity": {
+        "max": 3,
+        "min": 2
+      },
+      "unit": "cup"
+    },
+    {
+      "item": "puff pastry dough",
+      "quantity": 1,
+      "unit": "sheet"
+    }
+  ],
+  "id": "dutch-oven-chicken-pot-pie",
+  "ingredients": [
+    "1 tablespoon olive oil",
+    "1 clove garlic, minced",
+    "1/2 onion, chopped",
+    "2 1/4 cups milk",
+    "1/4 cup flour",
+    "2 cans condensed cream of chicken soup (no liquid added)",
+    "1 potato, chopped",
+    "12 oz frozen vegetables (corn and carrots)",
+    "1 teaspoon salt",
+    "1 teaspoon pepper",
+    "2-3 cups rotisserie chicken, shredded",
+    "1 sheet frozen puff pastry dough"
+  ],
+  "instructions": [
+    "Preheat oven to 350°F. Heat a Dutch oven over medium heat and add olive oil.",
+    "Remove puff pastry from the freezer and allow it to thaw to room temperature.",
+    "Add onion and garlic to the pot and cook, stirring frequently, for about 5 minutes until softened.",
+    "Whisk together milk and flour, then add to the pot.",
+    "Add all remaining ingredients except the chicken and puff pastry.",
+    "Simmer until potatoes are just cooked through. The mixture will be thick; add additional milk or water if a thinner consistency is desired.",
+    "Add shredded chicken and stir to combine.",
+    "Remove Dutch oven from heat.",
+    "Trim puff pastry to fit inside the Dutch oven using the lid as a guide, then place it on top of the filling.",
+    "Bake uncovered for 35-40 minutes until the pastry is golden brown and the filling is bubbling around the edges.",
+    "Let rest for 5 minutes before serving."
+  ],
+  "link": "https://deliciousmadeeasy.com/2018/12/dutch-oven-chicken-pot-pie/",
+  "notes": [
+    "If short on time, omit the potatoes and proceed directly to baking after heating the other ingredients.",
+    "Uncooked diced chicken breast can be used instead of rotisserie chicken; cook it fully with the onions and garlic before adding other ingredients.",
+    "Always bake with the Dutch oven lid off."
+  ],
+  "nutrition": {
+    "calories": "860 kcal",
+    "carbohydrates": "52 g",
+    "cholesterol": "233 mg",
+    "fat": "40 g",
+    "fiber": "4 g",
+    "protein": "72 g",
+    "saturatedFat": "12 g",
+    "sodium": "2127 mg",
+    "sugar": "3 g",
+    "transFat": "0 g",
+    "unsaturatedFat": "23 g"
+  },
+  "personalNotes": [
+    "I needed to use two of the pastry dough sheets. It was good, set off the fire alarm for my apartment so open up a door or window when cooking this. Clean the dutch oven after cooking cause the residue is kinda hard to remove once it dries."
+  ],
+  "prepTime": "5 minutes",
+  "rating": {
+    "count": 216,
+    "value": 4.4
+  },
+  "servings": "6",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "dutch-oven"
+    ],
+    "rating": "good",
+    "status": "tried"
+  },
+  "title": "Dutch Oven Chicken Pot Pie",
+  "totalTime": "1 hour 20 minutes"
+}

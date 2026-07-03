@@ -1,0 +1,140 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "30 minutes",
+  "description": "Indulge in the zesty delight of this Lemon Poppyseed Sourdough Monkey Bread Skillet, a tangy twist on a classic favorite. Crafted with sourdough discard, each fluffy morsel is coated with a lemon sugar and butter mixture, creating a burst of citrus flavor in every bite. Baked to perfection in a skillet, this delightful treat is finished with an almond glaze, adding a touch of sweetness to complement the tartness of the lemon. Perfect for brunch gatherings or a cozy weekend indulgence, this monkey bread skillet is sure to impress.",
+  "equipment": [
+    "10-inch baking dish or cast iron skillet",
+    "Baking sheet",
+    "Large bowl",
+    "Medium bowl",
+    "Small bowl",
+    "Whisk"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 1.25,
+      "unit": "cup"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "Greek yogurt",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "sourdough discard",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "lemon",
+      "quantity": 3
+    },
+    {
+      "item": "poppy seeds",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "lemon juice",
+      "quantity": 4,
+      "unit": "tbsp"
+    },
+    {
+      "item": "powdered sugar",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "milk",
+      "quantity": {
+        "max": 3,
+        "min": 2
+      },
+      "unit": "tbsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "almond extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "id": "lemon-poppyseed-sourdough-monkey-bread-skillet",
+  "ingredients": [
+    "1 1/4 cups all-purpose flour",
+    "1 1/2 tsp baking powder",
+    "1/4 tsp baking soda",
+    "Pinch of salt",
+    "3/4 cup Greek yogurt (it has to be Greek yogurt for these measurements)",
+    "1/2 cup sourdough discard or unfed starter (sub: 1/4 cup Greek yogurt)",
+    "1 cup granulated sugar",
+    "3 lemons, zested",
+    "3 tbsp poppyseeds",
+    "1/2 cup (1 stick) salted butter, melted",
+    "Juice from 2 lemons",
+    "3/4 cup powdered sugar",
+    "2-3 tbsp milk of choice",
+    "1/2 tsp vanilla extract",
+    "1/2 tsp almond extract"
+  ],
+  "instructions": [
+    "Preheat the oven to 350F. Grease a 10” baking dish or cast iron skillet with nonstick cooking spray.",
+    "In a large bowl, add all of the ingredients for the dough, and mix until well combined. The dough is going to be a little sticky, but just trust the process!",
+    "Lay the dough on a generously floured surface. Sprinkle some more flour on top of the dough and use your hands to knead a couple of times, until the dough becomes smooth. If the dough still seems too sticky, add 1 more tbsp of flour at a time, and continue to knead until it comes together more!",
+    "Divide the dough into 20 pieces (I just tear a piece off that's about ~1 tbsp, they don't have to be perfectly equal in size). Use your hands and fingers to pinch and form the pieces into balls. Place onto a baking sheet lined with parchment paper and set aside.",
+    "Then make the lemon sugar. Toss together the sugar, lemon zest and poppyseeds. Set aside.",
+    "Make the lemon butter. In a small bowl, mix together the melted butter and lemon juice.",
+    "Roll each ball of dough in the lemon butter mixture, then immediately in the lemon poppyseed sugar mixture to coat, and place into the prepared baking dish. Repeat the process of dipping and rolling with the remaining dough balls, until the pan is almost full (you will probably have to snug some in there).",
+    "Bake at 350F for 30-35 minutes, until the top is golden brown.",
+    "While baking, whisk together the ingredients for the almond glaze in a medium bowl.",
+    "Let the monkey bread cool in the pan for 5-10 minutes, then drizzle the top with the almond glaze.",
+    "Serve warm."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/lemon-poppyseed-sourdough-monkey-bread-skillet#recipe",
+  "notes": [
+    "This is a sticky dough!",
+    "Don't be afraid to flour your hands and sprinkle the outside of the pieces of dough with more flour as you are shaping the dough balls.",
+    "Greek yogurt is required for the measurements in this recipe.",
+    "Additional flour can be added 1 tablespoon at a time if the dough is too sticky.",
+    "Serve warm for the best texture and flavor."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "20 minutes",
+  "rating": null,
+  "servings": "1 10-inch skillet",
+  "tags": {
+    "equipment": [
+      "cast-iron-skillet"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Lemon Poppyseed Sourdough Monkey Bread Skillet",
+  "totalTime": "50 minutes"
+}

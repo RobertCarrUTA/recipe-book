@@ -1,0 +1,109 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "50 minutes",
+  "description": "This classic Pecan Pie features a gooey, sweet filling packed with crunchy pecans and baked in a flaky pie crust. It's easy to make and perfect for holidays or any special occasion.",
+  "equipment": [
+    "9-inch pie pan",
+    "Mixing bowl",
+    "Baking sheet",
+    "Wire rack"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "9-inch unbaked pie crust",
+      "quantity": 1
+    },
+    {
+      "item": "pecans",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "light or dark corn syrup",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 3
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 4,
+      "unit": "tbsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.75,
+      "unit": "tsp"
+    }
+  ],
+  "id": "pecan-pie",
+  "ingredients": [
+    "1 (9-inch) unbaked pie crust",
+    "1 1/2 cups coarsely chopped pecans",
+    "1 cup light or dark corn syrup",
+    "3/4 cup granulated sugar",
+    "3 large eggs",
+    "4 tablespoons unsalted butter, melted and slightly cooled",
+    "2 teaspoons vanilla extract",
+    "3/4 teaspoon salt"
+  ],
+  "instructions": [
+    "Position an oven rack in the bottom third of the oven and preheat to 425°F.",
+    "Place the unbaked pie crust in a deep-dish pie pan and crimp the edges. If using homemade dough, freeze the crust for 20 minutes. Place the crust on a baking sheet and fill with chopped pecans.",
+    "In a mixing bowl, whisk together the corn syrup, sugar, eggs, melted butter, vanilla, and salt until well combined. Pour the mixture over the pecans. Optional: decorate the top with additional pecan halves.",
+    "Bake for 15 minutes, then reduce the oven temperature to 350°F. Continue baking for 35-40 minutes, until the filling is puffed and the center slightly wobbles when shaken. Tent loosely with foil if the crust browns too quickly.",
+    "Remove from the oven and cool completely on a wire rack before slicing."
+  ],
+  "link": "https://preppykitchen.com/pecan-pie/",
+  "notes": [
+    "Allow the pie to cool for at least 3 hours before slicing so the filling can fully set.",
+    "If the pie is slightly underbaked and the filling is too soft, chill it after cooling to help firm it up."
+  ],
+  "nutrition": {
+    "calcium": "35 mg",
+    "calories": "416 kcal",
+    "carbohydrates": "55 g",
+    "cholesterol": "85 mg",
+    "fat": "22 g",
+    "fiber": "2 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "11 g",
+    "polyunsaturatedFat": "5 g",
+    "potassium": "132 mg",
+    "protein": "4 g",
+    "saturatedFat": "5 g",
+    "sodium": "312 mg",
+    "sugar": "53 g",
+    "transFat": "0.2 g",
+    "vitaminA": "288 IU",
+    "vitaminC": "0.2 mg"
+  },
+  "prepTime": "30 minutes",
+  "rating": {
+    "count": 238,
+    "value": 5
+  },
+  "servings": "8",
+  "tags": {
+    "equipment": [
+      "oven",
+      "pie-pan"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Pecan Pie",
+  "totalTime": "1 hour 20 minutes"
+}

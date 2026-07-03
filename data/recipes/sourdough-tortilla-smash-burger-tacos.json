@@ -1,0 +1,165 @@
+{
+  "additionalTime": "30 minutes",
+  "author": "Kiley Heard",
+  "cookTime": "30 minutes",
+  "description": "Enjoy a delicious twist on a classic with Sourdough Tortilla Smash Burger Tacos. These tacos feature juicy smash burger patties that are smashed directly onto homemade sourdough tortillas and cooked until crispy, then topped with melted cheese, crisp lettuce, tangy pickles, and a homemade burger sauce. Perfect for a quick, flavorful meal that combines the best of both tacos and burgers.",
+  "equipment": [
+    "Cast-iron skillet",
+    "Large bowl",
+    "Rolling pin",
+    "Small bowl",
+    "Spatula"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "sourdough discard",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "olive oil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 1.666667,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "paprika",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "onion powder",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic powder",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "dijon mustard",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "pickles",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "pickle brine",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "honey",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "worcestershire sauce",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground beef",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "item": "Gouda cheese"
+    },
+    {
+      "item": "lettuce",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "pickles"
+    },
+    {
+      "item": "sourdough tortillas",
+      "quantity": 4
+    }
+  ],
+  "id": "sourdough-tortilla-smash-burger-tacos",
+  "ingredients": [
+    "1/2 cup sourdough discard",
+    "1/4 cup olive oil",
+    "1/3 cup water",
+    "1 2/3 cups all-purpose flour",
+    "1/2 tsp salt",
+    "1/2 cup mayonnaise of choice",
+    "3/4 tsp paprika",
+    "1/2 tsp onion powder",
+    "1/4 tsp garlic powder",
+    "1/2 tsp Dijon mustard",
+    "2 tbsp minced pickles",
+    "1 tbsp pickle brine",
+    "Pinch of black pepper",
+    "1 tsp honey",
+    "1/4 tsp Worcestershire sauce",
+    "1 lb grass-fed ground beef",
+    "Salt and pepper",
+    "4 sourdough tortillas",
+    "Cheese of choice (I used grated Gouda)",
+    "1 cup lettuce of choice",
+    "Pickles",
+    "Homemade burger sauce"
+  ],
+  "instructions": [
+    "Start by preparing the sourdough tortilla dough. In a large bowl, mix together the sourdough discard, olive oil, and water.",
+    "Add in the flour and salt, and mix until a dough forms. Knead for 1-2 minutes with your hands, until there are no dry spots and the dough is smooth.",
+    "Cover with a damp paper towel, and rest at room temperature for 30 minutes.",
+    "While resting, make the burger sauce by combining all of the ingredients in a small bowl, and mixing until well combined. Place into the fridge until ready to use.",
+    "Preheat a large cast-iron skillet to medium-high heat.",
+    "Lightly flour a surface and turn the dough over. Divide into 10 pieces.",
+    "Roll each piece of the dough out into a thin circle (~1/8” thick, it should be almost see through).",
+    "Dry cook individually on medium-high heat for ~1 minute on each side. Flip when the bubbles appear and the edges are firm, there should be some nice brown spots! Remove from the pan and place onto a plate or wrap in foil until ready to use.",
+    "Portion the meat into 4, 3.5oz balls. Season each with salt and pepper to taste.",
+    "Heat a pan over high heat. Once hot, place a ball of seasoned beef onto the pan. Depending on the size of the pan, you can do more than 1 at once, if desired!",
+    "Quickly place a sourdough tortilla on top of the beef, and smash it down until very thin, using a large bowl, spatula, or burger press. Cook for ~3 minutes, or until the beef is darkened and crisp.",
+    "Use a spatula to flip, reduce the heat to medium, and add the cheese on top of the beef. Cover and allow the cheese to melt, for ~1-2 more minutes.",
+    "Remove from the pan and top with lettuce, pickles, and the homemade burger sauce."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/sourdough-tortilla-smash-burger-tacos#recipe",
+  "notes": [
+    "The dough makes 10 tortillas, but only 4 are needed for the tacos. Extra tortillas can be saved for later.",
+    "Roll the tortillas very thin, almost see-through, for the best results.",
+    "A cast-iron skillet helps create a crisp smash burger crust.",
+    "Grated Gouda cheese was used in the original recipe, but any melting cheese will work.",
+    "The burger sauce can be prepared ahead of time and refrigerated until needed."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 2,
+    "value": 4.75
+  },
+  "servings": "4",
+  "tags": {
+    "equipment": [
+      "cast-iron-skillet"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Sourdough Tortilla Smash Burger Tacos",
+  "totalTime": "1 hour 20 minutes"
+}

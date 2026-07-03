@@ -1,0 +1,123 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "10 minutes",
+  "description": "These ultra-easy Peanut Butter Cookies are soft, tender, and melt-in-your-mouth with the perfect balance of salty and sweet. Made with simple pantry ingredients, they bake quickly and set up beautifully as they cool.",
+  "equipment": [
+    "Baking sheet",
+    "Parchment paper",
+    "Stand mixer"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "peanut butter",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "light brown sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "optional": true,
+      "quantity": {
+        "max": 0.5,
+        "min": 0.25
+      },
+      "unit": "tsp"
+    }
+  ],
+  "id": "peanut-butter-cookies",
+  "ingredients": [
+    "1 1/2 cups all-purpose flour (180 g)",
+    "3/4 teaspoon baking powder (3 g)",
+    "1/2 cup unsalted butter, room temperature (113 g)",
+    "1 cup peanut butter (250 g)",
+    "1/2 cup light brown sugar, lightly packed (100 g)",
+    "1/2 cup granulated sugar (100 g)",
+    "1 large egg, room temperature",
+    "1 teaspoon vanilla extract",
+    "1/4 to 1/2 teaspoon salt (optional, if peanut butter is unsalted)"
+  ],
+  "instructions": [
+    "Preheat the oven to 350°F and line a baking sheet with parchment paper.",
+    "Sift the flour and baking powder together, then whisk to combine.",
+    "In a stand mixer fitted with the paddle attachment, cream the butter and both sugars until light and fluffy. Add optional salt if needed.",
+    "Add the peanut butter and mix until fully incorporated.",
+    "Mix in the egg and vanilla extract, scraping down the bowl as needed.",
+    "Add the flour mixture and beat just until combined.",
+    "Roll the dough into 1-inch balls and place them on the prepared baking sheet.",
+    "Flatten each cookie with a fork in a criss-cross pattern.",
+    "Bake for about 10 minutes, until the cookies are just set but still soft.",
+    "Allow cookies to cool completely on the baking sheet before transferring."
+  ],
+  "link": "https://preppykitchen.com/peanut-butter-cookies-recipe/",
+  "notes": [
+    "Cookies will look underbaked when removed from the oven; they continue to set as they cool.",
+    "Let cookies rest on the baking sheet until fully cooled to avoid breaking.",
+    "If your peanut butter is not salty, add 1/4 to 1/2 teaspoon salt to the dough.",
+    "For a classic look, use a fork dipped in sugar to flatten the cookies."
+  ],
+  "nutrition": {
+    "calcium": "20 mg",
+    "calories": "193 kcal",
+    "carbohydrates": "16 g",
+    "cholesterol": "23 mg",
+    "fat": "13 g",
+    "fiber": "1 g",
+    "iron": "0.8 mg",
+    "potassium": "129 mg",
+    "protein": "5 g",
+    "saturatedFat": "5 g",
+    "sodium": "115 mg",
+    "sugar": "7 g",
+    "vitaminA": "170 IU"
+  },
+  "prepTime": "1 minute",
+  "rating": {
+    "count": 5485,
+    "value": 4.95
+  },
+  "servings": "18 cookies",
+  "tags": {
+    "equipment": [
+      "oven",
+      "baking-sheet",
+      "mixer"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Peanut Butter Cookies",
+  "totalTime": "15 minutes"
+}

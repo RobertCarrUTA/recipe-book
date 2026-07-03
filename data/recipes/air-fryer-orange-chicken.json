@@ -1,0 +1,172 @@
+{
+  "author": "John Kanell",
+  "cookTime": "25 minutes",
+  "description": "Easy Air Fryer Orange Chicken is about to be your new favorite dinner recipe! It comes together quickly with simple ingredients. Serve it with rice for a satisfying dinner.",
+  "equipment": [
+    "Air fryer",
+    "Large bowl",
+    "Medium bowl",
+    "Shallow bowl",
+    "Small bowl",
+    "Small saucepan"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "large egg",
+      "quantity": 1
+    },
+    {
+      "item": "salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "boneless skinless chicken breast or thighs",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "item": "cornstarch or potato starch",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "non-aerosolized cooking spray"
+    },
+    {
+      "item": "fresh orange juice",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "soy sauce",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "packed light brown sugar",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "rice vinegar",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "orange zest",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "fresh ginger",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "toasted sesame oil",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "red pepper flakes",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic",
+      "quantity": 3,
+      "unit": "clove"
+    },
+    {
+      "item": "water",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cornstarch",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "sesame seeds",
+      "optional": true
+    },
+    {
+      "item": "green onion",
+      "optional": true
+    }
+  ],
+  "id": "air-fryer-orange-chicken",
+  "ingredients": [
+    "1 large egg, beaten",
+    "1/4 teaspoon salt",
+    "1 pound boneless skinless chicken breast or thighs, cut into 1-inch cubes",
+    "1 cup cornstarch or potato starch",
+    "Non-aerosolized cooking spray",
+    "1/2 cup fresh orange juice",
+    "1/4 cup soy sauce",
+    "1/4 cup packed light brown sugar",
+    "1 tablespoon rice vinegar",
+    "1 tablespoon orange zest",
+    "1 teaspoon minced fresh ginger",
+    "1 teaspoon toasted sesame oil",
+    "1/8 teaspoon red pepper flakes",
+    "3 garlic cloves, minced",
+    "2 tablespoons water",
+    "1 tablespoon cornstarch",
+    "Sesame seeds and sliced green onions, for serving"
+  ],
+  "instructions": [
+    "In a medium bowl, lightly beat the egg and salt together. Add the cubed chicken and stir to coat the chicken well.",
+    "In a shallow bowl, add the cornstarch and stir to break up any large clumps. Work with a few pieces at a time, transfer the chicken pieces to the cornstarch and toss until well coated. (Coat only what will fit in your basket at one time.)",
+    "Preheat the air fryer to 400°F.",
+    "Place the dredged chicken pieces in a single layer in the air fryer basket. Spray the chicken generously with cooking spray.",
+    "Air fry for 6 minutes. Flip the chicken pieces and spray them with cooking spray again. Continue to air fry until golden and crispy, about 6 minutes more. Transfer the cooked chicken to a large bowl, and continue dredging and cooking the remaining pieces.",
+    "While the last batch of chicken cooks, combine the orange juice, soy sauce, sugar, vinegar, zest, ginger, oil, pepper, and garlic in a small saucepan. Bring to a boil over medium-high heat, and cook until the sugar is dissolved.",
+    "Dissolve the cornstarch in the water in a small bowl, and whisk it into the saucepan. Continue cooking, whisking constantly, until thickened and translucent, about 1 minute.",
+    "Pour the sauce over the chicken and toss to coat. Serve immediately, topped with sesame seeds and green onions."
+  ],
+  "link": "https://preppykitchen.com/air-fryer-orange-chicken/#recipe",
+  "notes": [
+    "Try not to leave any dry spots on the coated chicken. Those areas will turn sticky, not crispy, so coat the chicken well with the spray oil.",
+    "Spray the chicken pieces with oil again after flipping them to coat the other side.",
+    "Keep the cooked chicken warm while you finish each batch. If cooking in smaller batches, heat an oven or toaster oven to 200°F and place cooked chicken on a wire rack set over a sheet pan."
+  ],
+  "nutrition": {
+    "calcium": "38 mg",
+    "calories": "367 kcal",
+    "carbohydrates": "50 g",
+    "cholesterol": "119 mg",
+    "fat": "5 g",
+    "fiber": "1 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "2 g",
+    "polyunsaturatedFat": "1 g",
+    "potassium": "564 mg",
+    "protein": "28 g",
+    "saturatedFat": "1 g",
+    "sodium": "1114 mg",
+    "sugar": "16 g",
+    "transFat": "0.02 g",
+    "vitaminA": "189 IU",
+    "vitaminC": "20 mg"
+  },
+  "personalNotes": [],
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 6,
+    "value": 4.84
+  },
+  "servings": "4 servings",
+  "tags": {
+    "equipment": [
+      "air-fryer",
+      "saucepan"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Air Fryer Orange Chicken",
+  "totalTime": "40 minutes"
+}

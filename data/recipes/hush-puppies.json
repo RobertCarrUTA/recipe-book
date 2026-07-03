@@ -1,0 +1,130 @@
+{
+  "additionalTime": "10 minutes",
+  "author": "John Kanell",
+  "cookTime": "20 minutes",
+  "description": "Hush Puppies are a Southern classic-crispy on the outside, fluffy on the inside, and perfect for fish fries or family barbecues. These are easy to make with simple pantry ingredients and fry up beautifully golden.",
+  "equipment": [
+    "Dutch oven or large pot",
+    "Mixing bowls",
+    "Baking sheet or plate",
+    "Slotted spoon or spider strainer",
+    "Deep-fry or digital thermometer"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "yellow cornmeal",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "buttermilk",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "onion",
+      "quantity": 0.5
+    },
+    {
+      "item": "peanut or vegetable oil"
+    }
+  ],
+  "id": "hush-puppies",
+  "ingredients": [
+    "1 cup yellow cornmeal",
+    "3/4 cup all-purpose flour",
+    "2 tablespoons granulated sugar",
+    "1 1/2 teaspoons baking powder",
+    "1 teaspoon salt",
+    "1/4 teaspoon baking soda",
+    "1/4 teaspoon ground black pepper",
+    "3/4 cup buttermilk",
+    "1 large egg",
+    "1/2 small onion, grated",
+    "Peanut or vegetable oil, for frying"
+  ],
+  "instructions": [
+    "In a large bowl, whisk together the cornmeal, flour, sugar, baking powder, salt, baking soda, and black pepper.",
+    "In a separate bowl, whisk together the buttermilk and egg until well combined. Add the wet mixture and grated onion to the dry ingredients and stir until just combined. Let the batter rest for 10 minutes.",
+    "Heat about 2 inches of oil in a large Dutch oven or heavy pot to 350°F. Line a baking sheet or plate with paper towels.",
+    "Using two spoons, drop tablespoon-sized portions of batter into the hot oil, working in batches to avoid overcrowding.",
+    "Fry until golden brown, turning halfway through, about 3-4 minutes total.",
+    "Remove hush puppies with a slotted spoon or spider strainer and drain on paper towels. Serve hot."
+  ],
+  "link": "https://preppykitchen.com/hush-puppies/",
+  "notes": [
+    "Do not overmix the batter or the hush puppies will be dense instead of fluffy.",
+    "Letting the batter rest allows the cornmeal to absorb moisture and thicken properly.",
+    "Use a thermometer to maintain oil temperature at 350°F for best results.",
+    "Fry in small batches so the oil temperature does not drop too low."
+  ],
+  "nutrition": {
+    "calcium": "104 mg",
+    "calories": "446 kcal",
+    "carbohydrates": "38 g",
+    "cholesterol": "34 mg",
+    "fat": "31 g",
+    "fiber": "3 g",
+    "iron": "2 mg",
+    "monounsaturatedFat": "14 g",
+    "polyunsaturatedFat": "10 g",
+    "potassium": "164 mg",
+    "protein": "6 g",
+    "saturatedFat": "6 g",
+    "sodium": "584 mg",
+    "sugar": "6 g",
+    "transFat": "0.003 g",
+    "vitaminA": "95 IU",
+    "vitaminC": "0.4 mg"
+  },
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 1,
+    "value": 5
+  },
+  "servings": "6-8 (24 hush puppies)",
+  "tags": {
+    "equipment": [
+      "deep-fryer",
+      "dutch-oven",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Hush Puppies",
+  "totalTime": "40 minutes"
+}

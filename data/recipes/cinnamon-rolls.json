@@ -1,0 +1,177 @@
+{
+  "additionalTime": "2 hours 30 minutes",
+  "author": "John Kanell",
+  "cookTime": "20 minutes",
+  "description": "These easy homemade Cinnamon Rolls bake up soft, fluffy, and gooey, with tender dough swirled with cinnamon brown sugar and finished with a rich cream cheese glaze.",
+  "equipment": [
+    "Mixing bowls",
+    "Stand mixer",
+    "9x13-inch baking pan",
+    "Rolling pin",
+    "Sharp serrated knife or unflavored dental floss",
+    "Wire rack"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "milk",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 5,
+      "unit": "tbsp"
+    },
+    {
+      "item": "active dry yeast",
+      "quantity": 2.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 4.666667,
+      "unit": "cup"
+    },
+    {
+      "item": "light brown sugar",
+      "quantity": 0.333333,
+      "unit": "cup"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 6,
+      "unit": "tbsp"
+    },
+    {
+      "item": "light brown sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "ground cinnamon",
+      "quantity": 1.5,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cream cheese",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "item": "butter",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "powdered sugar",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "milk",
+      "quantity": {
+        "max": 2,
+        "min": 1
+      },
+      "unit": "tbsp"
+    }
+  ],
+  "id": "cinnamon-rolls",
+  "ingredients": [
+    "1 cup warm milk (110-120°F)",
+    "5 tablespoons granulated sugar",
+    "2 1/4 teaspoons active dry yeast",
+    "4 2/3 cups all-purpose flour, plus more for dusting",
+    "1/3 cup packed light brown sugar",
+    "1/2 cup unsalted butter, melted",
+    "1 large egg, room temperature",
+    "1 tablespoon vanilla extract",
+    "1 1/2 teaspoons salt",
+    "6 tablespoons unsalted butter, room temperature (for filling)",
+    "1/2 cup light brown sugar (for filling)",
+    "1 1/2 tablespoons ground cinnamon (for filling)",
+    "4 ounces cream cheese, room temperature",
+    "2 tablespoons butter, room temperature",
+    "1 teaspoon vanilla extract (for glaze)",
+    "Pinch of salt",
+    "2 cups powdered sugar",
+    "1 to 2 tablespoons milk"
+  ],
+  "instructions": [
+    "In a large mixing bowl or the bowl of a stand mixer, combine warm milk, granulated sugar, and yeast. Let stand until foamy, about 5 minutes.",
+    "Add remaining dough ingredients and mix on low speed until combined. Increase to medium-low and knead for 8-10 minutes until the dough is springy and tacky but not sticky.",
+    "Transfer dough to a lightly oiled bowl, cover, and let rise in a warm place until doubled in size, about 1 1/2 to 2 hours.",
+    "Grease a 9x13-inch baking pan. Turn dough out onto a floured surface and roll into a 12x24-inch rectangle.",
+    "Spread softened butter evenly over the dough, leaving a 1/2-inch border on one long side. Mix brown sugar and cinnamon and sprinkle evenly over the butter.",
+    "Roll dough tightly into a log starting from the long side opposite the border. Cut into 12 equal rolls and place cut-side down in the baking dish.",
+    "Cover loosely and let rise until almost doubled, about 1 hour. Preheat oven to 350°F.",
+    "Bake uncovered for 20-25 minutes until lightly browned. Transfer to a wire rack.",
+    "While rolls bake, beat cream cheese, butter, vanilla, and salt until smooth. Add powdered sugar and mix until combined, adding milk as needed for desired consistency.",
+    "Spread one-third of the glaze over the rolls immediately after baking. After 5 minutes, spread remaining glaze and serve warm."
+  ],
+  "link": "https://preppykitchen.com/skillet-cinnamon-rolls/",
+  "notes": [
+    "Knead the dough thoroughly for best texture, either with a stand mixer or by hand.",
+    "Frosting the rolls in two stages allows the glaze to melt into the rolls while still building a thick topping.",
+    "Store covered at room temperature for up to 2 days."
+  ],
+  "nutrition": {
+    "calcium": "69 mg",
+    "calories": "504 kcal",
+    "carbohydrates": "74 g",
+    "cholesterol": "68 mg",
+    "fat": "20 g",
+    "fiber": "2 g",
+    "iron": "3 mg",
+    "monounsaturatedFat": "5 g",
+    "polyunsaturatedFat": "1 g",
+    "potassium": "132 mg",
+    "protein": "7 g",
+    "saturatedFat": "12 g",
+    "sodium": "359 mg",
+    "sugar": "35 g",
+    "transFat": "1 g",
+    "vitaminA": "657 IU",
+    "vitaminC": "0.04 mg"
+  },
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 701,
+    "value": 4.96
+  },
+  "servings": "12",
+  "tags": {
+    "equipment": [
+      "oven",
+      "stand-mixer",
+      "baking-pan"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Cinnamon Rolls",
+  "totalTime": "3 hours 5 minutes"
+}

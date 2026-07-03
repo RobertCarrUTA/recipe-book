@@ -1,0 +1,157 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "15 minutes",
+  "description": "Enjoy the perfect blend of crispy and sweet with Sourdough Fried Peaches. These juicy peach slices are dipped in a tangy sourdough batter, fried to golden perfection, and coated in a cinnamon sugar mixture. Served with a rich homemade crème anglaise, this dessert is a delightful twist on classic Southern comfort food.",
+  "equipment": [
+    "Deep saucepan",
+    "Large bowl",
+    "Medium bowl",
+    "Medium pot",
+    "Slotted spoon",
+    "Strainer",
+    "Whisk",
+    "Wire cooling rack"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "heavy cream",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "whole milk",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "egg",
+      "quantity": 4,
+      "unit": "yolk"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.333333,
+      "unit": "cup"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "whole milk",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "sourdough discard",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "salted butter",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "peach",
+      "quantity": 3
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 0.5,
+      "unit": "tbsp"
+    }
+  ],
+  "id": "sourdough-fried-peaches-with-creme-anglaise",
+  "ingredients": [
+    "3/4 cup heavy cream",
+    "3/4 cup whole milk",
+    "1 vanilla bean (or 1 tsp vanilla extract), beans removed",
+    "4 egg yolks",
+    "1/3 cup granulated sugar",
+    "1 cup all-purpose flour",
+    "2 tsp baking powder",
+    "1/2 tsp salt",
+    "1 tbsp granulated sugar",
+    "3/4 cup whole milk, at room temperature",
+    "1/2 cup sourdough discard (sub: Greek yogurt)",
+    "1 egg, at room temperature",
+    "2 tbsp salted butter, melted and slightly cooled",
+    "3 peaches",
+    "2 tbsp flour",
+    "1/2 cup granulated sugar",
+    "1/2 tbsp cinnamon"
+  ],
+  "instructions": [
+    "In a medium pot over medium heat, add the heavy cream and milk.",
+    "Add the vanilla bean seeds, mix, and bring to a simmer.",
+    "In a separate medium bowl, add the egg yolks and sugar. Whisk until light in color.",
+    "Once the milk mixture is simmering, slowly pour it into the eggs to temper, continuously whisking. Add the mixture back to the pot, and bring back to medium heat. Stir continuously, until slightly thickened. Strain the mixture into a bowl, and place it into the fridge to cool.",
+    "In a medium bowl, whisk together the flour, baking powder, salt, and sugar. Set aside.",
+    "In a separate large bowl, whisk together the milk, sourdough discard, and egg until well combined.",
+    "Add the dry ingredients to the wet, and whisk. Then, add the melted butter and whisk until just incorporated. Set aside.",
+    "Heat at least two inches of oil in a deep saucepan over medium-high heat (350F-375F).",
+    "Slice the peaches into eighths, and dust with flour.",
+    "Working in batches, drench the peach slices into the batter and slightly shake off any excess. Drop them into the hot oil and fry each side for 1-2 minutes, until golden brown.",
+    "Use a slotted spoon to remove, and place on a wire cooling rack that is lined with paper towels.",
+    "While still warm, roll the peaches in a cinnamon sugar mixture.",
+    "Serve warm with the crème anglaise."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/sourdough-fried-peaches-with-creme-anglaise#recipe",
+  "notes": [
+    "Greek yogurt can be substituted for sourdough discard.",
+    "Use a thermometer to maintain oil between 350°F and 375°F.",
+    "Straining the crème anglaise creates a smoother texture.",
+    "Serve immediately while the peaches are warm and crispy.",
+    "Fresh ripe peaches work best."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "15 minutes",
+  "rating": null,
+  "servings": "3-4 servings",
+  "tags": {
+    "equipment": [
+      "deep-saucepan"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Sourdough Fried Peaches with Crème Anglaise",
+  "totalTime": "30 minutes"
+}

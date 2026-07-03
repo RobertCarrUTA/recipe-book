@@ -1,0 +1,133 @@
+{
+  "additionalTime": "6 hours",
+  "author": "John Kanell",
+  "cookTime": "1 hour",
+  "description": "This classic baked Cheesecake is ultra-creamy with a crunchy graham cracker crust and a smooth, crack-free finish-no water bath required. With simple techniques and a gradual cool-down, it's an easy, reliable showstopper dessert.",
+  "equipment": [
+    "Electric or stand mixer with whisk attachment",
+    "Mixing bowls",
+    "9-inch springform pan",
+    "Baking sheet",
+    "Offset spatula (optional)"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "graham cracker crumbs",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cream cheese",
+      "quantity": 24,
+      "unit": "oz"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "lemon juice",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "egg",
+      "quantity": 3
+    },
+    {
+      "item": "sour cream",
+      "quantity": 0.5,
+      "unit": "cup"
+    }
+  ],
+  "id": "classic-cheesecake",
+  "ingredients": [
+    "1 1/2 cups graham cracker crumbs (180 g)",
+    "1/4 cup unsalted butter, melted",
+    "2 tablespoons granulated sugar (for crust)",
+    "3 (8-ounce) blocks cream cheese, room temperature",
+    "1 cup granulated sugar (200 g)",
+    "1/4 teaspoon salt",
+    "2 teaspoons vanilla extract",
+    "1 teaspoon lemon juice",
+    "3 large eggs, room temperature",
+    "1/2 cup sour cream, room temperature (120 g)"
+  ],
+  "instructions": [
+    "Preheat the oven to 350°F.",
+    "In a medium bowl, combine graham cracker crumbs, melted butter, and 2 tablespoons sugar until the mixture resembles wet sand.",
+    "Press the crumbs into the bottom and slightly up the sides of a 9-inch springform pan. Place the pan on a baking sheet.",
+    "Bake the crust for 10 minutes, then remove and let cool while preparing the filling.",
+    "Place the cream cheese in a large bowl or stand mixer fitted with the whisk attachment. Beat on medium-low until smooth, about 1 minute.",
+    "Add the sugar, salt, vanilla, and lemon juice; beat until fully combined and smooth, scraping down the bowl as needed.",
+    "With the mixer on medium-low, add the eggs one at a time, mixing just until incorporated. Mix in the sour cream until smooth.",
+    "Pour the filling into the cooled crust and smooth the top.",
+    "Bake for 15 minutes, then reduce the oven temperature to 300°F and bake for another 30-35 minutes, until the edges are slightly puffed and the center gently wobbles.",
+    "Turn off the oven and leave the cheesecake inside with the door closed for 1 hour.",
+    "Remove and cool at room temperature for 1 hour, then refrigerate for at least 6 hours before serving."
+  ],
+  "link": "https://preppykitchen.com/cheesecake-recipe/",
+  "notes": [
+    "Use the whisk attachment (not the paddle) to ensure a smoother filling without lumps.",
+    "Do not increase mixer speed above medium-low to avoid incorporating excess air.",
+    "Gently tap the pan on the counter to release air bubbles before baking.",
+    "Cool the cheesecake gradually to prevent cracks.",
+    "For clean slices, warm a sharp knife in hot water, wipe dry, and clean between cuts."
+  ],
+  "nutrition": {
+    "calcium": "81 mg",
+    "calories": "388 kcal",
+    "carbohydrates": "30 g",
+    "cholesterol": "120 mg",
+    "fat": "27 g",
+    "fiber": "0.4 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "7 g",
+    "polyunsaturatedFat": "1 g",
+    "potassium": "126 mg",
+    "protein": "6 g",
+    "saturatedFat": "15 g",
+    "sodium": "317 mg",
+    "sugar": "24 g",
+    "transFat": "0.2 g",
+    "vitaminA": "1007 IU",
+    "vitaminC": "0.2 mg"
+  },
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 624,
+    "value": 4.96
+  },
+  "servings": "12",
+  "tags": {
+    "equipment": [
+      "oven",
+      "mixer",
+      "springform-pan"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Classic Cheesecake",
+  "totalTime": "7 hours 10 minutes"
+}

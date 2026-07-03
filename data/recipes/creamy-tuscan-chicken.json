@@ -1,0 +1,142 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "15 minutes",
+  "description": "This Creamy Tuscan Chicken is a quick and flavorful weeknight dinner featuring pan-seared chicken breasts in a rich cream sauce with sun-dried tomatoes, spinach, garlic, and parmesan.",
+  "equipment": [
+    "Large skillet"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "chicken breast",
+      "quantity": 4
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "butter",
+      "quantity": 4,
+      "unit": "tbsp"
+    },
+    {
+      "item": "garlic",
+      "quantity": 4,
+      "unit": "clove"
+    },
+    {
+      "item": "chicken broth",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "sun-dried tomatoes in oil",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "baby spinach",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "oregano",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "heavy cream",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "parmesan cheese",
+      "quantity": 0.5,
+      "unit": "cup"
+    }
+  ],
+  "id": "creamy-tuscan-chicken",
+  "ingredients": [
+    "4 chicken breasts, pounded to an even thickness",
+    "1/4 cup all-purpose flour, plus 1 tablespoon",
+    "1 teaspoon salt",
+    "1 teaspoon black pepper",
+    "2 tablespoons oil",
+    "4 tablespoons butter",
+    "4 cloves garlic, minced",
+    "3/4 cup chicken broth",
+    "1/2 cup sun-dried tomatoes in oil, chopped",
+    "2 cups baby spinach",
+    "1 teaspoon oregano",
+    "1 1/2 cups heavy cream",
+    "1/2 cup grated parmesan cheese"
+  ],
+  "instructions": [
+    "Pound the chicken breasts to about 1 inch thick, season with salt and pepper, and dredge in flour.",
+    "Heat oil and 2 tablespoons of butter in a large skillet over medium-high heat. Add two chicken breasts, cover, and cook about 4 minutes per side until golden and cooked through. Transfer to a plate and repeat with remaining chicken. Wipe pan if needed.",
+    "Reduce heat to medium-low. Add remaining butter to the skillet. Once melted, add garlic and 1 tablespoon flour, stirring constantly for about 45 seconds.",
+    "Whisk in chicken broth and oregano. Cook until reduced, then stir in heavy cream, parmesan cheese, and sun-dried tomatoes.",
+    "Once the sauce is simmering, add spinach and cook until wilted.",
+    "Return chicken to the pan, spoon sauce over the top, warm through, and serve."
+  ],
+  "link": "https://preppykitchen.com/creamy-tuscan-chicken/",
+  "notes": [
+    "Pat chicken dry before dredging so the flour adheres better.",
+    "For a gluten-free version, substitute all-purpose flour with a gluten-free flour.",
+    "Heavy cream can be replaced with half-and-half for a lighter sauce.",
+    "Add red chili flakes for extra heat if desired."
+  ],
+  "nutrition": {
+    "calcium": "186 mg",
+    "calories": "640 kcal",
+    "carbohydrates": "13 g",
+    "cholesterol": "233 mg",
+    "fat": "48 g",
+    "fiber": "2 g",
+    "iron": "2 mg",
+    "potassium": "1038 mg",
+    "protein": "39 g",
+    "saturatedFat": "26 g",
+    "sodium": "889 mg",
+    "sugar": "4 g",
+    "transFat": "1 g",
+    "vitaminA": "2543 IU",
+    "vitaminC": "11 mg"
+  },
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 33,
+    "value": 5
+  },
+  "servings": "6",
+  "tags": {
+    "equipment": [
+      "skillet"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Creamy Tuscan Chicken",
+  "totalTime": "30 minutes"
+}

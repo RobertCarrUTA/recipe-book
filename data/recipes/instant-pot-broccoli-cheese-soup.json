@@ -1,0 +1,113 @@
+{
+  "author": "Savory Tooth",
+  "cookTime": "15 minutes",
+  "description": "This Instant Pot Broccoli Cheese Soup comes together quickly and easily using a pressure cooker. The result is a rich, creamy soup with tender broccoli and plenty of melted cheddar, perfect for a comforting meal.",
+  "equipment": [
+    "6-quart Instant Pot or electric pressure cooker",
+    "Cutting board",
+    "Knife",
+    "Wooden spoon"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "broccoli",
+      "quantity": 4,
+      "unit": "cup"
+    },
+    {
+      "item": "cheddar cheese",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "item": "heavy whipping cream",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "onion",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "carrot",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "celery",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "garlic",
+      "quantity": 5,
+      "unit": "clove"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "id": "instant-pot-broccoli-cheese-soup",
+  "ingredients": [
+    "4 cups chopped broccoli florets",
+    "3 cups shredded cheddar cheese",
+    "2 cups heavy whipping cream",
+    "1 1/2 cups diced onion",
+    "1 cup diced carrots",
+    "1 cup diced celery",
+    "5 cloves garlic, minced",
+    "2 tablespoons salted butter",
+    "Salt and black pepper, to taste",
+    "2 cups water"
+  ],
+  "instructions": [
+    "Select sauté mode on the Instant Pot and melt the butter. Add diced onion, carrots, and celery, and cook for about 5 minutes until onions are soft, stirring frequently. Turn off sauté mode.",
+    "Add broccoli florets and 2 cups of water. Stir to combine.",
+    "Secure the lid, seal the vent, and pressure cook on high for 5 minutes. Immediately perform a quick pressure release.",
+    "Uncover the pot and select sauté mode. Stir in heavy whipping cream and minced garlic.",
+    "Gradually add shredded cheddar cheese, stirring constantly until fully melted and well incorporated. Turn off sauté mode.",
+    "Season with salt and black pepper to taste and serve hot."
+  ],
+  "link": "https://www.savorytooth.com/instant-pot-broccoli-cheese-soup/",
+  "notes": [
+    "Broccoli: Cut florets into small pieces (no larger than 2 inches) for even cooking. Frozen florets or a mix of broccoli and cauliflower can also be used.",
+    "Cheese: Cheddar works best, but other soft shredded cheeses may be substituted.",
+    "Liquid: Water can be replaced with chicken or vegetable broth for more flavor.",
+    "Texture: For a thicker soup, blend with an immersion blender.",
+    "Storage: Store leftovers in an airtight container in the refrigerator or freezer. Thaw overnight before reheating."
+  ],
+  "nutrition": {
+    "calcium": "39%",
+    "calories": "560 kcal",
+    "cholesterol": "162 mg",
+    "fat": "52 g",
+    "fiber": "2.5 g",
+    "iron": "3%",
+    "protein": "15 g",
+    "saturatedFat": "32 g",
+    "sodium": "370 mg",
+    "sugar": "7 g",
+    "totalCarbohydrates": "12 g",
+    "vitaminA": "101%",
+    "vitaminC": "72%"
+  },
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 51,
+    "value": 4.8
+  },
+  "servings": "5",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "instant-pot"
+    ],
+    "rating": "great",
+    "status": "tried"
+  },
+  "title": "Instant Pot Broccoli Cheese Soup",
+  "totalTime": "30 minutes"
+}

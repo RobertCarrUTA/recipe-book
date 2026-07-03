@@ -1,0 +1,174 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "30 minutes",
+  "description": "These Pumpkin Cinnamon Roll Pancakes are soft, fluffy, and full of warm pumpkin spice flavor, with caramelized cinnamon sugar swirls that melt into every bite. Cooked to golden perfection and served warm with whipped honey cinnamon butter and a drizzle of maple syrup, they're perfect for a cozy fall breakfast or festive weekend brunch. They taste just like your favorite pumpkin cinnamon rolls-made even easier in pancake form.",
+  "equipment": [
+    "Baking sheet",
+    "Cookie scoop",
+    "Electric handheld mixer",
+    "Large nonstick skillet or griddle",
+    "Mixing bowls",
+    "Piping bag or sandwich bag",
+    "Spatula",
+    "Whisk"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 3.25,
+      "unit": "cup"
+    },
+    {
+      "item": "brown sugar",
+      "quantity": 6,
+      "unit": "tbsp"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 3,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "pumpkin pie spice",
+      "optional": true,
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "buttermilk",
+      "quantity": 2.25,
+      "unit": "cup"
+    },
+    {
+      "item": "pumpkin puree",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 2
+    },
+    {
+      "item": "salted butter",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 6,
+      "unit": "tbsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 6,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 3,
+      "unit": "tsp"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "honey",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "id": "pumpkin-cinnamon-roll-pancakes",
+  "ingredients": [
+    "3 1/4 cups (390g) all-purpose flour",
+    "6 tbsp (78g) brown sugar",
+    "3 tsp (12g) baking powder",
+    "1 1/2 tsp (8g) baking soda",
+    "1/2 tsp (3g) salt",
+    "2 tsp (4g) cinnamon",
+    "Optional: 1 tsp (2g) pumpkin pie spice",
+    "2 1/4 cups (540ml) buttermilk, at room temperature [substitution: 2 1/4 cups (540ml) milk of choice whisked with 2 tbsp (30ml) apple cider vinegar or lemon juice]",
+    "1 cup (240g) pumpkin puree",
+    "2 eggs, at room temperature",
+    "2 tbsp (28g) salted butter, melted and slightly cooled",
+    "2 tsp (8g) vanilla extract",
+    "6 tbsp (85g) salted butter, softened (almost melted)",
+    "6 tbsp (75g) granulated sugar",
+    "3 tsp (6g) cinnamon",
+    "2 tbsp of the pumpkin pancake batter",
+    "1/2 cup (113g) salted butter, softened",
+    "1/4 cup (80g) honey",
+    "1 1/2 tsp (3g) cinnamon",
+    "1/2 tsp (2g) vanilla bean paste or extract"
+  ],
+  "instructions": [
+    "Start by preparing the whipped honey cinnamon butter so it's ready to go once you're ready to serve. In a medium bowl, add the butter, honey, cinnamon, and vanilla. Beat with a whisk or an electric handheld mixer until well combined and fluffy. Set aside and keep at room temperature until ready to serve. You can store it in an airtight container in the refrigerator for up to one month.",
+    "In a medium bowl, whisk together the flour, brown sugar, baking powder, baking soda, salt, cinnamon, and pumpkin pie spice (if using). Set aside.",
+    "In a separate large bowl, whisk together the buttermilk, pumpkin puree, eggs, melted and slightly cooled butter, and vanilla until smooth.",
+    "Add the dry ingredient mixture to the wet, and whisk until just combined (it's okay if the batter is a little lumpy). Set aside and allow the batter rest for 10-15 minutes (do NOT skip - this allows the flour to absorb the liquid, making the pancakes lighter and fluffier).",
+    "In a small bowl, mix together the softened (almost melted) butter, sugar, cinnamon, and 2 tbsp of the pumpkin pancake batter until well combined and smooth. Transfer the mixture to a piping bag or a small sandwich baggie with a small portion of the corner/tip snipped off. This is what you're going to use to pipe the cinnamon swirl into the pancakes!",
+    "Heat a large nonstick skillet or griddle over medium or medium-low heat (depending on how strong the heat from your stovetop is) and grease with butter.",
+    "Use a large cookie scoop or 1/4 cup measuring cup to scoop and pour the pancake batter onto the skillet for each pancake. Let the pancakes cook on the pan for 1 minute.",
+    "Then, using the piping bag full of the cinnamon swirl mixture, starting at the middle, gently swirl and create a spiral of the cinnamon swirl mixture into each pancake, pushing slightly into the batter. Try your best to keep the swirl slightly away from the edges so it doesn't melt off the sides (however it's totally okay if it does, this happened to me too)!",
+    "Cook for 2-4 minutes, until bubbles appear on the surface. Then use a spatula to gently flip the pancakes over, and cook on the other side for another 1-3 minutes, until golden and cooked through. You can adjust the heat on your stovetop as needed throughout the cooking process if the pancakes seem like they're browning too quickly.",
+    "Transfer the cooked pancakes onto a baking sheet and keep warm in the oven at 200F while you make the rest of the pancakes.",
+    "Repeat the process with the remaining pancake batter and cinnamon swirl mixture, wiping the pan as needed between each batch.",
+    "Once ready, serve the pancakes warm with the whipped honey cinnamon butter and maple syrup, if desired."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/pumpkin-cinnamon-roll-pancakes-with-whipped-honey-cinnamon-butter#recipe",
+  "notes": [
+    "This recipe makes a good amount of pancakes, feel free to half the recipe to make a smaller amount!",
+    "The batter should rest for 10-15 minutes to produce lighter and fluffier pancakes.",
+    "Keep finished pancakes warm in a 200F oven while cooking the remaining batches.",
+    "It's okay if some of the cinnamon swirl melts off the edges during cooking.",
+    "The whipped honey cinnamon butter can be refrigerated in an airtight container for up to one month."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 6,
+    "value": 4.5
+  },
+  "servings": "16-18 pancakes",
+  "tags": {
+    "equipment": [
+      "griddle"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Pumpkin Cinnamon Roll Pancakes (with Whipped Honey Cinnamon Butter)",
+  "totalTime": "1 hour"
+}

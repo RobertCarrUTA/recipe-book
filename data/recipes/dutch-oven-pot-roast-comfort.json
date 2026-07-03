@@ -1,0 +1,168 @@
+{
+  "author": "Tania",
+  "cookTime": "3 hours 30 minutes",
+  "description": "This Dutch oven pot roast is the ultimate comfort food. It's incredibly flavorful, with fall-apart tender beef slow-braised alongside baby carrots and potatoes for a complete one-pot meal.",
+  "equipment": [
+    "7-8 quart Dutch oven",
+    "Tongs",
+    "Wooden spoon"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "boneless beef chuck roast",
+      "quantity": 3,
+      "unit": "lb"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 2
+    },
+    {
+      "item": "garlic",
+      "quantity": 6,
+      "unit": "clove"
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "red wine",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "beef broth",
+      "quantity": {
+        "max": 3,
+        "min": 2
+      },
+      "unit": "cup"
+    },
+    {
+      "item": "worcestershire sauce",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "fresh thyme",
+      "quantity": 4,
+      "unit": "sprig"
+    },
+    {
+      "item": "fresh rosemary",
+      "quantity": 2,
+      "unit": "sprig"
+    },
+    {
+      "item": "dried bay leaf",
+      "quantity": 2,
+      "unit": "leaf"
+    },
+    {
+      "item": "baby carrot",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "item": "baby yellow potato",
+      "quantity": 1.5,
+      "unit": "lb"
+    },
+    {
+      "item": "italian parsley",
+      "optional": true
+    }
+  ],
+  "id": "dutch-oven-pot-roast-comfort",
+  "ingredients": [
+    "3 pounds boneless beef chuck roast",
+    "1 1/2 teaspoons kosher salt, plus more to taste",
+    "1 teaspoon ground black pepper",
+    "2 tablespoons olive oil",
+    "2 large yellow onions, peeled and sliced",
+    "6 cloves garlic, minced",
+    "2 tablespoons tomato paste",
+    "1 cup red wine (or beef broth)",
+    "2-3 cups beef broth, plus more as needed",
+    "2 teaspoons Worcestershire sauce",
+    "4 sprigs fresh thyme",
+    "2 sprigs fresh rosemary",
+    "2 dried bay leaves",
+    "1 pound baby carrots",
+    "1 1/2 pounds baby yellow potatoes",
+    "Chopped Italian parsley, for garnish (optional)"
+  ],
+  "instructions": [
+    "Preheat oven to 300°F.",
+    "Season the beef generously on all sides with kosher salt and black pepper.",
+    "Heat olive oil in a large Dutch oven over medium-high heat. Sear the beef on each side until deeply golden, about 5-6 minutes per side. Remove and set aside.",
+    "Reduce heat to medium. Add onions and sauté until starting to brown, scraping the bottom of the pot to release browned bits. Add garlic and cook for 1 minute until fragrant.",
+    "Add red wine (or beef broth) and deglaze the pot. Stir in tomato paste, 2 cups beef broth, Worcestershire sauce, thyme, rosemary, and bay leaves. Bring to a low boil.",
+    "Return the beef and its juices to the pot. Liquid should cover about half the meat; add more broth if needed. Cover and bake for 1 1/2 hours.",
+    "Remove from oven and add carrots and potatoes. Adjust seasoning if needed. Cover and return to oven for 2 more hours, or until meat is fork-tender and vegetables are soft.",
+    "Optional: Cook an additional 15-30 minutes for extra tenderness. Garnish with parsley before serving."
+  ],
+  "link": "https://cookingformysoul.com/dutch-oven-pot-roast/",
+  "notes": [
+    "Meat: A 3-4 pound beef chuck roast works best. Trim excess exterior fat if desired.",
+    "Searing: Do not rush browning; the fond adds significant flavor to the sauce.",
+    "Wine: Cabernet Sauvignon or Pinot Noir are recommended. Beef broth may be substituted.",
+    "Storage: Refrigerate leftovers in a sealed container.",
+    "Freezing: Freeze in individual containers for up to 2 months. Thaw overnight and reheat gently."
+  ],
+  "nutrition": {
+    "calcium": "107 mg",
+    "calories": "609 kcal",
+    "carbohydrates": "33 g",
+    "cholesterol": "156 mg",
+    "fat": "29 g",
+    "fiber": "6 g",
+    "iron": "7 mg",
+    "monounsaturatedFat": "15 g",
+    "polyunsaturatedFat": "2 g",
+    "potassium": "1648 mg",
+    "protein": "48 g",
+    "saturatedFat": "12 g",
+    "sodium": "1194 mg",
+    "sugar": "7 g",
+    "transFat": "2 g",
+    "vitaminA": "10578 IU",
+    "vitaminC": "30 mg"
+  },
+  "personalNotes": [
+    "The rosemary was overpowering. We added more broth, salt, pepper, and a whole onion. Using Central Markets fire roasted hatch chili tortilla chips made it a lot better. It takes it from 'okay' to 'good'."
+  ],
+  "prepTime": "30 minutes",
+  "rating": {
+    "count": 347,
+    "value": 4.99
+  },
+  "servings": "6",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "dutch-oven"
+    ],
+    "rating": "okay",
+    "status": "tried"
+  },
+  "title": "Dutch Oven Pot Roast",
+  "totalTime": "4 hours"
+}

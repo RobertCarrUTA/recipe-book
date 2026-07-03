@@ -1,0 +1,127 @@
+{
+  "author": "Lauren Allen",
+  "cookTime": "2 hours 40 minutes",
+  "description": "Tender, fall-off-the-bone braised short ribs cooked low and slow in a rich, savory sauce-all in one pot. This comforting dish is perfect served over creamy mashed potatoes for an impressive yet approachable meal.",
+  "equipment": [
+    "Dutch oven with lid",
+    "Oven",
+    "Large plate",
+    "Spoon or ladle"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "olive oil",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1
+    },
+    {
+      "item": "carrot",
+      "quantity": 3
+    },
+    {
+      "item": "bone-in beef short rib",
+      "quantity": 8
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "dry red wine",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "beef broth",
+      "quantity": 2.5,
+      "unit": "cup"
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "fresh thyme",
+      "quantity": 2,
+      "unit": "sprig"
+    },
+    {
+      "item": "fresh rosemary",
+      "quantity": 2,
+      "unit": "sprig"
+    }
+  ],
+  "id": "braised-short-ribs",
+  "ingredients": [
+    "3 tablespoons olive oil",
+    "1 yellow onion, diced",
+    "3 carrots, chopped",
+    "8 bone-in beef short ribs",
+    "Salt and black pepper, to taste",
+    "1/4 cup all-purpose flour",
+    "1 cup dry red wine (such as Côtes du Rhône or Pinot Noir)",
+    "2 1/2 cups low-sodium beef broth",
+    "2 tablespoons tomato paste",
+    "2 sprigs fresh thyme",
+    "2 sprigs fresh rosemary"
+  ],
+  "instructions": [
+    "Preheat oven to 350°F.",
+    "Heat 1 tablespoon olive oil in a large Dutch oven over medium-high heat. Add onion and carrots and cook for a few minutes, stirring constantly, until slightly softened. Remove vegetables to a plate.",
+    "Season short ribs generously with salt and pepper, then coat on all sides with flour.",
+    "Add remaining 2 tablespoons olive oil to the pot and increase heat to high. Add ribs and brown on all sides, about 45 seconds per side. Remove ribs to a plate.",
+    "Add red wine to the pot to deglaze, scraping up any browned bits from the bottom. Bring to a boil and cook for 2 minutes.",
+    "Add beef broth, additional salt and pepper if needed, and stir in tomato paste. Taste and adjust seasoning.",
+    "Return ribs and vegetables to the pot along with whole sprigs of thyme and rosemary.",
+    "Cover with lid and place in the oven. Cook at 350°F for 2 hours, then reduce heat to 325°F and cook an additional 30-45 minutes, until ribs are very tender.",
+    "Remove from oven and let rest, covered, for 20 minutes. Skim excess fat from the surface before serving.",
+    "Serve short ribs over mashed potatoes with spoonfuls of the sauce."
+  ],
+  "link": "https://tastesbetterfromscratch.com/braised-short-ribs/",
+  "notes": [
+    "Slow Cooker: Complete stovetop steps, then transfer everything to a slow cooker and cook on low for 6-8 hours.",
+    "Instant Pot: Use sauté mode to brown vegetables and ribs, deglaze with wine, add remaining ingredients, then cook on high pressure for 45 minutes with a 15-minute natural release.",
+    "Make Ahead: This dish benefits from resting and can be prepared several hours in advance.",
+    "Freezing (Before Cooking): Freeze up to step before oven cooking for 4-5 months.",
+    "Freezing (After Cooking): Cool completely and freeze for 3-4 months."
+  ],
+  "nutrition": {
+    "calcium": "34 mg",
+    "calories": "347 kcal",
+    "carbohydrates": "16 g",
+    "cholesterol": "43 mg",
+    "fat": "20 g",
+    "fiber": "2 g",
+    "iron": "2 mg",
+    "monounsaturatedFat": "13 g",
+    "polyunsaturatedFat": "2 g",
+    "potassium": "681 mg",
+    "protein": "15 g",
+    "saturatedFat": "6 g",
+    "sodium": "401 mg",
+    "sugar": "4 g",
+    "transFat": "1 g",
+    "vitaminA": "7791 IU",
+    "vitaminC": "7 mg"
+  },
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 2801,
+    "value": 4.99
+  },
+  "servings": "4",
+  "tags": {
+    "equipment": [
+      "dutch-oven"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Braised Short Ribs",
+  "totalTime": "3 hours"
+}

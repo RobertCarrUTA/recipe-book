@@ -1,0 +1,119 @@
+{
+  "additionalTime": "20 minutes",
+  "author": "Jamie Silva",
+  "cookTime": "10 minutes",
+  "description": "These chewy chocolate chip cookies have ooey-gooey centers, perfectly crisp edges, and melty chunks of dark chocolate. Made easily in one bowl, they can be baked right away or frozen for cookies on demand.",
+  "equipment": [
+    "Mixing bowl or stand mixer",
+    "Baking sheet",
+    "Parchment paper",
+    "Cookie scoop"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "unsalted butter",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "brown sugar",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 1.333333,
+      "unit": "cup"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "dark chocolate",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "flaky sea salt",
+      "optional": true
+    }
+  ],
+  "id": "best-chewy-chocolate-chip-cookies",
+  "ingredients": [
+    "1/2 cup unsalted butter, melted",
+    "3/4 cup brown sugar, packed",
+    "1/2 cup granulated sugar",
+    "1 large egg",
+    "1 teaspoon vanilla extract",
+    "1 1/3 cups all-purpose flour",
+    "1/2 teaspoon baking soda",
+    "Pinch of salt",
+    "1 cup chopped dark chocolate (or chocolate of choice)",
+    "Flaky sea salt, for garnish (optional)"
+  ],
+  "instructions": [
+    "In a large bowl or mixer, combine melted butter and both sugars. Mix until smooth.",
+    "Add the egg and vanilla extract and mix until fully incorporated.",
+    "Add flour, baking soda, and salt. Mix just until combined; do not overmix.",
+    "Fold in the chopped chocolate.",
+    "Using a cookie scoop, form dough into balls (about 1 1/2 tablespoons each).",
+    "Refrigerate dough balls for at least 20 minutes, or freeze for later use.",
+    "When ready to bake, preheat oven to 350°F and line a baking sheet with parchment paper.",
+    "Place dough balls on the baking sheet and bake for 10-11 minutes, until edges are lightly golden.",
+    "Remove from the oven, sprinkle with flaky sea salt if desired, and let cool on the baking sheet for 5 minutes before serving."
+  ],
+  "link": "https://asassyspoon.com/chocolate-chip-cookies/",
+  "notes": [
+    "Cookies may appear slightly underbaked when removed; they will continue to set as they cool.",
+    "Dough can be frozen for up to 3 months and baked directly from frozen with an extra minute or two added to bake time.",
+    "Do not overmix the dough to keep cookies soft and chewy."
+  ],
+  "nutrition": {
+    "calcium": "41 mg",
+    "calories": "143 kcal",
+    "carbohydrates": "20 g",
+    "cholesterol": "19 mg",
+    "fat": "6 g",
+    "fiber": "1 g",
+    "iron": "1 mg",
+    "potassium": "67 mg",
+    "protein": "2 g",
+    "saturatedFat": "5 g",
+    "sodium": "31 mg",
+    "sugar": "11 g",
+    "vitaminA": "131 IU",
+    "vitaminC": "1 mg"
+  },
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 423,
+    "value": 4.91
+  },
+  "servings": "20 cookies",
+  "tags": {
+    "equipment": [
+      "oven",
+      "baking-sheet",
+      "mixer"
+    ],
+    "status": "not-tried"
+  },
+  "title": "The Best Chewy Chocolate Chip Cookies",
+  "totalTime": "40 minutes"
+}

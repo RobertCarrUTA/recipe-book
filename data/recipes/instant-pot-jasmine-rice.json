@@ -1,0 +1,78 @@
+{
+  "additionalTime": "15 minutes",
+  "author": "Rachel Gurk",
+  "cookTime": "5 minutes",
+  "description": "Instant Pot jasmine rice is fluffy, perfectly cooked, and incredibly easy to make. You don't need a rice cooker to get delicious jasmine rice for stir fries, curries, or any Asian-inspired meal.",
+  "equipment": [
+    "6-quart Instant Pot or electric pressure cooker",
+    "Fine mesh strainer",
+    "Fork"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "jasmine rice",
+      "quantity": 4,
+      "unit": "cup"
+    },
+    {
+      "item": "olive oil",
+      "quantity": 1.333333,
+      "unit": "tbsp"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 1.333333,
+      "unit": "tsp"
+    }
+  ],
+  "id": "instant-pot-jasmine-rice",
+  "ingredients": [
+    "4 cups jasmine rice",
+    "4 cups water",
+    "1 1/3 tablespoons oil (coconut oil, olive oil, or butter)",
+    "1 1/3 teaspoons kosher salt"
+  ],
+  "instructions": [
+    "Place jasmine rice in a fine mesh strainer and rinse thoroughly until the water runs clear.",
+    "Add rinsed rice to the Instant Pot insert along with water, oil, and salt. Push down any rice on the sides so it is submerged in liquid.",
+    "Secure the lid, set the valve to seal, and pressure cook on high for 5 minutes.",
+    "When cooking is complete, allow the pressure to naturally release for 10 minutes.",
+    "Quick release any remaining pressure, remove the lid, fluff the rice with a fork, and serve."
+  ],
+  "link": "https://www.rachelcooks.com/instant-pot-jasmine-rice/",
+  "notes": [
+    "Ratio: Keep a 1:1 ratio of rice to water when adjusting quantities. Pressure cook time remains the same.",
+    "Yield: This recipe makes about 9 cups of cooked rice.",
+    "Diet: Naturally gluten-free."
+  ],
+  "nutrition": {
+    "calcium": "20 mg",
+    "calories": "239 kcal",
+    "carbohydrates": "49 g",
+    "fat": "2 g",
+    "fiber": "1 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "1 g",
+    "polyunsaturatedFat": "1 g",
+    "potassium": "71 mg",
+    "protein": "4 g",
+    "saturatedFat": "1 g",
+    "sodium": "265 mg",
+    "sugar": "1 g",
+    "transFat": "1 g"
+  },
+  "prepTime": "5 minutes",
+  "rating": {
+    "count": 495,
+    "value": 4.44
+  },
+  "servings": "12",
+  "tags": {
+    "equipment": [
+      "instant-pot"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Instant Pot Jasmine Rice",
+  "totalTime": "25 minutes"
+}
