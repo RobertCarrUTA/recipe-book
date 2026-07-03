@@ -1,7 +1,7 @@
 {
   "additionalTime": "10 minutes potato steam-dry time, 10 minutes chile soak, plus 3 to 5 minutes foil rest",
   "author": "Robert Carr",
-  "cookTime": "55 minutes",
+  "cookTime": "45 minutes",
   "description": "A focused sausage, egg, potato, and cheese breakfast burrito with crispy Yukon Gold potatoes, deeply browned breakfast sausage, soft scrambled eggs, a three-cheese melt, toasted flour tortillas, and a simmered guajillo-arbol breakfast drip sauce served on the side for adding to each bite.",
   "equipment": [
     "12-inch cast-iron skillet or heavy saute pan",
@@ -22,88 +22,88 @@
   "groceryIngredients": [
     {
       "item": "American cheese",
-      "quantity": 4,
+      "quantity": 2,
       "unit": "slice"
     },
     {
       "item": "apple cider vinegar",
-      "quantity": 3,
+      "quantity": 1.5,
       "unit": "tbsp"
     },
     {
       "item": "avocado oil",
-      "quantity": 4,
+      "quantity": 2,
       "unit": "tbsp"
     },
     {
       "item": "black pepper",
-      "quantity": 2.25,
+      "quantity": 1.25,
       "unit": "tsp"
     },
     {
       "item": "bulk pork breakfast sausage",
-      "quantity": 12,
+      "quantity": 6,
       "unit": "oz"
     },
     {
       "item": "cheddar cheese",
-      "quantity": 4,
+      "quantity": 2,
       "unit": "oz"
     },
     {
       "item": "cornstarch",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 1.5,
+      "unit": "tsp"
     },
     {
       "item": "cumin",
-      "quantity": 1,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "dried chile de arbol",
-      "quantity": 2
+      "quantity": 1
     },
     {
       "item": "dried guajillo chile",
-      "quantity": 2
+      "quantity": 1
     },
     {
       "item": "garlic",
-      "quantity": 4,
+      "quantity": 2,
       "unit": "clove"
     },
     {
       "item": "garlic powder",
-      "quantity": 1,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "half-and-half",
-      "quantity": 3,
+      "quantity": 1.5,
       "unit": "tbsp"
     },
     {
       "item": "honey",
-      "quantity": 1,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "jalapeno",
-      "quantity": 2
+      "quantity": 1
     },
     {
       "item": "kosher salt",
-      "quantity": 5,
+      "quantity": 3,
       "unit": "tsp"
     },
     {
       "item": "large burrito-size flour tortilla",
-      "quantity": 4
+      "quantity": 2
     },
     {
       "item": "large egg",
-      "quantity": 8
+      "quantity": 4
     },
     {
       "item": "lime",
@@ -111,30 +111,30 @@
     },
     {
       "item": "Monterey Jack cheese",
-      "quantity": 4,
+      "quantity": 2,
       "unit": "oz"
     },
     {
       "item": "onion powder",
-      "quantity": 0.5,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "Roma tomato",
-      "quantity": 2
+      "quantity": 1
     },
     {
       "item": "smoked paprika",
-      "quantity": 1,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "tomatillo",
-      "quantity": 4
+      "quantity": 2
     },
     {
       "item": "unsalted butter",
-      "quantity": 2,
+      "quantity": 1,
       "unit": "tbsp"
     },
     {
@@ -143,89 +143,89 @@
     },
     {
       "item": "Yukon Gold potato",
-      "quantity": 1.25,
-      "unit": "lb"
+      "quantity": 10,
+      "unit": "oz"
     }
   ],
   "id": "sausage-egg-potato-cheese-breakfast-burritos-with-simmered-guajillo-arbol-drip-sauce",
   "ingredients": [
-    "1 1/4 pounds Yukon Gold potatoes, cut into 1/2-inch cubes",
-    "1 tablespoon apple cider vinegar for the potato water",
-    "1 tablespoon Diamond Crystal kosher salt for the potato water",
-    "1 tablespoon cornstarch",
-    "1 teaspoon smoked paprika",
-    "1 teaspoon garlic powder",
-    "1/2 teaspoon onion powder",
-    "3/4 teaspoon Diamond Crystal kosher salt for the potatoes, or 1/2 teaspoon Morton kosher salt",
-    "1 teaspoon black pepper for the potatoes",
-    "12 ounces bulk pork breakfast sausage, preferably sage-forward",
-    "1 to 2 tablespoons avocado oil for the potatoes, only as needed",
-    "8 large eggs",
-    "3 tablespoons half-and-half",
-    "1/2 teaspoon Diamond Crystal kosher salt for the eggs, or 1/4 teaspoon Morton kosher salt",
-    "1/2 teaspoon black pepper for the eggs",
-    "2 tablespoons unsalted butter",
-    "4 ounces sharp cheddar cheese, freshly shredded",
-    "4 ounces Monterey Jack cheese, freshly shredded",
-    "4 slices American cheese",
-    "4 large burrito-size flour tortillas, preferably 12 inches",
-    "2 dried guajillo chiles, stemmed and seeded",
-    "2 dried chile de arbol peppers, stems removed",
-    "4 tomatillos, husked and rinsed",
-    "2 Roma tomatoes",
-    "2 jalapenos",
-    "1/4 white onion",
-    "4 garlic cloves, unpeeled",
-    "2 tablespoons apple cider vinegar for the hot sauce",
-    "1 tablespoon fresh lime juice for the hot sauce",
-    "2 tablespoons chile soaking water or fresh hot water, plus more as needed",
-    "1 1/2 tablespoons avocado oil for the hot sauce",
-    "1 teaspoon honey",
-    "1 teaspoon cumin for the hot sauce",
-    "3/4 teaspoon Diamond Crystal kosher salt for the hot sauce, or 1/2 teaspoon Morton kosher salt",
-    "3/4 teaspoon black pepper for the hot sauce"
+    "10 ounces Yukon Gold potatoes, cut into 1/2-inch cubes",
+    "2 teaspoons apple cider vinegar for the potato water",
+    "2 teaspoons Diamond Crystal kosher salt for the potato water",
+    "1 1/2 teaspoons cornstarch",
+    "1/2 teaspoon smoked paprika",
+    "1/2 teaspoon garlic powder",
+    "1/4 teaspoon onion powder",
+    "1/2 teaspoon Diamond Crystal kosher salt for the potatoes, or 1/4 teaspoon Morton kosher salt",
+    "1/2 teaspoon black pepper for the potatoes",
+    "6 ounces bulk pork breakfast sausage, preferably sage-forward",
+    "1 tablespoon avocado oil for the potatoes, only as needed",
+    "4 large eggs",
+    "1 1/2 tablespoons half-and-half",
+    "1/4 teaspoon Diamond Crystal kosher salt for the eggs, or 1/8 teaspoon Morton kosher salt",
+    "1/4 teaspoon black pepper for the eggs",
+    "1 tablespoon unsalted butter",
+    "2 ounces sharp cheddar cheese, freshly shredded",
+    "2 ounces Monterey Jack cheese, freshly shredded",
+    "2 slices American cheese",
+    "2 large burrito-size flour tortillas, preferably 12 inches",
+    "1 dried guajillo chile, stemmed and seeded",
+    "1 dried chile de arbol pepper, stem removed",
+    "2 tomatillos, husked and rinsed",
+    "1 Roma tomato",
+    "1 jalapeno",
+    "1/8 white onion",
+    "2 garlic cloves, unpeeled",
+    "1 tablespoon apple cider vinegar for the hot sauce",
+    "2 teaspoons fresh lime juice for the hot sauce",
+    "1 tablespoon chile soaking water or fresh hot water, plus more as needed",
+    "2 teaspoons avocado oil for the hot sauce",
+    "1/2 teaspoon honey",
+    "1/2 teaspoon cumin for the hot sauce",
+    "1/2 teaspoon Diamond Crystal kosher salt for the hot sauce, or 1/4 teaspoon Morton kosher salt",
+    "1/2 teaspoon black pepper for the hot sauce"
   ],
   "instructions": [
-    "Place the 1 1/4 pounds diced Yukon Gold potatoes in a medium saucepan and cover them with cold water by 1 inch.",
-    "Add 1 tablespoon apple cider vinegar and 1 tablespoon Diamond Crystal kosher salt to the potato water.",
+    "Place the 10 ounces diced Yukon Gold potatoes in a medium saucepan and cover them with cold water by 1 inch.",
+    "Add 2 teaspoons apple cider vinegar and 2 teaspoons Diamond Crystal kosher salt to the potato water.",
     "Bring the potatoes to a boil over high heat, then reduce the heat and simmer for 5 to 7 minutes, until the potatoes are barely tender but not falling apart.",
     "Drain the potatoes well, spread them on paper towels or a wire rack, pat the tops dry if they look wet, and let them steam-dry for 10 minutes.",
     "While the potatoes dry, make the simmered guajillo-arbol breakfast drip sauce.",
-    "Toast 2 stemmed and seeded dried guajillo chiles and 2 stemmed dried chile de arbol peppers in a dry cast-iron skillet over medium heat for 15 to 30 seconds per side, turning often, just until fragrant and slightly softened, not scorched.",
+    "Toast 1 stemmed and seeded dried guajillo chile and 1 stemmed dried chile de arbol pepper in a dry cast-iron skillet over medium heat for 15 to 30 seconds per side, turning often, just until fragrant and slightly softened, not scorched.",
     "Transfer the toasted chiles to a small bowl, cover them with hot water, and soak for 10 minutes.",
-    "While the chiles soak, place 4 tomatillos, 2 Roma tomatoes, 2 jalapenos, 1/4 white onion, and 4 unpeeled garlic cloves in the dry cast-iron skillet over medium-high heat.",
+    "While the chiles soak, place 2 tomatillos, 1 Roma tomato, 1 jalapeno, 1/8 white onion, and 2 unpeeled garlic cloves in the dry cast-iron skillet over medium-high heat.",
     "Cook the hot sauce vegetables for 8 to 12 minutes, turning occasionally, until the tomatillos soften, the garlic is browned and soft inside, and the tomatoes, jalapenos, and onion are charred in places.",
     "Peel the roasted garlic cloves.",
     "Drain the soaked chiles, reserving the soaking water.",
     "Taste the reserved chile soaking water. If it tastes bitter or harsh, use fresh hot water for blending and thinning instead.",
     "Transfer the soaked chiles to a blender.",
-    "Add the roasted tomatillos, tomatoes, jalapenos, onion, peeled garlic, 2 tablespoons apple cider vinegar, 1 tablespoon fresh lime juice, 2 tablespoons chile soaking water or fresh hot water, 1 teaspoon honey, 1 teaspoon cumin, 3/4 teaspoon Diamond Crystal kosher salt, and 3/4 teaspoon black pepper to the blender.",
+    "Add the roasted tomatillos, tomato, jalapeno, onion, peeled garlic, 1 tablespoon apple cider vinegar, 2 teaspoons fresh lime juice, 1 tablespoon chile soaking water or fresh hot water, 1/2 teaspoon honey, 1/2 teaspoon cumin, 1/2 teaspoon Diamond Crystal kosher salt, and 1/2 teaspoon black pepper to the blender.",
     "Blend the hot sauce on high for 35 to 60 seconds until very smooth, adding 1 to 3 tablespoons more chile soaking water or fresh hot water only if needed to make it loose enough to drip from a spoon.",
-    "Heat 1 1/2 tablespoons avocado oil in a small saucepan over medium heat.",
+    "Heat 2 teaspoons avocado oil in a small saucepan over medium heat.",
     "Carefully pour the blended hot sauce into the hot oil; it may splatter at first.",
     "Simmer the hot sauce over medium-low heat for 5 to 7 minutes, stirring often, until the color deepens slightly, the oil looks integrated, and the sauce lightly coats a spoon but still drips easily.",
     "If the hot sauce gets too thick, whisk in chile soaking water or fresh hot water 1 tablespoon at a time until it drips easily again.",
     "Taste the hot sauce and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a few drops of honey.",
     "For a smoother drip sauce, pass the hot sauce through a fine-mesh strainer; for a more rustic sauce, leave it unstrained.",
-    "Cook 12 ounces bulk pork breakfast sausage in a large skillet over medium heat for 7 to 9 minutes, breaking it into small crumbles and letting the crumbles sit against the pan long enough to brown, until deeply browned and fully cooked.",
+    "Cook 6 ounces bulk pork breakfast sausage in a large skillet over medium heat for 6 to 8 minutes, breaking it into small crumbles and letting the crumbles sit against the pan long enough to brown, until deeply browned and fully cooked.",
     "Transfer the sausage to a paper towel-lined plate with a slotted spoon.",
-    "Reserve 2 tablespoons of sausage fat in the skillet and discard the rest, or add 1 to 2 tablespoons avocado oil if the sausage did not release enough fat.",
-    "Toss the steam-dried potatoes with 1 tablespoon cornstarch, 1 teaspoon smoked paprika, 1 teaspoon garlic powder, 1/2 teaspoon onion powder, 3/4 teaspoon Diamond Crystal kosher salt, and 1 teaspoon black pepper.",
+    "Reserve 1 tablespoon of sausage fat in the skillet and discard the rest, or add 1 tablespoon avocado oil if the sausage did not release enough fat.",
+    "Toss the steam-dried potatoes with 1 1/2 teaspoons cornstarch, 1/2 teaspoon smoked paprika, 1/2 teaspoon garlic powder, 1/4 teaspoon onion powder, 1/2 teaspoon Diamond Crystal kosher salt, and 1/2 teaspoon black pepper.",
     "Heat the reserved sausage fat in the skillet over medium-high heat until hot.",
     "Add the seasoned potatoes in a single layer, using a second skillet or working in batches if needed so they are not crowded.",
     "Cook the potatoes, or each batch, undisturbed for 3 minutes, then turn every 2 to 3 minutes for 10 to 14 minutes total, until deeply golden and crisp on multiple sides.",
     "Transfer the crispy potatoes to a plate and keep them uncovered so they stay crisp.",
-    "Whisk 8 large eggs with 3 tablespoons half-and-half, 1/2 teaspoon Diamond Crystal kosher salt, and 1/2 teaspoon black pepper until no streaks of egg white remain.",
-    "Melt 2 tablespoons unsalted butter in a nonstick skillet or clean well-seasoned skillet over medium-low heat.",
+    "Whisk 4 large eggs with 1 1/2 tablespoons half-and-half, 1/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper until no streaks of egg white remain.",
+    "Melt 1 tablespoon unsalted butter in a nonstick skillet or clean well-seasoned skillet over medium-low heat.",
     "Add the eggs and cook gently, folding with a rubber spatula, until the eggs form soft curds and are just set but still slightly looser than you want in the finished burrito.",
     "Immediately transfer the eggs to a plate and spread them into a shallow layer for 1 to 2 minutes so leftover heat slows down and excess steam escapes.",
     "Warm each 12-inch flour tortilla in a dry skillet for 20 to 30 seconds per side, or until soft, flexible, and lightly toasted in spots.",
     "Assemble 1 burrito at a time by placing a warm tortilla on a clean work surface.",
     "Place 1 slice American cheese just below the center of the tortilla.",
     "Sprinkle about 1 ounce sharp cheddar cheese and 1 ounce Monterey Jack cheese over the American cheese.",
-    "Add one-quarter of the crispy potatoes over the cheese.",
-    "Add one-quarter of the browned breakfast sausage over the potatoes.",
-    "Add one-quarter of the soft scrambled eggs over the sausage.",
+    "Add half of the crispy potatoes over the cheese.",
+    "Add half of the browned breakfast sausage over the potatoes.",
+    "Add half of the soft scrambled eggs over the sausage.",
     "Fold the left and right sides of the tortilla over the filling, then roll tightly from the bottom into a compact burrito.",
     "Place the burrito seam-side down in a dry skillet over medium heat.",
     "Toast the burrito for 1 to 2 minutes per side, starting with the seam side, until lightly crisp, sealed, and browned in spots.",
@@ -236,7 +236,7 @@
   ],
   "notes": [
     "This recipe intentionally keeps the burrito filling limited to sausage, egg, potato, and cheese. The hot sauce is served outside the burrito and does not count as an internal filling.",
-    "The reduced filling ratio is intentional. Four burritos made with 1 1/4 pounds potatoes, 12 ounces sausage, 8 eggs, and the listed cheese are still full, but they roll cleaner and eat with better balance than an overstuffed version.",
+    "The reduced filling ratio is intentional. Two burritos made with 10 ounces potatoes, 6 ounces sausage, 4 eggs, and the listed cheese are still full, but they roll cleaner and eat with better balance than an overstuffed version.",
     "Bulk pork breakfast sausage is better than sliced sausage links because it browns into small crumbles that distribute evenly through the burrito.",
     "A sage-forward breakfast sausage gives the most classic breakfast flavor. Avoid maple breakfast sausage unless you specifically want a sweeter burrito.",
     "Reserve only enough sausage fat to crisp the potatoes. Too much loose grease makes the burrito heavy.",
@@ -263,9 +263,9 @@
     "These burritos are best eaten immediately after the foil rest, but leftovers can be wrapped tightly in foil and reheated in a 350 degrees F oven until hot."
   ],
   "nutrition": null,
-  "prepTime": "40 minutes",
+  "prepTime": "30 minutes",
   "rating": null,
-  "servings": "4 burritos",
+  "servings": "2 burritos",
   "source": "original",
   "tags": {
     "equipment": [
@@ -275,5 +275,5 @@
     "status": "not-tried"
   },
   "title": "Sausage, Egg, Potato, and Cheese Breakfast Burritos with Simmered Guajillo-Arbol Breakfast Drip Sauce",
-  "totalTime": "1 hour 45 minutes"
+  "totalTime": "1 hour 25 minutes"
 }
