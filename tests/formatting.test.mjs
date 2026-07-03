@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 
 import {
+  createGrocerySearchUrl,
   formatGrocerySourceDetail,
   formatCheckedGroceryGroupMessage,
   formatGrocerySourceSummary,
@@ -73,6 +74,16 @@ test("grocery view helpers hide noisy notes and summarize sources", () => {
   );
   assert.equal(formatCheckedGroceryGroupMessage("Baking"), "Everything in Baking is checked.");
   assert.equal(formatCheckedGroceryGroupMessage("Manual Items"), "Everything in Manual Items is checked.");
+});
+
+test("grocery search URLs use a fixed destination with encoded item text", () => {
+  const searchUrl = createGrocerySearchUrl("  whole milk  <script>alert(1)</script>  ");
+  const parsed = new URL(searchUrl);
+
+  assert.equal(parsed.origin, "https://www.google.com");
+  assert.equal(parsed.pathname, "/search");
+  assert.equal(parsed.searchParams.get("q"), "whole milk <script>alert(1)</script>");
+  assert.equal(createGrocerySearchUrl("   "), "");
 });
 
 test("grocery totals use shopper-friendly quantities", () => {

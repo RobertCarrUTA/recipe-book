@@ -99,6 +99,7 @@ select:focus-visible,
 .accordion-header:focus-visible,
 .grocery-list li:focus-visible,
 .grocery-list li:has(input:focus-visible),
+.grocery-item-search-link:focus-visible,
 .grocery-source-link:focus-visible,
 .grocery-source-single-link:focus-visible,
 .recipe-action-link:focus-visible,
@@ -1934,6 +1935,47 @@ li {
   cursor: pointer;
 }
 
+.grocery-item-actions {
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+
+.grocery-item-search-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid rgba(122, 199, 163, 0.34);
+  border-radius: 999px;
+  background: rgba(122, 199, 163, 0.08);
+  color: var(--accent-strong);
+  font-size: 0.76rem;
+  font-weight: 850;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.grocery-item-search-link:hover {
+  border-color: rgba(159, 226, 191, 0.72);
+  background: rgba(122, 199, 163, 0.16);
+  color: var(--fg);
+}
+
+.grocery-item-search-link:active {
+  transform: translateY(1px);
+}
+
 .grocery-item-remove {
   align-self: center;
   width: 34px;
@@ -1962,6 +2004,7 @@ li {
 .grocery-list li .grocery-item-name {
   color: var(--fg);
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .grocery-item-source {
@@ -2129,6 +2172,12 @@ li {
 
 .grocery-list li.checked .grocery-source-link,
 .grocery-list li.checked .grocery-source-single-link {
+  color: var(--accent-strong);
+}
+
+.grocery-list li.checked .grocery-item-search-link {
+  border-color: rgba(122, 199, 163, 0.44);
+  background: rgba(122, 199, 163, 0.12);
   color: var(--accent-strong);
 }
 
@@ -2800,6 +2849,16 @@ li {
   .grocery-list li .grocery-item-name {
     font-size: 1.02rem;
     line-height: 1.32;
+  }
+
+  .grocery-item-actions {
+    gap: 7px;
+  }
+
+  .grocery-item-search-link {
+    min-height: 36px;
+    padding: 0 11px;
+    font-size: 0.8rem;
   }
 
   .grocery-item-content {

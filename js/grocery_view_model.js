@@ -5,8 +5,19 @@ import {
 } from "./recipe_multiplier.js";
 import { formatTotalsForKey } from "./units.js";
 
+const GROCERY_SEARCH_URL = "https://www.google.com/search";
+
 export function formatCount(count, singular, plural) {
   return `${count} ${count === 1 ? singular : plural}`;
+}
+
+export function createGrocerySearchUrl(searchText) {
+  const query = String(searchText || "").trim().replace(/\s+/g, " ");
+  if (!query) return "";
+
+  const url = new URL(GROCERY_SEARCH_URL);
+  url.searchParams.set("q", query);
+  return url.href;
 }
 
 export function formatCheckedGroceryGroupMessage(group) {
