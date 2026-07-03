@@ -413,6 +413,21 @@ const browserChecks = [
         /^0 of \d+ grocery items checked$/
       );
       const firstGroceryItem = page.locator("#groceryList li").first();
+      const firstSearchLink = firstGroceryItem.locator(".grocery-item-search-link");
+      await firstSearchLink.waitFor({ timeout: 5000 });
+      assert.equal(await firstSearchLink.innerText(), "Search");
+      assert.match(await firstSearchLink.getAttribute("href"), /^https:\/\/www\.google\.com\/search\?q=.+/);
+      assert.equal(await firstSearchLink.getAttribute("target"), "_blank");
+      assert.equal(await firstSearchLink.getAttribute("rel"), "noopener noreferrer");
+      assert.equal(await firstSearchLink.getAttribute("referrerpolicy"), "no-referrer");
+      await firstSearchLink.evaluate((link) => {
+        link.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
+      });
+      assert.match(
+        await page.locator(".grocery-progress").getAttribute("aria-valuetext"),
+        /^0 of \d+ grocery items checked$/,
+        "searching a grocery item should not toggle its checked state"
+      );
       await firstGroceryItem.evaluate((element) => {
         element.dataset.renderToken = "kept";
       });
@@ -868,6 +883,7 @@ const browserChecks = [
         Number.parseFloat(getComputedStyle(element).minHeight)
       );
       assert.ok(firstGroceryItemMinHeight >= 60, "mobile grocery rows should keep a comfortable tap target");
+      await assertNoHorizontalOverflow(page, ["#groceryList"]);
 
       const mobilePotatoItem = page.locator("#groceryList li").filter({ hasText: /^potato - / }).first();
       await scrollLocatorToViewportCenter(mobilePotatoItem);
