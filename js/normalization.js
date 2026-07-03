@@ -298,6 +298,10 @@ export function buildCanonicalIngredient(nameLower) {
     return { base: "yellow onion", display: "yellow onion" };
   }
 
+  if (raw.includes("white onion")) {
+    return { base: "white onion", display: "white onion" };
+  }
+
   if (raw.includes("roasted red peppers")) {
     return { base: "roasted red peppers", display: "roasted red peppers" };
   }
