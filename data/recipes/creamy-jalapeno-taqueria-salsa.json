@@ -2,10 +2,11 @@
   "additionalTime": "10 minutes cooling time plus 20 minutes flavor rest",
   "author": "Robert Carr",
   "cookTime": "12 minutes",
-  "description": "Creamy jalapeno taqueria salsa made by cooking jalapenos and garlic, then blending them with neutral oil, lime, a little vinegar, cilantro, and salt.",
+  "description": "Creamy jalapeno taqueria salsa made by cooking jalapenos, a little white onion, and garlic, then blending them with neutral oil, lime, a little vinegar, cilantro, and salt.",
   "equipment": [
     "Blender",
     "Cutting board",
+    "Knife",
     "Medium saucepan",
     "Slotted spoon",
     "Tongs"
@@ -44,38 +45,52 @@
       "item": "white vinegar",
       "quantity": 1,
       "unit": "tsp"
+    },
+    {
+      "item": "white onion",
+      "quantity": 1
     }
   ],
   "id": "creamy-jalapeno-taqueria-salsa",
   "ingredients": [
     "10 jalapenos, stems removed",
+    "1/4 small white onion",
     "4 garlic cloves, peeled",
-    "1/2 cup avocado oil or other neutral oil",
+    "1/2 cup avocado oil or other neutral oil, at room temperature",
     "1 tablespoon fresh lime juice",
     "1 teaspoon white vinegar",
     "1 1/4 teaspoons Diamond Crystal kosher salt, or 3/4 teaspoon Morton kosher salt",
     "1/4 cup cilantro leaves and tender stems, optional",
-    "2 to 4 tablespoons jalapeno cooking water, only as needed"
+    "2 to 4 tablespoons cooled jalapeno cooking water, only as needed"
   ],
   "instructions": [
-    "Place 10 stemmed jalapenos and 4 peeled garlic cloves in a medium saucepan and cover with water by 1 inch.",
-    "Bring to a simmer over medium-high heat and cook for 8 to 10 minutes, until the jalapenos turn olive-green and soften.",
-    "Use a slotted spoon to transfer the jalapenos and garlic to a plate and let them cool for 10 minutes. Reserve the cooking water.",
-    "For a milder sauce, split the cooked jalapenos and remove some or all of the seeds before blending.",
-    "Add the cooled jalapenos, garlic, 1 tablespoon fresh lime juice, 1 teaspoon white vinegar, 1 1/4 teaspoons Diamond Crystal kosher salt, and 1/4 cup cilantro if using to a blender.",
-    "Blend until the jalapenos are mostly broken down.",
-    "With the blender running, slowly stream in 1/2 cup avocado oil through the lid opening, then blend on high for 20 to 30 seconds until the salsa turns pale and creamy.",
-    "If the salsa is too thick to pour, blend in reserved jalapeno cooking water 1 tablespoon at a time until it is spoonable and lightly drippy.",
+    "Place 10 stemmed jalapenos and 1/4 small white onion in a medium saucepan and cover with water by 1 inch.",
+    "Bring to a simmer over medium-high heat, then reduce the heat to maintain a steady simmer and cook for 6 minutes.",
+    "Add 4 peeled garlic cloves and simmer for 2 to 4 minutes more, until the jalapenos turn olive-green, the onion is softened, and the garlic is just tender.",
+    "Use a slotted spoon to transfer the jalapenos, onion, and garlic to a plate and let them cool for 10 minutes. Reserve the cooking water and let it cool slightly.",
+    "For a milder sauce, split the cooked jalapenos and remove some or all of the seeds and membranes before blending.",
+    "Add the cooled jalapenos, onion, garlic, 1 tablespoon fresh lime juice, 1 teaspoon white vinegar, 1 1/4 teaspoons Diamond Crystal kosher salt, and 1/4 cup cilantro if using to a blender.",
+    "Blend on medium speed until the jalapenos are fully broken down into a thick, smooth puree, 30 to 45 seconds, scraping the blender jar if needed.",
+    "With the blender running on medium to medium-high, slowly stream in 1/2 cup room-temperature avocado oil through the lid opening, then blend on high for 20 to 30 seconds until the salsa turns pale, creamy, and glossy.",
+    "If the oil starts to pool while streaming, pause the oil, blend until the salsa looks glossy again, then continue streaming slowly.",
+    "If the salsa is too thick to pour, blend in cooled reserved jalapeno cooking water 1 tablespoon at a time until it is spoonable and lightly drippy.",
     "Taste and adjust only if needed with a small pinch of kosher salt or a few drops of lime juice.",
     "Let the salsa rest for at least 20 minutes before serving."
   ],
   "notes": [
     "This salsa is creamy because the cooked jalapenos blend smoothly with oil. It does not contain dairy.",
+    "The small amount of cooked white onion rounds the jalapeno flavor without making the salsa taste oniony.",
+    "Adding the garlic near the end keeps it tender and savory without washing out all of its bite.",
     "A high-powered blender such as a Vitamix 5200 makes the smoothest texture, but a regular blender works if you stream the oil slowly and blend a little longer.",
+    "If using a Vitamix 5200, blend the chile base around Variable 5 to 6 until smooth, then stream the oil in slowly before finishing briefly on High.",
+    "Room-temperature oil and cooled chiles make the emulsion more stable. Very hot chiles can trap steam and make the sauce thin or unstable.",
     "Keep the acid restrained. Too much lime or vinegar makes creamy jalapeno salsa taste sharp instead of green and rich.",
     "Avocado oil keeps the flavor clean. Canola or grapeseed oil also works. Olive oil is not ideal here because it can turn bitter and assertive when blended hard.",
     "For a mild version, remove most of the jalapeno seeds after cooking. For a hotter version, leave the seeds in or replace 2 jalapenos with serranos.",
+    "Cilantro is optional. Use it for a greener, fresher sauce; skip it for the cleaner taqueria-style jalapeno-and-garlic flavor.",
     "Do not add the oil all at once. Streaming it in helps the oil blend into the sauce instead of floating on top.",
+    "Use the cooking water only after the oil has been blended in. Adding too much water early makes the salsa loose instead of creamy.",
+    "The salsa thickens slightly after resting and again after chilling. Stir before serving, and thin with a small splash of water only if needed.",
     "This salsa works especially well on breakfast burritos, tacos, potatoes, grilled chicken, eggs, quesadillas, and rice bowls."
   ],
   "nutrition": null,
