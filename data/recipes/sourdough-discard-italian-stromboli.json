@@ -1,0 +1,165 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "25 minutes",
+  "description": "This Sourdough Discard Italian Stromboli is made with the best sourdough discard dough, using a self-rising flour mixture and Greek yogurt for a soft yet crisp crust. It's filled with layers of savory pizza sauce, pesto, roasted red peppers, provolone, salami, pepperoni, and melty mozzarella, then baked until golden and crispy. Served hot with a drizzle of hot honey, this stromboli is the perfect mix of cheesy, spicy, and savory flavors—a must-try for any pizza lover!",
+  "equipment": [
+    "Large bowl",
+    "Paring knife",
+    "Parchment paper",
+    "Pizza peel",
+    "Pizza stone or baking sheet",
+    "Rolling pin"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "'00' flour",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "Greek yogurt",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "sourdough discard",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "basil pesto",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "pizza sauce",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "roasted red peppers",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "provolone cheese",
+      "quantity": {
+        "max": 5,
+        "min": 4
+      },
+      "unit": "slice"
+    },
+    {
+      "item": "deli salami",
+      "quantity": {
+        "max": 6,
+        "min": 5
+      },
+      "unit": "slice"
+    },
+    {
+      "item": "deli pepperoni",
+      "quantity": {
+        "max": 8,
+        "min": 7
+      },
+      "unit": "slice"
+    },
+    {
+      "item": "mozzarella cheese",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "sesame seeds"
+    },
+    {
+      "item": "italian seasoning"
+    },
+    {
+      "item": "parmesan cheese"
+    },
+    {
+      "item": "hot honey"
+    }
+  ],
+  "id": "sourdough-discard-italian-stromboli",
+  "ingredients": [
+    "1 1/2 cups (213g) '00' flour or all-purpose flour (I highly recommend using a '00' flour)",
+    "2 tsp (9g) baking powder",
+    "1/4 tsp (2g) baking soda",
+    "1 tsp (6g) salt",
+    "1 cup (250g) Greek yogurt",
+    "1/2 cup (145g) sourdough discard (sub: 1/2 cup more Greek yogurt)",
+    "1/4 cup basil pesto",
+    "1/2 cup pizza sauce",
+    "1/4 cup roasted red peppers",
+    "4-5 slices provolone cheese",
+    "5-6 slices thinly sliced deli salami",
+    "7-8 slices thinly sliced deli pepperoni",
+    "3/4 cup shredded mozzarella cheese",
+    "1 egg, beaten, for egg wash",
+    "Sesame seeds",
+    "Italian seasoning",
+    "Freshly grated parmesan",
+    "Hot honey"
+  ],
+  "instructions": [
+    "Preheat oven to 400F. Place a pizza stone in the oven, and preheat for at least 30 minutes. This can also be made on a baking sheet lined with parchment paper.",
+    "In a large bowl, mix together the flour, baking powder, baking soda, salt, greek yogurt, and sourdough discard until a shaggy dough forms.",
+    "Lay the dough out onto a floured surface and knead with your hands until smooth. The dough should be soft and sticky, yet supple.",
+    "If the dough seems too wet, add 1 more tbsp of flour at a time, until it comes together more. Shape into a large ball and allow to rest for 10-15 minutes.",
+    "Place the dough on a piece of parchment paper that is dusted with flour and roll out into a large rectangle, around 8x12”.",
+    "Spread your desired amount of pizza sauce and pesto across the surface of the dough. Arrange the roasted red peppers over the sauce. Then, top with your desired amounts of provolone cheese, salami, pepperoni, and mozzarella cheese.",
+    "Brush the edges of the dough with the egg wash. Starting at a short end, tuck in the sides of the dough and carefully roll it up into a log while keeping everything tight and compact. Pinch to seal and place the seam side down.",
+    "Brush the top of the stromboli with the egg wash, then sprinkle with sesame seeds, grated parmesan, and Italian seasoning. Take a sharp knife and cut small slits across the top of the dough.",
+    "Using a pizza peel or pan, transfer the stromboli onto the heated pizza stone in the oven (I like to keep the parchment paper on the bottom to prevent sticking). Bake at 400F for 20-25 minutes or until the crust is golden brown and crispy.",
+    "Remove and let rest for 5 minutes before slicing.",
+    "Slice and serve hot with hot honey and extra pizza sauce, if desired."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/sourdough-discard-italian-stromboli#recipe",
+  "notes": [
+    "Please make sure you are using thick GREEK yogurt! The dough will turn out way too sticky if not, it needs the thickness of greek yogurt!",
+    "If you need to use dairy free yogurt, I would recommend finding a plant-based Greek-style yogurt, starting with a 1/2 cup of yogurt for the dough and adding more as needed.",
+    "A pizza stone gives the crispiest crust, but a parchment-lined baking sheet works well too.",
+    "Using '00' flour is highly recommended.",
+    "Allow the dough to rest 10-15 minutes before rolling."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 1,
+    "value": 5
+  },
+  "servings": "4-6",
+  "tags": {
+    "equipment": [
+      "oven",
+      "pizza-stone"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Sourdough Discard Italian Stromboli",
+  "totalTime": "55 minutes"
+}

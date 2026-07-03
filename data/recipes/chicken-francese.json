@@ -1,0 +1,142 @@
+{
+  "author": "John Kanell",
+  "cookTime": "20 minutes",
+  "description": "This Chicken Francese recipe comes together quickly with only a few simple ingredients. An easy chicken dinner for a busy weeknight or for entertaining guests, this chicken recipe is perfect!",
+  "equipment": [
+    "Large skillet",
+    "Meat mallet or rolling pin",
+    "Plastic wrap"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "boneless skinless chicken breast",
+      "quantity": 4
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 1.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "large egg",
+      "quantity": 2
+    },
+    {
+      "item": "olive oil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "lemon",
+      "quantity": 1
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "chicken broth",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "white wine",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "fresh lemon juice",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "flat-leaf parsley",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "id": "chicken-francese",
+  "ingredients": [
+    "4 6-ounce boneless, skinless chicken breasts (675g)",
+    "1/4 cup all-purpose flour (30g)",
+    "1 1/4 teaspoons salt, divided",
+    "3/4 teaspoon ground black pepper, divided",
+    "2 large eggs, beaten",
+    "1/4 cup olive oil (60mL)",
+    "1 lemon, thinly sliced",
+    "3 tablespoons unsalted butter",
+    "1 tablespoon all-purpose flour",
+    "1 cup chicken broth (240mL)",
+    "1/2 cup white wine (120mL)",
+    "1 tablespoon fresh lemon juice",
+    "2 tablespoons chopped flat-leaf parsley"
+  ],
+  "instructions": [
+    "Place the chicken breasts between 2 pieces of plastic wrap. Pound the breasts with a mallet or rolling pin to about ½-inch thickness.",
+    "In a shallow dish, combine ¼ cup flour, 1 teaspoon salt, and ½ teaspoon pepper. Place the beaten eggs in another shallow dish.",
+    "In a large nonstick skillet, heat the oil over medium-high heat. Dredge two chicken breasts in the flour mixture, then dip in the beaten eggs. Add the chicken to the pan, and cook until golden brown, about 4 minutes. Flip and repeat. Cook until the chicken has an internal temperature of 165F/75C. Remove the cooked chicken to a plate. Keep warm. Repeat the procedure with the remaining two breasts.",
+    "Add the lemon slices to the skillet. Cook for 1 minute or until the lemons begin to brown. Transfer the lemon slices to the plate.",
+    "Carefully wipe out the skillet with a paper towel. Place the skillet over medium heat. Add the butter and cook until melted. Add 1 tablespoon flour and cook for 1 minute, stirring constantly. Gradually whisk in the broth and wine and simmer until the sauce is just thickened, about 4 minutes.",
+    "Stir in the lemon juice, remaining ¼ teaspoon salt, and remaining ¼ teaspoon pepper. Return the chicken and lemon slices to the skillet, spooning the sauce over the chicken. Sprinkle with parsley and serve immediately."
+  ],
+  "link": "https://preppykitchen.com/chicken-francese/#recipe",
+  "notes": [
+    "Do not skip pounding the chicken breasts. Doing so ensures that they will cook through quickly. Even breasts will stay moist as you don't risk the exterior drying out as the interior cooks through.",
+    "To get more juice out of a lemon, bring it to room temperature and roll it on the counter under your palm. Doing so will loosen up the juices so you can more easily squeeze the lemon.",
+    "If you had frozen the chicken beforehand, make sure to pat them dry of any moisture. Doing so will help the flour coating stick better to the chicken.",
+    "To ensure the chicken is cooked all the way through, use a meat thermometer to check that the chicken has an internal temperature of 165F/75C.",
+    "You can use either chicken or vegetable stock for the sauce.",
+    "Place cooked chicken in a 200F oven to keep warm while cooking the remaining chicken, lemon slices, and sauce."
+  ],
+  "nutrition": {
+    "calcium": "44 mg",
+    "calories": "496 kcal",
+    "carbohydrates": "12 g",
+    "cholesterol": "225 mg",
+    "fat": "29 g",
+    "fiber": "1 g",
+    "iron": "2 mg",
+    "monounsaturatedFat": "14 g",
+    "polyunsaturatedFat": "3 g",
+    "potassium": "761 mg",
+    "protein": "41 g",
+    "saturatedFat": "9 g",
+    "sodium": "1181 mg",
+    "sugar": "1 g",
+    "transFat": "1 g",
+    "vitaminA": "626 IU",
+    "vitaminC": "20 mg"
+  },
+  "personalNotes": [],
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 16,
+    "value": 5
+  },
+  "servings": "4 servings",
+  "tags": {
+    "equipment": [
+      "stovetop"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Chicken Francese",
+  "totalTime": "35 minutes"
+}

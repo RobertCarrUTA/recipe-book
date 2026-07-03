@@ -1,0 +1,139 @@
+{
+  "additionalTime": "1 hour",
+  "author": "John Kanell",
+  "cookTime": "25 minutes",
+  "description": "These Mini Cheesecakes have a crunchy graham cracker pecan crust and a rich, creamy filling that bakes quickly. They're easy to make, perfectly portioned, and ideal for customizing with your favorite toppings.",
+  "equipment": [
+    "12-cup muffin pan",
+    "Cupcake liners",
+    "Stand mixer with whisk attachment",
+    "Food processor",
+    "Shot glass or small flat measuring cup"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "graham crackers",
+      "quantity": 8,
+      "unit": "sheet"
+    },
+    {
+      "item": "toasted pecans",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": {
+        "max": 5,
+        "min": 4
+      },
+      "unit": "tbsp"
+    },
+    {
+      "item": "cream cheese",
+      "quantity": 16,
+      "unit": "oz"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "sour cream",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "egg",
+      "quantity": 2
+    }
+  ],
+  "id": "mini-cheesecakes",
+  "ingredients": [
+    "8 full sheets graham crackers (135 g)",
+    "1/4 cup toasted pecans (30 g)",
+    "3 tablespoons granulated sugar",
+    "1/2 teaspoon ground cinnamon",
+    "4 to 5 tablespoons unsalted butter, melted",
+    "2 (8-ounce) packages cream cheese, room temperature",
+    "1/2 cup granulated sugar (100 g)",
+    "1/4 teaspoon salt",
+    "1/4 cup sour cream, room temperature (60 g)",
+    "1 1/2 teaspoons vanilla extract",
+    "2 large eggs, room temperature"
+  ],
+  "instructions": [
+    "Preheat the oven to 350°F and line a 12-cup muffin pan with paper liners.",
+    "Add the graham crackers and toasted pecans to a food processor and pulse until finely crushed. Add the sugar and cinnamon and pulse to combine.",
+    "Drizzle 4 tablespoons of the melted butter over the crumbs and pulse until evenly moistened. If the mixture feels dry, add the remaining tablespoon of butter.",
+    "Divide the crust mixture evenly among the muffin cups (about 2 packed tablespoons each) and press firmly into an even layer. Bake for 8 to 10 minutes, until fragrant. Set aside to cool slightly.",
+    "In a stand mixer, beat the cream cheese on medium speed for 2 to 3 minutes until smooth and creamy.",
+    "Add the sugar and salt and mix until fully combined, scraping down the bowl as needed.",
+    "Add the sour cream and vanilla extract and mix until smooth. Add the eggs one at a time, mixing on medium-low until just incorporated.",
+    "Scoop a scant 1/4 cup of filling into each muffin cup, filling nearly to the top.",
+    "Bake for 15 to 17 minutes, until the centers jiggle slightly when shaken.",
+    "Cool to room temperature in the pan, then remove and refrigerate until chilled before serving."
+  ],
+  "link": "https://preppykitchen.com/mini-cheesecakes/",
+  "notes": [
+    "If the cheesecakes crack, simply cover with toppings such as whipped cream, fruit, or chocolate sauce.",
+    "Store in an airtight container in the refrigerator for up to 3 days.",
+    "Freeze cooled cheesecakes for up to 3 months and thaw overnight in the refrigerator."
+  ],
+  "nutrition": {
+    "calcium": "57 mg",
+    "calories": "285 kcal",
+    "carbohydrates": "21 g",
+    "cholesterol": "78 mg",
+    "fat": "21 g",
+    "fiber": "1 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "6 g",
+    "polyunsaturatedFat": "1 g",
+    "potassium": "93 mg",
+    "protein": "4 g",
+    "saturatedFat": "11 g",
+    "sodium": "241 mg",
+    "sugar": "15 g",
+    "transFat": "0.2 g",
+    "vitaminA": "695 IU",
+    "vitaminC": "0.1 mg"
+  },
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 980,
+    "value": 4.98
+  },
+  "servings": "12",
+  "tags": {
+    "equipment": [
+      "oven",
+      "muffin-pan",
+      "mixer"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Mini Cheesecakes",
+  "totalTime": "1 hour 45 minutes"
+}

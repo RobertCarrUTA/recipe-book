@@ -1,0 +1,97 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "14 minutes",
+  "description": "These Air Fryer Sweet Potato Fries are crispy on the outside, tender on the inside, and incredibly easy to make. Perfect as a quick snack or simple side dish, they're lightly seasoned and ready in under 25 minutes.",
+  "equipment": [
+    "Air fryer",
+    "Large mixing bowl"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "sweet potato",
+      "quantity": 0.75,
+      "unit": "lb"
+    },
+    {
+      "item": "olive oil",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic powder",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "paprika",
+      "quantity": 0.25,
+      "unit": "tsp"
+    }
+  ],
+  "id": "air-fryer-sweet-potato-fries",
+  "ingredients": [
+    "3/4 pound sweet potatoes",
+    "1 teaspoon olive oil",
+    "1/2 teaspoon salt",
+    "1/4 teaspoon ground black pepper",
+    "1/4 teaspoon garlic powder",
+    "1/4 teaspoon paprika"
+  ],
+  "instructions": [
+    "Peel the sweet potatoes if desired. Cut them in half lengthwise, then cut into 1/4-inch-thick planks and slice into 1/4-inch-thick sticks.",
+    "Place the sweet potato sticks in a large bowl and toss with olive oil, salt, black pepper, garlic powder, and paprika until evenly coated.",
+    "Preheat the air fryer to 375°F. Add the sweet potatoes to the basket and air fry for 6 minutes, then gently shake the basket to stir.",
+    "Increase the temperature to 400°F and continue air frying for an additional 8 minutes, until tender and crispy.",
+    "Season with additional salt and pepper to taste and serve immediately."
+  ],
+  "link": "https://preppykitchen.com/air-fryer-sweet-potato-fries/",
+  "notes": [
+    "You can peel the sweet potatoes or leave the skin on based on preference.",
+    "Cut fries evenly so they cook at the same rate.",
+    "Do not cut fries thinner than 1/4 inch or they may burn or break apart.",
+    "Shake or stir the fries halfway through cooking to promote even crisping.",
+    "Try other spices such as cumin, curry powder, or cajun seasoning for variation."
+  ],
+  "nutrition": {
+    "calcium": "53 mg",
+    "calories": "167 kcal",
+    "carbohydrates": "35 g",
+    "fat": "2 g",
+    "fiber": "5 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "1 g",
+    "polyunsaturatedFat": "0.3 g",
+    "potassium": "587 mg",
+    "protein": "3 g",
+    "saturatedFat": "0.3 g",
+    "sodium": "675 mg",
+    "sugar": "7 g",
+    "vitaminA": "24256 IU",
+    "vitaminC": "4 mg"
+  },
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 3,
+    "value": 5
+  },
+  "servings": "2",
+  "tags": {
+    "equipment": [
+      "air-fryer"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Air Fryer Sweet Potato Fries",
+  "totalTime": "24 minutes"
+}

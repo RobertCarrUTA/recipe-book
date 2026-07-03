@@ -1,0 +1,94 @@
+{
+  "additionalTime": "10 minutes cooling time plus 20 minutes flavor rest",
+  "author": "Robert Carr",
+  "cookTime": "12 minutes",
+  "description": "Creamy jalapeno taqueria salsa made by cooking jalapenos and garlic, then blending them with neutral oil, lime, a little vinegar, cilantro, and salt.",
+  "equipment": [
+    "Blender",
+    "Cutting board",
+    "Medium saucepan",
+    "Slotted spoon",
+    "Tongs"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "avocado oil",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "cilantro",
+      "optional": true,
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "garlic",
+      "quantity": 4,
+      "unit": "clove"
+    },
+    {
+      "item": "jalapeno",
+      "quantity": 10
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 1.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "lime",
+      "quantity": 1
+    },
+    {
+      "item": "white vinegar",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "creamy-jalapeno-taqueria-salsa",
+  "ingredients": [
+    "10 jalapenos, stems removed",
+    "4 garlic cloves, peeled",
+    "1/2 cup avocado oil or other neutral oil",
+    "1 tablespoon fresh lime juice",
+    "1 teaspoon white vinegar",
+    "1 1/4 teaspoons Diamond Crystal kosher salt, or 3/4 teaspoon Morton kosher salt",
+    "1/4 cup cilantro leaves and tender stems, optional",
+    "2 to 4 tablespoons jalapeno cooking water, only as needed"
+  ],
+  "instructions": [
+    "Place 10 stemmed jalapenos and 4 peeled garlic cloves in a medium saucepan and cover with water by 1 inch.",
+    "Bring to a simmer over medium-high heat and cook for 8 to 10 minutes, until the jalapenos turn olive-green and soften.",
+    "Use a slotted spoon to transfer the jalapenos and garlic to a plate and let them cool for 10 minutes. Reserve the cooking water.",
+    "For a milder sauce, split the cooked jalapenos and remove some or all of the seeds before blending.",
+    "Add the cooled jalapenos, garlic, 1 tablespoon fresh lime juice, 1 teaspoon white vinegar, 1 1/4 teaspoons Diamond Crystal kosher salt, and 1/4 cup cilantro if using to a blender.",
+    "Blend until the jalapenos are mostly broken down.",
+    "With the blender running, slowly stream in 1/2 cup avocado oil through the lid opening, then blend on high for 20 to 30 seconds until the salsa turns pale and creamy.",
+    "If the salsa is too thick to pour, blend in reserved jalapeno cooking water 1 tablespoon at a time until it is spoonable and lightly drippy.",
+    "Taste and adjust only if needed with a small pinch of kosher salt or a few drops of lime juice.",
+    "Let the salsa rest for at least 20 minutes before serving."
+  ],
+  "notes": [
+    "This salsa is creamy because the cooked jalapenos blend smoothly with oil. It does not contain dairy.",
+    "A high-powered blender such as a Vitamix 5200 makes the smoothest texture, but a regular blender works if you stream the oil slowly and blend a little longer.",
+    "Keep the acid restrained. Too much lime or vinegar makes creamy jalapeno salsa taste sharp instead of green and rich.",
+    "Avocado oil keeps the flavor clean. Canola or grapeseed oil also works. Olive oil is not ideal here because it can turn bitter and assertive when blended hard.",
+    "For a mild version, remove most of the jalapeno seeds after cooking. For a hotter version, leave the seeds in or replace 2 jalapenos with serranos.",
+    "Do not add the oil all at once. Streaming it in helps the oil blend into the sauce instead of floating on top.",
+    "This salsa works especially well on breakfast burritos, tacos, potatoes, grilled chicken, eggs, quesadillas, and rice bowls."
+  ],
+  "nutrition": null,
+  "prepTime": "10 minutes",
+  "rating": null,
+  "servings": "about 2 cups",
+  "source": "original",
+  "tags": {
+    "equipment": [
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Creamy Jalapeño Taqueria Salsa",
+  "totalTime": "52 minutes"
+}

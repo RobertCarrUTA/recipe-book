@@ -1,0 +1,172 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "30 minutes",
+  "description": "These Banana Coffee Cake Pancakes with Warm Vanilla Bourbon Maple Syrup are soft, fluffy, and tender in the middle with a beautifully golden exterior and perfectly crisp edges in every single bite. A warm cinnamon streusel caramelizes on the bottom and melts into the middle as they cook for that classic coffee cake flavor that pairs absolutely perfectly with the ripe banana throughout. Served warm with a pat of butter and a drizzle of warm vanilla bourbon maple syrup - this is the ultimate cozy breakfast you'll want to make every single weekend.",
+  "equipment": [
+    "Baking sheet",
+    "Cookie scoop",
+    "Large nonstick pan or griddle",
+    "Mixing bowls",
+    "Saucepan",
+    "Whisk"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "brown sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 12,
+      "unit": "tbsp"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 3.25,
+      "unit": "cup"
+    },
+    {
+      "item": "brown sugar",
+      "quantity": 6,
+      "unit": "tbsp"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 3,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "cinnamon",
+      "optional": true,
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "buttermilk",
+      "quantity": 2.25,
+      "unit": "cup"
+    },
+    {
+      "item": "banana",
+      "quantity": {
+        "max": 3,
+        "min": 2
+      },
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 2
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "maple syrup",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "bourbon whiskey",
+      "quantity": {
+        "max": 2,
+        "min": 1
+      },
+      "unit": "tbsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "id": "banana-coffee-cake-pancakes",
+  "ingredients": [
+    "1 cup (120g) all-purpose flour",
+    "1 cup (240g) brown sugar, light or dark",
+    "2 tbsp (12g) cinnamon",
+    "12 tbsp (170g) salted butter, softened to room temperature",
+    "3 1/4 cups (390g) all-purpose flour",
+    "6 tbsp (78g) brown sugar, light or dark",
+    "3 tsp (12g) baking powder",
+    "1 1/2 tsp (9g) baking soda",
+    "1 tsp (6g) salt",
+    "Optional: 2 tsp (4g) cinnamon",
+    "2 1/4 cups (540ml) buttermilk, at room temperature",
+    "1 cup (265g) mashed banana, about 2 large or 3 medium bananas",
+    "2 eggs, at room temperature",
+    "2 tsp (8g) vanilla bean paste or extract",
+    "1/4 cup (58g) salted butter, melted and slightly cooled",
+    "3/4 cup (180ml) maple syrup, amber or dark preferred",
+    "1-2 tbsp (15-30ml) bourbon whiskey",
+    "1/2 tsp (2g) vanilla bean paste or extract"
+  ],
+  "instructions": [
+    "Start by preparing the cinnamon streusel. In a medium bowl, combine the flour, brown sugar, cinnamon, salt, and butter. Use a fork, your hands, or handheld electric mixer to mix until combined and the mixture is crumbly. Set aside until ready to use.",
+    "In a medium bowl, whisk together the flour, brown sugar, baking powder, baking soda, salt, and cinnamon. Set aside.",
+    "In a separate large bowl, whisk together the buttermilk, mashed banana, eggs, and vanilla until well combined.",
+    "Add the dry ingredients to the wet, and whisk until just barely combined.",
+    "Add the slightly cooled melted butter and whisk until just incorporated. Be careful not to over-mix, you want a few small lumps in the batter! Let the batter rest at room temperature for 10-15 minutes (do NOT skip this - it allows the flour to absorb the liquid, making the pancakes lighter and fluffier).",
+    "Heat a large nonstick pan or griddle over medium heat. Grease with butter.",
+    "For each pancake, sprinkle about 1-2 tbsp of the cinnamon streusel directly onto the pan. Use a medium cookie scoop or 1/4 cup measuring cup to pour some of the banana pancake batter on top of the streusel. Sprinkle another 1 tbsp of streusel on top of the batter, followed by another small scoop of pancake batter, and finish with a sprinkle of streusel on top (refer to video if needed). I want to emphasize here that there is no ‘perfect' way to do this! You can go about it however you'd like - this is just the way I did it, but feel free to cook them with the streusel in whatever fashion is easiest and the most fun for you! I personally just like to make sure that there is some streusel on both sides of the pancake so it gets nice and caramelized on the outside, and then some streusel on the inside as well.",
+    "Cook until little bubbles form on the surface, and then gently flip to cook the other side until golden brown (~2-4 minutes on each side). Once the pancake is flipped, I like to add a little sprinkle of streusel on top of the cooked side so it melts into the pancake as it finishes cooking. You can adjust the heat on your stovetop as needed throughout the cooking process if the pancakes seem like they're browning too quickly.",
+    "Transfer the cooked pancakes onto a baking sheet and keep warm in the oven at 200F while you make the rest of the pancakes.",
+    "Once you are ready to serve, prepare the warm vanilla bourbon maple syrup. In a in a small pot or pan over low heat for 5 mins, add the maple syrup, bourbon, and vanilla. Stir and heat for just a few minutes, until warm.",
+    "Plate and serve the pancakes warm with a pat of butter, a drizzle of the warm vanilla bourbon maple syrup, and a hot cup of coffee."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/banana-coffee-cake-pancakes-with-warm-vanilla-bourbon-maple-syrup#recipe",
+  "notes": [
+    "Do not skip the 10-15 minute batter rest.",
+    "Keep finished pancakes warm in a 200°F oven.",
+    "There is no perfect way to layer the streusel; do what is easiest and most fun.",
+    "The vanilla bourbon maple syrup is optional.",
+    "Use some streusel on both sides and inside the pancakes for the best caramelized flavor."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "25 minutes",
+  "rating": {
+    "count": 1,
+    "value": 4.5
+  },
+  "servings": "12-16 large pancakes",
+  "tags": {
+    "equipment": [
+      "griddle",
+      "oven",
+      "saucepan"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Banana Coffee Cake Pancakes (with Warm Vanilla Bourbon Maple Syrup)",
+  "totalTime": "1 hour 10 minutes"
+}

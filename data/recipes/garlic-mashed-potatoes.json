@@ -1,0 +1,107 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "25 minutes",
+  "description": "Creamy, fluffy garlic mashed potatoes made with Yukon gold potatoes, butter, milk, and sour cream. This classic side dish is easy to prepare and perfect for holidays, family dinners, or any comforting meal.",
+  "equipment": [
+    "Large pot",
+    "Small saucepan or pot",
+    "Potato masher or ricer"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "Yukon gold potato",
+      "quantity": 2.5,
+      "unit": "lb"
+    },
+    {
+      "item": "garlic",
+      "quantity": 6,
+      "unit": "clove"
+    },
+    {
+      "item": "salt",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "whole milk",
+      "quantity": 0.666667,
+      "unit": "cup"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "sour cream",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    }
+  ],
+  "id": "garlic-mashed-potatoes",
+  "ingredients": [
+    "2 1/2 pounds Yukon gold potatoes, peeled and cut into large pieces",
+    "6 garlic cloves, smashed and peeled",
+    "2 teaspoons salt",
+    "2/3 cup whole milk",
+    "1/4 cup unsalted butter",
+    "1/4 cup sour cream",
+    "1/4 teaspoon ground black pepper"
+  ],
+  "instructions": [
+    "Cut the potatoes into large, even pieces (about 1 1/2 inches). Place them in a large pot with the garlic cloves and salt. Cover with cold water by about 1 inch.",
+    "Bring the pot to a boil over high heat. Reduce heat to medium-low and simmer for about 20 minutes, until the potatoes are fork-tender but not falling apart.",
+    "Meanwhile, heat the milk and butter in a small saucepan over medium heat, stirring occasionally, until the butter is melted and the milk is warm. Remove from heat.",
+    "Drain the potatoes and garlic and return them to the pot. Pour the warm milk mixture over the potatoes.",
+    "Mash just until smooth using a potato masher or ricer. Do not overmix.",
+    "Stir in the sour cream and black pepper. Adjust seasoning with additional salt and pepper if needed. Serve warm."
+  ],
+  "link": "https://preppykitchen.com/garlic-mashed-potatoes/",
+  "notes": [
+    "For roasted garlic flavor, roast a whole head of garlic and add the softened cloves during mashing instead of boiling garlic with the potatoes.",
+    "Serve topped with extra butter, chopped chives, bacon, or shredded cheese.",
+    "Do not overmash, as this can make the potatoes gummy.",
+    "An Instant Pot method can also be used following Instant Pot mashed potato instructions."
+  ],
+  "nutrition": {
+    "calcium": "74 mg",
+    "calories": "253 kcal",
+    "carbohydrates": "36 g",
+    "cholesterol": "29 mg",
+    "fat": "11 g",
+    "fiber": "4 g",
+    "iron": "2 mg",
+    "monounsaturatedFat": "3 g",
+    "polyunsaturatedFat": "0.5 g",
+    "potassium": "864 mg",
+    "protein": "5 g",
+    "saturatedFat": "6 g",
+    "sodium": "801 mg",
+    "sugar": "3 g",
+    "transFat": "0.3 g",
+    "vitaminA": "344 IU",
+    "vitaminC": "38 mg"
+  },
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 6,
+    "value": 5
+  },
+  "servings": "6",
+  "tags": {
+    "equipment": [
+      "pot",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Garlic Mashed Potatoes",
+  "totalTime": "35 minutes"
+}

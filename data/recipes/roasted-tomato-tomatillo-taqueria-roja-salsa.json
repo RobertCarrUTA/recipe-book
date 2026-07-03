@@ -1,0 +1,127 @@
+{
+  "additionalTime": "10 minutes dried chile soak plus 15 minutes flavor rest",
+  "author": "Robert Carr",
+  "cookTime": "25 minutes",
+  "description": "Roasted red taqueria salsa with Roma tomatoes, tomatillos, jalapenos, guajillo, a small amount of chile de arbol, garlic, onion, lime, vinegar, and oil, blended until smooth.",
+  "equipment": [
+    "12-inch cast-iron skillet or comal",
+    "Blender",
+    "Cutting board",
+    "Fine-mesh strainer, optional",
+    "Knife",
+    "Small saucepan",
+    "Tongs"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "apple cider vinegar",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "avocado oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "dried chile de arbol",
+      "quantity": 2
+    },
+    {
+      "item": "dried guajillo chile",
+      "quantity": 1
+    },
+    {
+      "item": "garlic",
+      "quantity": 4,
+      "unit": "clove"
+    },
+    {
+      "item": "honey",
+      "optional": true,
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "jalapeno",
+      "quantity": 2
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "lime",
+      "quantity": 1
+    },
+    {
+      "item": "Roma tomato",
+      "quantity": 5
+    },
+    {
+      "item": "tomatillo",
+      "quantity": 3
+    },
+    {
+      "item": "white onion",
+      "quantity": 1
+    }
+  ],
+  "id": "roasted-tomato-tomatillo-taqueria-roja-salsa",
+  "ingredients": [
+    "5 Roma tomatoes",
+    "3 tomatillos, husked and rinsed",
+    "2 jalapenos",
+    "1/2 small white onion",
+    "4 garlic cloves, unpeeled",
+    "1 dried guajillo chile, stemmed and seeded",
+    "2 dried chile de arbol peppers, stemmed",
+    "1 tablespoon apple cider vinegar",
+    "1 tablespoon fresh lime juice",
+    "1 tablespoon avocado oil",
+    "1 teaspoon Diamond Crystal kosher salt, or 1/2 teaspoon Morton kosher salt",
+    "1/4 teaspoon black pepper",
+    "1/2 teaspoon honey, optional"
+  ],
+  "instructions": [
+    "Toast 1 stemmed and seeded dried guajillo chile and 2 stemmed dried chile de arbol peppers in a dry skillet over medium heat for 15 to 30 seconds per side, just until fragrant and slightly softened, not scorched.",
+    "Place the toasted chiles in a small bowl, cover with very hot water, and soak for 10 minutes.",
+    "While the chiles soak, place 5 Roma tomatoes, 3 tomatillos, 2 jalapenos, 1/2 small white onion, and 4 unpeeled garlic cloves in a dry cast-iron skillet or comal over medium-high heat.",
+    "Roast the vegetables for 10 to 14 minutes, turning occasionally, until the tomatoes and tomatillos soften, the jalapenos blister, the onion chars in spots, and the garlic is browned and soft inside.",
+    "Peel the roasted garlic cloves.",
+    "Drain the soaked chiles and add them to a blender with the roasted tomatoes, tomatillos, jalapenos, onion, peeled garlic, 1 tablespoon apple cider vinegar, 1 tablespoon fresh lime juice, 1 tablespoon avocado oil, 1 teaspoon Diamond Crystal kosher salt, 1/4 teaspoon black pepper, and 1/2 teaspoon honey if using.",
+    "Blend on medium speed for 20 to 35 seconds, using a tamper only if your blender needs help moving, until the salsa is smooth but not whipped or foamy.",
+    "For a thinner taqueria-style texture, blend in 1 to 3 tablespoons of the chile soaking water, 1 tablespoon at a time.",
+    "Pour the salsa into a small saucepan and simmer over medium-low heat for 3 to 5 minutes, stirring often, until the raw sharpness rounds off and the color deepens slightly.",
+    "Taste and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a few drops of honey.",
+    "Let the salsa rest for at least 15 minutes before serving so the roasted tomato, chile, and acid flavors settle."
+  ],
+  "notes": [
+    "This roja is the everyday red salsa in the set: smoother and more tomato-forward than the hotter guajillo-arbol drip salsa.",
+    "If using a Vitamix 5200, start on Variable 1 and increase to Variable 5 or 6. Do not use High unless you intentionally want a very smooth hot-sauce texture.",
+    "The tomatillos add brightness and structure, but the salsa should still taste like a red taqueria salsa rather than salsa verde.",
+    "Use 1 chile de arbol for mild heat, 2 for medium, or 4 for hot.",
+    "If any chile smells bitter or looks blackened after toasting, discard it and toast another one. Scorched dried chiles can make the whole batch taste harsh.",
+    "This salsa works especially well with carne asada burritos, breakfast burritos, tacos, eggs, chips, and quesadillas."
+  ],
+  "nutrition": null,
+  "prepTime": "15 minutes",
+  "rating": null,
+  "servings": "about 2 1/2 cups",
+  "source": "original",
+  "tags": {
+    "equipment": [
+      "cast-iron-skillet",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Roasted Tomato-Tomatillo Taqueria Roja Salsa",
+  "totalTime": "50 minutes"
+}

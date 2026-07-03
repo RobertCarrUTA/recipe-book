@@ -1,0 +1,144 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "30 minutes",
+  "description": "Chicken Florentine is a comforting Italian-inspired dish featuring pan-seared chicken breasts served in a garlicky spinach cream sauce with parmesan. It's quick, easy, and made with simple everyday ingredients.",
+  "equipment": [
+    "Large skillet"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "chicken breast",
+      "quantity": 4
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.333333,
+      "unit": "cup"
+    },
+    {
+      "item": "olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "butter",
+      "quantity": 4,
+      "unit": "tbsp"
+    },
+    {
+      "item": "garlic",
+      "quantity": 5,
+      "unit": "clove"
+    },
+    {
+      "item": "dry white wine",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "italian seasoning",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "heavy whipping cream",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "fresh baby spinach",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "item": "parmesan cheese",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "fresh parsley",
+      "optional": true
+    }
+  ],
+  "id": "chicken-florentine",
+  "ingredients": [
+    "4 large chicken breasts, pounded",
+    "1 teaspoon salt",
+    "1/2 teaspoon black pepper",
+    "1/3 cup all-purpose flour, for dredging",
+    "2 tablespoons olive oil",
+    "4 tablespoons butter, divided",
+    "5 cloves garlic, minced",
+    "3/4 cup dry white wine",
+    "1/2 teaspoon Italian seasoning",
+    "1 cup heavy whipping cream",
+    "3 cups fresh baby spinach",
+    "3/4 cup freshly grated parmesan cheese",
+    "Fresh parsley, for garnish (optional)"
+  ],
+  "instructions": [
+    "In a bowl, combine the flour, salt, and pepper and whisk together.",
+    "Pound the chicken breasts with a mallet until about 1 inch thick.",
+    "Season both sides of the chicken with salt and pepper, then dredge in the flour, shaking off any excess.",
+    "Heat 1 tablespoon olive oil and 1 tablespoon butter in a large skillet over medium-high heat. Add two chicken breasts, cover, and cook for about 4 minutes per side until golden and cooked through (internal temperature of 165°F). Remove to a plate and repeat with remaining chicken using another tablespoon of butter.",
+    "Reduce heat to medium. Melt the remaining 2 tablespoons of butter in the skillet, add garlic, and cook for 30-45 seconds until fragrant.",
+    "Pour in the white wine and cook, stirring occasionally, until reduced by about half.",
+    "Stir in the cream and bring to a simmer. Add the parmesan cheese and stir until melted.",
+    "Add the spinach and cook until wilted. Return the chicken and any juices to the pan, reduce heat to medium-low, and simmer until the sauce thickens and the chicken is warmed through, about 4 minutes.",
+    "Garnish with parsley if desired and serve immediately."
+  ],
+  "link": "https://preppykitchen.com/baked-chicken-florentine/",
+  "notes": [
+    "Boneless, skinless chicken thighs can be used instead of chicken breasts.",
+    "Swiss chard or kale can be substituted for spinach.",
+    "If you don't have white wine, substitute with chicken stock.",
+    "Mushrooms can be added and sautéed alongside the garlic.",
+    "Serve immediately for best texture, as cream sauces thicken as they cool."
+  ],
+  "nutrition": {
+    "calcium": "290 mg",
+    "calories": "536 kcal",
+    "carbohydrates": "14 g",
+    "cholesterol": "129 mg",
+    "fat": "46 g",
+    "fiber": "1 g",
+    "iron": "2 mg",
+    "potassium": "265 mg",
+    "protein": "11 g",
+    "saturatedFat": "25 g",
+    "sodium": "1013 mg",
+    "sugar": "1 g",
+    "transFat": "1 g",
+    "vitaminA": "3503 IU",
+    "vitaminC": "8 mg"
+  },
+  "personalNotes": [
+    "Honestly it wasn't that great. I used a enameled cast iron and I think it was too hot. Also it will be a bit of work to clean the cast iron after cooking if the pan is too hot and food/sauce on the surface burns. I would cook it again but it was just okay. The leftovers were better with rice. I may have liked it with a little more cheese. Also it took me 2 hours to prep and cook this for some reason."
+  ],
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 19,
+    "value": 4.95
+  },
+  "servings": "4",
+  "tags": {
+    "equipment": [
+      "skillet"
+    ],
+    "rating": "okay",
+    "status": "tried"
+  },
+  "title": "Chicken Florentine",
+  "totalTime": "40 minutes"
+}

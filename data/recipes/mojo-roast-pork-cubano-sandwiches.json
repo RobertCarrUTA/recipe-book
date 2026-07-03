@@ -1,0 +1,282 @@
+{
+  "additionalTime": "8 to 24 hours pork marinade plus 1 hour 30 minutes dough rise",
+  "author": "Robert Carr",
+  "cookTime": "3 hours 25 minutes",
+  "description": "Mojo roast pork Cubano sandwiches with homemade Cuban-style rolls, citrus-garlic pork shoulder, ham, Swiss cheese, quick garlic pickles, mustard sauce, and a buttered pressed crust.",
+  "equipment": [
+    "Blender or food processor",
+    "Cast-iron skillet, griddle, or panini press",
+    "Dutch oven or roasting pan with lid",
+    "Heavy skillet or foil-wrapped brick, if not using a panini press",
+    "Instant-read thermometer",
+    "Large bowl or stand mixer with dough hook",
+    "Parchment paper",
+    "Rimmed baking sheet",
+    "Sharp knife",
+    "Wire rack"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "bread flour",
+      "quantity": 4,
+      "unit": "cup"
+    },
+    {
+      "item": "active dry yeast",
+      "quantity": 2.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "water",
+      "quantity": 1.75,
+      "unit": "cup"
+    },
+    {
+      "item": "lard or unsalted butter",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 5.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "boneless pork shoulder",
+      "quantity": 3,
+      "unit": "lb"
+    },
+    {
+      "item": "large orange",
+      "quantity": 3
+    },
+    {
+      "item": "lime",
+      "quantity": 4
+    },
+    {
+      "item": "lemon",
+      "quantity": 1
+    },
+    {
+      "item": "garlic clove",
+      "quantity": 12
+    },
+    {
+      "item": "olive oil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "fresh oregano",
+      "quantity": 1,
+      "unit": "bunch"
+    },
+    {
+      "item": "ground cumin",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "smoked paprika",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 2.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "Worcestershire sauce",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1
+    },
+    {
+      "item": "dried bay leaf",
+      "quantity": 2
+    },
+    {
+      "item": "low-sodium chicken broth",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "English cucumber",
+      "quantity": 1
+    },
+    {
+      "item": "white vinegar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "yellow mustard seed",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "fresh dill",
+      "quantity": 1,
+      "unit": "small bunch"
+    },
+    {
+      "item": "yellow mustard",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "honey",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "thin-sliced smoked deli ham",
+      "quantity": 12,
+      "unit": "oz"
+    },
+    {
+      "item": "Swiss cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 3,
+      "unit": "tbsp"
+    }
+  ],
+  "id": "mojo-roast-pork-cubano-sandwiches",
+  "ingredients": [
+    "4 cups bread flour",
+    "2 1/4 teaspoons active dry yeast",
+    "3 tablespoons granulated sugar, divided",
+    "1 1/4 cups warm water, 105 to 110 degrees F, for the rolls",
+    "1/2 cup water, for the quick pickles",
+    "3 tablespoons melted lard or melted unsalted butter, for the rolls",
+    "5 3/4 teaspoons Diamond Crystal kosher salt or 3 3/4 teaspoons Morton kosher salt, divided",
+    "3 pounds boneless pork shoulder, trimmed of thick exterior fat and cut into 3 large pieces",
+    "3 large oranges, zested and juiced to yield 1 tablespoon zest and 3/4 cup juice",
+    "4 limes, juiced to yield 1/2 cup juice",
+    "1 lemon, juiced to yield 2 tablespoons juice",
+    "12 garlic cloves, divided",
+    "1/4 cup olive oil",
+    "2 tablespoons finely chopped fresh oregano leaves and tender stems, or 2 teaspoons dried oregano",
+    "2 teaspoons ground cumin",
+    "1 teaspoon smoked paprika",
+    "2 1/4 teaspoons black pepper, divided",
+    "1 tablespoon Worcestershire sauce",
+    "1 large yellow onion, thinly sliced",
+    "2 dried bay leaves",
+    "1/2 cup low-sodium chicken broth",
+    "1 large English cucumber, sliced 1/8 inch thick, or 12 ounces small pickling cucumbers",
+    "1/2 cup white vinegar",
+    "1 teaspoon yellow mustard seed",
+    "1/4 cup fresh dill sprigs or chopped dill",
+    "1/2 cup yellow mustard",
+    "2 tablespoons Dijon mustard",
+    "1/4 cup mayonnaise",
+    "1 tablespoon honey",
+    "12 ounces thin-sliced smoked deli ham",
+    "8 ounces Swiss cheese, preferably 8 thin slices",
+    "3 tablespoons unsalted butter, softened, for pressing the sandwiches"
+  ],
+  "instructions": [
+    "Pat the 3 pounds boneless pork shoulder dry with paper towels.",
+    "Trim any thick exterior fat down to about 1/4 inch, then cut the pork shoulder into 3 large pieces so the mojo can season more surface area.",
+    "Season the pork all over with 2 teaspoons Diamond Crystal kosher salt and 1 teaspoon black pepper.",
+    "In a blender or food processor, combine 1 tablespoon orange zest, 3/4 cup fresh orange juice, 1/2 cup fresh lime juice, 2 tablespoons fresh lemon juice, 1/4 cup olive oil, 10 garlic cloves, 2 tablespoons chopped fresh oregano, 2 teaspoons ground cumin, 1 teaspoon smoked paprika, 1 tablespoon Worcestershire sauce, and 1 teaspoon black pepper.",
+    "Blend the mojo for 20 to 30 seconds, until the garlic is finely chopped and the marinade looks cloudy and blended.",
+    "Place the sliced yellow onion and 2 dried bay leaves in a large nonreactive bowl, zip-top bag, or covered container.",
+    "Add the seasoned pork pieces to the onion and bay leaves, then pour all of the mojo over the pork.",
+    "Turn the pork pieces until every side is coated in mojo, then cover and refrigerate for 8 to 24 hours.",
+    "Remove the marinated pork from the refrigerator 30 minutes before roasting.",
+    "Heat the oven to 300 degrees F.",
+    "Transfer the pork, all of the mojo, the sliced onion, and the bay leaves to a Dutch oven or covered roasting pan.",
+    "Add 1/2 cup low-sodium chicken broth around the pork, cover tightly, and roast for 2 hours.",
+    "After 2 hours, uncover the pot and spoon the pan juices over the pork.",
+    "Continue roasting uncovered for 35 to 55 minutes, spooning the pan juices over the pork every 15 minutes, until the pork is browned at the edges and the thickest piece reaches 190 to 200 degrees F.",
+    "While the pork starts roasting, make the roll dough by stirring together 1 1/4 cups warm water, 2 tablespoons granulated sugar, and 2 1/4 teaspoons active dry yeast in a large bowl or the bowl of a stand mixer.",
+    "Let the yeast mixture stand for 5 to 10 minutes, until it looks foamy on top.",
+    "Add 4 cups bread flour, 3 tablespoons melted lard or melted unsalted butter, and 2 teaspoons Diamond Crystal kosher salt to the yeast mixture.",
+    "Mix on low speed with a dough hook until no dry flour remains, then knead on medium-low for 8 minutes. If mixing by hand, stir with a sturdy spoon until shaggy, then knead on a lightly floured counter for about 10 minutes.",
+    "The dough should be smooth and slightly tacky but should not paste itself to your fingers; if it is very sticky, knead for 1 more minute before adding any extra flour.",
+    "Cover the dough bowl and let the dough rise at warm room temperature for 60 to 90 minutes, until doubled.",
+    "Line a rimmed baking sheet with parchment paper.",
+    "Turn the risen dough onto a lightly floured counter, divide it into 4 equal pieces, and shape each piece into a tight 7-inch sandwich roll.",
+    "Place the 4 shaped rolls on the parchment-lined baking sheet, leaving at least 2 inches between them.",
+    "Cover the shaped rolls with a clean towel and let them rise for 35 to 45 minutes, until puffy.",
+    "If the rolls finish the second rise before the pork is tender, keep them covered at room temperature for up to 30 minutes.",
+    "When the pork is tender, transfer it to a cutting board, tent it loosely with foil, and let it rest for at least 20 minutes while the rolls bake.",
+    "Increase the oven to 400 degrees F for the rolls.",
+    "Use a sharp knife to make one shallow lengthwise slash down the top of each roll.",
+    "Bake the 4 rolls for 18 to 22 minutes, until golden brown and about 195 degrees F in the center.",
+    "Move the rolls to a wire rack and cool for at least 20 minutes before slicing.",
+    "Make the quick pickles by placing the sliced English cucumber and 1/4 cup fresh dill in a heat-safe bowl or jar.",
+    "In a small saucepan, combine 1/2 cup white vinegar, 1/2 cup water, 1 tablespoon granulated sugar, 1 1/2 teaspoons Diamond Crystal kosher salt, 1 teaspoon yellow mustard seed, and the remaining 2 smashed garlic cloves.",
+    "Bring the pickle brine to a simmer, stirring until the sugar and salt dissolve.",
+    "Pour the hot pickle brine over the cucumber and dill, press the cucumber under the liquid, and let the pickles cool for at least 30 minutes.",
+    "Strain the pan juices through a fine mesh strainer, skim off excess surface fat with a spoon, and reserve at least 1/4 cup strained pan juices for brushing the pork and seasoning the sauce.",
+    "Make the mustard sauce by stirring together 1/2 cup yellow mustard, 2 tablespoons Dijon mustard, 1/4 cup mayonnaise, 1 tablespoon honey, 1 tablespoon cooled quick pickle brine, 1 tablespoon strained pork pan juices, 1/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
+    "Slice or pull the rested pork into bite-size pieces, then toss the pork with 2 tablespoons strained pan juices so it stays juicy but not wet.",
+    "Split the 4 cooled rolls lengthwise without cutting all the way through if possible.",
+    "Spread about 1 tablespoon mustard sauce on each cut side of each roll, using about 2 tablespoons sauce per sandwich.",
+    "Layer 3 ounces thin-sliced smoked deli ham onto each bottom roll.",
+    "Add about 5 ounces mojo roast pork to each sandwich, using one-fourth of the sliced or pulled pork.",
+    "Add 2 ounces Swiss cheese to each sandwich, preferably 2 thin slices per sandwich.",
+    "Drain the quick pickles well, then add about 1/4 cup pickles to each sandwich.",
+    "Close the sandwiches and spread the outside of the rolls with 3 tablespoons softened unsalted butter total, coating the tops and bottoms.",
+    "Heat a cast-iron skillet, griddle, or panini press over medium heat.",
+    "Press 1 or 2 sandwiches at a time for 3 to 5 minutes per side, weighing them down with a heavy skillet or foil-wrapped brick if using a skillet or griddle.",
+    "Cook until the bread is well toasted, the Swiss cheese is melted, and the center of each sandwich is hot.",
+    "Let the pressed sandwiches rest for 2 minutes, then cut each sandwich in half and serve immediately."
+  ],
+  "link": null,
+  "notes": [
+    "The main flavor comes from citrus-garlic mojo in the pork, pork drippings in the mustard sauce, quick pickles, ham, melted Swiss cheese, and a buttered pressed roll.",
+    "For boneless pork shoulder, buy a piece with good marbling and a small fat cap. If using bone-in pork shoulder, buy about 4 pounds so you still have enough meat after removing the bone.",
+    "The pork is best after 8 to 12 hours in the mojo. Up to 24 hours is fine, but avoid going longer because the citrus can make the outside of the pork seem cured.",
+    "If using Morton kosher salt instead of Diamond Crystal, use about two-thirds of the salt amounts listed in the instructions because Morton is denser by volume.",
+    "Fresh oregano gives the mojo a greener, brighter flavor. If using dried oregano, use 2 teaspoons dried oregano instead of 2 tablespoons fresh oregano.",
+    "The pork should be tender enough to slice or pull but not swimming in liquid. Toss it with only 2 tablespoons pan juices before building the sandwiches so the bread can still crisp.",
+    "The rolls can be baked 1 day ahead. Rewarm them in a 300 degrees F oven for 5 to 7 minutes before assembling.",
+    "Drain the quick pickles well before adding them to the sandwiches. Wet pickles can keep the bread from crisping in the press.",
+    "Medium heat is better than high heat for pressing because the bread needs time to toast while the cheese melts and the middle gets hot.",
+    "A panini press works well. If using a skillet or griddle, place a sheet of parchment over the sandwich before weighing it down with a heavy skillet or foil-wrapped brick.",
+    "Leftover mojo pork is good in rice bowls, tacos, breakfast hash, or more sandwiches."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "1 hour",
+  "rating": null,
+  "servings": "4 large sandwiches",
+  "tags": {
+    "equipment": [
+      "dutch-oven",
+      "oven",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Mojo Roast Pork Cubano Sandwiches",
+  "totalTime": "4 hours 25 minutes plus 8 to 24 hours pork marinade"
+}

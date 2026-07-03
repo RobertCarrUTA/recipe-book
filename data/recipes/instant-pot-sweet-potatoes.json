@@ -1,0 +1,71 @@
+{
+  "additionalTime": "10 minutes",
+  "author": "John Kanell",
+  "cookTime": "30 minutes",
+  "description": "These Instant Pot Sweet Potatoes are an easy, no-fuss side dish that turns out perfectly soft and fluffy every time. They're ideal when you need a quick, hands-off way to cook whole sweet potatoes.",
+  "equipment": [
+    "Instant Pot or electric pressure cooker",
+    "Trivet",
+    "Tongs"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "sweet potato",
+      "quantity": {
+        "max": 4,
+        "min": 2
+      }
+    }
+  ],
+  "id": "instant-pot-sweet-potatoes",
+  "ingredients": [
+    "2 to 4 sweet potatoes, all similar in size",
+    "1 cup cool water"
+  ],
+  "instructions": [
+    "Scrub the sweet potatoes thoroughly and prick each one a few times with a fork.",
+    "Place the trivet in the Instant Pot and arrange the sweet potatoes in a single layer on top. Add the water.",
+    "Secure the lid and make sure the steam valve is set to seal.",
+    "Cook on high pressure based on potato size: 20 minutes for small, 30 minutes for medium, or 45 minutes for large potatoes.",
+    "Allow the pressure to naturally release for 10 minutes, then manually release any remaining pressure.",
+    "Carefully remove the sweet potatoes with tongs and serve hot, or let cool to room temperature before storing."
+  ],
+  "link": "https://preppykitchen.com/instant-pot-sweet-potatoes/",
+  "notes": [
+    "There is no need to peel the sweet potatoes; the skins are edible and will soften during cooking.",
+    "Fewer fork pricks will reduce skin splitting, but pricking is necessary to prevent bursting.",
+    "If the potatoes are not fully tender after cooking, return them to high pressure for an additional 5 minutes.",
+    "Cook times depend on size: small (6-8 oz), medium (9-14 oz), large (15 oz or more).",
+    "Store cooked sweet potatoes in an airtight container in the refrigerator for up to 1 week."
+  ],
+  "nutrition": {
+    "calcium": "68 mg",
+    "calories": "194 kcal",
+    "carbohydrates": "45 g",
+    "fat": "0.1 g",
+    "fiber": "7 g",
+    "iron": "1 mg",
+    "polyunsaturatedFat": "0.03 g",
+    "potassium": "762 mg",
+    "protein": "4 g",
+    "saturatedFat": "0.04 g",
+    "sodium": "124 mg",
+    "sugar": "9 g",
+    "vitaminA": "32063 IU",
+    "vitaminC": "5 mg"
+  },
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 2,
+    "value": 5
+  },
+  "servings": "2-4",
+  "tags": {
+    "equipment": [
+      "instant-pot"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Instant Pot Sweet Potatoes",
+  "totalTime": "40 minutes"
+}

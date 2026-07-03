@@ -1,0 +1,124 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "25 minutes",
+  "description": "These Salted Honey Butter Sourdough Parker House Rolls are soft, fluffy, and full of flavor! Made with sourdough discard, they're brushed with warm salted honey butter right after baking and sprinkled with flaky sea salt for a perfect sweet-and-salty finish. Ideal for dinner tables, holiday feasts, or any occasion.",
+  "equipment": [
+    "9x13-inch baking pan or dish",
+    "Large bowl",
+    "Small bowl",
+    "Wooden spoon"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "active dry or instant yeast",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "milk",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "honey",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "egg",
+      "quantity": 2
+    },
+    {
+      "item": "salted butter",
+      "quantity": 2.5,
+      "unit": "tbsp"
+    },
+    {
+      "item": "sourdough discard",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 3.5,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "salted butter",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "honey",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "flaky sea salt"
+    }
+  ],
+  "id": "salted-honey-butter-sourdough-parker-house-rolls",
+  "ingredients": [
+    "1 1/2 tsp active dry or instant yeast",
+    "1/2 cup (120ml) warm milk of choice, warmed (~110F)",
+    "1 tbsp (20g) honey",
+    "2 eggs, at room temperature",
+    "2 1/2 tbsp (35g) salted butter, melted",
+    "1 cup (280g) sourdough discard",
+    "1 tsp (6g) salt",
+    "3 1/2 cups (420g) all-purpose flour",
+    "1 extra egg, beaten, for egg wash",
+    "1/4 cup (58g) salted butter, melted",
+    "3 tbsp (60g) honey",
+    "Flaky sea salt, for topping"
+  ],
+  "instructions": [
+    "Start by activating the yeast. In a small bowl, mix together the warm milk, honey, and yeast. Let sit for 5 minutes until the yeast is activated and foamy.",
+    "Once activated, add the eggs, melted butter, sourdough discard, salt, and flour. Mix with a dough whisk or wooden spoon until a dough starts to form. Then, use your hands to knead for 5-8 minutes on a lightly floured surface, until the dough is smooth and elastic.",
+    "Lightly oil a large bowl, place the dough in, and cover with plastic wrap or a kitchen towel. Allow to rise until doubled in size (45-60 minutes).",
+    "Once doubled in size, remove the dough from the bowl and place onto a lightly floured surface.",
+    "Divide the dough into 12 equal pieces.",
+    "Create a roll out of each dough piece by folding the sides to the center, then roll the ball in a circular motion on a counter surface to create tention, until the top is smooth. Repeat with the rest.",
+    "Place the dough balls into a 9x13” baking pan or dish that is greased with butter.",
+    "Cover with plastic wrap or a kitchen towel, and allow to proof for 30-45 minutes, until puffed up.",
+    "Once proofed, brush with the egg wash.",
+    "Bake at 375F for 20-25 minutes, until golden brown.",
+    "Make the salted honey butter by mixing together the melted butter and honey in a small bowl.",
+    "Remove the rolls from the oven and immediately brush with the salted honey butter.",
+    "Sprinkle with flaky sea salt and serve warm."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/salted-honey-butter-sourdough-parker-house-rolls#recipe",
+  "notes": [
+    "Mix up the dough, shape the rolls, cover, and refrigerate to slow the rise. They can bake straight from the fridge after several hours.",
+    "Another option is to refrigerate the dough for about 12 hours after mixing, then shape and let rise before baking.",
+    "The rolls are best served warm.",
+    "Instant or active dry yeast both work.",
+    "Brushing with the salted honey butter immediately after baking gives the best flavor."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "30 minutes",
+  "rating": {
+    "count": 4,
+    "value": 4.88
+  },
+  "servings": "12 rolls",
+  "tags": {
+    "equipment": [
+      "baking-pan"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Salted Honey Butter Sourdough Parker House Rolls",
+  "totalTime": "2 hours 40 minutes"
+}

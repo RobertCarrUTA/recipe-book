@@ -6,7 +6,7 @@ The app is intentionally lightweight: no build step, no framework, and no backen
 
 ## Features
 
-- Browse saved recipes from `data/recipes.json`.
+- Browse saved recipes from the generated `data/recipes.json` bundle.
 - Search recipe titles, authors, ingredients, notes, and instructions.
 - Filter by status, rating, difficulty, equipment, selected recipes, and favorites.
 - Sort recipes by favorites, grocery-list selections, fastest total time, rating, or easiest difficulty.
@@ -40,7 +40,15 @@ Use Export backup and Import backup in the Grocery List controls when moving bro
 
 ## Recipe Data
 
-Recipes live in `data/recipes.json`. To add a recipe, add a new recipe object to the JSON array using the existing entries as a template.
+Recipe source files live in `data/recipes/`, with one recipe object per file. To add a recipe, add a new `data/recipes/<recipe-id>.json` file using the existing entries as a template.
+
+The browser still loads `data/recipes.json`, but that file is generated. After adding or editing recipe source files, rebuild the bundle:
+
+```bash
+npm run build:recipes
+```
+
+Use the recipe `id` as the filename, such as `data/recipes/chicken-fried-steak.json`. Do not edit `data/recipes.json` directly unless you are intentionally repairing the generated bundle.
 
 Recommended fields:
 
@@ -153,6 +161,8 @@ npm.cmd run verify
 ```
 
 It syntax-checks JavaScript modules, runs focused unit tests, validates the recipe schema, checks unique IDs, exercises ingredient parsing, and recomputes grocery totals from the real recipe data.
+
+`npm run verify` also checks that `data/recipes.json` is up to date with the source files in `data/recipes/`.
 
 For an advisory recipe data quality report:
 

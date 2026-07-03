@@ -1,0 +1,214 @@
+{
+  "additionalTime": "10 minutes tomato and onion seasoning time plus 5 minutes sandwich pressing",
+  "author": "Robert Carr",
+  "cookTime": "0 minutes",
+  "description": "A cold Italian grinder sandwich with thin-sliced ham, Genoa salami, capicola, provolone, garlic-oregano mayo, seasoned tomatoes and onions, chopped giardiniera, pepperoncini, and a red wine vinaigrette grinder salad.",
+  "equipment": [
+    "Cutting board",
+    "Large bowl",
+    "Parchment paper or aluminum foil",
+    "Sharp knife",
+    "Small bowl",
+    "Tongs or salad spoons",
+    "Whisk"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "Italian sub roll or sturdy hoagie roll",
+      "quantity": 4
+    },
+    {
+      "display": "paper-thin smoked deli ham",
+      "item": "thin-sliced smoked deli ham",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "display": "paper-thin Genoa salami",
+      "item": "deli salami",
+      "quantity": 6,
+      "unit": "oz"
+    },
+    {
+      "display": "paper-thin hot capicola or deli ham",
+      "item": "deli ham",
+      "quantity": 6,
+      "unit": "oz"
+    },
+    {
+      "item": "provolone cheese slice",
+      "quantity": 8
+    },
+    {
+      "display": "iceberg lettuce or shredded iceberg lettuce",
+      "item": "iceberg lettuce",
+      "quantity": 1
+    },
+    {
+      "display": "ripe tomato",
+      "item": "tomatoes",
+      "quantity": 2
+    },
+    {
+      "item": "red onion",
+      "quantity": 1
+    },
+    {
+      "item": "sliced pepperoncini peppers",
+      "quantity": 12,
+      "unit": "oz"
+    },
+    {
+      "display": "mild or hot giardiniera",
+      "item": "pickles",
+      "quantity": 12,
+      "unit": "oz"
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "garlic clove",
+      "quantity": 2
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "red wine vinegar",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "Parmesan cheese",
+      "quantity": 1,
+      "unit": "oz"
+    },
+    {
+      "item": "dried oregano",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic powder",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "onion powder",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "red pepper flakes",
+      "optional": true,
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "cold-italian-grinder-sandwiches",
+  "ingredients": [
+    "4 Italian sub rolls or sturdy hoagie rolls, 6 to 7 inches long, split but not fully separated",
+    "8 ounces paper-thin smoked deli ham",
+    "6 ounces Genoa salami, sliced paper-thin",
+    "6 ounces hot capicola or additional deli ham, sliced paper-thin",
+    "8 slices provolone cheese, about 6 ounces",
+    "4 cups finely shredded iceberg lettuce, from 1 small head or an 8-ounce bag",
+    "2 medium ripe tomatoes, sliced 1/4 inch thick",
+    "1/2 small red onion, very thinly sliced",
+    "1 (12-ounce) jar sliced pepperoncini peppers, using 1/2 cup peppers and 2 tablespoons pepperoncini brine",
+    "1 (12-ounce) jar mild or hot giardiniera, using 1/2 cup drained and finely chopped vegetables",
+    "1/2 cup mayonnaise",
+    "1 to 2 garlic cloves, finely grated or minced to a paste",
+    "1 tablespoon Dijon mustard",
+    "3 tablespoons red wine vinegar, divided",
+    "3 tablespoons extra-virgin olive oil, divided",
+    "1 ounce Parmesan cheese, finely grated, about 1/2 cup loosely packed, divided",
+    "1 1/2 teaspoons dried oregano, divided",
+    "1 teaspoon garlic powder, divided",
+    "1/2 teaspoon onion powder",
+    "1/2 teaspoon red pepper flakes, optional",
+    "1/2 teaspoon Diamond Crystal kosher salt or 1/4 teaspoon Morton kosher salt, divided",
+    "1 teaspoon black pepper, freshly ground if possible, divided"
+  ],
+  "instructions": [
+    "Place the 2 sliced tomatoes and the 1/2 thinly sliced red onion in a shallow bowl or on a plate.",
+    "Drizzle the tomatoes and onion with 1 tablespoon extra-virgin olive oil.",
+    "Season the tomatoes and onion with 1/4 teaspoon Diamond Crystal kosher salt and 1/4 teaspoon black pepper.",
+    "Turn the tomatoes and onion gently with your hands or tongs until the oil, salt, and pepper coat both sides of the tomato slices.",
+    "Let the seasoned tomatoes and onion sit for 10 minutes while making the mayo and grinder salad.",
+    "Make the garlic-oregano mayo in a small bowl by stirring together 1/2 cup mayonnaise, 1 to 2 finely grated garlic cloves, 1 tablespoon Dijon mustard, 1 tablespoon red wine vinegar, 1 tablespoon pepperoncini brine, 2 tablespoons finely grated Parmesan cheese, 1/2 teaspoon dried oregano, 1/4 teaspoon garlic powder, 1/8 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
+    "Taste the garlic-oregano mayo; it should be tangy, salty, garlicky, and slightly sharp from the vinegar and pepperoncini brine.",
+    "Refrigerate the garlic-oregano mayo while preparing the salad.",
+    "Drain 1/2 cup sliced pepperoncini peppers and 1/2 cup giardiniera well so the finished sandwiches stay crisp instead of watery.",
+    "Finely chop the 1/2 cup drained giardiniera into pieces about 1/4 inch wide.",
+    "Make the grinder salad dressing in a large bowl by whisking together the remaining 2 tablespoons red wine vinegar, remaining 2 tablespoons extra-virgin olive oil, remaining 1 tablespoon pepperoncini brine, remaining 1 teaspoon dried oregano, remaining 3/4 teaspoon garlic powder, 1/2 teaspoon onion powder, 1/2 teaspoon red pepper flakes if using, remaining 1/8 teaspoon Diamond Crystal kosher salt, and remaining 1/2 teaspoon black pepper.",
+    "Add the 4 cups finely shredded iceberg lettuce, 1/2 cup drained sliced pepperoncini peppers, and 1/2 cup finely chopped giardiniera to the large bowl with the dressing.",
+    "Toss the grinder salad for 30 to 45 seconds, until every strand of lettuce is lightly coated and the pepperoncini and giardiniera are evenly distributed.",
+    "Open the 4 split Italian sub rolls or hoagie rolls without separating the hinges.",
+    "If the rolls are very thick, pinch out a shallow strip of bread from the inside of each top roll so the sandwiches close around the filling.",
+    "Spread about 1 tablespoon garlic-oregano mayo on the inside bottom half of each roll.",
+    "Spread about 1 tablespoon garlic-oregano mayo on the inside top half of each roll.",
+    "Place 1 slice provolone cheese on the bottom half of each mayo-coated roll.",
+    "Press 1 slice provolone cheese onto the inside top half of each mayo-coated roll so both sides of the bread have a cheese barrier.",
+    "Fold and layer 2 ounces paper-thin smoked deli ham over the bottom provolone on each sandwich.",
+    "Fold and layer 1 1/2 ounces paper-thin Genoa salami over the ham on each sandwich.",
+    "Fold and layer 1 1/2 ounces paper-thin hot capicola or additional deli ham over the salami on each sandwich.",
+    "Lift the seasoned tomato slices and red onion from their bowl, leaving extra tomato juices behind.",
+    "Place about 2 seasoned tomato slices and one-fourth of the seasoned red onion on each sandwich.",
+    "Sprinkle the remaining 6 tablespoons finely grated Parmesan cheese over the tomatoes and onion, using about 1 1/2 tablespoons Parmesan per sandwich.",
+    "Pile about 1 cup dressed grinder salad onto each sandwich.",
+    "Close each sandwich firmly so the dressed lettuce compresses into the meats and cheese.",
+    "Wrap each closed sandwich tightly in parchment paper or aluminum foil.",
+    "Press the wrapped sandwiches under a cutting board, sheet pan, or heavy skillet for 5 minutes so the rolls absorb the mayo and vinaigrette without falling apart.",
+    "Cut each cold Italian grinder sandwich in half through the wrapper, then unwrap and serve immediately."
+  ],
+  "link": null,
+  "notes": [
+    "This is a no-cook sandwich, so the flavor comes from strong seasoning: garlic-oregano mayo, red wine vinegar, pepperoncini brine, chopped giardiniera, salty provolone, and seasoned tomatoes.",
+    "Ask the deli counter for the ham, salami, and capicola sliced paper-thin. Very thin slices fold into layers and are easier to bite through.",
+    "Use 1 garlic clove in the mayo if the cloves are very large, very fresh, or sharply spicy. Use 2 small to medium cloves when you want a stronger garlic bite.",
+    "Use hot capicola and hot giardiniera for a spicier sandwich, or use extra deli ham and mild giardiniera for a milder version.",
+    "Do not skip the 10-minute tomato and onion seasoning step. Cold raw tomatoes and onions need salt, pepper, and olive oil to taste finished inside a sandwich.",
+    "Drain the pepperoncini and giardiniera before adding them to the lettuce. Too much jar liquid makes the rolls soggy before the first bite.",
+    "Dress the iceberg lettuce right before assembly so it stays crisp but still picks up the oregano vinaigrette.",
+    "The recipe uses a restrained amount of salt because the deli meats, provolone, Parmesan, pepperoncini, and giardiniera already bring plenty of salt.",
+    "Use sturdy Italian sub rolls or hoagie rolls with a hinge. Very soft sandwich bread can tear once the grinder salad and seasoned tomatoes go in.",
+    "Splitting the provolone between the bottom and top of each roll helps protect the bread from the seasoned tomatoes, onion, and dressed grinder salad.",
+    "The 5-minute wrapped press helps the sandwich hold together and lets the mayo, vinaigrette, meat, cheese, tomato, onion, and salad combine.",
+    "These sandwiches are best right after pressing. For make-ahead, keep the garlic-oregano mayo, seasoned tomatoes and onions, and undressed lettuce mixture separate, then dress and assemble within 15 minutes of serving."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "30 minutes",
+  "rating": null,
+  "servings": "4 sandwiches",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "no-cook"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Cold Italian Grinder Sandwiches",
+  "totalTime": "45 minutes"
+}

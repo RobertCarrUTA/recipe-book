@@ -1,0 +1,152 @@
+{
+  "additionalTime": "1 hour",
+  "author": "John Kanell",
+  "cookTime": "30 minutes",
+  "description": "This classic Tres Leches Cake is light, airy, and soaked in a rich three-milk mixture that makes every bite incredibly moist and flavorful. Finished with a fluffy whipped cream topping, it's an easy yet impressive dessert.",
+  "equipment": [
+    "Mixing bowls",
+    "Electric mixer or stand mixer",
+    "13x9-inch baking dish",
+    "Whisk",
+    "Spatula"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "egg",
+      "quantity": 5
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1.25,
+      "unit": "cup"
+    },
+    {
+      "item": "whole milk",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "sweetened condensed milk",
+      "note": "14 oz can",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "evaporated milk",
+      "note": "12 oz can",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "whole milk",
+      "quantity": 0.666667,
+      "unit": "cup"
+    },
+    {
+      "item": "heavy whipping cream",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "powdered sugar",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "berries",
+      "optional": true
+    }
+  ],
+  "id": "tres-leches-cake",
+  "ingredients": [
+    "2 cups all-purpose flour",
+    "3/4 teaspoon baking powder",
+    "1/2 teaspoon salt",
+    "5 large eggs, separated",
+    "1 1/4 cups granulated sugar, divided",
+    "1/2 cup whole milk",
+    "2 teaspoons vanilla extract",
+    "1 (14-ounce) can sweetened condensed milk",
+    "1 (12-ounce) can evaporated milk",
+    "2/3 cup whole milk (for syrup)",
+    "2 cups heavy whipping cream",
+    "2 tablespoons powdered sugar",
+    "Fresh berries, for garnish (optional)"
+  ],
+  "instructions": [
+    "Preheat the oven to 350°F. Butter or spray a 13x9-inch baking dish.",
+    "In a medium bowl, whisk together the flour, baking powder, and salt.",
+    "In a large bowl, beat the egg whites on high speed until foamy. Slowly add 1/4 cup sugar and continue beating until stiff peaks form.",
+    "In another bowl, beat the egg yolks with the remaining 1 cup sugar until pale and fluffy. Beat in the milk and vanilla.",
+    "Add the yolk mixture to the flour mixture and mix just until combined.",
+    "Gently fold the egg whites into the batter in two additions, being careful not to deflate them.",
+    "Pour the batter into the prepared baking dish and bake for 25-30 minutes, until a toothpick inserted in the center comes out clean.",
+    "Let the cake cool until slightly warm. The cake will shrink as it cools.",
+    "In a bowl, whisk together the condensed milk, evaporated milk, and 2/3 cup whole milk. Poke holes all over the cake with a fork and slowly pour the milk mixture over the cake.",
+    "Cover and refrigerate for at least 1 hour.",
+    "In a large bowl, beat the heavy cream and powdered sugar until soft peaks form. Spread evenly over the chilled cake.",
+    "Garnish with fresh berries if desired and serve chilled."
+  ],
+  "link": "https://preppykitchen.com/tres-leches-cake/",
+  "notes": [
+    "Use a kitchen scale or spoon-and-level method to measure flour accurately.",
+    "Separate eggs while cold, but allow whites to come to room temperature before whipping.",
+    "Fold egg whites gently to keep the cake light and airy.",
+    "The cake can be covered and refrigerated for up to 3 days before serving."
+  ],
+  "nutrition": {
+    "calcium": "253 mg",
+    "calories": "491 kcal",
+    "carbohydrates": "62 g",
+    "cholesterol": "154 mg",
+    "fat": "23 g",
+    "fiber": "1 g",
+    "iron": "2 mg",
+    "monounsaturatedFat": "7 g",
+    "polyunsaturatedFat": "1 g",
+    "potassium": "325 mg",
+    "protein": "11 g",
+    "saturatedFat": "13 g",
+    "sodium": "252 mg",
+    "sugar": "44 g",
+    "transFat": "1 g",
+    "vitaminA": "893 IU",
+    "vitaminC": "2 mg"
+  },
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 423,
+    "value": 4.99
+  },
+  "servings": "12",
+  "tags": {
+    "equipment": [
+      "oven",
+      "baking-dish",
+      "mixer"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Tres Leches Cake",
+  "totalTime": "1 hour 45 minutes"
+}

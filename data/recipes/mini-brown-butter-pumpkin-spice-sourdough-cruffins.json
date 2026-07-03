@@ -1,0 +1,144 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "35 minutes",
+  "description": "These Mini Brown Butter Pumpkin Spice Sourdough Cruffins are flaky and buttery, made with homemade sourdough puff pastry (or store-bought for convenience) and filled with a rich brown butter pumpkin spice filling. Coated in cinnamon sugar, they offer the perfect blend of sweet, spiced flavors and crisp texture.",
+  "equipment": [
+    "12-cup muffin tin",
+    "Large bowl",
+    "Medium bowl",
+    "Parchment paper",
+    "Plastic wrap",
+    "Rolling pin",
+    "Whisk"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 205,
+      "unit": "g"
+    },
+    {
+      "item": "salt",
+      "quantity": 7,
+      "unit": "g"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 226,
+      "unit": "g"
+    },
+    {
+      "item": "sourdough discard",
+      "quantity": 113,
+      "unit": "g"
+    },
+    {
+      "item": "salted butter",
+      "quantity": 0.333333,
+      "unit": "cup"
+    },
+    {
+      "item": "pumpkin puree",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "brown sugar",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "pumpkin pie spice",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "milk",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "cinnamon",
+      "quantity": 1.5,
+      "unit": "tsp"
+    }
+  ],
+  "id": "mini-brown-butter-pumpkin-spice-sourdough-cruffins",
+  "ingredients": [
+    "205g all-purpose flour",
+    "7g salt",
+    "226g (2 sticks) salted butter, cold and grated",
+    "60g water",
+    "113g sourdough discard",
+    "1/3 cup salted butter, browned and slightly cooled",
+    "1/2 cup pumpkin puree",
+    "1/2 cup brown sugar",
+    "2 tbsp all-purpose flour",
+    "1 tbsp pumpkin pie spice",
+    "2 tsp cinnamon",
+    "1 egg + 1 tbsp milk, for egg wash",
+    "1/4 cup granulated sugar + 1 1/2 tsp cinnamon, for rolling"
+  ],
+  "instructions": [
+    "In a medium bowl, whisk together the sourdough discard and water.",
+    "In a separate large bowl, whisk together the flour and salt. Add the grated butter, and mix to coat. Then, make a well in the center of the flour mixture and pour the discard mixture into the center. Stir until a dough starts to form, and then knead with your hands until well combined, and there are no dry bits of flour.",
+    "Wrap the dough in a piece of plastic wrap, and flatten it out into a rectangle. Place in the fridge for 30 minutes to chill.",
+    "Place the dough onto a heavily floured surface. Roll the dough out into a large rectangle (~18”x8”, it doesn't have to be exact). Perform a book fold by folding the short sides towards the middle so they meet, and then fold the dough in half. Wrap in plastic wrap and chill in the fridge for another 30 minutes.",
+    "Then perform 2-3 series of letter folds. Place the dough onto a heavily floured surface, and roll it into a long large rectangle (~24x8”). Fold the sides towards the center, overlapping like you are folding a letter. Wrap in plastic wrap and place in the fridge for 30 minutes between each letter fold.",
+    "After the last letter fold, cut two long rectangular strips of parchment paper. Roll the dough into a large rectangle (12”x8”), fold into thirds, and tuck a piece of parchment paper in between the folds to prevent sticking.",
+    "Refrigerate the dough for at least 1 hour before using.",
+    "Preheat the oven to 375F and grease a standard 12-cup muffin tin with butter; set aside.",
+    "In a medium bowl, combine the brown butter, pumpkin puree, brown sugar, flour, pumpkin pie spice, and cinnamon. Mix until well combined, and then place the mixture in the fridge for 10-15 minutes.",
+    "Divide the puff pastry in half. Save whichever half you aren't using to use another time, if desired.",
+    "Slightly roll out the puff pastry on a sheet of parchment paper. Spread the pumpkin spice filling all over the surface of the puff pastry.",
+    "Cut the puff pastry in half lengthwise. Then, cut each strip in half again, and then half again. You should have 8 equal strips of dough.",
+    "Roll each strip like a snail, and place into the prepared muffin tin.",
+    "Brush the tops of each cruffin with the egg wash.",
+    "Bake at 375F for 30-40 minutes, or until they are a deep golden brown.",
+    "Allow to cool in the pan for 5 minutes, then remove and immediately roll in a cinnamon sugar mixture to coat."
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/mini-brown-butter-pumpkin-spice-sourdough-cruffins#recipe",
+  "notes": [
+    "You can use regular store-bought puff pastry instead. Use 1 sheet in place of the homemade sourdough puff pastry.",
+    "To make 16 mini cruffins, use both sheets of the sourdough puff pastry or two sheets of store-bought puff pastry.",
+    "The dough requires several chilling periods for proper lamination.",
+    "Allow the filling to chill for 10-15 minutes before spreading.",
+    "Roll the cruffins in cinnamon sugar while still warm for the best coating."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "45 minutes",
+  "rating": {
+    "count": 1,
+    "value": 5
+  },
+  "servings": "8 minis",
+  "tags": {
+    "equipment": [
+      "muffin-pan"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Mini Brown Butter Pumpkin Spice Sourdough Cruffins",
+  "totalTime": "4 hours 50 minutes"
+}

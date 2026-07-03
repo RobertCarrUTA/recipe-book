@@ -1,0 +1,115 @@
+{
+  "additionalTime": "3 hours",
+  "author": "John Kanell",
+  "cookTime": "55 minutes",
+  "description": "These bright and zingy Lemon Bars have a buttery shortbread crust topped with a smooth, tangy lemon filling. They're easy to make, perfectly balanced between sweet and tart, and ideal for make-ahead desserts.",
+  "equipment": [
+    "9x13-inch baking pan",
+    "Parchment paper",
+    "Food processor",
+    "Mixing bowls",
+    "Whisk"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "item": "powdered sugar",
+      "quantity": 0.666667,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 12,
+      "unit": "tbsp"
+    },
+    {
+      "item": "lemon zest",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 8
+    },
+    {
+      "item": "lemon juice",
+      "quantity": 1,
+      "unit": "cup"
+    }
+  ],
+  "id": "lemon-bars",
+  "ingredients": [
+    "3 cups all-purpose flour, divided (2 1/2 cups for crust, 1/2 cup for filling)",
+    "2/3 cup powdered sugar, plus more for dusting",
+    "1/2 teaspoon salt",
+    "12 tablespoons unsalted butter, melted",
+    "3 tablespoons lemon zest (from about 3 lemons)",
+    "3 cups granulated sugar",
+    "8 large eggs, room temperature",
+    "1 cup fresh lemon juice"
+  ],
+  "instructions": [
+    "Preheat the oven to 350°F and line a 9x13-inch baking dish with parchment paper.",
+    "In a large bowl, whisk together 2 1/2 cups flour, powdered sugar, and salt. Pour in the melted butter and mix until fully combined.",
+    "Press the mixture evenly into the prepared pan to form the crust. Bake for about 20 minutes, until lightly golden.",
+    "While the crust bakes, add the granulated sugar and lemon zest to a food processor and pulse until the zest is fully incorporated and the sugar is pale yellow.",
+    "Transfer the lemon sugar to a large bowl and whisk in the remaining 1/2 cup flour.",
+    "Add the lemon juice and eggs and whisk until completely smooth.",
+    "Pour the filling over the warm crust and return to the oven. Bake for about 25 minutes, rotating the pan halfway through, until the filling is set.",
+    "Remove from the oven and let cool at room temperature for 1 hour, then refrigerate for at least 2 hours.",
+    "Dust with powdered sugar and cut into bars using a clean, sharp knife, wiping the blade between cuts."
+  ],
+  "link": "https://preppykitchen.com/lemon-bars/",
+  "notes": [
+    "Always use fresh lemon juice for the best flavor.",
+    "The bars may look slightly underdone when removed from the oven; they will continue to set as they cool.",
+    "Lemon bars freeze well. Cut, wrap individually, and freeze for up to 3 months.",
+    "Dust with powdered sugar just before serving for best presentation."
+  ],
+  "nutrition": {
+    "calcium": "22 mg",
+    "calories": "385 kcal",
+    "carbohydrates": "66 g",
+    "cholesterol": "111 mg",
+    "fat": "12 g",
+    "fiber": "1 g",
+    "iron": "2 mg",
+    "potassium": "79 mg",
+    "protein": "6 g",
+    "saturatedFat": "7 g",
+    "sodium": "113 mg",
+    "sugar": "46 g",
+    "vitaminA": "407 IU",
+    "vitaminC": "8 mg"
+  },
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 4287,
+    "value": 4.97
+  },
+  "servings": "15 bars",
+  "tags": {
+    "equipment": [
+      "oven",
+      "baking-pan",
+      "food-processor"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Lemon Bars",
+  "totalTime": "4 hours 15 minutes"
+}

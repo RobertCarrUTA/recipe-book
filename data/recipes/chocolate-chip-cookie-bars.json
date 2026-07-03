@@ -1,0 +1,131 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "55 minutes",
+  "description": "These soft and chewy chocolate chip cookie bars are incredibly easy to make and packed with chocolatey goodness, featuring rich brown sugar, vanilla, and a hint of salt. Perfect for slicing and sharing.",
+  "equipment": [
+    "8x8-inch baking pan",
+    "Parchment paper",
+    "Mixing bowls",
+    "Whisk",
+    "Silicone spatula",
+    "Offset spatula",
+    "Wire rack"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 2.25,
+      "unit": "cup"
+    },
+    {
+      "item": "cornstarch",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "light brown sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.666667,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 2
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "semi-sweet chocolate chips",
+      "quantity": 2,
+      "unit": "cup"
+    }
+  ],
+  "id": "chocolate-chip-cookie-bars",
+  "ingredients": [
+    "2 1/4 cups all-purpose flour",
+    "1 tablespoon cornstarch",
+    "1 teaspoon baking soda",
+    "1 teaspoon salt",
+    "3/4 cup unsalted butter, melted and slightly cooled",
+    "1 cup packed light brown sugar",
+    "2/3 cup granulated sugar",
+    "2 large eggs, room temperature",
+    "1 tablespoon vanilla extract",
+    "2 cups semi-sweet chocolate chips, divided"
+  ],
+  "instructions": [
+    "Preheat the oven to 350°F. Line an 8x8-inch baking pan fully with parchment paper.",
+    "In a medium bowl, whisk together the flour, cornstarch, baking soda, and salt. Set aside.",
+    "In a large bowl, whisk together the melted butter, brown sugar, and granulated sugar for about 30 seconds until a thick slurry forms.",
+    "Add the eggs and vanilla extract and whisk for about 1 minute until fully combined.",
+    "Add the flour mixture to the butter mixture and stir with a silicone spatula until almost fully combined.",
+    "Reserve about 1/4 cup of the chocolate chips and fold the remaining chips into the dough.",
+    "Dollop the dough into the prepared pan and spread into an even layer using an offset spatula, leaving some texture on top. Sprinkle with the reserved chocolate chips.",
+    "Bake for about 55 minutes, until the edges are set and golden and a toothpick inserted into the center comes out with a few moist crumbs.",
+    "Let cool in the pan for about 1 hour before lifting out with the parchment and slicing into bars."
+  ],
+  "link": "https://preppykitchen.com/chocolate-chip-cookie-bars/",
+  "notes": [
+    "Sprinkle flaky sea salt over the bars just after baking for a salty-sweet contrast.",
+    "Let the bars cool completely before slicing for clean edges.",
+    "Store in an airtight container at room temperature for 3 to 5 days.",
+    "To keep bars extra soft, add a few marshmallows to the storage container.",
+    "Bars can be wrapped and frozen for up to 3 months."
+  ],
+  "nutrition": {
+    "calcium": "34 mg",
+    "calories": "367 kcal",
+    "carbohydrates": "48 g",
+    "cholesterol": "45 mg",
+    "fat": "18 g",
+    "fiber": "2 g",
+    "iron": "2 mg",
+    "monounsaturatedFat": "5 g",
+    "polyunsaturatedFat": "1 g",
+    "potassium": "176 mg",
+    "protein": "4 g",
+    "saturatedFat": "11 g",
+    "sodium": "229 mg",
+    "sugar": "30 g",
+    "transFat": "0.4 g",
+    "vitaminA": "307 IU"
+  },
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 1664,
+    "value": 4.96
+  },
+  "servings": "16 bars",
+  "tags": {
+    "equipment": [
+      "oven",
+      "baking-pan"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Chocolate Chip Cookie Bars",
+  "totalTime": "1 hour 5 minutes"
+}

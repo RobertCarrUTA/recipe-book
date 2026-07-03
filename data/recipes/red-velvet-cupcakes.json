@@ -1,0 +1,167 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "15 minutes",
+  "description": "These colorful, moist Red Velvet Cupcakes are soft, tender, and lightly chocolatey, topped with a classic cream cheese frosting. They're festive, easy to make, and perfect for parties or special occasions.",
+  "equipment": [
+    "Muffin pans",
+    "Paper cupcake liners",
+    "Mixing bowls",
+    "Electric hand mixer or stand mixer",
+    "Piping bag and tip",
+    "Wire rack"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "all-purpose flour",
+      "quantity": 1.666667,
+      "unit": "cup"
+    },
+    {
+      "item": "cocoa powder",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 3
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "buttermilk",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "red food coloring",
+      "note": "or 5-6 drops gel food coloring",
+      "quantity": {
+        "max": 2,
+        "min": 1
+      },
+      "unit": "tbsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 1.5,
+      "unit": "cup"
+    },
+    {
+      "item": "powdered sugar",
+      "quantity": 1.5,
+      "unit": "lb"
+    },
+    {
+      "item": "cream cheese",
+      "quantity": 16,
+      "unit": "oz"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "red-velvet-cupcakes",
+  "ingredients": [
+    "1 2/3 cups all-purpose flour",
+    "2 teaspoons cocoa powder",
+    "1 cup granulated sugar",
+    "1 teaspoon baking powder",
+    "1/4 teaspoon baking soda",
+    "1/4 teaspoon kosher salt",
+    "3/4 cup unsalted butter, room temperature",
+    "3 large eggs, room temperature",
+    "2 tablespoons vanilla extract",
+    "3/4 cup buttermilk",
+    "1 to 2 tablespoons red liquid food coloring or 5 to 6 drops gel food coloring",
+    "1 1/2 cups unsalted butter, room temperature (for frosting)",
+    "1 1/2 pounds confectioners' sugar, sifted (about 6 cups)",
+    "16 ounces cream cheese, room temperature",
+    "1 teaspoon vanilla extract (for frosting)",
+    "Pinch of kosher salt (for frosting)"
+  ],
+  "instructions": [
+    "Preheat the oven to 350°F. Line muffin pans with cupcake liners.",
+    "In a large bowl or the bowl of a stand mixer, sift together flour, sugar, cocoa powder, baking powder, baking soda, and salt. Whisk to combine.",
+    "Cut the butter into tablespoon-sized pieces and add to the dry ingredients. Mix on low speed until a sandy mixture forms.",
+    "In another bowl, whisk together the eggs, buttermilk, vanilla, and food coloring.",
+    "Slowly add the wet ingredients to the dry ingredients while mixing on low speed until just combined, scraping down the bowl as needed.",
+    "Divide the batter evenly among the cupcake liners.",
+    "Bake for 15-20 minutes, or until the cupcakes spring back when lightly touched. Cool briefly in the pan, then transfer to a wire rack to cool completely.",
+    "To make the frosting, beat the butter on medium speed until smooth and fluffy, about 2 minutes.",
+    "Add the cream cheese, vanilla, and salt, and beat until well combined.",
+    "With the mixer on low speed, gradually add the confectioners' sugar until smooth and fluffy.",
+    "Transfer frosting to a piping bag and pipe onto cooled cupcakes."
+  ],
+  "link": "https://preppykitchen.com/red-velvet-cupcakes/",
+  "notes": [
+    "Weighing ingredients with a kitchen scale gives the most accurate results, especially for flour.",
+    "For a richer chocolate flavor, increase cocoa powder up to 2 tablespoons and add 1 tablespoon of milk.",
+    "If buttermilk is unavailable, make a substitute by adding just under 1 tablespoon vinegar or lemon juice to whole milk and letting it sit for a few minutes.",
+    "Add more confectioners' sugar for a stiffer frosting consistency."
+  ],
+  "nutrition": {
+    "calcium": "71 mg",
+    "calories": "622 kcal",
+    "carbohydrates": "67 g",
+    "cholesterol": "135 mg",
+    "fat": "38 g",
+    "fiber": "0.4 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "10 g",
+    "polyunsaturatedFat": "2 g",
+    "potassium": "93 mg",
+    "protein": "5 g",
+    "saturatedFat": "23 g",
+    "sodium": "202 mg",
+    "sugar": "56 g",
+    "transFat": "1 g",
+    "vitaminA": "1270 IU"
+  },
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 2208,
+    "value": 4.98
+  },
+  "servings": "16 cupcakes",
+  "tags": {
+    "equipment": [
+      "oven",
+      "muffin-pan",
+      "mixer"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Red Velvet Cupcakes",
+  "totalTime": "35 minutes"
+}

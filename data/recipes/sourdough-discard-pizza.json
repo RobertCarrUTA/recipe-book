@@ -1,0 +1,135 @@
+{
+  "author": "Kiley Heard",
+  "cookTime": "18 minutes",
+  "description": "This Sourdough Discard Pizza features a soft and fluffy crust made with sourdough discard, Greek yogurt, and self-rising flour for a light, airy base with a perfectly golden crust. Topped with gooey mozzarella, savory pepperoni, creamy whipped ricotta, fresh basil, hot honey, and a sprinkle of freshly grated parmesan, it's the ultimate pizza that balances flavors and textures in every bite.",
+  "equipment": [
+    "Blender or food processor",
+    "Large bowl",
+    "Parchment paper",
+    "Pizza peel",
+    "Pizza stone, baking sheet, or cast iron skillet",
+    "Rolling pin"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "'00' flour",
+      "quantity": 1.75,
+      "unit": "cup"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "baking soda",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "Greek yogurt",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "sourdough discard",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "pizza oil or olive oil"
+    },
+    {
+      "item": "ricotta cheese",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "heavy cream",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "pizza sauce"
+    },
+    {
+      "item": "mozzarella cheese"
+    },
+    {
+      "item": "pepperoni"
+    },
+    {
+      "item": "hot honey"
+    },
+    {
+      "item": "parmesan cheese"
+    },
+    {
+      "item": "fresh basil"
+    }
+  ],
+  "id": "sourdough-discard-pizza",
+  "ingredients": [
+    "1 3/4 cups (210g) '00' flour or all-purpose flour (I highly recommend using a '00' flour if possible)",
+    "2 tsp (9g) baking powder",
+    "1/4 tsp (2g) baking soda",
+    "1 tsp (6g) salt",
+    "1 cup (250g) Greek yogurt",
+    "1/2 cup (145g) sourdough discard (sub: 1/2 cup more Greek yogurt)",
+    "Pizza oil or olive oil, for brushing",
+    "1 cup (250g) ricotta cheese",
+    "3 tbsp (45g) heavy cream",
+    "Salt to taste",
+    "Pizza sauce of choice",
+    "Shredded or fresh mozzarella cheese",
+    "Pepperoni",
+    "Hot honey",
+    "Freshly grated parmesan",
+    "Fresh basil, chopped"
+  ],
+  "instructions": [
+    "Preheat oven to 500F. Place a pizza stone in the oven, and preheat for at least 30 minutes. This can also be made on a baking sheet lined with parchment paper or in a cast iron skillet.",
+    "In a large bowl, mix together the flour, baking powder, baking soda, salt, greek yogurt, and sourdough discard until a shaggy dough forms.",
+    "Lay the dough out onto a floured surface and knead with your hands until smooth. The dough should be soft and sticky, yet supple.",
+    "If the dough seems too wet and sticky, add 1 more tbsp of flour at a time, until it comes together more and is moldable. Shape into a large ball and allow to rest for 10-15 minutes. Alternatively, you can place the dough onto a baking sheet that is lined with parchment paper and lightly dusted with flour. Cover with plastic wrap or a kitchen towel and allow to rest for a couple of hours - the dough will rise as a normal pizza dough would and the crust will turn out even fluffier! You can also place into the fridge for up to 2 days.",
+    "Place the dough on a piece of parchment paper that is dusted with flour and roll out into a large circle, to your desired thickness.",
+    "Use your fingers to fold the edges around the circle to create a crust; gently press down to seal.",
+    "Lightly brush the crust and the surface of the pizza with pizza oil or olive oil.",
+    "Top the dough with your desired amount of pizza sauce, mozzarella, and pepperoni.",
+    "Using a pizza peel or pan, transfer the pizza onto the heated pizza stone in the oven (I like to keep the parchment paper on the bottom to prevent sticking). Bake at 500F for 15-18 minutes or until the cheese has melted and the crust is golden brown.",
+    "Add the ricotta, heavy cream, and salt to a blender or food processor. Blend until smooth and creamy, then transfer to a piping bag (optional).",
+    "Remove the pizza from the oven and cool for at least 1-2 minutes before transferring to a cutting board. Top with the whipped ricotta, fresh basil, hot honey, and freshly grated parmesan, if desired.",
+    "Slice and enjoy!"
+  ],
+  "link": "https://www.wellmadebykiley.com/blog/the-best-sourdough-discard-pizza#recipe",
+  "notes": [
+    "Please make sure you are using thick GREEK yogurt! The dough will turn out way too sticky if not, it needs the thickness of greek yogurt!",
+    "If you need to use dairy free yogurt, I would recommend finding a plant-based greek style yogurt, starting with a 1/2 cup of yogurt for the dough, and adding as needed.",
+    "Using '00' flour is highly recommended.",
+    "Allowing the dough to rest for a couple of hours will create an even fluffier crust.",
+    "The dough can be refrigerated for up to 2 days."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 6,
+    "value": 4.92
+  },
+  "servings": "1, 8-10 inch pizza",
+  "tags": {
+    "equipment": [
+      "cast-iron-skillet",
+      "pizza-stone"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Sourdough Discard Pizza",
+  "totalTime": "33 minutes"
+}

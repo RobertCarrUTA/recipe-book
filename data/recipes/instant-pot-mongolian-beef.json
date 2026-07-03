@@ -1,0 +1,129 @@
+{
+  "author": "Joanna Cismaru",
+  "cookTime": "20 minutes",
+  "description": "This Instant Pot Mongolian Beef delivers takeout-style flavor at home in a fraction of the time. The beef is tender, saucy, and perfectly sweet-savory, making it a fast and satisfying dinner.",
+  "equipment": [
+    "Instant Pot or electric pressure cooker",
+    "Large mixing bowl",
+    "Whisk"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "flank steak",
+      "quantity": 2,
+      "unit": "lb"
+    },
+    {
+      "item": "cornstarch",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "rice vinegar",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "low-sodium soy sauce",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "garlic",
+      "quantity": 4,
+      "unit": "clove"
+    },
+    {
+      "item": "fresh ginger",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "brown sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "red pepper flakes",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "sesame oil",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "green onion",
+      "quantity": 2
+    },
+    {
+      "item": "sesame seeds",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "id": "instant-pot-mongolian-beef",
+  "ingredients": [
+    "2 pounds flank steak, cut into thin strips",
+    "1/2 cup cornstarch",
+    "2 tablespoons rice vinegar",
+    "1 cup low-sodium soy sauce",
+    "2/3 cup water",
+    "4 cloves garlic, minced",
+    "1 teaspoon fresh ginger, minced",
+    "1 cup brown sugar, packed",
+    "1/2 teaspoon red pepper flakes",
+    "3 tablespoons sesame oil",
+    "2 green onions, chopped",
+    "2 tablespoons sesame seeds"
+  ],
+  "instructions": [
+    "Toss flank steak strips with cornstarch in a large bowl and let sit for 5 minutes.",
+    "In a separate bowl, whisk together rice vinegar, soy sauce, water, garlic, ginger, brown sugar, and red pepper flakes. Set aside.",
+    "Set the Instant Pot to sauté mode.",
+    "Add half of the sesame oil to the pot. Once hot, add half of the beef and cook for 2-3 minutes until it begins to brown. Remove and repeat with remaining oil and beef.",
+    "Return all beef to the pot and cancel sauté mode.",
+    "Pour sauce over the beef and stir to combine.",
+    "Close the lid and set Instant Pot to Manual (High Pressure) for 10 minutes.",
+    "Quick release the pressure when cooking is complete.",
+    "Stir in green onions and garnish with sesame seeds. Serve over rice."
+  ],
+  "link": "https://www.jocooks.com/recipes/instant-pot-mongolian-beef/",
+  "notes": [
+    "Slicing Tip: Freeze steak for 20 minutes before slicing to make it easier to cut thin strips.",
+    "Meat Options: Top round steak, chicken breast, or chicken thighs can be substituted.",
+    "No Instant Pot: A stovetop version of Mongolian beef can be used instead."
+  ],
+  "nutrition": {
+    "calcium": "57 mg",
+    "calories": "358 kcal",
+    "carbohydrates": "37 g",
+    "cholesterol": "68 mg",
+    "fat": "10 g",
+    "iron": "2.7 mg",
+    "potassium": "494 mg",
+    "protein": "26 g",
+    "saturatedFat": "3 g",
+    "sodium": "1134 mg",
+    "sugar": "27 g",
+    "vitaminA": "65 IU",
+    "vitaminC": "1.1 mg"
+  },
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 366,
+    "value": 4.6
+  },
+  "servings": "8",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "instant-pot"
+    ],
+    "rating": "great",
+    "status": "tried"
+  },
+  "title": "Instant Pot Mongolian Beef",
+  "totalTime": "30 minutes"
+}

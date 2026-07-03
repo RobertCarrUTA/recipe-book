@@ -1,0 +1,216 @@
+{
+  "author": "Robert Carr",
+  "cookTime": "25 minutes",
+  "description": "A hot turkey provolone sandwich with seared turkey cutlets, garlic-Dijon mayo, mushroom-onion pan sauce, roasted red peppers, dressed arugula, and toasted ciabatta or hoagie rolls.",
+  "equipment": [
+    "Cast-iron skillet or heavy saute pan",
+    "Oven with broiler",
+    "Rimmed baking sheet",
+    "Aluminum foil",
+    "Meat mallet or rolling pin",
+    "Small bowl",
+    "Tongs",
+    "Instant-read thermometer"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "boneless skinless turkey breast cutlets",
+      "quantity": 1.5,
+      "unit": "lb"
+    },
+    {
+      "item": "ciabatta roll or sturdy hoagie roll",
+      "quantity": 4
+    },
+    {
+      "item": "provolone cheese slice",
+      "quantity": 8
+    },
+    {
+      "item": "fresh cremini mushrooms",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1
+    },
+    {
+      "item": "roasted red peppers",
+      "quantity": 12,
+      "unit": "oz"
+    },
+    {
+      "item": "baby arugula",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "item": "garlic clove",
+      "quantity": 4
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "low-sodium chicken broth",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "Worcestershire sauce",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "red wine vinegar",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "dried thyme",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "smoked paprika",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic powder",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "kosher salt",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "hot-turkey-provolone-sandwiches",
+  "ingredients": [
+    "1 1/2 pounds boneless skinless turkey breast cutlets, usually 4 cutlets",
+    "2 teaspoons Diamond Crystal kosher salt or 1 1/4 teaspoons Morton kosher salt, divided",
+    "1 teaspoon black pepper, freshly ground if possible, divided",
+    "3/4 teaspoon smoked paprika",
+    "1/2 teaspoon garlic powder",
+    "1 teaspoon dried thyme, divided",
+    "1/4 cup all-purpose flour",
+    "3 tablespoons extra-virgin olive oil, divided",
+    "3 tablespoons unsalted butter, divided",
+    "8 ounces fresh cremini mushrooms, sliced 1/4 inch thick",
+    "1 medium yellow onion, thinly sliced",
+    "4 garlic cloves, divided",
+    "1/2 cup low-sodium chicken broth",
+    "2 teaspoons Worcestershire sauce, divided",
+    "1 tablespoon red wine vinegar, divided",
+    "1/2 cup mayonnaise",
+    "1 tablespoon Dijon mustard",
+    "1 (12-ounce) jar roasted red peppers, using 1/2 cup drained strips and 1 teaspoon pepper brine",
+    "4 ciabatta rolls or sturdy hoagie rolls, split",
+    "8 slices provolone cheese",
+    "2 ounces baby arugula, about 2 packed cups"
+  ],
+  "instructions": [
+    "Move an oven rack 6 inches below the broiler and heat the broiler on high.",
+    "Line a rimmed baking sheet with aluminum foil.",
+    "Pat the 1 1/2 pounds turkey breast cutlets very dry with paper towels.",
+    "If any turkey cutlet is thicker than 1/2 inch, place it between sheets of parchment or plastic wrap and pound it to an even 1/2 inch thickness.",
+    "Season both sides of the turkey cutlets with 1 teaspoon Diamond Crystal kosher salt, 1/2 teaspoon black pepper, 3/4 teaspoon smoked paprika, 1/2 teaspoon garlic powder, and 1/2 teaspoon dried thyme.",
+    "Sprinkle 1/4 cup all-purpose flour over a plate.",
+    "Press each seasoned turkey cutlet lightly into the flour on both sides, then shake off the excess flour so only a thin coating remains.",
+    "Make the garlic-Dijon mayo by stirring together 1/2 cup mayonnaise, 1 tablespoon Dijon mustard, 1 finely grated garlic clove, 1 teaspoon Worcestershire sauce, 1 teaspoon red wine vinegar, 1 teaspoon roasted red pepper brine, 1/8 teaspoon Diamond Crystal kosher salt, and 1/8 teaspoon black pepper in a small bowl.",
+    "Refrigerate the garlic-Dijon mayo until assembly.",
+    "Heat a cast-iron skillet or heavy saute pan over medium-high heat for 2 minutes.",
+    "Add 1 tablespoon extra-virgin olive oil to the hot skillet.",
+    "Add as many floured turkey cutlets as will fit in a single uncrowded layer.",
+    "Cook the turkey cutlets for 2 to 3 minutes on the first side, until golden brown.",
+    "Flip the turkey cutlets with tongs and cook the second side for 2 to 3 minutes, until golden brown and the thickest part reaches 160 degrees F.",
+    "Transfer the cooked turkey cutlets to a plate.",
+    "If any turkey cutlets remain, add 1 tablespoon extra-virgin olive oil to the skillet and repeat the 2 to 3 minutes per side cooking process with the remaining turkey cutlets.",
+    "Loosely cover the cooked turkey cutlets with foil while making the pan sauce.",
+    "Reduce the skillet heat to medium and add 1 tablespoon unsalted butter.",
+    "Add the 8 ounces sliced cremini mushrooms, the 1 thinly sliced yellow onion, 1/2 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
+    "Cook the mushrooms and onion for 7 to 8 minutes, stirring every minute, until the mushrooms are browned, the onion is softened, and most of the moisture has cooked off.",
+    "Stir in 2 minced garlic cloves and the remaining 1/2 teaspoon dried thyme.",
+    "Cook the garlic and thyme for 30 seconds, stirring constantly, until fragrant.",
+    "Add 1/2 cup low-sodium chicken broth, the remaining 1 teaspoon Worcestershire sauce, and 1 teaspoon red wine vinegar.",
+    "Simmer the mushroom-onion pan sauce for 2 to 3 minutes, scraping the browned turkey bits from the skillet, until the liquid reduces by about half and coats the mushrooms and onions.",
+    "Return the turkey cutlets and any juices from the plate to the skillet.",
+    "Turn the turkey cutlets in the mushroom-onion pan sauce for 30 seconds so they are coated and hot.",
+    "Turn the heat to low so the turkey and mushroom-onion pan sauce stay warm while the rolls toast.",
+    "In a small bowl, stir together the remaining 2 tablespoons softened unsalted butter, the remaining 1 finely grated garlic clove, and 1/8 teaspoon Diamond Crystal kosher salt.",
+    "Place the 4 split ciabatta rolls or hoagie rolls cut-side up on the foil-lined baking sheet.",
+    "Spread the garlic butter evenly over the cut sides of the 4 split rolls, using about 3/4 teaspoon garlic butter on each cut side.",
+    "Broil the buttered rolls for 1 to 2 minutes, watching constantly, until the cut sides are lightly toasted around the edges.",
+    "Move the 4 toasted top rolls to a plate and leave the 4 toasted bottom rolls cut-side up on the baking sheet.",
+    "Spread about 1 tablespoon garlic-Dijon mayo on each toasted bottom roll.",
+    "Place 1 slice provolone cheese on each mayo-coated bottom roll.",
+    "Place 1 hot turkey cutlet on each bottom roll, folding or trimming the turkey as needed so it fits the bread.",
+    "Spoon about 1/4 cup mushroom-onion pan sauce over each turkey cutlet.",
+    "Add about 2 tablespoons drained roasted red pepper strips to each sandwich.",
+    "Tear the remaining 4 slices provolone cheese over the roasted red peppers, dividing 1 slice provolone per sandwich.",
+    "Broil the open sandwiches for 2 to 3 minutes, until the provolone is melted and lightly browned in spots.",
+    "While the cheese melts, toss 2 ounces baby arugula with the remaining 1 teaspoon red wine vinegar, 1 teaspoon extra-virgin olive oil, 1/8 teaspoon Diamond Crystal kosher salt, and 1/8 teaspoon black pepper.",
+    "Top each hot sandwich with about 1/2 cup dressed arugula.",
+    "Spread about 1 tablespoon garlic-Dijon mayo on each toasted top roll.",
+    "Close the sandwiches and serve immediately while the turkey, mushroom-onion pan sauce, and provolone are hot."
+  ],
+  "link": null,
+  "notes": [
+    "This sandwich is hot by temperature, not spice; the flavor comes from browned turkey, mushroom-onion pan sauce, roasted red peppers, garlic-Dijon mayo, toasted bread, and melted provolone.",
+    "Turkey breast cutlets cook quickly and keep this recipe inside an hour.",
+    "Pounding any thick turkey pieces to 1/2 inch helps them cook evenly before the flour coating over-browns.",
+    "The thin flour coating gives the turkey better browning and helps the chicken broth reduce into a light pan sauce instead of tasting watery.",
+    "Use low-sodium chicken broth so the pan sauce can reduce without becoming too salty.",
+    "Roasted red pepper brine seasons the mayo with a little sweetness and acidity; use the liquid from the jar, not extra vinegar.",
+    "Do not crowd the turkey cutlets in the skillet. Crowding traps steam and prevents browning.",
+    "The turkey is pulled at 160 degrees F because it will stay hot in the skillet and under the broiler during assembly.",
+    "Dress the arugula right before serving so it stays peppery and fresh against the hot turkey and cheese.",
+    "Serve immediately while the bread is crisp, the turkey is hot, and the provolone is melted."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "25 minutes",
+  "rating": null,
+  "servings": "4 sandwiches",
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "cast-iron skillet",
+      "oven",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Hot Turkey Provolone Sandwiches",
+  "totalTime": "50 minutes"
+}

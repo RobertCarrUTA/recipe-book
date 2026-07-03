@@ -1,0 +1,90 @@
+{
+  "author": "Amanda Cooks & Styles",
+  "cookTime": "20 minutes",
+  "description": "Super simple homemade breakfast potato recipe made with fresh potatoes, herbs and seasonings. Serve with fresh cooked eggs, toast, in a breakfast burrito and more.",
+  "equipment": [
+    "Lid",
+    "Skillet",
+    "Spatula"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "potato",
+      "quantity": 4
+    },
+    {
+      "item": "salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic powder",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "onion powder",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "butter",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "chopped parsley",
+      "quantity": 1,
+      "unit": "tbsp"
+    }
+  ],
+  "id": "easy-breakfast-potatoes",
+  "ingredients": [
+    "4 Potatoes, cut into 1/2-inch cubes",
+    "1/4 teaspoon Salt",
+    "1/4 teaspoon Black Pepper",
+    "1/4 teaspoon Garlic Powder",
+    "1/4 teaspoon Onion Powder",
+    "1 tablespoon Butter",
+    "1 tablespoon Oil",
+    "1 tablespoon Chopped Parsley, fresh, or 1/2 teaspoon dried"
+  ],
+  "instructions": [
+    "Cut all potatoes into small 1/2-inch cubes.",
+    "Heat skillet to medium high heat and add butter and oil.",
+    "Add chopped potatoes to the hot skillet and toss around to fully coat in butter/oil combination. Sprinkle potatoes with seasonings except for the parsley. Cover to let potatoes lightly steam for about 3-4 minutes.",
+    "Remove lid and stir potatoes. Continue to cook potatoes with lid off, turning potatoes around with spatula to ensure an even cook on all sides.",
+    "When potatoes are done they will have a light crisp on the outside, soft on the inside.",
+    "Sprinkle potatoes with fresh parsley and serve."
+  ],
+  "link": "https://amandacooksandstyles.com/easy-breakfast-potatoes/#recipe",
+  "notes": [],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 36,
+    "value": 4.98
+  },
+  "servings": "4 people",
+  "tags": {
+    "equipment": [
+      "skillet",
+      "stovetop"
+    ],
+    "rating": null,
+    "status": "not-tried"
+  },
+  "title": "Easy Breakfast Potatoes",
+  "totalTime": "35 minutes"
+}

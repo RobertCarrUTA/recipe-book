@@ -1,0 +1,112 @@
+{
+  "additionalTime": "30 minutes",
+  "author": "John Kanell",
+  "cookTime": "30 minutes",
+  "description": "Sopapilla Cheesecake combines flaky crescent roll layers with a rich, creamy cheesecake filling and a cinnamon-sugar topping. Inspired by the classic New Mexican dessert, this crowd-pleasing treat is best served warm with honey, berries, or whipped cream.",
+  "equipment": [
+    "9x13-inch baking dish",
+    "Mixing bowls",
+    "Electric hand mixer or stand mixer",
+    "Rolling pin"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "refrigerated crescent rolls",
+      "note": "8 oz each",
+      "quantity": 2,
+      "unit": "can"
+    },
+    {
+      "item": "cream cheese",
+      "quantity": 16,
+      "unit": "oz"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1.25,
+      "unit": "cup"
+    },
+    {
+      "item": "egg",
+      "quantity": 1
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 6,
+      "unit": "tbsp"
+    },
+    {
+      "item": "ground cinnamon",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "sopapilla-cheesecake",
+  "ingredients": [
+    "2 (8-ounce / 226 g) cans refrigerated crescent rolls",
+    "2 (8-ounce / 226 g) blocks cream cheese, softened",
+    "1 1/4 cups granulated sugar, divided",
+    "1 large egg, room temperature",
+    "1 1/2 teaspoons vanilla extract",
+    "6 tablespoons unsalted butter, melted",
+    "1 teaspoon ground cinnamon"
+  ],
+  "instructions": [
+    "Preheat the oven to 350°F and grease a 9x13-inch baking dish with cooking spray.",
+    "Unroll one package of crescent rolls and press it into the bottom of the baking dish, stretching to the edges and pinching seams together if needed.",
+    "In a large bowl or stand mixer, beat the cream cheese, 3/4 cup sugar, egg, and vanilla on medium speed until smooth and creamy, about 2 minutes.",
+    "Spread the cream cheese mixture evenly over the dough in the baking dish.",
+    "Unroll the second package of crescent rolls onto a lightly floured surface. Pinch seams together and roll into a 9x13-inch rectangle. Carefully place it over the cream cheese layer.",
+    "Brush the top dough evenly with melted butter.",
+    "In a small bowl, mix the remaining 1/2 cup sugar with the cinnamon and sprinkle evenly over the buttered dough.",
+    "Bake for about 30 minutes, until the crust is puffed and golden and the center jiggles slightly when shaken.",
+    "Let cool for 30 minutes before serving warm. Drizzle with honey if desired."
+  ],
+  "link": "https://preppykitchen.com/sopapilla-cheesecake/",
+  "notes": [
+    "A metal baking pan works best for even baking and crisp edges.",
+    "Pinching crescent roll seams is important to prevent filling from leaking.",
+    "Adjust the cinnamon amount to taste for stronger or milder flavor.",
+    "Store leftovers covered in the refrigerator for up to 5 days."
+  ],
+  "nutrition": {
+    "calcium": "49 mg",
+    "calories": "361 kcal",
+    "carbohydrates": "31 g",
+    "cholesterol": "76 mg",
+    "fat": "26 g",
+    "fiber": "0.1 g",
+    "iron": "0.4 mg",
+    "monounsaturatedFat": "6 g",
+    "polyunsaturatedFat": "2 g",
+    "potassium": "69 mg",
+    "protein": "4 g",
+    "saturatedFat": "14 g",
+    "sodium": "296 mg",
+    "sugar": "24 g",
+    "transFat": "0.2 g",
+    "vitaminA": "801 IU",
+    "vitaminC": "0.01 mg"
+  },
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 6,
+    "value": 5
+  },
+  "servings": "12",
+  "tags": {
+    "equipment": [
+      "oven",
+      "baking-dish",
+      "mixer"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Sopapilla Cheesecake",
+  "totalTime": "1 hour 20 minutes"
+}

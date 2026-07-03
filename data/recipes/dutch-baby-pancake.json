@@ -1,0 +1,101 @@
+{
+  "author": "Sally",
+  "cookTime": "25 minutes",
+  "description": "Make a sweet Dutch baby pancake using this simple, 8-ingredient recipe. It bakes up puffed and golden with crisp edges and a soft center, and can easily be adapted for sweet or savory toppings.",
+  "equipment": [
+    "Blender",
+    "10-inch oven-safe skillet or cast iron skillet",
+    "Pastry brush"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "egg",
+      "quantity": 3
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "whole milk",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "lemon zest",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "vanilla extract",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "powdered sugar",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "id": "dutch-baby-pancake",
+  "ingredients": [
+    "3 large eggs, at room temperature",
+    "3/4 cup all-purpose flour",
+    "3/4 cup whole milk, at room temperature (or nondairy)",
+    "1 teaspoon lemon zest",
+    "2 tablespoons granulated sugar",
+    "Pinch of salt",
+    "1/2 teaspoon vanilla extract",
+    "3 tablespoons unsalted butter",
+    "2 tablespoons confectioners' sugar, for sifting",
+    "Optional toppings: berries, whipped cream, maple syrup, and/or strawberry sauce"
+  ],
+  "instructions": [
+    "Place the eggs in a blender and blend on medium-high speed until frothy and fluffy, about 45 seconds.",
+    "Add flour, milk, lemon zest, sugar, salt, and vanilla. Blend until fully combined; the batter will be thin.",
+    "Set the batter aside to rest for 15 minutes at room temperature, or cover and refrigerate for up to 24 hours.",
+    "Preheat the oven to 400°F (204°C). Place butter in a 10-inch oven-safe skillet and place in the oven for 5 minutes to melt. Remove and brush the butter up the sides of the pan.",
+    "Pour the batter into the center of the hot pan without swirling.",
+    "Bake for 15 minutes, then reduce oven temperature to 350°F (177°C) and bake for an additional 10 minutes, until puffed and deeply golden.",
+    "Remove from the oven and let cool for 5 minutes. Top as desired, slice, and serve."
+  ],
+  "link": "https://sallysbakingaddiction.com/dutch-baby-pancake-recipe/",
+  "notes": [
+    "Milk: Whole milk is preferred, but any dairy or nondairy milk works.",
+    "Lemon Zest: Adds subtle freshness; the pancake does not taste strongly of lemon. Can be omitted or replaced with 1/2 teaspoon ground cinnamon.",
+    "Pan Options: If you don't have a cast iron skillet, use any oven-safe skillet around 10 inches, a 10-inch pie dish, a 9-inch square pan, or a 3-quart baking dish.",
+    "Storage: Best enjoyed immediately, but leftovers can be refrigerated for up to 5 days or frozen for up to 2 months.",
+    "Savory Version: Reduce sugar to 1 tablespoon and increase salt to 1/4 teaspoon. Add chives, parsley, sour cream, garlic powder, and black pepper. Top with smoked salmon, arugula, or pickled onions."
+  ],
+  "personalNotes": [
+    "These are good and easy to make. I like to add lemon juice on top of the powdered sugar and fold the dutch baby over like they do it at Ol' South Pancake House. I would add enough powdered sugar and warmed up fresh squeezed lemon juice onto the Dutch baby, but just enough to make the sugar/juice mix a powdery liquid mix. Doing that with cut up strawberries, blackberries, and blueberries is really good."
+  ],
+  "prepTime": "20 minutes",
+  "rating": {
+    "count": 433,
+    "value": 4.8
+  },
+  "servings": "4",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "oven-safe-skillet",
+      "blender"
+    ],
+    "rating": "great",
+    "status": "tried"
+  },
+  "title": "Dutch Baby Pancake",
+  "totalTime": "45 minutes"
+}

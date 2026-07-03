@@ -1,0 +1,177 @@
+{
+  "author": "Brianna May",
+  "cookTime": "1 hour 15 minutes",
+  "description": "This stovetop Dutch Oven Chili is hearty, rich, and full of flavor. The bacon, chipotle peppers, and adobo sauce add a delicious smokiness. This recipe works well in either an enameled or cast iron Dutch oven.",
+  "equipment": [
+    "6-quart Dutch oven",
+    "Stirring spoon"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "bacon",
+      "quantity": 4,
+      "unit": "slice"
+    },
+    {
+      "item": "85/15 ground beef",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "item": "chili powder",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "smoked paprika",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cumin",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "granulated garlic or garlic powder",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "oregano",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1
+    },
+    {
+      "item": "green bell pepper",
+      "quantity": 1
+    },
+    {
+      "item": "crushed tomatoes",
+      "note": "28 oz can",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "fire-roasted diced tomatoes",
+      "note": "15 oz can",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "chipotle peppers in adobo sauce",
+      "note": "7 oz can",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "honey",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "worcestershire sauce",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "kidney beans",
+      "note": "15 oz can",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "pinto beans",
+      "note": "15 oz can",
+      "quantity": 1,
+      "unit": "can"
+    }
+  ],
+  "id": "dutch-oven-chili",
+  "ingredients": [
+    "4 slices thick cut bacon, diced",
+    "1 pound 85/15 ground beef",
+    "3 tablespoons chili powder",
+    "1 tablespoon smoked paprika",
+    "1 tablespoon cumin",
+    "1 tablespoon granulated garlic or garlic powder",
+    "1 teaspoon black pepper",
+    "1 teaspoon oregano",
+    "1/2 teaspoon salt, plus more to taste",
+    "1 large yellow onion, diced",
+    "1 large green bell pepper, diced",
+    "1 (28 ounce) can crushed tomatoes, plus about 1/2 cup water",
+    "1 (15 ounce) can fire-roasted diced tomatoes",
+    "1 (7 ounce) can chipotle peppers in adobo sauce, use only 1-3 chopped peppers & all remaining sauce",
+    "1 tablespoon honey",
+    "1 tablespoon Worcestershire sauce",
+    "1 (15 ounce) can kidney beans, drained",
+    "1 (15 ounce) can pinto beans, drained"
+  ],
+  "instructions": [
+    "In a large Dutch oven over medium-high heat, fry the bacon until browned.",
+    "Add the ground beef and break it into crumbles with a spoon. Reduce heat to medium.",
+    "Add all of the spices and sauté for 1-2 minutes until fragrant.",
+    "Add the bell pepper and onion. Sauté for 4-5 minutes.",
+    "Add the crushed tomatoes, diced tomatoes, chipotles, adobo sauce, Worcestershire, kidney beans, and pinto beans. Add about 1/2 cup water to the empty crushed tomato can, swirl, and add to the pot. Bring to a light boil.",
+    "Reduce heat to medium-low and simmer covered for at least 60 minutes, stirring occasionally and adjusting heat as needed.",
+    "Remove the lid. If needed, simmer uncovered until the chili reaches desired thickness."
+  ],
+  "link": "https://biteswithbri.com/dutch-oven-chili/",
+  "notes": [
+    "Ground Beef: 85/15 is recommended for best flavor. If using leaner ground beef, ground turkey, or chicken, add a little olive oil to make up for lost fat.",
+    "Smoked Paprika: Use smoked (not regular).",
+    "Chipotles: Use only 1-3 peppers depending on desired heat. For less spice, use just the adobo sauce. Leftover peppers can be stored in the fridge.",
+    "Honey: Substitute for sugar.",
+    "Beans: Substitute for your favorite beans.",
+    "Simmer: Cook at least 60 minutes so flavors develop. Optionally cook in the oven at 250F for up to 2-3 hours (stir/check to ensure it is not burning), or use a slow cooker (low 6-8 hours, high 3-4 hours).",
+    "Freeze leftovers: Store in the fridge for 3 days or in the freezer for up to 3 months. Portion into freezer bags or containers and reheat directly from frozen on the stove."
+  ],
+  "nutrition": {
+    "calories": "521 kcal",
+    "carbohydrates": "51 g",
+    "cholesterol": "67 mg",
+    "fat": "23 g",
+    "fiber": "15 g",
+    "monounsaturatedFat": "10 g",
+    "polyunsaturatedFat": "3 g",
+    "protein": "31 g",
+    "saturatedFat": "8 g",
+    "sodium": "987 mg",
+    "sugar": "14 g",
+    "transFat": "1 g"
+  },
+  "personalNotes": [
+    "The chili's can make it pretty hot. I only put in two and it made my mom sick (she is not good with spices). I thought two was fine. It was easy to cook, good with shredded cheese and crackers, and it was really easy to freeze and recook."
+  ],
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 238,
+    "value": 4.99
+  },
+  "servings": "6",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "dutch-oven"
+    ],
+    "rating": "great",
+    "status": "tried"
+  },
+  "title": "Dutch Oven Chili",
+  "totalTime": "1 hour 30 minutes"
+}

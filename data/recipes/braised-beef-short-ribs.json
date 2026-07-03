@@ -1,0 +1,162 @@
+{
+  "additionalTime": null,
+  "author": "John Kanell",
+  "cookTime": "3 hours",
+  "description": "These Braised Beef Short Ribs are slow-cooked in a rich red wine and herb sauce until the meat is fall-apart tender. Perfect for cozy dinners, special occasions, or make-ahead meals, they're deeply flavorful and incredibly comforting.",
+  "equipment": [
+    "6-8 quart Dutch oven",
+    "Cutting board",
+    "Knife",
+    "Tongs",
+    "Butcher's twine"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "bone-in beef short rib",
+      "quantity": 8
+    },
+    {
+      "item": "salt",
+      "quantity": 1.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "olive oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1
+    },
+    {
+      "item": "carrot",
+      "quantity": 2
+    },
+    {
+      "item": "celery",
+      "quantity": 3,
+      "unit": "stalk"
+    },
+    {
+      "item": "garlic",
+      "quantity": 3,
+      "unit": "clove"
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "red wine",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "beef broth",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "fresh thyme",
+      "quantity": 8,
+      "unit": "sprig"
+    },
+    {
+      "item": "fresh rosemary",
+      "quantity": 2,
+      "unit": "sprig"
+    },
+    {
+      "item": "bay leaf",
+      "quantity": 1,
+      "unit": "leaf"
+    },
+    {
+      "item": "mashed potatoes",
+      "optional": true
+    }
+  ],
+  "id": "braised-beef-short-ribs",
+  "ingredients": [
+    "8 bone-in beef short ribs (about 4 pounds / 1.8 kg)",
+    "1 1/2 teaspoons salt",
+    "3/4 teaspoon ground black pepper",
+    "1/4 cup all-purpose flour",
+    "1 tablespoon olive oil",
+    "1 yellow onion, chopped",
+    "2 carrots, chopped",
+    "3 celery stalks, chopped",
+    "3 garlic cloves, peeled and crushed",
+    "2 tablespoons tomato paste",
+    "2 cups red wine",
+    "2 cups beef broth",
+    "8 sprigs fresh thyme",
+    "2 sprigs fresh rosemary",
+    "1 bay leaf",
+    "Mashed potatoes, for serving (optional)"
+  ],
+  "instructions": [
+    "Preheat the oven to 325°F.",
+    "Season the short ribs all over with salt and pepper. Place the flour in a shallow bowl and dredge each rib on all sides, shaking off excess.",
+    "Heat a large Dutch oven over medium-high heat until very hot. Add the olive oil, then sear half of the ribs in a single layer until deeply browned on all sides, about 6-8 minutes total. Transfer to a plate and repeat with remaining ribs. Remove excess fat, leaving about 2 tablespoons in the pot.",
+    "Reduce heat to medium and add the onion, carrots, celery, and garlic. Cook for about 5 minutes, stirring and scraping up browned bits, until vegetables begin to soften.",
+    "Stir in the tomato paste and cook for 2 minutes until slightly caramelized. Add the red wine and simmer until reduced by about half, roughly 8 minutes.",
+    "Add the beef broth and return the short ribs to the pot. Tie the thyme, rosemary, and bay leaf together with twine and add to the pot. Bring to a gentle simmer.",
+    "Cover with a tight-fitting lid and transfer to the oven. Cook for 2 1/2 to 3 hours, until the meat is fork-tender and nearly falling off the bone.",
+    "Remove the herb bundle and skim excess fat from the surface. Season with additional salt and pepper to taste.",
+    "Serve the short ribs with the vegetables and sauce, optionally over mashed potatoes."
+  ],
+  "link": "https://preppykitchen.com/braised-beef-short-ribs/",
+  "notes": [
+    "Cut vegetables into large chunks so they hold their shape and add natural sweetness to the sauce.",
+    "If you don't have a Dutch oven, use a large oven-safe pot with a tight-fitting lid.",
+    "For a thicker sauce, remove the ribs and simmer the braising liquid on the stovetop for 10-15 minutes.",
+    "This dish can be made up to two days ahead and reheated gently; flavor improves over time.",
+    "An Instant Pot version can be made by pressure cooking on high for 35 minutes with a 10-minute natural release."
+  ],
+  "nutrition": {
+    "calcium": "79 mg",
+    "calories": "779 kcal",
+    "carbohydrates": "18 g",
+    "cholesterol": "195 mg",
+    "fat": "38 g",
+    "fiber": "2 g",
+    "iron": "9 mg",
+    "monounsaturatedFat": "17 g",
+    "polyunsaturatedFat": "2 g",
+    "potassium": "1655 mg",
+    "protein": "67 g",
+    "saturatedFat": "15 g",
+    "sodium": "1625 mg",
+    "sugar": "4 g",
+    "vitaminA": "5324 IU",
+    "vitaminC": "10 mg"
+  },
+  "prepTime": "10 minutes",
+  "rating": {
+    "count": 4,
+    "value": 5
+  },
+  "servings": "4",
+  "tags": {
+    "equipment": [
+      "dutch-oven",
+      "oven"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Braised Beef Short Ribs",
+  "totalTime": "3 hours 10 minutes"
+}

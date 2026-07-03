@@ -1,0 +1,121 @@
+{
+  "author": "Lauren Allen",
+  "cookTime": "40 minutes",
+  "description": "This old-fashioned Peach Cobbler is incredibly easy to make from scratch and can be prepared with fresh or canned peaches, making it a perfect dessert any time of year.",
+  "equipment": [
+    "9x13-inch glass baking dish",
+    "Saucepan",
+    "Large mixing bowl"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "peach",
+      "quantity": 5
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "butter",
+      "quantity": 6,
+      "unit": "tbsp"
+    },
+    {
+      "item": "all-purpose flour",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "milk",
+      "quantity": 0.75,
+      "unit": "cup"
+    },
+    {
+      "item": "ground cinnamon"
+    }
+  ],
+  "id": "peach-cobbler",
+  "ingredients": [
+    "5 peaches, peeled, cored, and sliced (about 4 cups)",
+    "3/4 cup granulated sugar",
+    "1/4 teaspoon salt",
+    "6 tablespoons butter",
+    "1 cup all-purpose flour",
+    "1 cup granulated sugar",
+    "2 teaspoons baking powder",
+    "1/4 teaspoon salt",
+    "3/4 cup milk",
+    "Ground cinnamon, to taste"
+  ],
+  "instructions": [
+    "Add sliced peaches, sugar, and salt to a saucepan and stir to combine.",
+    "Cook over medium heat for a few minutes until the sugar dissolves and juices release from the peaches. Remove from heat and set aside.",
+    "Preheat oven to 350°F. Slice butter into pieces and add to a 9x13-inch baking dish. Place the dish in the oven while it preheats to melt the butter, then remove from oven.",
+    "In a large bowl, mix flour, sugar, baking powder, and salt. Stir in milk just until combined.",
+    "Pour batter evenly over the melted butter in the baking dish.",
+    "Spoon peaches and their juices evenly over the batter. Sprinkle generously with ground cinnamon.",
+    "Bake for 38-40 minutes, until golden brown. Serve warm, optionally with ice cream."
+  ],
+  "link": "https://tastesbetterfromscratch.com/peach-cobbler/",
+  "notes": [
+    "Canned Peaches: Substitute with 1 quart jar of canned peaches, undrained. Skip cooking steps and start at batter preparation.",
+    "Gluten-Free Option: Use a gluten-free flour blend such as Cup4Cup or King Arthur Measure for Measure.",
+    "Best served warm with vanilla ice cream."
+  ],
+  "nutrition": {
+    "calcium": "85 mg",
+    "calories": "315 kcal",
+    "carbohydrates": "59 g",
+    "cholesterol": "23 mg",
+    "fat": "9 g",
+    "fiber": "2 g",
+    "iron": "1 mg",
+    "monounsaturatedFat": "2 g",
+    "polyunsaturatedFat": "0.4 g",
+    "potassium": "150 mg",
+    "protein": "3 g",
+    "saturatedFat": "5 g",
+    "sodium": "303 mg",
+    "sugar": "47 g",
+    "transFat": "0.3 g",
+    "vitaminA": "538 IU",
+    "vitaminC": "3 mg"
+  },
+  "prepTime": "15 minutes",
+  "rating": {
+    "count": 9519,
+    "value": 4.91
+  },
+  "servings": "9",
+  "tags": {
+    "equipment": [
+      "baking-dish",
+      "saucepan"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Peach Cobbler",
+  "totalTime": "55 minutes"
+}
