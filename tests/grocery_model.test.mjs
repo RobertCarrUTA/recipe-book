@@ -211,6 +211,25 @@ test("specific steak grocery items do not collapse into vague steak totals", () 
   );
 });
 
+test("specific onion grocery items do not collapse into vague onion totals", () => {
+  const runtime = createRecipeRuntimeState();
+  const sourceRecipes = [
+    {
+      id: "salsa",
+      groceryIngredients: [{ item: "white onion", quantity: 0.5 }],
+      ingredients: [],
+      instructions: [],
+      title: "Salsa",
+    },
+  ];
+
+  selectAllRecipes(runtime, sourceRecipes);
+
+  assert.equal(runtime.grocery.totalsByKey.onion, undefined);
+  assert.deepEqual(runtime.grocery.totalsByKey["white onion"].item, { min: 0.5, max: 0.5 });
+  assert.equal(runtime.displayNamesByKey["white onion"], "white onion");
+});
+
 test("clearGroceryState resets selected, checked, totals, and display names", () => {
   const runtime = createRecipeRuntimeState();
   setRecipeSelected(runtime, recipes, recipes[0], 0, true);
