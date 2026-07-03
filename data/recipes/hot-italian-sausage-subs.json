@@ -1,7 +1,8 @@
 {
   "author": "Robert Carr",
-  "cookTime": "30 minutes",
-  "description": "A hot Italian sausage sub with homemade sweet Italian-style pork patties, browned peppers and onions, quick tomato pan sauce, garlic-toasted rolls, provolone, mozzarella, and basil.",
+  "additionalTime": "10 minutes sausage mixture rest",
+  "cookTime": "35 minutes",
+  "description": "A hot Italian sausage sub with homemade sweet Italian-style pork patties, browned peppers and onions, quick tomato pan sauce, garlic-toasted rolls, provolone, mozzarella, Parmesan, and basil.",
   "equipment": [
     "Cast-iron skillet or heavy saute pan",
     "Oven with broiler",
@@ -125,7 +126,7 @@
     },
     {
       "item": "kosher salt",
-      "quantity": 2.25,
+      "quantity": 2,
       "unit": "tsp"
     },
     {
@@ -140,7 +141,7 @@
     "2 ounces Parmesan cheese, finely grated to make about 2/3 cup, divided",
     "5 garlic cloves, divided",
     "2 tablespoons finely chopped fresh flat-leaf parsley",
-    "2 1/4 teaspoons Diamond Crystal kosher salt or 1 1/3 teaspoons Morton kosher salt, divided",
+    "2 teaspoons Diamond Crystal kosher salt or 1 1/4 teaspoons Morton kosher salt, divided, plus more to taste",
     "1 teaspoon black pepper, freshly ground if possible, divided",
     "1 1/2 teaspoons fennel seeds, lightly crushed",
     "1 1/2 teaspoons dried oregano, divided",
@@ -156,7 +157,7 @@
     "1 red bell pepper, thinly sliced",
     "2 tablespoons tomato paste",
     "1 (14.5-ounce) can crushed tomatoes",
-    "1/4 cup water",
+    "1/4 cup water, plus more if needed",
     "1/4 cup fresh basil leaves, torn, divided",
     "2 tablespoons unsalted butter, softened",
     "4 Italian sub rolls or sturdy hoagie rolls, 6 to 8 inches long, split",
@@ -164,12 +165,13 @@
     "4 ounces low-moisture whole-milk mozzarella cheese, shredded, about 1 cup"
   ],
   "instructions": [
-    "Move an oven rack 6 inches below the broiler and heat the broiler on high.",
+    "Move an oven rack 6 inches below the broiler.",
     "Line a rimmed baking sheet with aluminum foil.",
     "In a large mixing bowl, combine 1 1/2 pounds ground pork, 1/3 cup finely grated Parmesan cheese, 2 finely grated garlic cloves, 2 tablespoons finely chopped parsley, 1 1/4 teaspoons Diamond Crystal kosher salt, 3/4 teaspoon black pepper, 1 1/2 teaspoons lightly crushed fennel seeds, 1 teaspoon dried oregano, 3/4 teaspoon garlic powder, 1/2 teaspoon onion powder, 1/2 teaspoon sweet paprika, 1/4 teaspoon red pepper flakes if using, 2 teaspoons Worcestershire sauce, 2 teaspoons red wine vinegar, and 1 tablespoon extra-virgin olive oil.",
-    "Mix the pork gently with your hands for 30 to 45 seconds, just until the Parmesan, garlic, herbs, spices, Worcestershire sauce, vinegar, and oil are evenly distributed.",
+    "Mix the pork with your hands for 45 to 60 seconds, just until the Parmesan, garlic, herbs, spices, Worcestershire sauce, vinegar, and oil are evenly distributed and the mixture feels slightly tacky.",
     "Divide the seasoned pork into 8 equal portions, using about 3 ounces pork mixture for each portion.",
-    "Shape each portion into a flat 4-inch-long oval patty so 2 patties will fit neatly in each sub roll.",
+    "Shape each portion into a flat 4-inch-long, 1/2-inch-thick oval patty so 2 patties will fit neatly in each sub roll.",
+    "Let the shaped pork patties rest at room temperature for 10 minutes so the salt, spices, and fennel hydrate before browning.",
     "Heat a cast-iron skillet or heavy saute pan over medium-high heat for 2 minutes.",
     "Add 1 tablespoon extra-virgin olive oil to the hot skillet.",
     "Place as many of the 8 pork patties in the skillet as will fit in a single uncrowded layer, working in 2 batches if needed so they brown instead of steaming.",
@@ -180,12 +182,15 @@
     "Cook the peppers and onion for 7 to 9 minutes, stirring every minute, until softened, browned at the edges, and sweet-smelling.",
     "Stir in 2 minced garlic cloves, 2 tablespoons tomato paste, and the remaining 1/2 teaspoon dried oregano.",
     "Cook the garlic and tomato paste for 1 minute, stirring constantly, until the tomato paste darkens and coats the peppers and onion.",
-    "Add the 14.5-ounce can crushed tomatoes, 1/4 cup water, the remaining 1/2 teaspoon Diamond Crystal kosher salt, and the remaining 2 teaspoons red wine vinegar.",
+    "Add the 14.5-ounce can crushed tomatoes, 1/4 cup water, the remaining 1/4 teaspoon Diamond Crystal kosher salt, and the remaining 2 teaspoons red wine vinegar.",
     "Bring the tomato-pepper sauce to a simmer over medium heat, scraping the browned pork bits from the bottom of the skillet.",
+    "Simmer the tomato-pepper sauce for 4 to 5 minutes, stirring often, until it looks glossy and thick enough to cling to a spoon.",
     "Return the 8 cooked pork patties and any juices from the plate to the skillet.",
     "Spoon tomato-pepper sauce over the pork patties and simmer for 3 to 4 minutes, until the patties are hot and coated.",
     "Stir 2 tablespoons torn fresh basil into the tomato-pepper sauce.",
+    "Taste the sauce and add a small pinch of kosher salt or a splash of red wine vinegar only if it needs more seasoning or brightness.",
     "Turn the heat to low so the pork patties and sauce stay hot while the rolls toast.",
+    "Heat the broiler on high.",
     "In a small bowl, stir together 2 tablespoons softened unsalted butter, the remaining 1 finely grated garlic clove, and 2 tablespoons finely grated Parmesan cheese.",
     "Place the 4 split sub rolls cut-side up on the foil-lined baking sheet.",
     "Spread the garlic-Parmesan butter evenly over the cut sides of the 4 split rolls, using about 3/4 teaspoon butter mixture on each cut side.",
@@ -206,9 +211,11 @@
     "Ground pork keeps this fast because it skips sausage casings while keeping the flavor and texture of an Italian sausage sub.",
     "Use 80/20 ground pork if you can find it. Extra-lean pork can taste dry by the time the cheese melts.",
     "Shape the pork into flat oval patties instead of round meatballs so each bite gets browned pork, peppers, sauce, bread, and cheese.",
-    "The red pepper flakes are optional. Skip them for a fully mild sandwich.",
+    "Mixing the pork until slightly tacky and resting the shaped patties for 10 minutes makes the patties taste more like sausage and less like loose pork burgers.",
     "Browning the pork first builds the pan drippings that season the peppers, onions, and tomato sauce.",
     "Cook the peppers and onion until the edges brown. That sweetness is what keeps the quick sauce from tasting flat.",
+    "The red pepper flakes are optional. Skip them for a fully mild sandwich.",
+    "The sauce should be thick enough to cling to the patties before assembly. Simmer it 1 to 2 minutes longer if it looks watery.",
     "Use sturdy Italian sub rolls or hoagie rolls. Very soft rolls can collapse under hot sauce unless they are toasted thoroughly.",
     "Watch the broiler closely for both toasting and melting because buttered bread and cheese can go from browned to burned quickly.",
     "Serve immediately while the bread is toasted, the pork is hot, and the cheese is melted."
@@ -228,5 +235,5 @@
     "status": "not-tried"
   },
   "title": "Hot Italian Sausage Subs",
-  "totalTime": "55 minutes"
+  "totalTime": "1 hour 10 minutes"
 }

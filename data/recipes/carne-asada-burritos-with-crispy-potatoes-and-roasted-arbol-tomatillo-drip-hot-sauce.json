@@ -1,8 +1,8 @@
 {
-  "additionalTime": "2 to 8 hours steak marinade, 10 minutes steak rest, plus 10 minutes potato steam-dry time",
+  "additionalTime": "2 to 8 hours steak marinade, 10 minutes chile soak, 10 minutes steak rest, plus 10 minutes potato steam-dry time",
   "author": "Robert Carr",
-  "cookTime": "1 hour 5 minutes",
-  "description": "Carne asada burritos with citrus-garlic marinated steak, savory Mexican-style rice, creamy pinto beans, crispy seasoned potatoes, Oaxaca-Jack cheese, avocado crema, quick pickled onions, a toasted flour tortilla, and roasted arbol-tomatillo hot sauce on the side.",
+  "cookTime": "1 hour 10 minutes",
+  "description": "Carne asada burritos with citrus-garlic marinated steak, savory Mexican-style rice, creamy pinto beans, extra-crispy seasoned potatoes, Oaxaca-Jack cheese, avocado crema, quick pickled onions, a toasted flour tortilla, and a smooth roasted arbol-tomatillo drip hot sauce on the side.",
   "equipment": [
     "12-inch cast-iron skillet or grill pan",
     "Aluminum foil",
@@ -31,8 +31,8 @@
     },
     {
       "item": "avocado oil",
-      "quantity": 0.584,
-      "unit": "cup"
+      "quantity": 11,
+      "unit": "tbsp"
     },
     {
       "item": "baking soda",
@@ -46,7 +46,7 @@
     },
     {
       "item": "black pepper",
-      "quantity": 3.25,
+      "quantity": 2.5,
       "unit": "tsp"
     },
     {
@@ -56,7 +56,7 @@
     },
     {
       "item": "chicken broth",
-      "quantity": 3,
+      "quantity": 2.25,
       "unit": "cup"
     },
     {
@@ -66,12 +66,12 @@
     },
     {
       "item": "cilantro",
-      "quantity": 0.75,
+      "quantity": 0.375,
       "unit": "cup"
     },
     {
       "item": "cumin",
-      "quantity": 4,
+      "quantity": 3,
       "unit": "tsp"
     },
     {
@@ -85,7 +85,7 @@
     },
     {
       "item": "garlic",
-      "quantity": 15,
+      "quantity": 14,
       "unit": "clove"
     },
     {
@@ -113,7 +113,7 @@
       "unit": "tbsp"
     },
     {
-      "item": "large burrito-size flour tortilla",
+      "item": "large 12-inch burrito-size flour tortilla",
       "quantity": 4
     },
     {
@@ -152,7 +152,7 @@
     {
       "item": "pinto beans",
       "quantity": 2,
-      "unit": "can"
+      "unit": "15-ounce can"
     },
     {
       "item": "red onion",
@@ -211,6 +211,8 @@
     "1 teaspoon Mexican oregano",
     "1 teaspoon black pepper for the marinade",
     "1 teaspoon brown sugar",
+    "1 tablespoon fresh lime juice for finishing the steak",
+    "1 small pinch kosher salt for finishing the steak, only if needed",
     "1 cup long-grain white rice",
     "1 tablespoon avocado oil for the rice",
     "2 tablespoons finely minced white onion for the rice",
@@ -233,7 +235,7 @@
     "1 1/4 pounds Yukon Gold potatoes, cut into 1/2-inch cubes",
     "1 tablespoon Diamond Crystal kosher salt for parboiling the potatoes",
     "1/4 teaspoon baking soda for parboiling the potatoes",
-    "2 tablespoons avocado oil for crisping the potatoes",
+    "3 tablespoons avocado oil for crisping the potatoes, divided",
     "1/2 teaspoon smoked paprika for the potatoes",
     "1/2 teaspoon garlic powder for the potatoes",
     "1/2 teaspoon cumin for the potatoes",
@@ -250,19 +252,20 @@
     "1/3 cup water for the pickled onions",
     "1 tablespoon granulated sugar",
     "1 teaspoon Diamond Crystal kosher salt for the pickled onions",
-    "4 large burrito-size flour tortillas, preferably 12 inches",
+    "4 large 12-inch burrito-size flour tortillas",
     "4 ounces Oaxaca cheese, freshly shredded, or low-moisture whole-milk mozzarella",
     "4 ounces Monterey Jack cheese, freshly shredded",
     "4 tomatillos, husked and rinsed",
     "2 Roma tomatoes",
     "3 jalapenos",
     "1/2 small white onion for the hot sauce",
-    "6 cloves garlic for the hot sauce",
+    "6 unpeeled garlic cloves for the hot sauce",
     "8 dried chile de arbol peppers, stems removed",
+    "1/2 cup hot water for soaking the toasted chiles",
     "1 teaspoon tomato paste for the hot sauce",
     "1/4 cup apple cider vinegar for the hot sauce",
     "2 tablespoons fresh lime juice for the hot sauce",
-    "2 to 5 tablespoons water for the hot sauce",
+    "2 to 5 tablespoons water for thinning the hot sauce",
     "3 tablespoons avocado oil for the hot sauce",
     "1 teaspoon honey",
     "3/4 teaspoon Diamond Crystal kosher salt for the hot sauce, or 1/2 teaspoon Morton kosher salt",
@@ -275,12 +278,15 @@
     "Add the salted steak to the marinade, turn until coated, cover, and refrigerate for at least 2 hours or up to 8 hours.",
     "Make the quick pickled onions by combining 1 thinly sliced small red onion, 1/3 cup apple cider vinegar, 1/3 cup water, 1 tablespoon granulated sugar, and 1 teaspoon Diamond Crystal kosher salt in a bowl.",
     "Stir the pickled onions well, press them down into the liquid, and let them sit while the rest of the recipe is prepared.",
-    "Make the roasted arbol-tomatillo drip hot sauce by placing 4 tomatillos, 2 Roma tomatoes, 3 jalapenos, 1/2 small white onion, and 6 garlic cloves in a dry cast-iron skillet over medium-high heat.",
-    "Cook the hot sauce vegetables for 8 to 12 minutes, turning occasionally, until the tomatillos soften, the garlic is browned in spots, and the tomatoes, jalapenos, and onion are charred in places.",
-    "Transfer the roasted vegetables to a blender.",
-    "Toast 8 dried chile de arbol peppers in the dry skillet for 15 to 30 seconds, just until fragrant and slightly darkened, then transfer them to the blender.",
+    "Make the roasted arbol-tomatillo drip hot sauce by placing 4 tomatillos, 2 Roma tomatoes, 3 jalapenos, 1/2 small white onion, and 6 unpeeled garlic cloves in a dry cast-iron skillet over medium-high heat.",
+    "Cook the hot sauce vegetables for 8 to 12 minutes, turning occasionally, until the tomatillos soften, the garlic skins are browned in spots, and the tomatoes, jalapenos, and onion are charred in places.",
+    "Remove the garlic cloves as soon as they are browned and softened, let them cool briefly, peel them, and transfer the peeled roasted garlic to a blender.",
+    "Transfer the roasted tomatillos, tomatoes, jalapenos, and onion to the blender.",
+    "Toast 8 dried chile de arbol peppers in the dry skillet for 15 to 30 seconds, just until fragrant and slightly darkened.",
+    "Transfer the toasted chiles to a small bowl, cover them with 1/2 cup hot water, and soak for 10 minutes so the hot sauce blends smoother and less papery.",
+    "Drain the soaked chiles, discard the soaking water, and transfer the chiles to the blender.",
     "Add 1 teaspoon tomato paste, 1/4 cup apple cider vinegar, 2 tablespoons fresh lime juice, 2 tablespoons water, 1 teaspoon honey, 3/4 teaspoon Diamond Crystal kosher salt, and 3/4 teaspoon black pepper to the blender.",
-    "Blend the hot sauce until smooth, then slowly blend in 3 tablespoons avocado oil so the sauce lightly coats a bite.",
+    "Blend the hot sauce until very smooth, then slowly blend in 3 tablespoons avocado oil so the sauce lightly coats a bite.",
     "Add 1 to 3 tablespoons more water only if needed to make the hot sauce loose enough to drip from a spoon.",
     "Taste the hot sauce and adjust with a small pinch of salt, a few drops of lime juice, or a few drops of honey only if needed.",
     "For a smoother drip sauce, pass the hot sauce through a fine-mesh strainer; for a more rustic sauce, leave it unstrained.",
@@ -302,19 +308,23 @@
     "Make the crispy potatoes by placing 1 1/4 pounds 1/2-inch Yukon Gold potato cubes in a saucepan and covering them with cold water by 1 inch.",
     "Add 1 tablespoon Diamond Crystal kosher salt and 1/4 teaspoon baking soda to the potato water.",
     "Bring the potatoes to a boil, then simmer for 5 to 6 minutes, until the outsides are slightly tender but the centers are not falling apart.",
-    "Drain the potatoes very well, spread them on a rimmed baking sheet, and let them steam dry for 10 minutes.",
-    "Toss the dried potatoes with 2 tablespoons avocado oil, 1/2 teaspoon smoked paprika, 1/2 teaspoon garlic powder, 1/2 teaspoon cumin, 3/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
-    "Heat a cast-iron skillet over medium-high heat and add the seasoned potatoes in a single layer.",
-    "Cook the potatoes for 10 to 14 minutes, turning every few minutes, until crisp and browned on several sides.",
+    "Drain the potatoes very well, return them to the empty warm pan, and shake the pan gently for 15 to 20 seconds to rough up the potato edges without breaking the cubes apart.",
+    "Spread the potatoes on a rimmed baking sheet and let them steam dry for 10 minutes.",
+    "Toss the dried potatoes with 3 tablespoons avocado oil, 1/2 teaspoon smoked paprika, 1/2 teaspoon garlic powder, 1/2 teaspoon cumin, 3/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
+    "Heat a cast-iron skillet over medium-high heat until hot.",
+    "Cook the potatoes in 2 batches so they sit in a single layer with space between pieces.",
+    "Cook each batch for 8 to 10 minutes, turning every few minutes, until crisp and browned on several sides.",
     "Make the avocado crema by blending or mashing 1 avocado, 1/3 cup sour cream, 2 tablespoons fresh lime juice, 1/4 cup cilantro, 1 small garlic clove, and 1/4 teaspoon Diamond Crystal kosher salt until smooth.",
     "Remove the steak from the marinade and scrape off any heavy garlic or herb clumps so they do not burn.",
     "Pat the steak very dry with paper towels; this is important for browning instead of steaming.",
     "Heat a cast-iron skillet or grill pan over medium-high to high heat until very hot.",
-    "Add a thin film of avocado oil only if the pan looks dry.",
+    "Add up to 1 tablespoon avocado oil only if the pan looks dry.",
+    "Sear the steak in batches if needed so the pan stays very hot and the steak browns instead of steams.",
     "Sear the steak for 3 to 5 minutes per side, depending on thickness, until deeply browned and the center reaches 130 to 135 degrees F for medium-rare or 140 to 145 degrees F for medium.",
     "For USDA guidance, cook beef steaks to 145 degrees F with a 3-minute rest; for medium-rare preference, use fresh intact steak and cook to 130 to 135 degrees F if that is your desired doneness.",
     "Transfer the steak to a cutting board and rest for 10 minutes.",
     "Slice the rested steak thinly against the grain, then cut the slices into bite-size pieces so the burrito is easy to bite through.",
+    "Toss the sliced steak with any resting juices, 1 tablespoon fresh lime juice, and a small pinch of kosher salt only if the steak tastes like it needs it.",
     "Mix 4 ounces freshly shredded Oaxaca cheese or low-moisture whole-milk mozzarella and 4 ounces freshly shredded Monterey Jack cheese in a bowl.",
     "Warm each 12-inch flour tortilla in a dry skillet for 20 to 30 seconds per side, or until soft, flexible, and lightly toasted in spots.",
     "Assemble 1 burrito at a time by placing a warm tortilla on a clean work surface.",
@@ -334,20 +344,28 @@
   "link": null,
   "notes": [
     "Best steak choice: flap steak is the easiest high-reward option because it has strong beef flavor, good fat, and a forgiving texture. Skirt steak is excellent but can be chewier if sliced wrong. Flank steak works well but is leaner.",
-    "Do not marinate the steak overnight. The citrus is useful, but too much time in an acidic marinade can make the surface texture mushy.",
+    "Do not marinate the steak overnight. The citrus is useful, but too much time in an acidic marinade can make the surface texture mushy. For skirt steak, stay closer to 2 to 4 hours; for flap or flank steak, 4 to 8 hours works well.",
     "The marinade keeps Worcestershire as the main savory background note and uses only 1 teaspoon soy sauce so the steak tastes like carne asada instead of steakhouse beef.",
     "The steak must be patted very dry before searing. Wet marinade left on the surface prevents browning and can make the steak taste steamed.",
+    "Sear the steak in batches if needed. Crowding the skillet traps steam and weakens the crust.",
     "Slice the steak against the grain, then cut it into bite-size pieces. Long strips pull out of the burrito when you bite into it.",
+    "Tossing the sliced steak with its resting juices and a little lime wakes the steak back up after searing and resting.",
     "The rice is intentionally more savory than plain cilantro-lime rice. Tomato paste, onion, garlic, broth, and cumin make it taste integrated with the burrito instead of like a separate side dish.",
     "The beans should be creamy and spreadable, not loose. They act as a moisture barrier and help hold the burrito together.",
+    "This recipe intentionally makes extra rice and beans. Use only about 1/3 cup of each per burrito so the burritos roll tightly and do not become heavy or mushy.",
     "The potatoes add crisp texture, absorb steak juices, and make the burrito more satisfying without turning it watery.",
+    "Baking soda and roughing up the potato edges help create a starchy exterior that browns and crisps harder.",
     "Steam-drying the potatoes before crisping matters. Wet potatoes brown poorly and soften faster inside the burrito.",
+    "Cook the potatoes in 2 batches unless the skillet is large enough to hold them in a roomy single layer. Crowded potatoes steam instead of crisp.",
     "Freshly shredded Oaxaca and Monterey Jack melt better than pre-shredded cheese. If Oaxaca is hard to find, low-moisture whole-milk mozzarella is the best substitute because it gives a similar mild flavor and stretchy melt. Avoid fresh mozzarella here because it is too wet for a burrito.",
     "Drain the pickled onions before adding them to the burrito. Their job is brightness and crunch, not extra liquid.",
     "Use large 12-inch flour tortillas if possible. Smaller tortillas make overstuffed burritos that tear or cannot be rolled tightly.",
     "Toast the assembled burrito seam-side down first. It seals the fold, improves texture, and gives the tortilla a lightly crisp exterior.",
     "The hot sauce is intentionally served outside the burrito. Dripping it onto each bite gives heat, acid, and roasted chile flavor without soaking the tortilla.",
+    "Roasting the hot sauce garlic unpeeled lowers the risk of scorching the cloves and making the sauce bitter.",
+    "Soaking the toasted chile de arbol peppers before blending makes the hot sauce smoother, rounder, and less papery.",
     "Blending the avocado oil into the hot sauce gives it a smooth texture that drips cleanly but still lightly coats each bite.",
+    "With a high-powered blender such as a Vitamix 5200, the sauce can be very smooth without straining, but straining gives the cleanest restaurant-style drip texture.",
     "For a milder hot sauce, use 3 to 4 dried chile de arbol peppers instead of 8 and remove the jalapeno seeds before blending.",
     "For a hotter sauce, use 10 to 12 dried chile de arbol peppers or add 1 serrano with the jalapenos.",
     "The hot sauce should be loose enough to drip but not watery. Add water 1 tablespoon at a time only after blending.",
@@ -355,17 +373,18 @@
     "Eat these right after the final skillet toast."
   ],
   "nutrition": null,
-  "prepTime": "1 hour",
+  "prepTime": "1 hour 5 minutes",
   "rating": null,
-  "servings": "4 burritos",
-  "source": "original",
+  "servings": "4 large burritos, with extra rice and beans",
+  "source": "bundled",
   "tags": {
     "equipment": [
       "cast-iron-skillet",
-      "stovetop"
+      "stovetop",
+      "blender"
     ],
     "status": "not-tried"
   },
   "title": "Carne Asada Burritos with Crispy Potatoes and Roasted Arbol-Tomatillo Drip Hot Sauce",
-  "totalTime": "2 hours 5 minutes plus 2 to 8 hours steak marinade"
+  "totalTime": "2 hours 15 minutes plus 2 to 8 hours steak marinade"
 }

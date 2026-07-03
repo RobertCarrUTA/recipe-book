@@ -10034,9 +10034,10 @@
     "equipment": [
       "Cast-iron skillet or heavy saute pan",
       "Oven, optional for holding steaks warm",
-      "Wire rack",
-      "Rimmed baking sheet",
-      "Deep-fry thermometer or instant-read thermometer",
+      "2 wire racks",
+      "2 rimmed baking sheets",
+      "Deep-fry thermometer",
+      "Instant-read thermometer",
       "Meat mallet or rolling pin",
       "Large shallow bowls",
       "Whisk",
@@ -10195,7 +10196,7 @@
       "2 tablespoons finely chopped fresh parsley, optional, for finishing"
     ],
     "instructions": [
-      "Place a wire rack inside a rimmed baking sheet.",
+      "Set 1 wire rack inside a rimmed baking sheet for the breaded raw steaks, then set a second clean wire rack inside another rimmed baking sheet for the fried steaks.",
       "If you want every steak hot at serving time, heat the oven to 200 degrees F now so finished steaks can hold on the wire rack while the remaining batches and gravy finish.",
       "Pat the 2 pounds tenderized top round steak or cube steak very dry with paper towels.",
       "If starting with plain top round instead of already-tenderized cube steak, cover each steak with plastic wrap or parchment and pound it with the textured side of a meat mallet until it is evenly tenderized and about 1/3 inch thick, but no thicker than 1/2 inch.",
@@ -10213,9 +10214,9 @@
       "Press the steak firmly into the seasoned flour on both sides, making sure flour gets into every tenderized groove.",
       "Dip the floured steak back into the buttermilk mixture for 1 to 2 seconds, then let the excess drip off again.",
       "Press the steak into the seasoned flour a second time, packing the clumpy flour onto both sides until there are no damp bare spots.",
-      "Shake off only loose dusty flour, then place the breaded steak on the wire rack.",
+      "Shake off only loose dusty flour, then place the breaded steak on the raw-steak wire rack.",
       "Repeat the buttermilk and seasoned-flour coating steps with the remaining steaks.",
-      "Let the breaded steaks rest on the wire rack for 15 minutes so the flour coating absorbs moisture and sticks during frying.",
+      "Let the breaded steaks rest on the raw-steak wire rack for 15 minutes so the flour coating absorbs moisture and sticks during frying.",
       "While the coating rests, add 4 cups neutral frying oil to a cast-iron skillet or heavy saute pan, or use enough oil to reach 1/2 inch depth.",
       "Heat the oil over medium-high heat to 350 degrees F.",
       "Fry 1 steak at a time unless your skillet is wide enough to fit 2 steaks with at least 1 inch of space between them. Crowding drops the oil temperature and makes the crust greasy.",
@@ -10223,10 +10224,10 @@
       "Cook each steak for 3 to 4 minutes on the first side, until the bottom is deep golden brown and crisp.",
       "Flip with tongs and cook the second side for 2 to 4 minutes more, until deep golden brown and the center reaches at least 145 degrees F when checked through the side of the steak.",
       "Between batches, use a fine-mesh skimmer or slotted spoon to remove loose fried crumbs if they start turning dark brown or black so the later steaks and gravy do not taste bitter.",
-      "Transfer each fried steak to the wire rack and immediately sprinkle the batch with a tiny pinch from the remaining 1/2 teaspoon Diamond Crystal kosher salt.",
-      "If using the 200 degrees F oven hold, keep the fried steaks on the wire rack in the oven, uncovered and not stacked, while frying the remaining steaks and making the gravy.",
+      "Transfer each fried steak to the clean wire rack and immediately sprinkle the batch with a tiny pinch from the remaining 1/2 teaspoon Diamond Crystal kosher salt.",
+      "If using the 200 degrees F oven hold, keep the fried steaks on the clean wire rack in the oven, uncovered and not stacked, while frying the remaining steaks and making the gravy.",
       "Let the oil return to 350 degrees F before frying the next batch.",
-      "When all steaks are fried, let them rest on the wire rack for at least 3 minutes before serving.",
+      "When all steaks are fried, let them rest on the clean wire rack for at least 3 minutes before serving.",
       "Carefully pour the hot oil into a heat-safe bowl or measuring cup, leaving the browned bits in the skillet.",
       "Inspect the skillet before making gravy. Keep golden brown bits and toasted crumbs, but if any blackened flour crumbs smell burnt or harsh, carefully wipe those out with paper towels held in tongs.",
       "Return 4 tablespoons of the frying oil to the skillet with the good browned bits and place the skillet over medium heat.",
@@ -10253,7 +10254,7 @@
       "Peanut oil gives the cleanest classic fried flavor, but canola or vegetable oil still works well.",
       "The oil temperature will drop when steak goes in. Start at 350 degrees F, then manage the burner so the oil stays mostly between 325 degrees F and 350 degrees F.",
       "Skim loose crumbs if they start getting too dark between batches. Burnt flour specks can make both the later steaks and the gravy taste bitter.",
-      "A wire rack keeps the bottom crust crisp. Paper towels trap steam and can soften the breading.",
+      "A clean wire rack keeps the bottom crust crisp after frying. Paper towels trap steam and can soften the breading.",
       "The optional 200 degrees F oven hold keeps the steaks hot without steaming the crust. Keep them uncovered on the rack and avoid holding longer than about 20 minutes.",
       "Tenderized round steak and cube steak are lean and relatively thin, so the quality risk is overcooking after the crust is already brown. Pull the steaks once the coating is golden brown and the center is at least 145 degrees F, then rest for at least 3 minutes.",
       "Use the browned bits in the skillet for gravy only if they smell toasted and savory. If they smell burnt, remove the blackened crumbs and keep only the clean browned bits.",
@@ -10807,8 +10808,8 @@
   },
   {
     "author": "Robert Carr",
-    "cookTime": "15 minutes",
-    "description": "A quick skillet steak sandwich with thin-sliced seared sirloin, pepperoncini onions, garlic mayo, melted provolone, dressed arugula, and toasted ciabatta or hoagie rolls.",
+    "cookTime": "25 minutes",
+    "description": "A skillet steak sandwich with thin-sliced seared steak, pepperoncini onions, garlic mayo, melted deli provolone, dressed arugula, and toasted ciabatta or hoagie rolls.",
     "equipment": [
       "Cast-iron skillet or heavy saute pan",
       "Cutting board",
@@ -10828,7 +10829,7 @@
         "quantity": 4
       },
       {
-        "item": "provolone cheese slice",
+        "item": "deli provolone cheese slice",
         "quantity": 4
       },
       {
@@ -10914,7 +10915,7 @@
       "1/2 cup mayonnaise",
       "1 tablespoon Dijon mustard",
       "1 teaspoon Worcestershire sauce",
-      "4 slices provolone cheese",
+      "4 slices deli provolone cheese",
       "2 ounces baby arugula, about 2 packed cups",
       "2 teaspoons fresh lemon juice",
       "1 teaspoon extra-virgin olive oil"
@@ -10922,30 +10923,31 @@
     "instructions": [
       "Pat the 1 1/4 pounds steak very dry with paper towels.",
       "Season both sides of the steak with 1 1/4 teaspoons Diamond Crystal kosher salt, 3/4 teaspoon black pepper, and 1/2 teaspoon smoked paprika.",
-      "Let the seasoned steak sit at room temperature for 10 minutes while preparing the sauce and onions.",
+      "Let the seasoned steak sit at room temperature for 15 to 20 minutes while preparing the sauce and onions.",
       "Make the garlic mayo by stirring together 1/2 cup mayonnaise, 1 tablespoon Dijon mustard, 1 teaspoon Worcestershire sauce, 1 teaspoon pepperoncini brine, 1 finely grated garlic clove, and 1/4 teaspoon black pepper in a small bowl.",
-      "Taste the garlic mayo and add a tiny splash more pepperoncini brine only if it needs more tang.",
+      "Taste the garlic mayo and add only a few drops more pepperoncini brine if it needs more tang; keep it thick enough to cling to the rolls.",
       "Melt 1 tablespoon unsalted butter in a cast-iron skillet or heavy saute pan over medium heat.",
       "Add the 1 thinly sliced yellow onion, 1/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
-      "Cook the onion for 6 to 8 minutes, stirring every minute, until softened and lightly browned at the edges.",
+      "Cook the onion for 7 to 9 minutes, stirring every minute, until softened, sweet, and lightly browned at the edges.",
       "Stir 1/3 cup sliced pepperoncini peppers and 1 tablespoon pepperoncini brine into the onions.",
-      "Cook the pepperoncini onions for 1 to 2 minutes, until the brine has mostly evaporated and the onions taste bright and savory.",
+      "Cook the pepperoncini onions for 1 to 2 minutes, until the brine has mostly evaporated and the onions taste bright and savory without being wet.",
       "Transfer the pepperoncini onions to a plate.",
       "Melt the remaining 1 tablespoon unsalted butter in the same skillet over medium heat.",
       "Smash the remaining 1 garlic clove with the side of a knife, add it to the melted butter, and swirl it for 20 to 30 seconds until fragrant.",
-      "Place the 4 split ciabatta rolls or hoagie rolls cut-side down in the garlic butter and toast for 1 to 2 minutes, until the cut sides are golden.",
+      "Place the 4 split ciabatta rolls or hoagie rolls cut-side down in the garlic butter, working in batches if needed, and toast for 1 to 2 minutes, until the cut sides are golden.",
       "Move the toasted rolls to a plate and discard the smashed garlic clove.",
-      "Wipe out any loose crumbs from the skillet.",
-      "Increase the heat to medium-high and add 1 tablespoon avocado oil.",
+      "Wipe out any loose crumbs and browned garlic bits from the skillet.",
+      "Increase the heat to medium-high, let the skillet heat for 1 minute, and add 1 tablespoon avocado oil.",
       "Pat the steak dry again if moisture has appeared on the surface.",
-      "When the oil is shimmering, add the steak to the skillet.",
-      "Sear the steak for 3 to 4 minutes on the first side, until well browned.",
-      "Flip the steak with tongs and sear the second side for 3 to 4 minutes, until the center reaches 125 to 130 degrees F for medium-rare or 135 degrees F for medium.",
-      "Transfer the steak to a cutting board and let it rest for 5 minutes.",
-      "Slice the rested steak as thinly as possible against the grain.",
+      "When the oil is shimmering, add the steak to the skillet; if using two steaks, sear them in batches so the pan stays hot.",
+      "Sear the steak for 3 to 4 minutes on the first side, without moving it, until well browned.",
+      "Flip the steak with tongs and sear the second side for 3 to 4 minutes, until the center reaches 120 to 125 degrees F for medium-rare after the final cheese melt or 130 degrees F for medium.",
+      "If the steak is browning faster than it is cooking through, reduce the heat to medium and keep cooking until it reaches the target temperature.",
+      "Transfer the steak to a cutting board and let it rest for 5 to 8 minutes.",
+      "Slice the rested steak as thinly as possible against the grain, angling the knife slightly for wider slices.",
       "Toss the sliced steak with any cutting board juices and 1/8 teaspoon Diamond Crystal kosher salt.",
-      "Return the sliced steak to the skillet over low heat and divide it into 4 loose piles.",
-      "Top each steak pile with one-fourth of the pepperoncini onions and 1 slice provolone cheese.",
+      "Return the sliced steak and any board juices to the skillet over low heat and divide it into 4 loose piles.",
+      "Top each steak pile with one-fourth of the pepperoncini onions and 1 slice deli provolone cheese.",
       "Cover the skillet for 1 to 2 minutes, just until the provolone melts over the steak and onions.",
       "While the cheese melts, toss 2 ounces baby arugula with 2 teaspoons fresh lemon juice, 1 teaspoon extra-virgin olive oil, and 1/8 teaspoon Diamond Crystal kosher salt.",
       "Spread about 1 tablespoon garlic mayo on each toasted bottom roll.",
@@ -10957,11 +10959,15 @@
     "link": null,
     "notes": [
       "For speed, season the steak first, make the garlic mayo and onions while the salt starts working, then sear, slice, melt, and assemble.",
+      "For even better seasoning, salt the steak up to 24 hours ahead and refrigerate it uncovered on a plate or rack. Bring it out while preparing the sauce and onions.",
       "Top sirloin works well here because it cooks quickly and slices well. Strip steak is richer; flat iron is very tender if sliced across the grain.",
       "Avoid very thick steaks for this quick version. A 1 to 1 1/4 inch steak gives enough browning time without turning the recipe into a steakhouse project.",
+      "If using two smaller steaks, cook them one at a time. Crowding the skillet makes the steak steam instead of sear.",
+      "Pull the steak a few degrees below the final doneness you want because the sliced meat warms again while the cheese melts.",
+      "Use deli provolone for better melt and flavor. Provolone piccante is excellent here if you like a sharper cheese.",
       "Use sliced pepperoncini peppers from a jar, not sweet banana peppers, because the brine adds acidity that cuts through the steak, mayo, butter, and cheese.",
       "The garlic mayo should taste tangy, savory, and lightly sharp. If it tastes flat, add a few drops of pepperoncini brine before adding more salt.",
-      "Resting the steak for 5 minutes keeps the juices in the meat instead of soaking the bread.",
+      "Resting the steak for 5 to 8 minutes keeps the juices in the meat instead of soaking the bread.",
       "Slice against the grain as thinly as possible. Thin slices make a quick steak sandwich feel tender without needing a marinade.",
       "Dress the arugula right before assembly so it stays peppery and fresh instead of wilting.",
       "Serve immediately. The best texture is crisp toasted bread, warm steak, melted cheese, bright onions, and fresh arugula all at once."
@@ -10980,7 +10986,7 @@
       "status": "not-tried"
     },
     "title": "Garlic Steak Sandwiches",
-    "totalTime": "35 minutes"
+    "totalTime": "45 minutes"
   },
   {
     "additionalTime": "30 minutes to 12 hours marinating plus 20 minutes beef chill time",
@@ -11611,8 +11617,9 @@
   },
   {
     "author": "Robert Carr",
-    "cookTime": "30 minutes",
-    "description": "A hot Italian sausage sub with homemade sweet Italian-style pork patties, browned peppers and onions, quick tomato pan sauce, garlic-toasted rolls, provolone, mozzarella, and basil.",
+    "additionalTime": "10 minutes sausage mixture rest",
+    "cookTime": "35 minutes",
+    "description": "A hot Italian sausage sub with homemade sweet Italian-style pork patties, browned peppers and onions, quick tomato pan sauce, garlic-toasted rolls, provolone, mozzarella, Parmesan, and basil.",
     "equipment": [
       "Cast-iron skillet or heavy saute pan",
       "Oven with broiler",
@@ -11736,7 +11743,7 @@
       },
       {
         "item": "kosher salt",
-        "quantity": 2.25,
+        "quantity": 2,
         "unit": "tsp"
       },
       {
@@ -11751,7 +11758,7 @@
       "2 ounces Parmesan cheese, finely grated to make about 2/3 cup, divided",
       "5 garlic cloves, divided",
       "2 tablespoons finely chopped fresh flat-leaf parsley",
-      "2 1/4 teaspoons Diamond Crystal kosher salt or 1 1/3 teaspoons Morton kosher salt, divided",
+      "2 teaspoons Diamond Crystal kosher salt or 1 1/4 teaspoons Morton kosher salt, divided, plus more to taste",
       "1 teaspoon black pepper, freshly ground if possible, divided",
       "1 1/2 teaspoons fennel seeds, lightly crushed",
       "1 1/2 teaspoons dried oregano, divided",
@@ -11767,7 +11774,7 @@
       "1 red bell pepper, thinly sliced",
       "2 tablespoons tomato paste",
       "1 (14.5-ounce) can crushed tomatoes",
-      "1/4 cup water",
+      "1/4 cup water, plus more if needed",
       "1/4 cup fresh basil leaves, torn, divided",
       "2 tablespoons unsalted butter, softened",
       "4 Italian sub rolls or sturdy hoagie rolls, 6 to 8 inches long, split",
@@ -11775,12 +11782,13 @@
       "4 ounces low-moisture whole-milk mozzarella cheese, shredded, about 1 cup"
     ],
     "instructions": [
-      "Move an oven rack 6 inches below the broiler and heat the broiler on high.",
+      "Move an oven rack 6 inches below the broiler.",
       "Line a rimmed baking sheet with aluminum foil.",
       "In a large mixing bowl, combine 1 1/2 pounds ground pork, 1/3 cup finely grated Parmesan cheese, 2 finely grated garlic cloves, 2 tablespoons finely chopped parsley, 1 1/4 teaspoons Diamond Crystal kosher salt, 3/4 teaspoon black pepper, 1 1/2 teaspoons lightly crushed fennel seeds, 1 teaspoon dried oregano, 3/4 teaspoon garlic powder, 1/2 teaspoon onion powder, 1/2 teaspoon sweet paprika, 1/4 teaspoon red pepper flakes if using, 2 teaspoons Worcestershire sauce, 2 teaspoons red wine vinegar, and 1 tablespoon extra-virgin olive oil.",
-      "Mix the pork gently with your hands for 30 to 45 seconds, just until the Parmesan, garlic, herbs, spices, Worcestershire sauce, vinegar, and oil are evenly distributed.",
+      "Mix the pork with your hands for 45 to 60 seconds, just until the Parmesan, garlic, herbs, spices, Worcestershire sauce, vinegar, and oil are evenly distributed and the mixture feels slightly tacky.",
       "Divide the seasoned pork into 8 equal portions, using about 3 ounces pork mixture for each portion.",
-      "Shape each portion into a flat 4-inch-long oval patty so 2 patties will fit neatly in each sub roll.",
+      "Shape each portion into a flat 4-inch-long, 1/2-inch-thick oval patty so 2 patties will fit neatly in each sub roll.",
+      "Let the shaped pork patties rest at room temperature for 10 minutes so the salt, spices, and fennel hydrate before browning.",
       "Heat a cast-iron skillet or heavy saute pan over medium-high heat for 2 minutes.",
       "Add 1 tablespoon extra-virgin olive oil to the hot skillet.",
       "Place as many of the 8 pork patties in the skillet as will fit in a single uncrowded layer, working in 2 batches if needed so they brown instead of steaming.",
@@ -11791,12 +11799,15 @@
       "Cook the peppers and onion for 7 to 9 minutes, stirring every minute, until softened, browned at the edges, and sweet-smelling.",
       "Stir in 2 minced garlic cloves, 2 tablespoons tomato paste, and the remaining 1/2 teaspoon dried oregano.",
       "Cook the garlic and tomato paste for 1 minute, stirring constantly, until the tomato paste darkens and coats the peppers and onion.",
-      "Add the 14.5-ounce can crushed tomatoes, 1/4 cup water, the remaining 1/2 teaspoon Diamond Crystal kosher salt, and the remaining 2 teaspoons red wine vinegar.",
+      "Add the 14.5-ounce can crushed tomatoes, 1/4 cup water, the remaining 1/4 teaspoon Diamond Crystal kosher salt, and the remaining 2 teaspoons red wine vinegar.",
       "Bring the tomato-pepper sauce to a simmer over medium heat, scraping the browned pork bits from the bottom of the skillet.",
+      "Simmer the tomato-pepper sauce for 4 to 5 minutes, stirring often, until it looks glossy and thick enough to cling to a spoon.",
       "Return the 8 cooked pork patties and any juices from the plate to the skillet.",
       "Spoon tomato-pepper sauce over the pork patties and simmer for 3 to 4 minutes, until the patties are hot and coated.",
       "Stir 2 tablespoons torn fresh basil into the tomato-pepper sauce.",
+      "Taste the sauce and add a small pinch of kosher salt or a splash of red wine vinegar only if it needs more seasoning or brightness.",
       "Turn the heat to low so the pork patties and sauce stay hot while the rolls toast.",
+      "Heat the broiler on high.",
       "In a small bowl, stir together 2 tablespoons softened unsalted butter, the remaining 1 finely grated garlic clove, and 2 tablespoons finely grated Parmesan cheese.",
       "Place the 4 split sub rolls cut-side up on the foil-lined baking sheet.",
       "Spread the garlic-Parmesan butter evenly over the cut sides of the 4 split rolls, using about 3/4 teaspoon butter mixture on each cut side.",
@@ -11817,9 +11828,11 @@
       "Ground pork keeps this fast because it skips sausage casings while keeping the flavor and texture of an Italian sausage sub.",
       "Use 80/20 ground pork if you can find it. Extra-lean pork can taste dry by the time the cheese melts.",
       "Shape the pork into flat oval patties instead of round meatballs so each bite gets browned pork, peppers, sauce, bread, and cheese.",
-      "The red pepper flakes are optional. Skip them for a fully mild sandwich.",
+      "Mixing the pork until slightly tacky and resting the shaped patties for 10 minutes makes the patties taste more like sausage and less like loose pork burgers.",
       "Browning the pork first builds the pan drippings that season the peppers, onions, and tomato sauce.",
       "Cook the peppers and onion until the edges brown. That sweetness is what keeps the quick sauce from tasting flat.",
+      "The red pepper flakes are optional. Skip them for a fully mild sandwich.",
+      "The sauce should be thick enough to cling to the patties before assembly. Simmer it 1 to 2 minutes longer if it looks watery.",
       "Use sturdy Italian sub rolls or hoagie rolls. Very soft rolls can collapse under hot sauce unless they are toasted thoroughly.",
       "Watch the broiler closely for both toasting and melting because buttered bread and cheese can go from browned to burned quickly.",
       "Serve immediately while the bread is toasted, the pork is hot, and the cheese is melted."
@@ -11839,7 +11852,7 @@
       "status": "not-tried"
     },
     "title": "Hot Italian Sausage Subs",
-    "totalTime": "55 minutes"
+    "totalTime": "1 hour 10 minutes"
   },
   {
     "author": "Robert Carr",
@@ -12275,7 +12288,7 @@
     "additionalTime": "10 minutes dried chile soak plus 15 minutes flavor rest",
     "author": "Robert Carr",
     "cookTime": "25 minutes",
-    "description": "Roasted red taqueria salsa with Roma tomatoes, tomatillos, jalapenos, guajillo, a small amount of chile de arbol, garlic, onion, lime, vinegar, and oil, blended until smooth.",
+    "description": "Roasted red taqueria salsa with Roma tomatoes, tomatillos, jalapenos, guajillo, a small amount of chile de arbol, garlic, onion, lime, vinegar, and a brief hot-oil simmer.",
     "equipment": [
       "12-inch cast-iron skillet or comal",
       "Blender",
@@ -12357,10 +12370,11 @@
       "2 dried chile de arbol peppers, stemmed",
       "1 tablespoon apple cider vinegar",
       "1 tablespoon fresh lime juice",
-      "1 tablespoon avocado oil",
+      "1 tablespoon avocado oil for frying the salsa",
       "1 teaspoon Diamond Crystal kosher salt, or 1/2 teaspoon Morton kosher salt",
       "1/4 teaspoon black pepper",
-      "1/2 teaspoon honey, optional"
+      "1/2 teaspoon honey, optional",
+      "1 to 3 tablespoons chile soaking water or fresh hot water, only as needed"
     ],
     "instructions": [
       "Toast 1 stemmed and seeded dried guajillo chile and 2 stemmed dried chile de arbol peppers in a dry skillet over medium heat for 15 to 30 seconds per side, just until fragrant and slightly softened, not scorched.",
@@ -12368,10 +12382,15 @@
       "While the chiles soak, place 5 Roma tomatoes, 3 tomatillos, 2 jalapenos, 1/2 small white onion, and 4 unpeeled garlic cloves in a dry cast-iron skillet or comal over medium-high heat.",
       "Roast the vegetables for 10 to 14 minutes, turning occasionally, until the tomatoes and tomatillos soften, the jalapenos blister, the onion chars in spots, and the garlic is browned and soft inside.",
       "Peel the roasted garlic cloves.",
-      "Drain the soaked chiles and add them to a blender with the roasted tomatoes, tomatillos, jalapenos, onion, peeled garlic, 1 tablespoon apple cider vinegar, 1 tablespoon fresh lime juice, 1 tablespoon avocado oil, 1 teaspoon Diamond Crystal kosher salt, 1/4 teaspoon black pepper, and 1/2 teaspoon honey if using.",
+      "Drain the soaked chiles, reserving the soaking water.",
+      "Taste the reserved chile soaking water. If it tastes bitter or harsh, use fresh hot water for thinning instead.",
+      "Add the soaked chiles to a blender with the roasted tomatoes, tomatillos, jalapenos, onion, peeled garlic, 1 tablespoon apple cider vinegar, 1 tablespoon fresh lime juice, 1 teaspoon Diamond Crystal kosher salt, 1/4 teaspoon black pepper, and 1/2 teaspoon honey if using.",
       "Blend on medium speed for 20 to 35 seconds, using a tamper only if your blender needs help moving, until the salsa is smooth but not whipped or foamy.",
-      "For a thinner taqueria-style texture, blend in 1 to 3 tablespoons of the chile soaking water, 1 tablespoon at a time.",
-      "Pour the salsa into a small saucepan and simmer over medium-low heat for 3 to 5 minutes, stirring often, until the raw sharpness rounds off and the color deepens slightly.",
+      "For a thinner taqueria-style texture, blend in 1 to 3 tablespoons chile soaking water or fresh hot water, 1 tablespoon at a time.",
+      "For a smoother taqueria texture, pass the blended salsa through a fine-mesh strainer; for a lightly rustic table salsa texture, leave it unstrained.",
+      "Heat 1 tablespoon avocado oil in a small saucepan over medium heat until shimmering.",
+      "Carefully pour the blended salsa into the hot oil; it may splatter at first.",
+      "Simmer over medium-low heat for 3 to 5 minutes, stirring often, until the raw sharpness rounds off, the oil looks integrated, and the color deepens slightly.",
       "Taste and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a few drops of honey.",
       "Let the salsa rest for at least 15 minutes before serving so the roasted tomato, chile, and acid flavors settle."
     ],
@@ -12379,6 +12398,8 @@
       "This roja is the everyday red salsa in the set: smoother and more tomato-forward than the hotter guajillo-arbol drip salsa.",
       "If using a Vitamix 5200, start on Variable 1 and increase to Variable 5 or 6. Do not use High unless you intentionally want a very smooth hot-sauce texture.",
       "The tomatillos add brightness and structure, but the salsa should still taste like a red taqueria salsa rather than salsa verde.",
+      "Frying the blended salsa briefly in hot oil gives it a rounder taqueria finish than blending the oil in raw.",
+      "If the chile soaking water tastes bitter, do not use it. Fresh hot water keeps the salsa cleaner and more tomato-forward.",
       "Use 1 chile de arbol for mild heat, 2 for medium, or 4 for hot.",
       "If any chile smells bitter or looks blackened after toasting, discard it and toast another one. Scorched dried chiles can make the whole batch taste harsh.",
       "This salsa works especially well with carne asada burritos, breakfast burritos, tacos, eggs, chips, and quesadillas."
@@ -12399,16 +12420,18 @@
     "totalTime": "50 minutes"
   },
   {
-    "additionalTime": "10 minutes poblano steam time plus 20 minutes flavor rest",
+    "additionalTime": "10 minutes poblano steam time, 5 minutes cooling time, plus 20 minutes flavor rest",
     "author": "Robert Carr",
-    "cookTime": "25 minutes",
-    "description": "Roasted green salsa with tomatillos, poblano, jalapeno, serrano, garlic, onion, cilantro, lime, and a small amount of honey.",
+    "cookTime": "20 minutes",
+    "description": "Roasted green salsa with deeply broiled tomatillos, poblano, jalapeno, serrano, garlic, onion, cilantro, lime, and a small amount of honey.",
     "equipment": [
-      "12-inch cast-iron skillet or comal",
+      "Aluminum foil",
       "Blender",
+      "Broiler",
       "Bowl or foil for steaming poblano",
       "Cutting board",
       "Knife",
+      "Rimmed baking sheet",
       "Tongs"
     ],
     "groceryIngredients": [
@@ -12464,30 +12487,42 @@
     "ingredients": [
       "1 1/2 pounds tomatillos, husked and rinsed",
       "1 large poblano pepper",
-      "2 jalapenos",
+      "2 jalapenos, divided",
       "1 serrano pepper, optional for extra heat",
-      "1/2 small white onion",
+      "1/2 small white onion, cut into 2 wedges, plus 2 tablespoons finely chopped white onion for finishing",
       "4 garlic cloves, unpeeled",
-      "1/2 cup packed cilantro leaves and tender stems",
+      "1/2 cup packed cilantro leaves and tender stems, divided",
       "1 1/2 tablespoons fresh lime juice",
       "1 teaspoon Diamond Crystal kosher salt, or 1/2 teaspoon Morton kosher salt",
-      "1/2 teaspoon honey, optional"
+      "1/2 teaspoon honey, optional",
+      "1 to 3 tablespoons reserved roasted tomatillo juices or water, only as needed"
     ],
     "instructions": [
-      "Place 1 large poblano pepper in a dry cast-iron skillet or directly over a gas flame and char it for 6 to 8 minutes, turning often, until the skin is blistered and blackened in patches.",
+      "Position an oven rack 5 to 6 inches from the broiler, heat the broiler to high, and line a rimmed baking sheet with aluminum foil.",
+      "Cut any large tomatillos in half through the equator. Leave small tomatillos whole.",
+      "Place 1 1/2 pounds tomatillos, 1 large poblano pepper, 2 jalapenos, 1 serrano pepper if using, 2 white onion wedges, and 4 unpeeled garlic cloves on the prepared baking sheet.",
+      "Broil for 6 to 8 minutes, until the tomatillos are blistered on top and starting to collapse and the chile skins are blackened in patches.",
+      "Turn the poblano, jalapenos, serrano if using, onion, and garlic. Leave halved tomatillos cut-side down unless they are browning unevenly.",
+      "Broil for 4 to 8 minutes more, pulling the garlic early if it is browned and soft, until the tomatillos are olive-green and slumped, the onion is charred at the edges, and the chile skins are well blistered.",
       "Transfer the poblano to a covered bowl or wrap it loosely in foil and let it steam for 10 minutes.",
-      "While the poblano steams, place 1 1/2 pounds tomatillos, 2 jalapenos, 1 serrano pepper if using, 1/2 small white onion, and 4 unpeeled garlic cloves in a dry cast-iron skillet or comal over medium-high heat.",
-      "Roast for 10 to 14 minutes, turning occasionally, until the tomatillos soften and turn olive-green, the peppers blister, the onion chars in spots, and the garlic is browned and soft inside.",
+      "Let the tomatillos, jalapenos, serrano, onion, and garlic cool on the sheet pan for 5 minutes. Do not pour the pan juices into the blender yet.",
       "Rub most of the blackened skin from the poblano, then remove the stem and seeds.",
-      "Peel the roasted garlic cloves.",
-      "Add the roasted tomatillos, peeled poblano, jalapenos, serrano if using, onion, peeled garlic, 1/2 cup cilantro, 1 1/2 tablespoons fresh lime juice, 1 teaspoon Diamond Crystal kosher salt, and 1/2 teaspoon honey if using to a blender.",
-      "For a rustic salsa verde, pulse or blend on low speed for 10 to 20 seconds, stopping before it becomes fully smooth.",
-      "For a smooth taqueria-style salsa verde, blend on medium-high speed for 20 to 30 seconds.",
-      "Taste and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a few drops of honey if the tomatillos are very sharp.",
-      "Let the salsa rest for at least 20 minutes before serving."
+      "Peel the roasted garlic cloves and remove the stems from the jalapenos and serrano.",
+      "For a milder salsa, split the jalapenos and serrano and remove some or all of the seeds and membranes before blending.",
+      "Add the roasted tomatillos, peeled poblano, 1 jalapeno, roasted onion wedges, peeled garlic, 1/4 cup cilantro, 1 1/2 tablespoons fresh lime juice, and 3/4 teaspoon Diamond Crystal kosher salt to a blender.",
+      "Pulse on low speed until the salsa is evenly chopped but still slightly textured, 8 to 12 short pulses.",
+      "Taste for heat. Add the second roasted jalapeno and the serrano if using, a little at a time, blending briefly after each addition, until the salsa tastes as warm as you want it.",
+      "If the salsa is too thick to spoon, blend in reserved roasted tomatillo juices or water 1 tablespoon at a time. Stop while it is loose but not watery.",
+      "Pulse in the remaining 1/4 cup cilantro just until flecked through the salsa.",
+      "Transfer the salsa to a bowl, stir in 2 tablespoons finely chopped white onion, and let it rest for at least 20 minutes.",
+      "Taste again after the rest and adjust only if needed with the remaining 1/4 teaspoon Diamond Crystal kosher salt, a few drops of lime juice, or 1/2 teaspoon honey if the tomatillos are very sharp."
     ],
     "notes": [
       "The poblano is the upgrade. It adds roasted green chile depth without making the salsa taste heavy or overly spicy.",
+      "Broiling the tomatillos until they slump and char in spots concentrates their flavor better than stopping as soon as they soften.",
+      "Keep the roasted tomatillo juices out of the blender at first. Tomatillos vary in wateriness, and adding all the juices immediately can make the salsa thin and washed out.",
+      "Adding only 1 roasted jalapeno at first makes the heat repeatable. The second jalapeno and optional serrano are there for adjustment, not blind commitment.",
+      "Folding in a little raw onion and pulsing in the last cilantro after blending keeps the finished salsa bright.",
       "Do not rinse the poblano after charring. Rinsing washes away roasted flavor.",
       "Black pepper is intentionally omitted because it can muddy the clean tomatillo, chile, cilantro, and lime flavor.",
       "If the salsa tastes too tart, use the optional honey before adding more salt. Tomatillos can vary a lot in sharpness.",
@@ -12502,8 +12537,8 @@
     "source": "original",
     "tags": {
       "equipment": [
-        "cast-iron-skillet",
-        "stovetop"
+        "broiler",
+        "oven"
       ],
       "status": "not-tried"
     },
@@ -12514,10 +12549,11 @@
     "additionalTime": "10 minutes cooling time plus 20 minutes flavor rest",
     "author": "Robert Carr",
     "cookTime": "12 minutes",
-    "description": "Creamy jalapeno taqueria salsa made by cooking jalapenos and garlic, then blending them with neutral oil, lime, a little vinegar, cilantro, and salt.",
+    "description": "Creamy jalapeno taqueria salsa made by cooking jalapenos, a little white onion, and garlic, then blending them with neutral oil, lime, a little vinegar, cilantro, and salt.",
     "equipment": [
       "Blender",
       "Cutting board",
+      "Knife",
       "Medium saucepan",
       "Slotted spoon",
       "Tongs"
@@ -12556,38 +12592,52 @@
         "item": "white vinegar",
         "quantity": 1,
         "unit": "tsp"
+      },
+      {
+        "item": "white onion",
+        "quantity": 1
       }
     ],
     "id": "creamy-jalapeno-taqueria-salsa",
     "ingredients": [
       "10 jalapenos, stems removed",
+      "1/4 small white onion",
       "4 garlic cloves, peeled",
-      "1/2 cup avocado oil or other neutral oil",
+      "1/2 cup avocado oil or other neutral oil, at room temperature",
       "1 tablespoon fresh lime juice",
       "1 teaspoon white vinegar",
       "1 1/4 teaspoons Diamond Crystal kosher salt, or 3/4 teaspoon Morton kosher salt",
       "1/4 cup cilantro leaves and tender stems, optional",
-      "2 to 4 tablespoons jalapeno cooking water, only as needed"
+      "2 to 4 tablespoons cooled jalapeno cooking water, only as needed"
     ],
     "instructions": [
-      "Place 10 stemmed jalapenos and 4 peeled garlic cloves in a medium saucepan and cover with water by 1 inch.",
-      "Bring to a simmer over medium-high heat and cook for 8 to 10 minutes, until the jalapenos turn olive-green and soften.",
-      "Use a slotted spoon to transfer the jalapenos and garlic to a plate and let them cool for 10 minutes. Reserve the cooking water.",
-      "For a milder sauce, split the cooked jalapenos and remove some or all of the seeds before blending.",
-      "Add the cooled jalapenos, garlic, 1 tablespoon fresh lime juice, 1 teaspoon white vinegar, 1 1/4 teaspoons Diamond Crystal kosher salt, and 1/4 cup cilantro if using to a blender.",
-      "Blend until the jalapenos are mostly broken down.",
-      "With the blender running, slowly stream in 1/2 cup avocado oil through the lid opening, then blend on high for 20 to 30 seconds until the salsa turns pale and creamy.",
-      "If the salsa is too thick to pour, blend in reserved jalapeno cooking water 1 tablespoon at a time until it is spoonable and lightly drippy.",
+      "Place 10 stemmed jalapenos and 1/4 small white onion in a medium saucepan and cover with water by 1 inch.",
+      "Bring to a simmer over medium-high heat, then reduce the heat to maintain a steady simmer and cook for 6 minutes.",
+      "Add 4 peeled garlic cloves and simmer for 2 to 4 minutes more, until the jalapenos turn olive-green, the onion is softened, and the garlic is just tender.",
+      "Use a slotted spoon to transfer the jalapenos, onion, and garlic to a plate and let them cool for 10 minutes. Reserve the cooking water and let it cool slightly.",
+      "For a milder sauce, split the cooked jalapenos and remove some or all of the seeds and membranes before blending.",
+      "Add the cooled jalapenos, onion, garlic, 1 tablespoon fresh lime juice, 1 teaspoon white vinegar, 1 1/4 teaspoons Diamond Crystal kosher salt, and 1/4 cup cilantro if using to a blender.",
+      "Blend on medium speed until the jalapenos are fully broken down into a thick, smooth puree, 30 to 45 seconds, scraping the blender jar if needed.",
+      "With the blender running on medium to medium-high, slowly stream in 1/2 cup room-temperature avocado oil through the lid opening, then blend on high for 20 to 30 seconds until the salsa turns pale, creamy, and glossy.",
+      "If the oil starts to pool while streaming, pause the oil, blend until the salsa looks glossy again, then continue streaming slowly.",
+      "If the salsa is too thick to pour, blend in cooled reserved jalapeno cooking water 1 tablespoon at a time until it is spoonable and lightly drippy.",
       "Taste and adjust only if needed with a small pinch of kosher salt or a few drops of lime juice.",
       "Let the salsa rest for at least 20 minutes before serving."
     ],
     "notes": [
       "This salsa is creamy because the cooked jalapenos blend smoothly with oil. It does not contain dairy.",
+      "The small amount of cooked white onion rounds the jalapeno flavor without making the salsa taste oniony.",
+      "Adding the garlic near the end keeps it tender and savory without washing out all of its bite.",
       "A high-powered blender such as a Vitamix 5200 makes the smoothest texture, but a regular blender works if you stream the oil slowly and blend a little longer.",
+      "If using a Vitamix 5200, blend the chile base around Variable 5 to 6 until smooth, then stream the oil in slowly before finishing briefly on High.",
+      "Room-temperature oil and cooled chiles make the emulsion more stable. Very hot chiles can trap steam and make the sauce thin or unstable.",
       "Keep the acid restrained. Too much lime or vinegar makes creamy jalapeno salsa taste sharp instead of green and rich.",
       "Avocado oil keeps the flavor clean. Canola or grapeseed oil also works. Olive oil is not ideal here because it can turn bitter and assertive when blended hard.",
       "For a mild version, remove most of the jalapeno seeds after cooking. For a hotter version, leave the seeds in or replace 2 jalapenos with serranos.",
+      "Cilantro is optional. Use it for a greener, fresher sauce; skip it for the cleaner taqueria-style jalapeno-and-garlic flavor.",
       "Do not add the oil all at once. Streaming it in helps the oil blend into the sauce instead of floating on top.",
+      "Use the cooking water only after the oil has been blended in. Adding too much water early makes the salsa loose instead of creamy.",
+      "The salsa thickens slightly after resting and again after chilling. Stir before serving, and thin with a small splash of water only if needed.",
       "This salsa works especially well on breakfast burritos, tacos, potatoes, grilled chicken, eggs, quesadillas, and rice bowls."
     ],
     "nutrition": null,
@@ -12676,8 +12726,8 @@
     "ingredients": [
       "1 28-ounce can whole peeled tomatoes, drained with 1/2 cup juice reserved",
       "1 14.5-ounce can fire-roasted tomatoes, drained",
-      "1 jalapeno, stemmed and roughly chopped",
-      "1/3 cup roughly chopped white onion",
+      "1 jalapeno, stemmed, seeded for mild salsa or left with seeds for medium heat, and roughly chopped",
+      "1/3 cup roughly chopped white onion, rinsed and drained if very sharp",
       "1 garlic clove, roughly chopped",
       "1/2 cup cilantro leaves and tender stems",
       "2 tablespoons fresh lime juice",
@@ -12688,19 +12738,21 @@
     ],
     "instructions": [
       "Drain 1 28-ounce can whole peeled tomatoes, reserving 1/2 cup of the juice, and drain 1 14.5-ounce can fire-roasted tomatoes.",
-      "Add 1 jalapeno, 1/3 cup roughly chopped white onion, 1 roughly chopped garlic clove, 1/2 cup cilantro, 2 tablespoons fresh lime juice, 1 teaspoon Diamond Crystal kosher salt, 1/2 teaspoon cumin, 1/4 teaspoon black pepper, and 1/2 teaspoon granulated sugar if using to a blender.",
+      "If the chopped onion tastes very sharp, rinse it under cold water for 10 seconds and drain well.",
+      "Add 1 jalapeno, 1/3 cup roughly chopped white onion, 1 roughly chopped garlic clove, 1/2 cup cilantro, 2 tablespoons fresh lime juice, 1 teaspoon Diamond Crystal kosher salt or 1/2 teaspoon Morton kosher salt, 1/2 teaspoon cumin, 1/4 teaspoon black pepper, and 1/2 teaspoon granulated sugar if using to a blender.",
       "Add about half of the drained tomatoes over the jalapeno, onion, garlic, and cilantro.",
       "Pulse on low speed 2 to 4 times, just until the jalapeno, onion, garlic, and cilantro are chopped.",
       "Add the remaining drained tomatoes and pulse on low speed 3 to 6 more times, stopping while the salsa still has small tomato pieces and a loose table-salsa texture.",
       "If the salsa is thicker than you like, stir in reserved tomato juice 1 tablespoon at a time with a rubber spatula instead of blending longer.",
-      "Transfer the salsa to a bowl, taste, and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a pinch of sugar.",
-      "Cover and rest for 45 minutes before serving so the canned tomato, onion, cilantro, lime, and cumin flavors come together."
+      "Transfer the salsa to a bowl, stir, taste, and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a pinch of sugar.",
+      "Cover and rest for 45 minutes so the canned tomato, onion, cilantro, lime, and cumin flavors come together.",
+      "After resting, stir and taste once more before serving, adding only a small pinch of kosher salt or a few drops of lime juice if the salsa tastes flat."
     ],
     "notes": [
       "Whole peeled tomatoes give a better blended texture than using only diced tomatoes. The fire-roasted tomatoes add charred depth without making the salsa taste fully cooked.",
       "This salsa needs restraint in a powerful blender. If using a Vitamix 5200, pulse on Variable 2 or 3 in very short bursts instead of blending continuously.",
       "Do not fix thickness by blending longer. Stir in reserved tomato juice instead so the salsa stays fresh and lightly chunky.",
-      "For a milder salsa, remove the jalapeno seeds. For a hotter salsa, use 2 jalapenos or add 1 serrano.",
+      "For a mild salsa, remove the jalapeno seeds and white ribs. For a hotter salsa, use 2 jalapenos or add 1 serrano.",
       "The sugar is optional and should only be used if the tomatoes taste flat or metallic.",
       "This salsa works especially well with chips, tacos, eggs, rice bowls, grilled meats, and simple weeknight meals."
     ],
@@ -12719,10 +12771,10 @@
     "totalTime": "1 hour"
   },
   {
-    "additionalTime": "15 minutes dried chile soak plus 10 minutes flavor rest",
+    "additionalTime": "15 minutes dried chile soak plus 15 minutes flavor rest",
     "author": "Robert Carr",
     "cookTime": "25 minutes",
-    "description": "Smooth simmered guajillo-arbol salsa for spooning over burrito bites, with roasted tomatoes, tomatillos, garlic, onion, toasted dried chiles, a little vinegar and lime, honey, and oil.",
+    "description": "Smooth simmered guajillo-arbol salsa for spooning over burrito bites, with roasted tomatoes, tomatillos, garlic, onion, toasted dried chiles, a little vinegar and lime, honey, and a hot-oil finish.",
     "equipment": [
       "12-inch cast-iron skillet or comal",
       "Blender",
@@ -12794,7 +12846,7 @@
       "2 tomatillos, husked and rinsed",
       "1/4 small white onion",
       "4 garlic cloves, unpeeled",
-      "1/2 cup hot chile soaking water, plus more as needed",
+      "1/2 cup chile soaking water or fresh hot water, plus more as needed",
       "1 1/2 tablespoons apple cider vinegar",
       "1 tablespoon fresh lime juice",
       "2 tablespoons avocado oil",
@@ -12809,18 +12861,22 @@
       "Roast for 10 to 14 minutes, turning occasionally, until the tomatoes and tomatillos soften, the onion chars in spots, and the garlic is browned and soft inside.",
       "Peel the roasted garlic cloves.",
       "Drain the soaked chiles, reserving the soaking water.",
-      "Add the soaked chiles, roasted tomatoes, tomatillos, onion, peeled garlic, 1/2 cup hot chile soaking water, 1 1/2 tablespoons apple cider vinegar, 1 tablespoon fresh lime juice, 2 tablespoons avocado oil, 1 teaspoon honey, 1 teaspoon Diamond Crystal kosher salt, and 1/2 teaspoon black pepper to a blender.",
+      "Taste the reserved chile soaking water. If it tastes bitter or harsh, use fresh hot water for blending and thinning instead.",
+      "Add the soaked chiles, roasted tomatoes, tomatillos, onion, peeled garlic, 1/2 cup chile soaking water or fresh hot water, 1 1/2 tablespoons apple cider vinegar, 1 tablespoon fresh lime juice, 1 teaspoon honey, 1 teaspoon Diamond Crystal kosher salt, and 1/2 teaspoon black pepper to a blender.",
       "Blend on high for 35 to 60 seconds until very smooth.",
-      "For a smoother sauce, pass the salsa through a fine-mesh strainer; for a slightly rustic sauce, leave it unstrained.",
-      "Pour the salsa into a small saucepan and simmer over medium-low heat for 5 to 7 minutes, stirring often, until it lightly coats a spoon but still drips easily.",
-      "If the salsa gets too thick, whisk in reserved chile soaking water 1 tablespoon at a time until it is thin enough to drip from a spoon.",
+      "For the silkiest drip texture, pass the blended salsa through a fine-mesh strainer; for a slightly rustic sauce, leave it unstrained.",
+      "Heat 2 tablespoons avocado oil in a small saucepan over medium heat until shimmering.",
+      "Carefully pour the blended salsa into the hot oil; it may splatter at first.",
+      "Simmer over medium-low heat for 5 to 7 minutes, stirring often, until the color deepens slightly, the oil looks integrated, and the salsa lightly coats a spoon but still drips easily.",
+      "If the salsa gets too thick, whisk in reserved chile soaking water or fresh hot water 1 tablespoon at a time until it is thin enough to drip from a spoon.",
       "Taste and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a few drops of honey.",
-      "Let the salsa rest for 10 minutes before serving."
+      "Let the salsa rest for 15 minutes before serving."
     ],
     "notes": [
       "This salsa is smoother and more chile-forward than the everyday roja, so it works well spooned onto burrito bites.",
       "Four chile de arbol peppers gives a useful medium-hot default. Use 2 for mild, 6 for hot, or 8 for very hot.",
-      "Simmering after blending matters. It makes the dried chile flavor rounder, mixes the oil into the sauce, and softens the sharp vinegar and lime flavor.",
+      "Frying the blended salsa in hot oil matters. It makes the dried chile flavor rounder, gives the sauce a light gloss, and softens the sharp vinegar and lime flavor.",
+      "If the chile soaking water tastes bitter, do not use it. Fresh hot water gives a cleaner finished salsa.",
       "Aim for a sauce loose enough to drip from a spoon but thick enough to briefly coat eggs, potatoes, steak, or tortilla.",
       "Do not use scorched chiles. A few blackened spots on roasted vegetables are good, but blackened dried chiles taste bitter.",
       "This salsa works especially well with sausage breakfast burritos, carne asada burritos, eggs, potatoes, tacos, quesadillas, and grilled meats."
@@ -12838,7 +12894,7 @@
       "status": "not-tried"
     },
     "title": "Simmered Guajillo-Arbol Drip Salsa",
-    "totalTime": "1 hour 5 minutes"
+    "totalTime": "1 hour 10 minutes"
   },
   {
     "additionalTime": "10 minutes potato steam-dry time, 10 minutes chile soak, plus 3 to 5 minutes foil rest",
@@ -12908,7 +12964,7 @@
       },
       {
         "item": "dried guajillo chile",
-        "quantity": 1
+        "quantity": 2
       },
       {
         "item": "garlic",
@@ -13011,16 +13067,16 @@
       "4 ounces Monterey Jack cheese, freshly shredded",
       "4 slices American cheese",
       "4 large burrito-size flour tortillas, preferably 12 inches",
-      "1 dried guajillo chile, stemmed and seeded",
+      "2 dried guajillo chiles, stemmed and seeded",
       "2 dried chile de arbol peppers, stems removed",
       "4 tomatillos, husked and rinsed",
       "2 Roma tomatoes",
       "2 jalapenos",
       "1/4 white onion",
-      "4 garlic cloves",
+      "4 garlic cloves, unpeeled",
       "2 tablespoons apple cider vinegar for the hot sauce",
       "1 tablespoon fresh lime juice for the hot sauce",
-      "2 tablespoons water, plus more as needed",
+      "2 tablespoons chile soaking water or fresh hot water, plus more as needed",
       "1 1/2 tablespoons avocado oil for the hot sauce",
       "1 teaspoon honey",
       "1 teaspoon cumin for the hot sauce",
@@ -13031,26 +13087,31 @@
       "Place the 1 1/4 pounds diced Yukon Gold potatoes in a medium saucepan and cover them with cold water by 1 inch.",
       "Add 1 tablespoon apple cider vinegar and 1 tablespoon Diamond Crystal kosher salt to the potato water.",
       "Bring the potatoes to a boil over high heat, then reduce the heat and simmer for 5 to 7 minutes, until the potatoes are barely tender but not falling apart.",
-      "Drain the potatoes well, spread them on paper towels or a wire rack, and let them steam-dry for 10 minutes.",
+      "Drain the potatoes well, spread them on paper towels or a wire rack, pat the tops dry if they look wet, and let them steam-dry for 10 minutes.",
       "While the potatoes dry, make the simmered guajillo-arbol breakfast drip sauce.",
-      "Toast 1 stemmed and seeded dried guajillo chile and 2 stemmed dried chile de arbol peppers in a dry cast-iron skillet over medium heat for 15 to 45 seconds, turning often, just until fragrant and slightly darkened in spots.",
+      "Toast 2 stemmed and seeded dried guajillo chiles and 2 stemmed dried chile de arbol peppers in a dry cast-iron skillet over medium heat for 15 to 30 seconds per side, turning often, just until fragrant and slightly softened, not scorched.",
       "Transfer the toasted chiles to a small bowl, cover them with hot water, and soak for 10 minutes.",
-      "While the chiles soak, place 4 tomatillos, 2 Roma tomatoes, 2 jalapenos, 1/4 white onion, and 4 garlic cloves in the dry cast-iron skillet over medium-high heat.",
-      "Cook the hot sauce vegetables for 8 to 12 minutes, turning occasionally, until the tomatillos soften, the garlic is browned in spots, and the tomatoes, jalapenos, and onion are charred in places.",
-      "Drain the soaked chiles and transfer them to a blender.",
-      "Add the roasted hot sauce vegetables, 2 tablespoons apple cider vinegar, 1 tablespoon fresh lime juice, 2 tablespoons water, 1 teaspoon honey, 1 teaspoon cumin, 3/4 teaspoon Diamond Crystal kosher salt, and 3/4 teaspoon black pepper to the blender.",
-      "Blend the hot sauce until very smooth, adding 1 to 3 tablespoons more water only if needed to make it loose enough to drip from a spoon.",
+      "While the chiles soak, place 4 tomatillos, 2 Roma tomatoes, 2 jalapenos, 1/4 white onion, and 4 unpeeled garlic cloves in the dry cast-iron skillet over medium-high heat.",
+      "Cook the hot sauce vegetables for 8 to 12 minutes, turning occasionally, until the tomatillos soften, the garlic is browned and soft inside, and the tomatoes, jalapenos, and onion are charred in places.",
+      "Peel the roasted garlic cloves.",
+      "Drain the soaked chiles, reserving the soaking water.",
+      "Taste the reserved chile soaking water. If it tastes bitter or harsh, use fresh hot water for blending and thinning instead.",
+      "Transfer the soaked chiles to a blender.",
+      "Add the roasted tomatillos, tomatoes, jalapenos, onion, peeled garlic, 2 tablespoons apple cider vinegar, 1 tablespoon fresh lime juice, 2 tablespoons chile soaking water or fresh hot water, 1 teaspoon honey, 1 teaspoon cumin, 3/4 teaspoon Diamond Crystal kosher salt, and 3/4 teaspoon black pepper to the blender.",
+      "Blend the hot sauce on high for 35 to 60 seconds until very smooth, adding 1 to 3 tablespoons more chile soaking water or fresh hot water only if needed to make it loose enough to drip from a spoon.",
       "Heat 1 1/2 tablespoons avocado oil in a small saucepan over medium heat.",
       "Carefully pour the blended hot sauce into the hot oil; it may splatter at first.",
-      "Simmer the hot sauce for 3 to 5 minutes, stirring often, until it tastes rounded and lightly glossy but is still loose enough to drip onto each bite.",
+      "Simmer the hot sauce over medium-low heat for 5 to 7 minutes, stirring often, until the color deepens slightly, the oil looks integrated, and the sauce lightly coats a spoon but still drips easily.",
+      "If the hot sauce gets too thick, whisk in chile soaking water or fresh hot water 1 tablespoon at a time until it drips easily again.",
       "Taste the hot sauce and adjust only if needed with a small pinch of kosher salt, a few drops of lime juice, or a few drops of honey.",
       "For a smoother drip sauce, pass the hot sauce through a fine-mesh strainer; for a more rustic sauce, leave it unstrained.",
-      "Cook 12 ounces bulk pork breakfast sausage in a large skillet over medium heat for 7 to 9 minutes, breaking it into small crumbles, until deeply browned and fully cooked.",
+      "Cook 12 ounces bulk pork breakfast sausage in a large skillet over medium heat for 7 to 9 minutes, breaking it into small crumbles and letting the crumbles sit against the pan long enough to brown, until deeply browned and fully cooked.",
       "Transfer the sausage to a paper towel-lined plate with a slotted spoon.",
       "Reserve 2 tablespoons of sausage fat in the skillet and discard the rest, or add 1 to 2 tablespoons avocado oil if the sausage did not release enough fat.",
       "Toss the steam-dried potatoes with 1 tablespoon cornstarch, 1 teaspoon smoked paprika, 1 teaspoon garlic powder, 1/2 teaspoon onion powder, 3/4 teaspoon Diamond Crystal kosher salt, and 1 teaspoon black pepper.",
       "Heat the reserved sausage fat in the skillet over medium-high heat until hot.",
-      "Add the seasoned potatoes in a single layer and cook for 10 to 14 minutes, turning occasionally, until deeply golden and crisp on multiple sides.",
+      "Add the seasoned potatoes in a single layer, using a second skillet or working in batches if needed so they are not crowded.",
+      "Cook the potatoes, or each batch, undisturbed for 3 minutes, then turn every 2 to 3 minutes for 10 to 14 minutes total, until deeply golden and crisp on multiple sides.",
       "Transfer the crispy potatoes to a plate and keep them uncovered so they stay crisp.",
       "Whisk 8 large eggs with 3 tablespoons half-and-half, 1/2 teaspoon Diamond Crystal kosher salt, and 1/2 teaspoon black pepper until no streaks of egg white remain.",
       "Melt 2 tablespoons unsalted butter in a nonstick skillet or clean well-seasoned skillet over medium-low heat.",
@@ -13073,7 +13134,7 @@
     ],
     "notes": [
       "This recipe intentionally keeps the burrito filling limited to sausage, egg, potato, and cheese. The hot sauce is served outside the burrito and does not count as an internal filling.",
-      "The reduced filling ratio is intentional. Four burritos made with 1 1/4 pounds potatoes, 12 ounces sausage, 8 eggs, and 12 ounces total cheese are still full, but they roll cleaner and eat with better balance than an overstuffed version.",
+      "The reduced filling ratio is intentional. Four burritos made with 1 1/4 pounds potatoes, 12 ounces sausage, 8 eggs, and the listed cheese are still full, but they roll cleaner and eat with better balance than an overstuffed version.",
       "Bulk pork breakfast sausage is better than sliced sausage links because it browns into small crumbles that distribute evenly through the burrito.",
       "A sage-forward breakfast sausage gives the most classic breakfast flavor. Avoid maple breakfast sausage unless you specifically want a sweeter burrito.",
       "Reserve only enough sausage fat to crisp the potatoes. Too much loose grease makes the burrito heavy.",
@@ -13081,6 +13142,7 @@
       "The vinegar in the potato water helps the potato cubes hold their shape while they simmer.",
       "The cornstarch coating is a small but important crispness boost. It helps the potatoes brown and gives them a rough, crisp exterior.",
       "The potatoes should be crisp before they go into the burrito because they soften slightly after the foil rest.",
+      "Do not crowd the potatoes in the skillet. A crowded pan steams the potato cubes and prevents the rough cornstarch-coated edges from turning crisp.",
       "Do not overcook the eggs until dry. The target is soft, tender curds with no wet liquid pooling in the pan.",
       "Spreading the eggs on a plate before assembly prevents leftover heat from making them dry and lets extra steam escape before the burrito is wrapped.",
       "Freshly shredded cheddar and Monterey Jack melt better than pre-shredded cheese. The American cheese is included for melt, binding, and burrito-shop texture.",
@@ -13089,11 +13151,13 @@
       "Toast the assembled burrito seam-side down first. It seals the fold, melts the cheese, and gives the tortilla a lightly crisp exterior.",
       "The foil rest matters. It helps the cheese fully melt, lets the burrito hold together, and gives the tortilla a better breakfast-shop texture.",
       "Keep the hot sauce on the side if you want the tortilla to stay firmer. Drip it onto each bite while eating.",
-      "The guajillo chile gives the sauce deeper red chile flavor without making it aggressively hot. The chile de arbol peppers provide the sharper heat.",
+      "The guajillo chiles give the sauce body, color, and deeper red chile flavor without making it aggressively hot. The chile de arbol peppers provide the sharper heat.",
+      "Do not use scorched dried chiles. A few dark spots on roasted vegetables are good, but blackened dried chiles can make the sauce bitter.",
+      "If the chile soaking water tastes bitter, do not use it. Fresh hot water gives the sauce a cleaner finished flavor.",
       "Simmering the blended hot sauce in oil makes it taste more finished, less raw, and more like a burrito-shop sauce.",
       "For a milder hot sauce, remove the jalapeno seeds and use 1 dried chile de arbol pepper instead of 2.",
       "For a hotter hot sauce, use 4 to 5 dried chile de arbol peppers or add 1 serrano.",
-      "The hot sauce should be loose enough to drip but not watery. Add water 1 tablespoon at a time only after blending or simmering.",
+      "The hot sauce should be loose enough to drip but not watery. Add chile soaking water or fresh hot water 1 tablespoon at a time only after blending or simmering.",
       "These burritos are best eaten immediately after the foil rest, but leftovers can be wrapped tightly in foil and reheated in a 350 degrees F oven until hot."
     ],
     "nutrition": null,
@@ -13112,10 +13176,10 @@
     "totalTime": "1 hour 45 minutes"
   },
   {
-    "additionalTime": "2 to 8 hours steak marinade, 10 minutes steak rest, plus 10 minutes potato steam-dry time",
+    "additionalTime": "2 to 8 hours steak marinade, 10 minutes chile soak, 10 minutes steak rest, plus 10 minutes potato steam-dry time",
     "author": "Robert Carr",
-    "cookTime": "1 hour 5 minutes",
-    "description": "Carne asada burritos with citrus-garlic marinated steak, savory Mexican-style rice, creamy pinto beans, crispy seasoned potatoes, Oaxaca-Jack cheese, avocado crema, quick pickled onions, a toasted flour tortilla, and roasted arbol-tomatillo hot sauce on the side.",
+    "cookTime": "1 hour 10 minutes",
+    "description": "Carne asada burritos with citrus-garlic marinated steak, savory Mexican-style rice, creamy pinto beans, extra-crispy seasoned potatoes, Oaxaca-Jack cheese, avocado crema, quick pickled onions, a toasted flour tortilla, and a smooth roasted arbol-tomatillo drip hot sauce on the side.",
     "equipment": [
       "12-inch cast-iron skillet or grill pan",
       "Aluminum foil",
@@ -13144,8 +13208,8 @@
       },
       {
         "item": "avocado oil",
-        "quantity": 0.584,
-        "unit": "cup"
+        "quantity": 11,
+        "unit": "tbsp"
       },
       {
         "item": "baking soda",
@@ -13159,7 +13223,7 @@
       },
       {
         "item": "black pepper",
-        "quantity": 3.25,
+        "quantity": 2.5,
         "unit": "tsp"
       },
       {
@@ -13169,7 +13233,7 @@
       },
       {
         "item": "chicken broth",
-        "quantity": 3,
+        "quantity": 2.25,
         "unit": "cup"
       },
       {
@@ -13179,12 +13243,12 @@
       },
       {
         "item": "cilantro",
-        "quantity": 0.75,
+        "quantity": 0.375,
         "unit": "cup"
       },
       {
         "item": "cumin",
-        "quantity": 4,
+        "quantity": 3,
         "unit": "tsp"
       },
       {
@@ -13198,7 +13262,7 @@
       },
       {
         "item": "garlic",
-        "quantity": 15,
+        "quantity": 14,
         "unit": "clove"
       },
       {
@@ -13226,7 +13290,7 @@
         "unit": "tbsp"
       },
       {
-        "item": "large burrito-size flour tortilla",
+        "item": "large 12-inch burrito-size flour tortilla",
         "quantity": 4
       },
       {
@@ -13265,7 +13329,7 @@
       {
         "item": "pinto beans",
         "quantity": 2,
-        "unit": "can"
+        "unit": "15-ounce can"
       },
       {
         "item": "red onion",
@@ -13324,6 +13388,8 @@
       "1 teaspoon Mexican oregano",
       "1 teaspoon black pepper for the marinade",
       "1 teaspoon brown sugar",
+      "1 tablespoon fresh lime juice for finishing the steak",
+      "1 small pinch kosher salt for finishing the steak, only if needed",
       "1 cup long-grain white rice",
       "1 tablespoon avocado oil for the rice",
       "2 tablespoons finely minced white onion for the rice",
@@ -13346,7 +13412,7 @@
       "1 1/4 pounds Yukon Gold potatoes, cut into 1/2-inch cubes",
       "1 tablespoon Diamond Crystal kosher salt for parboiling the potatoes",
       "1/4 teaspoon baking soda for parboiling the potatoes",
-      "2 tablespoons avocado oil for crisping the potatoes",
+      "3 tablespoons avocado oil for crisping the potatoes, divided",
       "1/2 teaspoon smoked paprika for the potatoes",
       "1/2 teaspoon garlic powder for the potatoes",
       "1/2 teaspoon cumin for the potatoes",
@@ -13363,19 +13429,20 @@
       "1/3 cup water for the pickled onions",
       "1 tablespoon granulated sugar",
       "1 teaspoon Diamond Crystal kosher salt for the pickled onions",
-      "4 large burrito-size flour tortillas, preferably 12 inches",
+      "4 large 12-inch burrito-size flour tortillas",
       "4 ounces Oaxaca cheese, freshly shredded, or low-moisture whole-milk mozzarella",
       "4 ounces Monterey Jack cheese, freshly shredded",
       "4 tomatillos, husked and rinsed",
       "2 Roma tomatoes",
       "3 jalapenos",
       "1/2 small white onion for the hot sauce",
-      "6 cloves garlic for the hot sauce",
+      "6 unpeeled garlic cloves for the hot sauce",
       "8 dried chile de arbol peppers, stems removed",
+      "1/2 cup hot water for soaking the toasted chiles",
       "1 teaspoon tomato paste for the hot sauce",
       "1/4 cup apple cider vinegar for the hot sauce",
       "2 tablespoons fresh lime juice for the hot sauce",
-      "2 to 5 tablespoons water for the hot sauce",
+      "2 to 5 tablespoons water for thinning the hot sauce",
       "3 tablespoons avocado oil for the hot sauce",
       "1 teaspoon honey",
       "3/4 teaspoon Diamond Crystal kosher salt for the hot sauce, or 1/2 teaspoon Morton kosher salt",
@@ -13388,12 +13455,15 @@
       "Add the salted steak to the marinade, turn until coated, cover, and refrigerate for at least 2 hours or up to 8 hours.",
       "Make the quick pickled onions by combining 1 thinly sliced small red onion, 1/3 cup apple cider vinegar, 1/3 cup water, 1 tablespoon granulated sugar, and 1 teaspoon Diamond Crystal kosher salt in a bowl.",
       "Stir the pickled onions well, press them down into the liquid, and let them sit while the rest of the recipe is prepared.",
-      "Make the roasted arbol-tomatillo drip hot sauce by placing 4 tomatillos, 2 Roma tomatoes, 3 jalapenos, 1/2 small white onion, and 6 garlic cloves in a dry cast-iron skillet over medium-high heat.",
-      "Cook the hot sauce vegetables for 8 to 12 minutes, turning occasionally, until the tomatillos soften, the garlic is browned in spots, and the tomatoes, jalapenos, and onion are charred in places.",
-      "Transfer the roasted vegetables to a blender.",
-      "Toast 8 dried chile de arbol peppers in the dry skillet for 15 to 30 seconds, just until fragrant and slightly darkened, then transfer them to the blender.",
+      "Make the roasted arbol-tomatillo drip hot sauce by placing 4 tomatillos, 2 Roma tomatoes, 3 jalapenos, 1/2 small white onion, and 6 unpeeled garlic cloves in a dry cast-iron skillet over medium-high heat.",
+      "Cook the hot sauce vegetables for 8 to 12 minutes, turning occasionally, until the tomatillos soften, the garlic skins are browned in spots, and the tomatoes, jalapenos, and onion are charred in places.",
+      "Remove the garlic cloves as soon as they are browned and softened, let them cool briefly, peel them, and transfer the peeled roasted garlic to a blender.",
+      "Transfer the roasted tomatillos, tomatoes, jalapenos, and onion to the blender.",
+      "Toast 8 dried chile de arbol peppers in the dry skillet for 15 to 30 seconds, just until fragrant and slightly darkened.",
+      "Transfer the toasted chiles to a small bowl, cover them with 1/2 cup hot water, and soak for 10 minutes so the hot sauce blends smoother and less papery.",
+      "Drain the soaked chiles, discard the soaking water, and transfer the chiles to the blender.",
       "Add 1 teaspoon tomato paste, 1/4 cup apple cider vinegar, 2 tablespoons fresh lime juice, 2 tablespoons water, 1 teaspoon honey, 3/4 teaspoon Diamond Crystal kosher salt, and 3/4 teaspoon black pepper to the blender.",
-      "Blend the hot sauce until smooth, then slowly blend in 3 tablespoons avocado oil so the sauce lightly coats a bite.",
+      "Blend the hot sauce until very smooth, then slowly blend in 3 tablespoons avocado oil so the sauce lightly coats a bite.",
       "Add 1 to 3 tablespoons more water only if needed to make the hot sauce loose enough to drip from a spoon.",
       "Taste the hot sauce and adjust with a small pinch of salt, a few drops of lime juice, or a few drops of honey only if needed.",
       "For a smoother drip sauce, pass the hot sauce through a fine-mesh strainer; for a more rustic sauce, leave it unstrained.",
@@ -13415,19 +13485,23 @@
       "Make the crispy potatoes by placing 1 1/4 pounds 1/2-inch Yukon Gold potato cubes in a saucepan and covering them with cold water by 1 inch.",
       "Add 1 tablespoon Diamond Crystal kosher salt and 1/4 teaspoon baking soda to the potato water.",
       "Bring the potatoes to a boil, then simmer for 5 to 6 minutes, until the outsides are slightly tender but the centers are not falling apart.",
-      "Drain the potatoes very well, spread them on a rimmed baking sheet, and let them steam dry for 10 minutes.",
-      "Toss the dried potatoes with 2 tablespoons avocado oil, 1/2 teaspoon smoked paprika, 1/2 teaspoon garlic powder, 1/2 teaspoon cumin, 3/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
-      "Heat a cast-iron skillet over medium-high heat and add the seasoned potatoes in a single layer.",
-      "Cook the potatoes for 10 to 14 minutes, turning every few minutes, until crisp and browned on several sides.",
+      "Drain the potatoes very well, return them to the empty warm pan, and shake the pan gently for 15 to 20 seconds to rough up the potato edges without breaking the cubes apart.",
+      "Spread the potatoes on a rimmed baking sheet and let them steam dry for 10 minutes.",
+      "Toss the dried potatoes with 3 tablespoons avocado oil, 1/2 teaspoon smoked paprika, 1/2 teaspoon garlic powder, 1/2 teaspoon cumin, 3/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
+      "Heat a cast-iron skillet over medium-high heat until hot.",
+      "Cook the potatoes in 2 batches so they sit in a single layer with space between pieces.",
+      "Cook each batch for 8 to 10 minutes, turning every few minutes, until crisp and browned on several sides.",
       "Make the avocado crema by blending or mashing 1 avocado, 1/3 cup sour cream, 2 tablespoons fresh lime juice, 1/4 cup cilantro, 1 small garlic clove, and 1/4 teaspoon Diamond Crystal kosher salt until smooth.",
       "Remove the steak from the marinade and scrape off any heavy garlic or herb clumps so they do not burn.",
       "Pat the steak very dry with paper towels; this is important for browning instead of steaming.",
       "Heat a cast-iron skillet or grill pan over medium-high to high heat until very hot.",
-      "Add a thin film of avocado oil only if the pan looks dry.",
+      "Add up to 1 tablespoon avocado oil only if the pan looks dry.",
+      "Sear the steak in batches if needed so the pan stays very hot and the steak browns instead of steams.",
       "Sear the steak for 3 to 5 minutes per side, depending on thickness, until deeply browned and the center reaches 130 to 135 degrees F for medium-rare or 140 to 145 degrees F for medium.",
       "For USDA guidance, cook beef steaks to 145 degrees F with a 3-minute rest; for medium-rare preference, use fresh intact steak and cook to 130 to 135 degrees F if that is your desired doneness.",
       "Transfer the steak to a cutting board and rest for 10 minutes.",
       "Slice the rested steak thinly against the grain, then cut the slices into bite-size pieces so the burrito is easy to bite through.",
+      "Toss the sliced steak with any resting juices, 1 tablespoon fresh lime juice, and a small pinch of kosher salt only if the steak tastes like it needs it.",
       "Mix 4 ounces freshly shredded Oaxaca cheese or low-moisture whole-milk mozzarella and 4 ounces freshly shredded Monterey Jack cheese in a bowl.",
       "Warm each 12-inch flour tortilla in a dry skillet for 20 to 30 seconds per side, or until soft, flexible, and lightly toasted in spots.",
       "Assemble 1 burrito at a time by placing a warm tortilla on a clean work surface.",
@@ -13447,20 +13521,28 @@
     "link": null,
     "notes": [
       "Best steak choice: flap steak is the easiest high-reward option because it has strong beef flavor, good fat, and a forgiving texture. Skirt steak is excellent but can be chewier if sliced wrong. Flank steak works well but is leaner.",
-      "Do not marinate the steak overnight. The citrus is useful, but too much time in an acidic marinade can make the surface texture mushy.",
+      "Do not marinate the steak overnight. The citrus is useful, but too much time in an acidic marinade can make the surface texture mushy. For skirt steak, stay closer to 2 to 4 hours; for flap or flank steak, 4 to 8 hours works well.",
       "The marinade keeps Worcestershire as the main savory background note and uses only 1 teaspoon soy sauce so the steak tastes like carne asada instead of steakhouse beef.",
       "The steak must be patted very dry before searing. Wet marinade left on the surface prevents browning and can make the steak taste steamed.",
+      "Sear the steak in batches if needed. Crowding the skillet traps steam and weakens the crust.",
       "Slice the steak against the grain, then cut it into bite-size pieces. Long strips pull out of the burrito when you bite into it.",
+      "Tossing the sliced steak with its resting juices and a little lime wakes the steak back up after searing and resting.",
       "The rice is intentionally more savory than plain cilantro-lime rice. Tomato paste, onion, garlic, broth, and cumin make it taste integrated with the burrito instead of like a separate side dish.",
       "The beans should be creamy and spreadable, not loose. They act as a moisture barrier and help hold the burrito together.",
+      "This recipe intentionally makes extra rice and beans. Use only about 1/3 cup of each per burrito so the burritos roll tightly and do not become heavy or mushy.",
       "The potatoes add crisp texture, absorb steak juices, and make the burrito more satisfying without turning it watery.",
+      "Baking soda and roughing up the potato edges help create a starchy exterior that browns and crisps harder.",
       "Steam-drying the potatoes before crisping matters. Wet potatoes brown poorly and soften faster inside the burrito.",
+      "Cook the potatoes in 2 batches unless the skillet is large enough to hold them in a roomy single layer. Crowded potatoes steam instead of crisp.",
       "Freshly shredded Oaxaca and Monterey Jack melt better than pre-shredded cheese. If Oaxaca is hard to find, low-moisture whole-milk mozzarella is the best substitute because it gives a similar mild flavor and stretchy melt. Avoid fresh mozzarella here because it is too wet for a burrito.",
       "Drain the pickled onions before adding them to the burrito. Their job is brightness and crunch, not extra liquid.",
       "Use large 12-inch flour tortillas if possible. Smaller tortillas make overstuffed burritos that tear or cannot be rolled tightly.",
       "Toast the assembled burrito seam-side down first. It seals the fold, improves texture, and gives the tortilla a lightly crisp exterior.",
       "The hot sauce is intentionally served outside the burrito. Dripping it onto each bite gives heat, acid, and roasted chile flavor without soaking the tortilla.",
+      "Roasting the hot sauce garlic unpeeled lowers the risk of scorching the cloves and making the sauce bitter.",
+      "Soaking the toasted chile de arbol peppers before blending makes the hot sauce smoother, rounder, and less papery.",
       "Blending the avocado oil into the hot sauce gives it a smooth texture that drips cleanly but still lightly coats each bite.",
+      "With a high-powered blender such as a Vitamix 5200, the sauce can be very smooth without straining, but straining gives the cleanest restaurant-style drip texture.",
       "For a milder hot sauce, use 3 to 4 dried chile de arbol peppers instead of 8 and remove the jalapeno seeds before blending.",
       "For a hotter sauce, use 10 to 12 dried chile de arbol peppers or add 1 serrano with the jalapenos.",
       "The hot sauce should be loose enough to drip but not watery. Add water 1 tablespoon at a time only after blending.",
@@ -13468,18 +13550,19 @@
       "Eat these right after the final skillet toast."
     ],
     "nutrition": null,
-    "prepTime": "1 hour",
+    "prepTime": "1 hour 5 minutes",
     "rating": null,
-    "servings": "4 burritos",
-    "source": "original",
+    "servings": "4 large burritos, with extra rice and beans",
+    "source": "bundled",
     "tags": {
       "equipment": [
         "cast-iron-skillet",
-        "stovetop"
+        "stovetop",
+        "blender"
       ],
       "status": "not-tried"
     },
     "title": "Carne Asada Burritos with Crispy Potatoes and Roasted Arbol-Tomatillo Drip Hot Sauce",
-    "totalTime": "2 hours 5 minutes plus 2 to 8 hours steak marinade"
+    "totalTime": "2 hours 15 minutes plus 2 to 8 hours steak marinade"
   }
 ]
