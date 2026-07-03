@@ -31,6 +31,7 @@ const SHELL_URLS = [
   "./js/mobile_view_controller.js",
   "./js/normalization.js",
   "./js/offline_controller.js",
+  "./js/recipe_exporter.js",
   "./js/recipe_filter.js",
   "./js/recipe_formatting.js",
   "./js/recipe_multiplier.js",

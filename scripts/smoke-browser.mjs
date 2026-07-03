@@ -57,6 +57,7 @@ async function visibleRecipeCount(page) {
 
 async function runBrowserCheck(browser, check) {
   const context = await browser.newContext({
+    acceptDownloads: true,
     hasTouch: Boolean(check.hasTouch),
     viewport: check.viewport || { width: 1280, height: 900 },
   });
@@ -187,6 +188,89 @@ const browserChecks = [
       );
       await assertVisible(page, "#recipeNoResults", false);
       assert.ok(await visibleRecipeCount(page), "no-results clear action should restore rendered recipes");
+    },
+  },
+  {
+    name: "recipe export downloads formatted text and JSON",
+    async run(page) {
+      await openApp(page, { debug: true });
+      const target = await page.evaluate(() => {
+        const recipes = window.recipeBookDebug.getState().recipes;
+        const index = recipes.findIndex((recipe) => recipe.ingredients.length && recipe.instructions.length);
+        const recipe = recipes[index >= 0 ? index : 0];
+        return {
+          id: recipe.id,
+          index: index >= 0 ? index : 0,
+          title: recipe.title,
+        };
+      });
+
+      await page.fill("#recipeSearch", target.title);
+      await page.waitForTimeout(250);
+      const recipe = page.locator(`.recipe[data-recipe-index="${target.index}"]`);
+      await recipe.waitFor({ timeout: 5000 });
+      await recipe.locator(".accordion-header").click();
+      await assertVisible(page, `.recipe[data-recipe-index="${target.index}"] .recipe-export-actions`, true);
+
+      const textDownloadPromise = page.waitForEvent("download");
+      await recipe.locator(".recipe-export-button").filter({ hasText: "Text" }).click();
+      const textDownload = await textDownloadPromise;
+      const textPath = await textDownload.path();
+      const text = await fs.readFile(textPath, "utf8");
+      assert.equal(textDownload.suggestedFilename(), `${target.id}.txt`);
+      assert.match(text, new RegExp(`^${escapeRegExp(target.title)}\\n`));
+      assert.match(text, /\nIngredients\n- /);
+      assert.match(text, /\nInstructions\n1\. /);
+
+      const jsonDownloadPromise = page.waitForEvent("download");
+      await recipe.locator(".recipe-export-button").filter({ hasText: "JSON" }).click();
+      const jsonDownload = await jsonDownloadPromise;
+      const jsonPath = await jsonDownload.path();
+      const json = JSON.parse(await fs.readFile(jsonPath, "utf8"));
+      assert.equal(jsonDownload.suggestedFilename(), `${target.id}.json`);
+      assert.equal(json.id, target.id);
+      assert.equal(json.title, target.title);
+    },
+  },
+  {
+    name: "mobile recipe export copies formatted text",
+    hasTouch: true,
+    viewport: { width: 390, height: 844 },
+    async run(page) {
+      await page.addInitScript(() => {
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          value: {
+            async writeText(text) {
+              window.__recipeBookCopiedText = text;
+            },
+          },
+        });
+      });
+      await openApp(page, { debug: true });
+      const target = await page.evaluate(() => {
+        const recipes = window.recipeBookDebug.getState().recipes;
+        const index = recipes.findIndex((recipe) => recipe.ingredients.length && recipe.instructions.length);
+        const recipe = recipes[index >= 0 ? index : 0];
+        return {
+          index: index >= 0 ? index : 0,
+          title: recipe.title,
+        };
+      });
+
+      await page.fill("#recipeSearch", target.title);
+      await page.waitForTimeout(250);
+      const recipe = page.locator(`.recipe[data-recipe-index="${target.index}"]`);
+      await recipe.waitFor({ timeout: 5000 });
+      await recipe.locator(".accordion-header").click();
+      await assertVisible(page, `.recipe[data-recipe-index="${target.index}"] .recipe-export-copy-button`, true);
+      await recipe.locator(".recipe-export-copy-button").click();
+
+      const copiedText = await page.evaluate(() => window.__recipeBookCopiedText || "");
+      assert.match(copiedText, new RegExp(`^${escapeRegExp(target.title)}\\n`));
+      assert.match(copiedText, /\nIngredients\n- /);
+      assert.match(copiedText, /\nInstructions\n1\. /);
+      await expectLocatorText(recipe.locator(".recipe-export-status"), /^Copied\.$/);
     },
   },
   {
