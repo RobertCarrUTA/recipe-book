@@ -2,7 +2,7 @@
   "additionalTime": "15 minutes beef chill time",
   "author": "Robert Carr",
   "cookTime": "15 minutes",
-  "description": "A double smash burger with cold 80/20 beef, a thin crisp griddle crust, shaved onion smashed into the patties, melted American cheese, toasted potato buns, dill pickles, crisp lettuce, and homemade burger sauce.",
+  "description": "A double smash burger with cold 80/20 beef, a thin crisp griddle crust, shaved onion smashed into the patties, melted American cheese, a toasted potato bun, dill pickles, crisp lettuce, and homemade burger sauce.",
   "equipment": [
     "Cast-iron griddle or large cast-iron skillet",
     "Heavy metal spatula or burger press",
@@ -16,16 +16,16 @@
   "groceryIngredients": [
     {
       "item": "80/20 ground beef",
-      "quantity": 1.5,
-      "unit": "lb"
+      "quantity": 6,
+      "unit": "oz"
     },
     {
       "item": "potato bun",
-      "quantity": 4
+      "quantity": 1
     },
     {
       "item": "American cheese slice",
-      "quantity": 8
+      "quantity": 2
     },
     {
       "item": "yellow onion",
@@ -33,131 +33,131 @@
     },
     {
       "item": "iceberg lettuce",
-      "quantity": 2,
+      "quantity": 0.5,
       "unit": "cup"
     },
     {
       "item": "dill pickle chips",
-      "quantity": 1,
+      "quantity": 0.25,
       "unit": "cup"
     },
     {
       "item": "mayonnaise",
-      "quantity": 0.5,
-      "unit": "cup"
+      "quantity": 2,
+      "unit": "tbsp"
     },
     {
       "item": "ketchup",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 1.5,
+      "unit": "tsp"
     },
     {
       "item": "yellow mustard",
       "quantity": 1,
-      "unit": "tbsp"
+      "unit": "tsp"
     },
     {
       "item": "pickle brine",
       "quantity": 1,
-      "unit": "tbsp"
+      "unit": "tsp"
     },
     {
       "item": "Worcestershire sauce",
-      "quantity": 1,
-      "unit": "tsp"
-    },
-    {
-      "item": "Louisiana-style cayenne hot sauce",
-      "quantity": 1,
-      "unit": "tsp"
-    },
-    {
-      "item": "smoked paprika",
-      "quantity": 0.5,
-      "unit": "tsp"
-    },
-    {
-      "item": "garlic powder",
       "quantity": 0.25,
       "unit": "tsp"
     },
     {
+      "item": "Louisiana-style cayenne hot sauce",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "smoked paprika",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic powder",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
       "item": "kosher salt",
-      "quantity": 2,
-      "unit": "tsp"
-    },
-    {
-      "item": "black pepper",
-      "quantity": 1,
-      "unit": "tsp"
-    },
-    {
-      "item": "MSG",
       "quantity": 0.5,
       "unit": "tsp"
     },
     {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "MSG",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
       "item": "unsalted butter",
-      "quantity": 2,
+      "quantity": 0.5,
       "unit": "tbsp"
     },
     {
       "item": "beef tallow or neutral oil",
       "quantity": 1,
-      "unit": "tbsp"
+      "unit": "tsp"
     }
   ],
   "id": "double-onion-smash-burgers",
   "ingredients": [
-    "1 1/2 pounds cold 80/20 ground beef, preferably freshly ground chuck or a chuck and short rib blend",
-    "4 potato buns",
-    "8 slices American cheese",
-    "1 large yellow onion, 1 tablespoon very finely grated for sauce and the rest shaved paper-thin",
-    "2 cups finely shredded iceberg lettuce",
-    "1 cup dill pickle chips",
-    "2 tablespoons unsalted butter, softened",
-    "1 tablespoon beef tallow or neutral oil, optional, divided",
-    "1/2 cup mayonnaise",
-    "2 tablespoons ketchup",
-    "1 tablespoon yellow mustard",
-    "1 tablespoon pickle brine",
-    "1 teaspoon Worcestershire sauce",
-    "1 teaspoon Louisiana-style cayenne hot sauce, such as Frank's RedHot, Crystal, or Texas Pete",
-    "1/2 teaspoon smoked paprika",
-    "1/4 teaspoon garlic powder",
-    "2 teaspoons Diamond Crystal kosher salt or 1 1/4 teaspoons Morton kosher salt, for seasoning the patties",
-    "1 teaspoon black pepper, freshly ground",
-    "1/2 teaspoon MSG, optional"
+    "6 ounces cold 80/20 ground beef, preferably freshly ground chuck or a chuck and short rib blend",
+    "1 potato bun",
+    "2 slices American cheese",
+    "1 small yellow onion, 1 teaspoon very finely grated for sauce and enough of the rest shaved paper-thin for the patties",
+    "1/2 cup finely shredded iceberg lettuce",
+    "1/4 cup dill pickle chips",
+    "1/2 tablespoon unsalted butter, softened",
+    "1 teaspoon beef tallow or neutral oil, optional",
+    "2 tablespoons mayonnaise",
+    "1 1/2 teaspoons ketchup",
+    "1 teaspoon yellow mustard",
+    "1 teaspoon pickle brine",
+    "1/4 teaspoon Worcestershire sauce",
+    "1/4 teaspoon Louisiana-style cayenne hot sauce, such as Frank's RedHot, Crystal, or Texas Pete",
+    "Pinch smoked paprika",
+    "Pinch garlic powder",
+    "1/2 teaspoon Diamond Crystal kosher salt or 1/4 teaspoon Morton kosher salt, for seasoning the patties",
+    "1/4 teaspoon black pepper, freshly ground",
+    "Pinch MSG, optional"
   ],
   "instructions": [
-    "Grate 1 tablespoon from the yellow onion into a small bowl for the sauce, then shave the remaining onion paper-thin with a mandoline or sharp knife.",
+    "Grate 1 teaspoon from the yellow onion into a small bowl for the sauce, then shave enough of the remaining onion paper-thin to loosely cover 2 patties.",
     "Spread the shaved onion on a paper towel-lined plate and pat very dry. Wet onion steams the beef instead of browning with it.",
-    "Make the burger sauce by stirring together 1/2 cup mayonnaise, 2 tablespoons ketchup, 1 tablespoon yellow mustard, 1 tablespoon pickle brine, the 1 tablespoon very finely grated onion and any onion juice, 1 teaspoon Worcestershire sauce, 1 teaspoon Louisiana-style cayenne hot sauce, 1/2 teaspoon smoked paprika, and 1/4 teaspoon garlic powder.",
-    "Cover and refrigerate the sauce for at least 15 minutes while preparing the burgers so the onion, pickle brine, and spices season the mayonnaise.",
-    "Mix 2 teaspoons Diamond Crystal kosher salt, 1 teaspoon black pepper, and 1/2 teaspoon MSG if using in a small bowl. This is the patty seasoning.",
-    "Divide 1 1/2 pounds cold ground beef into 8 loose 3-ounce portions.",
+    "Make the burger sauce by stirring together 2 tablespoons mayonnaise, 1 1/2 teaspoons ketchup, 1 teaspoon yellow mustard, 1 teaspoon pickle brine, the 1 teaspoon very finely grated onion and any onion juice, 1/4 teaspoon Worcestershire sauce, 1/4 teaspoon Louisiana-style cayenne hot sauce, a pinch smoked paprika, and a pinch garlic powder.",
+    "Cover and refrigerate the sauce for at least 15 minutes while preparing the burger so the onion, pickle brine, and spices season the mayonnaise.",
+    "Mix 1/2 teaspoon Diamond Crystal kosher salt, 1/4 teaspoon black pepper, and a pinch MSG if using in a small bowl. This is the patty seasoning.",
+    "Divide 6 ounces cold ground beef into 2 loose 3-ounce portions.",
     "Gently shape each portion into a rough ball without packing the meat tightly.",
-    "Place the beef balls on a sheet pan and refrigerate for 15 minutes while preparing the buns and preheating the pan.",
-    "Spread the 2 tablespoons softened butter evenly over the cut sides of the 4 potato buns.",
+    "Place the beef balls on a sheet pan and refrigerate for 15 minutes while preparing the bun and preheating the pan.",
+    "Spread the 1/2 tablespoon softened butter evenly over the cut sides of the potato bun.",
     "Preheat a cast-iron griddle or large cast-iron skillet over medium-high to high heat for 5 to 8 minutes, until a drop of water skitters and evaporates quickly or an infrared thermometer reads about 425 degrees F to 475 degrees F.",
-    "Toast the buttered buns cut-side down until golden brown, then set them aside.",
-    "After the buns are toasted, return the pan to medium-high to high heat for 1 minute so it recovers before the beef goes in.",
-    "If the cooking surface is dry before the first batch, add 1 teaspoon beef tallow or neutral oil and spread it into a thin film with the spatula. Use up to the remaining 2 teaspoons only if the pan dries out between batches.",
-    "Work with 1 or 2 beef balls at a time so the pan stays hot and the patties have room.",
+    "Toast the buttered bun cut-side down until golden brown, then set it aside.",
+    "After the bun is toasted, return the pan to medium-high to high heat for 1 minute so it recovers before the beef goes in.",
+    "If the cooking surface is dry, add 1 teaspoon beef tallow or neutral oil and spread it into a thin film with the spatula.",
+    "Cook the 2 beef balls together only if the pan is wide enough for both patties to have room.",
     "Place each beef ball on the hot pan, immediately cover with a parchment square, and smash very hard with a burger press or heavy metal spatula for 8 to 10 seconds, until the patty is about 1/4 inch thick with ragged edges.",
-    "Remove the parchment and season the top of each patty with one-eighth of the salt, pepper, and MSG mixture, using all of the seasoning across the 8 patties.",
-    "Scatter one-eighth of the shaved onion over the raw top of each smashed patty, about 1/4 cup loosely packed onion per patty.",
+    "Remove the parchment and season the top of each patty with half of the salt, pepper, and MSG mixture, using all of the seasoning across the 2 patties.",
+    "Scatter half of the shaved onion over the raw top of each smashed patty.",
     "Cook without moving for 90 seconds to 2 minutes, until the edges are browned and crisp.",
     "Use a bench scraper or stiff spatula to scrape firmly under each patty so the crust stays attached to the beef.",
     "Flip each patty onion-side down.",
     "Immediately place 1 slice American cheese on each patty.",
     "Cook for 45 to 75 seconds more, until the onions brown underneath, the cheese melts, and the beef is cooked through to 160 degrees F if checking with an instant-read thermometer.",
-    "Stack 2 patties together for each burger.",
-    "Spread 1 1/2 tablespoons burger sauce on each toasted bottom bun.",
-    "Add 1/2 cup shredded lettuce and 1/4 cup dill pickle chips to each bottom bun.",
-    "Place a double stack of smash patties on each prepared bottom bun.",
-    "Spread 1 tablespoon burger sauce on each toasted top bun and serve any remaining sauce on the side.",
-    "Close the burgers and serve immediately while the edges are still crisp."
+    "Stack the 2 patties together for the burger.",
+    "Spread 1 1/2 tablespoons burger sauce on the toasted bottom bun.",
+    "Add 1/2 cup shredded lettuce and 1/4 cup dill pickle chips to the bottom bun.",
+    "Place the double stack of smash patties on the prepared bottom bun.",
+    "Spread 1 tablespoon burger sauce on the toasted top bun and serve any remaining sauce on the side.",
+    "Close the burger and serve immediately while the edges are still crisp."
   ],
   "link": null,
   "notes": [
@@ -178,9 +178,9 @@
   ],
   "nutrition": null,
   "personalNotes": [],
-  "prepTime": "25 minutes",
+  "prepTime": "20 minutes",
   "rating": null,
-  "servings": "4 double burgers",
+  "servings": "1 double burger",
   "tags": {
     "equipment": [
       "cast-iron skillet",
@@ -189,6 +189,6 @@
     ],
     "status": "not-tried"
   },
-  "title": "Double Onion Smash Burgers",
-  "totalTime": "40 minutes plus 15 minutes beef chill time"
+  "title": "Double Onion Smash Burger",
+  "totalTime": "30 minutes plus 15 minutes beef chill time"
 }

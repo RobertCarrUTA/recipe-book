@@ -1,7 +1,7 @@
 {
   "author": "Robert Carr",
   "cookTime": "25 minutes",
-  "description": "A skillet steak sandwich with thin-sliced seared steak, pepperoncini onions, garlic mayo, melted deli provolone, dressed arugula, and toasted ciabatta or hoagie rolls.",
+  "description": "A skillet steak sandwich with thin-sliced seared steak, pepperoncini onions, garlic mayo, melted deli provolone, dressed arugula, and a toasted ciabatta or hoagie roll.",
   "equipment": [
     "Cast-iron skillet or heavy saute pan",
     "Cutting board",
@@ -13,16 +13,16 @@
   "groceryIngredients": [
     {
       "item": "top sirloin steak, strip steak, or flat iron steak",
-      "quantity": 1.25,
-      "unit": "lb"
+      "quantity": 8,
+      "unit": "oz"
     },
     {
       "item": "ciabatta roll or sturdy hoagie roll",
-      "quantity": 4
+      "quantity": 1
     },
     {
       "item": "deli provolone cheese slice",
-      "quantity": 4
+      "quantity": 1
     },
     {
       "item": "yellow onion",
@@ -35,7 +35,7 @@
     },
     {
       "item": "baby arugula",
-      "quantity": 2,
+      "quantity": 0.5,
       "unit": "oz"
     },
     {
@@ -44,109 +44,109 @@
     },
     {
       "item": "garlic clove",
-      "quantity": 2
+      "quantity": 1
     },
     {
       "item": "mayonnaise",
-      "quantity": 0.5,
-      "unit": "cup"
+      "quantity": 2,
+      "unit": "tbsp"
     },
     {
       "item": "Dijon mustard",
       "quantity": 1,
-      "unit": "tbsp"
+      "unit": "tsp"
     },
     {
       "item": "Worcestershire sauce",
-      "quantity": 1,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "unsalted butter",
-      "quantity": 2,
+      "quantity": 1,
       "unit": "tbsp"
     },
     {
       "item": "avocado oil",
       "quantity": 1,
-      "unit": "tbsp"
+      "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 1,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "kosher salt",
-      "quantity": 1.75,
+      "quantity": 0.75,
       "unit": "tsp"
     },
     {
       "item": "black pepper",
-      "quantity": 1.25,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "smoked paprika",
-      "quantity": 0.5,
+      "quantity": 0.25,
       "unit": "tsp"
     }
   ],
   "id": "garlic-steak-sandwiches",
   "ingredients": [
-    "1 1/4 pounds top sirloin steak, strip steak, or flat iron steak, ideally 1 to 1 1/4 inches thick",
-    "1 3/4 teaspoons Diamond Crystal kosher salt or 1 teaspoon Morton kosher salt, divided",
-    "1 1/4 teaspoons black pepper, freshly ground if possible, divided",
-    "1/2 teaspoon smoked paprika",
-    "1 tablespoon avocado oil or another neutral high-heat oil",
-    "1 medium yellow onion, thinly sliced",
-    "1 (12-ounce) jar sliced pepperoncini peppers, using 1/3 cup peppers and 1 tablespoon plus 1 teaspoon brine",
-    "2 tablespoons unsalted butter, divided",
-    "2 garlic cloves, divided",
-    "4 ciabatta rolls or sturdy hoagie rolls, split",
-    "1/2 cup mayonnaise",
-    "1 tablespoon Dijon mustard",
-    "1 teaspoon Worcestershire sauce",
-    "4 slices deli provolone cheese",
-    "2 ounces baby arugula, about 2 packed cups",
-    "2 teaspoons fresh lemon juice",
-    "1 teaspoon extra-virgin olive oil"
+    "6 to 8 ounces top sirloin steak, strip steak, or flat iron steak, ideally 1 to 1 1/4 inches thick",
+    "3/4 teaspoon Diamond Crystal kosher salt or 1/2 teaspoon Morton kosher salt, divided",
+    "1/2 teaspoon black pepper, freshly ground if possible, divided",
+    "1/4 teaspoon smoked paprika",
+    "1 teaspoon avocado oil or another neutral high-heat oil",
+    "1/4 medium yellow onion, thinly sliced",
+    "1 (12-ounce) jar sliced pepperoncini peppers, using 2 tablespoons peppers and 1 teaspoon brine",
+    "1 tablespoon unsalted butter, divided",
+    "1 small garlic clove, half finely grated and half smashed",
+    "1 ciabatta roll or sturdy hoagie roll, split",
+    "2 tablespoons mayonnaise",
+    "1 teaspoon Dijon mustard",
+    "1/4 teaspoon Worcestershire sauce",
+    "1 slice deli provolone cheese",
+    "1/2 ounce baby arugula, about 1/2 packed cup",
+    "1/2 teaspoon fresh lemon juice",
+    "1/4 teaspoon extra-virgin olive oil"
   ],
   "instructions": [
-    "Pat the 1 1/4 pounds steak very dry with paper towels.",
-    "Season both sides of the steak with 1 1/4 teaspoons Diamond Crystal kosher salt, 3/4 teaspoon black pepper, and 1/2 teaspoon smoked paprika.",
+    "Pat the steak very dry with paper towels.",
+    "Season both sides of the steak with 1/2 teaspoon Diamond Crystal kosher salt, 1/4 teaspoon black pepper, and 1/4 teaspoon smoked paprika.",
     "Let the seasoned steak sit at room temperature for 15 to 20 minutes while preparing the sauce and onions.",
-    "Make the garlic mayo by stirring together 1/2 cup mayonnaise, 1 tablespoon Dijon mustard, 1 teaspoon Worcestershire sauce, 1 teaspoon pepperoncini brine, 1 finely grated garlic clove, and 1/4 teaspoon black pepper in a small bowl.",
-    "Taste the garlic mayo and add only a few drops more pepperoncini brine if it needs more tang; keep it thick enough to cling to the rolls.",
-    "Melt 1 tablespoon unsalted butter in a cast-iron skillet or heavy saute pan over medium heat.",
-    "Add the 1 thinly sliced yellow onion, 1/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper.",
+    "Make the garlic mayo by stirring together 2 tablespoons mayonnaise, 1 teaspoon Dijon mustard, 1/4 teaspoon Worcestershire sauce, 1/2 teaspoon pepperoncini brine, the finely grated garlic, and a pinch of black pepper in a small bowl.",
+    "Taste the garlic mayo and add only a few drops more pepperoncini brine if it needs more tang; keep it thick enough to cling to the roll.",
+    "Melt 1/2 tablespoon unsalted butter in a cast-iron skillet or heavy saute pan over medium heat.",
+    "Add the thinly sliced yellow onion, a small pinch Diamond Crystal kosher salt, and a small pinch black pepper.",
     "Cook the onion for 7 to 9 minutes, stirring every minute, until softened, sweet, and lightly browned at the edges.",
-    "Stir 1/3 cup sliced pepperoncini peppers and 1 tablespoon pepperoncini brine into the onions.",
+    "Stir 2 tablespoons sliced pepperoncini peppers and the remaining 1/2 teaspoon pepperoncini brine into the onions.",
     "Cook the pepperoncini onions for 1 to 2 minutes, until the brine has mostly evaporated and the onions taste bright and savory without being wet.",
     "Transfer the pepperoncini onions to a plate.",
-    "Melt the remaining 1 tablespoon unsalted butter in the same skillet over medium heat.",
-    "Smash the remaining 1 garlic clove with the side of a knife, add it to the melted butter, and swirl it for 20 to 30 seconds until fragrant.",
-    "Place the 4 split ciabatta rolls or hoagie rolls cut-side down in the garlic butter, working in batches if needed, and toast for 1 to 2 minutes, until the cut sides are golden.",
-    "Move the toasted rolls to a plate and discard the smashed garlic clove.",
+    "Melt the remaining 1/2 tablespoon unsalted butter in the same skillet over medium heat.",
+    "Add the smashed garlic to the melted butter and swirl it for 20 to 30 seconds until fragrant.",
+    "Place the split ciabatta roll or hoagie roll cut-side down in the garlic butter and toast for 1 to 2 minutes, until the cut sides are golden.",
+    "Move the toasted roll to a plate and discard the smashed garlic.",
     "Wipe out any loose crumbs and browned garlic bits from the skillet.",
-    "Increase the heat to medium-high, let the skillet heat for 1 minute, and add 1 tablespoon avocado oil.",
+    "Increase the heat to medium-high, let the skillet heat for 1 minute, and add 1 teaspoon avocado oil.",
     "Pat the steak dry again if moisture has appeared on the surface.",
-    "When the oil is shimmering, add the steak to the skillet; if using two steaks, sear them in batches so the pan stays hot.",
+    "When the oil is shimmering, add the steak to the skillet.",
     "Sear the steak for 3 to 4 minutes on the first side, without moving it, until well browned.",
     "Flip the steak with tongs and sear the second side for 3 to 4 minutes, until the center reaches 120 to 125 degrees F for medium-rare after the final cheese melt or 130 degrees F for medium.",
     "If the steak is browning faster than it is cooking through, reduce the heat to medium and keep cooking until it reaches the target temperature.",
     "Transfer the steak to a cutting board and let it rest for 5 to 8 minutes.",
     "Slice the rested steak as thinly as possible against the grain, angling the knife slightly for wider slices.",
-    "Toss the sliced steak with any cutting board juices and 1/8 teaspoon Diamond Crystal kosher salt.",
-    "Return the sliced steak and any board juices to the skillet over low heat and divide it into 4 loose piles.",
-    "Top each steak pile with one-fourth of the pepperoncini onions and 1 slice deli provolone cheese.",
+    "Toss the sliced steak with any cutting board juices and a tiny pinch of Diamond Crystal kosher salt.",
+    "Return the sliced steak and any board juices to the skillet over low heat and gather it into 1 loose pile.",
+    "Top the steak pile with the pepperoncini onions and 1 slice deli provolone cheese.",
     "Cover the skillet for 1 to 2 minutes, just until the provolone melts over the steak and onions.",
-    "While the cheese melts, toss 2 ounces baby arugula with 2 teaspoons fresh lemon juice, 1 teaspoon extra-virgin olive oil, and 1/8 teaspoon Diamond Crystal kosher salt.",
-    "Spread about 1 tablespoon garlic mayo on each toasted bottom roll.",
-    "Use tongs or a spatula to move 1 cheesy steak-and-onion pile onto each bottom roll.",
-    "Top each sandwich with about 1/2 cup dressed arugula.",
-    "Spread about 1 tablespoon garlic mayo on each toasted top roll.",
-    "Close the sandwiches and serve immediately while the rolls are crisp and the cheese is melted."
+    "While the cheese melts, toss 1/2 ounce baby arugula with 1/2 teaspoon fresh lemon juice, 1/4 teaspoon extra-virgin olive oil, and a tiny pinch of Diamond Crystal kosher salt.",
+    "Spread about 1 tablespoon garlic mayo on the toasted bottom roll.",
+    "Use tongs or a spatula to move the cheesy steak-and-onion pile onto the bottom roll.",
+    "Top the sandwich with the dressed arugula.",
+    "Spread about 1 tablespoon garlic mayo on the toasted top roll.",
+    "Close the sandwich and serve immediately while the roll is crisp and the cheese is melted."
   ],
   "link": null,
   "notes": [
@@ -154,7 +154,7 @@
     "For even better seasoning, salt the steak up to 24 hours ahead and refrigerate it uncovered on a plate or rack. Bring it out while preparing the sauce and onions.",
     "Top sirloin works well here because it cooks quickly and slices well. Strip steak is richer; flat iron is very tender if sliced across the grain.",
     "Avoid very thick steaks for this quick version. A 1 to 1 1/4 inch steak gives enough browning time without turning the recipe into a steakhouse project.",
-    "If using two smaller steaks, cook them one at a time. Crowding the skillet makes the steak steam instead of sear.",
+    "If using two smaller steak pieces, cook them one at a time. Crowding the skillet makes the steak steam instead of sear.",
     "Pull the steak a few degrees below the final doneness you want because the sliced meat warms again while the cheese melts.",
     "Use deli provolone for better melt and flavor. Provolone piccante is excellent here if you like a sharper cheese.",
     "Use sliced pepperoncini peppers from a jar, not sweet banana peppers, because the brine adds acidity that cuts through the steak, mayo, butter, and cheese.",
@@ -166,9 +166,9 @@
   ],
   "nutrition": null,
   "personalNotes": [],
-  "prepTime": "20 minutes",
+  "prepTime": "15 minutes",
   "rating": null,
-  "servings": "4 sandwiches",
+  "servings": "1 sandwich",
   "tags": {
     "difficulty": "easy",
     "equipment": [
@@ -177,6 +177,6 @@
     ],
     "status": "not-tried"
   },
-  "title": "Garlic Steak Sandwiches",
-  "totalTime": "45 minutes"
+  "title": "Garlic Steak Sandwich",
+  "totalTime": "40 minutes"
 }

@@ -1,8 +1,8 @@
 {
   "author": "Robert Carr",
   "additionalTime": "10 minutes sausage mixture rest",
-  "cookTime": "35 minutes",
-  "description": "A hot Italian sausage sub with homemade sweet Italian-style pork patties, browned peppers and onions, quick tomato pan sauce, garlic-toasted rolls, provolone, mozzarella, Parmesan, and basil.",
+  "cookTime": "25 minutes",
+  "description": "A hot Italian sausage sub with homemade sweet Italian-style pork patties, browned peppers and onions, quick tomato pan sauce, a garlic-toasted roll, provolone, mozzarella, Parmesan, and basil.",
   "equipment": [
     "Cast-iron skillet or heavy saute pan",
     "Oven with broiler",
@@ -16,25 +16,25 @@
   "groceryIngredients": [
     {
       "item": "ground pork",
-      "quantity": 1.5,
-      "unit": "lb"
+      "quantity": 6,
+      "unit": "oz"
     },
     {
       "item": "Italian sub roll or sturdy hoagie roll",
-      "quantity": 4
+      "quantity": 1
     },
     {
       "item": "provolone cheese slice",
-      "quantity": 8
+      "quantity": 2
     },
     {
       "item": "low-moisture whole-milk mozzarella cheese",
-      "quantity": 4,
+      "quantity": 1,
       "unit": "oz"
     },
     {
       "item": "Parmesan cheese",
-      "quantity": 2,
+      "quantity": 0.5,
       "unit": "oz"
     },
     {
@@ -45,7 +45,7 @@
     {
       "item": "tomato paste",
       "quantity": 2,
-      "unit": "tbsp"
+      "unit": "tsp"
     },
     {
       "item": "yellow onion",
@@ -61,7 +61,7 @@
     },
     {
       "item": "garlic clove",
-      "quantity": 5
+      "quantity": 2
     },
     {
       "item": "fresh basil",
@@ -75,135 +75,135 @@
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 3,
-      "unit": "tbsp"
+      "quantity": 2,
+      "unit": "tsp"
     },
     {
       "item": "unsalted butter",
-      "quantity": 2,
+      "quantity": 1,
       "unit": "tbsp"
     },
     {
       "item": "red wine vinegar",
-      "quantity": 4,
+      "quantity": 1,
       "unit": "tsp"
     },
     {
       "item": "Worcestershire sauce",
-      "quantity": 2,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "fennel seeds",
-      "quantity": 1.5,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "dried oregano",
-      "quantity": 1.5,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "garlic powder",
-      "quantity": 0.75,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "onion powder",
-      "quantity": 0.5,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
       "item": "sweet paprika",
-      "quantity": 0.5,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
       "item": "red pepper flakes",
       "optional": true,
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
       "item": "kosher salt",
-      "quantity": 2,
+      "quantity": 0.75,
       "unit": "tsp"
     },
     {
       "item": "black pepper",
-      "quantity": 1,
+      "quantity": 0.5,
       "unit": "tsp"
     }
   ],
   "id": "hot-italian-sausage-subs",
   "ingredients": [
-    "1 1/2 pounds ground pork, 80/20 if available",
-    "2 ounces Parmesan cheese, finely grated to make about 2/3 cup, divided",
-    "5 garlic cloves, divided",
-    "2 tablespoons finely chopped fresh flat-leaf parsley",
-    "2 teaspoons Diamond Crystal kosher salt or 1 1/4 teaspoons Morton kosher salt, divided, plus more to taste",
-    "1 teaspoon black pepper, freshly ground if possible, divided",
-    "1 1/2 teaspoons fennel seeds, lightly crushed",
-    "1 1/2 teaspoons dried oregano, divided",
-    "3/4 teaspoon garlic powder",
-    "1/2 teaspoon onion powder",
-    "1/2 teaspoon sweet paprika",
-    "1/4 teaspoon red pepper flakes, optional",
-    "2 teaspoons Worcestershire sauce",
-    "4 teaspoons red wine vinegar, divided",
-    "3 tablespoons extra-virgin olive oil, divided",
-    "1 medium yellow onion, thinly sliced",
-    "1 green bell pepper, thinly sliced",
-    "1 red bell pepper, thinly sliced",
-    "2 tablespoons tomato paste",
-    "1 (14.5-ounce) can crushed tomatoes",
-    "1/4 cup water, plus more if needed",
-    "1/4 cup fresh basil leaves, torn, divided",
-    "2 tablespoons unsalted butter, softened",
-    "4 Italian sub rolls or sturdy hoagie rolls, 6 to 8 inches long, split",
-    "8 slices provolone cheese",
-    "4 ounces low-moisture whole-milk mozzarella cheese, shredded, about 1 cup"
+    "6 ounces ground pork, 80/20 if available",
+    "1/2 ounce Parmesan cheese, finely grated to make about 3 tablespoons, divided",
+    "2 garlic cloves, divided",
+    "2 teaspoons finely chopped fresh flat-leaf parsley",
+    "3/4 teaspoon Diamond Crystal kosher salt or 1/2 teaspoon Morton kosher salt, divided, plus more to taste",
+    "1/2 teaspoon black pepper, freshly ground if possible, divided",
+    "1/2 teaspoon fennel seeds, lightly crushed",
+    "1/2 teaspoon dried oregano, divided",
+    "1/4 teaspoon garlic powder",
+    "1/8 teaspoon onion powder",
+    "1/8 teaspoon sweet paprika",
+    "Pinch red pepper flakes, optional",
+    "1/2 teaspoon Worcestershire sauce",
+    "1 teaspoon red wine vinegar, divided",
+    "2 teaspoons extra-virgin olive oil, divided",
+    "1/4 medium yellow onion, thinly sliced",
+    "1/4 green bell pepper, thinly sliced",
+    "1/4 red bell pepper, thinly sliced",
+    "2 teaspoons tomato paste",
+    "1/2 cup crushed tomatoes from a 14.5-ounce can",
+    "2 tablespoons water, plus more if needed",
+    "1 tablespoon fresh basil leaves, torn, divided",
+    "1 tablespoon unsalted butter, softened",
+    "1 Italian sub roll or sturdy hoagie roll, 6 to 8 inches long, split",
+    "2 slices provolone cheese",
+    "1 ounce low-moisture whole-milk mozzarella cheese, shredded, about 1/4 cup"
   ],
   "instructions": [
     "Move an oven rack 6 inches below the broiler.",
     "Line a rimmed baking sheet with aluminum foil.",
-    "In a large mixing bowl, combine 1 1/2 pounds ground pork, 1/3 cup finely grated Parmesan cheese, 2 finely grated garlic cloves, 2 tablespoons finely chopped parsley, 1 1/4 teaspoons Diamond Crystal kosher salt, 3/4 teaspoon black pepper, 1 1/2 teaspoons lightly crushed fennel seeds, 1 teaspoon dried oregano, 3/4 teaspoon garlic powder, 1/2 teaspoon onion powder, 1/2 teaspoon sweet paprika, 1/4 teaspoon red pepper flakes if using, 2 teaspoons Worcestershire sauce, 2 teaspoons red wine vinegar, and 1 tablespoon extra-virgin olive oil.",
+    "In a mixing bowl, combine 6 ounces ground pork, 1 tablespoon finely grated Parmesan cheese, 1/2 garlic clove, finely grated, 2 teaspoons finely chopped parsley, 1/2 teaspoon Diamond Crystal kosher salt, 1/4 teaspoon black pepper, 1/2 teaspoon lightly crushed fennel seeds, 1/4 teaspoon dried oregano, 1/4 teaspoon garlic powder, 1/8 teaspoon onion powder, 1/8 teaspoon sweet paprika, a pinch red pepper flakes if using, 1/2 teaspoon Worcestershire sauce, 1/2 teaspoon red wine vinegar, and 1 teaspoon extra-virgin olive oil.",
     "Mix the pork with your hands for 45 to 60 seconds, just until the Parmesan, garlic, herbs, spices, Worcestershire sauce, vinegar, and oil are evenly distributed and the mixture feels slightly tacky.",
-    "Divide the seasoned pork into 8 equal portions, using about 3 ounces pork mixture for each portion.",
-    "Shape each portion into a flat 4-inch-long, 1/2-inch-thick oval patty so 2 patties will fit neatly in each sub roll.",
+    "Divide the seasoned pork into 2 equal portions, using about 3 ounces pork mixture for each portion.",
+    "Shape each portion into a flat 4-inch-long, 1/2-inch-thick oval patty so both patties will fit neatly in the sub roll.",
     "Let the shaped pork patties rest at room temperature for 10 minutes so the salt, spices, and fennel hydrate before browning.",
     "Heat a cast-iron skillet or heavy saute pan over medium-high heat for 2 minutes.",
-    "Add 1 tablespoon extra-virgin olive oil to the hot skillet.",
-    "Place as many of the 8 pork patties in the skillet as will fit in a single uncrowded layer, working in 2 batches if needed so they brown instead of steaming.",
+    "Add 1 teaspoon extra-virgin olive oil to the hot skillet.",
+    "Place the 2 pork patties in the skillet in a single uncrowded layer so they brown instead of steaming.",
     "Cook the pork patties for 3 to 4 minutes on the first side, until well browned.",
     "Flip the pork patties and cook the second side for 3 to 4 minutes, until well browned and the centers reach 160 degrees F.",
     "Transfer the cooked pork patties to a plate and leave about 1 tablespoon fat in the skillet.",
-    "Reduce the heat to medium and add the 1 thinly sliced yellow onion, 1 thinly sliced green bell pepper, 1 thinly sliced red bell pepper, 1/2 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper to the skillet.",
+    "Reduce the heat to medium and add the thinly sliced yellow onion, green bell pepper, red bell pepper, a pinch Diamond Crystal kosher salt, and a pinch black pepper to the skillet.",
     "Cook the peppers and onion for 7 to 9 minutes, stirring every minute, until softened, browned at the edges, and sweet-smelling.",
-    "Stir in 2 minced garlic cloves, 2 tablespoons tomato paste, and the remaining 1/2 teaspoon dried oregano.",
+    "Stir in 1 minced garlic clove, 2 teaspoons tomato paste, and the remaining 1/4 teaspoon dried oregano.",
     "Cook the garlic and tomato paste for 1 minute, stirring constantly, until the tomato paste darkens and coats the peppers and onion.",
-    "Add the 14.5-ounce can crushed tomatoes, 1/4 cup water, the remaining 1/4 teaspoon Diamond Crystal kosher salt, and the remaining 2 teaspoons red wine vinegar.",
+    "Add 1/2 cup crushed tomatoes, 2 tablespoons water, the remaining 1/4 teaspoon Diamond Crystal kosher salt, and the remaining 1/2 teaspoon red wine vinegar.",
     "Bring the tomato-pepper sauce to a simmer over medium heat, scraping the browned pork bits from the bottom of the skillet.",
     "Simmer the tomato-pepper sauce for 4 to 5 minutes, stirring often, until it looks glossy and thick enough to cling to a spoon.",
-    "Return the 8 cooked pork patties and any juices from the plate to the skillet.",
+    "Return the 2 cooked pork patties and any juices from the plate to the skillet.",
     "Spoon tomato-pepper sauce over the pork patties and simmer for 3 to 4 minutes, until the patties are hot and coated.",
-    "Stir 2 tablespoons torn fresh basil into the tomato-pepper sauce.",
+    "Stir 2 teaspoons torn fresh basil into the tomato-pepper sauce.",
     "Taste the sauce and add a small pinch of kosher salt or a splash of red wine vinegar only if it needs more seasoning or brightness.",
-    "Turn the heat to low so the pork patties and sauce stay hot while the rolls toast.",
+    "Turn the heat to low so the pork patties and sauce stay hot while the roll toasts.",
     "Heat the broiler on high.",
-    "In a small bowl, stir together 2 tablespoons softened unsalted butter, the remaining 1 finely grated garlic clove, and 2 tablespoons finely grated Parmesan cheese.",
-    "Place the 4 split sub rolls cut-side up on the foil-lined baking sheet.",
-    "Spread the garlic-Parmesan butter evenly over the cut sides of the 4 split rolls, using about 3/4 teaspoon butter mixture on each cut side.",
-    "Broil the buttered rolls for 1 to 2 minutes, watching constantly, until the cut sides are lightly toasted around the edges.",
-    "Move the 4 toasted top rolls to a plate and leave the 4 toasted bottom rolls cut-side up on the baking sheet.",
-    "Place 1 slice provolone cheese on each toasted bottom roll.",
-    "Place 2 hot pork patties on each bottom roll.",
-    "Spoon about 1/3 cup hot tomato-pepper sauce over the pork patties on each sandwich.",
-    "Tear the remaining 4 slices provolone cheese over the sauced pork patties, dividing 1 slice provolone per sandwich.",
-    "Sprinkle 1/4 cup shredded low-moisture mozzarella cheese and 1 tablespoon finely grated Parmesan cheese over each open sandwich.",
-    "Broil the open sandwiches for 2 to 3 minutes, until the provolone and mozzarella are melted and lightly browned in spots.",
-    "Scatter the remaining 2 tablespoons torn fresh basil over the hot cheese.",
-    "Close the sandwiches with the toasted top rolls and serve immediately while the sausage patties, sauce, peppers, onions, and cheese are hot."
+    "In a small bowl, stir together 1 tablespoon softened unsalted butter, the remaining 1/2 garlic clove, finely grated, and 1 tablespoon finely grated Parmesan cheese.",
+    "Place the split sub roll cut-side up on the foil-lined baking sheet.",
+    "Spread the garlic-Parmesan butter evenly over the cut sides of the split roll.",
+    "Broil the buttered roll for 1 to 2 minutes, watching constantly, until the cut sides are lightly toasted around the edges.",
+    "Move the toasted top roll to a plate and leave the toasted bottom roll cut-side up on the baking sheet.",
+    "Place 1 slice provolone cheese on the toasted bottom roll.",
+    "Place the 2 hot pork patties on the bottom roll.",
+    "Spoon about 1/3 cup hot tomato-pepper sauce over the pork patties.",
+    "Tear the remaining 1 slice provolone cheese over the sauced pork patties.",
+    "Sprinkle 1/4 cup shredded low-moisture mozzarella cheese and 1 tablespoon finely grated Parmesan cheese over the open sandwich.",
+    "Broil the open sandwich for 2 to 3 minutes, until the provolone and mozzarella are melted and lightly browned in spots.",
+    "Scatter the remaining 1 teaspoon torn fresh basil over the hot cheese.",
+    "Close the sandwich with the toasted top roll and serve immediately while the sausage patties, sauce, peppers, onions, and cheese are hot."
   ],
   "link": null,
   "notes": [
@@ -222,9 +222,9 @@
   ],
   "nutrition": null,
   "personalNotes": [],
-  "prepTime": "25 minutes",
+  "prepTime": "20 minutes",
   "rating": null,
-  "servings": "4 sandwiches",
+  "servings": "1 sandwich",
   "tags": {
     "difficulty": "medium",
     "equipment": [
@@ -234,6 +234,6 @@
     ],
     "status": "not-tried"
   },
-  "title": "Hot Italian Sausage Subs",
-  "totalTime": "1 hour 10 minutes"
+  "title": "Hot Italian Sausage Sub",
+  "totalTime": "55 minutes"
 }

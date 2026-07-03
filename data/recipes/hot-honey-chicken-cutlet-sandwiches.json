@@ -1,8 +1,8 @@
 {
   "additionalTime": "10 minutes quick soak plus 10 minutes coating rest",
   "author": "Robert Carr",
-  "cookTime": "20 minutes",
-  "description": "A quick hot honey chicken cutlet sandwich with thin chicken breasts, a buttermilk-hot sauce dip, crisp panko crust, garlic mayo, lime slaw, dill pickles, and toasted potato buns.",
+  "cookTime": "15 minutes",
+  "description": "A quick hot honey chicken cutlet sandwich with a thin chicken breast cutlet, a buttermilk-hot sauce dip, crisp panko crust, garlic mayo, lime slaw, dill pickles, and a toasted potato bun.",
   "equipment": [
     "Cast-iron skillet or heavy saute pan",
     "Instant-read thermometer",
@@ -17,12 +17,12 @@
     {
       "display": "boneless skinless chicken breast",
       "item": "boneless skinless chicken breast",
-      "quantity": 1.5,
-      "unit": "lb"
+      "quantity": 6,
+      "unit": "oz"
     },
     {
       "item": "potato bun",
-      "quantity": 4
+      "quantity": 1
     },
     {
       "item": "dill pickle chips",
@@ -32,12 +32,12 @@
     {
       "item": "plain shredded cabbage and carrot coleslaw mix",
       "display": "plain shredded cabbage and carrot coleslaw mix",
-      "quantity": 10,
-      "unit": "oz"
+      "quantity": 0.75,
+      "unit": "cup"
     },
     {
       "item": "green onion",
-      "quantity": 2
+      "quantity": 1
     },
     {
       "item": "lime",
@@ -45,7 +45,7 @@
     },
     {
       "item": "buttermilk",
-      "quantity": 0.75,
+      "quantity": 0.25,
       "unit": "cup"
     },
     {
@@ -54,170 +54,169 @@
     },
     {
       "item": "Louisiana-style cayenne hot sauce",
-      "quantity": 2,
+      "quantity": 1,
       "unit": "tbsp"
     },
     {
       "item": "Dijon mustard",
-      "quantity": 4,
+      "quantity": 2,
       "unit": "tsp"
     },
     {
       "item": "pickle brine",
-      "quantity": 3,
+      "quantity": 2,
       "unit": "tbsp"
     },
     {
       "item": "all-purpose flour",
-      "quantity": 0.75,
-      "unit": "cup"
-    },
-    {
-      "item": "panko breadcrumbs",
-      "quantity": 1,
-      "unit": "cup"
-    },
-    {
-      "item": "cornstarch",
       "quantity": 0.25,
       "unit": "cup"
     },
     {
-      "item": "baking powder",
+      "item": "panko breadcrumbs",
+      "quantity": 0.333,
+      "unit": "cup"
+    },
+    {
+      "item": "cornstarch",
       "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "baking powder",
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "smoked paprika",
-      "quantity": 1.25,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "garlic powder",
-      "quantity": 1.25,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "onion powder",
-      "quantity": 1,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "cayenne pepper",
-      "quantity": 0.75,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "MSG",
       "optional": true,
-      "quantity": 0.5,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
       "item": "kosher salt",
-      "quantity": 2.5,
+      "quantity": 1,
       "unit": "tsp"
     },
     {
       "item": "black pepper",
-      "quantity": 1.25,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "avocado oil",
-      "quantity": 1.5,
-      "unit": "cups"
+      "quantity": 0.75,
+      "unit": "cup"
     },
     {
       "item": "unsalted butter",
-      "quantity": 4,
+      "quantity": 1,
       "unit": "tbsp"
     },
     {
       "item": "mayonnaise",
-      "quantity": 11,
+      "quantity": 3,
       "unit": "tbsp"
     },
     {
       "item": "apple cider vinegar",
-      "quantity": 4,
+      "quantity": 1.5,
       "unit": "tsp"
     },
     {
       "item": "honey",
-      "quantity": 4.5,
+      "quantity": 1.5,
       "unit": "tbsp"
     }
   ],
   "id": "hot-honey-chicken-cutlet-sandwiches",
   "ingredients": [
-    "1 1/2 pounds boneless skinless chicken breasts, usually 2 large breasts, split horizontally into 4 cutlets",
-    "2 1/2 teaspoons Diamond Crystal kosher salt or 1 1/2 teaspoons Morton kosher salt, divided",
-    "1 1/4 teaspoons black pepper, freshly ground if possible, divided",
-    "3/4 cup buttermilk",
+    "1 boneless skinless chicken breast cutlet, about 6 ounces",
+    "1 teaspoon Diamond Crystal kosher salt or 1/2 teaspoon Morton kosher salt, divided",
+    "1/2 teaspoon black pepper, freshly ground if possible, divided",
+    "1/4 cup buttermilk",
     "1 large egg",
-    "2 tablespoons Louisiana-style cayenne hot sauce, such as Frank's RedHot, Crystal, or Texas Pete, divided",
-    "1 tablespoon plus 1 teaspoon Dijon mustard, divided",
-    "1 (16-ounce) jar dill pickle chips, using 1 cup pickle chips and 3 tablespoons pickle brine",
-    "3/4 cup all-purpose flour",
-    "1 cup panko breadcrumbs",
-    "1/4 cup cornstarch",
-    "1 teaspoon baking powder",
-    "1 1/4 teaspoons smoked paprika, divided",
-    "1 1/4 teaspoons garlic powder, divided",
-    "1 teaspoon onion powder",
-    "3/4 teaspoon cayenne pepper, divided",
-    "1/2 teaspoon MSG, optional",
-    "1 1/2 cups avocado oil or another neutral high-heat oil, for shallow frying",
-    "4 potato buns",
-    "4 tablespoons unsalted butter, softened, divided",
-    "11 tablespoons mayonnaise, divided",
-    "3 cups plain shredded cabbage and carrot coleslaw mix, from a 10-ounce bag",
-    "2 green onions, thinly sliced",
-    "1 lime, juiced to yield 1 tablespoon lime juice",
-    "1 tablespoon plus 1 teaspoon apple cider vinegar, divided",
-    "1/4 cup plus 1 1/2 teaspoons honey, divided"
+    "1 tablespoon Louisiana-style cayenne hot sauce, such as Frank's RedHot, Crystal, or Texas Pete, divided",
+    "2 teaspoons Dijon mustard, divided",
+    "1 (16-ounce) jar dill pickle chips, using 1/4 cup pickle chips and 2 tablespoons pickle brine",
+    "1/4 cup all-purpose flour",
+    "1/3 cup panko breadcrumbs",
+    "1 tablespoon cornstarch",
+    "1/4 teaspoon baking powder",
+    "1/2 teaspoon smoked paprika, divided",
+    "1/2 teaspoon garlic powder, divided",
+    "1/4 teaspoon onion powder",
+    "1/4 teaspoon cayenne pepper, divided",
+    "Pinch MSG, optional",
+    "3/4 cup avocado oil or another neutral high-heat oil, or enough for a 1/4-inch layer",
+    "1 potato bun",
+    "1 tablespoon unsalted butter, softened, divided",
+    "3 tablespoons mayonnaise, divided",
+    "3/4 cup plain shredded cabbage and carrot coleslaw mix",
+    "1 green onion, thinly sliced",
+    "1 teaspoon fresh lime juice",
+    "1 1/2 teaspoons apple cider vinegar, divided",
+    "1 tablespoon plus 1 teaspoon honey, divided"
   ],
   "instructions": [
     "Set 1 wire rack inside a rimmed baking sheet for the breaded raw chicken, then set a second clean wire rack inside another rimmed baking sheet for the fried chicken.",
-    "Split the 1 1/2 pounds boneless skinless chicken breasts horizontally into 4 cutlets if they are not already cut thin.",
-    "Place the cutlets between sheets of plastic wrap or parchment and pound them to an even 1/2 inch thickness.",
-    "Season both sides of the 4 chicken cutlets with 1 teaspoon Diamond Crystal kosher salt and 1/2 teaspoon black pepper total.",
-    "In a shallow bowl, whisk together 3/4 cup buttermilk, 1 large egg, 1 tablespoon Louisiana-style cayenne hot sauce, 1 tablespoon Dijon mustard, and 1 tablespoon pickle brine from the dill pickle jar.",
-    "Add the seasoned chicken cutlets to the buttermilk mixture and turn each piece until fully coated.",
+    "If the chicken breast is not already a thin cutlet, split it horizontally and save the extra cutlet for another meal.",
+    "Place the chicken cutlet between sheets of plastic wrap or parchment and pound it to an even 1/2 inch thickness.",
+    "Season both sides of the chicken cutlet with 1/4 teaspoon Diamond Crystal kosher salt and 1/8 teaspoon black pepper.",
+    "In a shallow bowl, whisk together 1/4 cup buttermilk, 1 large egg, 1 teaspoon Louisiana-style cayenne hot sauce, 1 teaspoon Dijon mustard, and 1 teaspoon pickle brine from the dill pickle jar.",
+    "Add the seasoned chicken cutlet to the buttermilk mixture and turn until fully coated.",
     "Let the chicken sit in the buttermilk mixture at room temperature for 10 minutes while making the sauce and slaw.",
-    "Make the garlic mayo by stirring together 1/2 cup mayonnaise, 1 tablespoon pickle brine, 1 teaspoon Louisiana-style cayenne hot sauce, 1 teaspoon Dijon mustard, 1/2 teaspoon honey, 1/4 teaspoon smoked paprika, 1/4 teaspoon garlic powder, and 1/8 teaspoon Diamond Crystal kosher salt.",
+    "Make the garlic mayo by stirring together 2 tablespoons mayonnaise, 1 teaspoon pickle brine, 1/2 teaspoon Louisiana-style cayenne hot sauce, 1 teaspoon Dijon mustard, 1/2 teaspoon honey, a pinch smoked paprika, a pinch garlic powder, and a tiny pinch Diamond Crystal kosher salt.",
     "Refrigerate the garlic mayo until assembly.",
-    "Make the lime slaw by whisking together 3 tablespoons mayonnaise, 1 tablespoon lime juice, 1 tablespoon apple cider vinegar, 1 tablespoon pickle brine, 1 teaspoon honey, 1/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper in a medium bowl.",
-    "Add 3 cups plain shredded cabbage and carrot coleslaw mix and the 2 thinly sliced green onions to the lime dressing.",
+    "Make the lime slaw by whisking together 1 tablespoon mayonnaise, 1 teaspoon fresh lime juice, 1 teaspoon apple cider vinegar, 1 teaspoon pickle brine, 1/2 teaspoon honey, a tiny pinch Diamond Crystal kosher salt, and a pinch black pepper in a medium bowl.",
+    "Add 3/4 cup plain shredded cabbage and carrot coleslaw mix and the thinly sliced green onion to the lime dressing.",
     "Toss the slaw for 30 seconds, until all of the cabbage is lightly coated, then refrigerate it until assembly.",
-    "Make the dry coating in a wide shallow bowl by whisking together 3/4 cup all-purpose flour, 1 cup panko breadcrumbs, 1/4 cup cornstarch, 1 teaspoon baking powder, 1 teaspoon smoked paprika, 1 teaspoon garlic powder, 1 teaspoon onion powder, 1/2 teaspoon cayenne pepper, 1 teaspoon Diamond Crystal kosher salt, 1/2 teaspoon black pepper, and 1/2 teaspoon MSG if using.",
-    "Drizzle 2 tablespoons of the buttermilk mixture into the dry coating and rub it through with your fingers until small shaggy clumps form.",
+    "Make the dry coating in a wide shallow bowl by whisking together 1/4 cup all-purpose flour, 1/3 cup panko breadcrumbs, 1 tablespoon cornstarch, 1/4 teaspoon baking powder, 1/4 teaspoon smoked paprika, 1/4 teaspoon garlic powder, 1/4 teaspoon onion powder, 1/8 teaspoon cayenne pepper, 1/2 teaspoon Diamond Crystal kosher salt, 1/4 teaspoon black pepper, and a pinch MSG if using.",
+    "Drizzle 1 tablespoon of the buttermilk mixture into the dry coating and rub it through with your fingers until small shaggy clumps form.",
     "Remove 1 chicken cutlet from the buttermilk mixture and let the excess drip back into the bowl for 3 to 5 seconds.",
     "Press the chicken cutlet firmly into the dry coating on both sides.",
     "Dip the coated chicken cutlet back into the buttermilk mixture for 1 second, then let the excess drip off.",
     "Press the chicken cutlet into the dry coating a second time, packing the panko-flour mixture onto both sides until there are no wet spots.",
-    "Place the breaded chicken cutlet on the raw-chicken wire rack and repeat with the remaining 3 cutlets.",
+    "Place the breaded chicken cutlet on the raw-chicken wire rack.",
     "Let the breaded chicken rest on the raw-chicken wire rack for 10 minutes so the coating absorbs moisture and sticks.",
-    "While the chicken rests, spread 2 tablespoons softened unsalted butter over the cut sides of the 4 potato buns.",
-    "Heat the cast-iron skillet or heavy saute pan over medium heat, then toast the buttered buns cut-side down for 1 to 2 minutes, until golden brown.",
-    "Move the toasted buns to a plate and wipe out any loose crumbs from the skillet.",
-    "Pour 1 1/2 cups avocado oil into the skillet, or enough to make a 1/4-inch layer.",
+    "While the chicken rests, spread 1/2 tablespoon softened unsalted butter over the cut sides of the potato bun.",
+    "Heat the cast-iron skillet or heavy saute pan over medium heat, then toast the buttered bun cut-side down for 1 to 2 minutes, until golden brown.",
+    "Move the toasted bun to a plate and wipe out any loose crumbs from the skillet.",
+    "Pour 3/4 cup avocado oil into the skillet, or enough to make a 1/4-inch layer.",
     "Heat the oil over medium to medium-high heat until it reaches 350 degrees F.",
-    "Fry 2 chicken cutlets at a time so the pan is not crowded.",
+    "Fry the chicken cutlet without crowding the pan.",
     "Cook the first side for 3 to 4 minutes, until deep golden brown and crisp.",
-    "Flip the chicken cutlets with tongs and cook the second side for 2 to 3 minutes, until deep golden brown and the center of each cutlet reaches 165 degrees F.",
-    "Transfer the fried chicken cutlets to the clean wire rack, keeping them in a single layer so steam can escape.",
-    "Let the oil return to 350 degrees F before frying the remaining 2 chicken cutlets.",
-    "While the second batch fries, make the hot honey butter by warming 2 tablespoons unsalted butter, 1/4 cup honey, 2 teaspoons Louisiana-style cayenne hot sauce, 1 teaspoon apple cider vinegar, 1/4 teaspoon cayenne pepper, and 1/8 teaspoon Diamond Crystal kosher salt in a small saucepan or microwave-safe bowl until the butter melts.",
+    "Flip the chicken cutlet with tongs and cook the second side for 2 to 3 minutes, until deep golden brown and the center reaches 165 degrees F.",
+    "Transfer the fried chicken cutlet to the clean wire rack so steam can escape.",
+    "Make the hot honey butter by warming the remaining 1/2 tablespoon unsalted butter, 1 tablespoon honey, 1 teaspoon Louisiana-style cayenne hot sauce, 1/2 teaspoon apple cider vinegar, the remaining 1/8 teaspoon cayenne pepper, and a tiny pinch Diamond Crystal kosher salt in a small saucepan or microwave-safe bowl until the butter melts.",
     "Stir the hot honey butter until glossy and smooth.",
-    "Brush or spoon the hot honey butter over both sides of the fried chicken cutlets while they are still hot.",
-    "Spread about 1 tablespoon garlic mayo on each toasted bottom bun.",
-    "Add 1/4 cup dill pickle chips to each bottom bun.",
-    "Place 1 hot honey chicken cutlet on each bottom bun.",
-    "Top each chicken cutlet with about 1/2 cup lime slaw.",
-    "Spread about 1 tablespoon garlic mayo on each toasted top bun.",
-    "Close the sandwiches and serve immediately while the chicken crust is crisp."
+    "Brush or spoon the hot honey butter over both sides of the fried chicken cutlet while it is still hot.",
+    "Spread about 1 tablespoon garlic mayo on the toasted bottom bun.",
+    "Add 1/4 cup dill pickle chips to the bottom bun.",
+    "Place the hot honey chicken cutlet on the bottom bun.",
+    "Top the chicken cutlet with about 1/2 cup lime slaw.",
+    "Spread about 1 tablespoon garlic mayo on the toasted top bun.",
+    "Close the sandwich and serve immediately while the chicken crust is crisp."
   ],
   "link": null,
   "notes": [
@@ -228,15 +227,15 @@
     "Use separate racks for raw breaded chicken and fried chicken. The clean rack also keeps the bottom crust from steaming soft.",
     "Keep the oil between 325 degrees F and 350 degrees F while frying. If the coating browns before the chicken reaches 165 degrees F, lower the heat slightly.",
     "The slaw should stay lightly dressed, not wet. If the coleslaw mix releases liquid while waiting, lift the slaw with tongs and leave extra dressing behind during assembly.",
-    "For a less spicy sandwich, reduce the cayenne pepper in the dry coating to 1/4 teaspoon and skip the 1/4 teaspoon cayenne pepper in the hot honey butter.",
-    "For a hotter sandwich, add 1/4 teaspoon extra cayenne pepper to the hot honey butter.",
-    "Serve right after brushing with hot honey butter so the crust stays crisp and the buns stay toasted."
+    "For a less spicy sandwich, skip the cayenne pepper in the dry coating and hot honey butter.",
+    "For a hotter sandwich, add 1/8 to 1/4 teaspoon extra cayenne pepper to the hot honey butter.",
+    "Serve right after brushing with hot honey butter so the crust stays crisp and the bun stays toasted."
   ],
   "nutrition": null,
   "personalNotes": [],
-  "prepTime": "25 minutes",
+  "prepTime": "20 minutes",
   "rating": null,
-  "servings": "4 sandwiches",
+  "servings": "1 sandwich",
   "tags": {
     "difficulty": "medium",
     "equipment": [
@@ -245,6 +244,6 @@
     ],
     "status": "not-tried"
   },
-  "title": "Hot Honey Chicken Cutlet Sandwiches",
-  "totalTime": "45 to 50 minutes"
+  "title": "Hot Honey Chicken Cutlet Sandwich",
+  "totalTime": "35 to 40 minutes"
 }

@@ -1,8 +1,8 @@
 {
   "additionalTime": "4 to 24 hours brine time",
   "author": "Robert Carr",
-  "cookTime": "30 minutes",
-  "description": "A Nashville hot chicken sandwich with pickle-buttermilk brined chicken thighs, a rough, crisp fried crust, spicy hot oil, bright pickle slaw, dill pickles, comeback sauce, and toasted potato or brioche buns.",
+  "cookTime": "25 minutes",
+  "description": "A Nashville hot chicken sandwich with a pickle-buttermilk brined chicken thigh, a rough, crisp fried crust, spicy hot oil, bright pickle slaw, dill pickles, comeback sauce, and a toasted potato or brioche bun.",
   "equipment": [
     "2 rimmed baking sheets",
     "2 wire racks",
@@ -16,33 +16,23 @@
   "groceryIngredients": [
     {
       "item": "boneless skinless chicken thigh",
-      "quantity": 2,
-      "unit": "lb"
+      "quantity": 8,
+      "unit": "oz"
     },
     {
       "item": "buttermilk",
-      "quantity": 2,
-      "unit": "cups"
-    },
-    {
-      "item": "pickle brine",
       "quantity": 0.5,
       "unit": "cup"
     },
     {
       "item": "pickle brine",
-      "quantity": 1,
+      "quantity": 3,
       "unit": "tbsp"
     },
     {
-      "item": "pickle brine",
-      "quantity": 1,
-      "unit": "tsp"
-    },
-    {
       "item": "Louisiana-style cayenne hot sauce",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": 1,
+      "unit": "tbsp"
     },
     {
       "item": "Louisiana-style cayenne hot sauce",
@@ -55,38 +45,38 @@
     },
     {
       "item": "kosher salt",
-      "quantity": 4.5,
+      "quantity": 1.5,
       "unit": "tsp"
     },
     {
       "item": "all-purpose flour",
-      "quantity": 2,
-      "unit": "cups"
-    },
-    {
-      "item": "cornstarch",
-      "quantity": 0.5,
+      "quantity": 0.75,
       "unit": "cup"
     },
     {
+      "item": "cornstarch",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
       "item": "baking powder",
-      "quantity": 1,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "black pepper",
-      "quantity": 2.25,
+      "quantity": 1,
       "unit": "tsp"
     },
     {
       "item": "cayenne pepper",
-      "quantity": 5,
+      "quantity": 2,
       "unit": "tbsp"
     },
     {
       "item": "smoked paprika",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 1.5,
+      "unit": "tsp"
     },
     {
       "item": "smoked paprika",
@@ -96,7 +86,7 @@
     {
       "item": "garlic powder",
       "quantity": 1,
-      "unit": "tbsp"
+      "unit": "tsp"
     },
     {
       "item": "garlic powder",
@@ -106,40 +96,40 @@
     {
       "item": "onion powder",
       "quantity": 1,
-      "unit": "tbsp"
+      "unit": "tsp"
     },
     {
       "item": "chili powder",
-      "quantity": 2,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "light brown sugar",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 1.5,
+      "unit": "tsp"
     },
     {
       "item": "mustard powder",
-      "quantity": 1,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "MSG",
-      "quantity": 1,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
       "item": "neutral frying oil",
-      "quantity": 6,
-      "unit": "cups"
+      "quantity": 3,
+      "unit": "cup"
     },
     {
       "item": "potato bun or brioche bun",
-      "quantity": 4
+      "quantity": 1
     },
     {
       "item": "unsalted butter",
-      "quantity": 2,
+      "quantity": 0.5,
       "unit": "tbsp"
     },
     {
@@ -149,122 +139,116 @@
     },
     {
       "item": "plain shredded cabbage and carrot coleslaw mix",
-      "quantity": 3,
-      "unit": "cups"
+      "quantity": 0.75,
+      "unit": "cup"
     },
     {
       "item": "mayonnaise",
-      "quantity": 0.5,
+      "quantity": 0.25,
       "unit": "cup"
     },
     {
       "item": "apple cider vinegar",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 1.5,
+      "unit": "tsp"
     },
     {
       "item": "honey",
-      "quantity": 2,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
       "item": "celery seed",
-      "quantity": 0.5,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
       "item": "ketchup",
       "quantity": 1,
-      "unit": "tbsp"
+      "unit": "tsp"
     },
     {
       "item": "Dijon mustard",
-      "quantity": 1,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "Worcestershire sauce",
-      "quantity": 1,
+      "quantity": 0.25,
       "unit": "tsp"
     }
   ],
   "id": "nashville-hot-chicken-sandwich",
   "ingredients": [
-    "2 pounds boneless skinless chicken thighs, ideally 4 large thighs",
-    "2 cups buttermilk",
-    "1/2 cup pickle juice from a jar of dill pickle chips, for the brine",
-    "1/4 cup Louisiana-style cayenne hot sauce, for the brine",
+    "1 large boneless skinless chicken thigh, about 6 to 8 ounces",
+    "1/2 cup buttermilk",
+    "3 tablespoons pickle juice from a jar of dill pickle chips, divided",
+    "1 tablespoon Louisiana-style cayenne hot sauce, for the brine",
     "1 large egg",
-    "4 1/2 teaspoons kosher salt, divided",
-    "2 cups all-purpose flour",
-    "1/2 cup cornstarch",
-    "1 teaspoon baking powder",
-    "2 1/4 teaspoons black pepper, divided",
-    "5 tablespoons cayenne pepper, divided",
-    "2 tablespoons plus 1/4 teaspoon smoked paprika, divided",
-    "1 tablespoon plus 1/4 teaspoon garlic powder, divided",
-    "1 tablespoon onion powder, divided",
-    "2 teaspoons chili powder",
-    "2 tablespoons light brown sugar",
-    "1 teaspoon mustard powder",
-    "1 teaspoon MSG, optional",
-    "6 cups neutral frying oil, such as peanut, canola, or vegetable oil",
-    "4 sturdy potato buns or brioche buns",
-    "2 tablespoons unsalted butter, softened",
-    "1 cup crinkle-cut hamburger dill pickle chips",
-    "3 cups plain shredded cabbage and carrot coleslaw mix",
-    "1/4 cup mayonnaise, for the slaw",
-    "2 tablespoons apple cider vinegar",
-    "1 tablespoon pickle juice from the dill pickle jar, for the slaw",
-    "2 teaspoons honey",
-    "1/2 teaspoon celery seed",
-    "1/4 cup mayonnaise, for the comeback sauce",
-    "1 tablespoon ketchup",
-    "1 teaspoon Dijon mustard",
-    "1 teaspoon Worcestershire sauce",
-    "1 teaspoon Louisiana-style cayenne hot sauce, for the comeback sauce",
-    "1 teaspoon pickle juice from the dill pickle jar, for the comeback sauce",
-    "1/4 teaspoon garlic powder",
-    "1/4 teaspoon smoked paprika"
+    "1 1/2 teaspoons kosher salt, divided",
+    "3/4 cup all-purpose flour",
+    "2 tablespoons cornstarch",
+    "1/4 teaspoon baking powder",
+    "1 teaspoon black pepper, divided",
+    "2 tablespoons cayenne pepper, divided",
+    "1 1/2 teaspoons smoked paprika, divided",
+    "1 teaspoon garlic powder, divided",
+    "1 teaspoon onion powder, divided",
+    "1/2 teaspoon chili powder",
+    "1 1/2 teaspoons light brown sugar",
+    "1/4 teaspoon mustard powder",
+    "Pinch MSG, optional",
+    "3 cups neutral frying oil, such as peanut, canola, or vegetable oil, or enough for 2 inches in a small pot",
+    "1 sturdy potato bun or brioche bun",
+    "1/2 tablespoon unsalted butter, softened",
+    "1/4 cup crinkle-cut hamburger dill pickle chips",
+    "3/4 cup plain shredded cabbage and carrot coleslaw mix",
+    "2 tablespoons mayonnaise, divided",
+    "1 1/2 teaspoons apple cider vinegar",
+    "1/2 teaspoon honey",
+    "Pinch celery seed",
+    "1 teaspoon ketchup",
+    "1/4 teaspoon Dijon mustard",
+    "1/4 teaspoon Worcestershire sauce",
+    "1/2 teaspoon Louisiana-style cayenne hot sauce, for the comeback sauce"
   ],
   "instructions": [
-    "Trim any large loose pieces of fat from the 2 pounds boneless skinless chicken thighs.",
-    "If the chicken thighs are very thick, lightly pound them to an even 1/2 to 3/4 inch thickness.",
-    "In a large bowl, whisk together 2 cups buttermilk, 1/2 cup pickle juice from the dill pickle jar, 1/4 cup Louisiana-style cayenne hot sauce, 1 large egg, and 1 1/2 teaspoons kosher salt.",
-    "Add the chicken thighs to the buttermilk brine and toss until fully coated.",
+    "Trim any large loose pieces of fat from the chicken thigh.",
+    "If the chicken thigh is very thick, lightly pound it to an even 1/2 to 3/4 inch thickness.",
+    "In a bowl, whisk together 1/2 cup buttermilk, 2 tablespoons pickle juice from the dill pickle jar, 1 tablespoon Louisiana-style cayenne hot sauce, 1 large egg, and 1/2 teaspoon kosher salt.",
+    "Add the chicken thigh to the buttermilk brine and toss until fully coated.",
     "Cover and refrigerate for at least 4 hours, or up to 24 hours.",
-    "Make the Nashville spice blend by mixing 4 tablespoons cayenne pepper, 1 tablespoon smoked paprika, 2 teaspoons chili powder, 2 teaspoons garlic powder, 2 teaspoons onion powder, 2 tablespoons light brown sugar, 1 teaspoon mustard powder, 1 teaspoon black pepper, 1 teaspoon kosher salt, and 1 teaspoon MSG if using.",
-    "Make the seasoned flour coating by whisking together 2 cups all-purpose flour, 1/2 cup cornstarch, 1 teaspoon baking powder, 1 tablespoon cayenne pepper, 1 tablespoon smoked paprika, 1 teaspoon garlic powder, 1 teaspoon onion powder, 1 teaspoon black pepper, and 2 teaspoons kosher salt.",
-    "Drizzle 3 tablespoons of the buttermilk brine into the seasoned flour and rub it in with your fingers until small clumps form.",
-    "Make the comeback sauce by stirring together 1/4 cup mayonnaise, 1 tablespoon ketchup, 1 teaspoon Dijon mustard, 1 teaspoon Worcestershire sauce, 1 teaspoon Louisiana-style cayenne hot sauce, 1 teaspoon pickle juice from the dill pickle jar, 1/4 teaspoon garlic powder, and 1/4 teaspoon smoked paprika.",
-    "Refrigerate the comeback sauce until the sandwiches are ready to assemble.",
+    "Make the Nashville spice blend by mixing 1 tablespoon cayenne pepper, 1 teaspoon smoked paprika, 1/2 teaspoon chili powder, 1/2 teaspoon garlic powder, 1/2 teaspoon onion powder, 1 1/2 teaspoons light brown sugar, 1/4 teaspoon mustard powder, 1/4 teaspoon black pepper, 1/4 teaspoon kosher salt, and a pinch MSG if using.",
+    "Make the seasoned flour coating by whisking together 3/4 cup all-purpose flour, 2 tablespoons cornstarch, 1/4 teaspoon baking powder, 1 tablespoon cayenne pepper, 1/2 teaspoon smoked paprika, 1/2 teaspoon garlic powder, 1/2 teaspoon onion powder, 1/4 teaspoon black pepper, and 1/2 teaspoon kosher salt.",
+    "Drizzle 1 tablespoon of the buttermilk brine into the seasoned flour and rub it in with your fingers until small clumps form.",
+    "Make the comeback sauce by stirring together 1 tablespoon mayonnaise, 1 teaspoon ketchup, 1/4 teaspoon Dijon mustard, 1/4 teaspoon Worcestershire sauce, 1/2 teaspoon Louisiana-style cayenne hot sauce, 1/2 teaspoon pickle juice from the dill pickle jar, a pinch garlic powder, and a pinch smoked paprika.",
+    "Refrigerate the comeback sauce until the sandwich is ready to assemble.",
     "Set 1 wire rack inside a rimmed baking sheet for the breaded raw chicken, then set a second clean wire rack inside another rimmed baking sheet for the fried chicken.",
     "Remove one piece of chicken from the brine and let the excess drip off.",
     "Press the chicken firmly into the seasoned flour on both sides.",
     "Dip the chicken briefly back into the brine.",
     "Press the chicken into the seasoned flour a second time, packing the flour onto the surface to build a rough crust.",
     "Gently shake off any loose dry flour so the coating looks rough but not dusty.",
-    "Place the breaded chicken on the raw-chicken wire rack and repeat with the remaining thighs.",
+    "Place the breaded chicken on the raw-chicken wire rack.",
     "Let the breaded chicken rest for 15 to 20 minutes while the oil heats.",
-    "Add 6 cups neutral frying oil to a Dutch oven or heavy-bottomed pot, making sure the pot is not filled more than halfway.",
+    "Add 3 cups neutral frying oil to a small Dutch oven or heavy-bottomed pot, or use enough oil for 2 inches of depth, making sure the pot is not filled more than halfway.",
     "Heat the oil to 350°F.",
-    "Make the slaw by mixing 3 cups plain shredded cabbage and carrot coleslaw mix, 1/4 cup mayonnaise, 2 tablespoons apple cider vinegar, 1 tablespoon pickle juice from the dill pickle jar, 2 teaspoons honey, 1/2 teaspoon celery seed, 1/4 teaspoon black pepper, and a small pinch of kosher salt.",
+    "Make the slaw by mixing 3/4 cup plain shredded cabbage and carrot coleslaw mix, 1 tablespoon mayonnaise, 1 1/2 teaspoons apple cider vinegar, 1/2 teaspoon pickle juice from the dill pickle jar, 1/2 teaspoon honey, a pinch celery seed, a pinch black pepper, and a small pinch of kosher salt.",
     "Taste the slaw and adjust with more vinegar, pickle juice, honey, or salt until it tastes bright, tangy, and lightly creamy.",
-    "Spread 2 tablespoons softened unsalted butter over the cut sides of 4 potato buns or brioche buns.",
-    "Toast the buns in a dry pan until golden brown, then set aside.",
-    "Fry the chicken in batches, keeping the oil between 325°F and 350°F, until deeply golden brown and the center reaches 175°F to 185°F, about 6 to 8 minutes depending on thickness.",
-    "Transfer the fried chicken to the clean wire rack, keeping the pieces in a single layer so steam can escape.",
+    "Spread 1/2 tablespoon softened unsalted butter over the cut sides of the potato bun or brioche bun.",
+    "Toast the bun in a dry pan until golden brown, then set aside.",
+    "Fry the chicken, keeping the oil between 325°F and 350°F, until deeply golden brown and the center reaches 175°F to 185°F, about 6 to 8 minutes depending on thickness.",
+    "Transfer the fried chicken to the clean wire rack so steam can escape.",
     "Let the fried chicken rest for 3 to 5 minutes so the juices settle and the crust stays crisp.",
-    "Let the oil return to 350°F before frying the next batch.",
-    "Carefully ladle 1/2 cup of the hot frying oil into the Nashville spice blend.",
+    "Carefully ladle 2 tablespoons of the hot frying oil into the Nashville spice blend.",
     "Whisk until the spices form a glossy red hot oil.",
-    "Brush the hot oil generously over both sides of each piece of fried chicken just before assembling the sandwiches.",
-    "Spread comeback sauce on the toasted bottom buns.",
-    "Add 1 cup crinkle-cut hamburger dill pickle chips across the 4 bottom buns.",
-    "Add 1 piece of Nashville hot chicken to each sandwich.",
-    "Top each sandwich with creamy slaw.",
-    "Spread comeback sauce on the toasted top buns.",
-    "Close the sandwiches and serve immediately."
+    "Brush the hot oil generously over both sides of the fried chicken just before assembling the sandwich.",
+    "Spread comeback sauce on the toasted bottom bun.",
+    "Add 1/4 cup crinkle-cut hamburger dill pickle chips to the bottom bun.",
+    "Add the Nashville hot chicken to the sandwich.",
+    "Top the sandwich with creamy slaw.",
+    "Spread comeback sauce on the toasted top bun.",
+    "Close the sandwich and serve immediately."
   ],
   "link": null,
   "notes": [
@@ -280,18 +264,18 @@
     "Resting the breaded chicken before frying helps the coating stick.",
     "Use separate racks for raw breaded chicken and fried chicken. The clean rack also keeps the bottom crust from steaming soft.",
     "The hot oil should be mixed with the spices after frying, not before, so the sugar and cayenne do not burn.",
-    "Use 4 tablespoons cayenne in the hot oil for a hot sandwich. Use 2 tablespoons for medium heat or 5 to 6 tablespoons for very hot.",
+    "Use 1 tablespoon cayenne in the hot oil for a hot sandwich. Use 2 teaspoons for medium heat or 1 1/2 tablespoons for very hot.",
     "The coleslaw mix should be a plain shredded cabbage and carrot mix, not a salad kit with dressing included.",
     "The slaw should taste tangy and fresh on its own; that acidity is what keeps the sandwich from feeling heavy.",
     "The comeback sauce, slaw, and pickles are important because they balance the heat and richness.",
-    "Serve the sandwiches right after brushing the chicken with hot oil for the best crust.",
+    "Serve the sandwich right after brushing the chicken with hot oil for the best crust.",
     "Leftover chicken reheats best on a wire rack in a 375°F oven or air fryer until hot and crisp."
   ],
   "nutrition": null,
   "personalNotes": [],
-  "prepTime": "35 minutes",
+  "prepTime": "25 minutes",
   "rating": null,
-  "servings": "4 sandwiches",
+  "servings": "1 sandwich",
   "tags": {
     "equipment": [
       "deep fryer",
@@ -300,6 +284,6 @@
     ],
     "status": "not-tried"
   },
-  "title": "Nashville Hot Chicken Sandwiches",
-  "totalTime": "1 hour 5 minutes plus 4 to 24 hours brine time"
+  "title": "Nashville Hot Chicken Sandwich",
+  "totalTime": "50 minutes plus 4 to 24 hours brine time"
 }
