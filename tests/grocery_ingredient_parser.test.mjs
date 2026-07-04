@@ -158,6 +158,7 @@ test("parseStructuredGroceryIngredient preserves shopping-critical specific labe
       parseStructuredGroceryIngredient({ item: "fresh ginger", quantity: 1, unit: "tbsp" }),
       parseStructuredGroceryIngredient({ item: "extra-virgin olive oil", quantity: 1, unit: "tsp" }),
       parseStructuredGroceryIngredient({ item: "lard or unsalted butter", quantity: 3, unit: "tbsp" }),
+      parseStructuredGroceryIngredient({ item: "canned full-fat coconut milk", quantity: 1, unit: "cup" }),
     ].map((entry) => ({
       base: entry.canonical.base,
       display: entry.canonical.display,
@@ -248,6 +249,12 @@ test("parseStructuredGroceryIngredient preserves shopping-critical specific labe
         display: "lard or unsalted butter",
         unitKey: "tbsp",
         quantityRange: { min: 3, max: 3 },
+      },
+      {
+        base: "coconut milk",
+        display: "coconut milk",
+        unitKey: "cup",
+        quantityRange: { min: 1, max: 1 },
       },
     ]
   );

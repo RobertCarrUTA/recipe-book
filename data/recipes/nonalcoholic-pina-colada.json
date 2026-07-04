@@ -1,0 +1,82 @@
+{
+  "additionalTime": "0 minutes",
+  "author": "Robert Carr",
+  "cookTime": "0 minutes",
+  "description": "A creamy blended nonalcoholic pina colada with frozen pineapple, pineapple juice, sweetened cream of coconut, coconut milk, ice, and a tiny pinch of salt. It is sweet, smooth, and tropical without rum flavor.",
+  "equipment": [
+    "Blender",
+    "Can opener",
+    "Liquid measuring cup",
+    "Rubber spatula",
+    "Hurricane glasses or tall glasses"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "frozen pineapple chunks",
+      "quantity": 3,
+      "unit": "cup"
+    },
+    {
+      "item": "pineapple juice",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "cream of coconut",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "coconut milk",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "item": "fine salt",
+      "quantity": 0.125,
+      "unit": "tsp"
+    }
+  ],
+  "id": "nonalcoholic-pina-colada",
+  "ingredients": [
+    "3 cups frozen pineapple chunks",
+    "2 cups cold pineapple juice, plus 1/4 cup more if needed",
+    "1 cup sweetened cream of coconut, stirred smooth",
+    "1 cup canned full-fat coconut milk, shaken well",
+    "1/8 teaspoon fine salt",
+    "2 to 3 cups ice"
+  ],
+  "instructions": [
+    "Shake the can of coconut milk well before opening. Stir or shake the cream of coconut until it is completely smooth.",
+    "Add 2 cups cold pineapple juice, 1 cup cream of coconut, 1 cup coconut milk, and 1/8 teaspoon fine salt to a blender.",
+    "Add 3 cups frozen pineapple chunks and 2 cups ice.",
+    "Blend on high until completely smooth and creamy, stopping once to scrape down the sides if needed.",
+    "Check the texture. For a thicker frozen drink, blend in another 1/2 to 1 cup ice. For a looser, more sippable drink, blend in pineapple juice 2 tablespoons at a time.",
+    "Taste and adjust only if needed. For a sweeter drink, blend in 1 to 2 tablespoons more cream of coconut. For a brighter drink, add a tiny squeeze of fresh lime juice.",
+    "Pour into cold hurricane glasses or tall glasses and serve immediately."
+  ],
+  "link": null,
+  "notes": [
+    "This recipe is fully nonalcoholic and does not use rum extract, bitters, or anything meant to imitate rum. It should taste like pineapple, coconut, and sunshine, not alcohol.",
+    "Use sweetened cream of coconut, such as Coco Lopez, not unsweetened coconut cream. Cream of coconut is what gives the drink its sweet, beach-bar pina colada flavor.",
+    "Frozen pineapple makes the drink thicker and more flavorful than using ice alone.",
+    "Canned full-fat coconut milk makes the drink creamy without adding dairy. Shake the can hard before opening so the coconut fat and liquid recombine.",
+    "The tiny pinch of salt should not taste salty. It makes the pineapple and coconut taste sweeter and fuller.",
+    "If making this for someone who prefers it very sweet, add the extra cream of coconut before adding more pineapple juice.",
+    "If the blender struggles, add a splash more pineapple juice and blend again."
+  ],
+  "nutrition": null,
+  "prepTime": "10 minutes",
+  "rating": null,
+  "servings": "4 drinks",
+  "source": "original",
+  "tags": {
+    "equipment": [
+      "blender",
+      "no-cook"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Nonalcoholic Pina Colada",
+  "totalTime": "10 minutes"
+}
