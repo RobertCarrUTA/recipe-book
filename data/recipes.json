@@ -9844,8 +9844,9 @@
         "quantity": 1
       },
       {
-        "item": "American cheese slice",
-        "quantity": 2
+        "item": "American cheese",
+        "quantity": 2,
+        "unit": "slice"
       },
       {
         "item": "yellow onion",
