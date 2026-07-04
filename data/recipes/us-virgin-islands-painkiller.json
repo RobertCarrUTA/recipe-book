@@ -1,0 +1,95 @@
+{
+  "additionalTime": "0 minutes",
+  "author": "Robert Carr",
+  "cookTime": "0 minutes",
+  "description": "A sweeter, smoother Virgin Islands-style Painkiller with dark rum, pineapple juice, fresh orange juice, extra cream of coconut, crushed ice, freshly grated nutmeg, and a tiny pinch of salt to make the fruit and coconut pop.",
+  "equipment": [
+    "Cocktail shaker",
+    "Jigger",
+    "Citrus juicer",
+    "Fine grater or microplane",
+    "Hurricane glasses or double rocks glasses"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "Cruzan dark rum or smooth dark rum",
+      "item": "Cruzan dark rum or smooth dark rum",
+      "quantity": 6,
+      "unit": "oz"
+    },
+    {
+      "item": "pineapple juice",
+      "quantity": 16,
+      "unit": "oz"
+    },
+    {
+      "item": "fresh orange juice",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "item": "cream of coconut",
+      "quantity": 6,
+      "unit": "oz"
+    },
+    {
+      "item": "fine salt",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "item": "whole nutmeg",
+      "quantity": 1
+    },
+    {
+      "item": "orange",
+      "optional": true,
+      "quantity": 1
+    }
+  ],
+  "id": "us-virgin-islands-painkiller",
+  "ingredients": [
+    "6 ounces Cruzan dark rum or another smooth 80-proof dark rum, chilled",
+    "16 ounces pineapple juice, chilled",
+    "4 ounces fresh orange juice, chilled",
+    "6 ounces cream of coconut, stirred smooth",
+    "1/8 teaspoon fine salt",
+    "Crushed ice, for shaking and serving",
+    "Freshly grated nutmeg, for finishing",
+    "4 orange wedges, optional, for garnish"
+  ],
+  "instructions": [
+    "Stir or shake the cream of coconut until it is completely smooth. If it is separated or stiff, set the closed can or squeeze bottle in warm water for a few minutes, then shake well.",
+    "Make the drinks one at a time for the coldest texture. For each drink, add 1 1/2 ounces rum, 4 ounces pineapple juice, 1 ounce fresh orange juice, 1 1/2 ounces cream of coconut, and a tiny pinch of fine salt to a cocktail shaker.",
+    "Fill the shaker about two-thirds full with ice, seal, and shake hard for 15 seconds, until the shaker is frosty and the drink looks creamy.",
+    "Fill a hurricane glass or double rocks glass with crushed ice.",
+    "Strain the drink over the crushed ice.",
+    "Grate a generous dusting of fresh nutmeg over the top and garnish with an orange wedge if using.",
+    "Serve immediately, then repeat with the remaining ingredients."
+  ],
+  "link": "https://en.wikipedia.org/wiki/Painkiller_(cocktail)",
+  "notes": [
+    "This version is intentionally sweeter and less alcohol-forward than the classic Painkiller formula. It is tuned for the creamy, easy-drinking style common at beach bars around the U.S. Virgin Islands.",
+    "Cruzan dark rum gives this a U.S. Virgin Islands lean and stays softer than many navy-style rums. Avoid overproof rum, heavily spiced rum, or anything that tastes hot neat.",
+    "Use sweetened cream of coconut, such as Coco Lopez, not unsweetened coconut cream or coconut milk.",
+    "The tiny pinch of salt is not traditional, but it should disappear into the drink and make the pineapple, orange, and coconut taste fuller. Do not add enough that the drink tastes salty.",
+    "Lime is not part of the classic Painkiller profile. If the drink tastes flat because the juices are dull or the cream of coconut is very heavy, add only a tiny squeeze of fresh lime, about 1/8 ounce per drink, then shake again.",
+    "If you want the rum even more hidden, use 1 ounce rum per drink and keep every other ingredient the same. If you want a classic-strength drink, use 2 ounces rum per drink.",
+    "For a thicker, sweeter drink, add another 1/4 ounce cream of coconut per serving. For a lighter drink, use 1 1/4 ounces cream of coconut per serving.",
+    "Freshly grated nutmeg is part of the drink, not just decoration. It gives the first sip its warm island-spice aroma.",
+    "Shake instead of blending. The drink should be cold, creamy, and poured over crushed ice, not frozen into a slush."
+  ],
+  "nutrition": null,
+  "prepTime": "10 minutes",
+  "rating": null,
+  "servings": "4 drinks",
+  "source": "original",
+  "tags": {
+    "equipment": [
+      "no-cook"
+    ],
+    "status": "not-tried"
+  },
+  "title": "U.S. Virgin Islands Painkiller",
+  "totalTime": "10 minutes"
+}

@@ -13548,5 +13548,182 @@
     },
     "title": "Carne Asada Burritos with Crispy Potatoes and Roasted Arbol-Tomatillo Drip Hot Sauce",
     "totalTime": "1 hour 55 minutes plus 2 to 8 hours steak marinade"
+  },
+  {
+    "additionalTime": "0 minutes",
+    "author": "Robert Carr",
+    "cookTime": "0 minutes",
+    "description": "A sweeter, smoother Virgin Islands-style Painkiller with dark rum, pineapple juice, fresh orange juice, extra cream of coconut, crushed ice, freshly grated nutmeg, and a tiny pinch of salt to make the fruit and coconut pop.",
+    "equipment": [
+      "Cocktail shaker",
+      "Jigger",
+      "Citrus juicer",
+      "Fine grater or microplane",
+      "Hurricane glasses or double rocks glasses"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "Cruzan dark rum or smooth dark rum",
+        "item": "Cruzan dark rum or smooth dark rum",
+        "quantity": 6,
+        "unit": "oz"
+      },
+      {
+        "item": "pineapple juice",
+        "quantity": 16,
+        "unit": "oz"
+      },
+      {
+        "item": "fresh orange juice",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "item": "cream of coconut",
+        "quantity": 6,
+        "unit": "oz"
+      },
+      {
+        "item": "fine salt",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "item": "whole nutmeg",
+        "quantity": 1
+      },
+      {
+        "item": "orange",
+        "optional": true,
+        "quantity": 1
+      }
+    ],
+    "id": "us-virgin-islands-painkiller",
+    "ingredients": [
+      "6 ounces Cruzan dark rum or another smooth 80-proof dark rum, chilled",
+      "16 ounces pineapple juice, chilled",
+      "4 ounces fresh orange juice, chilled",
+      "6 ounces cream of coconut, stirred smooth",
+      "1/8 teaspoon fine salt",
+      "Crushed ice, for shaking and serving",
+      "Freshly grated nutmeg, for finishing",
+      "4 orange wedges, optional, for garnish"
+    ],
+    "instructions": [
+      "Stir or shake the cream of coconut until it is completely smooth. If it is separated or stiff, set the closed can or squeeze bottle in warm water for a few minutes, then shake well.",
+      "Make the drinks one at a time for the coldest texture. For each drink, add 1 1/2 ounces rum, 4 ounces pineapple juice, 1 ounce fresh orange juice, 1 1/2 ounces cream of coconut, and a tiny pinch of fine salt to a cocktail shaker.",
+      "Fill the shaker about two-thirds full with ice, seal, and shake hard for 15 seconds, until the shaker is frosty and the drink looks creamy.",
+      "Fill a hurricane glass or double rocks glass with crushed ice.",
+      "Strain the drink over the crushed ice.",
+      "Grate a generous dusting of fresh nutmeg over the top and garnish with an orange wedge if using.",
+      "Serve immediately, then repeat with the remaining ingredients."
+    ],
+    "link": "https://en.wikipedia.org/wiki/Painkiller_(cocktail)",
+    "notes": [
+      "This version is intentionally sweeter and less alcohol-forward than the classic Painkiller formula. It is tuned for the creamy, easy-drinking style common at beach bars around the U.S. Virgin Islands.",
+      "Cruzan dark rum gives this a U.S. Virgin Islands lean and stays softer than many navy-style rums. Avoid overproof rum, heavily spiced rum, or anything that tastes hot neat.",
+      "Use sweetened cream of coconut, such as Coco Lopez, not unsweetened coconut cream or coconut milk.",
+      "The tiny pinch of salt is not traditional, but it should disappear into the drink and make the pineapple, orange, and coconut taste fuller. Do not add enough that the drink tastes salty.",
+      "Lime is not part of the classic Painkiller profile. If the drink tastes flat because the juices are dull or the cream of coconut is very heavy, add only a tiny squeeze of fresh lime, about 1/8 ounce per drink, then shake again.",
+      "If you want the rum even more hidden, use 1 ounce rum per drink and keep every other ingredient the same. If you want a classic-strength drink, use 2 ounces rum per drink.",
+      "For a thicker, sweeter drink, add another 1/4 ounce cream of coconut per serving. For a lighter drink, use 1 1/4 ounces cream of coconut per serving.",
+      "Freshly grated nutmeg is part of the drink, not just decoration. It gives the first sip its warm island-spice aroma.",
+      "Shake instead of blending. The drink should be cold, creamy, and poured over crushed ice, not frozen into a slush."
+    ],
+    "nutrition": null,
+    "prepTime": "10 minutes",
+    "rating": null,
+    "servings": "4 drinks",
+    "source": "original",
+    "tags": {
+      "equipment": [
+        "no-cook"
+      ],
+      "status": "not-tried"
+    },
+    "title": "U.S. Virgin Islands Painkiller",
+    "totalTime": "10 minutes"
+  },
+  {
+    "additionalTime": "0 minutes",
+    "author": "Robert Carr",
+    "cookTime": "0 minutes",
+    "description": "A creamy blended nonalcoholic pina colada with frozen pineapple, pineapple juice, sweetened cream of coconut, coconut milk, ice, and a tiny pinch of salt. It is sweet, smooth, and tropical without rum flavor.",
+    "equipment": [
+      "Blender",
+      "Can opener",
+      "Liquid measuring cup",
+      "Rubber spatula",
+      "Hurricane glasses or tall glasses"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "frozen pineapple chunks",
+        "quantity": 3,
+        "unit": "cup"
+      },
+      {
+        "item": "pineapple juice",
+        "quantity": 2,
+        "unit": "cup"
+      },
+      {
+        "item": "cream of coconut",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "coconut milk",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "item": "fine salt",
+        "quantity": 0.125,
+        "unit": "tsp"
+      }
+    ],
+    "id": "nonalcoholic-pina-colada",
+    "ingredients": [
+      "3 cups frozen pineapple chunks",
+      "2 cups cold pineapple juice, plus 1/4 cup more if needed",
+      "1 cup sweetened cream of coconut, stirred smooth",
+      "1 cup canned full-fat coconut milk, shaken well",
+      "1/8 teaspoon fine salt",
+      "2 to 3 cups ice"
+    ],
+    "instructions": [
+      "Shake the can of coconut milk well before opening. Stir or shake the cream of coconut until it is completely smooth.",
+      "Add 2 cups cold pineapple juice, 1 cup cream of coconut, 1 cup coconut milk, and 1/8 teaspoon fine salt to a blender.",
+      "Add 3 cups frozen pineapple chunks and 2 cups ice.",
+      "Blend on high until completely smooth and creamy, stopping once to scrape down the sides if needed.",
+      "Check the texture. For a thicker frozen drink, blend in another 1/2 to 1 cup ice. For a looser, more sippable drink, blend in pineapple juice 2 tablespoons at a time.",
+      "Taste and adjust only if needed. For a sweeter drink, blend in 1 to 2 tablespoons more cream of coconut. For a brighter drink, add a tiny squeeze of fresh lime juice.",
+      "Pour into cold hurricane glasses or tall glasses and serve immediately."
+    ],
+    "link": null,
+    "notes": [
+      "This recipe is fully nonalcoholic and does not use rum extract, bitters, or anything meant to imitate rum. It should taste like pineapple, coconut, and sunshine, not alcohol.",
+      "Use sweetened cream of coconut, such as Coco Lopez, not unsweetened coconut cream. Cream of coconut is what gives the drink its sweet, beach-bar pina colada flavor.",
+      "Frozen pineapple makes the drink thicker and more flavorful than using ice alone.",
+      "Canned full-fat coconut milk makes the drink creamy without adding dairy. Shake the can hard before opening so the coconut fat and liquid recombine.",
+      "The tiny pinch of salt should not taste salty. It makes the pineapple and coconut taste sweeter and fuller.",
+      "If making this for someone who prefers it very sweet, add the extra cream of coconut before adding more pineapple juice.",
+      "If the blender struggles, add a splash more pineapple juice and blend again."
+    ],
+    "nutrition": null,
+    "prepTime": "10 minutes",
+    "rating": null,
+    "servings": "4 drinks",
+    "source": "original",
+    "tags": {
+      "equipment": [
+        "blender",
+        "no-cook"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Nonalcoholic Pina Colada",
+    "totalTime": "10 minutes"
   }
 ]

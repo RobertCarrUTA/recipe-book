@@ -27,6 +27,7 @@ function extractCommodityBaseStrict(raw) {
   if (name.includes("sweetened condensed milk")) return "sweetened condensed milk";
   if (name.includes("evaporated milk")) return "evaporated milk";
   if (name.includes("buttermilk")) return "buttermilk";
+  if (name.includes("coconut milk")) return "coconut milk";
 
   if (name.includes("peanut butter")) return "peanut butter";
   if (name.includes("almond butter")) return "almond butter";
