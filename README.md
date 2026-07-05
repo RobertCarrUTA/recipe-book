@@ -200,3 +200,16 @@ When CSS or JavaScript changes, bump both asset URLs with:
 ```bash
 npm run set-asset-version -- 20260614-2
 ```
+
+## License
+
+This project is available for noncommercial use only.
+
+- App code is licensed under the PolyForm Noncommercial License 1.0.0.
+- Project-owned recipes, notes, documentation, and other non-software content are licensed under CC BY-NC-SA 4.0.
+
+You may use, copy, modify, and share the app and content for noncommercial purposes with credit. You may not sell the app as-is, charge for copies, include it in a paid or commercial product or service, or sell modified versions without separate written permission.
+
+Some recipe entries may contain or reference recipes from other authors or sources. Those third-party materials remain owned by their original rights holders and are not relicensed by this project.
+
+See `LICENSE.md` and `NOTICE` for the full project licensing notice.
