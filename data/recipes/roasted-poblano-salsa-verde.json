@@ -59,7 +59,12 @@
     },
     {
       "item": "white onion",
-      "quantity": 1
+      "quantity": 0.5
+    },
+    {
+      "item": "white onion",
+      "quantity": 2,
+      "unit": "tbsp"
     }
   ],
   "id": "roasted-poblano-salsa-verde",

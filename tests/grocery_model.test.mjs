@@ -221,13 +221,22 @@ test("specific onion grocery items do not collapse into vague onion totals", () 
       instructions: [],
       title: "Salsa",
     },
+    {
+      id: "sandwich",
+      groceryIngredients: [{ item: "red onion", quantity: 1 }],
+      ingredients: [],
+      instructions: [],
+      title: "Sandwich",
+    },
   ];
 
   selectAllRecipes(runtime, sourceRecipes);
 
   assert.equal(runtime.grocery.totalsByKey.onion, undefined);
   assert.deepEqual(runtime.grocery.totalsByKey["white onion"].item, { min: 0.5, max: 0.5 });
+  assert.deepEqual(runtime.grocery.totalsByKey["red onion"].item, { min: 1, max: 1 });
   assert.equal(runtime.displayNamesByKey["white onion"], "white onion");
+  assert.equal(runtime.displayNamesByKey["red onion"], "red onion");
 });
 
 test("clearGroceryState resets selected, checked, totals, and display names", () => {

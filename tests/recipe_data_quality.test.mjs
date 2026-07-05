@@ -1,9 +1,14 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 
-import { getRecipeGroceryIngredients } from "../js/grocery_model.js";
+import {
+  createRecipeRuntimeState,
+  getRecipeGroceryIngredients,
+  selectAllRecipes,
+} from "../js/grocery_model.js";
 import { analyzeRecipeDataQuality } from "../js/recipe_quality_report.js";
 import { normalizeRecipeBook } from "../js/recipe_schema.js";
+import { formatTotalsForKey } from "../js/units.js";
 import { test } from "./test_helpers.mjs";
 
 async function loadNormalizedRecipes() {
@@ -48,5 +53,41 @@ test("Robert Carr grocery labels keep shopping-specific recipe wording", async (
     assert.ok(parsed, `${recipeId} should include ${label}`);
     assert.equal(parsed.canonical.base, label);
     assert.equal(parsed.canonical.display, label);
+  });
+});
+
+test("current salsa recipe data keeps white onion quantities recipe-specific", async () => {
+  const { recipes } = await loadNormalizedRecipes();
+  const recipeIds = [
+    "fresh-table-salsa",
+    "roasted-tomato-tomatillo-taqueria-roja-salsa",
+    "sausage-egg-potato-cheese-breakfast-burritos-with-simmered-guajillo-arbol-drip-sauce",
+  ];
+  const selectedRecipes = recipeIds.map((recipeId) => recipes.find((recipe) => recipe.id === recipeId));
+  assert.equal(selectedRecipes.filter(Boolean).length, recipeIds.length);
+
+  const runtime = createRecipeRuntimeState();
+  selectAllRecipes(runtime, selectedRecipes);
+
+  assert.deepEqual(runtime.grocery.totalsByKey["white onion"], {
+    item: { min: 0.625, max: 0.625 },
+    tsp: { min: 16, max: 16 },
+  });
+  assert.equal(
+    formatTotalsForKey(runtime.grocery.totalsByKey["white onion"], { canonicalKey: "white onion" }),
+    "1/3 cup + 5/8 white onion"
+  );
+
+  const sourceTotalsById = Object.fromEntries(
+    runtime.grocery.sourcesByKey["white onion"].map((source) => [
+      source.id,
+      formatTotalsForKey(source.totals, { canonicalKey: "white onion" }),
+    ])
+  );
+
+  assert.deepEqual(sourceTotalsById, {
+    "fresh-table-salsa": "1/3 cup",
+    "roasted-tomato-tomatillo-taqueria-roja-salsa": "1/2 white onion",
+    "sausage-egg-potato-cheese-breakfast-burritos-with-simmered-guajillo-arbol-drip-sauce": "1/8 white onion",
   });
 });

@@ -58,7 +58,8 @@
     },
     {
       "item": "white onion",
-      "quantity": 1
+      "quantity": "1/3",
+      "unit": "cup"
     },
     {
       "item": "whole peeled tomatoes",
