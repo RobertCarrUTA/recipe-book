@@ -1,34 +1,35 @@
 # Robert's Recipe Book and Grocery List
 
-A mobile-first recipe book, meal planner, cooking companion, and grocery list for saved recipes.
+A mobile-first static web app for saved recipes, weekly meal planning, focused cooking, and grocery-list building.
 
-The project is intentionally small and durable: static files, native browser APIs, no framework, no backend, and no required build step for the app shell. Recipe source files are maintained as individual JSON files and bundled into the runtime recipe file with one npm script.
+This project is intentionally small: no framework, no backend, no database, and no app-shell build step. The browser loads native ES modules from static files, recipe source files live as individual JSON documents, and personal state stays in the user's browser.
 
-## Table of Contents
+## Contents
 
 - [Robert's Recipe Book and Grocery List](#roberts-recipe-book-and-grocery-list)
-  - [Table of Contents](#table-of-contents)
-  - [At a Glance](#at-a-glance)
+  - [Contents](#contents)
+  - [What It Is](#what-it-is)
+  - [Highlights](#highlights)
   - [Quick Start](#quick-start)
   - [Using the App](#using-the-app)
     - [Recipes](#recipes)
     - [Meal Plan](#meal-plan)
-    - [Cooking Mode](#cooking-mode)
     - [Grocery List](#grocery-list)
+    - [Cooking Mode](#cooking-mode)
+  - [Common Tasks](#common-tasks)
   - [Recipe Data](#recipe-data)
     - [Recommended Fields](#recommended-fields)
     - [Optional Fields](#optional-fields)
-  - [Structured Grocery Ingredients](#structured-grocery-ingredients)
-  - [Browser State and Backups](#browser-state-and-backups)
-  - [Offline Behavior](#offline-behavior)
+  - [Structured Grocery Data](#structured-grocery-data)
+  - [Local State and Backups](#local-state-and-backups)
+  - [Offline and Deployment](#offline-and-deployment)
   - [Project Structure](#project-structure)
     - [JavaScript Map](#javascript-map)
   - [Development Workflow](#development-workflow)
     - [Add or Edit Recipes](#add-or-edit-recipes)
     - [Change CSS or JavaScript](#change-css-or-javascript)
     - [Change Documentation](#change-documentation)
-  - [Verification](#verification)
-  - [Cache Busting](#cache-busting)
+  - [Verification and CI](#verification-and-ci)
   - [Troubleshooting](#troubleshooting)
     - [Recipes changed but the app still shows old data](#recipes-changed-but-the-app-still-shows-old-data)
     - [`npm run verify` says `data/recipes.json` is stale](#npm-run-verify-says-datarecipesjson-is-stale)
@@ -36,21 +37,39 @@ The project is intentionally small and durable: static files, native browser API
     - [Browser smoke tests cannot find Chromium](#browser-smoke-tests-cannot-find-chromium)
   - [License](#license)
 
-## At a Glance
+## What It Is
 
-This recipe book helps with the whole home-cooking loop:
+This is a personal cooking app that keeps the everyday cooking loop in one place:
 
-- Browse, search, sort, filter, favorite, and open saved recipes.
-- Plan recipes across a week and turn the plan into grocery selections.
-- Build a combined grocery list from selected recipes, adjusted quantities, and one-off manual items.
-- Group grocery items by shopping section, check items off while shopping, hide checked items, and copy the list as clean text.
-- Cook from a focused full-screen Cooking Mode with ingredients, one instruction step at a time, progress, keyboard controls, and optional screen wake lock.
-- Export and import browser-state backups for favorites, grocery selections, meal plans, manual items, checks, quantities, and preferences.
-- Reopen after the first successful load when the app shell and recipe data have been cached by the service worker.
+- Find a saved recipe.
+- Plan it for the week.
+- Turn planned or selected recipes into a grocery list.
+- Shop from a grouped, checkable list.
+- Cook from a phone-friendly step view.
+- Back up browser state when moving devices or preserving local data.
 
-The app runs from static files served by a local or hosted web server. Personal state stays in the browser through `localStorage`.
+It is not a hosted recipe service, account system, shared database, or cloud-sync product. That is deliberate. The app favors a simple static architecture that can be served from almost anywhere and understood without a large toolchain.
+
+## Highlights
+
+- Static app shell served from `index.html`, `css/`, `js/`, `data/`, and `sw.js`.
+- Native ES modules with no framework runtime.
+- Recipe browsing with search, filters, favorites, sorting, selected-only view, and lazy-rendered recipe details.
+- Weekly meal planning that can generate grocery selections and recipe quantity counts.
+- Grocery aggregation from recipe selections, recipe multipliers, structured grocery data, and manual one-off items.
+- Collapsible grocery sections, checkmarks, checked-item hiding, source tracing, and plain-text copy.
+- Full-screen Cooking Mode with ingredients, one instruction step at a time, keyboard navigation, progress, and optional Screen Wake Lock.
+- Export and import for browser-state backups.
+- Service-worker caching for the app shell and latest successful recipe data response.
+- Focused local verification and browser smoke tests.
 
 ## Quick Start
+
+Prerequisites:
+
+- Node.js and npm. CI uses Node.js 22.
+- A modern browser.
+- Any simple local static server. The examples below use Python, but the app does not depend on Python.
 
 Install dependencies:
 
@@ -58,31 +77,31 @@ Install dependencies:
 npm install
 ```
 
-Verify the project:
+Run the standard local check:
 
 ```bash
 npm run verify
 ```
 
-Serve the static app from the repository root with any simple web server. One common option is:
+Serve the repository root:
 
 ```bash
 python -m http.server 8080
 ```
 
-Then open:
+Open the app:
 
 ```text
 http://localhost:8080
 ```
 
-The app does not need a JavaScript build step. CSS and JavaScript are loaded directly by `index.html` as static assets.
+Use a local web server instead of opening `index.html` directly. Browser module loading, recipe fetching, and service-worker behavior are more reliable from `localhost` or another real origin.
 
 ## Using the App
 
 ### Recipes
 
-Use the Recipes view to search, filter, sort, favorite, select, and open recipes. Expanding a recipe card shows recipe details, source links when available, grocery controls, quantity controls, meal-plan controls, and the Cooking Mode entry point.
+Use the Recipes view to search, filter, sort, favorite, select, and open saved recipes. Expanding a card shows recipe details, source links when available, grocery controls, quantity controls, meal-plan controls, and the Cooking Mode entry point.
 
 Recipes can be filtered by status, rating, difficulty, equipment, selected recipes, and favorites. Sorting supports favorites, grocery-list selections, fastest total time, rating, and easiest difficulty.
 
@@ -90,31 +109,30 @@ Recipes can be filtered by status, rating, difficulty, equipment, selected recip
 
 Use the Meal Plan panel to schedule recipes across the week. Recipe cards also include a day picker for quickly adding a recipe to the plan.
 
-When the week is planned, use Build list to convert planned recipes into recipe selections and grocery quantities.
-
-### Cooking Mode
-
-Cooking Mode is designed for the moment the phone is on the counter and your hands are busy. It shows ingredients beside one instruction step at a time, tracks progress, supports Previous and Next navigation, and closes with Escape.
-
-When supported by the browser, the keep-awake toggle uses Screen Wake Lock. The Cooking Mode toggle and the main keep-awake toggle stay in sync.
+Build list converts the planned week into recipe selections and grocery quantities.
 
 ### Grocery List
 
-Use the Grocery List view to:
+Use the Grocery List view to build a shopping list from selected recipes, all recipes, adjusted recipe quantities, and manual items.
 
-- Add ingredients from selected recipes.
-- Add all recipes at once.
-- Adjust per-recipe quantities.
-- Add one-off manual grocery items.
-- Review combined shopping items.
-- Inspect which recipes contributed to a grocery item.
-- Group items into collapsible shopping sections.
-- Check items off while shopping.
-- Hide checked items.
-- Clear checked progress or clear the list.
-- Copy the current grocery list as clean text.
+The grocery list combines compatible units where possible, keeps recipe sources available for review, groups items into collapsible shopping sections, tracks checked progress, hides checked items while shopping, and copies the current list as clean text.
 
-Compatible grocery units are combined where possible, and recipe sources remain available so a shopping item can be traced back to the recipes that need it.
+### Cooking Mode
+
+Cooking Mode is designed for cooking from a phone on the counter. It shows ingredients beside one instruction step at a time, tracks progress, supports Previous and Next navigation, and closes with Escape.
+
+When the browser supports Screen Wake Lock, the keep-awake toggle can prevent the display from sleeping. The Cooking Mode toggle and main app toggle stay in sync.
+
+## Common Tasks
+
+| Task                     | Start Here                       | Finish With                                       |
+| ------------------------ | -------------------------------- | ------------------------------------------------- |
+| Run the app locally      | `python -m http.server 8080`     | Open `http://localhost:8080`                      |
+| Add or edit a recipe     | Edit one file in `data/recipes/` | `npm run build:recipes`, then `npm run verify`    |
+| Check recipe quality     | `npm run report:data-quality`    | Review warnings and advisory notes                |
+| Change CSS or JavaScript | Edit the focused app file        | Bump the asset version, then run `npm run verify` |
+| Check browser behavior   | `npm run smoke:browser`          | Review Playwright smoke-test output               |
+| Prepare a PR             | `npm run verify:full`            | Confirm GitHub Actions also passes                |
 
 ## Recipe Data
 
@@ -141,7 +159,7 @@ data/recipes/chicken-fried-steak.json
 
 Keep recipe IDs as simple dish-name slugs. Keep titles literal and modest; let the ingredients, method, notes, and result carry the quality.
 
-The browser loads `data/recipes.json`, but that file is generated. After adding or editing files in `data/recipes/`, rebuild the generated bundle:
+The browser loads `data/recipes.json`, but that file is generated. After adding or editing files in `data/recipes/`, rebuild the bundle:
 
 ```bash
 npm run build:recipes
@@ -176,7 +194,7 @@ Do not hand-edit `data/recipes.json` unless you are intentionally repairing the 
 - `personalNotes`
 - `link`
 
-## Structured Grocery Ingredients
+## Structured Grocery Data
 
 For the most accurate grocery list, add `groceryIngredients`. These entries override the fallback parser used for regular ingredient text.
 
@@ -193,9 +211,11 @@ Use grocery items as shopping labels. Preserve meaningful distinctions, such as 
 
 Keep notes useful for shopping. Avoid noisy notes such as `to taste` or `plus more` unless the note changes what should be bought.
 
-## Browser State and Backups
+## Local State and Backups
 
-The app stores personal state in `localStorage`, including:
+The app stores personal state in `localStorage`. There is no account, backend, or cloud sync.
+
+Stored browser state includes:
 
 - Grocery list recipe selections
 - Recipe quantity multipliers
@@ -217,13 +237,15 @@ Clearing browser site data resets these preferences.
 
 Use Export backup and Import backup in the Grocery List controls when moving state to another browser or preserving a local copy before clearing site data. Imports are validated before they are applied, and grocery totals are recomputed from the current recipe data after restore.
 
-## Offline Behavior
+## Offline and Deployment
 
-The app registers a service worker when served from `http://localhost`, `https`, or another service-worker-capable origin. The service worker caches the static app shell and the latest successful `data/recipes.json` response so the app can reopen without a network connection after the first successful load.
+The app can be hosted by any static file server that serves the repository contents. For production-like hosting, use `https` so service workers and installable app behavior work in normal browsers. `http://localhost` also supports service workers for local development.
 
-When a newer service worker is ready, the header shows an update status with a Refresh button.
+The service worker caches the static app shell and the latest successful `data/recipes.json` response. After the first successful load, the app can reopen without a network connection from the same browser.
 
 Recipe data is requested with `cache: "no-store"` and a per-load cache-busting query string, which helps phone browsers and static hosts pick up fresh recipe data after updates.
+
+When a newer service worker is ready, the app header shows an update status with a Refresh button.
 
 ## Project Structure
 
@@ -295,7 +317,7 @@ Use the current date for `YYYYMMDD` and increment `N` if multiple CSS or JavaScr
 
 Documentation-only changes do not require rebuilding recipes or bumping asset versions.
 
-## Verification
+## Verification and CI
 
 Run the standard local check after code or recipe-data changes:
 
@@ -340,25 +362,9 @@ For the strictest local gate before a PR:
 npm run verify:full
 ```
 
+Pull requests and pushes to `main` run `npm run verify:full` in GitHub Actions. The workflow installs Node.js 22, installs dependencies with `npm ci`, installs Playwright Chromium, and runs the full verification suite.
+
 If a constrained environment intentionally cannot run browser smoke tests, set `RECIPE_BOOK_ALLOW_SMOKE_SKIP=1` before `npm run smoke:browser` or `npm run verify:full`.
-
-Pull requests and pushes to `main` run `npm run verify:full` in GitHub Actions, including a Playwright Chromium install for the browser smoke checks.
-
-## Cache Busting
-
-`index.html` uses a release-style asset version on local CSS and JavaScript URLs, such as:
-
-```text
-?v=20260614-1
-```
-
-When CSS or JavaScript changes, bump local asset URLs with:
-
-```bash
-npm run set-asset-version -- 20260614-2
-```
-
-Recipe data does not use the asset version. It is fetched with `cache: "no-store"` and a per-load cache-busting query string.
 
 ## Troubleshooting
 
