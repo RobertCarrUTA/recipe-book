@@ -7,79 +7,6 @@ ingredient labels used by structured grocery parsing and aggregation.
 
 =============================================================================*/
 
-// ===== Commodity helpers (single source of truth) =====
-function extractCommodityBaseStrict(raw) {
-  const name = raw.toLowerCase();
-
-  if (name.includes("all-purpose flour") || name === "flour") return "all-purpose flour";
-  if (name.includes("granulated sugar")) return "granulated sugar";
-  if (name.includes("powdered sugar") || name.includes("confectioners")) return "powdered sugar";
-  if (name.includes("light brown sugar")) return "light brown sugar";
-  if (name.includes("dark brown sugar")) return "dark brown sugar";
-
-  if (name.includes("lemon zest")) return "lemon zest";
-  if (name.includes("lemon juice")) return "lemon juice";
-  if (name.includes("lemon")) return "lemon";
-
-  if (name.includes("greek yogurt") && name.includes("sour cream")) return "greek yogurt or sour cream";
-  if (name.includes("greek yogurt")) return "greek yogurt";
-
-  if (name.includes("sweetened condensed milk")) return "sweetened condensed milk";
-  if (name.includes("evaporated milk")) return "evaporated milk";
-  if (name.includes("buttermilk")) return "buttermilk";
-  if (name.includes("coconut milk")) return "coconut milk";
-
-  if (name.includes("peanut butter")) return "peanut butter";
-  if (name.includes("almond butter")) return "almond butter";
-
-  if (name.includes("milk chocolate")) return "milk chocolate";
-
-  if (name.includes("unsalted butter")) return "unsalted butter";
-  if (name.includes("salted butter")) return "salted butter";
-  if (name.includes("butter")) return "butter";
-
-  if (name.includes("cream cheese")) return "cream cheese";
-
-  if (name.includes("whole milk")) return "whole milk";
-  if (name.includes("skim milk")) return "skim milk";
-  if (name.includes("2% milk")) return "2% milk";
-  if (name.includes("milk")) return "milk";
-
-  if (/\begg\s+yolks?\b/.test(name)) return "egg yolk";
-  if (/\begg\s+whites?\b/.test(name)) return "egg whites";
-  if (/\beggs?\b/.test(name)) return "egg";
-
-  if (name.includes("sour cream")) return "sour cream";
-
-  if (name.includes("parmigiano reggiano")) return "parmigiano reggiano cheese";
-  if (name.includes("parmesan") || name.includes("parmigiano")) return "parmesan cheese";
-
-  if (name.includes("heavy whipping cream")) return "heavy whipping cream";
-  if (name.includes("heavy cream")) return "heavy cream";
-
-  if (name.includes("cheddar")) return "cheddar cheese";
-
-  if (name.includes("flaky sea salt")) return "flaky sea salt";
-  if (name.includes("flaked sea salt")) return "flaked sea salt";
-  if (name.includes("flaky salt")) return "flaky salt";
-  if (name.includes("celery salt")) return "celery salt";
-  if (name.includes("sea salt")) return "sea salt";
-  if (name.includes("kosher salt")) return "kosher salt";
-  if (name.includes("salt")) return "salt";
-  if (name.includes("black pepper")) return "black pepper";
-  if (/^(?:ground\s+)?pepper$/.test(name)) return "pepper";
-
-  return null;
-}
-
-function extractNotesStrict(raw) {
-  const notes = [];
-  ["divided", "for dredging", "for dusting", "plus more", "packed", "lightly packed", "sifted"].forEach((k) => {
-    if (raw.includes(k)) notes.push(k);
-  });
-  return notes;
-}
-
 /* ================================
 NORMALIZATION HELPERS
 
@@ -89,6 +16,279 @@ exist to aggressively normalize input before aggregation.
   - Preserve distinctions that affect shopping decisions
   - Avoid over-normalization that could merge distinct products
 ================================ */
+function createCanonicalIngredient(base, display = base, extras = null) {
+  return extras ? { base, display, ...extras } : { base, display };
+}
+
+function ruleMatches(raw, rule) {
+  if (rule.match) return rule.match(raw);
+  if (rule.pattern) return rule.pattern.test(raw);
+  if (rule.includesAll) return rule.includesAll.every((term) => raw.includes(term));
+  if (rule.includesAny) return rule.includesAny.some((term) => raw.includes(term));
+  if (rule.includes) return raw.includes(rule.includes);
+  return false;
+}
+
+function canonicalFromRule(rule) {
+  return createCanonicalIngredient(rule.base, rule.display || rule.base, rule.extras);
+}
+
+function findCanonicalRule(raw, rules) {
+  const rule = rules.find((candidate) => ruleMatches(raw, candidate));
+  return rule ? canonicalFromRule(rule) : null;
+}
+
+const canonicalNoteTokens = [
+  "divided",
+  "for dredging",
+  "for dusting",
+  "plus more",
+  "packed",
+  "lightly packed",
+  "sifted",
+];
+
+function extractNotesStrict(raw) {
+  return canonicalNoteTokens.filter((note) => raw.includes(note));
+}
+
+const leadingIngredientRules = [
+  {
+    includesAny: ["dark or semi sweet chocolate", "dark or semi-sweet chocolate"],
+    base: "chocolate",
+    display: "Chocolate (dark OR semi-sweet)",
+    extras: { notes: [] },
+  },
+  {
+    includesAll: ["butter lettuce", "red leaf lettuce"],
+    base: "butter lettuce or red leaf lettuce",
+  },
+  {
+    includesAll: ["lard", "unsalted butter"],
+    base: "lard or unsalted butter",
+  },
+];
+
+const commodityIngredientRules = [
+  { match: (raw) => raw.includes("all-purpose flour") || raw === "flour", base: "all-purpose flour" },
+  { includes: "granulated sugar", base: "granulated sugar" },
+  { includesAny: ["powdered sugar", "confectioners"], base: "powdered sugar" },
+  { includes: "light brown sugar", base: "light brown sugar" },
+  { includes: "dark brown sugar", base: "dark brown sugar" },
+  { includes: "lemon zest", base: "lemon zest" },
+  { includes: "lemon juice", base: "lemon juice" },
+  { includes: "lemon", base: "lemon" },
+  { includesAll: ["greek yogurt", "sour cream"], base: "greek yogurt or sour cream" },
+  { includes: "greek yogurt", base: "greek yogurt" },
+  { includes: "sweetened condensed milk", base: "sweetened condensed milk" },
+  { includes: "evaporated milk", base: "evaporated milk" },
+  { includes: "buttermilk", base: "buttermilk" },
+  { includes: "coconut milk", base: "coconut milk" },
+  { includes: "peanut butter", base: "peanut butter" },
+  { includes: "almond butter", base: "almond butter" },
+  { includes: "milk chocolate", base: "milk chocolate" },
+  { includes: "unsalted butter", base: "unsalted butter" },
+  { includes: "salted butter", base: "salted butter" },
+  { includes: "butter", base: "butter" },
+  { includes: "cream cheese", base: "cream cheese" },
+  { includes: "whole milk", base: "whole milk" },
+  { includes: "skim milk", base: "skim milk" },
+  { includes: "2% milk", base: "2% milk" },
+  { includes: "milk", base: "milk" },
+  { pattern: /\begg\s+yolks?\b/, base: "egg yolk" },
+  { pattern: /\begg\s+whites?\b/, base: "egg whites" },
+  { pattern: /\beggs?\b/, base: "egg" },
+  { includes: "sour cream", base: "sour cream" },
+  { includes: "parmigiano reggiano", base: "parmigiano reggiano cheese" },
+  { includesAny: ["parmesan", "parmigiano"], base: "parmesan cheese" },
+  { includes: "heavy whipping cream", base: "heavy whipping cream" },
+  { includes: "heavy cream", base: "heavy cream" },
+  { includes: "cheddar", base: "cheddar cheese" },
+  { includes: "flaky sea salt", base: "flaky sea salt" },
+  { includes: "flaked sea salt", base: "flaked sea salt" },
+  { includes: "flaky salt", base: "flaky salt" },
+  { includes: "celery salt", base: "celery salt" },
+  { includes: "sea salt", base: "sea salt" },
+  { includes: "kosher salt", base: "kosher salt" },
+  { includes: "salt", base: "salt" },
+  { includes: "black pepper", base: "black pepper" },
+  { pattern: /^(?:ground\s+)?pepper$/, base: "pepper" },
+];
+
+function isChocolateFamily(raw) {
+  return [
+    "chocolate chip",
+    "chopped chocolate",
+    "dark chocolate",
+    "white chocolate",
+    "semi-sweet chocolate",
+    "semisweet chocolate",
+  ].some((term) => raw.includes(term));
+}
+
+const ingredientRules = [
+  { includesAll: ["granulated garlic", "garlic powder"], base: "granulated garlic or garlic powder" },
+  { includes: "garlic powder", base: "garlic powder" },
+  { includes: "onion powder", base: "onion powder" },
+  { includes: "garlic", base: "garlic" },
+  { includes: "yellow onion", base: "yellow onion" },
+  { includes: "white onion", base: "white onion" },
+  { includes: "roasted red peppers", base: "roasted red peppers" },
+  { includes: "green bell pepper", base: "green bell pepper" },
+  { includes: "red bell pepper", base: "red bell pepper" },
+  { includes: "bell pepper", base: "bell pepper" },
+  {
+    includesAny: ["cabbage and carrot coleslaw mix", "coleslaw mix"],
+    base: "plain shredded cabbage and carrot coleslaw mix",
+  },
+  { includes: "carrot", base: "carrot" },
+  { includes: "celery seed", base: "celery seed" },
+  { includes: "celery", base: "celery" },
+  { includesAll: ["potato bun", "brioche bun"], base: "potato bun or brioche bun" },
+  { includes: "potato bun", base: "potato bun" },
+  { includes: "brioche bun", base: "brioche bun" },
+  { includes: "mashed potatoes", base: "mashed potatoes" },
+  { includes: "sweet potato", base: "sweet potato" },
+  { includes: "yukon gold", base: "yukon gold potato", display: "Yukon gold potato" },
+  { includes: "baby yellow", base: "baby yellow potato" },
+  { includes: "potato", base: "potato" },
+  {
+    includesAll: ["chicken breast", "boneless skinless"],
+    base: "boneless skinless chicken breast",
+  },
+  { includes: "chicken breast", base: "chicken breast" },
+  { includes: "flank steak", base: "flank steak" },
+  {
+    includesAll: ["top sirloin steak", "strip steak", "flat iron steak"],
+    base: "top sirloin steak, strip steak, or flat iron steak",
+  },
+  {
+    includesAll: ["ribeye", "top sirloin", "skirt steak"],
+    base: "boneless ribeye, top sirloin, or skirt steak",
+  },
+  { includes: "thick-cut ribeye steak", base: "thick-cut ribeye steak" },
+  { includes: "ribeye", base: "ribeye steak" },
+  { includes: "top sirloin", base: "top sirloin steak" },
+  { includes: "new york strip", base: "new york strip steak", display: "New York strip steak" },
+  { includes: "strip steak", base: "strip steak" },
+  { includes: "flat iron steak", base: "flat iron steak" },
+  { includes: "skirt steak", base: "skirt steak" },
+  { includes: "80/20 ground beef", base: "80/20 ground beef" },
+  { includes: "85/15 ground beef", base: "85/15 ground beef" },
+  { includes: "lean ground beef", base: "lean ground beef" },
+  { includes: "grass-fed ground beef", base: "grass-fed ground beef" },
+  { includes: "ground beef", base: "ground beef" },
+  { includes: "short rib", base: "beef short rib" },
+  { includes: "beef tenderloin", base: "beef tenderloin" },
+  { includes: "prime rib", base: "prime rib roast" },
+  { includes: "crushed tomatoes", base: "crushed tomatoes" },
+  { includes: "fire-roasted diced tomatoes", base: "fire-roasted diced tomatoes" },
+  { includes: "diced tomatoes", base: "diced tomatoes" },
+  { includes: "tomato sauce", base: "tomato sauce" },
+  { includes: "tomato paste", base: "tomato paste" },
+  { includes: "kidney beans", base: "kidney beans" },
+  { includes: "pinto beans", base: "pinto beans" },
+  { includes: "cream of chicken soup", base: "cream of chicken soup" },
+  { includes: "puff pastry", base: "puff pastry dough" },
+  { includesAll: ["vanilla bean paste", "extract"], base: "vanilla extract or paste" },
+  { includes: "vanilla bean paste", base: "vanilla bean paste" },
+  { includesAny: ["vanilla extract", "vanilla paste"], base: "vanilla extract or paste" },
+  { includes: "egg yolk", base: "egg yolk" },
+  { includes: "american cheese slice", base: "american cheese slice", display: "American cheese slice" },
+  { includes: "american cheese", base: "american cheese", display: "American cheese" },
+  { includes: "brown sugar", base: "brown sugar" },
+  { includes: "maple syrup", base: "maple syrup" },
+  { includes: "blueberries", base: "blueberries" },
+  { includes: "raspberries", base: "raspberries" },
+  { includes: "mixed berries", base: "mixed berries" },
+  { includes: "berries", base: "berries" },
+  { includes: "banana", base: "banana" },
+  { includes: "walnut", base: "walnuts" },
+  { includes: "pecan", base: "pecans" },
+  { includes: "pistachio", base: "pistachios" },
+  { includes: "nuts of choice", base: "nuts of choice" },
+  { includesAny: ["pasta of choice", "pasta"], base: "pasta" },
+  { includes: "low-sodium beef broth", base: "low-sodium beef broth" },
+  { includes: "beef broth", base: "beef broth" },
+  { includes: "low-sodium chicken broth", base: "low-sodium chicken broth" },
+  { includes: "chicken broth", base: "chicken broth" },
+  { includes: "cinnamon", base: "cinnamon" },
+  { includes: "red pepper flakes", base: "red pepper flakes" },
+  { includes: "peanut or vegetable oil", base: "peanut or vegetable oil" },
+  { includes: "olive or avocado oil", base: "olive or avocado oil" },
+  { includes: "pizza oil", base: "pizza oil or olive oil" },
+  { includes: "oil of choice", base: "oil of choice" },
+  { includes: "mayonnaise", base: "mayonnaise" },
+  { includes: "yellow mustard seed", base: "yellow mustard seed" },
+  { includes: "yellow mustard", base: "yellow mustard" },
+  {
+    includes: "louisiana-style cayenne hot sauce",
+    base: "louisiana-style cayenne hot sauce",
+    display: "Louisiana-style cayenne hot sauce",
+  },
+  {
+    includes: "louisiana-style hot sauce",
+    base: "louisiana-style hot sauce",
+    display: "Louisiana-style hot sauce",
+  },
+  { includes: "hot sauce", base: "hot sauce" },
+  { includes: "pizza sauce", base: "pizza sauce" },
+  { includes: "cheese of choice", base: "cheese", display: "cheese" },
+  { includes: "iceberg lettuce", base: "iceberg lettuce" },
+  { includes: "red leaf lettuce", base: "red leaf lettuce" },
+  { includes: "butter lettuce", base: "butter lettuce" },
+  { includes: "lettuce", base: "lettuce" },
+  { includes: "white chocolate", base: "white chocolate" },
+  { includes: "dark chocolate", base: "dark chocolate" },
+  { includes: "semisweet chocolate chips", base: "semisweet chocolate chips" },
+  { includes: "semi-sweet chocolate chips", base: "semi-sweet chocolate chips" },
+  { includes: "semi-sweet", base: "semi-sweet chocolate" },
+  { includes: "semisweet", base: "semisweet chocolate" },
+  { match: isChocolateFamily, base: "chocolate" },
+  { includesAll: ["avocado oil", "coconut oil"], base: "avocado oil or coconut oil" },
+  { includes: "avocado oil", base: "avocado oil" },
+  { includesAll: ["olive oil", "extra-virgin"], base: "extra-virgin olive oil" },
+  { includes: "olive oil", base: "olive oil" },
+  { includes: "chipotle peppers in adobo", base: "chipotle peppers in adobo sauce" },
+  { includes: "sun-dried tomatoes", base: "sun-dried tomatoes" },
+  { includes: "broccoli", base: "broccoli" },
+  { includes: "green onion", base: "green onion" },
+  { includes: "onion", base: "onion" },
+  { includes: "fresh ginger", base: "fresh ginger" },
+  { includes: "ginger", base: "ginger" },
+  { includes: "peach", base: "peach" },
+  { includes: "graham cracker", base: "graham crackers" },
+  { includes: "croissant", base: "croissants" },
+  { includes: "refrigerated crescent rolls", base: "refrigerated crescent rolls" },
+  { includes: "pineapple slices", base: "pineapple slices" },
+  { includes: "maraschino cherries", base: "maraschino cherries" },
+  { includes: "vanilla bean", base: "vanilla bean" },
+  { includes: "basil pesto", base: "basil pesto" },
+  { includes: "basil", base: "basil" },
+  { includes: "sourdough discard", base: "sourdough discard" },
+  { includes: "freeze-dried strawberries", base: "freeze-dried strawberries" },
+  {
+    includesAny: ["dill pickle chips", "hamburger dill pickle chips", "crinkle-cut dill pickles"],
+    base: "dill pickle chips",
+  },
+  { includesAny: ["pickle chips", "pickles"], base: "pickles" },
+  { includes: "bacon", base: "bacon" },
+  { includes: "salami", base: "deli salami" },
+  { includes: "pepperoni", base: "deli pepperoni" },
+  { includes: "ice cream", base: "ice cream" },
+  { includesAny: ["dried bay leaf", "dried bay leaves"], base: "dried bay leaf" },
+  { includesAny: ["bay leaf", "bay leaves"], base: "bay leaf" },
+  { includes: "italian parsley", base: "italian parsley" },
+  { includes: "fresh parsley", base: "fresh parsley" },
+  { includes: "parsley", base: "parsley" },
+  { includes: "fresh rosemary", base: "fresh rosemary" },
+  { match: (raw) => raw.includes("rosemary") && raw.includes("sprig"), base: "rosemary sprig" },
+  { includes: "rosemary", base: "rosemary" },
+  { includes: "fresh thyme", base: "fresh thyme" },
+  { match: (raw) => raw.includes("thyme") && raw.includes("sprig"), base: "thyme sprig" },
+  { includes: "thyme", base: "thyme" },
+];
+
 const unicodeFractionMap = {
   "\u00bc": "1/4",
   "\u00bd": "1/2",
@@ -131,6 +331,72 @@ const unicodeFractionMap = {
   "⅞": "7/8",
 };
 const unicodeFractionSymbols = Object.keys(unicodeFractionMap).sort((a, b) => b.length - a.length);
+
+const unitAliases = new Map([
+  ["tsp", "tsp"],
+  ["teaspoon", "tsp"],
+  ["teaspoons", "tsp"],
+  ["tbsp", "tbsp"],
+  ["tablespoon", "tbsp"],
+  ["tablespoons", "tbsp"],
+  ["cup", "cup"],
+  ["cups", "cup"],
+  ["oz", "oz"],
+  ["ounce", "oz"],
+  ["ounces", "oz"],
+  ["lb", "lb"],
+  ["lbs", "lb"],
+  ["pound", "lb"],
+  ["pounds", "lb"],
+  ["g", "g"],
+  ["gram", "g"],
+  ["grams", "g"],
+  ["kg", "kg"],
+  ["kilogram", "kg"],
+  ["kilograms", "kg"],
+  ["ml", "ml"],
+  ["milliliter", "ml"],
+  ["milliliters", "ml"],
+  ["l", "l"],
+  ["liter", "l"],
+  ["liters", "l"],
+  ["bag", "bag"],
+  ["bags", "bag"],
+  ["block", "block"],
+  ["blocks", "block"],
+  ["bottle", "bottle"],
+  ["bottles", "bottle"],
+  ["bunch", "bunch"],
+  ["bunches", "bunch"],
+  ["can", "can"],
+  ["cans", "can"],
+  ["clove", "clove"],
+  ["cloves", "clove"],
+  ["egg", "egg"],
+  ["eggs", "egg"],
+  ["egg white", "egg white"],
+  ["egg whites", "egg white"],
+  ["jar", "jar"],
+  ["jars", "jar"],
+  ["leaf", "leaf"],
+  ["leaves", "leaf"],
+  ["package", "package"],
+  ["packages", "package"],
+  ["pkg", "package"],
+  ["pkgs", "package"],
+  ["sheet", "sheet"],
+  ["sheets", "sheet"],
+  ["slice", "slice"],
+  ["slices", "slice"],
+  ["sprig", "sprig"],
+  ["sprigs", "sprig"],
+  ["stalk", "stalk"],
+  ["stalks", "stalk"],
+  ["stick", "stick"],
+  ["sticks", "stick"],
+  ["yolk", "yolk"],
+  ["yolks", "yolk"],
+]);
 
 export function normalizeWhitespace(text) {
   return String(text || "")
@@ -196,36 +462,7 @@ export function normalizeUnit(unitRaw) {
   const unit = (unitRaw || "").toLowerCase().trim();
 
   if (!unit) return null;
-
-  if (unit === "tsp" || unit === "teaspoon" || unit === "teaspoons") return "tsp";
-  if (unit === "tbsp" || unit === "tablespoon" || unit === "tablespoons") return "tbsp";
-  if (unit === "cup" || unit === "cups") return "cup";
-  if (unit === "oz" || unit === "ounce" || unit === "ounces") return "oz";
-  if (unit === "lb" || unit === "lbs" || unit === "pound" || unit === "pounds") return "lb";
-  if (unit === "g" || unit === "gram" || unit === "grams") return "g";
-  if (unit === "kg" || unit === "kilogram" || unit === "kilograms") return "kg";
-  if (unit === "ml" || unit === "milliliter" || unit === "milliliters") return "ml";
-  if (unit === "l" || unit === "liter" || unit === "liters") return "l";
-
-  if (unit === "bag" || unit === "bags") return "bag";
-  if (unit === "block" || unit === "blocks") return "block";
-  if (unit === "bottle" || unit === "bottles") return "bottle";
-  if (unit === "bunch" || unit === "bunches") return "bunch";
-  if (unit === "can" || unit === "cans") return "can";
-  if (unit === "clove" || unit === "cloves") return "clove";
-  if (unit === "egg" || unit === "eggs") return "egg";
-  if (unit === "egg white" || unit === "egg whites") return "egg white";
-  if (unit === "jar" || unit === "jars") return "jar";
-  if (unit === "leaf" || unit === "leaves") return "leaf";
-  if (unit === "package" || unit === "packages" || unit === "pkg" || unit === "pkgs") return "package";
-  if (unit === "sheet" || unit === "sheets") return "sheet";
-  if (unit === "slice" || unit === "slices") return "slice";
-  if (unit === "sprig" || unit === "sprigs") return "sprig";
-  if (unit === "stalk" || unit === "stalks") return "stalk";
-  if (unit === "stick" || unit === "sticks") return "stick";
-  if (unit === "yolk" || unit === "yolks") return "yolk";
-
-  return unit;
+  return unitAliases.get(unit) || unit;
 }
 
 export function removeParentheticalsAndTrailingNotes(nameText) {
@@ -253,547 +490,18 @@ export function buildCanonicalIngredient(nameLower) {
   const raw = normalizeWhitespace(removeParentheticalsAndTrailingNotes(nameLower)).toLowerCase();
   if (!raw) return null;
 
-  if (raw.includes("dark or semi sweet chocolate") || raw.includes("dark or semi-sweet chocolate")) {
-    return {
-      base: "chocolate",
-      display: "Chocolate (dark OR semi-sweet)",
-      notes: [],
-    };
-  }
+  const leadingRule = findCanonicalRule(raw, leadingIngredientRules);
+  if (leadingRule) return leadingRule;
 
-  if (raw.includes("butter lettuce") && raw.includes("red leaf lettuce")) {
-    return { base: "butter lettuce or red leaf lettuce", display: "butter lettuce or red leaf lettuce" };
-  }
-
-  if (raw.includes("lard") && raw.includes("unsalted butter")) {
-    return { base: "lard or unsalted butter", display: "lard or unsalted butter" };
-  }
-
-  const commodity = extractCommodityBaseStrict(raw);
-  const notes = extractNotesStrict(raw);
-
+  const commodity = findCanonicalRule(raw, commodityIngredientRules);
   if (commodity) {
     return {
-      base: commodity, // ONLY key used for aggregation
-      display: commodity, // UI label
-      notes: notes,
+      ...commodity,
+      notes: extractNotesStrict(raw),
     };
   }
 
-  if (raw.includes("granulated garlic") && raw.includes("garlic powder")) {
-    return { base: "granulated garlic or garlic powder", display: "granulated garlic or garlic powder" };
-  }
-
-  if (raw.includes("garlic powder")) {
-    return { base: "garlic powder", display: "garlic powder" };
-  }
-
-  if (raw.includes("onion powder")) {
-    return { base: "onion powder", display: "onion powder" };
-  }
-
-  if (raw.includes("garlic")) {
-    return { base: "garlic", display: "garlic" };
-  }
-
-  if (raw.includes("yellow onion")) {
-    return { base: "yellow onion", display: "yellow onion" };
-  }
-
-  if (raw.includes("white onion")) {
-    return { base: "white onion", display: "white onion" };
-  }
-
-  if (raw.includes("roasted red peppers")) {
-    return { base: "roasted red peppers", display: "roasted red peppers" };
-  }
-
-  if (raw.includes("green bell pepper")) {
-    return { base: "green bell pepper", display: "green bell pepper" };
-  }
-
-  if (raw.includes("red bell pepper")) {
-    return { base: "red bell pepper", display: "red bell pepper" };
-  }
-
-  if (raw.includes("bell pepper")) {
-    return { base: "bell pepper", display: "bell pepper" };
-  }
-
-  if (raw.includes("cabbage and carrot coleslaw mix") || raw.includes("coleslaw mix")) {
-    return { base: "plain shredded cabbage and carrot coleslaw mix", display: "plain shredded cabbage and carrot coleslaw mix" };
-  }
-
-  if (raw.includes("carrot")) {
-    return { base: "carrot", display: "carrot" };
-  }
-
-  if (raw.includes("celery seed")) {
-    return { base: "celery seed", display: "celery seed" };
-  }
-
-  if (raw.includes("celery")) {
-    return { base: "celery", display: "celery" };
-  }
-
-  if (raw.includes("potato bun") && raw.includes("brioche bun")) {
-    return { base: "potato bun or brioche bun", display: "potato bun or brioche bun" };
-  }
-
-  if (raw.includes("potato bun")) {
-    return { base: "potato bun", display: "potato bun" };
-  }
-
-  if (raw.includes("brioche bun")) {
-    return { base: "brioche bun", display: "brioche bun" };
-  }
-
-  if (raw.includes("potato")) {
-    if (raw.includes("mashed potatoes")) return { base: "mashed potatoes", display: "mashed potatoes" };
-    if (raw.includes("sweet potato")) return { base: "sweet potato", display: "sweet potato" };
-    if (raw.includes("yukon gold")) return { base: "yukon gold potato", display: "Yukon gold potato" };
-    if (raw.includes("baby yellow")) return { base: "baby yellow potato", display: "baby yellow potato" };
-    return { base: "potato", display: "potato" };
-  }
-
-  if (raw.includes("chicken breast")) {
-    if (raw.includes("boneless skinless")) {
-      return { base: "boneless skinless chicken breast", display: "boneless skinless chicken breast" };
-    }
-    return { base: "chicken breast", display: "chicken breast" };
-  }
-
-  if (raw.includes("flank steak")) {
-    return { base: "flank steak", display: "flank steak" };
-  }
-
-  if (raw.includes("top sirloin steak") && raw.includes("strip steak") && raw.includes("flat iron steak")) {
-    return { base: "top sirloin steak, strip steak, or flat iron steak", display: "top sirloin steak, strip steak, or flat iron steak" };
-  }
-
-  if (raw.includes("ribeye") && raw.includes("top sirloin") && raw.includes("skirt steak")) {
-    return { base: "boneless ribeye, top sirloin, or skirt steak", display: "boneless ribeye, top sirloin, or skirt steak" };
-  }
-
-  if (raw.includes("thick-cut ribeye steak")) {
-    return { base: "thick-cut ribeye steak", display: "thick-cut ribeye steak" };
-  }
-
-  if (raw.includes("ribeye")) {
-    return { base: "ribeye steak", display: "ribeye steak" };
-  }
-
-  if (raw.includes("top sirloin")) {
-    return { base: "top sirloin steak", display: "top sirloin steak" };
-  }
-
-  if (raw.includes("new york strip")) {
-    return { base: "new york strip steak", display: "New York strip steak" };
-  }
-
-  if (raw.includes("strip steak")) {
-    return { base: "strip steak", display: "strip steak" };
-  }
-
-  if (raw.includes("flat iron steak")) {
-    return { base: "flat iron steak", display: "flat iron steak" };
-  }
-
-  if (raw.includes("skirt steak")) {
-    return { base: "skirt steak", display: "skirt steak" };
-  }
-
-  if (raw.includes("80/20 ground beef")) {
-    return { base: "80/20 ground beef", display: "80/20 ground beef" };
-  }
-
-  if (raw.includes("85/15 ground beef")) {
-    return { base: "85/15 ground beef", display: "85/15 ground beef" };
-  }
-
-  if (raw.includes("lean ground beef")) {
-    return { base: "lean ground beef", display: "lean ground beef" };
-  }
-
-  if (raw.includes("grass-fed ground beef")) {
-    return { base: "grass-fed ground beef", display: "grass-fed ground beef" };
-  }
-
-  if (raw.includes("ground beef")) {
-    return { base: "ground beef", display: "ground beef" };
-  }
-
-  if (raw.includes("short rib")) {
-    return { base: "beef short rib", display: "beef short rib" };
-  }
-
-  if (raw.includes("beef tenderloin")) {
-    return { base: "beef tenderloin", display: "beef tenderloin" };
-  }
-
-  if (raw.includes("prime rib")) {
-    return { base: "prime rib roast", display: "prime rib roast" };
-  }
-
-  if (raw.includes("crushed tomatoes")) {
-    return { base: "crushed tomatoes", display: "crushed tomatoes" };
-  }
-
-  if (raw.includes("fire-roasted diced tomatoes")) {
-    return { base: "fire-roasted diced tomatoes", display: "fire-roasted diced tomatoes" };
-  }
-
-  if (raw.includes("diced tomatoes")) {
-    return { base: "diced tomatoes", display: "diced tomatoes" };
-  }
-
-  if (raw.includes("tomato sauce")) {
-    return { base: "tomato sauce", display: "tomato sauce" };
-  }
-
-  if (raw.includes("tomato paste")) {
-    return { base: "tomato paste", display: "tomato paste" };
-  }
-
-  if (raw.includes("kidney beans")) {
-    return { base: "kidney beans", display: "kidney beans" };
-  }
-
-  if (raw.includes("pinto beans")) {
-    return { base: "pinto beans", display: "pinto beans" };
-  }
-
-  if (raw.includes("cream of chicken soup")) {
-    return { base: "cream of chicken soup", display: "cream of chicken soup" };
-  }
-
-  if (raw.includes("puff pastry")) {
-    return { base: "puff pastry dough", display: "puff pastry dough" };
-  }
-
-  if (raw.includes("vanilla bean paste") && raw.includes("extract")) {
-    return { base: "vanilla extract or paste", display: "vanilla extract or paste" };
-  }
-
-  if (raw.includes("vanilla bean paste")) {
-    return { base: "vanilla bean paste", display: "vanilla bean paste" };
-  }
-
-  if (raw.includes("vanilla extract") || raw.includes("vanilla paste")) {
-    return { base: "vanilla extract or paste", display: "vanilla extract or paste" };
-  }
-
-  if (raw.includes("egg yolk")) {
-    return { base: "egg yolk", display: "egg yolk" };
-  }
-
-  if (raw.includes("american cheese slice")) {
-    return { base: "american cheese slice", display: "American cheese slice" };
-  }
-
-  if (raw.includes("american cheese")) {
-    return { base: "american cheese", display: "American cheese" };
-  }
-
-  if (raw.includes("brown sugar")) {
-    if (raw.includes("light or dark")) return { base: "brown sugar", display: "brown sugar" };
-    return { base: "brown sugar", display: "brown sugar" };
-  }
-
-  if (raw.includes("maple syrup")) {
-    return { base: "maple syrup", display: "maple syrup" };
-  }
-
-  if (raw.includes("blueberries")) {
-    return { base: "blueberries", display: "blueberries" };
-  }
-
-  if (raw.includes("raspberries")) {
-    return { base: "raspberries", display: "raspberries" };
-  }
-
-  if (raw.includes("mixed berries")) {
-    return { base: "mixed berries", display: "mixed berries" };
-  }
-
-  if (raw.includes("berries")) {
-    return { base: "berries", display: "berries" };
-  }
-
-  if (raw.includes("banana")) {
-    return { base: "banana", display: "banana" };
-  }
-
-  if (raw.includes("walnut")) {
-    return { base: "walnuts", display: "walnuts" };
-  }
-
-  if (raw.includes("pecan")) {
-    return { base: "pecans", display: "pecans" };
-  }
-
-  if (raw.includes("pistachio")) {
-    return { base: "pistachios", display: "pistachios" };
-  }
-
-  if (raw.includes("nuts of choice")) {
-    return { base: "nuts of choice", display: "nuts of choice" };
-  }
-
-  if (raw.includes("pasta of choice") || raw.includes("pasta")) {
-    return { base: "pasta", display: "pasta" };
-  }
-
-  if (raw.includes("low-sodium beef broth")) {
-    return { base: "low-sodium beef broth", display: "low-sodium beef broth" };
-  }
-
-  if (raw.includes("beef broth")) {
-    return { base: "beef broth", display: "beef broth" };
-  }
-
-  if (raw.includes("low-sodium chicken broth")) {
-    return { base: "low-sodium chicken broth", display: "low-sodium chicken broth" };
-  }
-
-  if (raw.includes("chicken broth")) {
-    return { base: "chicken broth", display: "chicken broth" };
-  }
-
-  if (raw.includes("cinnamon")) {
-    return { base: "cinnamon", display: "cinnamon" };
-  }
-
-  if (raw.includes("red pepper flakes")) {
-    return { base: "red pepper flakes", display: "red pepper flakes" };
-  }
-
-  if (raw.includes("peanut or vegetable oil")) {
-    return { base: "peanut or vegetable oil", display: "peanut or vegetable oil" };
-  }
-
-  if (raw.includes("olive or avocado oil")) {
-    return { base: "olive or avocado oil", display: "olive or avocado oil" };
-  }
-
-  if (raw.includes("pizza oil")) {
-    return { base: "pizza oil or olive oil", display: "pizza oil or olive oil" };
-  }
-
-  if (raw.includes("oil of choice")) {
-    return { base: "oil of choice", display: "oil of choice" };
-  }
-
-  if (raw.includes("mayonnaise")) {
-    return { base: "mayonnaise", display: "mayonnaise" };
-  }
-
-  if (raw.includes("yellow mustard seed")) {
-    return { base: "yellow mustard seed", display: "yellow mustard seed" };
-  }
-
-  if (raw.includes("yellow mustard")) {
-    return { base: "yellow mustard", display: "yellow mustard" };
-  }
-
-  if (raw.includes("louisiana-style cayenne hot sauce")) {
-    return { base: "louisiana-style cayenne hot sauce", display: "Louisiana-style cayenne hot sauce" };
-  }
-
-  if (raw.includes("louisiana-style hot sauce")) {
-    return { base: "louisiana-style hot sauce", display: "Louisiana-style hot sauce" };
-  }
-
-  if (raw.includes("hot sauce")) {
-    return { base: "hot sauce", display: "hot sauce" };
-  }
-
-  if (raw.includes("pizza sauce")) {
-    return { base: "pizza sauce", display: "pizza sauce" };
-  }
-
-  if (raw.includes("cheese of choice")) {
-    return { base: "cheese", display: "cheese" };
-  }
-
-  if (raw.includes("iceberg lettuce")) {
-    return { base: "iceberg lettuce", display: "iceberg lettuce" };
-  }
-
-  if (raw.includes("red leaf lettuce")) {
-    return { base: "red leaf lettuce", display: "red leaf lettuce" };
-  }
-
-  if (raw.includes("butter lettuce")) {
-    return { base: "butter lettuce", display: "butter lettuce" };
-  }
-
-  if (raw.includes("lettuce")) {
-    return { base: "lettuce", display: "lettuce" };
-  }
-
-  if (raw.includes("chocolate chip") || raw.includes("chopped chocolate") || raw.includes("dark chocolate") || raw.includes("white chocolate") || raw.includes("semi-sweet chocolate") || raw.includes("semisweet chocolate")) {
-    if (raw.includes("white chocolate")) return { base: "white chocolate", display: "white chocolate" };
-    if (raw.includes("dark chocolate")) return { base: "dark chocolate", display: "dark chocolate" };
-    if (raw.includes("semisweet chocolate chips")) return { base: "semisweet chocolate chips", display: "semisweet chocolate chips" };
-    if (raw.includes("semi-sweet chocolate chips")) return { base: "semi-sweet chocolate chips", display: "semi-sweet chocolate chips" };
-    if (raw.includes("semi-sweet")) return { base: "semi-sweet chocolate", display: "semi-sweet chocolate" };
-    if (raw.includes("semisweet")) return { base: "semisweet chocolate", display: "semisweet chocolate" };
-    return { base: "chocolate", display: "chocolate" };
-  }
-
-  if (raw.includes("avocado oil") && raw.includes("coconut oil")) {
-    return { base: "avocado oil or coconut oil", display: "avocado oil or coconut oil" };
-  }
-
-  if (raw.includes("avocado oil")) {
-    return { base: "avocado oil", display: "avocado oil" };
-  }
-
-  if (raw.includes("olive oil")) {
-    if (raw.includes("extra-virgin")) {
-      return { base: "extra-virgin olive oil", display: "extra-virgin olive oil" };
-    }
-    return { base: "olive oil", display: "olive oil" };
-  }
-
-  if (raw.includes("chipotle peppers in adobo")) {
-    return { base: "chipotle peppers in adobo sauce", display: "chipotle peppers in adobo sauce" };
-  }
-
-  if (raw.includes("sun-dried tomatoes")) {
-    return { base: "sun-dried tomatoes", display: "sun-dried tomatoes" };
-  }
-
-  if (raw.includes("broccoli")) {
-    return { base: "broccoli", display: "broccoli" };
-  }
-
-  if (raw.includes("green onion")) {
-    return { base: "green onion", display: "green onion" };
-  }
-
-  if (raw.includes("onion")) {
-    return { base: "onion", display: "onion" };
-  }
-
-  if (raw.includes("fresh ginger")) {
-    return { base: "fresh ginger", display: "fresh ginger" };
-  }
-
-  if (raw.includes("ginger")) {
-    return { base: "ginger", display: "ginger" };
-  }
-
-  if (raw.includes("peach")) {
-    return { base: "peach", display: "peach" };
-  }
-
-  if (raw.includes("graham cracker")) {
-    return { base: "graham crackers", display: "graham crackers" };
-  }
-
-  if (raw.includes("croissant")) {
-    return { base: "croissants", display: "croissants" };
-  }
-
-  if (raw.includes("refrigerated crescent rolls")) {
-    return { base: "refrigerated crescent rolls", display: "refrigerated crescent rolls" };
-  }
-
-  if (raw.includes("pineapple slices")) {
-    return { base: "pineapple slices", display: "pineapple slices" };
-  }
-
-  if (raw.includes("maraschino cherries")) {
-    return { base: "maraschino cherries", display: "maraschino cherries" };
-  }
-
-  if (raw.includes("vanilla bean")) {
-    return { base: "vanilla bean", display: "vanilla bean" };
-  }
-
-  if (raw.includes("basil pesto")) {
-    return { base: "basil pesto", display: "basil pesto" };
-  }
-
-  if (raw.includes("basil")) {
-    return { base: "basil", display: "basil" };
-  }
-
-  if (raw.includes("sourdough discard")) {
-    return { base: "sourdough discard", display: "sourdough discard" };
-  }
-
-  if (raw.includes("freeze-dried strawberries")) {
-    return { base: "freeze-dried strawberries", display: "freeze-dried strawberries" };
-  }
-
-  if (raw.includes("dill pickle chips") || raw.includes("hamburger dill pickle chips") || raw.includes("crinkle-cut dill pickles")) {
-    return { base: "dill pickle chips", display: "dill pickle chips" };
-  }
-
-  if (raw.includes("pickle chips") || raw.includes("pickles")) {
-    return { base: "pickles", display: "pickles" };
-  }
-
-  if (raw.includes("bacon")) {
-    return { base: "bacon", display: "bacon" };
-  }
-
-  if (raw.includes("salami")) {
-    return { base: "deli salami", display: "deli salami" };
-  }
-
-  if (raw.includes("pepperoni")) {
-    return { base: "deli pepperoni", display: "deli pepperoni" };
-  }
-
-  if (raw.includes("ice cream")) {
-    return { base: "ice cream", display: "ice cream" };
-  }
-
-  if (raw.includes("dried bay leaf") || raw.includes("dried bay leaves")) {
-    return { base: "dried bay leaf", display: "dried bay leaf" };
-  }
-
-  if (raw.includes("bay leaf") || raw.includes("bay leaves")) {
-    return { base: "bay leaf", display: "bay leaf" };
-  }
-
-  if (raw.includes("italian parsley")) {
-    return { base: "italian parsley", display: "italian parsley" };
-  }
-
-  if (raw.includes("fresh parsley")) {
-    return { base: "fresh parsley", display: "fresh parsley" };
-  }
-
-  if (raw.includes("parsley")) {
-    return { base: "parsley", display: "parsley" };
-  }
-
-  if (raw.includes("rosemary")) {
-    if (raw.includes("fresh rosemary")) {
-      return { base: "fresh rosemary", display: "fresh rosemary" };
-    }
-    if (raw.includes("sprig")) {
-      return { base: "rosemary sprig", display: "rosemary sprig" };
-    }
-    return { base: "rosemary", display: "rosemary" };
-  }
-
-  if (raw.includes("thyme")) {
-    if (raw.includes("fresh thyme")) {
-      return { base: "fresh thyme", display: "fresh thyme" };
-    }
-    if (raw.includes("sprig")) {
-      return { base: "thyme sprig", display: "thyme sprig" };
-    }
-    return { base: "thyme", display: "thyme" };
-  }
-
-  return { base: raw, display: raw };
+  return findCanonicalRule(raw, ingredientRules) || createCanonicalIngredient(raw);
 }
 
 export function escapeRegex(text) {

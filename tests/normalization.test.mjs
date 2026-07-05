@@ -63,6 +63,31 @@ test("buildCanonicalIngredient preserves distinctions that affect shopping", () 
   });
 });
 
+test("buildCanonicalIngredient keeps specific ordered rules ahead of generic fallbacks", () => {
+  const cases = [
+    ["red bell pepper", { base: "red bell pepper", display: "red bell pepper" }],
+    ["bell pepper", { base: "bell pepper", display: "bell pepper" }],
+    ["celery seed", { base: "celery seed", display: "celery seed" }],
+    ["celery", { base: "celery", display: "celery" }],
+    ["yellow mustard seed", { base: "yellow mustard seed", display: "yellow mustard seed" }],
+    ["yellow mustard", { base: "yellow mustard", display: "yellow mustard" }],
+    ["dried bay leaves", { base: "dried bay leaf", display: "dried bay leaf" }],
+    ["bay leaves", { base: "bay leaf", display: "bay leaf" }],
+    ["fresh rosemary sprigs", { base: "fresh rosemary", display: "fresh rosemary" }],
+    ["rosemary sprigs", { base: "rosemary sprig", display: "rosemary sprig" }],
+    ["potato bun and brioche bun", { base: "potato bun or brioche bun", display: "potato bun or brioche bun" }],
+    ["potato bun", { base: "potato bun", display: "potato bun" }],
+    ["semi-sweet chocolate chips", { base: "semi-sweet chocolate chips", display: "semi-sweet chocolate chips" }],
+    ["chocolate chips", { base: "chocolate", display: "chocolate" }],
+    ["lard or unsalted butter", { base: "lard or unsalted butter", display: "lard or unsalted butter" }],
+    ["unsalted butter", { base: "unsalted butter", display: "unsalted butter", notes: [] }],
+  ];
+
+  cases.forEach(([input, expected]) => {
+    assert.deepEqual(buildCanonicalIngredient(input), expected);
+  });
+});
+
 test("repairTextEncoding fixes common mojibake without touching non-strings", () => {
   assert.equal(
     repairTextEncoding("Bake at 350\u00c2\u00b0F until caf\u00c3\u00a9 brown"),
