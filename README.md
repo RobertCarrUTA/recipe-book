@@ -1,41 +1,25 @@
-# Robert's Recipe Book and Grocery List
+# Robert's Recipe Book and Grocery List <!-- omit in toc -->
 
 A mobile-first static web app for saved recipes, weekly meal planning, focused cooking, and grocery-list building.
 
 This project is intentionally small: no framework, no backend, no database, and no app-shell build step. The browser loads native ES modules from static files, recipe source files live as individual JSON documents, and personal state stays in the user's browser.
 
-## Contents
+## Contents <!-- omit in toc -->
 
-- [Robert's Recipe Book and Grocery List](#roberts-recipe-book-and-grocery-list)
-  - [Contents](#contents)
-  - [What It Is](#what-it-is)
-  - [Highlights](#highlights)
-  - [Quick Start](#quick-start)
-  - [Using the App](#using-the-app)
-    - [Recipes](#recipes)
-    - [Meal Plan](#meal-plan)
-    - [Grocery List](#grocery-list)
-    - [Cooking Mode](#cooking-mode)
-  - [Common Tasks](#common-tasks)
-  - [Recipe Data](#recipe-data)
-    - [Recommended Fields](#recommended-fields)
-    - [Optional Fields](#optional-fields)
-  - [Structured Grocery Data](#structured-grocery-data)
-  - [Local State and Backups](#local-state-and-backups)
-  - [Offline and Deployment](#offline-and-deployment)
-  - [Project Structure](#project-structure)
-    - [JavaScript Map](#javascript-map)
-  - [Development Workflow](#development-workflow)
-    - [Add or Edit Recipes](#add-or-edit-recipes)
-    - [Change CSS or JavaScript](#change-css-or-javascript)
-    - [Change Documentation](#change-documentation)
-  - [Verification and CI](#verification-and-ci)
-  - [Troubleshooting](#troubleshooting)
-    - [Recipes changed but the app still shows old data](#recipes-changed-but-the-app-still-shows-old-data)
-    - [`npm run verify` says `data/recipes.json` is stale](#npm-run-verify-says-datarecipesjson-is-stale)
-    - [PowerShell blocks npm scripts](#powershell-blocks-npm-scripts)
-    - [Browser smoke tests cannot find Chromium](#browser-smoke-tests-cannot-find-chromium)
-  - [License](#license)
+- [What It Is](#what-it-is)
+- [Highlights](#highlights)
+- [Quick Start](#quick-start)
+- [Using the App](#using-the-app)
+- [Common Tasks](#common-tasks)
+- [Recipe Data](#recipe-data)
+- [Structured Grocery Data](#structured-grocery-data)
+- [Local State and Backups](#local-state-and-backups)
+- [Offline and Deployment](#offline-and-deployment)
+- [Project Structure](#project-structure)
+- [Development Workflow](#development-workflow)
+- [Verification and CI](#verification-and-ci)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
 
 ## What It Is
 
