@@ -1,17 +1,17 @@
 import assert from "node:assert/strict";
-import crypto from "node:crypto";
 import fs from "node:fs/promises";
 
 import { buildCanonicalIngredient, normalizeUnit } from "../js/normalization.js";
 import { test } from "./test_helpers.mjs";
 
-const expectedCatalogNormalizationDigest = "5147c91e2cbc1bc4dbd462ff00c1c1ac9937b0146748f280933981b1815cd4ba";
-const expectedCatalogLabelCount = 323;
-const expectedCatalogUnitCount = 19;
-
 async function loadBundledRecipes() {
   const recipeDataUrl = new URL("../data/recipes.json", import.meta.url);
   return JSON.parse(await fs.readFile(recipeDataUrl, "utf8"));
+}
+
+async function loadExpectedCatalogSnapshot() {
+  const snapshotUrl = new URL("./fixtures/normalization_catalog_snapshot.json", import.meta.url);
+  return JSON.parse(await fs.readFile(snapshotUrl, "utf8"));
 }
 
 function createCatalogNormalizationSnapshot(recipes) {
@@ -38,25 +38,19 @@ function createCatalogNormalizationSnapshot(recipes) {
   };
 }
 
-function createDigest(value) {
-  return crypto.createHash("sha256").update(JSON.stringify(value)).digest("hex");
-}
-
 test("bundled grocery catalog normalization stays intentionally stable", async () => {
-  const snapshot = createCatalogNormalizationSnapshot(await loadBundledRecipes());
-  const digest = createDigest(snapshot);
+  const actual = createCatalogNormalizationSnapshot(await loadBundledRecipes());
+  const expected = await loadExpectedCatalogSnapshot();
 
-  assert.equal(snapshot.labels.length, expectedCatalogLabelCount);
-  assert.equal(snapshot.units.length, expectedCatalogUnitCount);
-  assert.equal(
-    digest,
-    expectedCatalogNormalizationDigest,
+  assert.deepEqual(
+    actual,
+    expected,
     JSON.stringify(
       {
-        actualDigest: digest,
-        expectedDigest: expectedCatalogNormalizationDigest,
-        labelCount: snapshot.labels.length,
-        unitCount: snapshot.units.length,
+        actualLabelCount: actual.labels.length,
+        expectedLabelCount: expected.labels.length,
+        actualUnitCount: actual.units.length,
+        expectedUnitCount: expected.units.length,
       },
       null,
       2

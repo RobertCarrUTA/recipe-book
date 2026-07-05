@@ -88,6 +88,17 @@ test("buildCanonicalIngredient keeps specific ordered rules ahead of generic fal
   });
 });
 
+test("buildCanonicalIngredient returns fresh mutable canonical objects", () => {
+  const first = buildCanonicalIngredient("dark or semi-sweet chocolate");
+  first.notes.push("changed by caller");
+
+  assert.deepEqual(buildCanonicalIngredient("dark or semi-sweet chocolate"), {
+    base: "chocolate",
+    display: "Chocolate (dark OR semi-sweet)",
+    notes: [],
+  });
+});
+
 test("repairTextEncoding fixes common mojibake without touching non-strings", () => {
   assert.equal(
     repairTextEncoding("Bake at 350\u00c2\u00b0F until caf\u00c3\u00a9 brown"),

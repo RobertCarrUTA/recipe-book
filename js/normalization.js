@@ -15,8 +15,18 @@ ingredient labels used by structured grocery parsing and aggregation.
 
 =============================================================================*/
 
+function cloneCanonicalExtras(extras) {
+  if (!extras) return null;
+  return Object.fromEntries(
+    Object.entries(extras).map(([key, value]) => [
+      key,
+      Array.isArray(value) ? [...value] : value,
+    ])
+  );
+}
+
 function createCanonicalIngredient(base, display = base, extras = null) {
-  return extras ? { base, display, ...extras } : { base, display };
+  return extras ? { base, display, ...cloneCanonicalExtras(extras) } : { base, display };
 }
 
 function ruleMatches(raw, rule) {
@@ -63,24 +73,21 @@ const unicodeFractionMap = {
   "\u215c": "3/8",
   "\u215d": "5/8",
   "\u215e": "7/8",
-  "Â¼": "1/4",
-  "Â½": "1/2",
-  "Â¾": "3/4",
-  "â…": "1/7",
-  "â…‘": "1/9",
-  "â…’": "1/10",
-  "â…“": "1/3",
-  "â…”": "2/3",
-  "â…•": "1/5",
-  "â…–": "2/5",
-  "â…—": "3/5",
-  "â…˜": "4/5",
-  "â…™": "1/6",
-  "â…š": "5/6",
-  "â…›": "1/8",
-  "â…œ": "3/8",
-  "â…": "5/8",
-  "â…ž": "7/8",
+  "\u00e2\u2026\u0090": "1/7",
+  "\u00e2\u2026\u2018": "1/9",
+  "\u00e2\u2026\u2019": "1/10",
+  "\u00e2\u2026\u201c": "1/3",
+  "\u00e2\u2026\u201d": "2/3",
+  "\u00e2\u2026\u2022": "1/5",
+  "\u00e2\u2026\u2013": "2/5",
+  "\u00e2\u2026\u2014": "3/5",
+  "\u00e2\u2026\u02dc": "4/5",
+  "\u00e2\u2026\u2122": "1/6",
+  "\u00e2\u2026\u0161": "5/6",
+  "\u00e2\u2026\u203a": "1/8",
+  "\u00e2\u2026\u0153": "3/8",
+  "\u00e2\u2026\u009d": "5/8",
+  "\u00e2\u2026\u017e": "7/8",
 };
 const unicodeFractionSymbols = Object.keys(unicodeFractionMap).sort((a, b) => b.length - a.length);
 const unitAliases = new Map(unitAliasEntries);
