@@ -1,0 +1,2394 @@
+{
+  "labels": [
+    {
+      "item": "'00' flour",
+      "canonical": {
+        "base": "'00' flour",
+        "display": "'00' flour"
+      }
+    },
+    {
+      "item": "80/20 ground beef",
+      "canonical": {
+        "base": "80/20 ground beef",
+        "display": "80/20 ground beef"
+      }
+    },
+    {
+      "item": "85/15 ground beef",
+      "canonical": {
+        "base": "85/15 ground beef",
+        "display": "85/15 ground beef"
+      }
+    },
+    {
+      "item": "9-inch unbaked pie crust",
+      "canonical": {
+        "base": "9-inch unbaked pie crust",
+        "display": "9-inch unbaked pie crust"
+      }
+    },
+    {
+      "item": "active dry or instant yeast",
+      "canonical": {
+        "base": "active dry or instant yeast",
+        "display": "active dry or instant yeast"
+      }
+    },
+    {
+      "item": "active dry yeast",
+      "canonical": {
+        "base": "active dry yeast",
+        "display": "active dry yeast"
+      }
+    },
+    {
+      "item": "all-purpose flour",
+      "canonical": {
+        "base": "all-purpose flour",
+        "display": "all-purpose flour",
+        "notes": []
+      }
+    },
+    {
+      "item": "almond butter",
+      "canonical": {
+        "base": "almond butter",
+        "display": "almond butter",
+        "notes": []
+      }
+    },
+    {
+      "item": "almond extract",
+      "canonical": {
+        "base": "almond extract",
+        "display": "almond extract"
+      }
+    },
+    {
+      "item": "american cheese",
+      "canonical": {
+        "base": "american cheese",
+        "display": "American cheese"
+      }
+    },
+    {
+      "item": "amoretti's vanilla bean paste",
+      "canonical": {
+        "base": "vanilla bean paste",
+        "display": "vanilla bean paste"
+      }
+    },
+    {
+      "item": "apple cider vinegar",
+      "canonical": {
+        "base": "apple cider vinegar",
+        "display": "apple cider vinegar"
+      }
+    },
+    {
+      "item": "asian pear or bosc pear",
+      "canonical": {
+        "base": "asian pear or bosc pear",
+        "display": "asian pear or bosc pear"
+      }
+    },
+    {
+      "item": "avocado",
+      "canonical": {
+        "base": "avocado",
+        "display": "avocado"
+      }
+    },
+    {
+      "item": "avocado oil",
+      "canonical": {
+        "base": "avocado oil",
+        "display": "avocado oil"
+      }
+    },
+    {
+      "item": "avocado oil or coconut oil",
+      "canonical": {
+        "base": "avocado oil or coconut oil",
+        "display": "avocado oil or coconut oil"
+      }
+    },
+    {
+      "item": "baby arugula",
+      "canonical": {
+        "base": "baby arugula",
+        "display": "baby arugula"
+      }
+    },
+    {
+      "item": "baby carrot",
+      "canonical": {
+        "base": "carrot",
+        "display": "carrot"
+      }
+    },
+    {
+      "item": "baby spinach",
+      "canonical": {
+        "base": "baby spinach",
+        "display": "baby spinach"
+      }
+    },
+    {
+      "item": "baby yellow potato",
+      "canonical": {
+        "base": "baby yellow potato",
+        "display": "baby yellow potato"
+      }
+    },
+    {
+      "item": "bacon",
+      "canonical": {
+        "base": "bacon",
+        "display": "bacon"
+      }
+    },
+    {
+      "item": "baking powder",
+      "canonical": {
+        "base": "baking powder",
+        "display": "baking powder"
+      }
+    },
+    {
+      "item": "baking soda",
+      "canonical": {
+        "base": "baking soda",
+        "display": "baking soda"
+      }
+    },
+    {
+      "item": "banana",
+      "canonical": {
+        "base": "banana",
+        "display": "banana"
+      }
+    },
+    {
+      "item": "basil pesto",
+      "canonical": {
+        "base": "basil pesto",
+        "display": "basil pesto"
+      }
+    },
+    {
+      "item": "bay leaf",
+      "canonical": {
+        "base": "bay leaf",
+        "display": "bay leaf"
+      }
+    },
+    {
+      "item": "beef broth",
+      "canonical": {
+        "base": "beef broth",
+        "display": "beef broth"
+      }
+    },
+    {
+      "item": "beef tallow or neutral oil",
+      "canonical": {
+        "base": "beef tallow or neutral oil",
+        "display": "beef tallow or neutral oil"
+      }
+    },
+    {
+      "item": "beef tenderloin",
+      "canonical": {
+        "base": "beef tenderloin",
+        "display": "beef tenderloin"
+      }
+    },
+    {
+      "item": "berries",
+      "canonical": {
+        "base": "berries",
+        "display": "berries"
+      }
+    },
+    {
+      "item": "black pepper",
+      "canonical": {
+        "base": "black pepper",
+        "display": "black pepper",
+        "notes": []
+      }
+    },
+    {
+      "item": "blueberries",
+      "canonical": {
+        "base": "blueberries",
+        "display": "blueberries"
+      }
+    },
+    {
+      "item": "bone-in beef prime rib roast",
+      "canonical": {
+        "base": "prime rib roast",
+        "display": "prime rib roast"
+      }
+    },
+    {
+      "item": "bone-in beef short rib",
+      "canonical": {
+        "base": "beef short rib",
+        "display": "beef short rib"
+      }
+    },
+    {
+      "item": "boneless beef chuck roast",
+      "canonical": {
+        "base": "boneless beef chuck roast",
+        "display": "boneless beef chuck roast"
+      }
+    },
+    {
+      "item": "boneless pork shoulder",
+      "canonical": {
+        "base": "boneless pork shoulder",
+        "display": "boneless pork shoulder"
+      }
+    },
+    {
+      "item": "boneless ribeye, top sirloin, or skirt steak",
+      "canonical": {
+        "base": "boneless ribeye, top sirloin, or skirt steak",
+        "display": "boneless ribeye, top sirloin, or skirt steak"
+      }
+    },
+    {
+      "item": "boneless skinless chicken breast",
+      "canonical": {
+        "base": "boneless skinless chicken breast",
+        "display": "boneless skinless chicken breast"
+      }
+    },
+    {
+      "item": "boneless skinless chicken breast or thighs",
+      "canonical": {
+        "base": "boneless skinless chicken breast",
+        "display": "boneless skinless chicken breast"
+      }
+    },
+    {
+      "item": "boneless skinless chicken thigh",
+      "canonical": {
+        "base": "boneless skinless chicken thigh",
+        "display": "boneless skinless chicken thigh"
+      }
+    },
+    {
+      "item": "boneless skinless turkey breast cutlet",
+      "canonical": {
+        "base": "boneless skinless turkey breast cutlet",
+        "display": "boneless skinless turkey breast cutlet"
+      }
+    },
+    {
+      "item": "bourbon whiskey",
+      "canonical": {
+        "base": "bourbon whiskey",
+        "display": "bourbon whiskey"
+      }
+    },
+    {
+      "item": "bread flour",
+      "canonical": {
+        "base": "bread flour",
+        "display": "bread flour"
+      }
+    },
+    {
+      "item": "broccoli",
+      "canonical": {
+        "base": "broccoli",
+        "display": "broccoli"
+      }
+    },
+    {
+      "item": "brown sugar",
+      "canonical": {
+        "base": "brown sugar",
+        "display": "brown sugar"
+      }
+    },
+    {
+      "item": "bulk pork breakfast sausage",
+      "canonical": {
+        "base": "bulk pork breakfast sausage",
+        "display": "bulk pork breakfast sausage"
+      }
+    },
+    {
+      "item": "butter",
+      "canonical": {
+        "base": "butter",
+        "display": "butter",
+        "notes": []
+      }
+    },
+    {
+      "item": "butter lettuce or red leaf lettuce",
+      "canonical": {
+        "base": "butter lettuce or red leaf lettuce",
+        "display": "butter lettuce or red leaf lettuce"
+      }
+    },
+    {
+      "item": "buttermilk",
+      "canonical": {
+        "base": "buttermilk",
+        "display": "buttermilk",
+        "notes": []
+      }
+    },
+    {
+      "item": "cake flour",
+      "canonical": {
+        "base": "cake flour",
+        "display": "cake flour"
+      }
+    },
+    {
+      "item": "capers",
+      "canonical": {
+        "base": "capers",
+        "display": "capers"
+      }
+    },
+    {
+      "item": "carrot",
+      "canonical": {
+        "base": "carrot",
+        "display": "carrot"
+      }
+    },
+    {
+      "item": "cayenne pepper",
+      "canonical": {
+        "base": "cayenne pepper",
+        "display": "cayenne pepper"
+      }
+    },
+    {
+      "item": "celery",
+      "canonical": {
+        "base": "celery",
+        "display": "celery"
+      }
+    },
+    {
+      "item": "celery salt",
+      "canonical": {
+        "base": "celery salt",
+        "display": "celery salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "celery seed",
+      "canonical": {
+        "base": "celery seed",
+        "display": "celery seed"
+      }
+    },
+    {
+      "item": "cheddar cheese",
+      "canonical": {
+        "base": "cheddar cheese",
+        "display": "cheddar cheese",
+        "notes": []
+      }
+    },
+    {
+      "item": "chicken breast",
+      "canonical": {
+        "base": "chicken breast",
+        "display": "chicken breast"
+      }
+    },
+    {
+      "item": "chicken broth",
+      "canonical": {
+        "base": "chicken broth",
+        "display": "chicken broth"
+      }
+    },
+    {
+      "item": "chicken stock",
+      "canonical": {
+        "base": "chicken stock",
+        "display": "chicken stock"
+      }
+    },
+    {
+      "item": "chili powder",
+      "canonical": {
+        "base": "chili powder",
+        "display": "chili powder"
+      }
+    },
+    {
+      "item": "chipotle pepper in adobo",
+      "canonical": {
+        "base": "chipotle pepper in adobo",
+        "display": "chipotle pepper in adobo"
+      }
+    },
+    {
+      "item": "chipotle peppers in adobo sauce",
+      "canonical": {
+        "base": "chipotle peppers in adobo sauce",
+        "display": "chipotle peppers in adobo sauce"
+      }
+    },
+    {
+      "item": "chives",
+      "canonical": {
+        "base": "chives",
+        "display": "chives"
+      }
+    },
+    {
+      "item": "chives or green onion",
+      "canonical": {
+        "base": "green onion",
+        "display": "green onion"
+      }
+    },
+    {
+      "item": "chocolate chips",
+      "canonical": {
+        "base": "chocolate",
+        "display": "chocolate"
+      }
+    },
+    {
+      "item": "chopped parsley",
+      "canonical": {
+        "base": "parsley",
+        "display": "parsley"
+      }
+    },
+    {
+      "item": "ciabatta roll or sturdy hoagie roll",
+      "canonical": {
+        "base": "ciabatta roll or sturdy hoagie roll",
+        "display": "ciabatta roll or sturdy hoagie roll"
+      }
+    },
+    {
+      "item": "cilantro",
+      "canonical": {
+        "base": "cilantro",
+        "display": "cilantro"
+      }
+    },
+    {
+      "item": "cinnamon",
+      "canonical": {
+        "base": "cinnamon",
+        "display": "cinnamon"
+      }
+    },
+    {
+      "item": "cocoa powder",
+      "canonical": {
+        "base": "cocoa powder",
+        "display": "cocoa powder"
+      }
+    },
+    {
+      "item": "coconut milk",
+      "canonical": {
+        "base": "coconut milk",
+        "display": "coconut milk",
+        "notes": []
+      }
+    },
+    {
+      "item": "condensed cream of chicken soup",
+      "canonical": {
+        "base": "cream of chicken soup",
+        "display": "cream of chicken soup"
+      }
+    },
+    {
+      "item": "corn kernels",
+      "canonical": {
+        "base": "corn kernels",
+        "display": "corn kernels"
+      }
+    },
+    {
+      "item": "cornstarch",
+      "canonical": {
+        "base": "cornstarch",
+        "display": "cornstarch"
+      }
+    },
+    {
+      "item": "cornstarch or potato starch",
+      "canonical": {
+        "base": "potato",
+        "display": "potato"
+      }
+    },
+    {
+      "item": "cream cheese",
+      "canonical": {
+        "base": "cream cheese",
+        "display": "cream cheese",
+        "notes": []
+      }
+    },
+    {
+      "item": "cream of coconut",
+      "canonical": {
+        "base": "cream of coconut",
+        "display": "cream of coconut"
+      }
+    },
+    {
+      "item": "crinkle-cut dill pickles",
+      "canonical": {
+        "base": "dill pickle chips",
+        "display": "dill pickle chips"
+      }
+    },
+    {
+      "item": "croissants",
+      "canonical": {
+        "base": "croissants",
+        "display": "croissants"
+      }
+    },
+    {
+      "item": "crushed tomatoes",
+      "canonical": {
+        "base": "crushed tomatoes",
+        "display": "crushed tomatoes"
+      }
+    },
+    {
+      "item": "cruzan dark rum or smooth dark rum",
+      "canonical": {
+        "base": "cruzan dark rum or smooth dark rum",
+        "display": "cruzan dark rum or smooth dark rum"
+      }
+    },
+    {
+      "item": "cultured buttermilk",
+      "canonical": {
+        "base": "buttermilk",
+        "display": "buttermilk",
+        "notes": []
+      }
+    },
+    {
+      "item": "cumin",
+      "canonical": {
+        "base": "cumin",
+        "display": "cumin"
+      }
+    },
+    {
+      "item": "dark brown sugar",
+      "canonical": {
+        "base": "dark brown sugar",
+        "display": "dark brown sugar",
+        "notes": []
+      }
+    },
+    {
+      "item": "dark chocolate",
+      "canonical": {
+        "base": "dark chocolate",
+        "display": "dark chocolate"
+      }
+    },
+    {
+      "item": "dark chocolate chips",
+      "canonical": {
+        "base": "dark chocolate",
+        "display": "dark chocolate"
+      }
+    },
+    {
+      "item": "dark or semi-sweet chocolate",
+      "canonical": {
+        "base": "chocolate",
+        "display": "Chocolate (dark OR semi-sweet)",
+        "notes": []
+      }
+    },
+    {
+      "item": "deli ham",
+      "canonical": {
+        "base": "deli ham",
+        "display": "deli ham"
+      }
+    },
+    {
+      "item": "deli pepperoni",
+      "canonical": {
+        "base": "deli pepperoni",
+        "display": "deli pepperoni"
+      }
+    },
+    {
+      "item": "deli provolone cheese slice",
+      "canonical": {
+        "base": "deli provolone cheese slice",
+        "display": "deli provolone cheese slice"
+      }
+    },
+    {
+      "item": "deli salami",
+      "canonical": {
+        "base": "deli salami",
+        "display": "deli salami"
+      }
+    },
+    {
+      "item": "diced tomatoes",
+      "canonical": {
+        "base": "diced tomatoes",
+        "display": "diced tomatoes"
+      }
+    },
+    {
+      "item": "dijon mustard",
+      "canonical": {
+        "base": "dijon mustard",
+        "display": "dijon mustard"
+      }
+    },
+    {
+      "item": "dill pickle chips",
+      "canonical": {
+        "base": "dill pickle chips",
+        "display": "dill pickle chips"
+      }
+    },
+    {
+      "item": "dried bay leaf",
+      "canonical": {
+        "base": "dried bay leaf",
+        "display": "dried bay leaf"
+      }
+    },
+    {
+      "item": "dried chile de arbol",
+      "canonical": {
+        "base": "dried chile de arbol",
+        "display": "dried chile de arbol"
+      }
+    },
+    {
+      "item": "dried guajillo chile",
+      "canonical": {
+        "base": "dried guajillo chile",
+        "display": "dried guajillo chile"
+      }
+    },
+    {
+      "item": "dried oregano",
+      "canonical": {
+        "base": "dried oregano",
+        "display": "dried oregano"
+      }
+    },
+    {
+      "item": "dried thyme",
+      "canonical": {
+        "base": "thyme",
+        "display": "thyme"
+      }
+    },
+    {
+      "item": "dry red wine",
+      "canonical": {
+        "base": "dry red wine",
+        "display": "dry red wine"
+      }
+    },
+    {
+      "item": "dry white wine",
+      "canonical": {
+        "base": "dry white wine",
+        "display": "dry white wine"
+      }
+    },
+    {
+      "item": "egg",
+      "canonical": {
+        "base": "egg",
+        "display": "egg",
+        "notes": []
+      }
+    },
+    {
+      "item": "egg yolk",
+      "canonical": {
+        "base": "egg yolk",
+        "display": "egg yolk",
+        "notes": []
+      }
+    },
+    {
+      "item": "elbow macaroni pasta",
+      "canonical": {
+        "base": "pasta",
+        "display": "pasta"
+      }
+    },
+    {
+      "item": "english cucumber",
+      "canonical": {
+        "base": "english cucumber",
+        "display": "english cucumber"
+      }
+    },
+    {
+      "item": "evaporated milk",
+      "canonical": {
+        "base": "evaporated milk",
+        "display": "evaporated milk",
+        "notes": []
+      }
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "canonical": {
+        "base": "extra-virgin olive oil",
+        "display": "extra-virgin olive oil"
+      }
+    },
+    {
+      "item": "fennel seeds",
+      "canonical": {
+        "base": "fennel seeds",
+        "display": "fennel seeds"
+      }
+    },
+    {
+      "item": "fine salt",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "fire-roasted diced tomatoes",
+      "canonical": {
+        "base": "fire-roasted diced tomatoes",
+        "display": "fire-roasted diced tomatoes"
+      }
+    },
+    {
+      "item": "fire-roasted tomatoes",
+      "canonical": {
+        "base": "fire-roasted tomatoes",
+        "display": "fire-roasted tomatoes"
+      }
+    },
+    {
+      "item": "flaked sea salt",
+      "canonical": {
+        "base": "flaked sea salt",
+        "display": "flaked sea salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "flaky salt",
+      "canonical": {
+        "base": "flaky salt",
+        "display": "flaky salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "flaky sea salt",
+      "canonical": {
+        "base": "flaky sea salt",
+        "display": "flaky sea salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "flank steak",
+      "canonical": {
+        "base": "flank steak",
+        "display": "flank steak"
+      }
+    },
+    {
+      "item": "flanken-cut beef short ribs",
+      "canonical": {
+        "base": "beef short rib",
+        "display": "beef short rib"
+      }
+    },
+    {
+      "item": "flap steak, skirt steak, or flank steak",
+      "canonical": {
+        "base": "flank steak",
+        "display": "flank steak"
+      }
+    },
+    {
+      "item": "flat-leaf parsley",
+      "canonical": {
+        "base": "parsley",
+        "display": "parsley"
+      }
+    },
+    {
+      "item": "freeze-dried strawberries",
+      "canonical": {
+        "base": "berries",
+        "display": "berries"
+      }
+    },
+    {
+      "item": "fresh baby spinach",
+      "canonical": {
+        "base": "fresh baby spinach",
+        "display": "fresh baby spinach"
+      }
+    },
+    {
+      "item": "fresh basil",
+      "canonical": {
+        "base": "basil",
+        "display": "basil"
+      }
+    },
+    {
+      "item": "fresh cremini mushrooms",
+      "canonical": {
+        "base": "fresh cremini mushrooms",
+        "display": "fresh cremini mushrooms"
+      }
+    },
+    {
+      "item": "fresh dill",
+      "canonical": {
+        "base": "fresh dill",
+        "display": "fresh dill"
+      }
+    },
+    {
+      "item": "fresh flat-leaf parsley",
+      "canonical": {
+        "base": "parsley",
+        "display": "parsley"
+      }
+    },
+    {
+      "item": "fresh ginger",
+      "canonical": {
+        "base": "fresh ginger",
+        "display": "fresh ginger"
+      }
+    },
+    {
+      "item": "fresh lemon juice",
+      "canonical": {
+        "base": "lemon juice",
+        "display": "lemon juice",
+        "notes": []
+      }
+    },
+    {
+      "item": "fresh orange juice",
+      "canonical": {
+        "base": "fresh orange juice",
+        "display": "fresh orange juice"
+      }
+    },
+    {
+      "item": "fresh oregano",
+      "canonical": {
+        "base": "fresh oregano",
+        "display": "fresh oregano"
+      }
+    },
+    {
+      "item": "fresh parsley",
+      "canonical": {
+        "base": "fresh parsley",
+        "display": "fresh parsley"
+      }
+    },
+    {
+      "item": "fresh rosemary",
+      "canonical": {
+        "base": "fresh rosemary",
+        "display": "fresh rosemary"
+      }
+    },
+    {
+      "item": "fresh shiitake or cremini mushrooms",
+      "canonical": {
+        "base": "fresh shiitake or cremini mushrooms",
+        "display": "fresh shiitake or cremini mushrooms"
+      }
+    },
+    {
+      "item": "fresh thyme",
+      "canonical": {
+        "base": "fresh thyme",
+        "display": "fresh thyme"
+      }
+    },
+    {
+      "item": "fresh thyme sprig",
+      "canonical": {
+        "base": "fresh thyme",
+        "display": "fresh thyme"
+      }
+    },
+    {
+      "item": "frozen corn and carrots",
+      "canonical": {
+        "base": "carrot",
+        "display": "carrot"
+      }
+    },
+    {
+      "item": "frozen pineapple chunks",
+      "canonical": {
+        "base": "frozen pineapple chunks",
+        "display": "frozen pineapple chunks"
+      }
+    },
+    {
+      "item": "garlic",
+      "canonical": {
+        "base": "garlic",
+        "display": "garlic"
+      }
+    },
+    {
+      "item": "garlic clove",
+      "canonical": {
+        "base": "garlic",
+        "display": "garlic"
+      }
+    },
+    {
+      "item": "garlic powder",
+      "canonical": {
+        "base": "garlic powder",
+        "display": "garlic powder"
+      }
+    },
+    {
+      "item": "gochujang",
+      "canonical": {
+        "base": "gochujang",
+        "display": "gochujang"
+      }
+    },
+    {
+      "item": "gold potato",
+      "canonical": {
+        "base": "potato",
+        "display": "potato"
+      }
+    },
+    {
+      "item": "gouda cheese",
+      "canonical": {
+        "base": "gouda cheese",
+        "display": "gouda cheese"
+      }
+    },
+    {
+      "item": "graham cracker crumbs",
+      "canonical": {
+        "base": "graham crackers",
+        "display": "graham crackers"
+      }
+    },
+    {
+      "item": "graham crackers",
+      "canonical": {
+        "base": "graham crackers",
+        "display": "graham crackers"
+      }
+    },
+    {
+      "item": "granulated garlic or garlic powder",
+      "canonical": {
+        "base": "granulated garlic or garlic powder",
+        "display": "granulated garlic or garlic powder"
+      }
+    },
+    {
+      "item": "granulated sugar",
+      "canonical": {
+        "base": "granulated sugar",
+        "display": "granulated sugar",
+        "notes": []
+      }
+    },
+    {
+      "item": "greek yogurt",
+      "canonical": {
+        "base": "greek yogurt",
+        "display": "greek yogurt",
+        "notes": []
+      }
+    },
+    {
+      "item": "greek yogurt or sour cream",
+      "canonical": {
+        "base": "greek yogurt or sour cream",
+        "display": "greek yogurt or sour cream",
+        "notes": []
+      }
+    },
+    {
+      "item": "green bell pepper",
+      "canonical": {
+        "base": "green bell pepper",
+        "display": "green bell pepper"
+      }
+    },
+    {
+      "item": "green onion",
+      "canonical": {
+        "base": "green onion",
+        "display": "green onion"
+      }
+    },
+    {
+      "item": "ground beef",
+      "canonical": {
+        "base": "ground beef",
+        "display": "ground beef"
+      }
+    },
+    {
+      "item": "ground cinnamon",
+      "canonical": {
+        "base": "cinnamon",
+        "display": "cinnamon"
+      }
+    },
+    {
+      "item": "ground cumin",
+      "canonical": {
+        "base": "ground cumin",
+        "display": "ground cumin"
+      }
+    },
+    {
+      "item": "ground ginger",
+      "canonical": {
+        "base": "ginger",
+        "display": "ginger"
+      }
+    },
+    {
+      "item": "ground nutmeg",
+      "canonical": {
+        "base": "ground nutmeg",
+        "display": "ground nutmeg"
+      }
+    },
+    {
+      "item": "ground pork",
+      "canonical": {
+        "base": "ground pork",
+        "display": "ground pork"
+      }
+    },
+    {
+      "item": "ground white pepper",
+      "canonical": {
+        "base": "ground white pepper",
+        "display": "ground white pepper"
+      }
+    },
+    {
+      "item": "half-and-half",
+      "canonical": {
+        "base": "half-and-half",
+        "display": "half-and-half"
+      }
+    },
+    {
+      "item": "heavy cream",
+      "canonical": {
+        "base": "heavy cream",
+        "display": "heavy cream",
+        "notes": []
+      }
+    },
+    {
+      "item": "heavy whipping cream",
+      "canonical": {
+        "base": "heavy whipping cream",
+        "display": "heavy whipping cream",
+        "notes": []
+      }
+    },
+    {
+      "item": "honey",
+      "canonical": {
+        "base": "honey",
+        "display": "honey"
+      }
+    },
+    {
+      "item": "hot honey",
+      "canonical": {
+        "base": "hot honey",
+        "display": "hot honey"
+      }
+    },
+    {
+      "item": "iceberg lettuce",
+      "canonical": {
+        "base": "iceberg lettuce",
+        "display": "iceberg lettuce"
+      }
+    },
+    {
+      "item": "instant espresso powder",
+      "canonical": {
+        "base": "instant espresso powder",
+        "display": "instant espresso powder"
+      }
+    },
+    {
+      "item": "italian breadcrumbs",
+      "canonical": {
+        "base": "italian breadcrumbs",
+        "display": "italian breadcrumbs"
+      }
+    },
+    {
+      "item": "italian parsley",
+      "canonical": {
+        "base": "italian parsley",
+        "display": "italian parsley"
+      }
+    },
+    {
+      "item": "italian seasoning",
+      "canonical": {
+        "base": "italian seasoning",
+        "display": "italian seasoning"
+      }
+    },
+    {
+      "item": "italian sub roll or sturdy hoagie roll",
+      "canonical": {
+        "base": "italian sub roll or sturdy hoagie roll",
+        "display": "italian sub roll or sturdy hoagie roll"
+      }
+    },
+    {
+      "item": "jalapeno",
+      "canonical": {
+        "base": "jalapeno",
+        "display": "jalapeno"
+      }
+    },
+    {
+      "item": "jasmine rice",
+      "canonical": {
+        "base": "jasmine rice",
+        "display": "jasmine rice"
+      }
+    },
+    {
+      "item": "ketchup",
+      "canonical": {
+        "base": "ketchup",
+        "display": "ketchup"
+      }
+    },
+    {
+      "item": "kidney beans",
+      "canonical": {
+        "base": "kidney beans",
+        "display": "kidney beans"
+      }
+    },
+    {
+      "item": "kimchi",
+      "canonical": {
+        "base": "kimchi",
+        "display": "kimchi"
+      }
+    },
+    {
+      "item": "kosher salt",
+      "canonical": {
+        "base": "kosher salt",
+        "display": "kosher salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "lard or unsalted butter",
+      "canonical": {
+        "base": "lard or unsalted butter",
+        "display": "lard or unsalted butter"
+      }
+    },
+    {
+      "item": "large 12-inch burrito-size flour tortilla",
+      "canonical": {
+        "base": "large 12-inch burrito-size flour tortilla",
+        "display": "large 12-inch burrito-size flour tortilla"
+      }
+    },
+    {
+      "item": "large burrito-size flour tortilla",
+      "canonical": {
+        "base": "large burrito-size flour tortilla",
+        "display": "large burrito-size flour tortilla"
+      }
+    },
+    {
+      "item": "large carrot",
+      "canonical": {
+        "base": "carrot",
+        "display": "carrot"
+      }
+    },
+    {
+      "item": "large egg",
+      "canonical": {
+        "base": "egg",
+        "display": "egg",
+        "notes": []
+      }
+    },
+    {
+      "item": "large orange",
+      "canonical": {
+        "base": "large orange",
+        "display": "large orange"
+      }
+    },
+    {
+      "item": "lean ground beef",
+      "canonical": {
+        "base": "lean ground beef",
+        "display": "lean ground beef"
+      }
+    },
+    {
+      "item": "lemon",
+      "canonical": {
+        "base": "lemon",
+        "display": "lemon",
+        "notes": []
+      }
+    },
+    {
+      "item": "lemon juice",
+      "canonical": {
+        "base": "lemon juice",
+        "display": "lemon juice",
+        "notes": []
+      }
+    },
+    {
+      "item": "lemon zest",
+      "canonical": {
+        "base": "lemon zest",
+        "display": "lemon zest",
+        "notes": []
+      }
+    },
+    {
+      "item": "lettuce",
+      "canonical": {
+        "base": "lettuce",
+        "display": "lettuce"
+      }
+    },
+    {
+      "item": "light brown sugar",
+      "canonical": {
+        "base": "light brown sugar",
+        "display": "light brown sugar",
+        "notes": []
+      }
+    },
+    {
+      "item": "light or dark corn syrup",
+      "canonical": {
+        "base": "light or dark corn syrup",
+        "display": "light or dark corn syrup"
+      }
+    },
+    {
+      "item": "lime",
+      "canonical": {
+        "base": "lime",
+        "display": "lime"
+      }
+    },
+    {
+      "item": "long-grain white rice",
+      "canonical": {
+        "base": "long-grain white rice",
+        "display": "long-grain white rice"
+      }
+    },
+    {
+      "item": "louisiana-style cayenne hot sauce",
+      "canonical": {
+        "base": "louisiana-style cayenne hot sauce",
+        "display": "Louisiana-style cayenne hot sauce"
+      }
+    },
+    {
+      "item": "low-moisture mozzarella",
+      "canonical": {
+        "base": "low-moisture mozzarella",
+        "display": "low-moisture mozzarella"
+      }
+    },
+    {
+      "item": "low-moisture whole-milk mozzarella cheese",
+      "canonical": {
+        "base": "milk",
+        "display": "milk",
+        "notes": []
+      }
+    },
+    {
+      "item": "low-sodium beef broth",
+      "canonical": {
+        "base": "low-sodium beef broth",
+        "display": "low-sodium beef broth"
+      }
+    },
+    {
+      "item": "low-sodium chicken broth",
+      "canonical": {
+        "base": "low-sodium chicken broth",
+        "display": "low-sodium chicken broth"
+      }
+    },
+    {
+      "item": "low-sodium soy sauce",
+      "canonical": {
+        "base": "low-sodium soy sauce",
+        "display": "low-sodium soy sauce"
+      }
+    },
+    {
+      "item": "maple syrup",
+      "canonical": {
+        "base": "maple syrup",
+        "display": "maple syrup"
+      }
+    },
+    {
+      "item": "maraschino cherries",
+      "canonical": {
+        "base": "maraschino cherries",
+        "display": "maraschino cherries"
+      }
+    },
+    {
+      "item": "marinara sauce",
+      "canonical": {
+        "base": "marinara sauce",
+        "display": "marinara sauce"
+      }
+    },
+    {
+      "item": "mashed potatoes",
+      "canonical": {
+        "base": "mashed potatoes",
+        "display": "mashed potatoes"
+      }
+    },
+    {
+      "item": "mayonnaise",
+      "canonical": {
+        "base": "mayonnaise",
+        "display": "mayonnaise"
+      }
+    },
+    {
+      "item": "mexican oregano",
+      "canonical": {
+        "base": "mexican oregano",
+        "display": "mexican oregano"
+      }
+    },
+    {
+      "item": "milk",
+      "canonical": {
+        "base": "milk",
+        "display": "milk",
+        "notes": []
+      }
+    },
+    {
+      "item": "milk chocolate chips",
+      "canonical": {
+        "base": "milk chocolate",
+        "display": "milk chocolate",
+        "notes": []
+      }
+    },
+    {
+      "item": "mirin or rice wine",
+      "canonical": {
+        "base": "mirin or rice wine",
+        "display": "mirin or rice wine"
+      }
+    },
+    {
+      "item": "mixed berries",
+      "canonical": {
+        "base": "mixed berries",
+        "display": "mixed berries"
+      }
+    },
+    {
+      "item": "monterey jack cheese",
+      "canonical": {
+        "base": "monterey jack cheese",
+        "display": "monterey jack cheese"
+      }
+    },
+    {
+      "item": "mozzarella cheese",
+      "canonical": {
+        "base": "mozzarella cheese",
+        "display": "mozzarella cheese"
+      }
+    },
+    {
+      "item": "msg",
+      "canonical": {
+        "base": "msg",
+        "display": "msg"
+      }
+    },
+    {
+      "item": "mustard powder",
+      "canonical": {
+        "base": "mustard powder",
+        "display": "mustard powder"
+      }
+    },
+    {
+      "item": "neutral frying oil",
+      "canonical": {
+        "base": "neutral frying oil",
+        "display": "neutral frying oil"
+      }
+    },
+    {
+      "item": "neutral frying oil, preferably peanut oil",
+      "canonical": {
+        "base": "neutral frying oil preferably peanut oil",
+        "display": "neutral frying oil preferably peanut oil"
+      }
+    },
+    {
+      "item": "neutral high-heat oil",
+      "canonical": {
+        "base": "neutral high-heat oil",
+        "display": "neutral high-heat oil"
+      }
+    },
+    {
+      "item": "non-aerosolized cooking spray",
+      "canonical": {
+        "base": "non-aerosolized cooking spray",
+        "display": "non-aerosolized cooking spray"
+      }
+    },
+    {
+      "item": "nutella",
+      "canonical": {
+        "base": "nutella",
+        "display": "nutella"
+      }
+    },
+    {
+      "item": "nuts of choice",
+      "canonical": {
+        "base": "nuts of choice",
+        "display": "nuts of choice"
+      }
+    },
+    {
+      "item": "oaxaca cheese or low-moisture whole-milk mozzarella",
+      "canonical": {
+        "base": "milk",
+        "display": "milk",
+        "notes": []
+      }
+    },
+    {
+      "item": "oil",
+      "canonical": {
+        "base": "oil",
+        "display": "oil"
+      }
+    },
+    {
+      "item": "oil of choice",
+      "canonical": {
+        "base": "oil of choice",
+        "display": "oil of choice"
+      }
+    },
+    {
+      "item": "olive oil",
+      "canonical": {
+        "base": "olive oil",
+        "display": "olive oil"
+      }
+    },
+    {
+      "item": "olive or avocado oil",
+      "canonical": {
+        "base": "olive or avocado oil",
+        "display": "olive or avocado oil"
+      }
+    },
+    {
+      "item": "onion",
+      "canonical": {
+        "base": "onion",
+        "display": "onion"
+      }
+    },
+    {
+      "item": "onion powder",
+      "canonical": {
+        "base": "onion powder",
+        "display": "onion powder"
+      }
+    },
+    {
+      "item": "orange",
+      "canonical": {
+        "base": "orange",
+        "display": "orange"
+      }
+    },
+    {
+      "item": "orange zest",
+      "canonical": {
+        "base": "orange zest",
+        "display": "orange zest"
+      }
+    },
+    {
+      "item": "oregano",
+      "canonical": {
+        "base": "oregano",
+        "display": "oregano"
+      }
+    },
+    {
+      "item": "packed light brown sugar",
+      "canonical": {
+        "base": "light brown sugar",
+        "display": "light brown sugar",
+        "notes": [
+          "packed"
+        ]
+      }
+    },
+    {
+      "item": "panko breadcrumbs",
+      "canonical": {
+        "base": "panko breadcrumbs",
+        "display": "panko breadcrumbs"
+      }
+    },
+    {
+      "item": "paprika",
+      "canonical": {
+        "base": "paprika",
+        "display": "paprika"
+      }
+    },
+    {
+      "item": "parmesan",
+      "canonical": {
+        "base": "parmesan cheese",
+        "display": "parmesan cheese",
+        "notes": []
+      }
+    },
+    {
+      "item": "parmesan cheese",
+      "canonical": {
+        "base": "parmesan cheese",
+        "display": "parmesan cheese",
+        "notes": []
+      }
+    },
+    {
+      "item": "parmigiano reggiano cheese",
+      "canonical": {
+        "base": "parmigiano reggiano cheese",
+        "display": "parmigiano reggiano cheese",
+        "notes": []
+      }
+    },
+    {
+      "item": "parsley",
+      "canonical": {
+        "base": "parsley",
+        "display": "parsley"
+      }
+    },
+    {
+      "item": "pasta",
+      "canonical": {
+        "base": "pasta",
+        "display": "pasta"
+      }
+    },
+    {
+      "item": "peach",
+      "canonical": {
+        "base": "peach",
+        "display": "peach"
+      }
+    },
+    {
+      "item": "peanut butter",
+      "canonical": {
+        "base": "peanut butter",
+        "display": "peanut butter",
+        "notes": []
+      }
+    },
+    {
+      "item": "peanut or vegetable oil",
+      "canonical": {
+        "base": "peanut or vegetable oil",
+        "display": "peanut or vegetable oil"
+      }
+    },
+    {
+      "item": "pecans",
+      "canonical": {
+        "base": "pecans",
+        "display": "pecans"
+      }
+    },
+    {
+      "item": "pepperoni",
+      "canonical": {
+        "base": "deli pepperoni",
+        "display": "deli pepperoni"
+      }
+    },
+    {
+      "item": "pickle brine",
+      "canonical": {
+        "base": "pickle brine",
+        "display": "pickle brine"
+      }
+    },
+    {
+      "item": "pickles",
+      "canonical": {
+        "base": "pickles",
+        "display": "pickles"
+      }
+    },
+    {
+      "item": "pineapple juice",
+      "canonical": {
+        "base": "pineapple juice",
+        "display": "pineapple juice"
+      }
+    },
+    {
+      "item": "pineapple slices",
+      "canonical": {
+        "base": "pineapple slices",
+        "display": "pineapple slices"
+      }
+    },
+    {
+      "item": "pinto beans",
+      "canonical": {
+        "base": "pinto beans",
+        "display": "pinto beans"
+      }
+    },
+    {
+      "item": "pizza oil or olive oil",
+      "canonical": {
+        "base": "pizza oil or olive oil",
+        "display": "pizza oil or olive oil"
+      }
+    },
+    {
+      "item": "pizza sauce",
+      "canonical": {
+        "base": "pizza sauce",
+        "display": "pizza sauce"
+      }
+    },
+    {
+      "item": "plain shredded cabbage and carrot coleslaw mix",
+      "canonical": {
+        "base": "plain shredded cabbage and carrot coleslaw mix",
+        "display": "plain shredded cabbage and carrot coleslaw mix"
+      }
+    },
+    {
+      "item": "poblano pepper",
+      "canonical": {
+        "base": "poblano pepper",
+        "display": "poblano pepper"
+      }
+    },
+    {
+      "item": "poppy seeds",
+      "canonical": {
+        "base": "poppy seeds",
+        "display": "poppy seeds"
+      }
+    },
+    {
+      "item": "potato",
+      "canonical": {
+        "base": "potato",
+        "display": "potato"
+      }
+    },
+    {
+      "item": "potato bun",
+      "canonical": {
+        "base": "potato bun",
+        "display": "potato bun"
+      }
+    },
+    {
+      "item": "potato bun or brioche bun",
+      "canonical": {
+        "base": "potato bun or brioche bun",
+        "display": "potato bun or brioche bun"
+      }
+    },
+    {
+      "item": "powdered sugar",
+      "canonical": {
+        "base": "powdered sugar",
+        "display": "powdered sugar",
+        "notes": []
+      }
+    },
+    {
+      "item": "provolone cheese",
+      "canonical": {
+        "base": "provolone cheese",
+        "display": "provolone cheese"
+      }
+    },
+    {
+      "item": "provolone cheese slice",
+      "canonical": {
+        "base": "provolone cheese slice",
+        "display": "provolone cheese slice"
+      }
+    },
+    {
+      "item": "puff pastry dough",
+      "canonical": {
+        "base": "puff pastry dough",
+        "display": "puff pastry dough"
+      }
+    },
+    {
+      "item": "pumpkin pie spice",
+      "canonical": {
+        "base": "pumpkin pie spice",
+        "display": "pumpkin pie spice"
+      }
+    },
+    {
+      "item": "pumpkin puree",
+      "canonical": {
+        "base": "pumpkin puree",
+        "display": "pumpkin puree"
+      }
+    },
+    {
+      "item": "raspberries",
+      "canonical": {
+        "base": "raspberries",
+        "display": "raspberries"
+      }
+    },
+    {
+      "item": "red bell pepper",
+      "canonical": {
+        "base": "red bell pepper",
+        "display": "red bell pepper"
+      }
+    },
+    {
+      "item": "red food coloring",
+      "canonical": {
+        "base": "red food coloring",
+        "display": "red food coloring"
+      }
+    },
+    {
+      "item": "red leaf lettuce",
+      "canonical": {
+        "base": "red leaf lettuce",
+        "display": "red leaf lettuce"
+      }
+    },
+    {
+      "item": "red onion",
+      "canonical": {
+        "base": "onion",
+        "display": "onion"
+      }
+    },
+    {
+      "item": "red pepper flakes",
+      "canonical": {
+        "base": "red pepper flakes",
+        "display": "red pepper flakes"
+      }
+    },
+    {
+      "item": "red wine",
+      "canonical": {
+        "base": "red wine",
+        "display": "red wine"
+      }
+    },
+    {
+      "item": "red wine vinegar",
+      "canonical": {
+        "base": "red wine vinegar",
+        "display": "red wine vinegar"
+      }
+    },
+    {
+      "item": "refrigerated crescent rolls",
+      "canonical": {
+        "base": "refrigerated crescent rolls",
+        "display": "refrigerated crescent rolls"
+      }
+    },
+    {
+      "item": "rice vinegar",
+      "canonical": {
+        "base": "rice vinegar",
+        "display": "rice vinegar"
+      }
+    },
+    {
+      "item": "ricotta cheese",
+      "canonical": {
+        "base": "ricotta cheese",
+        "display": "ricotta cheese"
+      }
+    },
+    {
+      "item": "roasted red peppers",
+      "canonical": {
+        "base": "roasted red peppers",
+        "display": "roasted red peppers"
+      }
+    },
+    {
+      "item": "roma tomato",
+      "canonical": {
+        "base": "roma tomato",
+        "display": "roma tomato"
+      }
+    },
+    {
+      "item": "rotisserie chicken",
+      "canonical": {
+        "base": "rotisserie chicken",
+        "display": "rotisserie chicken"
+      }
+    },
+    {
+      "item": "salt",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "salted butter",
+      "canonical": {
+        "base": "salted butter",
+        "display": "salted butter",
+        "notes": []
+      }
+    },
+    {
+      "item": "sea salt",
+      "canonical": {
+        "base": "sea salt",
+        "display": "sea salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "semi-sweet chocolate chips",
+      "canonical": {
+        "base": "semi-sweet chocolate chips",
+        "display": "semi-sweet chocolate chips"
+      }
+    },
+    {
+      "item": "serrano pepper",
+      "canonical": {
+        "base": "serrano pepper",
+        "display": "serrano pepper"
+      }
+    },
+    {
+      "item": "sesame oil",
+      "canonical": {
+        "base": "sesame oil",
+        "display": "sesame oil"
+      }
+    },
+    {
+      "item": "sesame seeds",
+      "canonical": {
+        "base": "sesame seeds",
+        "display": "sesame seeds"
+      }
+    },
+    {
+      "item": "short-grain white rice",
+      "canonical": {
+        "base": "short-grain white rice",
+        "display": "short-grain white rice"
+      }
+    },
+    {
+      "item": "shredded cheddar cheese",
+      "canonical": {
+        "base": "cheddar cheese",
+        "display": "cheddar cheese",
+        "notes": []
+      }
+    },
+    {
+      "item": "sliced pepperoncini peppers",
+      "canonical": {
+        "base": "sliced pepperoncini peppers",
+        "display": "sliced pepperoncini peppers"
+      }
+    },
+    {
+      "item": "smoked paprika",
+      "canonical": {
+        "base": "smoked paprika",
+        "display": "smoked paprika"
+      }
+    },
+    {
+      "item": "sour cream",
+      "canonical": {
+        "base": "sour cream",
+        "display": "sour cream",
+        "notes": []
+      }
+    },
+    {
+      "item": "sourdough discard",
+      "canonical": {
+        "base": "sourdough discard",
+        "display": "sourdough discard"
+      }
+    },
+    {
+      "item": "sourdough tortillas",
+      "canonical": {
+        "base": "sourdough tortillas",
+        "display": "sourdough tortillas"
+      }
+    },
+    {
+      "item": "soy sauce",
+      "canonical": {
+        "base": "soy sauce",
+        "display": "soy sauce"
+      }
+    },
+    {
+      "item": "steak",
+      "canonical": {
+        "base": "steak",
+        "display": "steak"
+      }
+    },
+    {
+      "item": "sun-dried tomatoes in oil",
+      "canonical": {
+        "base": "sun-dried tomatoes",
+        "display": "sun-dried tomatoes"
+      }
+    },
+    {
+      "item": "sweet paprika",
+      "canonical": {
+        "base": "sweet paprika",
+        "display": "sweet paprika"
+      }
+    },
+    {
+      "item": "sweet potato",
+      "canonical": {
+        "base": "sweet potato",
+        "display": "sweet potato"
+      }
+    },
+    {
+      "item": "sweetened condensed milk",
+      "canonical": {
+        "base": "sweetened condensed milk",
+        "display": "sweetened condensed milk",
+        "notes": []
+      }
+    },
+    {
+      "item": "sweetened shredded coconut",
+      "canonical": {
+        "base": "sweetened shredded coconut",
+        "display": "sweetened shredded coconut"
+      }
+    },
+    {
+      "item": "swiss cheese",
+      "canonical": {
+        "base": "swiss cheese",
+        "display": "swiss cheese"
+      }
+    },
+    {
+      "item": "tenderized top round steak or cube steak, ideally 1/3 inch thick and no thicker than 1/2 inch",
+      "canonical": {
+        "base": "tenderized top round steak or cube steak ideally 1/3 inch thick and no thicker than 1/2 inch",
+        "display": "tenderized top round steak or cube steak ideally 1/3 inch thick and no thicker than 1/2 inch"
+      }
+    },
+    {
+      "item": "thick-cut ribeye steak",
+      "canonical": {
+        "base": "thick-cut ribeye steak",
+        "display": "thick-cut ribeye steak"
+      }
+    },
+    {
+      "item": "thin-sliced smoked deli ham",
+      "canonical": {
+        "base": "thin-sliced smoked deli ham",
+        "display": "thin-sliced smoked deli ham"
+      }
+    },
+    {
+      "item": "toasted pecans",
+      "canonical": {
+        "base": "pecans",
+        "display": "pecans"
+      }
+    },
+    {
+      "item": "toasted sesame oil",
+      "canonical": {
+        "base": "toasted sesame oil",
+        "display": "toasted sesame oil"
+      }
+    },
+    {
+      "item": "tomatillo",
+      "canonical": {
+        "base": "tomatillo",
+        "display": "tomatillo"
+      }
+    },
+    {
+      "item": "tomato paste",
+      "canonical": {
+        "base": "tomato paste",
+        "display": "tomato paste"
+      }
+    },
+    {
+      "item": "tomato sauce",
+      "canonical": {
+        "base": "tomato sauce",
+        "display": "tomato sauce"
+      }
+    },
+    {
+      "item": "tomatoes",
+      "canonical": {
+        "base": "tomatoes",
+        "display": "tomatoes"
+      }
+    },
+    {
+      "item": "top sirloin steak, strip steak, or flat iron steak",
+      "canonical": {
+        "base": "top sirloin steak, strip steak, or flat iron steak",
+        "display": "top sirloin steak, strip steak, or flat iron steak"
+      }
+    },
+    {
+      "item": "unsalted butter",
+      "canonical": {
+        "base": "unsalted butter",
+        "display": "unsalted butter",
+        "notes": []
+      }
+    },
+    {
+      "item": "unsweetened dutch-processed cocoa powder",
+      "canonical": {
+        "base": "unsweetened dutch-processed cocoa powder",
+        "display": "unsweetened dutch-processed cocoa powder"
+      }
+    },
+    {
+      "item": "vanilla extract",
+      "canonical": {
+        "base": "vanilla extract or paste",
+        "display": "vanilla extract or paste"
+      }
+    },
+    {
+      "item": "vanilla ice cream",
+      "canonical": {
+        "base": "ice cream",
+        "display": "ice cream"
+      }
+    },
+    {
+      "item": "vegetable oil",
+      "canonical": {
+        "base": "vegetable oil",
+        "display": "vegetable oil"
+      }
+    },
+    {
+      "item": "walnuts",
+      "canonical": {
+        "base": "walnuts",
+        "display": "walnuts"
+      }
+    },
+    {
+      "item": "water",
+      "canonical": {
+        "base": "water",
+        "display": "water"
+      }
+    },
+    {
+      "item": "white chocolate",
+      "canonical": {
+        "base": "white chocolate",
+        "display": "white chocolate"
+      }
+    },
+    {
+      "item": "white onion",
+      "canonical": {
+        "base": "white onion",
+        "display": "white onion"
+      }
+    },
+    {
+      "item": "white vinegar",
+      "canonical": {
+        "base": "white vinegar",
+        "display": "white vinegar"
+      }
+    },
+    {
+      "item": "white wine",
+      "canonical": {
+        "base": "white wine",
+        "display": "white wine"
+      }
+    },
+    {
+      "item": "whole milk",
+      "canonical": {
+        "base": "whole milk",
+        "display": "whole milk",
+        "notes": []
+      }
+    },
+    {
+      "item": "whole nutmeg",
+      "canonical": {
+        "base": "whole nutmeg",
+        "display": "whole nutmeg"
+      }
+    },
+    {
+      "item": "whole peeled tomatoes",
+      "canonical": {
+        "base": "whole peeled tomatoes",
+        "display": "whole peeled tomatoes"
+      }
+    },
+    {
+      "item": "worcestershire sauce",
+      "canonical": {
+        "base": "worcestershire sauce",
+        "display": "worcestershire sauce"
+      }
+    },
+    {
+      "item": "yellow cornmeal",
+      "canonical": {
+        "base": "yellow cornmeal",
+        "display": "yellow cornmeal"
+      }
+    },
+    {
+      "item": "yellow mustard",
+      "canonical": {
+        "base": "yellow mustard",
+        "display": "yellow mustard"
+      }
+    },
+    {
+      "item": "yellow mustard seed",
+      "canonical": {
+        "base": "yellow mustard seed",
+        "display": "yellow mustard seed"
+      }
+    },
+    {
+      "item": "yellow onion",
+      "canonical": {
+        "base": "yellow onion",
+        "display": "yellow onion"
+      }
+    },
+    {
+      "item": "yukon gold potato",
+      "canonical": {
+        "base": "yukon gold potato",
+        "display": "Yukon gold potato"
+      }
+    }
+  ],
+  "units": [
+    {
+      "unit": "15-ounce can",
+      "normalized": "15-ounce can"
+    },
+    {
+      "unit": "bunch",
+      "normalized": "bunch"
+    },
+    {
+      "unit": "can",
+      "normalized": "can"
+    },
+    {
+      "unit": "clove",
+      "normalized": "clove"
+    },
+    {
+      "unit": "cup",
+      "normalized": "cup"
+    },
+    {
+      "unit": "g",
+      "normalized": "g"
+    },
+    {
+      "unit": "head",
+      "normalized": "head"
+    },
+    {
+      "unit": "lb",
+      "normalized": "lb"
+    },
+    {
+      "unit": "leaf",
+      "normalized": "leaf"
+    },
+    {
+      "unit": "oz",
+      "normalized": "oz"
+    },
+    {
+      "unit": "pinch",
+      "normalized": "pinch"
+    },
+    {
+      "unit": "sheet",
+      "normalized": "sheet"
+    },
+    {
+      "unit": "slice",
+      "normalized": "slice"
+    },
+    {
+      "unit": "small bunch",
+      "normalized": "small bunch"
+    },
+    {
+      "unit": "sprig",
+      "normalized": "sprig"
+    },
+    {
+      "unit": "stalk",
+      "normalized": "stalk"
+    },
+    {
+      "unit": "tbsp",
+      "normalized": "tbsp"
+    },
+    {
+      "unit": "tsp",
+      "normalized": "tsp"
+    },
+    {
+      "unit": "yolk",
+      "normalized": "yolk"
+    }
+  ]
+}
