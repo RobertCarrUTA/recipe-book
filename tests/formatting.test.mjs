@@ -93,6 +93,7 @@ test("grocery totals use shopper-friendly quantities", () => {
   assert.equal(formatTotalsForKey({ item: { min: 1, max: 1 } }, { canonicalKey: "red onion" }), "1 red onion");
   assert.equal(formatTotalsForKey({ item: { min: 5, max: 5 } }, { canonicalKey: "roma tomato" }), "5 Roma tomatoes");
   assert.equal(formatTotalsForKey({ item: { min: 2, max: 2 } }, { canonicalKey: "jalapeno" }), "2 jalapenos");
+  assert.equal(formatTotalsForKey({ item: { min: 3, max: 3 } }, { canonicalKey: "10-inch flour tortilla" }), "3 tortillas");
   assert.equal(
     formatTotalsForKey({ item: { min: 20, max: 20 } }, { canonicalKey: "maraschino cherries" }),
     "20 cherries"
