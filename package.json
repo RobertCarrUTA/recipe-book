@@ -1,6 +1,7 @@
 {
   "name": "recipe-book",
   "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
   "scripts": {
     "build:recipes": "node scripts/build-recipes.mjs",
