@@ -88,6 +88,7 @@ test("grocery search URLs use a fixed destination with encoded item text", () =>
 
 test("grocery totals use shopper-friendly quantities", () => {
   assert.equal(formatTotalsForKey({ item: { min: 8, max: 8 } }, { canonicalKey: "peach" }), "8 peaches");
+  assert.equal(formatTotalsForKey({ item: { min: 0.625, max: 0.625 } }, { canonicalKey: "white onion" }), "5/8 white onion");
   assert.equal(formatTotalsForKey({ item: { min: 3, max: 3 } }, { canonicalKey: "white onion" }), "3 white onions");
   assert.equal(formatTotalsForKey({ item: { min: 1, max: 1 } }, { canonicalKey: "red onion" }), "1 red onion");
   assert.equal(formatTotalsForKey({ item: { min: 5, max: 5 } }, { canonicalKey: "roma tomato" }), "5 Roma tomatoes");

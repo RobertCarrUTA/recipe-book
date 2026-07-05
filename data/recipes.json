@@ -12342,7 +12342,7 @@
       },
       {
         "item": "white onion",
-        "quantity": 1
+        "quantity": 0.5
       }
     ],
     "id": "roasted-tomato-tomatillo-taqueria-roja-salsa",
@@ -12466,7 +12466,12 @@
       },
       {
         "item": "white onion",
-        "quantity": 1
+        "quantity": 0.5
+      },
+      {
+        "item": "white onion",
+        "quantity": 2,
+        "unit": "tbsp"
       }
     ],
     "id": "roasted-poblano-salsa-verde",
@@ -12581,7 +12586,7 @@
       },
       {
         "item": "white onion",
-        "quantity": 1
+        "quantity": 0.25
       }
     ],
     "id": "creamy-jalapeno-taqueria-salsa",
@@ -12700,7 +12705,8 @@
       },
       {
         "item": "white onion",
-        "quantity": 1
+        "quantity": "1/3",
+        "unit": "cup"
       },
       {
         "item": "whole peeled tomatoes",
@@ -12821,7 +12827,7 @@
       },
       {
         "item": "white onion",
-        "quantity": 1
+        "quantity": 0.25
       }
     ],
     "id": "simmered-guajillo-arbol-drip-salsa",
@@ -13023,7 +13029,7 @@
       },
       {
         "item": "white onion",
-        "quantity": 1
+        "quantity": 0.125
       },
       {
         "item": "Yukon Gold potato",
@@ -13346,7 +13352,12 @@
       },
       {
         "item": "white onion",
-        "quantity": 1
+        "quantity": 0.5
+      },
+      {
+        "item": "white onion",
+        "quantity": 1,
+        "unit": "tbsp"
       },
       {
         "item": "Worcestershire sauce",

@@ -183,7 +183,12 @@
     },
     {
       "item": "white onion",
-      "quantity": 1
+      "quantity": 0.5
+    },
+    {
+      "item": "white onion",
+      "quantity": 1,
+      "unit": "tbsp"
     },
     {
       "item": "Worcestershire sauce",
