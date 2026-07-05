@@ -12895,18 +12895,18 @@
     "cookTime": "45 minutes",
     "description": "A focused sausage, egg, potato, and cheese breakfast burrito with crispy Yukon Gold potatoes, deeply browned breakfast sausage, soft scrambled eggs, a three-cheese melt, toasted flour tortillas, and a simmered guajillo-arbol breakfast drip sauce served on the side for adding to each bite.",
     "equipment": [
-      "12-inch cast-iron skillet or heavy saute pan",
+      "Large 12-inch heavy skillet or saute pan",
+      "Medium saucepan",
+      "Small saucepan",
+      "Nonstick skillet for eggs, optional but helpful",
       "Aluminum foil",
       "Blender",
       "Cutting board",
       "Fine-mesh strainer, optional",
-      "Large skillet",
-      "Medium saucepan",
       "Mixing bowls",
       "Paper towels",
       "Rubber spatula",
       "Slotted spoon",
-      "Small saucepan",
       "Tongs",
       "Whisk"
     ],
@@ -13082,9 +13082,9 @@
       "Bring the potatoes to a boil over high heat, then reduce the heat and simmer for 5 to 7 minutes, until the potatoes are barely tender but not falling apart.",
       "Drain the potatoes well, spread them on paper towels or a wire rack, pat the tops dry if they look wet, and let them steam-dry for 10 minutes.",
       "While the potatoes dry, make the simmered guajillo-arbol breakfast drip sauce.",
-      "Toast 1 stemmed and seeded dried guajillo chile and 1 stemmed dried chile de arbol pepper in a dry cast-iron skillet over medium heat for 15 to 30 seconds per side, turning often, just until fragrant and slightly softened, not scorched.",
+      "Toast 1 stemmed and seeded dried guajillo chile and 1 stemmed dried chile de arbol pepper in a dry large heavy skillet or saute pan, over medium heat for 15 to 30 seconds per side, turning often, just until fragrant and slightly softened, not scorched.",
       "Transfer the toasted chiles to a small bowl, cover them with hot water, and soak for 10 minutes.",
-      "While the chiles soak, place 2 tomatillos, 1 Roma tomato, 1 jalapeno, 1/8 white onion, and 2 unpeeled garlic cloves in the dry cast-iron skillet over medium-high heat.",
+      "While the chiles soak, place 2 tomatillos, 1 Roma tomato, 1 jalapeno, 1/8 white onion, and 2 unpeeled garlic cloves in the same dry large heavy skillet or saute pan over medium-high heat.",
       "Cook the hot sauce vegetables for 8 to 12 minutes, turning occasionally, until the tomatillos soften, the garlic is browned and soft inside, and the tomatoes, jalapenos, and onion are charred in places.",
       "Peel the roasted garlic cloves.",
       "Drain the soaked chiles, reserving the soaking water.",
@@ -13107,7 +13107,7 @@
       "Cook the potatoes, or each batch, undisturbed for 3 minutes, then turn every 2 to 3 minutes for 10 to 14 minutes total, until deeply golden and crisp on multiple sides.",
       "Transfer the crispy potatoes to a plate and keep them uncovered so they stay crisp.",
       "Whisk 4 large eggs with 1 1/2 tablespoons half-and-half, 1/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper until no streaks of egg white remain.",
-      "Melt 1 tablespoon unsalted butter in a nonstick skillet or clean well-seasoned skillet over medium-low heat.",
+      "Melt 1 tablespoon unsalted butter in a nonstick skillet over medium-low heat, or for minimum cookware, wipe out the large heavy skillet or saute pan, let it cool to medium-low, and use that instead.",
       "Add the eggs and cook gently, folding with a rubber spatula, until the eggs form soft curds and are just set but still slightly looser than you want in the finished burrito.",
       "Immediately transfer the eggs to a plate and spread them into a shallow layer for 1 to 2 minutes so leftover heat slows down and excess steam escapes.",
       "Warm each 12-inch flour tortilla in a dry skillet for 20 to 30 seconds per side, or until soft, flexible, and lightly toasted in spots.",
@@ -13126,6 +13126,8 @@
       "Drip a small spoonful of hot sauce onto each bite as you eat instead of pouring it inside the burrito."
     ],
     "notes": [
+      "The minimum cookware setup is 1 medium saucepan for the potatoes, 1 small saucepan for the hot sauce, and 1 large 12-inch heavy skillet or saute pan for the chiles, roasted sauce vegetables, sausage, potatoes, tortillas, and burrito toasting.",
+      "A separate nonstick skillet for the eggs is optional and makes the workflow easier, but it is not required. If using the large stainless skillet for eggs, wipe it clean after the potatoes, let it cool to medium-low, use the full 1 tablespoon butter, and fold the eggs gently with a rubber spatula.",
       "This recipe intentionally keeps the burrito filling limited to sausage, egg, potato, and cheese. The hot sauce is served outside the burrito and does not count as an internal filling.",
       "The reduced filling ratio is intentional. Two burritos made with 10 ounces potatoes, 6 ounces sausage, 4 eggs, and the listed cheese are still full, but they roll cleaner and eat with better balance than an overstuffed version.",
       "Bulk pork breakfast sausage is better than sliced sausage links because it browns into small crumbles that distribute evenly through the burrito.",
@@ -13153,14 +13155,15 @@
       "The hot sauce should be loose enough to drip but not watery. Add chile soaking water or fresh hot water 1 tablespoon at a time only after blending or simmering.",
       "These burritos are best eaten immediately after the foil rest, but leftovers can be wrapped tightly in foil and reheated in a 350 degrees F oven until hot."
     ],
-    "nutrition": null,
     "prepTime": "30 minutes",
-    "rating": null,
     "servings": "2 burritos",
-    "source": "original",
+    "source": "bundled",
     "tags": {
       "equipment": [
-        "cast-iron-skillet",
+        "blender",
+        "heavy-skillet-or-saute-pan",
+        "medium-saucepan",
+        "small-saucepan",
         "stovetop"
       ],
       "status": "not-tried"
@@ -13742,5 +13745,197 @@
     },
     "title": "Nonalcoholic Pina Colada",
     "totalTime": "10 minutes"
+  },
+  {
+    "additionalTime": "10 minutes patty seasoning rest and sauce rest",
+    "author": "Robert Carr",
+    "cookTime": "15 minutes",
+    "description": "One thick A5 Wagyu burger with a toasted potato or brioche bun, glossy soy-pickle onions, a little burger sauce, pickles, lettuce, and a skillet cook that builds a crust before gently finishing the center.",
+    "equipment": [
+      "Cast-iron skillet or stainless steel skillet",
+      "Thin metal spatula",
+      "Instant-read thermometer",
+      "Small bowl",
+      "Small plate",
+      "Paper towels",
+      "Tongs or fork",
+      "Lid or small sheet pan for covering the skillet"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "A5 Wagyu blended beef burger patty",
+        "item": "ground beef",
+        "original": "A5 Wagyu blended beef burger patty",
+        "quantity": 1
+      },
+      {
+        "item": "potato bun or brioche bun",
+        "quantity": 1
+      },
+      {
+        "item": "American cheese",
+        "quantity": 1,
+        "unit": "slice"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 0.25
+      },
+      {
+        "item": "butter lettuce or red leaf lettuce",
+        "quantity": 1,
+        "unit": "leaf"
+      },
+      {
+        "item": "dill pickle chips",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "ketchup",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "dijon mustard",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "pickle brine",
+        "quantity": 0.75,
+        "unit": "tsp"
+      },
+      {
+        "item": "Worcestershire sauce",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "garlic powder",
+        "quantity": 0.0625,
+        "unit": "tsp"
+      },
+      {
+        "item": "kosher salt",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "item": "MSG",
+        "optional": true,
+        "quantity": 0.0625,
+        "unit": "tsp"
+      },
+      {
+        "item": "low-sodium soy sauce",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "granulated sugar",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 2,
+        "unit": "tsp"
+      }
+    ],
+    "id": "a5-wagyu-burger",
+    "ingredients": [
+      "1 A5 Wagyu blended beef burger patty, about 1 inch thick and 4 inches wide, kept cold until cooking",
+      "1 potato bun or brioche burger bun, ideally about 4 inches wide",
+      "1 thin slice American cheese",
+      "1/4 small yellow onion, with 3 tablespoons sliced paper-thin for the pan onions",
+      "1 butter lettuce or red leaf lettuce leaf, patted dry",
+      "3 to 4 dill pickle chips",
+      "2 teaspoons unsalted butter, divided",
+      "1 tablespoon mayonnaise",
+      "1/2 teaspoon ketchup",
+      "1/2 teaspoon Dijon mustard",
+      "3/4 teaspoon pickle brine, divided",
+      "1/4 teaspoon Worcestershire sauce",
+      "Small pinch garlic powder, about 1/16 teaspoon",
+      "1/4 teaspoon Diamond Crystal kosher salt or 1/8 teaspoon Morton kosher salt, divided",
+      "1/8 teaspoon black pepper, freshly ground, divided",
+      "Small pinch MSG, about 1/16 teaspoon, optional",
+      "1/2 teaspoon low-sodium soy sauce",
+      "1/8 teaspoon granulated sugar"
+    ],
+    "instructions": [
+      "Put the 1 A5 Wagyu blended beef patty on a paper towel-lined plate and pat the top, bottom, and sides very dry.",
+      "If the patty has puffed into a dome, press only the center lightly with your thumb to make a shallow dimple about 1 inch wide. Do not flatten or smash the patty.",
+      "Mix 1/4 teaspoon Diamond Crystal kosher salt, 1/8 teaspoon black pepper, and the small pinch MSG if using in a small bowl.",
+      "Season the top, bottom, and sides of the patty with almost all of the salt, pepper, and MSG mixture, saving only a tiny pinch of the mixture for the onions.",
+      "Refrigerate the seasoned patty uncovered for 10 minutes while you make the sauce and prepare the toppings.",
+      "Make the burger sauce by stirring together 1 tablespoon mayonnaise, 1/2 teaspoon ketchup, 1/2 teaspoon Dijon mustard, 1/4 teaspoon pickle brine, 1/4 teaspoon Worcestershire sauce, and the small pinch garlic powder.",
+      "Refrigerate the sauce for 10 minutes while the patty rests so the mustard, pickle brine, and Worcestershire season the mayonnaise.",
+      "Slice 3 tablespoons yellow onion paper-thin, then separate the slices with your fingers so they cook quickly.",
+      "Pat 1 butter lettuce or red leaf lettuce leaf dry and set out 3 to 4 dill pickle chips so the burger can be assembled as soon as the patty finishes.",
+      "Melt 1 teaspoon unsalted butter in a cast-iron or stainless steel skillet over medium heat.",
+      "Add the 3 tablespoons sliced yellow onion and the reserved tiny pinch of the salt, pepper, and MSG mixture.",
+      "Cook the onions for 3 to 4 minutes, stirring often, until softened and lightly browned at the edges.",
+      "Stir 1/2 teaspoon low-sodium soy sauce, the remaining 1/2 teaspoon pickle brine, 1/8 teaspoon granulated sugar, and 1 teaspoon water into the onions.",
+      "Cook for 30 to 60 seconds, stirring constantly, until the liquid is gone and the onions look glossy, then transfer the onions to a small plate.",
+      "Wipe the skillet clean if any onion sugar stuck to the pan, then return the skillet to medium heat.",
+      "Spread the remaining 1 teaspoon unsalted butter over the cut sides of the potato bun or brioche bun.",
+      "Toast the bun cut-side down for 1 to 2 minutes, until the cut sides are golden and crisp at the edges, then transfer the bun to a plate.",
+      "Increase the skillet to medium-high heat for 1 minute. The pan should be hot enough to brown the patty steadily but not so hot that the rendered Wagyu fat smokes hard.",
+      "Pat the cold seasoned patty dry again if surface moisture appears.",
+      "Place the patty in the hot dry skillet and cook without pressing for 2 to 3 minutes, until the bottom has a deep brown crust.",
+      "Flip the patty with a thin metal spatula and cook the second side uncovered for 2 minutes.",
+      "Reduce the heat to medium-low, cover the skillet with a lid or small sheet pan, and cook for 2 to 4 minutes more, until the center of the ground beef patty reaches 150 degrees F to 155 degrees F when checked from the side with an instant-read thermometer.",
+      "Place 1 thin slice American cheese on the patty, cover again, and cook for 30 to 60 seconds more, until the cheese melts and the center reaches 160 degrees F.",
+      "Transfer the cheese-topped patty to a clean plate and rest it for 2 minutes while you sauce the bun.",
+      "Spread about 2 teaspoons burger sauce on the toasted bottom bun.",
+      "Add the dry butter lettuce or red leaf lettuce leaf and 3 to 4 dill pickle chips to the sauced bottom bun.",
+      "Place the rested cheese-topped Wagyu patty on the pickles.",
+      "Spoon all of the glossy soy-pickle onions over the patty.",
+      "Spread the remaining burger sauce on the toasted top bun.",
+      "Close the burger and serve immediately while the bun is crisp and the patty is hot."
+    ],
+    "link": null,
+    "notes": [
+      "This makes exactly 1 burger with 1 thick patty.",
+      "A 1-inch-thick, 4-inch-wide patty needs a normal 4-inch burger bun. A slider bun would make the burger awkward and bread-light in the wrong places.",
+      "For this 30-minute version, buy the bun. The beef, onions, sauce, and toast matter more than making bread.",
+      "The flavor comes from a dry beef surface, enough exterior seasoning, a short cold rest, a hot dry pan, quick soy-pickle onions, melted American cheese, pickles, and a restrained sauce that does not bury the Wagyu.",
+      "Do not smash this patty. It is thick enough to cook as a juicy steakhouse-style burger, and pressing hard can squeeze out too much rendered fat.",
+      "Do not add oil to the skillet before searing the patty. Wagyu-style ground beef renders quickly, and extra oil can make the burger greasy instead of rich.",
+      "The covered finish matters for a 1-inch-thick patty. It lets the center come up to temperature before the crust gets too dark.",
+      "For food safety, cook ground beef patties to 160 degrees F. Start checking early because a rich, thick patty can move from juicy to overdone quickly near the end.",
+      "If the patty is browning too fast before the center reaches 150 degrees F, lower the heat and keep the skillet covered. If it is cooking through before browning, uncover it and raise the heat slightly.",
+      "Keep the sauce light. The burger should taste like rich beef first, then toast, onions, cheese, pickles, and sauce.",
+      "Serve with fries, chips, or a small salad. The burger is rich enough that simple sides are best."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "15 minutes",
+    "rating": null,
+    "servings": "1 burger",
+    "source": "bundled",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "cast-iron skillet",
+        "stainless steel skillet",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "A5 Wagyu Burger",
+    "totalTime": "30 minutes"
   }
 ]
