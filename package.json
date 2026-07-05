@@ -6,6 +6,7 @@
   "scripts": {
     "build:recipes": "node scripts/build-recipes.mjs",
     "check:recipes": "node scripts/build-recipes.mjs --check",
+    "update:normalization-snapshot": "node scripts/update-normalization-catalog-snapshot.mjs",
     "set-asset-version": "node scripts/set-asset-version.mjs",
     "check:syntax": "node scripts/check-syntax.mjs",
     "report:data-quality": "node scripts/report-data-quality.mjs",
