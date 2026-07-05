@@ -179,6 +179,7 @@ export function formatTotalsForKey(totals, options = {}) {
     "green onion": ["green onion", "green onions"],
     "italian sub roll or sturdy hoagie roll": ["roll", "rolls"],
     jalapeno: ["jalapeno", "jalapenos"],
+    "10-inch flour tortilla": ["tortilla", "tortillas"],
     "large 12-inch burrito-size flour tortilla": ["tortilla", "tortillas"],
     "large burrito-size flour tortilla": ["tortilla", "tortillas"],
     "large orange": ["large orange", "large oranges"],
