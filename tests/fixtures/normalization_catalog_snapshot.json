@@ -1873,8 +1873,8 @@
     {
       "item": "red onion",
       "canonical": {
-        "base": "onion",
-        "display": "onion"
+        "base": "red onion",
+        "display": "red onion"
       }
     },
     {

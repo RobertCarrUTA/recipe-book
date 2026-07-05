@@ -116,6 +116,7 @@ export const ingredientRules = freezeRuleList([
   { includes: "garlic", base: "garlic" },
   { includes: "yellow onion", base: "yellow onion" },
   { includes: "white onion", base: "white onion" },
+  { includes: "red onion", base: "red onion" },
   { includes: "roasted red peppers", base: "roasted red peppers" },
   { includes: "green bell pepper", base: "green bell pepper" },
   { includes: "red bell pepper", base: "red bell pepper" },
