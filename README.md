@@ -6,23 +6,39 @@ The project is intentionally small and durable: static files, native browser API
 
 ## Table of Contents
 
-- [At a Glance](#at-a-glance)
-- [Quick Start](#quick-start)
-- [Using the App](#using-the-app)
-- [Recipe Data](#recipe-data)
-- [Structured Grocery Ingredients](#structured-grocery-ingredients)
-- [Browser State and Backups](#browser-state-and-backups)
-- [Offline Behavior](#offline-behavior)
-- [Project Structure](#project-structure)
-- [Development Workflow](#development-workflow)
-- [Verification](#verification)
-- [Cache Busting](#cache-busting)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
+- [Robert's Recipe Book and Grocery List](#roberts-recipe-book-and-grocery-list)
+  - [Table of Contents](#table-of-contents)
+  - [At a Glance](#at-a-glance)
+  - [Quick Start](#quick-start)
+  - [Using the App](#using-the-app)
+    - [Recipes](#recipes)
+    - [Meal Plan](#meal-plan)
+    - [Cooking Mode](#cooking-mode)
+    - [Grocery List](#grocery-list)
+  - [Recipe Data](#recipe-data)
+    - [Recommended Fields](#recommended-fields)
+    - [Optional Fields](#optional-fields)
+  - [Structured Grocery Ingredients](#structured-grocery-ingredients)
+  - [Browser State and Backups](#browser-state-and-backups)
+  - [Offline Behavior](#offline-behavior)
+  - [Project Structure](#project-structure)
+    - [JavaScript Map](#javascript-map)
+  - [Development Workflow](#development-workflow)
+    - [Add or Edit Recipes](#add-or-edit-recipes)
+    - [Change CSS or JavaScript](#change-css-or-javascript)
+    - [Change Documentation](#change-documentation)
+  - [Verification](#verification)
+  - [Cache Busting](#cache-busting)
+  - [Troubleshooting](#troubleshooting)
+    - [Recipes changed but the app still shows old data](#recipes-changed-but-the-app-still-shows-old-data)
+    - [`npm run verify` says `data/recipes.json` is stale](#npm-run-verify-says-datarecipesjson-is-stale)
+    - [PowerShell blocks npm scripts](#powershell-blocks-npm-scripts)
+    - [Browser smoke tests cannot find Chromium](#browser-smoke-tests-cannot-find-chromium)
+  - [License](#license)
 
 ## At a Glance
 
-Robert's Recipe Book helps with the whole home-cooking loop:
+This recipe book helps with the whole home-cooking loop:
 
 - Browse, search, sort, filter, favorite, and open saved recipes.
 - Plan recipes across a week and turn the plan into grocery selections.
