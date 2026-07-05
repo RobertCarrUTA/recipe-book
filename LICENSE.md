@@ -1,6 +1,6 @@
 # License
 
-Copyright (c) 2026 Robert and contributors.
+Copyright (c) 2026 Robert Carr and contributors.
 
 This project uses a mixed noncommercial license because it contains both
 software and recipe/content material.
@@ -35,7 +35,7 @@ License URL: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 This may include, but is not limited to:
 
-- Original recipes created by Robert or project contributors
+- Original recipes created by Robert Carr or project contributors
 - Original personal notes and project-authored recipe annotations
 - Original project documentation such as `README.md`
 - The project-authored selection, organization, and arrangement of the recipe
