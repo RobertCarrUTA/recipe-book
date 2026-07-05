@@ -8,6 +8,13 @@
       }
     },
     {
+      "item": "10-inch flour tortilla",
+      "canonical": {
+        "base": "10-inch flour tortilla",
+        "display": "10-inch flour tortilla"
+      }
+    },
+    {
       "item": "80/20 ground beef",
       "canonical": {
         "base": "80/20 ground beef",
@@ -1256,13 +1263,6 @@
       "canonical": {
         "base": "large 12-inch burrito-size flour tortilla",
         "display": "large 12-inch burrito-size flour tortilla"
-      }
-    },
-    {
-      "item": "large burrito-size flour tortilla",
-      "canonical": {
-        "base": "large burrito-size flour tortilla",
-        "display": "large burrito-size flour tortilla"
       }
     },
     {
