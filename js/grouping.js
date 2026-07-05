@@ -197,6 +197,7 @@ const ingredientGroups = {
   "chili powder": "Spices",
   cinnamon: "Spices",
   cumin: "Spices",
+  "celery salt": "Spices",
   "celery seed": "Spices",
   "celery seeds": "Spices",
   "dried chile de arbol": "Spices",
