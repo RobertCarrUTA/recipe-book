@@ -12895,18 +12895,18 @@
     "cookTime": "45 minutes",
     "description": "A focused sausage, egg, potato, and cheese breakfast burrito with crispy Yukon Gold potatoes, deeply browned breakfast sausage, soft scrambled eggs, a three-cheese melt, toasted flour tortillas, and a simmered guajillo-arbol breakfast drip sauce served on the side for adding to each bite.",
     "equipment": [
-      "12-inch cast-iron skillet or heavy saute pan",
+      "Large 12-inch heavy skillet or saute pan",
+      "Medium saucepan",
+      "Small saucepan",
+      "Nonstick skillet for eggs, optional but helpful",
       "Aluminum foil",
       "Blender",
       "Cutting board",
       "Fine-mesh strainer, optional",
-      "Large skillet",
-      "Medium saucepan",
       "Mixing bowls",
       "Paper towels",
       "Rubber spatula",
       "Slotted spoon",
-      "Small saucepan",
       "Tongs",
       "Whisk"
     ],
@@ -13082,9 +13082,9 @@
       "Bring the potatoes to a boil over high heat, then reduce the heat and simmer for 5 to 7 minutes, until the potatoes are barely tender but not falling apart.",
       "Drain the potatoes well, spread them on paper towels or a wire rack, pat the tops dry if they look wet, and let them steam-dry for 10 minutes.",
       "While the potatoes dry, make the simmered guajillo-arbol breakfast drip sauce.",
-      "Toast 1 stemmed and seeded dried guajillo chile and 1 stemmed dried chile de arbol pepper in a dry cast-iron skillet over medium heat for 15 to 30 seconds per side, turning often, just until fragrant and slightly softened, not scorched.",
+      "Toast 1 stemmed and seeded dried guajillo chile and 1 stemmed dried chile de arbol pepper in a dry large heavy skillet or saute pan, over medium heat for 15 to 30 seconds per side, turning often, just until fragrant and slightly softened, not scorched.",
       "Transfer the toasted chiles to a small bowl, cover them with hot water, and soak for 10 minutes.",
-      "While the chiles soak, place 2 tomatillos, 1 Roma tomato, 1 jalapeno, 1/8 white onion, and 2 unpeeled garlic cloves in the dry cast-iron skillet over medium-high heat.",
+      "While the chiles soak, place 2 tomatillos, 1 Roma tomato, 1 jalapeno, 1/8 white onion, and 2 unpeeled garlic cloves in the same dry large heavy skillet or saute pan over medium-high heat.",
       "Cook the hot sauce vegetables for 8 to 12 minutes, turning occasionally, until the tomatillos soften, the garlic is browned and soft inside, and the tomatoes, jalapenos, and onion are charred in places.",
       "Peel the roasted garlic cloves.",
       "Drain the soaked chiles, reserving the soaking water.",
@@ -13107,7 +13107,7 @@
       "Cook the potatoes, or each batch, undisturbed for 3 minutes, then turn every 2 to 3 minutes for 10 to 14 minutes total, until deeply golden and crisp on multiple sides.",
       "Transfer the crispy potatoes to a plate and keep them uncovered so they stay crisp.",
       "Whisk 4 large eggs with 1 1/2 tablespoons half-and-half, 1/4 teaspoon Diamond Crystal kosher salt, and 1/4 teaspoon black pepper until no streaks of egg white remain.",
-      "Melt 1 tablespoon unsalted butter in a nonstick skillet or clean well-seasoned skillet over medium-low heat.",
+      "Melt 1 tablespoon unsalted butter in a nonstick skillet over medium-low heat, or for minimum cookware, wipe out the large heavy skillet or saute pan, let it cool to medium-low, and use that instead.",
       "Add the eggs and cook gently, folding with a rubber spatula, until the eggs form soft curds and are just set but still slightly looser than you want in the finished burrito.",
       "Immediately transfer the eggs to a plate and spread them into a shallow layer for 1 to 2 minutes so leftover heat slows down and excess steam escapes.",
       "Warm each 12-inch flour tortilla in a dry skillet for 20 to 30 seconds per side, or until soft, flexible, and lightly toasted in spots.",
@@ -13126,6 +13126,8 @@
       "Drip a small spoonful of hot sauce onto each bite as you eat instead of pouring it inside the burrito."
     ],
     "notes": [
+      "The minimum cookware setup is 1 medium saucepan for the potatoes, 1 small saucepan for the hot sauce, and 1 large 12-inch heavy skillet or saute pan for the chiles, roasted sauce vegetables, sausage, potatoes, tortillas, and burrito toasting.",
+      "A separate nonstick skillet for the eggs is optional and makes the workflow easier, but it is not required. If using the large stainless skillet for eggs, wipe it clean after the potatoes, let it cool to medium-low, use the full 1 tablespoon butter, and fold the eggs gently with a rubber spatula.",
       "This recipe intentionally keeps the burrito filling limited to sausage, egg, potato, and cheese. The hot sauce is served outside the burrito and does not count as an internal filling.",
       "The reduced filling ratio is intentional. Two burritos made with 10 ounces potatoes, 6 ounces sausage, 4 eggs, and the listed cheese are still full, but they roll cleaner and eat with better balance than an overstuffed version.",
       "Bulk pork breakfast sausage is better than sliced sausage links because it browns into small crumbles that distribute evenly through the burrito.",
@@ -13153,14 +13155,15 @@
       "The hot sauce should be loose enough to drip but not watery. Add chile soaking water or fresh hot water 1 tablespoon at a time only after blending or simmering.",
       "These burritos are best eaten immediately after the foil rest, but leftovers can be wrapped tightly in foil and reheated in a 350 degrees F oven until hot."
     ],
-    "nutrition": null,
     "prepTime": "30 minutes",
-    "rating": null,
     "servings": "2 burritos",
-    "source": "original",
+    "source": "bundled",
     "tags": {
       "equipment": [
-        "cast-iron-skillet",
+        "blender",
+        "heavy-skillet-or-saute-pan",
+        "medium-saucepan",
+        "small-saucepan",
         "stovetop"
       ],
       "status": "not-tried"
