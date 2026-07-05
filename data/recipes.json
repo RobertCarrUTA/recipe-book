@@ -10245,6 +10245,9 @@
       "For a thicker diner-style gravy, simmer the gravy 1 to 2 minutes longer before adding any extra milk. For a looser gravy, use the reserved 1/2 cup whole milk.",
       "Serve immediately with mashed potatoes, buttered corn, green beans, or a simple salad."
     ],
+    "personalNotes": [
+      "Good overall. The recipe has a lot of steps, but it is not hard if everything is measured and set up before cooking. Watch the oil temperature closely in different areas of the pan. The oil drops when the steak goes in, then can climb quickly if the pan stays on the burner. Adjust the burner or briefly move the pan off heat."
+    ],
     "prepTime": "35 minutes",
     "servings": "1 steak with gravy",
     "source": "bundled",
@@ -10253,7 +10256,8 @@
         "cast-iron-skillet",
         "stovetop"
       ],
-      "status": "not-tried"
+      "rating": "great",
+      "status": "tried"
     },
     "title": "Chicken Fried Steak",
     "totalTime": "1 hour plus 30 minutes to 2 hours buttermilk soak"

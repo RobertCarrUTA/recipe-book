@@ -62,6 +62,7 @@ function extractCommodityBaseStrict(raw) {
   if (name.includes("flaky sea salt")) return "flaky sea salt";
   if (name.includes("flaked sea salt")) return "flaked sea salt";
   if (name.includes("flaky salt")) return "flaky salt";
+  if (name.includes("celery salt")) return "celery salt";
   if (name.includes("sea salt")) return "sea salt";
   if (name.includes("kosher salt")) return "kosher salt";
   if (name.includes("salt")) return "salt";
