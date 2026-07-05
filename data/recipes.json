@@ -12100,7 +12100,8 @@
       {
         "display": "iceberg lettuce or shredded iceberg lettuce",
         "item": "iceberg lettuce",
-        "quantity": 1
+        "quantity": 1,
+        "unit": "cup"
       },
       {
         "display": "ripe tomato",
