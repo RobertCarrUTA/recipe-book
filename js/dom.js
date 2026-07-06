@@ -70,3 +70,17 @@ export function syncDisclosureToggle(toggle, expanded, options = {}) {
   }
   if (title !== undefined) toggle.title = title ?? "";
 }
+
+export function setElementInert(element, inert) {
+  if (!element) return;
+
+  if ("inert" in element) {
+    element.inert = Boolean(inert);
+  }
+
+  if (inert) {
+    element.setAttribute("aria-hidden", "true");
+  } else {
+    element.removeAttribute("aria-hidden");
+  }
+}

@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 
 import {
   buildRecipeSearchText,
+  countActiveRecipeDiscoveryFilters,
+  countSelectedRecipeFilters,
   getMatchingRecipeIndexes,
   normalizeForSearch,
   recipeSearchTextMatches,
@@ -56,6 +58,29 @@ test("recipeMatchesSelectedFilters accepts array-backed selected filters", () =>
   );
   assert.equal(recipeMatchesSelectedFilters(recipe, { status: ["not-tried"] }), false);
   assert.equal(recipeMatchesSelectedFilters(recipe, { equipment: ["instant-pot"] }), false);
+});
+
+test("countSelectedRecipeFilters accepts set and array backed filter groups", () => {
+  assert.equal(
+    countSelectedRecipeFilters({
+      difficulty: ["easy"],
+      equipment: new Set(["dutch-oven", "instant-pot"]),
+      status: [],
+    }),
+    3
+  );
+});
+
+test("countActiveRecipeDiscoveryFilters includes search and visibility toggles", () => {
+  assert.equal(
+    countActiveRecipeDiscoveryFilters({
+      filterText: "  chili  ",
+      selected: { status: new Set(["tried"]) },
+      showFavoriteOnly: true,
+      showSelectedOnly: false,
+    }),
+    3
+  );
 });
 
 test("recipeMatchesVisibilityOptions combines search, favorites, selection, and tags", () => {
