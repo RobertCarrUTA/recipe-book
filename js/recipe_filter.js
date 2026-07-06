@@ -54,6 +54,27 @@ function hasSelectedFilterValues(selected) {
   return Object.values(selected || {}).some((values) => getSelectedFilterValueCount(values) > 0);
 }
 
+export function countSelectedRecipeFilters(selected) {
+  return Object.values(selected || {}).reduce(
+    (count, values) => count + getSelectedFilterValueCount(values),
+    0
+  );
+}
+
+export function countActiveRecipeDiscoveryFilters({
+  filterText,
+  selected,
+  showFavoriteOnly,
+  showSelectedOnly,
+}) {
+  return (
+    countSelectedRecipeFilters(selected) +
+    (normalizeForSearch(filterText) ? 1 : 0) +
+    (showFavoriteOnly ? 1 : 0) +
+    (showSelectedOnly ? 1 : 0)
+  );
+}
+
 function getAllRecipeIndexes(items) {
   return Array.from({ length: items.length }, (_item, index) => index);
 }

@@ -25,7 +25,8 @@ import {
   syncCollapsibleControlsPanel,
 } from "./collapsible_controls.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
-import { listen } from "./dom.js";
+import { downloadTextFile } from "./download.js";
+import { listen, setElementInert } from "./dom.js";
 import { createLogger, isDebugEnabled } from "./logger.js";
 import {
   addRecipeToMealPlan,
@@ -40,6 +41,7 @@ import { createMobileViewController } from "./mobile_view_controller.js";
 import { createOfflineController } from "./offline_controller.js";
 import {
   buildRecipeSearchText,
+  countActiveRecipeDiscoveryFilters,
   getMatchingRecipeIndexes,
   normalizeForSearch,
 } from "./recipe_filter.js";
@@ -145,27 +147,6 @@ function createRecipeBookApp() {
     applyUiStateToDomControls(document, appState.ui);
   }
 
-  function countSelectedRecipeFilters(selected) {
-    return Object.values(selected || {}).reduce((count, values) => {
-      if (values instanceof Set) return count + values.size;
-      return count + (Array.isArray(values) ? values.length : 0);
-    }, 0);
-  }
-
-  function countActiveDiscoveryFilters({
-    filterText,
-    selected,
-    showFavoriteOnly,
-    showSelectedOnly,
-  }) {
-    return (
-      countSelectedRecipeFilters(selected) +
-      (filterText ? 1 : 0) +
-      (showFavoriteOnly ? 1 : 0) +
-      (showSelectedOnly ? 1 : 0)
-    );
-  }
-
   function isRecipeListRuntimeSorted() {
     return appState.ui.recipeSort === recipeSortModes.favoritesFirst ||
       appState.ui.recipeSort === recipeSortModes.selectedFirst;
@@ -199,7 +180,7 @@ function createRecipeBookApp() {
     const clearFiltersButton = byId("clearFilters");
     const recipeSearch = byId("recipeSearch");
     const recipeSearchWrap = recipeSearch ? recipeSearch.closest(".recipe-search") : null;
-    const activeDiscoveryFilterCount = countActiveDiscoveryFilters({
+    const activeDiscoveryFilterCount = countActiveRecipeDiscoveryFilters({
       filterText,
       selected,
       showFavoriteOnly,
@@ -460,20 +441,6 @@ function createRecipeBookApp() {
     handleViewGroceryList();
   }
 
-  function setElementInert(element, inert) {
-    if (!element) return;
-
-    if ("inert" in element) {
-      element.inert = inert;
-    }
-
-    if (inert) {
-      element.setAttribute("aria-hidden", "true");
-    } else {
-      element.removeAttribute("aria-hidden");
-    }
-  }
-
   function setMealPlanBackgroundInert(inert) {
     setElementInert(document.querySelector(".app-header"), inert);
     setElementInert(byId("recipesPanel"), inert);
@@ -631,39 +598,36 @@ function createRecipeBookApp() {
     saveAppState();
   }
 
-  async function handleCopyGroceryList() {
-    syncUiStateFromControls();
-    const text = createGroceryListText(appState.runtime, appState.ui);
-
+  async function copyTextWithStatus(text, {
+    failureMessage,
+    logContext,
+    logMessage,
+    successMessage,
+  }) {
     try {
       await writeTextToClipboard(text, { document, logger, navigator });
-      setStateToolsStatus("Grocery list copied.");
+      setStateToolsStatus(successMessage);
+      return true;
     } catch (error) {
-      logger.warn("Grocery list copy failed", error);
-      setStateToolsStatus("Grocery list could not be copied.", { kind: "error", sticky: true });
+      logger.warn(logMessage, logContext ? { error, ...logContext } : error);
+      setStateToolsStatus(failureMessage, { kind: "error", sticky: true });
+      return false;
     }
   }
 
-  function downloadTextFile(payload) {
-    const link = document.createElement("a");
-    const blob = new Blob([payload.text], { type: payload.mimeType });
-    const urlApi = window.URL || URL;
-    const objectUrl = urlApi.createObjectURL(blob);
-
-    link.href = objectUrl;
-    link.download = payload.fileName;
-    link.style.display = "none";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-
-    window.setTimeout(() => urlApi.revokeObjectURL(objectUrl), 0);
+  async function handleCopyGroceryList() {
+    syncUiStateFromControls();
+    return copyTextWithStatus(createGroceryListText(appState.runtime, appState.ui), {
+      failureMessage: "Grocery list could not be copied.",
+      logMessage: "Grocery list copy failed",
+      successMessage: "Grocery list copied.",
+    });
   }
 
   function handleExportRecipe(recipe, recipeIndex, format) {
     try {
       const payload = createRecipeExportPayload(recipe, format);
-      downloadTextFile(payload);
+      downloadTextFile(payload, { document, window });
       setStateToolsStatus(`Recipe exported as ${payload.format.toUpperCase()}.`);
       return true;
     } catch (error) {
@@ -675,16 +639,12 @@ function createRecipeBookApp() {
 
   async function handleCopyRecipeText(recipe, recipeIndex) {
     const payload = createRecipeExportPayload(recipe, "text");
-
-    try {
-      await writeTextToClipboard(payload.text, { document, logger, navigator });
-      setStateToolsStatus("Recipe text copied.");
-      return true;
-    } catch (error) {
-      logger.warn("Recipe text copy failed", { error, recipeIndex });
-      setStateToolsStatus("Recipe text could not be copied.", { kind: "error", sticky: true });
-      return false;
-    }
+    return copyTextWithStatus(payload.text, {
+      failureMessage: "Recipe text could not be copied.",
+      logContext: { recipeIndex },
+      logMessage: "Recipe text copy failed",
+      successMessage: "Recipe text copied.",
+    });
   }
 
   function attachManualGroceryForm() {

@@ -6,6 +6,7 @@ import {
   createEmptyState,
   createTextElement,
   listen,
+  setElementInert,
   syncDisclosureToggle,
 } from "../js/dom.js";
 import { createFakeDocument, createFakeElement, createFakeEvent } from "./dom_test_helpers.mjs";
@@ -118,4 +119,20 @@ test("syncDisclosureToggle keeps text, labels, and expanded state together", () 
   assert.equal(toggle.title, "Hide recipe controls");
   assert.equal(toggle.getAttribute("aria-expanded"), "true");
   assert.equal(toggle.getAttribute("aria-label"), "Hide recipe controls");
+});
+
+test("setElementInert syncs inert and aria-hidden state", () => {
+  const section = createFakeElement({ tagName: "section" });
+  section.inert = false;
+
+  setElementInert(section, true);
+
+  assert.equal(section.inert, true);
+  assert.equal(section.getAttribute("aria-hidden"), "true");
+
+  setElementInert(section, false);
+
+  assert.equal(section.inert, false);
+  assert.equal(section.getAttribute("aria-hidden"), null);
+  assert.doesNotThrow(() => setElementInert(null, true));
 });
