@@ -4757,7 +4757,8 @@
         "baking-sheet",
         "mixer"
       ],
-      "status": "not-tried"
+      "rating": "great",
+      "status": "tried"
     },
     "title": "The Best Chewy Chocolate Chip Cookies",
     "totalTime": "40 minutes"
@@ -13959,7 +13960,9 @@
       "Serve with fries, chips, or a small salad. The burger is rich enough that simple sides are best."
     ],
     "nutrition": null,
-    "personalNotes": [],
+    "personalNotes": [
+      "This burger was so damn good and easy to make. Probably the best I can remember eating. The pan will smoke a lot, so make sure it won't set off a fire alarm. I used Dave's Killer Bread Burger Buns Done Right for the buns which was so much easier than making the buns at home with the burger. The burger will also be very juicy."
+    ],
     "prepTime": "15 minutes",
     "rating": null,
     "servings": "1 burger",
@@ -13971,7 +13974,8 @@
         "stainless steel skillet",
         "stovetop"
       ],
-      "status": "not-tried"
+      "rating": "great",
+      "status": "tried"
     },
     "title": "A5 Wagyu Burger",
     "totalTime": "30 minutes"
