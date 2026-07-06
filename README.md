@@ -253,6 +253,7 @@ When a newer service worker is ready, the app header shows an update status with
 - `js/app.js`: Application composition, event wiring, filtering, mobile view, wake lock, and persistence orchestration.
 - `js/render.js`: Renderer composition boundary that exposes one renderer API to the app.
 - `js/recipe_renderer.js`: Recipe card and recipe-detail rendering.
+- `js/recipe_actions_renderer.js`: Recipe action controls for favorites, grocery selections, meal planning, exports, and source links.
 - `js/meal_plan_renderer.js`: Weekly meal-plan rendering.
 - `js/grocery_renderer.js`: Grocery-list rendering.
 - `js/cooking_renderer.js`: Cooking Mode rendering.
