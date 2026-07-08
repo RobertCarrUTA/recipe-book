@@ -48,7 +48,7 @@ test("createElement applies common DOM options and appends children", () => {
 
   assert.equal(button.tagName, "BUTTON");
   assert.equal(button.id, "saveRecipe");
-  assert.equal(button.className, "primary-button");
+  assert.equal(button.className, "primary-button is-ready");
   assert.equal(button.classList.contains("is-ready"), true);
   assert.equal(button.checked, true);
   assert.equal(button.disabled, false);
