@@ -166,3 +166,16 @@ test("status message controller clears old timers before sticky errors", () => {
   assert.equal(status.hidden, false);
   assert.equal(status.classList.contains("is-error"), true);
 });
+
+test("status message controller works without timer APIs", () => {
+  const status = createFakeElement({ id: "stateBackupStatus" });
+  const document = createFakeDocument({ elements: { stateBackupStatus: status } });
+  const controller = createStatusMessageController({ document, window: {} });
+
+  controller.set("Saved.");
+  controller.clear();
+
+  assert.equal(status.textContent, "");
+  assert.equal(status.hidden, true);
+  assert.equal(status.classList.contains("is-error"), false);
+});
