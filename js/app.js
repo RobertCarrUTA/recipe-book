@@ -52,7 +52,7 @@ import { normalizeRecipeSort } from "./recipe_sort.js";
 import { createRenderer } from "./render.js";
 import {
   clearGroceryPersistence,
-  createDefaultUiState,
+  normalizeUiState,
   restorePersistentState,
   savePersistentState,
 } from "./storage.js";
@@ -65,6 +65,16 @@ import { createWakeLockController } from "./wake_lock_controller.js";
 
 const COMPACT_CONTROLS_MEDIA = "(max-width: 979px)";
 const STATUS_TIMEOUT_MS = 3600;
+
+function createRecipeBookState(restoredState = {}) {
+  return {
+    recipes: [],
+    mealPlan: normalizeMealPlan(restoredState.mealPlan),
+    recipeSearchTexts: [],
+    runtime: createRecipeRuntimeState(restoredState),
+    ui: normalizeUiState(restoredState.ui),
+  };
+}
 
 function attachGlobalErrorHandlers(logger) {
   window.addEventListener("error", (event) => {
@@ -80,17 +90,7 @@ function createRecipeBookApp() {
   const logger = createLogger("recipe-book", { debugEnabled: isDebugEnabled() });
   const recipeRepository = createRecipeRepository({ logger });
   const restored = restorePersistentState();
-  const appState = {
-    recipes: [],
-    mealPlan: normalizeMealPlan(restored.mealPlan),
-    recipeSearchTexts: [],
-    runtime: createRecipeRuntimeState(restored),
-    ui: {
-      ...createDefaultUiState(),
-      ...(restored.ui || {}),
-    },
-  };
-  appState.ui.recipeSort = normalizeRecipeSort(appState.ui.recipeSort);
+  const appState = createRecipeBookState(restored);
   let renderer = null;
   let mobileViewController = null;
   let mealPlanPanelController = null;
@@ -119,6 +119,22 @@ function createRecipeBookApp() {
     return control;
   }
 
+  function attachCheckboxUiControl(id, uiKey, onChange) {
+    onControlChange(id, (control) => {
+      appState.ui[uiKey] = control.checked;
+      onChange();
+      saveAppState();
+    });
+  }
+
+  function attachCollapsedPanelToggle(id, uiKey, syncPanel) {
+    onId(id, "click", () => {
+      appState.ui[uiKey] = !appState.ui[uiKey];
+      syncPanel();
+      saveAppState();
+    });
+  }
+
   function syncUiStateFromControls() {
     appState.ui = readUiStateFromControls(document, appState.ui);
   }
@@ -142,24 +158,27 @@ function createRecipeBookApp() {
   function applyRestoredPersistentState(restoredState) {
     appState.runtime = createRecipeRuntimeState(restoredState);
     appState.mealPlan = normalizeMealPlan(restoredState.mealPlan);
-    appState.ui = {
-      ...createDefaultUiState(),
-      ...(restoredState.ui || {}),
-    };
-    appState.ui.recipeSort = normalizeRecipeSort(appState.ui.recipeSort);
+    appState.ui = normalizeUiState(restoredState.ui);
 
-    pruneMealPlanForRecipes(appState.mealPlan, appState.recipes);
-    recomputeGroceryState(appState.runtime, appState.recipes);
     applyUiStateToControls();
     syncRecipeControlsPanel();
     syncGroceryControlsPanel();
+    prepareRecipeRuntimeState();
+    renderLoadedAppState();
+    closeMealPlanPanel({ restoreFocus: false });
+    saveAppState({ immediate: true });
+  }
+
+  function prepareRecipeRuntimeState() {
+    pruneMealPlanForRecipes(appState.mealPlan, appState.recipes);
+    recomputeGroceryState(appState.runtime, appState.recipes);
+  }
+
+  function renderLoadedAppState() {
     renderer.renderGroceryList();
     renderer.renderMealPlan();
-    renderer.syncMealPlanIndicators();
-    refreshRecipeListFilter();
-    closeMealPlanPanel({ restoreFocus: false });
+    recipeDiscoveryController.applyFilter(appState.ui.recipeSearch || "");
     mobileViewController.setMobileView(appState.ui.mobileView, { skipSave: true });
-    saveAppState({ immediate: true });
   }
 
   function isCompactControlsLayout() {
@@ -491,29 +510,10 @@ function createRecipeBookApp() {
     syncGroceryControlsPanel();
     attachResponsiveControlsSync();
 
-    onControlChange("groupToggle", (control) => {
-      appState.ui.groupItems = control.checked;
-      renderer.renderGroceryList();
-      saveAppState();
-    });
-
-    onControlChange("showSelectedRecipesOnly", (control) => {
-      appState.ui.showSelectedRecipesOnly = control.checked;
-      refreshRecipeListFilter();
-      saveAppState();
-    });
-
-    onControlChange("showFavoriteRecipesOnly", (control) => {
-      appState.ui.showFavoriteRecipesOnly = control.checked;
-      refreshRecipeListFilter();
-      saveAppState();
-    });
-
-    onControlChange("hideCheckedGroceryItems", (control) => {
-      appState.ui.hideCheckedGroceryItems = control.checked;
-      renderer.renderGroceryList();
-      saveAppState();
-    });
+    attachCheckboxUiControl("groupToggle", "groupItems", () => renderer.renderGroceryList());
+    attachCheckboxUiControl("showSelectedRecipesOnly", "showSelectedRecipesOnly", refreshRecipeListFilter);
+    attachCheckboxUiControl("showFavoriteRecipesOnly", "showFavoriteRecipesOnly", refreshRecipeListFilter);
+    attachCheckboxUiControl("hideCheckedGroceryItems", "hideCheckedGroceryItems", () => renderer.renderGroceryList());
 
     onControlChange("recipeSort", (control) => {
       appState.ui.recipeSort = normalizeRecipeSort(control.value);
@@ -525,16 +525,38 @@ function createRecipeBookApp() {
     onId("clearCheckedGroceryItems", "click", clearCheckedGroceryListItems);
     onId("addAllRecipesToGroceryList", "click", addAllRecipesToGroceryList);
     onId("copyGroceryList", "click", handleCopyGroceryList);
-    onId("toggleRecipeControls", "click", () => {
-      appState.ui.recipeControlsCollapsed = !appState.ui.recipeControlsCollapsed;
-      syncRecipeControlsPanel();
-      saveAppState();
-    });
-    onId("toggleGroceryControls", "click", () => {
-      appState.ui.groceryControlsCollapsed = !appState.ui.groceryControlsCollapsed;
-      syncGroceryControlsPanel();
-      saveAppState();
-    });
+    attachCollapsedPanelToggle("toggleRecipeControls", "recipeControlsCollapsed", syncRecipeControlsPanel);
+    attachCollapsedPanelToggle("toggleGroceryControls", "groceryControlsCollapsed", syncGroceryControlsPanel);
+  }
+
+  function createRendererActions() {
+    return {
+      getRecipeKey,
+      getRecipeMultiplier: (recipe, index) => getRecipeMultiplier(appState.runtime, recipe, index),
+      getRecipePlannedDayKeys: (recipe, index) =>
+        getRecipePlannedDayKeys(appState.mealPlan, getRecipeKey(recipe, index)),
+      isRecipeFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
+      isManualGroceryItem: (canonicalKey) => isManualGroceryItemKey(canonicalKey),
+      isRecipeSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
+      onFavoriteRecipe: handleFavoriteRecipe,
+      onGroceryCheckedChange: handleGroceryCheckedChange,
+      onGroceryGroupToggle: handleGroceryGroupToggle,
+      onManualGroceryRemove: handleManualGroceryRemove,
+      onAddRecipeToMealPlan: handleAddRecipeToMealPlan,
+      onPlanRecipe: handlePlanRecipe,
+      onPrepareRecipeSourceNavigation: handlePrepareRecipeSourceNavigation,
+      onRecipeBatchRendered: ({ totalCount }) => updateRecipeSearchMeta(totalCount),
+      onCopyRecipeText: handleCopyRecipeText,
+      onExportRecipe: handleExportRecipe,
+      onRecipeMultiplierChange: handleRecipeMultiplierChange,
+      onRemoveRecipeFromMealPlan: handleRemoveRecipeFromMealPlan,
+      onRecipeTagToggle: handleRecipeTagToggle,
+      onRenderError: (error) => logger.error(error),
+      onSelectRecipe: handleSelectRecipe,
+      onViewGroceryList: handleViewGroceryList,
+      onViewMealPlan: handleViewMealPlan,
+      onViewRecipeSource: handleViewRecipeSource,
+    };
   }
 
   function exposeDebugApi() {
@@ -562,33 +584,7 @@ function createRecipeBookApp() {
       getRecipes: () => appState.recipes,
       getRuntimeState: () => appState.runtime,
       getUiState: () => appState.ui,
-      actions: {
-        getRecipeKey,
-        getRecipeMultiplier: (recipe, index) => getRecipeMultiplier(appState.runtime, recipe, index),
-        getRecipePlannedDayKeys: (recipe, index) =>
-          getRecipePlannedDayKeys(appState.mealPlan, getRecipeKey(recipe, index)),
-        isRecipeFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
-        isManualGroceryItem: (canonicalKey) => isManualGroceryItemKey(canonicalKey),
-        isRecipeSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
-        onFavoriteRecipe: handleFavoriteRecipe,
-        onGroceryCheckedChange: handleGroceryCheckedChange,
-        onGroceryGroupToggle: handleGroceryGroupToggle,
-        onManualGroceryRemove: handleManualGroceryRemove,
-        onAddRecipeToMealPlan: handleAddRecipeToMealPlan,
-        onPlanRecipe: handlePlanRecipe,
-        onPrepareRecipeSourceNavigation: handlePrepareRecipeSourceNavigation,
-        onRecipeBatchRendered: ({ totalCount }) => updateRecipeSearchMeta(totalCount),
-        onCopyRecipeText: handleCopyRecipeText,
-        onExportRecipe: handleExportRecipe,
-        onRecipeMultiplierChange: handleRecipeMultiplierChange,
-        onRemoveRecipeFromMealPlan: handleRemoveRecipeFromMealPlan,
-        onRecipeTagToggle: handleRecipeTagToggle,
-        onRenderError: (error) => logger.error(error),
-        onSelectRecipe: handleSelectRecipe,
-        onViewGroceryList: handleViewGroceryList,
-        onViewMealPlan: handleViewMealPlan,
-        onViewRecipeSource: handleViewRecipeSource,
-      },
+      actions: createRendererActions(),
     });
     recipeDiscoveryController = createRecipeDiscoveryController({
       document,
@@ -660,17 +656,13 @@ function createRecipeBookApp() {
       const result = await recipeRepository.loadAllRecipes();
       appState.recipes = result.recipes;
       appState.recipeSearchTexts = appState.recipes.map(buildRecipeSearchText);
-      pruneMealPlanForRecipes(appState.mealPlan, appState.recipes);
-      recomputeGroceryState(appState.runtime, appState.recipes);
+      prepareRecipeRuntimeState();
     } catch (error) {
       renderer.renderRecipeLoadError(error);
       return;
     }
 
-    renderer.renderGroceryList();
-    renderer.renderMealPlan();
-    recipeDiscoveryController.applyFilter(appState.ui.recipeSearch || "");
-    mobileViewController.setMobileView(appState.ui.mobileView, { skipSave: true });
+    renderLoadedAppState();
     wakeLockController.attach();
     exposeDebugApi();
   }
