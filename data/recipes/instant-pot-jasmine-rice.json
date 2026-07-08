@@ -61,6 +61,9 @@
     "sugar": "1 g",
     "transFat": "1 g"
   },
+  "personalNotes": [
+    "Use a rice cooker instead if you have one. Usually rice sticks to the bottom of the Instant Pot, to get around this you can use butter and oil but that mixes into the rice which I don't like. It also takes up time you could use to cook something else, or you have to use multiple Instant Pots if the main meal is also made in an Instant Pot."
+  ],
   "prepTime": "5 minutes",
   "rating": {
     "count": 495,
@@ -71,7 +74,8 @@
     "equipment": [
       "instant-pot"
     ],
-    "status": "not-tried"
+    "rating": "good",
+    "status": "tried"
   },
   "title": "Instant Pot Jasmine Rice",
   "totalTime": "25 minutes"

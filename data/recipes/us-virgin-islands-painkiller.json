@@ -85,10 +85,12 @@
   "servings": "4 drinks",
   "source": "original",
   "tags": {
+    "difficulty": "easy",
     "equipment": [
       "no-cook"
     ],
-    "status": "not-tried"
+    "rating": "great",
+    "status": "tried"
   },
   "title": "U.S. Virgin Islands Painkiller",
   "totalTime": "10 minutes"

@@ -178,17 +178,21 @@
     "Serve immediately. Smash burgers lose the magic as the lacy edges steam inside the bun."
   ],
   "nutrition": null,
-  "personalNotes": [],
+  "personalNotes": [
+    "Good burgers, there will be a lot of left over burger sauce. Also the burgers will be very messy, but they are good."
+  ],
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "1 double burger",
   "tags": {
+    "difficulty": "medium",
     "equipment": [
       "cast-iron skillet",
       "griddle",
       "stovetop"
     ],
-    "status": "not-tried"
+    "rating": "great",
+    "status": "tried"
   },
   "title": "Double Onion Smash Burger",
   "totalTime": "30 minutes plus 15 minutes beef chill time"
