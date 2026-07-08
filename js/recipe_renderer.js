@@ -5,7 +5,7 @@ import {
   getRecipeServingsText,
 } from "./recipe_formatting.js";
 import { createRecipeActionsRenderer } from "./recipe_actions_renderer.js";
-import { createEmptyState, createTextElement } from "./dom.js";
+import { createElement, createEmptyState, createTextElement } from "./dom.js";
 import { mealPlanDays } from "./meal_plan_model.js";
 import {
   DEFAULT_RECIPE_MULTIPLIER,
@@ -17,6 +17,11 @@ const COMPACT_RECIPE_BATCH_SIZE = 16;
 const COMPACT_RECIPE_BATCH_QUERY = "(max-width: 979px)";
 const DEFAULT_RECIPE_LOAD_AHEAD_MARGIN = "900px 0px";
 const COMPACT_RECIPE_LOAD_AHEAD_MARGIN = "120px 0px";
+
+function capitalizeLabel(value) {
+  const text = String(value || "");
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : "";
+}
 
 export function createRecipeRenderer({
   document,
@@ -153,32 +158,31 @@ export function createRecipeRenderer({
 
   function renderRecipeTags(tags) {
     const t = tags || {};
-    const wrap = document.createElement("div");
-    wrap.className = "recipe-tags";
+    const wrap = createElement(document, "div", { className: "recipe-tags" });
 
     function add(label, className, filterKey, filterValue) {
-      const el = document.createElement("button");
       const isActive = isFilterValueActive(filterKey, filterValue);
-      el.type = "button";
-      el.className = `recipe-tag ${className}`;
-      el.classList.toggle("active", isActive);
-      el.dataset.filterKey = filterKey;
-      el.dataset.filterValue = filterValue;
-      el.setAttribute("aria-pressed", isActive ? "true" : "false");
-      el.textContent = label;
-      el.addEventListener("click", (event) => {
-        event.stopPropagation();
-        actions.onRecipeTagToggle(filterKey, filterValue);
-      });
-      wrap.appendChild(el);
+      wrap.appendChild(createElement(document, "button", {
+        attributes: { "aria-pressed": isActive ? "true" : "false" },
+        className: `recipe-tag ${className}${isActive ? " active" : ""}`,
+        dataset: { filterKey, filterValue },
+        textContent: label,
+        type: "button",
+        listeners: {
+          click: (event) => {
+            event.stopPropagation();
+            actions.onRecipeTagToggle(filterKey, filterValue);
+          },
+        },
+      }));
     }
 
     const status = t.status === "tried" ? "tried" : "not-tried";
     add(status === "tried" ? "Tried" : "Not Tried", status === "tried" ? "tag-tried" : "tag-not-tried", "status", status);
 
-    if (t.rating) add(t.rating.charAt(0).toUpperCase() + t.rating.slice(1), `tag-${t.rating}`, "rating", t.rating);
+    if (t.rating) add(capitalizeLabel(t.rating), `tag-${t.rating}`, "rating", t.rating);
     if (t.difficulty) {
-      add(t.difficulty.charAt(0).toUpperCase() + t.difficulty.slice(1), `tag-${t.difficulty}`, "difficulty", t.difficulty);
+      add(capitalizeLabel(t.difficulty), `tag-${t.difficulty}`, "difficulty", t.difficulty);
     }
     if (Array.isArray(t.equipment)) {
       t.equipment.forEach((eq) => add(eq.replace(/-/g, " "), "tag-equipment", "equipment", eq));
@@ -218,46 +222,40 @@ export function createRecipeRenderer({
     if (servingsText) metaItems.push({ label: "Servings", value: servingsText });
     if (!metaItems.length) return;
 
-    const metaWrap = document.createElement("div");
-    const grid = document.createElement("div");
-    metaWrap.className = "recipe-meta";
-    grid.className = "recipe-meta-grid";
-
-    metaItems.forEach((item) => {
-      const p = document.createElement("p");
-      const label = document.createElement("span");
-      const value = document.createElement("span");
-      p.className = "recipe-meta-item";
-      label.className = "recipe-meta-label";
-      label.textContent = `${item.label}:`;
-      value.textContent = ` ${item.value}`;
-      p.appendChild(label);
-      p.appendChild(value);
-      grid.appendChild(p);
+    const grid = createElement(document, "div", {
+      children: metaItems.map((item) =>
+        createElement(document, "p", {
+          children: [
+            createTextElement(document, "span", `${item.label}:`, { className: "recipe-meta-label" }),
+            createTextElement(document, "span", ` ${item.value}`),
+          ],
+          className: "recipe-meta-item",
+        })
+      ),
+      className: "recipe-meta-grid",
+    });
+    const metaWrap = createElement(document, "div", {
+      children: grid,
+      className: "recipe-meta",
     });
 
-    metaWrap.appendChild(grid);
     content.appendChild(metaWrap);
   }
 
   function appendPersonalNotes(content, notes) {
     if (!Array.isArray(notes) || !notes.length) return;
 
-    const personalNotesWrap = document.createElement("div");
-    const title = document.createElement("div");
-    const label = document.createElement("span");
-    personalNotesWrap.className = "recipe-meta personal-notes";
-    title.className = "recipe-meta-item";
-    label.className = "recipe-meta-label";
-    label.textContent = "Personal Notes:";
-    title.appendChild(label);
-    personalNotesWrap.appendChild(title);
-
-    notes.forEach((note) => {
-      const noteItem = document.createElement("div");
-      noteItem.className = "recipe-meta-item";
-      noteItem.textContent = `- ${note}`;
-      personalNotesWrap.appendChild(noteItem);
+    const personalNotesWrap = createElement(document, "div", {
+      children: [
+        createElement(document, "div", {
+          children: createTextElement(document, "span", "Personal Notes:", { className: "recipe-meta-label" }),
+          className: "recipe-meta-item",
+        }),
+        ...notes.map((note) => createTextElement(document, "div", `- ${note}`, {
+          className: "recipe-meta-item",
+        })),
+      ],
+      className: "recipe-meta personal-notes",
     });
 
     content.appendChild(personalNotesWrap);
@@ -280,19 +278,13 @@ export function createRecipeRenderer({
       ["fiber", "Fiber"],
       ["sugar", "Sugar"],
     ];
-    const title = document.createElement("h4");
-    const list = document.createElement("ul");
-    title.className = "recipe-section-title";
-    title.textContent = "Nutrition";
+    const nutritionItems = nutritionLabelOrder
+      .filter(([key]) => nutrition[key])
+      .map(([key, label]) => createTextElement(document, "li", `${label}: ${nutrition[key]}`, { tabIndex: 0 }));
 
-    nutritionLabelOrder.forEach(([key, label]) => {
-      if (!nutrition[key]) return;
-      list.appendChild(createTextElement(document, "li", `${label}: ${nutrition[key]}`, { tabIndex: 0 }));
-    });
-
-    if (!list.children.length) return;
-    content.appendChild(title);
-    content.appendChild(list);
+    if (!nutritionItems.length) return;
+    content.appendChild(createTextElement(document, "h4", "Nutrition", { className: "recipe-section-title" }));
+    content.appendChild(createElement(document, "ul", { children: nutritionItems }));
   }
 
   function ensureRecipeContent(recipe, recipeIndex, content) {
@@ -303,20 +295,14 @@ export function createRecipeRenderer({
     content.appendChild(recipeActions.createRecipeActions(recipe, recipeIndex));
 
     if (recipe.category) {
-      const tag = document.createElement("div");
-      tag.className = "category-tag";
-      tag.textContent = recipe.category;
-      content.appendChild(tag);
+      content.appendChild(createTextElement(document, "div", recipe.category, { className: "category-tag" }));
     }
 
     appendRecipeMeta(content, recipe);
     appendPersonalNotes(content, recipe.personalNotes);
 
     if (recipe.description) {
-      const p = document.createElement("p");
-      p.className = "recipe-description";
-      p.textContent = recipe.description;
-      content.appendChild(p);
+      content.appendChild(createTextElement(document, "p", recipe.description, { className: "recipe-description" }));
     }
 
     appendSectionList(content, "Equipment", recipe.equipment);
@@ -337,79 +323,83 @@ export function createRecipeRenderer({
     const recipe = recipes[recipeIndex];
     const recipeKey = actions.getRecipeKey(recipe, recipeIndex);
     const contentId = `recipe-content-${recipeIndex}`;
-    const wrap = document.createElement("div");
-    const header = document.createElement("button");
-    const headerTop = document.createElement("div");
-    const title = document.createElement("span");
-    const headerBadges = document.createElement("span");
-    const favoriteBadge = document.createElement("span");
-    const plannedBadge = document.createElement("span");
-    const selectedBadge = document.createElement("span");
-    const content = document.createElement("div");
     const isSelected = actions.isRecipeSelected(recipe, recipeIndex);
     const isFavorite = actions.isRecipeFavorite(recipe, recipeIndex);
     const plannedDayKeys = getRecipePlanDayKeys(recipe, recipeIndex);
     const planned = plannedDayKeys.length > 0;
-
-    wrap.className = "recipe";
-    wrap.classList.toggle("recipe-selected", isSelected);
-    wrap.classList.toggle("recipe-favorite", isFavorite);
-    wrap.classList.toggle("recipe-planned", planned);
-    wrap.dataset.recipeIndex = String(recipeIndex);
-    wrap.dataset.recipeId = recipeKey;
-
-    header.className = "accordion-header";
-    header.type = "button";
-    header.setAttribute("aria-controls", contentId);
-    header.setAttribute("aria-expanded", "false");
-
-    headerTop.className = "recipe-header-top";
-    title.className = "recipe-title";
-    title.textContent = recipe.title;
-    headerTop.appendChild(title);
-
-    headerBadges.className = "recipe-header-badges";
-    favoriteBadge.className = "recipe-favorite-badge";
-    favoriteBadge.textContent = "Favorite";
-    favoriteBadge.hidden = !isFavorite;
-    plannedBadge.className = "recipe-planned-badge";
-    plannedBadge.textContent = formatPlannedBadgeText(plannedDayKeys);
-    plannedBadge.hidden = !planned;
-    selectedBadge.className = "recipe-selected-badge";
-    selectedBadge.textContent = getSelectedBadgeText(recipe, recipeIndex);
-    selectedBadge.hidden = !isSelected;
-    headerBadges.appendChild(favoriteBadge);
-    headerBadges.appendChild(plannedBadge);
-    headerBadges.appendChild(selectedBadge);
-    headerTop.appendChild(headerBadges);
-    header.appendChild(headerTop);
+    const content = createElement(document, "div", {
+      className: "accordion-content",
+      id: contentId,
+    });
+    const headerBadges = createElement(document, "span", {
+      children: [
+        createTextElement(document, "span", "Favorite", {
+          className: "recipe-favorite-badge",
+          hidden: !isFavorite,
+        }),
+        createTextElement(document, "span", formatPlannedBadgeText(plannedDayKeys), {
+          className: "recipe-planned-badge",
+          hidden: !planned,
+        }),
+        createTextElement(document, "span", getSelectedBadgeText(recipe, recipeIndex), {
+          className: "recipe-selected-badge",
+          hidden: !isSelected,
+        }),
+      ],
+      className: "recipe-header-badges",
+    });
+    const headerTop = createElement(document, "div", {
+      children: [
+        createTextElement(document, "span", recipe.title, { className: "recipe-title" }),
+        headerBadges,
+      ],
+      className: "recipe-header-top",
+    });
+    const header = createElement(document, "button", {
+      attributes: {
+        "aria-controls": contentId,
+        "aria-expanded": "false",
+      },
+      children: headerTop,
+      className: "accordion-header",
+      type: "button",
+      listeners: {
+        click: () => {
+          setRecipeContentOpen(recipe, recipeIndex, header, content, !content.classList.contains("open"));
+        },
+        keydown: (event) => handleRecipeHeaderKeydown(event, header),
+      },
+    });
 
     const headerMetaItems = getRecipeHeaderMeta(recipe);
     if (headerMetaItems.length) {
-      const headerMeta = document.createElement("div");
-      headerMeta.className = "recipe-header-meta";
-      headerMetaItems.forEach((item) => {
-        const chip = document.createElement("span");
-        chip.className = "recipe-header-chip";
-        if (item.primary) chip.classList.add("primary");
-        if (item.variant) chip.classList.add(item.variant);
-        chip.textContent = item.text;
-        headerMeta.appendChild(chip);
-      });
-      header.appendChild(headerMeta);
+      header.appendChild(createElement(document, "div", {
+        children: headerMetaItems.map((item) =>
+          createTextElement(document, "span", item.text, {
+            className: [
+              "recipe-header-chip",
+              item.primary ? "primary" : "",
+              item.variant || "",
+            ].filter(Boolean).join(" "),
+          })
+        ),
+        className: "recipe-header-meta",
+      }));
     }
 
-    content.className = "accordion-content";
-    content.id = contentId;
-
-    header.addEventListener("click", () => {
-      setRecipeContentOpen(recipe, recipeIndex, header, content, !content.classList.contains("open"));
+    return createElement(document, "div", {
+      children: [header, content],
+      classList: [
+        isSelected ? "recipe-selected" : "",
+        isFavorite ? "recipe-favorite" : "",
+        planned ? "recipe-planned" : "",
+      ],
+      className: "recipe",
+      dataset: {
+        recipeId: recipeKey,
+        recipeIndex,
+      },
     });
-    header.addEventListener("keydown", (event) => handleRecipeHeaderKeydown(event, header));
-
-    wrap.appendChild(header);
-    wrap.appendChild(content);
-    return wrap;
   }
 
   function setupLoadMoreObserver() {
@@ -425,23 +415,21 @@ export function createRecipeRenderer({
   }
 
   function createLoadMoreSentinel() {
-    const sentinel = document.createElement("div");
     const status = createTextElement(document, "span", "Loading more recipes...", {
       className: "recipe-load-more-status",
     });
-    const button = document.createElement("button");
-    sentinel.className = "recipe-load-more";
-    sentinel.setAttribute("aria-live", "polite");
+    const button = createElement(document, "button", {
+      className: "secondary-button",
+      textContent: "Show more recipes",
+      type: "button",
+      listeners: { click: renderNextRecipeBatch },
+    });
 
-    sentinel.appendChild(status);
-
-    button.className = "secondary-button";
-    button.type = "button";
-    button.textContent = "Show more recipes";
-    button.addEventListener("click", renderNextRecipeBatch);
-    sentinel.appendChild(button);
-
-    return sentinel;
+    return createElement(document, "div", {
+      attributes: { "aria-live": "polite" },
+      children: [status, button],
+      className: "recipe-load-more",
+    });
   }
 
   function scheduleNextRecipeBatch() {

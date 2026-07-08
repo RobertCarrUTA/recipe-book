@@ -8,12 +8,19 @@ import {
   getSortedGrocerySources,
   formatCount,
 } from "./grocery_view_model.js";
-import { createEmptyState } from "./dom.js";
+import { createElement, createEmptyState, createTextElement } from "./dom.js";
 import { formatTotalsForKey } from "./units.js";
 
 export function createGroceryRenderer({ document, getRuntimeState, getUiState, actions }) {
   const byId = (id) => document.getElementById(id);
   let sourceDetailsIdCounter = 0;
+
+  function createButton(options = {}) {
+    return createElement(document, "button", {
+      type: "button",
+      ...options,
+    });
+  }
 
   function getAllGroceryKeys(groceryState) {
     return new Set([
@@ -131,21 +138,51 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     sourceControl.addEventListener("touchstart", () => prepareRecipeSourceNavigation(canonicalKey), { passive: true });
   }
 
+  function createRecipeSourceControl({
+    canonicalKey,
+    className,
+    label,
+    linkClassName,
+    sourceId,
+    sourceTitle,
+  }) {
+    const canOpen = sourceId && typeof actions.onViewRecipeSource === "function";
+    const control = createElement(document, canOpen ? "button" : "span", {
+      attributes: canOpen ? { "aria-label": `Open ${sourceTitle} in recipes` } : undefined,
+      className: canOpen ? `${className} ${linkClassName}` : className,
+      textContent: label,
+      title: canOpen ? `Open ${sourceTitle}` : undefined,
+      type: canOpen ? "button" : undefined,
+    });
+
+    if (!canOpen) return control;
+
+    attachRecipeSourcePreparation(control, canonicalKey);
+    control.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      actions.onViewRecipeSource(sourceId, { canonicalKey });
+    });
+    return control;
+  }
+
   function createGrocerySearchLink(displayName) {
     const href = createGrocerySearchUrl(displayName);
     if (!href) return null;
 
-    const link = document.createElement("a");
-    link.className = "grocery-item-search-link";
-    link.href = href;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "Search";
-    link.title = `Search for ${displayName}`;
-    link.setAttribute("aria-label", `Search for ${displayName} in a new tab`);
-    link.setAttribute("referrerpolicy", "no-referrer");
-    link.addEventListener("click", (event) => event.stopPropagation());
-    return link;
+    return createElement(document, "a", {
+      attributes: {
+        "aria-label": `Search for ${displayName} in a new tab`,
+        referrerpolicy: "no-referrer",
+      },
+      className: "grocery-item-search-link",
+      href,
+      listeners: { click: (event) => event.stopPropagation() },
+      rel: "noopener noreferrer",
+      target: "_blank",
+      textContent: "Search",
+      title: `Search for ${displayName}`,
+    });
   }
 
   function isInteractiveGroceryTarget(target) {
@@ -158,10 +195,9 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const detailOptions = { canonicalKey, displayName };
 
     if (actions.isManualGroceryItem(canonicalKey)) {
-      const source = document.createElement("span");
-      source.className = "grocery-item-source";
-      source.textContent = "Manual item";
-      content.appendChild(source);
+      content.appendChild(createTextElement(document, "span", "Manual item", {
+        className: "grocery-item-source",
+      }));
       return;
     }
 
@@ -172,87 +208,66 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const sourceNames = sortedSources.map((source) => source.title);
     const shouldRenderDetails = sourceNames.length > 1 || sourceSummary === "From 1 recipe";
     const singleSource = sortedSources.length === 1 ? sortedSources[0] : null;
-    const canOpenSingleSource =
-      singleSource && singleSource.id && typeof actions.onViewRecipeSource === "function";
 
     if (!shouldRenderDetails) {
-      const source = document.createElement(canOpenSingleSource ? "button" : "span");
-      source.className = canOpenSingleSource
-        ? "grocery-item-source grocery-source-single-link"
-        : "grocery-item-source";
-      source.textContent = sourceSummary;
-      if (canOpenSingleSource) {
-        source.type = "button";
-        source.title = `Open ${singleSource.title}`;
-        source.setAttribute("aria-label", `Open ${singleSource.title} in recipes`);
-        attachRecipeSourcePreparation(source, canonicalKey);
-        source.addEventListener("click", (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          actions.onViewRecipeSource(singleSource.id, { canonicalKey });
-        });
-      }
-      content.appendChild(source);
+      content.appendChild(createRecipeSourceControl({
+        canonicalKey,
+        className: "grocery-item-source",
+        label: sourceSummary,
+        linkClassName: "grocery-source-single-link",
+        sourceId: singleSource?.id,
+        sourceTitle: singleSource?.title,
+      }));
       return;
     }
 
-    const sourceToggle = document.createElement("button");
-    sourceToggle.className = "grocery-item-source grocery-item-source-toggle";
-    sourceToggle.type = "button";
-    sourceToggle.textContent = sourceSummary;
-    sourceToggle.setAttribute("aria-expanded", "false");
-
-    const sourceDetails = document.createElement("span");
     const sourceDetailsId = `grocery-source-details-${sourceDetailsIdCounter}`;
     sourceDetailsIdCounter += 1;
-    sourceDetails.className = "grocery-item-source-list";
-    sourceDetails.id = sourceDetailsId;
-    sourceDetails.hidden = true;
-    sourceToggle.setAttribute("aria-controls", sourceDetailsId);
+    const sourceDetails = createElement(document, "span", {
+      className: "grocery-item-source-list",
+      hidden: true,
+      id: sourceDetailsId,
+      listeners: { click: (event) => event.stopPropagation() },
+    });
+    const sourceToggle = createButton({
+      attributes: {
+        "aria-controls": sourceDetailsId,
+        "aria-expanded": "false",
+      },
+      className: "grocery-item-source grocery-item-source-toggle",
+      textContent: sourceSummary,
+      listeners: {
+        click: (event) => {
+          event.stopPropagation();
+          const isExpanded = sourceToggle.getAttribute("aria-expanded") === "true";
+          sourceToggle.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+          sourceDetails.hidden = isExpanded;
+        },
+      },
+    });
 
     sortedSources.forEach((sourceEntry) => {
       const detail = getGrocerySourceDetail(sourceEntry, detailOptions);
-      const sourceItem = document.createElement("span");
-      const canOpenSourceRecipe =
-        sourceEntry.id && typeof actions.onViewRecipeSource === "function";
-      const sourceTitle = document.createElement(canOpenSourceRecipe ? "button" : "span");
-      sourceItem.className = "grocery-item-source-list-item";
-      sourceTitle.className = canOpenSourceRecipe
-        ? "grocery-source-title grocery-source-link"
-        : "grocery-source-title";
-      sourceTitle.textContent = detail.title;
+      const sourceTitle = createRecipeSourceControl({
+        canonicalKey,
+        className: "grocery-source-title",
+        label: detail.title,
+        linkClassName: "grocery-source-link",
+        sourceId: sourceEntry.id,
+        sourceTitle: detail.title,
+      });
 
-      if (canOpenSourceRecipe) {
-        sourceTitle.type = "button";
-        sourceTitle.title = `Open ${detail.title}`;
-        sourceTitle.setAttribute("aria-label", `Open ${detail.title} in recipes`);
-        attachRecipeSourcePreparation(sourceTitle, canonicalKey);
-        sourceTitle.addEventListener("click", (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          actions.onViewRecipeSource(sourceEntry.id, { canonicalKey });
-        });
-      }
-
-      sourceItem.appendChild(sourceTitle);
-
-      if (detail.metaText) {
-        const sourceMeta = document.createElement("span");
-        sourceMeta.className = "grocery-source-meta";
-        sourceMeta.textContent = detail.metaText;
-        sourceItem.appendChild(sourceMeta);
-      }
-
+      const sourceItem = createElement(document, "span", {
+        children: [
+          sourceTitle,
+          detail.metaText
+            ? createTextElement(document, "span", detail.metaText, { className: "grocery-source-meta" })
+            : null,
+        ],
+        className: "grocery-item-source-list-item",
+      });
       sourceDetails.appendChild(sourceItem);
     });
-
-    sourceToggle.addEventListener("click", (event) => {
-      event.stopPropagation();
-      const isExpanded = sourceToggle.getAttribute("aria-expanded") === "true";
-      sourceToggle.setAttribute("aria-expanded", isExpanded ? "false" : "true");
-      sourceDetails.hidden = isExpanded;
-    });
-    sourceDetails.addEventListener("click", (event) => event.stopPropagation());
 
     content.appendChild(sourceToggle);
     content.appendChild(sourceDetails);
@@ -260,74 +275,80 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
 
   function createGroceryItem(canonicalKey, entry, allKeys, selectedRecipeCount) {
     const runtimeState = getRuntimeState();
-    const li = document.createElement("li");
-    const cb = document.createElement("input");
-    const content = document.createElement("span");
-    const itemName = document.createElement("span");
-    const itemActions = document.createElement("span");
     const displayNotes = getDisplayNotes(entry.notes, entry.sources);
     const notesText = displayNotes.length ? ` (${displayNotes.join(", ")})` : "";
     const displayName = runtimeState.displayNamesByKey[canonicalKey] || canonicalKey;
     const searchLink = createGrocerySearchLink(displayName);
     const totalsText = entry.totals ? formatTotalsForKey(entry.totals, { canonicalKey, displayName }) : "";
     const isManual = actions.isManualGroceryItem(canonicalKey);
+    const cb = createElement(document, "input", {
+      checked: Boolean(runtimeState.groceryCheckedByKey[canonicalKey]),
+      type: "checkbox",
+      listeners: {
+        change: () => {
+          actions.onGroceryCheckedChange(canonicalKey, cb.checked);
+          if (getUiState().hideCheckedGroceryItems) {
+            renderGroceryList();
+            return;
+          }
 
-    li.tabIndex = 0;
-    li.dataset.groceryKey = canonicalKey;
-    li.classList.toggle("manual-item", isManual);
-    cb.type = "checkbox";
-    cb.checked = Boolean(runtimeState.groceryCheckedByKey[canonicalKey]);
-    content.className = "grocery-item-content";
-    itemActions.className = "grocery-item-actions";
-    itemName.className = "grocery-item-name";
-    itemName.textContent = totalsText ? `${displayName} - ${totalsText}${notesText}` : `${displayName}${notesText}`;
-    content.appendChild(itemName);
+          li.classList.toggle("checked", cb.checked);
+          updateGrocerySummary(allKeys);
+          syncGroceryGroupCountFromRow(li);
+        },
+      },
+    });
+    const content = createElement(document, "span", {
+      children: createTextElement(
+        document,
+        "span",
+        totalsText ? `${displayName} - ${totalsText}${notesText}` : `${displayName}${notesText}`,
+        { className: "grocery-item-name" }
+      ),
+      className: "grocery-item-content",
+    });
+    const itemActions = createElement(document, "span", { className: "grocery-item-actions" });
+    const li = createElement(document, "li", {
+      children: [cb, content],
+      classList: [
+        isManual ? "manual-item" : "",
+        cb.checked ? "checked" : "",
+      ],
+      dataset: { groceryKey: canonicalKey },
+      tabIndex: 0,
+      listeners: {
+        click: (event) => {
+          if (isInteractiveGroceryTarget(event.target)) return;
+          cb.checked = !cb.checked;
+          cb.dispatchEvent(new Event("change"));
+        },
+        keydown: (event) => {
+          if (event.target !== li) return;
+          if (event.key !== " " && event.key !== "Enter") return;
+
+          event.preventDefault();
+          cb.checked = !cb.checked;
+          cb.dispatchEvent(new Event("change"));
+        },
+      },
+    });
+
     renderGrocerySource(content, entry.sources, selectedRecipeCount, canonicalKey);
     if (searchLink) itemActions.appendChild(searchLink);
 
-    li.classList.toggle("checked", cb.checked);
-    cb.addEventListener("change", () => {
-      actions.onGroceryCheckedChange(canonicalKey, cb.checked);
-      if (getUiState().hideCheckedGroceryItems) {
-        renderGroceryList();
-        return;
-      }
-
-      li.classList.toggle("checked", cb.checked);
-      updateGrocerySummary(allKeys);
-      syncGroceryGroupCountFromRow(li);
-    });
-
-    li.addEventListener("click", (event) => {
-      if (isInteractiveGroceryTarget(event.target)) return;
-      cb.checked = !cb.checked;
-      cb.dispatchEvent(new Event("change"));
-    });
-
-    li.addEventListener("keydown", (event) => {
-      if (event.target !== li) return;
-      if (event.key === " " || event.key === "Enter") {
-        event.preventDefault();
-        cb.checked = !cb.checked;
-        cb.dispatchEvent(new Event("change"));
-      }
-    });
-
-    li.appendChild(cb);
-    li.appendChild(content);
-
     if (isManual) {
-      const removeButton = document.createElement("button");
-      removeButton.className = "grocery-item-remove";
-      removeButton.type = "button";
-      removeButton.setAttribute("aria-label", `Remove ${displayName}`);
-      removeButton.title = `Remove ${displayName}`;
-      removeButton.textContent = "x";
-      removeButton.addEventListener("click", (event) => {
-        event.stopPropagation();
-        actions.onManualGroceryRemove(canonicalKey);
-      });
-      itemActions.appendChild(removeButton);
+      itemActions.appendChild(createButton({
+        attributes: { "aria-label": `Remove ${displayName}` },
+        className: "grocery-item-remove",
+        textContent: "x",
+        title: `Remove ${displayName}`,
+        listeners: {
+          click: (event) => {
+            event.stopPropagation();
+            actions.onManualGroceryRemove(canonicalKey);
+          },
+        },
+      }));
     }
 
     if (itemActions.children.length) li.appendChild(itemActions);
@@ -339,57 +360,47 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const uiState = getUiState();
     const checkedCount = entries.filter((entry) => entry.checked).length;
     const isCollapsed = Boolean(uiState.collapsedGroceryGroups && uiState.collapsedGroceryGroups[group]);
-    const header = document.createElement("button");
-    const title = document.createElement("span");
-    const count = document.createElement("span");
-
-    header.className = "grocery-group-header";
-    header.type = "button";
-    header.setAttribute("aria-expanded", isCollapsed ? "false" : "true");
-    title.className = "grocery-group-title";
-    title.textContent = group;
-    count.className = "grocery-group-count";
-    count.textContent = checkedCount
+    const countText = checkedCount
       ? `${checkedCount}/${entries.length} checked`
       : formatCount(entries.length, "item", "items");
 
-    header.appendChild(title);
-    header.appendChild(count);
-    header.addEventListener("click", () => actions.onGroceryGroupToggle(group, !isCollapsed));
-
-    return header;
+    return createButton({
+      attributes: { "aria-expanded": isCollapsed ? "false" : "true" },
+      children: [
+        createTextElement(document, "span", group, { className: "grocery-group-title" }),
+        createTextElement(document, "span", countText, { className: "grocery-group-count" }),
+      ],
+      className: "grocery-group-header",
+      listeners: { click: () => actions.onGroceryGroupToggle(group, !isCollapsed) },
+    });
   }
 
   function renderGroceryGroup(container, group, entries, allKeys, selectedRecipeCount) {
     const uiState = getUiState();
-    const section = document.createElement("section");
     const visibleEntries = uiState.hideCheckedGroceryItems ? entries.filter((entry) => !entry.checked) : entries;
     const isCollapsed = Boolean(uiState.collapsedGroceryGroups && uiState.collapsedGroceryGroups[group]);
-    const list = document.createElement("ul");
-
-    section.className = "grocery-group";
-    section.appendChild(createGroupHeader(group, entries));
-    list.hidden = isCollapsed;
+    const list = createElement(document, "ul", { hidden: isCollapsed });
 
     visibleEntries.forEach((entry) => {
       list.appendChild(createGroceryItem(entry.canonicalKey, entry, allKeys, selectedRecipeCount));
     });
 
     if (!visibleEntries.length && entries.length) {
-      const hiddenState = document.createElement("li");
-      hiddenState.className = "grocery-group-empty";
-      hiddenState.textContent = formatCheckedGroceryGroupMessage(group);
-      list.appendChild(hiddenState);
+      list.appendChild(createTextElement(document, "li", formatCheckedGroceryGroupMessage(group), {
+        className: "grocery-group-empty",
+      }));
     }
 
-    section.appendChild(list);
-    container.appendChild(section);
+    container.appendChild(createElement(document, "section", {
+      children: [createGroupHeader(group, entries), list],
+      className: "grocery-group",
+    }));
   }
 
   function renderUngroupedGroceryList(container, entries, allKeys, selectedRecipeCount) {
     const uiState = getUiState();
     const visibleEntries = uiState.hideCheckedGroceryItems ? entries.filter((entry) => !entry.checked) : entries;
-    const ul = document.createElement("ul");
+    const ul = createElement(document, "ul");
 
     visibleEntries.forEach((entry) => {
       ul.appendChild(createGroceryItem(entry.canonicalKey, entry, allKeys, selectedRecipeCount));

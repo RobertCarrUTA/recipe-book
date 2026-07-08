@@ -30,12 +30,18 @@ test("createTextElement applies concise text element options", () => {
 test("createElement applies common DOM options and appends children", () => {
   const document = createFakeDocument();
   const child = createTextElement(document, "span", "Save");
+  let clicked = false;
   const button = createElement(document, "button", {
     attributes: { "aria-label": "Save recipe" },
+    checked: true,
     children: child,
     className: "primary-button",
+    classList: ["is-ready"],
     dataset: { recipeId: "chili" },
+    disabled: false,
+    hidden: true,
     id: "saveRecipe",
+    listeners: { click: () => { clicked = true; } },
     title: "Save",
     type: "button",
   });
@@ -43,11 +49,17 @@ test("createElement applies common DOM options and appends children", () => {
   assert.equal(button.tagName, "BUTTON");
   assert.equal(button.id, "saveRecipe");
   assert.equal(button.className, "primary-button");
+  assert.equal(button.classList.contains("is-ready"), true);
+  assert.equal(button.checked, true);
+  assert.equal(button.disabled, false);
+  assert.equal(button.hidden, true);
   assert.equal(button.type, "button");
   assert.equal(button.title, "Save");
   assert.equal(button.getAttribute("aria-label"), "Save recipe");
   assert.equal(button.dataset.recipeId, "chili");
   assert.deepEqual(button.children, [child]);
+  button.dispatchEvent(createFakeEvent("click"));
+  assert.equal(clicked, true);
 });
 
 test("appendChildren skips empty children and preserves parent linkage", () => {

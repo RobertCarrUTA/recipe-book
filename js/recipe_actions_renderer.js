@@ -1,3 +1,4 @@
+import { appendChildren, createElement } from "./dom.js";
 import { mealPlanDays } from "./meal_plan_model.js";
 import {
   DEFAULT_RECIPE_MULTIPLIER,
@@ -16,6 +17,14 @@ export function createRecipeActionsRenderer({
   openCookingMode,
   windowLike = document.defaultView || globalThis,
 }) {
+  function createButton({ listeners, onClick, ...options }) {
+    return createElement(document, "button", {
+      type: "button",
+      ...options,
+      listeners: onClick ? { ...(listeners || {}), click: onClick } : listeners,
+    });
+  }
+
   function syncRecipePlanSelect(select, recipe, recipeIndex) {
     if (!select) return;
 
@@ -47,11 +56,6 @@ export function createRecipeActionsRenderer({
   }
 
   function createRecipeScaleControl(recipe, recipeIndex) {
-    const control = document.createElement("div");
-    const label = document.createElement("label");
-    const decreaseButton = document.createElement("button");
-    const input = document.createElement("input");
-    const increaseButton = document.createElement("button");
     const inputId = `recipe-scale-${recipeIndex}`;
 
     function commitMultiplier(nextValue) {
@@ -62,76 +66,81 @@ export function createRecipeActionsRenderer({
       input.value = formatRecipeMultiplierInputValue(normalized);
     }
 
-    control.className = "recipe-scale-control";
-    label.className = "recipe-scale-label";
-    label.htmlFor = inputId;
-    label.textContent = "Qty";
-
-    decreaseButton.className = "recipe-scale-step";
-    decreaseButton.type = "button";
-    decreaseButton.textContent = "-";
-    decreaseButton.setAttribute("aria-label", `Decrease quantity for ${recipe.title || "recipe"}`);
-    decreaseButton.addEventListener("click", () => commitMultiplier(stepRecipeMultiplier(input.value, -1)));
-
-    input.className = "recipe-scale-input";
-    input.id = inputId;
-    input.type = "number";
-    input.inputMode = "decimal";
-    input.min = String(MIN_RECIPE_MULTIPLIER);
-    input.max = String(MAX_RECIPE_MULTIPLIER);
-    input.step = String(RECIPE_MULTIPLIER_STEP);
-    input.value = formatRecipeMultiplierInputValue(getRecipeMultiplier(recipe, recipeIndex));
-    input.setAttribute("aria-label", `Quantity multiplier for ${recipe.title || "recipe"}`);
-    input.addEventListener("change", () => commitMultiplier(input.value));
-    input.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        commitMultiplier(input.value);
-        input.blur();
-      }
-      if (event.key === "Escape") {
-        input.value = formatRecipeMultiplierInputValue(getRecipeMultiplier(recipe, recipeIndex));
-        input.blur();
-      }
+    const label = createElement(document, "label", {
+      className: "recipe-scale-label",
+      htmlFor: inputId,
+      textContent: "Qty",
+    });
+    const decreaseButton = createButton({
+      attributes: { "aria-label": `Decrease quantity for ${recipe.title || "recipe"}` },
+      className: "recipe-scale-step",
+      onClick: () => commitMultiplier(stepRecipeMultiplier(input.value, -1)),
+      textContent: "-",
+    });
+    const input = createElement(document, "input", {
+      attributes: { "aria-label": `Quantity multiplier for ${recipe.title || "recipe"}` },
+      className: "recipe-scale-input",
+      id: inputId,
+      inputMode: "decimal",
+      max: MAX_RECIPE_MULTIPLIER,
+      min: MIN_RECIPE_MULTIPLIER,
+      step: RECIPE_MULTIPLIER_STEP,
+      type: "number",
+      value: formatRecipeMultiplierInputValue(getRecipeMultiplier(recipe, recipeIndex)),
+      listeners: {
+        change: () => commitMultiplier(input.value),
+        keydown: (event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            commitMultiplier(input.value);
+            input.blur();
+          }
+          if (event.key === "Escape") {
+            input.value = formatRecipeMultiplierInputValue(getRecipeMultiplier(recipe, recipeIndex));
+            input.blur();
+          }
+        },
+      },
+    });
+    const increaseButton = createButton({
+      attributes: { "aria-label": `Increase quantity for ${recipe.title || "recipe"}` },
+      className: "recipe-scale-step",
+      onClick: () => commitMultiplier(stepRecipeMultiplier(input.value, 1)),
+      textContent: "+",
+    });
+    const control = createElement(document, "div", {
+      children: [label, decreaseButton, input, increaseButton],
+      className: "recipe-scale-control",
     });
 
-    increaseButton.className = "recipe-scale-step";
-    increaseButton.type = "button";
-    increaseButton.textContent = "+";
-    increaseButton.setAttribute("aria-label", `Increase quantity for ${recipe.title || "recipe"}`);
-    increaseButton.addEventListener("click", () => commitMultiplier(stepRecipeMultiplier(input.value, 1)));
-
-    control.appendChild(label);
-    control.appendChild(decreaseButton);
-    control.appendChild(input);
-    control.appendChild(increaseButton);
     syncRecipeScaleControl(control, recipe, recipeIndex, actions.isRecipeSelected(recipe, recipeIndex));
 
     return control;
   }
 
   function createRecipePlanSelect(recipe, recipeIndex) {
-    const select = document.createElement("select");
-    const placeholder = document.createElement("option");
-
-    select.className = "recipe-plan-select";
-    select.setAttribute("aria-label", `Plan ${recipe.title || "recipe"}`);
-    placeholder.value = "";
-    placeholder.textContent = "Plan meal";
-    select.appendChild(placeholder);
-
-    mealPlanDays.forEach((day) => {
-      const option = document.createElement("option");
-      option.value = day.key;
-      option.dataset.day = day.key;
-      option.textContent = day.label;
-      select.appendChild(option);
-    });
-
-    select.addEventListener("change", () => {
-      if (!select.value || typeof actions.onPlanRecipe !== "function") return;
-      actions.onPlanRecipe(recipe, recipeIndex, select.value);
-      syncRecipePlanSelect(select, recipe, recipeIndex);
+    const dayOptions = mealPlanDays.map((day) => createElement(document, "option", {
+      dataset: { day: day.key },
+      textContent: day.label,
+      value: day.key,
+    }));
+    const select = createElement(document, "select", {
+      attributes: { "aria-label": `Plan ${recipe.title || "recipe"}` },
+      children: [
+        createElement(document, "option", {
+          textContent: "Plan meal",
+          value: "",
+        }),
+        ...dayOptions,
+      ],
+      className: "recipe-plan-select",
+      listeners: {
+        change: () => {
+          if (!select.value || typeof actions.onPlanRecipe !== "function") return;
+          actions.onPlanRecipe(recipe, recipeIndex, select.value);
+          syncRecipePlanSelect(select, recipe, recipeIndex);
+        },
+      },
     });
     syncRecipePlanSelect(select, recipe, recipeIndex);
 
@@ -139,10 +148,23 @@ export function createRecipeActionsRenderer({
   }
 
   function createRecipeExportActions(recipe, recipeIndex) {
-    const wrap = document.createElement("div");
-    const label = document.createElement("span");
-    const status = document.createElement("span");
     const recipeTitle = recipe.title || "recipe";
+    const wrap = createElement(document, "div", {
+      attributes: {
+        "aria-label": `Export ${recipeTitle}`,
+        role: "group",
+      },
+      className: "recipe-export-actions",
+    });
+    const label = createElement(document, "span", {
+      className: "recipe-export-label",
+      textContent: "Export",
+    });
+    const status = createElement(document, "span", {
+      attributes: { "aria-live": "polite" },
+      className: "recipe-export-status",
+      hidden: true,
+    });
     let statusTimer = null;
 
     function setStatus(message, options = {}) {
@@ -177,59 +199,47 @@ export function createRecipeActionsRenderer({
     }
 
     function addButton(text, exportLabel, action, className = "") {
-      const button = document.createElement("button");
-      button.className = `recipe-export-button${className ? ` ${className}` : ""}`;
-      button.type = "button";
-      button.textContent = text;
-      button.title = exportLabel;
-      button.setAttribute("aria-label", `${exportLabel} for ${recipeTitle}`);
-      button.addEventListener("click", action);
-      wrap.appendChild(button);
+      wrap.appendChild(createButton({
+        attributes: { "aria-label": `${exportLabel} for ${recipeTitle}` },
+        className: `recipe-export-button${className ? ` ${className}` : ""}`,
+        onClick: action,
+        textContent: text,
+        title: exportLabel,
+      }));
     }
-
-    wrap.className = "recipe-export-actions";
-    wrap.setAttribute("role", "group");
-    wrap.setAttribute("aria-label", `Export ${recipeTitle}`);
-    label.className = "recipe-export-label";
-    label.textContent = "Export";
-    status.className = "recipe-export-status";
-    status.setAttribute("aria-live", "polite");
-    status.hidden = true;
 
     wrap.appendChild(label);
-    if (typeof actions.onCopyRecipeText === "function") {
+    [
+      typeof actions.onCopyRecipeText === "function" && {
+        className: "recipe-export-copy-button",
+        errorText: "Copy failed.",
+        exportLabel: "Copy formatted text",
+        run: () => actions.onCopyRecipeText(recipe, recipeIndex),
+        successText: "Copied.",
+        text: "Copy",
+      },
+      {
+        errorText: "Download failed.",
+        exportLabel: "Export formatted text",
+        run: () => actions.onExportRecipe(recipe, recipeIndex, "text"),
+        successText: "Downloaded text.",
+        text: "Text",
+      },
+      {
+        errorText: "Download failed.",
+        exportLabel: "Export JSON",
+        run: () => actions.onExportRecipe(recipe, recipeIndex, "json"),
+        successText: "Downloaded JSON.",
+        text: "JSON",
+      },
+    ].filter(Boolean).forEach((exportAction) => {
       addButton(
-        "Copy",
-        "Copy formatted text",
-        () =>
-          runAction(
-            () => actions.onCopyRecipeText(recipe, recipeIndex),
-            "Copied.",
-            "Copy failed."
-          ),
-        "recipe-export-copy-button"
+        exportAction.text,
+        exportAction.exportLabel,
+        () => runAction(exportAction.run, exportAction.successText, exportAction.errorText),
+        exportAction.className
       );
-    }
-    addButton(
-      "Text",
-      "Export formatted text",
-      () =>
-        runAction(
-          () => actions.onExportRecipe(recipe, recipeIndex, "text"),
-          "Downloaded text.",
-          "Download failed."
-        )
-    );
-    addButton(
-      "JSON",
-      "Export JSON",
-      () =>
-        runAction(
-          () => actions.onExportRecipe(recipe, recipeIndex, "json"),
-          "Downloaded JSON.",
-          "Download failed."
-        )
-    );
+    });
     wrap.appendChild(status);
 
     return wrap;
@@ -240,64 +250,54 @@ export function createRecipeActionsRenderer({
   }
 
   function createRecipeActions(recipe, recipeIndex) {
-    const actionsWrap = document.createElement("div");
-    const favoriteButton = document.createElement("button");
-    const cookButton = document.createElement("button");
+    const isFavorite = actions.isRecipeFavorite(recipe, recipeIndex);
+    const isSelected = actions.isRecipeSelected(recipe, recipeIndex);
+    const actionsWrap = createElement(document, "div", { className: "recipe-actions" });
     const planSelect = createRecipePlanSelect(recipe, recipeIndex);
-    const toggle = document.createElement("label");
-    const addToListCheckbox = document.createElement("input");
-    const addToListText = document.createElement("span");
-    const scaleControl = createRecipeScaleControl(recipe, recipeIndex);
-    const viewPlanButton = document.createElement("button");
-    const viewGroceryButton = document.createElement("button");
-
-    actionsWrap.className = "recipe-actions";
-
-    favoriteButton.className = "favorite-recipe-button";
-    favoriteButton.type = "button";
-    favoriteButton.setAttribute("aria-pressed", actions.isRecipeFavorite(recipe, recipeIndex) ? "true" : "false");
-    favoriteButton.textContent = actions.isRecipeFavorite(recipe, recipeIndex) ? "Favorited" : "Favorite";
-    favoriteButton.addEventListener("click", () => {
-      actions.onFavoriteRecipe(recipe, recipeIndex, !actions.isRecipeFavorite(recipe, recipeIndex));
+    const addToListCheckbox = createElement(document, "input", {
+      checked: isSelected,
+      dataset: { recipeId: actions.getRecipeKey(recipe, recipeIndex) },
+      type: "checkbox",
     });
-    actionsWrap.appendChild(favoriteButton);
+    const addToListText = createElement(document, "span", {
+      className: "recipe-add-toggle-text",
+      textContent: "Add to grocery list",
+    });
+    const toggle = createElement(document, "label", {
+      children: [addToListCheckbox, addToListText],
+      className: "checkbox-inline recipe-add-toggle",
+    });
+    const scaleControl = createRecipeScaleControl(recipe, recipeIndex);
+    const favoriteButton = createButton({
+      attributes: { "aria-pressed": isFavorite ? "true" : "false" },
+      className: "favorite-recipe-button",
+      onClick: () => actions.onFavoriteRecipe(recipe, recipeIndex, !actions.isRecipeFavorite(recipe, recipeIndex)),
+      textContent: isFavorite ? "Favorited" : "Favorite",
+    });
+    const cookButton = createButton({
+      className: "primary-button cooking-mode-button",
+      onClick: () => openCookingMode(recipe, recipeIndex),
+      textContent: "Cook mode",
+    });
+    const viewPlanButton = createButton({
+      className: "view-plan-button",
+      hidden: !isRecipePlanned(recipe, recipeIndex),
+      onClick: actions.onViewMealPlan,
+      textContent: "View plan",
+    });
+    const viewGroceryButton = createButton({
+      className: "view-grocery-button",
+      hidden: !addToListCheckbox.checked,
+      onClick: actions.onViewGroceryList,
+      textContent: "View list",
+    });
 
-    cookButton.className = "primary-button cooking-mode-button";
-    cookButton.type = "button";
-    cookButton.textContent = "Cook mode";
-    cookButton.addEventListener("click", () => openCookingMode(recipe, recipeIndex));
-    actionsWrap.appendChild(cookButton);
-    actionsWrap.appendChild(planSelect);
-
-    toggle.className = "checkbox-inline recipe-add-toggle";
-    addToListCheckbox.type = "checkbox";
-    addToListCheckbox.dataset.recipeId = actions.getRecipeKey(recipe, recipeIndex);
-    addToListCheckbox.checked = actions.isRecipeSelected(recipe, recipeIndex);
-    addToListText.className = "recipe-add-toggle-text";
-    addToListText.textContent = "Add to grocery list";
-    toggle.appendChild(addToListCheckbox);
-    toggle.appendChild(addToListText);
-    syncRecipeAddToggleText(toggle, addToListCheckbox.checked);
-    actionsWrap.appendChild(toggle);
-    actionsWrap.appendChild(scaleControl);
-
+    appendChildren(actionsWrap, [favoriteButton, cookButton, planSelect, toggle, scaleControl]);
     if (typeof actions.onExportRecipe === "function") {
       actionsWrap.appendChild(createRecipeExportActions(recipe, recipeIndex));
     }
-
-    viewPlanButton.className = "view-plan-button";
-    viewPlanButton.type = "button";
-    viewPlanButton.textContent = "View plan";
-    viewPlanButton.hidden = !isRecipePlanned(recipe, recipeIndex);
-    viewPlanButton.addEventListener("click", actions.onViewMealPlan);
-    actionsWrap.appendChild(viewPlanButton);
-
-    viewGroceryButton.className = "view-grocery-button";
-    viewGroceryButton.type = "button";
-    viewGroceryButton.textContent = "View list";
-    viewGroceryButton.hidden = !addToListCheckbox.checked;
-    viewGroceryButton.addEventListener("click", actions.onViewGroceryList);
-    actionsWrap.appendChild(viewGroceryButton);
+    appendChildren(actionsWrap, [viewPlanButton, viewGroceryButton]);
+    syncRecipeAddToggleText(toggle, addToListCheckbox.checked);
 
     addToListCheckbox.addEventListener("change", () => {
       actions.onSelectRecipe(recipe, recipeIndex, addToListCheckbox.checked);
@@ -307,13 +307,13 @@ export function createRecipeActionsRenderer({
     });
 
     if (recipe.link) {
-      const link = document.createElement("a");
-      link.className = "recipe-link recipe-action-link";
-      link.href = recipe.link;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = "View full recipe";
-      actionsWrap.appendChild(link);
+      actionsWrap.appendChild(createElement(document, "a", {
+        className: "recipe-link recipe-action-link",
+        href: recipe.link,
+        rel: "noopener noreferrer",
+        target: "_blank",
+        textContent: "View full recipe",
+      }));
     }
 
     return actionsWrap;
