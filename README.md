@@ -250,7 +250,8 @@ When a newer service worker is ready, the app header shows an update status with
 
 ### JavaScript Map
 
-- `js/app.js`: Application composition, event wiring, filtering, mobile view, wake lock, and persistence orchestration.
+- `js/app.js`: Application composition, event wiring, mobile view, wake lock, and persistence orchestration.
+- `js/recipe_discovery_controller.js`: Recipe search, filter controls, and filtered-list refresh orchestration.
 - `js/render.js`: Renderer composition boundary that exposes one renderer API to the app.
 - `js/recipe_renderer.js`: Recipe card and recipe-detail rendering.
 - `js/recipe_actions_renderer.js`: Recipe action controls for favorites, grocery selections, meal planning, exports, and source links.
@@ -261,7 +262,7 @@ When a newer service worker is ready, the app header shows an update status with
 - `js/grocery_model.js`: Grocery aggregation for selected recipes, quantities, favorites, checks, source details, and parsed display names.
 - `js/grocery_list_exporter.js`: Plain-text grocery list export.
 - `js/meal_plan_model.js`: Weekly meal-plan model and plan-to-grocery generation.
-- `js/recipe_filter.js`, `js/recipe_formatting.js`, `js/grocery_view_model.js`, `js/cooking_model.js`: Pure UI and domain helpers.
+- `js/recipe_filter.js`, `js/recipe_discovery.js`, `js/recipe_formatting.js`, `js/grocery_view_model.js`, `js/cooking_model.js`: Pure UI and domain helpers.
 - `js/recipe_repository.js`: Recipe loading boundary for bundled and future recipe sources.
 - `js/recipe_schema.js`: Recipe normalization, schema defaults, ID de-duplication, and data warnings.
 - `js/storage.js`: Versioned `localStorage` adapter with defensive reads, writes, and migrations.
