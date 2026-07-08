@@ -7,7 +7,9 @@ export function createStatusMessageController(options = {}) {
 
   function clearTimer() {
     if (!timer) return;
-    window.clearTimeout(timer);
+    if (window && typeof window.clearTimeout === "function") {
+      window.clearTimeout(timer);
+    }
     timer = null;
   }
 
@@ -20,7 +22,7 @@ export function createStatusMessageController(options = {}) {
     status.hidden = !message;
     status.classList.toggle("is-error", statusOptions.kind === "error");
 
-    if (message && !statusOptions.sticky) {
+    if (message && !statusOptions.sticky && window && typeof window.setTimeout === "function") {
       timer = window.setTimeout(() => {
         status.textContent = "";
         status.hidden = true;

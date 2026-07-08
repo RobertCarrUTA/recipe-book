@@ -3,8 +3,7 @@ import {
   normalizePersistentStateBackup,
   safeJsonParse,
 } from "./storage.js";
-
-const STATUS_TIMEOUT_MS = 3600;
+import { createStatusMessageController } from "./status_message_controller.js";
 
 function getBackupFileName(date = new Date()) {
   const dateStamp = date.toISOString().slice(0, 10);
@@ -21,7 +20,7 @@ export function createBackupController({
   window = globalThis.window,
 } = {}) {
   const byId = (id) => document.getElementById(id);
-  let statusTimer = null;
+  const fallbackStatus = createStatusMessageController({ document, window });
 
   function setStatus(message, options = {}) {
     if (typeof reportExternalStatus === "function") {
@@ -29,25 +28,7 @@ export function createBackupController({
       return;
     }
 
-    const status = byId("stateBackupStatus");
-    if (!status) return;
-
-    if (statusTimer && window && typeof window.clearTimeout === "function") {
-      window.clearTimeout(statusTimer);
-      statusTimer = null;
-    }
-
-    status.textContent = message || "";
-    status.hidden = !message;
-    status.classList.toggle("is-error", options.kind === "error");
-
-    if (message && !options.sticky && window && typeof window.setTimeout === "function") {
-      statusTimer = window.setTimeout(() => {
-        status.textContent = "";
-        status.hidden = true;
-        status.classList.remove("is-error");
-      }, STATUS_TIMEOUT_MS);
-    }
+    fallbackStatus.set(message, options);
   }
 
   function exportBackup() {
