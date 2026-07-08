@@ -7,6 +7,7 @@ import {
   createPersistentStateBackup,
   currentStorageVersion,
   migratePersistentState,
+  normalizeUiState,
   normalizePersistentStateBackup,
   restorePersistentState,
   savePersistentState,
@@ -102,6 +103,25 @@ test("restorePersistentState reads persisted UI preferences", () => {
   assert.equal(restored.ui.showFavoriteRecipesOnly, true);
   assert.equal(restored.ui.showSelectedRecipesOnly, true);
   assert.equal(restored.ui.skipClearGroceryConfirmation, true);
+});
+
+test("normalizeUiState returns safe defaults for partial restored UI state", () => {
+  const ui = normalizeUiState({
+    collapsedGroceryGroups: { Produce: true, Dairy: false },
+    filters: { difficulty: ["easy", "", "easy"], rating: "great" },
+    mobileView: "bad",
+    recipeSearch: " pasta ",
+    recipeSort: "old-sort",
+    showSelectedRecipesOnly: 1,
+  });
+
+  assert.deepEqual(ui.collapsedGroceryGroups, { Produce: true });
+  assert.deepEqual(ui.filters, { difficulty: ["easy"] });
+  assert.equal(ui.mobileView, "recipes");
+  assert.equal(ui.recipeSearch, "pasta");
+  assert.equal(ui.recipeSort, "default");
+  assert.equal(ui.showSelectedRecipesOnly, true);
+  assert.equal(ui.hideCheckedGroceryItems, false);
 });
 
 test("migratePersistentState promotes legacy selected recipes", () => {

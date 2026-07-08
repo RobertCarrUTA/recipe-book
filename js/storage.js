@@ -161,7 +161,7 @@ function normalizeMobileView(value) {
   return mobileViews.has(value) ? value : "recipes";
 }
 
-function normalizeUiState(uiState) {
+export function normalizeUiState(uiState) {
   const ui = isPlainObject(uiState) ? uiState : {};
   const defaults = createDefaultUiState();
 
