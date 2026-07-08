@@ -42,10 +42,7 @@ import { createOfflineController } from "./offline_controller.js";
 import {
   buildRecipeSearchText,
 } from "./recipe_filter.js";
-import {
-  getRecipeDiscoveryResult,
-  isRuntimeRecipeSort,
-} from "./recipe_discovery.js";
+import { createRecipeDiscoveryController } from "./recipe_discovery_controller.js";
 import { createRecipeExportPayload } from "./recipe_exporter.js";
 import { createGroceryListText } from "./grocery_list_exporter.js";
 import { createRecipeRepository } from "./recipe_repository.js";
@@ -61,13 +58,10 @@ import {
 import { createStatusMessageController } from "./status_message_controller.js";
 import {
   applyUiStateToControls as applyUiStateToDomControls,
-  getSelectedRecipeFilters,
-  readFilterDataFromDom,
   readUiStateFromControls,
 } from "./ui_state.js";
 import { createWakeLockController } from "./wake_lock_controller.js";
 
-const DEBOUNCE_MS = 150;
 const COMPACT_CONTROLS_MEDIA = "(max-width: 979px)";
 const STATUS_TIMEOUT_MS = 3600;
 
@@ -99,7 +93,7 @@ function createRecipeBookApp() {
   let renderer = null;
   let mobileViewController = null;
   let mealPlanReturnFocus = null;
-  let lastRenderedRecipeIndexes = null;
+  let recipeDiscoveryController = null;
   let recipeSourceNavigationController = null;
   let wakeLockController = null;
   const stateToolsStatus = createStatusMessageController({
@@ -124,10 +118,6 @@ function createRecipeBookApp() {
     return control;
   }
 
-  function queryAll(selector) {
-    return Array.from(document.querySelectorAll(selector));
-  }
-
   function syncUiStateFromControls() {
     appState.ui = readUiStateFromControls(document, appState.ui);
   }
@@ -146,69 +136,6 @@ function createRecipeBookApp() {
 
   function applyUiStateToControls() {
     applyUiStateToDomControls(document, appState.ui);
-  }
-
-  function isRecipeListRuntimeSorted() {
-    return isRuntimeRecipeSort(appState.ui.recipeSort);
-  }
-
-  function areRecipeIndexesEqual(left, right) {
-    if (!Array.isArray(left) || !Array.isArray(right) || left.length !== right.length) return false;
-
-    return left.every((value, index) => value === right[index]);
-  }
-
-  function renderFilteredRecipes(recipeIndexes) {
-    if (!areRecipeIndexesEqual(lastRenderedRecipeIndexes, recipeIndexes)) {
-      renderer.renderRecipes({ recipeIndexes });
-      lastRenderedRecipeIndexes = recipeIndexes.slice();
-      return;
-    }
-
-    renderer.syncFavoriteRecipeIndicators();
-    renderer.syncRecipeSelectionIndicators();
-    renderer.syncMealPlanIndicators();
-  }
-
-  function syncRecipeFilterControls({
-    activeDiscoveryFilterCount,
-    filterText,
-  }) {
-    const filterToggle = byId("toggleFilters");
-    const clearFiltersButton = byId("clearFilters");
-    const recipeSearch = byId("recipeSearch");
-    const recipeSearchWrap = recipeSearch ? recipeSearch.closest(".recipe-search") : null;
-    const filterToggleText = activeDiscoveryFilterCount
-      ? `Filters (${activeDiscoveryFilterCount})`
-      : "Filters";
-
-    if (filterToggle) {
-      filterToggle.textContent = filterToggleText;
-      filterToggle.classList.toggle("has-active-filters", activeDiscoveryFilterCount > 0);
-      filterToggle.setAttribute(
-        "aria-label",
-        activeDiscoveryFilterCount
-          ? `${activeDiscoveryFilterCount} recipe discovery controls active`
-          : "Show recipe filters"
-      );
-    }
-
-    if (clearFiltersButton) clearFiltersButton.disabled = activeDiscoveryFilterCount === 0;
-
-    if (recipeSearchWrap) {
-      recipeSearchWrap.classList.toggle("has-active-discovery-filters", activeDiscoveryFilterCount > 0);
-      recipeSearchWrap.classList.toggle("has-search-text", Boolean(filterText));
-    }
-
-    syncRecipeSearchClearButton();
-  }
-
-  function syncRecipeSearchClearButton() {
-    const recipeSearch = byId("recipeSearch");
-    const clearSearchButton = byId("clearRecipeSearch");
-    if (!clearSearchButton) return;
-
-    clearSearchButton.hidden = !(recipeSearch && recipeSearch.value);
   }
 
   function applyRestoredPersistentState(restoredState) {
@@ -238,77 +165,20 @@ function createRecipeBookApp() {
     return isMediaQueryActive(window, COMPACT_CONTROLS_MEDIA);
   }
 
-  function applyRecipeFilter(filterTextRaw) {
-    const selected = getSelectedRecipeFilters(document);
-    const selectedOnly = byId("showSelectedRecipesOnly");
-    const favoriteOnly = byId("showFavoriteRecipesOnly");
-    const discovery = getRecipeDiscoveryResult({
-      filterText: filterTextRaw,
-      isFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
-      isSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
-      recipes: appState.recipes,
-      searchTexts: appState.recipeSearchTexts,
-      selectedFilters: selected,
-      showFavoriteOnly: Boolean(favoriteOnly && favoriteOnly.checked),
-      showSelectedOnly: Boolean(selectedOnly && selectedOnly.checked),
-      sortMode: appState.ui.recipeSort,
-    });
-
-    renderFilteredRecipes(discovery.recipeIndexes);
-    renderer.syncRecipeFilterTagStyles(discovery.selectedFilters);
-    syncRecipeFilterControls({
-      activeDiscoveryFilterCount: discovery.activeDiscoveryFilterCount,
-      filterText: discovery.filterText,
-    });
-    updateRecipeSearchMeta(discovery.matchCount);
-
-    const noResults = byId("recipeNoResults");
-    if (noResults) noResults.hidden = !(appState.recipes.length && discovery.matchCount === 0);
-  }
-
   function refreshRecipeListFilter() {
-    const recipeSearch = byId("recipeSearch");
-    applyRecipeFilter(recipeSearch ? recipeSearch.value || "" : "");
+    recipeDiscoveryController?.refresh();
   }
 
   function clearRecipeDiscoveryFilters(options = {}) {
-    const recipeSearch = byId("recipeSearch");
-    const selectedOnly = byId("showSelectedRecipesOnly");
-    const favoriteOnly = byId("showFavoriteRecipesOnly");
-
-    if (recipeSearch) recipeSearch.value = "";
-    if (selectedOnly) selectedOnly.checked = false;
-    if (favoriteOnly) favoriteOnly.checked = false;
-    queryAll(".recipe-filters input").forEach((cb) => {
-      cb.checked = false;
-    });
-
-    appState.ui.recipeSearch = "";
-    appState.ui.filters = {};
-    appState.ui.showSelectedRecipesOnly = false;
-    appState.ui.showFavoriteRecipesOnly = false;
-    refreshRecipeListFilter();
-    saveAppState();
-    if (options.focusSearch !== false && recipeSearch) recipeSearch.focus();
-  }
-
-  function findFilterCheckbox(filterKey, filterValue) {
-    return queryAll(".recipe-filters input").find(
-      (input) => input.dataset.filter === filterKey && input.value === filterValue
-    );
-  }
-
-  function isControlChecked(id) {
-    const control = byId(id);
-    return Boolean(control && control.checked);
+    recipeDiscoveryController?.clear(options);
   }
 
   function shouldRefreshRecipesForFavoriteChange() {
-    return isControlChecked("showFavoriteRecipesOnly") || isRecipeListRuntimeSorted();
+    return Boolean(recipeDiscoveryController?.shouldRefreshForFavoriteChange());
   }
 
   function shouldRefreshRecipesForSelectionChange() {
-    return isControlChecked("showSelectedRecipesOnly") || isRecipeListRuntimeSorted();
+    return Boolean(recipeDiscoveryController?.shouldRefreshForSelectionChange());
   }
 
   function syncFavoriteRecipeUi() {
@@ -330,30 +200,11 @@ function createRecipeBookApp() {
   }
 
   function handleRecipeTagToggle(filterKey, filterValue) {
-    const checkbox = findFilterCheckbox(filterKey, filterValue);
-    if (!checkbox) return;
-
-    checkbox.checked = !checkbox.checked;
-    appState.ui.filters = readFilterDataFromDom(document);
-    refreshRecipeListFilter();
-    saveAppState();
+    recipeDiscoveryController?.handleTagToggle(filterKey, filterValue);
   }
 
   function updateRecipeSearchMeta(matchCount) {
-    const meta = byId("recipeSearchMeta");
-    if (!meta) return;
-
-    if (!appState.recipes.length) {
-      meta.textContent = "0 recipes";
-      meta.classList.remove("is-filtered");
-      return;
-    }
-
-    meta.classList.toggle("is-filtered", matchCount !== appState.recipes.length);
-    meta.textContent =
-      matchCount === appState.recipes.length
-        ? `${appState.recipes.length} recipes`
-        : `${matchCount} matches of ${appState.recipes.length}`;
+    recipeDiscoveryController?.updateSearchMeta(matchCount);
   }
 
   function handleFavoriteRecipe(recipe, recipeIndex, favorite) {
@@ -679,74 +530,6 @@ function createRecipeBookApp() {
     });
   }
 
-  function attachRecipeSearch() {
-    const recipeSearch = byId("recipeSearch");
-    const clearSearchButton = byId("clearRecipeSearch");
-    if (!recipeSearch) return;
-
-    let debounceTimer = null;
-    const clearRecipeSearchDebounce = () => {
-      if (debounceTimer) {
-        window.clearTimeout(debounceTimer);
-        debounceTimer = null;
-      }
-    };
-
-    const runFilter = () => {
-      clearRecipeSearchDebounce();
-      appState.ui.recipeSearch = recipeSearch.value || "";
-      applyRecipeFilter(appState.ui.recipeSearch);
-      saveAppState();
-    };
-
-    listen(recipeSearch, "input", () => {
-      clearRecipeSearchDebounce();
-      syncRecipeSearchClearButton();
-      debounceTimer = window.setTimeout(runFilter, DEBOUNCE_MS);
-    });
-
-    listen(recipeSearch, "keydown", (event) => {
-      if (event.key !== "Escape") return;
-      recipeSearch.value = "";
-      runFilter();
-      recipeSearch.blur();
-    });
-
-    listen(clearSearchButton, "click", () => {
-      if (!recipeSearch.value) return;
-      recipeSearch.value = "";
-      runFilter();
-      recipeSearch.focus();
-    });
-
-    syncRecipeSearchClearButton();
-  }
-
-  function attachFilterControls() {
-    const filterToggle = byId("toggleFilters");
-    const filters = byId("recipeFilters");
-    const clearFiltersButton = byId("clearFilters");
-    const clearDiscoveryButton = byId("clearRecipeDiscoveryFilters");
-
-    if (filterToggle && filters) {
-      listen(filterToggle, "click", () => {
-        const isHidden = filters.classList.toggle("hidden");
-        filterToggle.setAttribute("aria-expanded", isHidden ? "false" : "true");
-      });
-    }
-
-    queryAll(".recipe-filters input").forEach((cb) => {
-      listen(cb, "change", () => {
-        appState.ui.filters = readFilterDataFromDom(document);
-        refreshRecipeListFilter();
-        saveAppState();
-      });
-    });
-
-    listen(clearFiltersButton, "click", () => clearRecipeDiscoveryFilters());
-    listen(clearDiscoveryButton, "click", clearRecipeDiscoveryFilters);
-  }
-
   function attachPrimaryControls() {
     syncRecipeControlsPanel();
     syncGroceryControlsPanel();
@@ -851,6 +634,18 @@ function createRecipeBookApp() {
         onViewRecipeSource: handleViewRecipeSource,
       },
     });
+    recipeDiscoveryController = createRecipeDiscoveryController({
+      document,
+      getRecipes: () => appState.recipes,
+      getRuntimeState: () => appState.runtime,
+      getSearchTexts: () => appState.recipeSearchTexts,
+      getUiState: () => appState.ui,
+      isFavorite: (runtime, recipe, index) => isRecipeFavorite(runtime, recipe, index),
+      isSelected: (runtime, recipe, index) => isRecipeSelected(runtime, recipe, index),
+      renderer,
+      saveState: saveAppState,
+      window,
+    });
     mobileViewController = createMobileViewController({
       document,
       getUiState: () => appState.ui,
@@ -880,7 +675,7 @@ function createRecipeBookApp() {
 
     applyUiStateToControls();
     attachPrimaryControls();
-    attachFilterControls();
+    recipeDiscoveryController.attach();
     attachClearGroceryDialog();
     attachManualGroceryForm();
     attachMealPlanControls();
@@ -898,7 +693,6 @@ function createRecipeBookApp() {
     createOfflineController({ document, logger, navigator, window }).attach();
     mobileViewController.attach();
     window.addEventListener("popstate", handleRecipeBookHistoryNavigation);
-    attachRecipeSearch();
     attachCookingModeControls({ document, renderer, window });
 
     try {
@@ -914,7 +708,7 @@ function createRecipeBookApp() {
 
     renderer.renderGroceryList();
     renderer.renderMealPlan();
-    applyRecipeFilter(appState.ui.recipeSearch || "");
+    recipeDiscoveryController.applyFilter(appState.ui.recipeSearch || "");
     mobileViewController.setMobileView(appState.ui.mobileView, { skipSave: true });
     wakeLockController.attach();
     exposeDebugApi();
