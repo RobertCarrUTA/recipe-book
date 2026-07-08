@@ -1,48 +1,19 @@
 import assert from "node:assert/strict";
-import fs from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 
+import {
+  assertProjectFileExists,
+  collectStaticModuleGraph,
+  getLocalIndexReferences,
+  getStaticShellAssetPaths,
+  readProjectFile,
+  referencePath,
+} from "../scripts/static-app-assets.mjs";
 import { test } from "./test_helpers.mjs";
-
-const rootDir = fileURLToPath(new URL("..", import.meta.url));
-
-async function readProjectFile(relativePath) {
-  return fs.readFile(path.join(rootDir, relativePath), "utf8");
-}
-
-async function assertProjectFileExists(relativePath) {
-  const absolutePath = path.join(rootDir, relativePath);
-  const stats = await fs.stat(absolutePath);
-  assert.equal(stats.isFile(), true, `${relativePath} should be a file`);
-}
-
-function extractAttributeValues(html, tagName, attributeName) {
-  const pattern = new RegExp(`<${tagName}\\b[^>]*\\b${attributeName}="([^"]+)"[^>]*>`, "gi");
-  return Array.from(html.matchAll(pattern), (match) => match[1]);
-}
 
 function extractAllAttributeValues(html, attributeName) {
   const escapedAttributeName = attributeName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const pattern = new RegExp(`\\b${escapedAttributeName}="([^"]*)"`, "gi");
   return Array.from(html.matchAll(pattern), (match) => match[1]);
-}
-
-function isLocalReference(reference) {
-  return !/^(?:[a-z][a-z0-9+.-]*:|#)/i.test(reference);
-}
-
-function referencePath(reference) {
-  const withoutHash = String(reference).split("#")[0];
-  const withoutQuery = withoutHash.split("?")[0];
-  return withoutQuery.replace(/^\.?\//, "");
-}
-
-function getLocalIndexReferences(indexHtml) {
-  return [
-    ...extractAttributeValues(indexHtml, "link", "href"),
-    ...extractAttributeValues(indexHtml, "script", "src"),
-  ].filter(isLocalReference);
 }
 
 function getDuplicateValues(values) {
@@ -81,26 +52,6 @@ function extractStaticElementIdLookups(source) {
     source.matchAll(/\b(?:getElementById|byId|onControlChange|onId)\(\s*"([^"]+)"\s*\)/g),
     (match) => match[1]
   );
-}
-
-async function collectStaticModuleGraph(entryPath, seen = new Set()) {
-  const normalizedEntryPath = entryPath.replaceAll("\\", "/");
-  if (seen.has(normalizedEntryPath)) return seen;
-
-  seen.add(normalizedEntryPath);
-
-  const source = await readProjectFile(normalizedEntryPath);
-  const importSpecifiers = Array.from(
-    source.matchAll(/import\s+(?:[\s\S]*?\s+from\s+)?["'](\.{1,2}\/[^"']+)["']/g),
-    (match) => match[1]
-  );
-
-  for (const specifier of importSpecifiers) {
-    const resolvedPath = path.posix.normalize(path.posix.join(path.posix.dirname(normalizedEntryPath), specifier));
-    await collectStaticModuleGraph(resolvedPath, seen);
-  }
-
-  return seen;
 }
 
 test("index.html local shell references are versioned and point to files", async () => {
@@ -180,15 +131,7 @@ test("service worker shell cache tracks current static app assets", async () => 
   const serviceWorkerJs = await readProjectFile("sw.js");
   const shellUrls = extractServiceWorkerShellUrls(serviceWorkerJs);
   const shellPaths = new Set(shellUrls.map(referencePath).filter(Boolean));
-  const appModulePaths = await collectStaticModuleGraph("js/app.js");
-  const requiredShellPaths = new Set([
-    "css/styles.css",
-    "icons/icon.svg",
-    "index.html",
-    "js/app.js",
-    "manifest.webmanifest",
-    ...appModulePaths,
-  ]);
+  const requiredShellPaths = new Set(await getStaticShellAssetPaths());
 
   assert.ok(shellUrls.includes("./"), "service worker should pre-cache the app root");
   for (const shellPath of shellPaths) {
