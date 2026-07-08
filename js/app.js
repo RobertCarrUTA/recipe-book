@@ -26,7 +26,7 @@ import {
 } from "./collapsible_controls.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
 import { downloadTextFile } from "./download.js";
-import { listen, setElementInert } from "./dom.js";
+import { listen } from "./dom.js";
 import { createLogger, isDebugEnabled } from "./logger.js";
 import {
   addRecipeToMealPlan,
@@ -37,6 +37,7 @@ import {
   pruneMealPlanForRecipes,
   removeRecipeFromMealPlan,
 } from "./meal_plan_model.js";
+import { createMealPlanPanelController } from "./meal_plan_panel_controller.js";
 import { createMobileViewController } from "./mobile_view_controller.js";
 import { createOfflineController } from "./offline_controller.js";
 import {
@@ -92,7 +93,7 @@ function createRecipeBookApp() {
   appState.ui.recipeSort = normalizeRecipeSort(appState.ui.recipeSort);
   let renderer = null;
   let mobileViewController = null;
-  let mealPlanReturnFocus = null;
+  let mealPlanPanelController = null;
   let recipeDiscoveryController = null;
   let recipeSourceNavigationController = null;
   let wakeLockController = null;
@@ -268,43 +269,12 @@ function createRecipeBookApp() {
     handleViewGroceryList();
   }
 
-  function setMealPlanBackgroundInert(inert) {
-    setElementInert(document.querySelector(".app-header"), inert);
-    setElementInert(byId("recipesPanel"), inert);
-    setElementInert(byId("groceryPanel"), inert);
-    setElementInert(document.querySelector(".mobile-view-tabs"), inert);
-  }
-
   function openMealPlanPanel() {
-    const mealPlanPanel = byId("mealPlanPanel");
-    if (!mealPlanPanel) return;
-
-    const HTMLElementCtor = document.defaultView && document.defaultView.HTMLElement;
-    mealPlanReturnFocus = HTMLElementCtor && document.activeElement instanceof HTMLElementCtor
-      ? document.activeElement
-      : byId("openMealPlan");
-    setMealPlanBackgroundInert(true);
-    document.body.classList.add("is-meal-plan-open");
-    const closeButton = byId("closeMealPlanPanel");
-    if (closeButton) closeButton.focus();
+    mealPlanPanelController?.open();
   }
 
   function closeMealPlanPanel(options = {}) {
-    if (!document.body.classList.contains("is-meal-plan-open")) return;
-
-    document.body.classList.remove("is-meal-plan-open");
-    setMealPlanBackgroundInert(false);
-
-    if (options.restoreFocus === false) {
-      mealPlanReturnFocus = null;
-      return;
-    }
-
-    const focusTarget = mealPlanReturnFocus && document.contains(mealPlanReturnFocus)
-      ? mealPlanReturnFocus
-      : byId("openMealPlan");
-    mealPlanReturnFocus = null;
-    if (focusTarget) focusTarget.focus();
+    mealPlanPanelController?.close(options);
   }
 
   function handleViewMealPlan() {
@@ -499,20 +469,6 @@ function createRecipeBookApp() {
     });
   }
 
-  function attachMealPlanControls() {
-    onId("openMealPlan", "click", openMealPlanPanel);
-    onId("buildGroceryListFromMealPlan", "click", handleBuildGroceryListFromMealPlan);
-    onId("clearMealPlan", "click", handleClearMealPlan);
-    onId("closeMealPlanPanel", "click", closeMealPlanPanel);
-
-    listen(document, "keydown", (event) => {
-      if (event.key === "Escape" && document.body.classList.contains("is-meal-plan-open")) {
-        event.preventDefault();
-        closeMealPlanPanel();
-      }
-    });
-  }
-
   function attachClearGroceryDialog() {
     const dialog = byId("confirmClearGroceryDialog");
     const confirmButton = byId("confirmClearGroceryList");
@@ -672,13 +628,18 @@ function createRecipeBookApp() {
       saveState: saveAppState,
       window,
     });
+    mealPlanPanelController = createMealPlanPanelController({
+      document,
+      onBuildGroceryList: handleBuildGroceryListFromMealPlan,
+      onClearMealPlan: handleClearMealPlan,
+    });
 
     applyUiStateToControls();
     attachPrimaryControls();
     recipeDiscoveryController.attach();
     attachClearGroceryDialog();
     attachManualGroceryForm();
-    attachMealPlanControls();
+    mealPlanPanelController.attach();
     createBackupController({
       document,
       getState: () => {
