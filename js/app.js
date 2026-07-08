@@ -41,15 +41,16 @@ import { createMobileViewController } from "./mobile_view_controller.js";
 import { createOfflineController } from "./offline_controller.js";
 import {
   buildRecipeSearchText,
-  countActiveRecipeDiscoveryFilters,
-  getMatchingRecipeIndexes,
-  normalizeForSearch,
 } from "./recipe_filter.js";
+import {
+  getRecipeDiscoveryResult,
+  isRuntimeRecipeSort,
+} from "./recipe_discovery.js";
 import { createRecipeExportPayload } from "./recipe_exporter.js";
 import { createGroceryListText } from "./grocery_list_exporter.js";
 import { createRecipeRepository } from "./recipe_repository.js";
 import { createRecipeSourceNavigationController } from "./recipe_source_navigation.js";
-import { normalizeRecipeSort, recipeSortModes, sortRecipeIndexes } from "./recipe_sort.js";
+import { normalizeRecipeSort } from "./recipe_sort.js";
 import { createRenderer } from "./render.js";
 import {
   clearGroceryPersistence,
@@ -148,8 +149,7 @@ function createRecipeBookApp() {
   }
 
   function isRecipeListRuntimeSorted() {
-    return appState.ui.recipeSort === recipeSortModes.favoritesFirst ||
-      appState.ui.recipeSort === recipeSortModes.selectedFirst;
+    return isRuntimeRecipeSort(appState.ui.recipeSort);
   }
 
   function areRecipeIndexesEqual(left, right) {
@@ -171,21 +171,13 @@ function createRecipeBookApp() {
   }
 
   function syncRecipeFilterControls({
+    activeDiscoveryFilterCount,
     filterText,
-    selected,
-    showFavoriteOnly,
-    showSelectedOnly,
   }) {
     const filterToggle = byId("toggleFilters");
     const clearFiltersButton = byId("clearFilters");
     const recipeSearch = byId("recipeSearch");
     const recipeSearchWrap = recipeSearch ? recipeSearch.closest(".recipe-search") : null;
-    const activeDiscoveryFilterCount = countActiveRecipeDiscoveryFilters({
-      filterText,
-      selected,
-      showFavoriteOnly,
-      showSelectedOnly,
-    });
     const filterToggleText = activeDiscoveryFilterCount
       ? `Filters (${activeDiscoveryFilterCount})`
       : "Filters";
@@ -247,47 +239,31 @@ function createRecipeBookApp() {
   }
 
   function applyRecipeFilter(filterTextRaw) {
-    const filterText = normalizeForSearch(filterTextRaw);
     const selected = getSelectedRecipeFilters(document);
     const selectedOnly = byId("showSelectedRecipesOnly");
     const favoriteOnly = byId("showFavoriteRecipesOnly");
-    const showSelectedOnly = Boolean(selectedOnly && selectedOnly.checked);
-    const showFavoriteOnly = Boolean(favoriteOnly && favoriteOnly.checked);
-
-    const matchingRecipeIndexes = getMatchingRecipeIndexes({
-      filterText,
-      filterTextIsNormalized: true,
+    const discovery = getRecipeDiscoveryResult({
+      filterText: filterTextRaw,
       isFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
       isSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
       recipes: appState.recipes,
       searchTexts: appState.recipeSearchTexts,
-      searchTextsAreNormalized: true,
       selectedFilters: selected,
-      showFavoriteOnly,
-      showSelectedOnly,
+      showFavoriteOnly: Boolean(favoriteOnly && favoriteOnly.checked),
+      showSelectedOnly: Boolean(selectedOnly && selectedOnly.checked),
+      sortMode: appState.ui.recipeSort,
     });
 
-    let sortedRecipeIndexes = matchingRecipeIndexes;
-    if (appState.ui.recipeSort !== recipeSortModes.default) {
-      sortedRecipeIndexes = sortRecipeIndexes(matchingRecipeIndexes, appState.recipes, {
-        isFavorite: (recipe, index) => isRecipeFavorite(appState.runtime, recipe, index),
-        isSelected: (recipe, index) => isRecipeSelected(appState.runtime, recipe, index),
-        sortMode: appState.ui.recipeSort,
-      });
-    }
-
-    renderFilteredRecipes(sortedRecipeIndexes);
-    renderer.syncRecipeFilterTagStyles(selected);
+    renderFilteredRecipes(discovery.recipeIndexes);
+    renderer.syncRecipeFilterTagStyles(discovery.selectedFilters);
     syncRecipeFilterControls({
-      filterText,
-      selected,
-      showFavoriteOnly,
-      showSelectedOnly,
+      activeDiscoveryFilterCount: discovery.activeDiscoveryFilterCount,
+      filterText: discovery.filterText,
     });
-    updateRecipeSearchMeta(matchingRecipeIndexes.length);
+    updateRecipeSearchMeta(discovery.matchCount);
 
     const noResults = byId("recipeNoResults");
-    if (noResults) noResults.hidden = !(appState.recipes.length && matchingRecipeIndexes.length === 0);
+    if (noResults) noResults.hidden = !(appState.recipes.length && discovery.matchCount === 0);
   }
 
   function refreshRecipeListFilter() {
