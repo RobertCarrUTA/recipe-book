@@ -1,5 +1,10 @@
 import fs from "node:fs/promises";
 
+import {
+  formatServiceWorkerShellUrls,
+  getStaticShellAssetPaths,
+} from "./static-app-assets.mjs";
+
 const requestedVersion = process.argv[2];
 const defaultVersion = new Date().toISOString().slice(0, 10).replaceAll("-", "") + "-1";
 const assetVersion = requestedVersion || defaultVersion;
@@ -27,15 +32,34 @@ function replaceRequiredVersion(source, pattern, label) {
   return next;
 }
 
+function replaceRequiredBlock(source, pattern, replacement, label) {
+  let replaced = false;
+  const next = source.replace(pattern, () => {
+    replaced = true;
+    return replacement;
+  });
+
+  if (!replaced) {
+    throw new Error(`No ${label} block was found.`);
+  }
+
+  return next;
+}
+
 const nextHtml = replaceRequiredVersion(
   replaceRequiredVersion(indexHtml, /(href="css\/styles\.css\?v=)[^"]+(")/, "CSS asset"),
   /(src="js\/app\.js\?v=)[^"]+(")/,
   "JavaScript asset"
 );
-const nextServiceWorkerJs = replaceRequiredVersion(
-  serviceWorkerJs,
-  /(const CACHE_VERSION = ")[^"]+(";)/,
-  "service worker cache"
+const nextServiceWorkerJs = replaceRequiredBlock(
+  replaceRequiredVersion(
+    serviceWorkerJs,
+    /(const CACHE_VERSION = ")[^"]+(";)/,
+    "service worker cache"
+  ),
+  /const\s+SHELL_URLS\s*=\s*\[[\s\S]*?\];/,
+  formatServiceWorkerShellUrls(await getStaticShellAssetPaths()),
+  "service worker shell URL"
 );
 
 await fs.writeFile(indexUrl, nextHtml);
