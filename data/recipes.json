@@ -1421,6 +1421,9 @@
       "sugar": "1 g",
       "transFat": "1 g"
     },
+    "personalNotes": [
+      "Use a rice cooker instead if you have one. Usually rice sticks to the bottom of the Instant Pot, to get around this you can use butter and oil but that mixes into the rice which I don't like. It also takes up time you could use to cook something else, or you have to use multiple Instant Pots if the main meal is also made in an Instant Pot."
+    ],
     "prepTime": "5 minutes",
     "rating": {
       "count": 495,
@@ -1431,7 +1434,8 @@
       "equipment": [
         "instant-pot"
       ],
-      "status": "not-tried"
+      "rating": "good",
+      "status": "tried"
     },
     "title": "Instant Pot Jasmine Rice",
     "totalTime": "25 minutes"
@@ -9999,17 +10003,21 @@
       "Serve immediately. Smash burgers lose the magic as the lacy edges steam inside the bun."
     ],
     "nutrition": null,
-    "personalNotes": [],
+    "personalNotes": [
+      "Good burgers, there will be a lot of left over burger sauce. Also the burgers will be very messy, but they are good."
+    ],
     "prepTime": "20 minutes",
     "rating": null,
     "servings": "1 double burger",
     "tags": {
+      "difficulty": "medium",
       "equipment": [
         "cast-iron skillet",
         "griddle",
         "stovetop"
       ],
-      "status": "not-tried"
+      "rating": "great",
+      "status": "tried"
     },
     "title": "Double Onion Smash Burger",
     "totalTime": "30 minutes plus 15 minutes beef chill time"
@@ -10961,7 +10969,9 @@
       "Serve immediately. The best texture is crisp toasted bread, warm steak, melted cheese, bright onions, and fresh arugula all at once."
     ],
     "nutrition": null,
-    "personalNotes": [],
+    "personalNotes": [
+      "The ciabatta bread can be kinda hard, but it was still good."
+    ],
     "prepTime": "15 minutes",
     "rating": null,
     "servings": "1 sandwich",
@@ -10971,7 +10981,8 @@
         "cast-iron skillet",
         "stovetop"
       ],
-      "status": "not-tried"
+      "rating": "great",
+      "status": "tried"
     },
     "title": "Garlic Steak Sandwich",
     "totalTime": "40 minutes"
@@ -13695,10 +13706,12 @@
     "servings": "4 drinks",
     "source": "original",
     "tags": {
+      "difficulty": "easy",
       "equipment": [
         "no-cook"
       ],
-      "status": "not-tried"
+      "rating": "great",
+      "status": "tried"
     },
     "title": "U.S. Virgin Islands Painkiller",
     "totalTime": "10 minutes"

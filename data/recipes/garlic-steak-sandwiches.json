@@ -165,7 +165,9 @@
     "Serve immediately. The best texture is crisp toasted bread, warm steak, melted cheese, bright onions, and fresh arugula all at once."
   ],
   "nutrition": null,
-  "personalNotes": [],
+  "personalNotes": [
+    "The ciabatta bread can be kinda hard, but it was still good."
+  ],
   "prepTime": "15 minutes",
   "rating": null,
   "servings": "1 sandwich",
@@ -175,7 +177,8 @@
       "cast-iron skillet",
       "stovetop"
     ],
-    "status": "not-tried"
+    "rating": "great",
+    "status": "tried"
   },
   "title": "Garlic Steak Sandwich",
   "totalTime": "40 minutes"
