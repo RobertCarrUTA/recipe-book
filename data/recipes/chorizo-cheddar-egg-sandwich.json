@@ -110,13 +110,15 @@
   ],
   "link": null,
   "notes": [
-    "This is now the highest-upside recipe from the ingredients you listed. Egg plus butter gives the sandwich a real center instead of tasting like assembled deli snacks.",
-    "Use the spicy pecan cold-smoked chorizo first if you have it; cheddar, butter, egg, and pickles can stand up to it.",
+    "The egg and butter give the sandwich structure and richness while the pickles and greens keep it from feeling heavy.",
+    "Spicy pecan cold-smoked chorizo pairs well with cheddar, butter, egg, and pickles.",
     "Cook the egg gently. A dry browned egg makes the sandwich taste flat, while a soft folded egg makes it taste rich.",
     "The dressed greens and pickles go in after cooking so they stay crisp and bright."
   ],
   "nutrition": null,
-  "personalNotes": [],
+  "personalNotes": [
+    "This was okay, might remove it from the recipe collection. I was trying to make something from the ingredients I had as a quick midnight snack. I am not sure I'd cook this again with the chorizo salami, maybe I'd also cook the onions, and not use generic pp&j sandwich wheat bread."
+  ],
   "prepTime": "7 minutes",
   "rating": null,
   "servings": "1 sandwich",
@@ -125,7 +127,8 @@
     "equipment": [
       "stovetop"
     ],
-    "status": "not-tried"
+    "rating": "okay",
+    "status": "tried"
   },
   "title": "Chorizo Cheddar Egg Sandwich",
   "totalTime": "15 minutes"
