@@ -1,0 +1,105 @@
+{
+  "author": "Robert Carr",
+  "cookTime": "0 minutes",
+  "description": "A no-cook snack plate with cured meat, cheese, bread, pickles, greens, onion, and a simple Dijon pickle mayo for building balanced bites.",
+  "equipment": [
+    "Plate",
+    "Small bowl",
+    "Knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "ciabatta or wheat sandwich bread",
+      "item": "wheat sandwich bread",
+      "quantity": 2,
+      "unit": "slice"
+    },
+    {
+      "display": "prosciutto, salami, or chorizo",
+      "item": "deli salami",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "cheddar or mozzarella cheese",
+      "item": "cheddar cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "dill pickles",
+      "item": "dill pickle chips",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "display": "baby arugula or lettuce",
+      "item": "baby arugula",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 0.0625
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "pickle brine",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "cured-meat-cheese-snack-plate",
+  "ingredients": [
+    "1 to 2 slices ciabatta or wheat sandwich bread, cut into pieces",
+    "1 to 2 ounces prosciutto, salami, chorizo, or a mix",
+    "1 to 2 ounces cheddar or whole-milk mozzarella, sliced",
+    "A few dill pickle slices or spears",
+    "Small handful baby arugula or lettuce, patted dry",
+    "A few very thin onion slices, optional",
+    "1 tablespoon mayonnaise",
+    "1 teaspoon Dijon mustard",
+    "1 teaspoon pickle brine from the jar"
+  ],
+  "instructions": [
+    "Stir the mayonnaise, Dijon mustard, and pickle brine together in a small bowl to make a tangy dip.",
+    "Cut or tear the bread into bite-size pieces. Toast the bread first if you want it crisp, or leave it soft if you want the fastest version.",
+    "Slice the cheese into pieces that fit on the bread.",
+    "Fold or tear the cured meat into loose pieces instead of leaving it in flat sheets.",
+    "Arrange the cured meat, cheese, bread, pickles, greens, onion, and dip on a plate.",
+    "Build each bite with bread, a small piece of cheese, a folded piece of meat, a little pickle, and a leaf or two of greens.",
+    "Use the Dijon pickle mayo lightly as a dip or spread so the salty meat and cheese still come through."
+  ],
+  "link": null,
+  "notes": [
+    "Yes, these ingredients can be eaten cold as long as they have been stored properly and smell/taste normal.",
+    "For one person, choose 1 cured meat and 1 cheese instead of opening every package. The plate tastes cleaner and the opened packages stay fresher.",
+    "The cured meats and cheeses are salty and rich, so the pickles, greens, onion, and mustard dip make the plate taste more balanced.",
+    "Small bites work better than giant stacks. Too much meat in one bite can taste salty before the cheese, bread, and pickles have a chance to balance it.",
+    "Use smaller amounts of the spicy chorizo or salty prosciutto at first, then add more if you like the flavor.",
+    "If the onion tastes too sharp, use only a few slices or skip it."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "5 minutes",
+  "rating": null,
+  "servings": "1 plate",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "no-cook"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Cured Meat Cheese Snack Plate",
+  "totalTime": "5 minutes"
+}

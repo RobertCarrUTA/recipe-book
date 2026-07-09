@@ -1,0 +1,110 @@
+{
+  "author": "Robert Carr",
+  "cookTime": "4 minutes",
+  "description": "Open-faced ciabatta toast with whole-milk mozzarella, loose folds of prosciutto, pickle-brined arugula, onion, chopped pickles, and light Dijon mayo.",
+  "equipment": [
+    "Skillet or toaster",
+    "Small bowl",
+    "Knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "ciabatta bread",
+      "item": "ciabatta roll or sturdy hoagie roll",
+      "quantity": 1
+    },
+    {
+      "display": "whole-milk mozzarella",
+      "item": "mozzarella cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "item": "prosciutto",
+      "quantity": 1,
+      "unit": "oz"
+    },
+    {
+      "item": "baby arugula",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 0.0625
+    },
+    {
+      "display": "dill pickles",
+      "item": "dill pickle chips",
+      "quantity": 3,
+      "unit": "slice"
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "pickle brine",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "id": "prosciutto-mozzarella-arugula-toast",
+  "ingredients": [
+    "1 small ciabatta roll or 2 slices ciabatta bread, split",
+    "2 ounces whole-milk mozzarella, sliced thin",
+    "1 ounce prosciutto, torn into bite-size pieces",
+    "Small handful baby arugula, patted dry",
+    "A few very thin onion slices",
+    "2 to 3 dill pickle slices, finely chopped",
+    "1 tablespoon mayonnaise",
+    "1/2 teaspoon Dijon mustard",
+    "1 teaspoon pickle brine from the jar",
+    "1/2 teaspoon extra-virgin olive oil"
+  ],
+  "instructions": [
+    "Stir the mayonnaise, Dijon mustard, and 1/2 teaspoon pickle brine together in a small bowl.",
+    "Toast the ciabatta in a toaster or cut-side down in a dry skillet over medium heat for 2 to 4 minutes, until crisp at the edges.",
+    "Spread the Dijon mayo lightly over the warm toast.",
+    "Add the mozzarella slices and let them sit on the warm toast for 30 seconds so they soften slightly.",
+    "Drape the prosciutto over the mozzarella in loose folds instead of flat layers.",
+    "Toss the arugula, onion slices, chopped pickles, remaining 1/2 teaspoon pickle brine, and extra-virgin olive oil together with your fingers.",
+    "Pile the dressed arugula mixture over the prosciutto.",
+    "Eat open-faced, or close it like a sandwich if the bread pieces match."
+  ],
+  "link": null,
+  "notes": [
+    "Use the prosciutto here before using it in a hot sandwich. It is thin, salty, and delicate, so it is best folded onto warm toast instead of cooked hard.",
+    "Prosciutto and pickles are salty, so start with a light hand and add more only if you want it.",
+    "The mozzarella is mild; the Dijon mayo, arugula, onion, chopped pickles, olive oil, and pickle brine keep it from tasting flat.",
+    "Loose folds of prosciutto are easier to bite through than one flat sheet.",
+    "If the ciabatta is very chewy, toast it a little longer so it becomes easier to bite.",
+    "This is best right after assembly while the bread is crisp."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "5 minutes",
+  "rating": null,
+  "servings": "1 toast or small sandwich",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "toaster",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Prosciutto Mozzarella Arugula Toast",
+  "totalTime": "9 minutes"
+}

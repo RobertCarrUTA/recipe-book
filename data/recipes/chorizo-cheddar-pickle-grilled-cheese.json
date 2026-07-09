@@ -1,0 +1,122 @@
+{
+  "author": "Robert Carr",
+  "cookTime": "8 minutes",
+  "description": "A wheat bread grilled cheese with crisped chorizo or salami, melted cheddar, thin onion, dill pickles, greens, and a small amount of Dijon burger-style sauce.",
+  "equipment": [
+    "Skillet",
+    "Spatula",
+    "Small bowl",
+    "Knife"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "wheat sandwich bread",
+      "quantity": 2,
+      "unit": "slice"
+    },
+    {
+      "display": "chorizo or salami",
+      "item": "deli salami",
+      "quantity": 1.5,
+      "unit": "oz"
+    },
+    {
+      "display": "cheddar cheese slices",
+      "item": "cheddar cheese",
+      "quantity": 2,
+      "unit": "slice"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 0.0625
+    },
+    {
+      "display": "dill pickles",
+      "item": "dill pickle chips",
+      "quantity": 4,
+      "unit": "slice"
+    },
+    {
+      "display": "baby arugula or lettuce",
+      "item": "baby arugula",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 0.5,
+      "unit": "tbsp"
+    },
+    {
+      "item": "butter",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "ketchup",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "pickle brine",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "id": "chorizo-cheddar-pickle-grilled-cheese",
+  "ingredients": [
+    "2 slices wheat sandwich bread",
+    "1 1/2 ounces chorizo, salami, or salchichon-style salami, thinly sliced",
+    "2 slices cheddar cheese",
+    "A few very thin onion slices",
+    "3 to 4 dill pickle slices, patted dry",
+    "Small handful baby arugula or lettuce, patted dry",
+    "1/2 tablespoon mayonnaise",
+    "1 tablespoon butter, softened",
+    "1/2 teaspoon Dijon mustard",
+    "1/2 teaspoon ketchup",
+    "1/2 teaspoon pickle brine from the jar"
+  ],
+  "instructions": [
+    "Stir the mayonnaise, Dijon mustard, ketchup, and pickle brine together in a small bowl.",
+    "Spread the softened butter very thinly on one outside face of each bread slice.",
+    "Warm a skillet over medium-low heat for 1 minute.",
+    "Add the chorizo or salami and cook for 45 to 60 seconds per side, just until the edges curl and a little fat renders. Transfer to a plate.",
+    "Place 1 bread slice mayo-side down in the skillet.",
+    "Layer on 1 slice cheddar, the warmed chorizo or salami, the onion slices, and the second slice cheddar.",
+    "Close with the second bread slice, mayo-side up.",
+    "Cook for 3 to 4 minutes per side, pressing gently with a spatula, until the bread is deep golden and the cheddar is melted.",
+    "Open the sandwich carefully, add the pickles, arugula or lettuce, and the Dijon sauce, then close it again.",
+    "Rest for 1 minute, then cut in half."
+  ],
+  "link": null,
+  "notes": [
+    "Use the spicy pecan cold-smoked chorizo here first if you have it. The smoke, paprika, and cheddar are the strongest pairing in this ingredient set.",
+    "Salchichon-style salami also works well here. Save prosciutto for the mozzarella toast instead of crisping it inside grilled cheese.",
+    "This is the richest option in this set of ingredients, so the pickles and greens matter. They keep the grilled cheese from tasting heavy.",
+    "Butter tastes better than mayonnaise on the outside now that you have it. Use the mayonnaise in the sauce instead.",
+    "Medium-low heat is important because wheat sandwich bread browns before cheddar fully melts if the pan is too hot.",
+    "If the bread is browned before the cheese melts, lower the heat and cover the skillet for 30 to 60 seconds.",
+    "The two slices of cheddar help glue the warmed cured meat and onion into the sandwich.",
+    "Add the pickles and greens after cooking so they stay crisp."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "7 minutes",
+  "rating": null,
+  "servings": "1 sandwich",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Chorizo Cheddar Pickle Grilled Cheese",
+  "totalTime": "15 minutes"
+}

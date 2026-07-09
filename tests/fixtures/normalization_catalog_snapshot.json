@@ -1852,6 +1852,13 @@
       }
     },
     {
+      "item": "prosciutto",
+      "canonical": {
+        "base": "prosciutto",
+        "display": "prosciutto"
+      }
+    },
+    {
       "item": "provolone cheese",
       "canonical": {
         "base": "provolone cheese",
@@ -2269,6 +2276,13 @@
       "canonical": {
         "base": "water",
         "display": "water"
+      }
+    },
+    {
+      "item": "wheat sandwich bread",
+      "canonical": {
+        "base": "wheat sandwich bread",
+        "display": "wheat sandwich bread"
       }
     },
     {

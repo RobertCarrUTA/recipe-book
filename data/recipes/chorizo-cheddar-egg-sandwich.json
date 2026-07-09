@@ -1,0 +1,132 @@
+{
+  "author": "Robert Carr",
+  "cookTime": "8 minutes",
+  "description": "A hot egg sandwich with butter-toasted wheat bread, warmed chorizo or salami, soft folded egg, cheddar, pickles, greens, onion, and a small Dijon burger-style sauce.",
+  "equipment": [
+    "Nonstick skillet",
+    "Spatula",
+    "Small bowl",
+    "Fork",
+    "Knife"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "wheat sandwich bread",
+      "quantity": 2,
+      "unit": "slice"
+    },
+    {
+      "item": "large egg",
+      "quantity": 1
+    },
+    {
+      "display": "chorizo or salami",
+      "item": "deli salami",
+      "quantity": 1.25,
+      "unit": "oz"
+    },
+    {
+      "display": "cheddar cheese slices",
+      "item": "cheddar cheese",
+      "quantity": 1,
+      "unit": "slice"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 0.0625
+    },
+    {
+      "display": "dill pickles",
+      "item": "dill pickle chips",
+      "quantity": 3,
+      "unit": "slice"
+    },
+    {
+      "display": "baby arugula or lettuce",
+      "item": "baby arugula",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "butter",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 0.5,
+      "unit": "tbsp"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "ketchup",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "pickle brine",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "chorizo-cheddar-egg-sandwich",
+  "ingredients": [
+    "2 slices wheat sandwich bread",
+    "1 large egg",
+    "1 to 1 1/2 ounces chorizo, salami, or salchichon-style salami, thinly sliced",
+    "1 slice cheddar cheese",
+    "A few very thin onion slices",
+    "2 to 3 dill pickle slices, patted dry",
+    "Small handful baby arugula or lettuce, patted dry",
+    "1 tablespoon butter, divided",
+    "1/4 teaspoon extra-virgin olive oil",
+    "1/2 tablespoon mayonnaise",
+    "1/2 teaspoon Dijon mustard",
+    "1/2 teaspoon ketchup",
+    "1 teaspoon pickle brine from the jar, divided"
+  ],
+  "instructions": [
+    "Stir the mayonnaise, Dijon mustard, ketchup, and 1/2 teaspoon pickle brine together in a small bowl.",
+    "Toss the arugula or lettuce with the onion slices, extra-virgin olive oil, and remaining 1/2 teaspoon pickle brine.",
+    "Beat the egg with a fork in a small bowl until no streaks of white remain.",
+    "Warm a nonstick skillet over medium-low heat for 1 minute.",
+    "Add the chorizo or salami and cook for 45 to 60 seconds per side, just until the edges curl and a little fat renders. Transfer to a plate.",
+    "Melt 1/2 tablespoon butter in the skillet and toast both bread slices for 1 to 2 minutes per side, until lightly golden. Transfer the toast to a plate.",
+    "Lower the heat to low and melt the remaining 1/2 tablespoon butter in the skillet.",
+    "Pour in the beaten egg and gently push it into a rough square or rectangle as it sets.",
+    "When the egg is just set on top, fold it once or twice to fit the bread, place the cheddar on top, and cover the skillet for 30 to 45 seconds until the cheese softens.",
+    "Spread the Dijon sauce on the toast.",
+    "Build the sandwich with the cheesy folded egg, warmed chorizo or salami, pickles, and dressed greens.",
+    "Close the sandwich, press gently, cut in half, and eat right away."
+  ],
+  "link": null,
+  "notes": [
+    "This is now the highest-upside recipe from the ingredients you listed. Egg plus butter gives the sandwich a real center instead of tasting like assembled deli snacks.",
+    "Use the spicy pecan cold-smoked chorizo first if you have it; cheddar, butter, egg, and pickles can stand up to it.",
+    "Cook the egg gently. A dry browned egg makes the sandwich taste flat, while a soft folded egg makes it taste rich.",
+    "The dressed greens and pickles go in after cooking so they stay crisp and bright."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "7 minutes",
+  "rating": null,
+  "servings": "1 sandwich",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Chorizo Cheddar Egg Sandwich",
+  "totalTime": "15 minutes"
+}

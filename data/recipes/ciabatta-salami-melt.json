@@ -1,0 +1,116 @@
+{
+  "author": "Robert Carr",
+  "cookTime": "8 minutes",
+  "description": "A toasted ciabatta sandwich with warmed salami or chorizo, melted cheddar or mozzarella, quick pickle-brine onion, crisp pickles, greens, and Dijon mayo.",
+  "equipment": [
+    "Skillet",
+    "Spatula",
+    "Small bowl",
+    "Knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "ciabatta bread",
+      "item": "ciabatta roll or sturdy hoagie roll",
+      "quantity": 1
+    },
+    {
+      "display": "salami or chorizo",
+      "item": "deli salami",
+      "quantity": 1.5,
+      "unit": "oz"
+    },
+    {
+      "display": "cheddar or mozzarella cheese",
+      "item": "cheddar cheese",
+      "quantity": 1.5,
+      "unit": "oz"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 0.125
+    },
+    {
+      "display": "dill pickles",
+      "item": "dill pickle chips",
+      "quantity": 4,
+      "unit": "slice"
+    },
+    {
+      "display": "baby arugula or lettuce",
+      "item": "baby arugula",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "butter",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "pickle brine",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "ciabatta-salami-melt",
+  "ingredients": [
+    "1 small ciabatta roll or 2 slices ciabatta bread, split",
+    "1 1/2 ounces salami or chorizo, thinly sliced",
+    "1 1/2 ounces cheddar or low-moisture whole-milk mozzarella, sliced thin",
+    "A few very thin slices yellow onion",
+    "3 to 4 dill pickle slices, patted dry",
+    "Small handful baby arugula or lettuce, patted dry",
+    "1 tablespoon mayonnaise",
+    "1 teaspoon butter",
+    "1 teaspoon Dijon mustard",
+    "1 teaspoon pickle brine from the jar"
+  ],
+  "instructions": [
+    "Stir the mayonnaise, Dijon mustard, and 1/2 teaspoon pickle brine together in a small bowl.",
+    "Toss the onion slices with the remaining 1/2 teaspoon pickle brine and let them sit while the skillet heats.",
+    "Warm a skillet over medium-low heat for 1 minute.",
+    "Add the salami or chorizo in a single loose layer and warm for 45 to 60 seconds per side, just until glossy and lightly curled at the edges. Transfer to a plate.",
+    "Add the butter to the skillet, then place the ciabatta cut-side down in the melted butter and cured-meat fat.",
+    "Toast for 1 to 2 minutes, until the cut sides are crisp and lightly browned.",
+    "Spread most of the Dijon mayo on the cut sides of the toasted ciabatta.",
+    "Layer the cheese on the bottom bread, then add the warmed salami or chorizo and the drained onion slices.",
+    "Close the sandwich and cook it in the skillet for 2 to 3 minutes per side, pressing lightly with a spatula, until the bread is crisp and the cheese softens.",
+    "Open the sandwich carefully, add the pickles, arugula or lettuce, and the remaining Dijon mayo, then close it again.",
+    "Cut in half and eat while the bread is crisp, the meat is warm, and the greens are still cool."
+  ],
+  "link": null,
+  "notes": [
+    "Use the black truffle mustard seed salami with mozzarella when you want the most balanced version. Use chorizo with cheddar when you want the boldest version.",
+    "Warming the salami or chorizo first wakes up the cured meat flavor, and butter makes the ciabatta taste more finished.",
+    "Medium-low heat gives the cheese time to soften before the ciabatta gets too dark.",
+    "If the ciabatta is crisp before the cheese softens, lower the heat and cover the skillet for 30 to 60 seconds.",
+    "Add the pickles and greens after toasting so they stay crisp instead of steaming.",
+    "Chorizo will make the sandwich smokier and spicier. Mild salami is the easiest option. Prosciutto works too, but do not crisp it hard because it can turn leathery.",
+    "If the ciabatta feels too thick, pinch out a little bread from the inside before building the sandwich."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "7 minutes",
+  "rating": null,
+  "servings": "1 sandwich",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Ciabatta Salami Melt",
+  "totalTime": "15 minutes"
+}
