@@ -1,0 +1,121 @@
+{
+  "author": "Robert Carr",
+  "cookTime": "6 minutes",
+  "description": "A ciabatta toast with mozzarella, folded prosciutto, a butter-fried egg, and arugula dressed with olive oil and pickle brine.",
+  "equipment": [
+    "Skillet",
+    "Spatula",
+    "Small bowl",
+    "Knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "ciabatta bread",
+      "item": "ciabatta roll or sturdy hoagie roll",
+      "quantity": 1
+    },
+    {
+      "item": "large egg",
+      "quantity": 1
+    },
+    {
+      "display": "whole-milk mozzarella",
+      "item": "mozzarella cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "item": "prosciutto",
+      "quantity": 1,
+      "unit": "oz"
+    },
+    {
+      "item": "baby arugula",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 0.0625
+    },
+    {
+      "display": "dill pickles",
+      "item": "dill pickle chips",
+      "quantity": 2,
+      "unit": "slice"
+    },
+    {
+      "item": "butter",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 0.5,
+      "unit": "tbsp"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "pickle brine",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "id": "prosciutto-mozzarella-fried-egg-toast",
+  "ingredients": [
+    "1 small ciabatta roll or 2 slices ciabatta bread, split",
+    "1 large egg",
+    "2 ounces whole-milk mozzarella, sliced thin",
+    "1 ounce prosciutto, torn into bite-size pieces",
+    "Small handful baby arugula, patted dry",
+    "A few very thin onion slices",
+    "2 dill pickle slices, finely chopped",
+    "1 teaspoon butter",
+    "1 teaspoon extra-virgin olive oil, divided",
+    "1/2 tablespoon mayonnaise",
+    "1/2 teaspoon Dijon mustard",
+    "1 teaspoon pickle brine from the jar"
+  ],
+  "instructions": [
+    "Stir the mayonnaise, Dijon mustard, and 1/2 teaspoon pickle brine together in a small bowl.",
+    "Toss the arugula, onion slices, chopped pickles, remaining 1/2 teaspoon pickle brine, and 1/2 teaspoon extra-virgin olive oil together with your fingers.",
+    "Toast the ciabatta cut-side down in a dry skillet over medium heat for 2 to 4 minutes, until crisp at the edges.",
+    "Brush or drizzle the toasted cut sides with the remaining 1/2 teaspoon extra-virgin olive oil.",
+    "Spread the Dijon mayo lightly over the warm toast and add the mozzarella so it softens slightly.",
+    "Melt the butter in the skillet over medium-low heat.",
+    "Crack in the egg and cook until the white is set and the yolk is as soft or firm as you like, 2 to 3 minutes for a runny yolk or 4 to 5 minutes for a firmer yolk.",
+    "Drape the prosciutto over the mozzarella in loose folds.",
+    "Add the fried egg and pile the dressed arugula mixture over or alongside it.",
+    "Eat open-faced with a knife and fork, or close it carefully if the bread pieces match."
+  ],
+  "link": null,
+  "notes": [
+    "This is the better version of the prosciutto mozzarella toast now that eggs, butter, and olive oil are available.",
+    "The butter-fried egg makes the toast feel like a meal, while the olive oil and pickle brine keep the arugula bright.",
+    "Fold the prosciutto loosely so each bite pulls away cleanly.",
+    "For less mess, cook the yolk firmer or break it before closing the sandwich."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "6 minutes",
+  "rating": null,
+  "servings": "1 toast or small sandwich",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Prosciutto Mozzarella Fried Egg Toast",
+  "totalTime": "12 minutes"
+}

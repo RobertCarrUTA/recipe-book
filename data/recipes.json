@@ -14288,5 +14288,914 @@
     },
     "title": "Hot Honey Pepperoni and Ricotta Pizza",
     "totalTime": "55 minutes active, plus 24 to 72 hours dough fermentation and 2 to 3 hours dough warm-up"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "8 minutes",
+    "description": "A toasted ciabatta sandwich with warmed salami or chorizo, melted cheddar or mozzarella, quick pickle-brine onion, crisp pickles, greens, and Dijon mayo.",
+    "equipment": [
+      "Skillet",
+      "Spatula",
+      "Small bowl",
+      "Knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "ciabatta bread",
+        "item": "ciabatta roll or sturdy hoagie roll",
+        "quantity": 1
+      },
+      {
+        "display": "salami or chorizo",
+        "item": "deli salami",
+        "quantity": 1.5,
+        "unit": "oz"
+      },
+      {
+        "display": "cheddar or mozzarella cheese",
+        "item": "cheddar cheese",
+        "quantity": 1.5,
+        "unit": "oz"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 0.125
+      },
+      {
+        "display": "dill pickles",
+        "item": "dill pickle chips",
+        "quantity": 4,
+        "unit": "slice"
+      },
+      {
+        "display": "baby arugula or lettuce",
+        "item": "baby arugula",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "butter",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "pickle brine",
+        "quantity": 1,
+        "unit": "tsp"
+      }
+    ],
+    "id": "ciabatta-salami-melt",
+    "ingredients": [
+      "1 small ciabatta roll or 2 slices ciabatta bread, split",
+      "1 1/2 ounces salami or chorizo, thinly sliced",
+      "1 1/2 ounces cheddar or low-moisture whole-milk mozzarella, sliced thin",
+      "A few very thin slices yellow onion",
+      "3 to 4 dill pickle slices, patted dry",
+      "Small handful baby arugula or lettuce, patted dry",
+      "1 tablespoon mayonnaise",
+      "1 teaspoon butter",
+      "1 teaspoon Dijon mustard",
+      "1 teaspoon pickle brine from the jar"
+    ],
+    "instructions": [
+      "Stir the mayonnaise, Dijon mustard, and 1/2 teaspoon pickle brine together in a small bowl.",
+      "Toss the onion slices with the remaining 1/2 teaspoon pickle brine and let them sit while the skillet heats.",
+      "Warm a skillet over medium-low heat for 1 minute.",
+      "Add the salami or chorizo in a single loose layer and warm for 45 to 60 seconds per side, just until glossy and lightly curled at the edges. Transfer to a plate.",
+      "Add the butter to the skillet, then place the ciabatta cut-side down in the melted butter and cured-meat fat.",
+      "Toast for 1 to 2 minutes, until the cut sides are crisp and lightly browned.",
+      "Spread most of the Dijon mayo on the cut sides of the toasted ciabatta.",
+      "Layer the cheese on the bottom bread, then add the warmed salami or chorizo and the drained onion slices.",
+      "Close the sandwich and cook it in the skillet for 2 to 3 minutes per side, pressing lightly with a spatula, until the bread is crisp and the cheese softens.",
+      "Open the sandwich carefully, add the pickles, arugula or lettuce, and the remaining Dijon mayo, then close it again.",
+      "Cut in half and eat while the bread is crisp, the meat is warm, and the greens are still cool."
+    ],
+    "link": null,
+    "notes": [
+      "Use the black truffle mustard seed salami with mozzarella when you want the most balanced version. Use chorizo with cheddar when you want the boldest version.",
+      "Warming the salami or chorizo first wakes up the cured meat flavor, and butter makes the ciabatta taste more finished.",
+      "Medium-low heat gives the cheese time to soften before the ciabatta gets too dark.",
+      "If the ciabatta is crisp before the cheese softens, lower the heat and cover the skillet for 30 to 60 seconds.",
+      "Add the pickles and greens after toasting so they stay crisp instead of steaming.",
+      "Chorizo will make the sandwich smokier and spicier. Mild salami is the easiest option. Prosciutto works too, but do not crisp it hard because it can turn leathery.",
+      "If the ciabatta feels too thick, pinch out a little bread from the inside before building the sandwich."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "7 minutes",
+    "rating": null,
+    "servings": "1 sandwich",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Ciabatta Salami Melt",
+    "totalTime": "15 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "0 minutes",
+    "description": "A no-cook snack plate with cured meat, cheese, bread, pickles, greens, onion, and a simple Dijon pickle mayo for building balanced bites.",
+    "equipment": [
+      "Plate",
+      "Small bowl",
+      "Knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "ciabatta or wheat sandwich bread",
+        "item": "wheat sandwich bread",
+        "quantity": 2,
+        "unit": "slice"
+      },
+      {
+        "display": "prosciutto, salami, or chorizo",
+        "item": "deli salami",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "cheddar or mozzarella cheese",
+        "item": "cheddar cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "dill pickles",
+        "item": "dill pickle chips",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "display": "baby arugula or lettuce",
+        "item": "baby arugula",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 0.0625
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "pickle brine",
+        "quantity": 1,
+        "unit": "tsp"
+      }
+    ],
+    "id": "cured-meat-cheese-snack-plate",
+    "ingredients": [
+      "1 to 2 slices ciabatta or wheat sandwich bread, cut into pieces",
+      "1 to 2 ounces prosciutto, salami, chorizo, or a mix",
+      "1 to 2 ounces cheddar or whole-milk mozzarella, sliced",
+      "A few dill pickle slices or spears",
+      "Small handful baby arugula or lettuce, patted dry",
+      "A few very thin onion slices, optional",
+      "1 tablespoon mayonnaise",
+      "1 teaspoon Dijon mustard",
+      "1 teaspoon pickle brine from the jar"
+    ],
+    "instructions": [
+      "Stir the mayonnaise, Dijon mustard, and pickle brine together in a small bowl to make a tangy dip.",
+      "Cut or tear the bread into bite-size pieces. Toast the bread first if you want it crisp, or leave it soft if you want the fastest version.",
+      "Slice the cheese into pieces that fit on the bread.",
+      "Fold or tear the cured meat into loose pieces instead of leaving it in flat sheets.",
+      "Arrange the cured meat, cheese, bread, pickles, greens, onion, and dip on a plate.",
+      "Build each bite with bread, a small piece of cheese, a folded piece of meat, a little pickle, and a leaf or two of greens.",
+      "Use the Dijon pickle mayo lightly as a dip or spread so the salty meat and cheese still come through."
+    ],
+    "link": null,
+    "notes": [
+      "Yes, these ingredients can be eaten cold as long as they have been stored properly and smell/taste normal.",
+      "For one person, choose 1 cured meat and 1 cheese instead of opening every package. The plate tastes cleaner and the opened packages stay fresher.",
+      "The cured meats and cheeses are salty and rich, so the pickles, greens, onion, and mustard dip make the plate taste more balanced.",
+      "Small bites work better than giant stacks. Too much meat in one bite can taste salty before the cheese, bread, and pickles have a chance to balance it.",
+      "Use smaller amounts of the spicy chorizo or salty prosciutto at first, then add more if you like the flavor.",
+      "If the onion tastes too sharp, use only a few slices or skip it."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "5 minutes",
+    "rating": null,
+    "servings": "1 plate",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "no-cook"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Cured Meat Cheese Snack Plate",
+    "totalTime": "5 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "0 minutes",
+    "description": "A cold wheat bread sandwich with cheddar, a chopped pickle and greens crunch, onion, and a quick mayo-Dijon-ketchup sauce.",
+    "equipment": [
+      "Knife",
+      "Small bowl"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "wheat sandwich bread",
+        "quantity": 2,
+        "unit": "slice"
+      },
+      {
+        "display": "cheddar cheese slices",
+        "item": "cheddar cheese",
+        "quantity": 2,
+        "unit": "slice"
+      },
+      {
+        "display": "lettuce or baby arugula",
+        "item": "lettuce",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "display": "dill pickles",
+        "item": "dill pickle chips",
+        "quantity": 5,
+        "unit": "slice"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 0.0625
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "ketchup",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "pickle brine",
+        "quantity": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "id": "pickle-cheddar-sandwich",
+    "ingredients": [
+      "2 slices wheat sandwich bread",
+      "1 to 2 slices sharp or mild cheddar cheese",
+      "Small handful lettuce or baby arugula, patted dry and thinly sliced",
+      "4 to 5 dill pickle slices, patted dry and chopped",
+      "A few very thin onion slices, optional",
+      "1 tablespoon mayonnaise",
+      "1/2 teaspoon Dijon mustard",
+      "1/2 teaspoon ketchup",
+      "1/2 teaspoon pickle brine from the jar"
+    ],
+    "instructions": [
+      "Stir the mayonnaise, Dijon mustard, ketchup, and pickle brine together in a small bowl.",
+      "Put the chopped pickles, sliced lettuce or arugula, and onion slices on a cutting board or plate.",
+      "Add 1 teaspoon of the sauce to the pickle mixture and toss with your fingers until lightly coated.",
+      "Spread the remaining sauce on one side of each slice of wheat bread.",
+      "Place cheddar on both sauced bread slices if using 2 cheese slices, or place 1 cheese slice on the bottom bread if using 1 slice.",
+      "Pile the pickle and greens crunch over the cheddar.",
+      "Close the sandwich, press it gently with your hand, and cut it in half."
+    ],
+    "link": null,
+    "notes": [
+      "This is the fastest no-cook sandwich, not the highest-flavor option. Make the grilled cheese or ciabatta melt when you have a skillet and 10 extra minutes.",
+      "Patting the pickles and greens dry keeps the bread from getting soggy.",
+      "Use mild cheddar for a softer flavor or sharp cheddar when you want the sandwich to taste more savory.",
+      "This also works with a few slices of salami or prosciutto if you want a meatier sandwich.",
+      "Toast the bread first if you want more crunch."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "5 minutes",
+    "rating": null,
+    "servings": "1 sandwich",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "no-cook"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Pickle Cheddar Sandwich",
+    "totalTime": "5 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "4 minutes",
+    "description": "Open-faced ciabatta toast with whole-milk mozzarella, loose folds of prosciutto, pickle-brined arugula, onion, chopped pickles, and light Dijon mayo.",
+    "equipment": [
+      "Skillet or toaster",
+      "Small bowl",
+      "Knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "ciabatta bread",
+        "item": "ciabatta roll or sturdy hoagie roll",
+        "quantity": 1
+      },
+      {
+        "display": "whole-milk mozzarella",
+        "item": "mozzarella cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "item": "prosciutto",
+        "quantity": 1,
+        "unit": "oz"
+      },
+      {
+        "item": "baby arugula",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 0.0625
+      },
+      {
+        "display": "dill pickles",
+        "item": "dill pickle chips",
+        "quantity": 3,
+        "unit": "slice"
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "pickle brine",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "id": "prosciutto-mozzarella-arugula-toast",
+    "ingredients": [
+      "1 small ciabatta roll or 2 slices ciabatta bread, split",
+      "2 ounces whole-milk mozzarella, sliced thin",
+      "1 ounce prosciutto, torn into bite-size pieces",
+      "Small handful baby arugula, patted dry",
+      "A few very thin onion slices",
+      "2 to 3 dill pickle slices, finely chopped",
+      "1 tablespoon mayonnaise",
+      "1/2 teaspoon Dijon mustard",
+      "1 teaspoon pickle brine from the jar",
+      "1/2 teaspoon extra-virgin olive oil"
+    ],
+    "instructions": [
+      "Stir the mayonnaise, Dijon mustard, and 1/2 teaspoon pickle brine together in a small bowl.",
+      "Toast the ciabatta in a toaster or cut-side down in a dry skillet over medium heat for 2 to 4 minutes, until crisp at the edges.",
+      "Spread the Dijon mayo lightly over the warm toast.",
+      "Add the mozzarella slices and let them sit on the warm toast for 30 seconds so they soften slightly.",
+      "Drape the prosciutto over the mozzarella in loose folds instead of flat layers.",
+      "Toss the arugula, onion slices, chopped pickles, remaining 1/2 teaspoon pickle brine, and extra-virgin olive oil together with your fingers.",
+      "Pile the dressed arugula mixture over the prosciutto.",
+      "Eat open-faced, or close it like a sandwich if the bread pieces match."
+    ],
+    "link": null,
+    "notes": [
+      "Use the prosciutto here before using it in a hot sandwich. It is thin, salty, and delicate, so it is best folded onto warm toast instead of cooked hard.",
+      "Prosciutto and pickles are salty, so start with a light hand and add more only if you want it.",
+      "The mozzarella is mild; the Dijon mayo, arugula, onion, chopped pickles, olive oil, and pickle brine keep it from tasting flat.",
+      "Loose folds of prosciutto are easier to bite through than one flat sheet.",
+      "If the ciabatta is very chewy, toast it a little longer so it becomes easier to bite.",
+      "This is best right after assembly while the bread is crisp."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "5 minutes",
+    "rating": null,
+    "servings": "1 toast or small sandwich",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "toaster",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Prosciutto Mozzarella Arugula Toast",
+    "totalTime": "9 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "8 minutes",
+    "description": "A wheat bread grilled cheese with crisped chorizo or salami, melted cheddar, thin onion, dill pickles, greens, and a small amount of Dijon burger-style sauce.",
+    "equipment": [
+      "Skillet",
+      "Spatula",
+      "Small bowl",
+      "Knife"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "wheat sandwich bread",
+        "quantity": 2,
+        "unit": "slice"
+      },
+      {
+        "display": "chorizo or salami",
+        "item": "deli salami",
+        "quantity": 1.5,
+        "unit": "oz"
+      },
+      {
+        "display": "cheddar cheese slices",
+        "item": "cheddar cheese",
+        "quantity": 2,
+        "unit": "slice"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 0.0625
+      },
+      {
+        "display": "dill pickles",
+        "item": "dill pickle chips",
+        "quantity": 4,
+        "unit": "slice"
+      },
+      {
+        "display": "baby arugula or lettuce",
+        "item": "baby arugula",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 0.5,
+        "unit": "tbsp"
+      },
+      {
+        "item": "butter",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "ketchup",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "pickle brine",
+        "quantity": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "id": "chorizo-cheddar-pickle-grilled-cheese",
+    "ingredients": [
+      "2 slices wheat sandwich bread",
+      "1 1/2 ounces chorizo, salami, or salchichon-style salami, thinly sliced",
+      "2 slices cheddar cheese",
+      "A few very thin onion slices",
+      "3 to 4 dill pickle slices, patted dry",
+      "Small handful baby arugula or lettuce, patted dry",
+      "1/2 tablespoon mayonnaise",
+      "1 tablespoon butter, softened",
+      "1/2 teaspoon Dijon mustard",
+      "1/2 teaspoon ketchup",
+      "1/2 teaspoon pickle brine from the jar"
+    ],
+    "instructions": [
+      "Stir the mayonnaise, Dijon mustard, ketchup, and pickle brine together in a small bowl.",
+      "Spread the softened butter very thinly on one outside face of each bread slice.",
+      "Warm a skillet over medium-low heat for 1 minute.",
+      "Add the chorizo or salami and cook for 45 to 60 seconds per side, just until the edges curl and a little fat renders. Transfer to a plate.",
+      "Place 1 bread slice mayo-side down in the skillet.",
+      "Layer on 1 slice cheddar, the warmed chorizo or salami, the onion slices, and the second slice cheddar.",
+      "Close with the second bread slice, mayo-side up.",
+      "Cook for 3 to 4 minutes per side, pressing gently with a spatula, until the bread is deep golden and the cheddar is melted.",
+      "Open the sandwich carefully, add the pickles, arugula or lettuce, and the Dijon sauce, then close it again.",
+      "Rest for 1 minute, then cut in half."
+    ],
+    "link": null,
+    "notes": [
+      "Use the spicy pecan cold-smoked chorizo here first if you have it. The smoke, paprika, and cheddar are the strongest pairing in this ingredient set.",
+      "Salchichon-style salami also works well here. Save prosciutto for the mozzarella toast instead of crisping it inside grilled cheese.",
+      "This is the richest option in this set of ingredients, so the pickles and greens matter. They keep the grilled cheese from tasting heavy.",
+      "Butter tastes better than mayonnaise on the outside now that you have it. Use the mayonnaise in the sauce instead.",
+      "Medium-low heat is important because wheat sandwich bread browns before cheddar fully melts if the pan is too hot.",
+      "If the bread is browned before the cheese melts, lower the heat and cover the skillet for 30 to 60 seconds.",
+      "The two slices of cheddar help glue the warmed cured meat and onion into the sandwich.",
+      "Add the pickles and greens after cooking so they stay crisp."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "7 minutes",
+    "rating": null,
+    "servings": "1 sandwich",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Chorizo Cheddar Pickle Grilled Cheese",
+    "totalTime": "15 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "8 minutes",
+    "description": "A hot egg sandwich with butter-toasted wheat bread, warmed chorizo or salami, soft folded egg, cheddar, pickles, greens, onion, and a small Dijon burger-style sauce.",
+    "equipment": [
+      "Nonstick skillet",
+      "Spatula",
+      "Small bowl",
+      "Fork",
+      "Knife"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "wheat sandwich bread",
+        "quantity": 2,
+        "unit": "slice"
+      },
+      {
+        "item": "large egg",
+        "quantity": 1
+      },
+      {
+        "display": "chorizo or salami",
+        "item": "deli salami",
+        "quantity": 1.25,
+        "unit": "oz"
+      },
+      {
+        "display": "cheddar cheese slices",
+        "item": "cheddar cheese",
+        "quantity": 1,
+        "unit": "slice"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 0.0625
+      },
+      {
+        "display": "dill pickles",
+        "item": "dill pickle chips",
+        "quantity": 3,
+        "unit": "slice"
+      },
+      {
+        "display": "baby arugula or lettuce",
+        "item": "baby arugula",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "butter",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 0.5,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "ketchup",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "pickle brine",
+        "quantity": 1,
+        "unit": "tsp"
+      }
+    ],
+    "id": "chorizo-cheddar-egg-sandwich",
+    "ingredients": [
+      "2 slices wheat sandwich bread",
+      "1 large egg",
+      "1 to 1 1/2 ounces chorizo, salami, or salchichon-style salami, thinly sliced",
+      "1 slice cheddar cheese",
+      "A few very thin onion slices",
+      "2 to 3 dill pickle slices, patted dry",
+      "Small handful baby arugula or lettuce, patted dry",
+      "1 tablespoon butter, divided",
+      "1/4 teaspoon extra-virgin olive oil",
+      "1/2 tablespoon mayonnaise",
+      "1/2 teaspoon Dijon mustard",
+      "1/2 teaspoon ketchup",
+      "1 teaspoon pickle brine from the jar, divided"
+    ],
+    "instructions": [
+      "Stir the mayonnaise, Dijon mustard, ketchup, and 1/2 teaspoon pickle brine together in a small bowl.",
+      "Toss the arugula or lettuce with the onion slices, extra-virgin olive oil, and remaining 1/2 teaspoon pickle brine.",
+      "Beat the egg with a fork in a small bowl until no streaks of white remain.",
+      "Warm a nonstick skillet over medium-low heat for 1 minute.",
+      "Add the chorizo or salami and cook for 45 to 60 seconds per side, just until the edges curl and a little fat renders. Transfer to a plate.",
+      "Melt 1/2 tablespoon butter in the skillet and toast both bread slices for 1 to 2 minutes per side, until lightly golden. Transfer the toast to a plate.",
+      "Lower the heat to low and melt the remaining 1/2 tablespoon butter in the skillet.",
+      "Pour in the beaten egg and gently push it into a rough square or rectangle as it sets.",
+      "When the egg is just set on top, fold it once or twice to fit the bread, place the cheddar on top, and cover the skillet for 30 to 45 seconds until the cheese softens.",
+      "Spread the Dijon sauce on the toast.",
+      "Build the sandwich with the cheesy folded egg, warmed chorizo or salami, pickles, and dressed greens.",
+      "Close the sandwich, press gently, cut in half, and eat right away."
+    ],
+    "link": null,
+    "notes": [
+      "This is now the highest-upside recipe from the ingredients you listed. Egg plus butter gives the sandwich a real center instead of tasting like assembled deli snacks.",
+      "Use the spicy pecan cold-smoked chorizo first if you have it; cheddar, butter, egg, and pickles can stand up to it.",
+      "Cook the egg gently. A dry browned egg makes the sandwich taste flat, while a soft folded egg makes it taste rich.",
+      "The dressed greens and pickles go in after cooking so they stay crisp and bright."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "7 minutes",
+    "rating": null,
+    "servings": "1 sandwich",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Chorizo Cheddar Egg Sandwich",
+    "totalTime": "15 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "10 minutes",
+    "description": "A simple egg salad sandwich with chopped dill pickles, onion, lettuce or arugula, and a Dijon mayo dressing on wheat bread or ciabatta.",
+    "equipment": [
+      "Small saucepan",
+      "Bowl",
+      "Fork",
+      "Knife"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "large egg",
+        "quantity": 2
+      },
+      {
+        "display": "wheat sandwich bread or ciabatta",
+        "item": "wheat sandwich bread",
+        "quantity": 2,
+        "unit": "slice"
+      },
+      {
+        "display": "dill pickles",
+        "item": "dill pickle chips",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "display": "lettuce or baby arugula",
+        "item": "lettuce",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 0.0625
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 1.5,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "pickle brine",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "id": "dill-pickle-egg-salad-sandwich",
+    "ingredients": [
+      "2 large eggs",
+      "2 slices wheat sandwich bread or 1 small ciabatta roll, toasted if desired",
+      "1/4 cup chopped dill pickles, patted dry",
+      "Small handful lettuce or baby arugula, patted dry",
+      "A few very thin onion slices, minced if you want them in the egg salad",
+      "1 1/2 tablespoons mayonnaise",
+      "1 teaspoon Dijon mustard",
+      "1 teaspoon pickle brine from the jar",
+      "1/2 teaspoon extra-virgin olive oil"
+    ],
+    "instructions": [
+      "Place the eggs in a small saucepan and cover them with water by about 1 inch.",
+      "Bring the water to a boil over medium-high heat, then turn off the heat, cover the pan, and let the eggs sit for 10 minutes.",
+      "Move the eggs to cold water for 2 minutes, then peel them.",
+      "Chop the eggs and place them in a bowl.",
+      "Add the mayonnaise, Dijon mustard, pickle brine, chopped pickles, and minced onion if using onion in the salad.",
+      "Mash with a fork until the egg salad is creamy but still a little chunky.",
+      "Toss the lettuce or arugula with the extra-virgin olive oil.",
+      "Spread the egg salad on the bread, add the dressed greens, close the sandwich, and cut in half."
+    ],
+    "link": null,
+    "notes": [
+      "This is the best no-meat use for the eggs, pickles, mayo, and Dijon.",
+      "Pat the chopped pickles dry before mixing so the egg salad tastes tangy without becoming watery.",
+      "Use ciabatta if you want more chew and crunch; use wheat sandwich bread if you want a softer, easier lunch.",
+      "If you already have hard-boiled eggs, this becomes a 5-minute sandwich."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "5 minutes",
+    "rating": null,
+    "servings": "1 sandwich",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Dill Pickle Egg Salad Sandwich",
+    "totalTime": "15 minutes"
+  },
+  {
+    "author": "Robert Carr",
+    "cookTime": "6 minutes",
+    "description": "A ciabatta toast with mozzarella, folded prosciutto, a butter-fried egg, and arugula dressed with olive oil and pickle brine.",
+    "equipment": [
+      "Skillet",
+      "Spatula",
+      "Small bowl",
+      "Knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "ciabatta bread",
+        "item": "ciabatta roll or sturdy hoagie roll",
+        "quantity": 1
+      },
+      {
+        "item": "large egg",
+        "quantity": 1
+      },
+      {
+        "display": "whole-milk mozzarella",
+        "item": "mozzarella cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "item": "prosciutto",
+        "quantity": 1,
+        "unit": "oz"
+      },
+      {
+        "item": "baby arugula",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 0.0625
+      },
+      {
+        "display": "dill pickles",
+        "item": "dill pickle chips",
+        "quantity": 2,
+        "unit": "slice"
+      },
+      {
+        "item": "butter",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "mayonnaise",
+        "quantity": 0.5,
+        "unit": "tbsp"
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "pickle brine",
+        "quantity": 1,
+        "unit": "tsp"
+      }
+    ],
+    "id": "prosciutto-mozzarella-fried-egg-toast",
+    "ingredients": [
+      "1 small ciabatta roll or 2 slices ciabatta bread, split",
+      "1 large egg",
+      "2 ounces whole-milk mozzarella, sliced thin",
+      "1 ounce prosciutto, torn into bite-size pieces",
+      "Small handful baby arugula, patted dry",
+      "A few very thin onion slices",
+      "2 dill pickle slices, finely chopped",
+      "1 teaspoon butter",
+      "1 teaspoon extra-virgin olive oil, divided",
+      "1/2 tablespoon mayonnaise",
+      "1/2 teaspoon Dijon mustard",
+      "1 teaspoon pickle brine from the jar"
+    ],
+    "instructions": [
+      "Stir the mayonnaise, Dijon mustard, and 1/2 teaspoon pickle brine together in a small bowl.",
+      "Toss the arugula, onion slices, chopped pickles, remaining 1/2 teaspoon pickle brine, and 1/2 teaspoon extra-virgin olive oil together with your fingers.",
+      "Toast the ciabatta cut-side down in a dry skillet over medium heat for 2 to 4 minutes, until crisp at the edges.",
+      "Brush or drizzle the toasted cut sides with the remaining 1/2 teaspoon extra-virgin olive oil.",
+      "Spread the Dijon mayo lightly over the warm toast and add the mozzarella so it softens slightly.",
+      "Melt the butter in the skillet over medium-low heat.",
+      "Crack in the egg and cook until the white is set and the yolk is as soft or firm as you like, 2 to 3 minutes for a runny yolk or 4 to 5 minutes for a firmer yolk.",
+      "Drape the prosciutto over the mozzarella in loose folds.",
+      "Add the fried egg and pile the dressed arugula mixture over or alongside it.",
+      "Eat open-faced with a knife and fork, or close it carefully if the bread pieces match."
+    ],
+    "link": null,
+    "notes": [
+      "This is the better version of the prosciutto mozzarella toast now that eggs, butter, and olive oil are available.",
+      "The butter-fried egg makes the toast feel like a meal, while the olive oil and pickle brine keep the arugula bright.",
+      "Fold the prosciutto loosely so each bite pulls away cleanly.",
+      "For less mess, cook the yolk firmer or break it before closing the sandwich."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "6 minutes",
+    "rating": null,
+    "servings": "1 toast or small sandwich",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Prosciutto Mozzarella Fried Egg Toast",
+    "totalTime": "12 minutes"
   }
 ]

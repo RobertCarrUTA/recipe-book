@@ -1,0 +1,101 @@
+{
+  "author": "Robert Carr",
+  "cookTime": "0 minutes",
+  "description": "A cold wheat bread sandwich with cheddar, a chopped pickle and greens crunch, onion, and a quick mayo-Dijon-ketchup sauce.",
+  "equipment": [
+    "Knife",
+    "Small bowl"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "wheat sandwich bread",
+      "quantity": 2,
+      "unit": "slice"
+    },
+    {
+      "display": "cheddar cheese slices",
+      "item": "cheddar cheese",
+      "quantity": 2,
+      "unit": "slice"
+    },
+    {
+      "display": "lettuce or baby arugula",
+      "item": "lettuce",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "display": "dill pickles",
+      "item": "dill pickle chips",
+      "quantity": 5,
+      "unit": "slice"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 0.0625
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "ketchup",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "pickle brine",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "id": "pickle-cheddar-sandwich",
+  "ingredients": [
+    "2 slices wheat sandwich bread",
+    "1 to 2 slices sharp or mild cheddar cheese",
+    "Small handful lettuce or baby arugula, patted dry and thinly sliced",
+    "4 to 5 dill pickle slices, patted dry and chopped",
+    "A few very thin onion slices, optional",
+    "1 tablespoon mayonnaise",
+    "1/2 teaspoon Dijon mustard",
+    "1/2 teaspoon ketchup",
+    "1/2 teaspoon pickle brine from the jar"
+  ],
+  "instructions": [
+    "Stir the mayonnaise, Dijon mustard, ketchup, and pickle brine together in a small bowl.",
+    "Put the chopped pickles, sliced lettuce or arugula, and onion slices on a cutting board or plate.",
+    "Add 1 teaspoon of the sauce to the pickle mixture and toss with your fingers until lightly coated.",
+    "Spread the remaining sauce on one side of each slice of wheat bread.",
+    "Place cheddar on both sauced bread slices if using 2 cheese slices, or place 1 cheese slice on the bottom bread if using 1 slice.",
+    "Pile the pickle and greens crunch over the cheddar.",
+    "Close the sandwich, press it gently with your hand, and cut it in half."
+  ],
+  "link": null,
+  "notes": [
+    "This is the fastest no-cook sandwich, not the highest-flavor option. Make the grilled cheese or ciabatta melt when you have a skillet and 10 extra minutes.",
+    "Patting the pickles and greens dry keeps the bread from getting soggy.",
+    "Use mild cheddar for a softer flavor or sharp cheddar when you want the sandwich to taste more savory.",
+    "This also works with a few slices of salami or prosciutto if you want a meatier sandwich.",
+    "Toast the bread first if you want more crunch."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "5 minutes",
+  "rating": null,
+  "servings": "1 sandwich",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "no-cook"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Pickle Cheddar Sandwich",
+  "totalTime": "5 minutes"
+}

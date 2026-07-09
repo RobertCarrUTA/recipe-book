@@ -1,0 +1,102 @@
+{
+  "author": "Robert Carr",
+  "cookTime": "10 minutes",
+  "description": "A simple egg salad sandwich with chopped dill pickles, onion, lettuce or arugula, and a Dijon mayo dressing on wheat bread or ciabatta.",
+  "equipment": [
+    "Small saucepan",
+    "Bowl",
+    "Fork",
+    "Knife"
+  ],
+  "groceryIngredients": [
+    {
+      "item": "large egg",
+      "quantity": 2
+    },
+    {
+      "display": "wheat sandwich bread or ciabatta",
+      "item": "wheat sandwich bread",
+      "quantity": 2,
+      "unit": "slice"
+    },
+    {
+      "display": "dill pickles",
+      "item": "dill pickle chips",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "display": "lettuce or baby arugula",
+      "item": "lettuce",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 0.0625
+    },
+    {
+      "item": "mayonnaise",
+      "quantity": 1.5,
+      "unit": "tbsp"
+    },
+    {
+      "item": "Dijon mustard",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "pickle brine",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "id": "dill-pickle-egg-salad-sandwich",
+  "ingredients": [
+    "2 large eggs",
+    "2 slices wheat sandwich bread or 1 small ciabatta roll, toasted if desired",
+    "1/4 cup chopped dill pickles, patted dry",
+    "Small handful lettuce or baby arugula, patted dry",
+    "A few very thin onion slices, minced if you want them in the egg salad",
+    "1 1/2 tablespoons mayonnaise",
+    "1 teaspoon Dijon mustard",
+    "1 teaspoon pickle brine from the jar",
+    "1/2 teaspoon extra-virgin olive oil"
+  ],
+  "instructions": [
+    "Place the eggs in a small saucepan and cover them with water by about 1 inch.",
+    "Bring the water to a boil over medium-high heat, then turn off the heat, cover the pan, and let the eggs sit for 10 minutes.",
+    "Move the eggs to cold water for 2 minutes, then peel them.",
+    "Chop the eggs and place them in a bowl.",
+    "Add the mayonnaise, Dijon mustard, pickle brine, chopped pickles, and minced onion if using onion in the salad.",
+    "Mash with a fork until the egg salad is creamy but still a little chunky.",
+    "Toss the lettuce or arugula with the extra-virgin olive oil.",
+    "Spread the egg salad on the bread, add the dressed greens, close the sandwich, and cut in half."
+  ],
+  "link": null,
+  "notes": [
+    "This is the best no-meat use for the eggs, pickles, mayo, and Dijon.",
+    "Pat the chopped pickles dry before mixing so the egg salad tastes tangy without becoming watery.",
+    "Use ciabatta if you want more chew and crunch; use wheat sandwich bread if you want a softer, easier lunch.",
+    "If you already have hard-boiled eggs, this becomes a 5-minute sandwich."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "5 minutes",
+  "rating": null,
+  "servings": "1 sandwich",
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Dill Pickle Egg Salad Sandwich",
+  "totalTime": "15 minutes"
+}
