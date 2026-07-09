@@ -14382,12 +14382,12 @@
     ],
     "link": null,
     "notes": [
-      "Use the black truffle mustard seed salami with mozzarella when you want the most balanced version. Use chorizo with cheddar when you want the boldest version.",
-      "Warming the salami or chorizo first wakes up the cured meat flavor, and butter makes the ciabatta taste more finished.",
+      "Black truffle mustard seed salami pairs well with mozzarella; chorizo pairs well with cheddar.",
+      "Warming the salami or chorizo first deepens the cured meat flavor, and butter helps the ciabatta brown.",
       "Medium-low heat gives the cheese time to soften before the ciabatta gets too dark.",
       "If the ciabatta is crisp before the cheese softens, lower the heat and cover the skillet for 30 to 60 seconds.",
       "Add the pickles and greens after toasting so they stay crisp instead of steaming.",
-      "Chorizo will make the sandwich smokier and spicier. Mild salami is the easiest option. Prosciutto works too, but do not crisp it hard because it can turn leathery.",
+      "Chorizo makes the sandwich smokier and spicier. Mild salami is gentler. Prosciutto works too, but avoid crisping it hard because it can turn leathery.",
       "If the ciabatta feels too thick, pinch out a little bread from the inside before building the sandwich."
     ],
     "nutrition": null,
@@ -14488,10 +14488,10 @@
     ],
     "link": null,
     "notes": [
-      "Yes, these ingredients can be eaten cold as long as they have been stored properly and smell/taste normal.",
-      "For one person, choose 1 cured meat and 1 cheese instead of opening every package. The plate tastes cleaner and the opened packages stay fresher.",
+      "Cured meats and cheeses can be served cold as long as they have been stored properly and show no signs of spoilage.",
+      "For one person, choose 1 cured meat and 1 cheese so the plate stays simple and unopened packages stay fresher.",
       "The cured meats and cheeses are salty and rich, so the pickles, greens, onion, and mustard dip make the plate taste more balanced.",
-      "Small bites work better than giant stacks. Too much meat in one bite can taste salty before the cheese, bread, and pickles have a chance to balance it.",
+      "Build small bites rather than tall stacks so the cheese, bread, pickles, and dip can balance the cured meat.",
       "Use smaller amounts of the spicy chorizo or salty prosciutto at first, then add more if you like the flavor.",
       "If the onion tastes too sharp, use only a few slices or skip it."
     ],
@@ -14590,7 +14590,7 @@
     ],
     "link": null,
     "notes": [
-      "This is the fastest no-cook sandwich, not the highest-flavor option. Make the grilled cheese or ciabatta melt when you have a skillet and 10 extra minutes.",
+      "This sandwich is meant for a fast no-cook lunch. For a warmer version, toast it in a skillet or make a grilled cheese.",
       "Patting the pickles and greens dry keeps the bread from getting soggy.",
       "Use mild cheddar for a softer flavor or sharp cheddar when you want the sandwich to taste more savory.",
       "This also works with a few slices of salami or prosciutto if you want a meatier sandwich.",
@@ -14698,12 +14698,12 @@
     ],
     "link": null,
     "notes": [
-      "Use the prosciutto here before using it in a hot sandwich. It is thin, salty, and delicate, so it is best folded onto warm toast instead of cooked hard.",
+      "Prosciutto is thin, salty, and delicate, so fold it onto warm toast instead of cooking it hard.",
       "Prosciutto and pickles are salty, so start with a light hand and add more only if you want it.",
       "The mozzarella is mild; the Dijon mayo, arugula, onion, chopped pickles, olive oil, and pickle brine keep it from tasting flat.",
       "Loose folds of prosciutto are easier to bite through than one flat sheet.",
       "If the ciabatta is very chewy, toast it a little longer so it becomes easier to bite.",
-      "This is best right after assembly while the bread is crisp."
+      "Serve right after assembly while the bread is crisp."
     ],
     "nutrition": null,
     "personalNotes": [],
@@ -14819,10 +14819,10 @@
     ],
     "link": null,
     "notes": [
-      "Use the spicy pecan cold-smoked chorizo here first if you have it. The smoke, paprika, and cheddar are the strongest pairing in this ingredient set.",
-      "Salchichon-style salami also works well here. Save prosciutto for the mozzarella toast instead of crisping it inside grilled cheese.",
-      "This is the richest option in this set of ingredients, so the pickles and greens matter. They keep the grilled cheese from tasting heavy.",
-      "Butter tastes better than mayonnaise on the outside now that you have it. Use the mayonnaise in the sauce instead.",
+      "Spicy pecan cold-smoked chorizo pairs especially well with cheddar, pickles, and buttered wheat bread.",
+      "Salchichon-style salami also works well. Prosciutto is delicate, so add it after cooking or use it on toast.",
+      "The pickles and greens balance the butter, cheddar, and cured meat.",
+      "Butter gives the bread a clean toasted flavor; keep the mayonnaise for the sauce.",
       "Medium-low heat is important because wheat sandwich bread browns before cheddar fully melts if the pan is too hot.",
       "If the bread is browned before the cheese melts, lower the heat and cover the skillet for 30 to 60 seconds.",
       "The two slices of cheddar help glue the warmed cured meat and onion into the sandwich.",
@@ -14955,13 +14955,15 @@
     ],
     "link": null,
     "notes": [
-      "This is now the highest-upside recipe from the ingredients you listed. Egg plus butter gives the sandwich a real center instead of tasting like assembled deli snacks.",
-      "Use the spicy pecan cold-smoked chorizo first if you have it; cheddar, butter, egg, and pickles can stand up to it.",
+      "The egg and butter give the sandwich structure and richness while the pickles and greens keep it from feeling heavy.",
+      "Spicy pecan cold-smoked chorizo pairs well with cheddar, butter, egg, and pickles.",
       "Cook the egg gently. A dry browned egg makes the sandwich taste flat, while a soft folded egg makes it taste rich.",
       "The dressed greens and pickles go in after cooking so they stay crisp and bright."
     ],
     "nutrition": null,
-    "personalNotes": [],
+    "personalNotes": [
+      "This was okay, might remove it from the recipe collection. I was trying to make something from the ingredients I had as a quick midnight snack. I am not sure I'd cook this again with the chorizo salami, maybe I'd also cook the onions, and not use generic pp&j sandwich wheat bread."
+    ],
     "prepTime": "7 minutes",
     "rating": null,
     "servings": "1 sandwich",
@@ -14970,7 +14972,8 @@
       "equipment": [
         "stovetop"
       ],
-      "status": "not-tried"
+      "rating": "okay",
+      "status": "tried"
     },
     "title": "Chorizo Cheddar Egg Sandwich",
     "totalTime": "15 minutes"
@@ -15057,7 +15060,7 @@
     ],
     "link": null,
     "notes": [
-      "This is the best no-meat use for the eggs, pickles, mayo, and Dijon.",
+      "Pickles, mayo, and Dijon give the egg salad a tangy, creamy base without needing meat.",
       "Pat the chopped pickles dry before mixing so the egg salad tastes tangy without becoming watery.",
       "Use ciabatta if you want more chew and crunch; use wheat sandwich bread if you want a softer, easier lunch.",
       "If you already have hard-boiled eggs, this becomes a 5-minute sandwich."
@@ -15178,8 +15181,8 @@
     ],
     "link": null,
     "notes": [
-      "This is the better version of the prosciutto mozzarella toast now that eggs, butter, and olive oil are available.",
-      "The butter-fried egg makes the toast feel like a meal, while the olive oil and pickle brine keep the arugula bright.",
+      "Egg, butter, and olive oil make the toast more filling while keeping it simple.",
+      "The butter-fried egg adds richness; olive oil and pickle brine keep the arugula bright.",
       "Fold the prosciutto loosely so each bite pulls away cleanly.",
       "For less mess, cook the yolk firmer or break it before closing the sandwich."
     ],
