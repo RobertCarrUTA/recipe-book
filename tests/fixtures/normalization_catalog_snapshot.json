@@ -94,6 +94,13 @@
       }
     },
     {
+      "item": "apple cider vinegar or red wine vinegar",
+      "canonical": {
+        "base": "apple cider vinegar or red wine vinegar",
+        "display": "apple cider vinegar or red wine vinegar"
+      }
+    },
+    {
       "item": "asian pear or bosc pear",
       "canonical": {
         "base": "asian pear or bosc pear",
@@ -360,6 +367,20 @@
       "canonical": {
         "base": "cake flour",
         "display": "cake flour"
+      }
+    },
+    {
+      "item": "calabrian chile paste",
+      "canonical": {
+        "base": "calabrian chile paste",
+        "display": "calabrian chile paste"
+      }
+    },
+    {
+      "item": "canned tomatoes",
+      "canonical": {
+        "base": "canned tomatoes",
+        "display": "canned tomatoes"
       }
     },
     {
@@ -790,6 +811,14 @@
       "canonical": {
         "base": "salt",
         "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "fine sea salt or kosher salt",
+      "canonical": {
+        "base": "sea salt",
+        "display": "sea salt",
         "notes": []
       }
     },
@@ -1702,6 +1731,14 @@
       }
     },
     {
+      "item": "pecorino romano or parmesan cheese",
+      "canonical": {
+        "base": "parmesan cheese",
+        "display": "parmesan cheese",
+        "notes": []
+      }
+    },
+    {
       "item": "pepperoni",
       "canonical": {
         "base": "deli pepperoni",
@@ -1741,6 +1778,13 @@
       "canonical": {
         "base": "pinto beans",
         "display": "pinto beans"
+      }
+    },
+    {
+      "item": "pizza dough",
+      "canonical": {
+        "base": "pizza dough",
+        "display": "pizza dough"
       }
     },
     {
@@ -1969,6 +2013,13 @@
       "canonical": {
         "base": "semi-sweet chocolate chips",
         "display": "semi-sweet chocolate chips"
+      }
+    },
+    {
+      "item": "semolina flour or fine cornmeal",
+      "canonical": {
+        "base": "semolina flour or fine cornmeal",
+        "display": "semolina flour or fine cornmeal"
       }
     },
     {
@@ -2341,6 +2392,10 @@
     {
       "unit": "head",
       "normalized": "head"
+    },
+    {
+      "unit": "jar",
+      "normalized": "jar"
     },
     {
       "unit": "lb",
