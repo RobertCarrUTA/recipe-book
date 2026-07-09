@@ -1,0 +1,296 @@
+{
+  "additionalTime": "24 to 72 hours dough fermentation plus 2 to 3 hours dough warm-up",
+  "author": "Robert Carr",
+  "cookTime": "8 to 11 minutes",
+  "description": "A large hot honey pepperoni and ricotta pizza with a 24- to 72-hour cold-fermented crust, garlic-Calabrian tomato sauce, whole-milk mozzarella, cup-and-char pepperoni, seasoned ricotta, Pecorino Romano, basil, and warm chile honey.",
+  "equipment": [
+    "15 x 12-inch cordierite pizza stone",
+    "Pizza peel or rimless baking sheet",
+    "Kitchen scale",
+    "Large mixing bowl",
+    "Dough scraper or spatula",
+    "Covered dough container or large zip-top bag",
+    "Small bowls",
+    "Box grater",
+    "Fine-mesh strainer or paper towels",
+    "Small saucepan or microwave-safe bowl",
+    "Room-temperature baking sheet, for finishing if the bottom crust browns early",
+    "Cutting board",
+    "Pizza wheel or sharp knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "bread flour, preferably high-protein",
+      "item": "bread flour",
+      "note": "Use 300 grams bread flour total, or 250 grams bread flour plus 50 grams optional '00' flour.",
+      "quantity": {
+        "min": 250,
+        "max": 300
+      },
+      "unit": "g"
+    },
+    {
+      "item": "'00' flour",
+      "note": "Optional flour blend for a silkier rim; use with 250 grams bread flour.",
+      "optional": true,
+      "quantity": 50,
+      "unit": "g"
+    },
+    {
+      "display": "instant yeast",
+      "item": "active dry or instant yeast",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "honey",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "display": "Morton Coarse Kosher Salt or fine sea salt",
+      "item": "fine sea salt or kosher salt",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "semolina flour or fine cornmeal",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "display": "premium cold-fermented pizza dough ball, optional shortcut",
+      "item": "pizza dough",
+      "optional": true,
+      "quantity": 20,
+      "unit": "oz"
+    },
+    {
+      "display": "San Marzano-style whole peeled or crushed tomatoes",
+      "item": "canned tomatoes",
+      "note": "Buy one 14-ounce can; the recipe uses 1/2 cup crushed tomatoes.",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic clove",
+      "quantity": 1
+    },
+    {
+      "item": "dried oregano",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "fennel seeds",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "item": "Calabrian chile paste",
+      "quantity": 1,
+      "unit": "jar"
+    },
+    {
+      "item": "granulated sugar",
+      "optional": true,
+      "quantity": 0.0625,
+      "unit": "tsp"
+    },
+    {
+      "display": "low-moisture whole-milk mozzarella block",
+      "item": "mozzarella cheese",
+      "quantity": 6,
+      "unit": "oz"
+    },
+    {
+      "display": "natural-casing cup-and-char pepperoni",
+      "item": "pepperoni",
+      "note": "Buy a 4-ounce package if that is how it is sold.",
+      "quantity": 3.5,
+      "unit": "oz"
+    },
+    {
+      "display": "whole-milk ricotta",
+      "item": "ricotta cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "item": "Pecorino Romano or Parmesan cheese",
+      "quantity": 1,
+      "unit": "oz"
+    },
+    {
+      "item": "lemon",
+      "quantity": 1
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "apple cider vinegar or red wine vinegar",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "fresh basil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "flaky sea salt",
+      "optional": true,
+      "quantity": 0.0625,
+      "unit": "tsp"
+    }
+  ],
+  "id": "hot-honey-pepperoni-ricotta-pizza",
+  "ingredients": [
+    "2 1/2 cups (300 grams) bread flour, preferably high-protein bread flour; if weighing, use 250 grams bread flour plus 50 grams '00' flour for a slightly silkier rim",
+    "204 grams cool water, about 3/4 cup plus 1 tablespoon plus 2 teaspoons",
+    "1 teaspoon honey for the dough",
+    "1/4 teaspoon instant yeast",
+    "7 grams Morton Coarse Kosher Salt for the dough, about 1 1/2 level teaspoons, or 7 grams fine sea salt",
+    "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+    "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+    "Optional dough shortcut: 18 to 20 ounces premium cold-fermented pizza dough from a pizzeria, Italian market, or bakery",
+    "1 (14-ounce) can San Marzano-style whole peeled or crushed tomatoes, using 1/2 cup crushed tomatoes for the sauce",
+    "1 teaspoon tomato paste",
+    "1 small garlic clove, finely grated",
+    "1 teaspoon extra-virgin olive oil for the sauce",
+    "1/4 teaspoon dried oregano",
+    "1/8 teaspoon fennel seeds, lightly crushed",
+    "1/8 teaspoon Morton Coarse Kosher Salt for the sauce, or 1/4 teaspoon Diamond Crystal kosher salt",
+    "1/8 teaspoon Calabrian chile paste for the sauce",
+    "Small pinch granulated sugar, only if the tomatoes taste sharp",
+    "6 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
+    "3 to 3 1/2 ounces natural-casing cup-and-char pepperoni, sliced thin",
+    "3/4 cup whole-milk ricotta, drained for 10 to 15 minutes if loose or wet",
+    "1 ounce Pecorino Romano or Parmesan cheese, finely grated, divided",
+    "1 teaspoon extra-virgin olive oil for the ricotta",
+    "1 teaspoon extra-virgin olive oil for brushing the finished rim",
+    "1/4 teaspoon finely grated lemon zest",
+    "1/8 teaspoon black pepper, freshly ground if possible",
+    "Small pinch Morton Coarse Kosher Salt for the ricotta, plus a very small pinch for the hot honey",
+    "2 tablespoons honey for the hot honey",
+    "1 teaspoon Calabrian chile paste for the hot honey",
+    "1 teaspoon unsalted butter",
+    "1/2 teaspoon apple cider vinegar or red wine vinegar",
+    "8 to 10 fresh basil leaves, torn after baking",
+    "Small pinch flaky sea salt for finishing, optional"
+  ],
+  "instructions": [
+    "One to three days before baking, make the dough by whisking 204 grams cool water, 1 teaspoon honey, and 7 grams Morton Coarse Kosher Salt, about 1 1/2 level teaspoons, or 7 grams fine sea salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+    "Whisk 1/4 teaspoon instant yeast into the salted honey water.",
+    "Add either 300 grams bread flour or 250 grams bread flour plus 50 grams '00' flour to the bowl with the yeasted water.",
+    "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+    "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+    "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+    "Knead or fold the dough in the bowl for 2 to 3 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+    "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+    "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+    "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+    "Cover the dough and refrigerate it for at least 24 hours or up to 72 hours.",
+    "About 2 to 3 hours before baking, remove the cold dough from the refrigerator.",
+    "If the cold dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+    "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for 2 to 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+    "If using the optional 18 to 20 ounces store-bought cold-fermented dough, shape it into a smooth ball and let it warm in the same lightly oiled covered container for 2 to 3 hours before stretching.",
+    "Place the 15 x 12-inch cordierite pizza stone on the middle rack or upper-middle rack of the oven.",
+    "Preheat the oven to 500 degrees F for 45 to 60 minutes so the stone is fully heated before the pizza goes in.",
+    "While the stone preheats, make the sauce by spooning the thick tomatoes from the can into a bowl and leaving any very watery juice behind.",
+    "Crush enough of the thick tomatoes by hand to measure 1/2 cup crushed tomatoes.",
+    "Stir together the 1/2 cup crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/8 teaspoon Morton Coarse Kosher Salt, 1/8 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
+    "Let the sauce sit for at least 15 minutes while the oven continues preheating so the garlic, oregano, fennel, salt, and chile season the tomatoes.",
+    "Taste the rested sauce; it should taste bright and lightly salty because it has to season bread, cheese, and ricotta. If it tastes flat, stir in another tiny pinch of Morton Coarse Kosher Salt, about 1/16 teaspoon.",
+    "If the 3/4 cup whole-milk ricotta looks loose or wet, drain it in a fine-mesh strainer or on a double layer of paper towels for 10 to 15 minutes.",
+    "Make the seasoned ricotta by stirring together the drained 3/4 cup whole-milk ricotta, 1/2 ounce finely grated Pecorino Romano or Parmesan, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon lemon zest, 1/8 teaspoon black pepper, and a very small pinch of Morton Coarse Kosher Salt.",
+    "Keep the seasoned ricotta cold until the pizza has started baking so it stays creamy when added near the end.",
+    "Make the hot honey by warming 2 tablespoons honey, 1 teaspoon Calabrian chile paste, 1 teaspoon unsalted butter, 1/2 teaspoon apple cider vinegar or red wine vinegar, and a very small pinch of Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until fluid.",
+    "Stir the hot honey until glossy, then keep it warm off the heat while the pizza bakes.",
+    "Freshly shred 6 ounces low-moisture whole-milk mozzarella from a block and keep it cold until assembly.",
+    "Dust a pizza peel or rimless baking sheet with 1 tablespoon semolina flour or fine cornmeal.",
+    "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+    "Stretch the dough into an 11 x 14-inch oval or rectangle so it fits safely on the 15 x 12-inch stone with a little room at the edges.",
+    "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+    "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+    "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+    "Spread all 1/2 cup sauce over the dough in a thin, even layer, leaving a 3/4-inch rim uncovered.",
+    "Scatter about 5 ounces of the shredded mozzarella evenly over the sauce.",
+    "Arrange all 3 to 3 1/2 ounces sliced natural-casing pepperoni over the mozzarella, leaving a little space between slices so the cheese can bubble through.",
+    "Scatter the remaining 1 ounce shredded mozzarella over any exposed sauced areas.",
+    "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+    "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+    "Launch the pizza onto the fully preheated stone as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the toppings does not glue the dough to the peel.",
+    "Bake the pizza for 5 minutes.",
+    "At 5 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+    "Bake for 1 to 2 minutes more, until the rim is set, the bottom is pale golden, and the cheese has started to melt.",
+    "Carefully pull the oven rack out just enough to work safely, then add the seasoned ricotta in teaspoon-size dollops across the pizza.",
+    "Slide the rack back in and bake for 2 to 4 minutes more, until the crust is deep golden, the cheese is bubbling, and the pepperoni edges are curled and lightly crisp.",
+    "Check the bottom crust around the 8-minute mark by lifting one edge with the peel.",
+    "If the bottom is already deep brown but the top needs more time, slide the pizza onto a room-temperature baking sheet and finish it on the sheet for 1 to 2 minutes so the crust stops darkening on the stone.",
+    "If the bottom is still pale at 8 minutes, leave the pizza directly on the stone for 1 to 2 minutes more.",
+    "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+    "Brush only the exposed outer rim with 1 teaspoon extra-virgin olive oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+    "Drizzle 1 1/2 to 2 tablespoons warm hot honey over the pizza, focusing on the pepperoni and ricotta instead of soaking the crust.",
+    "Sprinkle the remaining 1/2 ounce finely grated Pecorino Romano or Parmesan over the pizza.",
+    "Tear 8 to 10 fresh basil leaves over the pizza and add a small pinch of flaky sea salt if using.",
+    "Slice the pizza and serve immediately while the crust is crisp, the ricotta is warm, and the hot honey is glossy."
+  ],
+  "link": null,
+  "notes": [
+    "For maximum crust flavor, make the dough yourself and cold-ferment it for 24 to 72 hours. The dough gets more savory and easier to stretch as it rests.",
+    "Your Morton Coarse Kosher Salt is a good salt for this recipe. Weigh 7 grams for the dough if possible; without a scale, use about 1 1/2 level teaspoons Morton Coarse. If using Diamond Crystal kosher salt instead, use about 2 1/4 teaspoons because it is much lighter by volume.",
+    "If buying dough, the strongest choice is an 18 to 20-ounce cold-fermented dough ball from a good local pizzeria, Italian market, or bakery. Ask for a high-hydration dough ball made for a hot deck oven or Neapolitan-style bake. Avoid canned dough, par-baked crusts, and very sweet grocery-store dough.",
+    "All bread flour gives the easiest browning and chew in a home oven. The 250 grams bread flour plus 50 grams '00' flour blend is a little softer and silkier, but all bread flour is the safer first bake on a cordierite stone.",
+    "Your 15 x 12-inch cordierite stone is big enough for this 11 x 14-inch pizza. Keep the dough a little smaller than the stone so it launches cleanly and the edge does not hang over and scorch.",
+    "For a true 16-inch round pizza, use a larger stone or a baking steel at least 16 x 16 inches. The best upgrade for home-oven pizza is usually a 3/8-inch baking steel if the oven rack can safely support the weight, but it browns faster than cordierite and may need a shorter bake.",
+    "Do not use parchment paper at 500 degrees F for this pizza. A semolina-dusted peel or rimless baking sheet gives a cleaner launch and avoids scorched parchment edges.",
+    "Top the pizza quickly once it is on the peel. Sauce, cheese, and tomato moisture can make dough stick if the topped pizza sits too long before launch.",
+    "Low-moisture whole-milk mozzarella from a block is intentional because it melts well without flooding the crust. Avoid pre-shredded mozzarella if possible because anti-caking starches can make the melt drier and less glossy. Fresh mozzarella is wetter and should be drained very well if substituted.",
+    "Do not use a rolling pin for this pizza. Pressing and stretching by hand keeps gas in the rim, which gives the crust a better puff and chew.",
+    "Natural-casing cup-and-char pepperoni gives the most flavor because it curls, crisps at the edges, and releases seasoned oil into the cheese.",
+    "The tiny amount of crushed fennel seeds in the sauce makes the tomato, pepperoni, and chile honey taste more connected without making the sauce taste licorice-heavy.",
+    "Add the ricotta near the end of baking instead of at the beginning. This warms it through while keeping it creamy and reducing the chance that it dries out or waters down the pizza.",
+    "Drain wet ricotta before seasoning it. Loose ricotta can leave milky puddles on the pizza and soften the crust near the cheese pockets.",
+    "Brushing the rim with olive oil after baking seasons the crust and gives it a light sheen without risking burned oil or garlic during the 500 degree F bake.",
+    "The hot honey goes on after baking because honey can scorch in a 500 degree F oven.",
+    "Use a thin layer of sauce and a measured amount of cheese. Overloading the center makes the crust steam instead of crisp.",
+    "If the crust browns too quickly on your oven's hot spots, rotate earlier and finish on a room-temperature baking sheet as written in the instructions.",
+    "If the bottom crust is pale after the cheese is melted, give the stone a longer preheat next time or bake the pizza 1 rack position lower.",
+    "Leftover hot honey keeps covered at room temperature for 1 week. Warm it for a few seconds before drizzling."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "35 minutes",
+  "rating": null,
+  "servings": "1 large 11 x 14-inch pizza, 2 to 3 servings",
+  "source": "bundled",
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "pizza-stone"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Hot Honey Pepperoni and Ricotta Pizza",
+  "totalTime": "55 minutes active, plus 24 to 72 hours dough fermentation and 2 to 3 hours dough warm-up"
+}
