@@ -231,7 +231,7 @@ test("recipe discovery controller toggles recipe tag filters through matching co
   assert.equal(harness.getSaveCount(), 1);
 });
 
-test("recipe discovery controller populates collection counts and restores selection after recipes load", () => {
+test("recipe discovery controller populates collection options and restores selection after recipes load", () => {
   const harness = createDiscoveryHarness({
     recipes: [],
     uiFilters: { collection: ["desserts"] },
@@ -241,7 +241,7 @@ test("recipe discovery controller populates collection counts and restores selec
 
   assert.equal(harness.elements.recipeCollection.disabled, true);
   assert.equal(harness.elements.recipeCollection.value, "desserts");
-  assert.equal(harness.elements.recipeCollection.children[0].textContent, "All recipes");
+  assert.equal(harness.elements.recipeCollection.children[0].textContent, "All recipe types");
   assert.ok(
     harness.elements.recipeCollection.children.some(
       (option) => option.value === "desserts" && option.textContent === "Desserts"
@@ -257,11 +257,11 @@ test("recipe discovery controller populates collection counts and restores selec
   assert.deepEqual(
     harness.elements.recipeCollection.children.map((option) => [option.value, option.textContent]),
     [
-      ["", "All recipes (2)"],
-      ["main-dishes", "Main Dishes (1)"],
-      ["soups-stews", "Soups & Stews (1)"],
-      ["baking", "Baking (1)"],
-      ["desserts", "Desserts (1)"],
+      ["", "All recipe types"],
+      ["main-dishes", "Main Dishes"],
+      ["soups-stews", "Soups & Stews"],
+      ["baking", "Baking"],
+      ["desserts", "Desserts"],
     ]
   );
   assert.deepEqual(harness.renderCalls, [[1]]);

@@ -87,7 +87,7 @@ Use a local web server instead of opening `index.html` directly. Browser module 
 
 Use the Recipes view to search, filter, sort, favorite, select, and open saved recipes. Expanding a card shows recipe details, source links when available, grocery controls, quantity controls, meal-plan controls, and the Cooking Mode entry point.
 
-Use the Browse selector to focus the list on a collection such as Pizza, Sandwiches, Steak, Baking, Desserts, or Drinks. Collection browsing combines with search, status, rating, difficulty, equipment, selected recipes, and favorites. Sorting supports favorites, grocery-list selections, fastest total time, rating, and easiest difficulty.
+Use the Recipe type selector to focus the list on a collection such as Pizza, Sandwiches, Steak, Baking, Desserts, or Drinks. Collection browsing combines with search, status, rating, difficulty, equipment, selected recipes, and favorites. Sorting supports favorites, grocery-list selections, fastest total time, rating, and easiest difficulty.
 
 ### Meal Plan
 

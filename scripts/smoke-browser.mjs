@@ -134,6 +134,38 @@ const browserChecks = [
     async run(page) {
       await openApp(page, { debug: true });
       const totalCount = await page.evaluate(() => window.recipeBookDebug.getState().recipes.length);
+      const recipeTypeSelect = page.getByRole("combobox", { name: "Recipe type", exact: true });
+      const recipeTypePicker = await recipeTypeSelect.evaluate((select) => ({
+        disabled: select.disabled,
+        multiple: select.multiple,
+        sizeAttribute: select.getAttribute("size"),
+        tagName: select.tagName,
+        values: Array.from(select.options, (option) => option.value),
+      }));
+      const lastRecipeTypeValue = recipeTypePicker.values.filter(Boolean).at(-1);
+
+      assert.equal(recipeTypePicker.tagName, "SELECT");
+      assert.equal(recipeTypePicker.disabled, false);
+      assert.equal(recipeTypePicker.multiple, false);
+      assert.equal(recipeTypePicker.sizeAttribute, null);
+      assert.ok(recipeTypePicker.values.length > 10, "the native picker should expose the full collection list");
+      assert.equal(
+        await page.locator("#recipeCollection option:checked").innerText(),
+        "All recipe types"
+      );
+
+      await recipeTypeSelect.selectOption(lastRecipeTypeValue);
+      assert.equal(await recipeTypeSelect.inputValue(), lastRecipeTypeValue);
+      await page.waitForFunction(
+        (collectionId) => {
+          const state = window.recipeBookDebug.getState();
+          const expectedCount = state.recipes.filter((recipe) => recipe.collections.includes(collectionId)).length;
+          return document.querySelector("#recipeSearchMeta")?.textContent === `${expectedCount} matches of ${state.recipes.length}`;
+        },
+        lastRecipeTypeValue
+      );
+      await recipeTypeSelect.selectOption("");
+
       const pizzaRecipeIds = await page.evaluate(() =>
         window.recipeBookDebug
           .getState()
@@ -145,7 +177,7 @@ const browserChecks = [
       assert.ok(pizzaRecipeIds.length > 0, "recipe data should include a Pizza collection");
       assert.equal(
         await page.locator('#recipeCollection option[value="pizza"]').innerText(),
-        `Pizza (${pizzaRecipeIds.length})`
+        "Pizza"
       );
 
       await page.selectOption("#recipeCollection", "pizza");
@@ -252,9 +284,22 @@ const browserChecks = [
         search: document.querySelector(".recipe-search-field")?.getBoundingClientRect().width || 0,
         sort: document.querySelector(".recipe-sort-control")?.getBoundingClientRect().width || 0,
       }));
+      const recipeTypeLayout = await getLabeledSelectLayout(
+        page,
+        ".recipe-collection-control",
+        "#recipeCollection"
+      );
+      const sortLayout = await getLabeledSelectLayout(page, ".recipe-sort-control", "#recipeSort");
+
       assert.ok(controlWidths.search >= 180, "search should remain usable at the desktop breakpoint");
-      assert.ok(controlWidths.collection >= 150, "Browse should remain usable at the desktop breakpoint");
-      assert.ok(controlWidths.sort >= 150, "Sort should remain usable at the desktop breakpoint");
+      assert.ok(controlWidths.collection >= 175, "Recipe type should remain usable at the desktop breakpoint");
+      assert.ok(controlWidths.sort >= 140, "Sort should remain usable at the desktop breakpoint");
+      assert.ok(recipeTypeLayout.labelBottom <= recipeTypeLayout.selectTop + 1, "Recipe type label should sit above its field");
+      assert.ok(sortLayout.labelBottom <= sortLayout.selectTop + 1, "Sort label should sit above its field");
+      assert.ok(recipeTypeLayout.selectWidth >= recipeTypeLayout.controlWidth - 1, "Recipe type field should use its full control width");
+      assert.ok(sortLayout.selectWidth >= sortLayout.controlWidth - 1, "Sort field should use its full control width");
+      await assertSelectOptionTextFits(page, "#recipeCollection");
+      await assertSelectOptionTextFits(page, "#recipeSort");
     },
   },
   {
@@ -302,7 +347,7 @@ const browserChecks = [
   {
     name: "mobile recipe export copies formatted text",
     hasTouch: true,
-    viewport: { width: 390, height: 844 },
+    viewport: { width: 381, height: 844 },
     async run(page) {
       await page.addInitScript(() => {
         Object.defineProperty(navigator, "clipboard", {
@@ -860,7 +905,7 @@ const browserChecks = [
   {
     name: "mobile view tabs and swipes switch directly between recipes and grocery",
     hasTouch: true,
-    viewport: { width: 390, height: 844 },
+    viewport: { width: 381, height: 844 },
     async run(page) {
       await openApp(page);
 
@@ -876,6 +921,31 @@ const browserChecks = [
         "#recipeContainer",
         ".mobile-view-tabs",
       ]);
+      const mobileRecipeTypeLayout = await getLabeledSelectLayout(
+        page,
+        ".recipe-collection-control",
+        "#recipeCollection"
+      );
+      const mobileSortLayout = await getLabeledSelectLayout(page, ".recipe-sort-control", "#recipeSort");
+
+      assert.ok(
+        mobileRecipeTypeLayout.selectWidth >= mobileRecipeTypeLayout.controlWidth - 1,
+        "Recipe type should use its full mobile control width"
+      );
+      assert.ok(
+        mobileSortLayout.selectWidth >= mobileSortLayout.controlWidth - 1,
+        "Sort should use its full mobile control width"
+      );
+      assert.ok(
+        mobileRecipeTypeLayout.labelBottom <= mobileRecipeTypeLayout.selectTop + 1,
+        "Recipe type label should sit above its mobile field"
+      );
+      assert.ok(
+        mobileSortLayout.labelBottom <= mobileSortLayout.selectTop + 1,
+        "Sort label should sit above its mobile field"
+      );
+      await assertSelectOptionTextFits(page, "#recipeCollection");
+      await assertSelectOptionTextFits(page, "#recipeSort");
       assert.equal(
         await page.locator(".recipe-search").evaluate((element) => getComputedStyle(element).position),
         "sticky"
@@ -1057,6 +1127,68 @@ async function assertNoHorizontalOverflow(page, selectors) {
   }, selectors);
 
   assert.deepEqual(overflowReport, []);
+}
+
+async function getLabeledSelectLayout(page, controlSelector, selectSelector) {
+  return page.evaluate(({ controlSelector, selectSelector }) => {
+    const control = document.querySelector(controlSelector);
+    const label = control?.querySelector("span");
+    const select = document.querySelector(selectSelector);
+    const controlRect = control?.getBoundingClientRect();
+    const labelRect = label?.getBoundingClientRect();
+    const selectRect = select?.getBoundingClientRect();
+
+    return {
+      controlWidth: controlRect?.width || 0,
+      labelBottom: labelRect?.bottom || 0,
+      selectTop: selectRect?.top || 0,
+      selectWidth: selectRect?.width || 0,
+    };
+  }, { controlSelector, selectSelector });
+}
+
+async function assertSelectOptionTextFits(page, selector) {
+  const report = await page.locator(selector).evaluate((select) => {
+    const styles = getComputedStyle(select);
+    const probe = document.createElement("span");
+    Object.assign(probe.style, {
+      fontFamily: styles.fontFamily,
+      fontSize: styles.fontSize,
+      fontStyle: styles.fontStyle,
+      fontWeight: styles.fontWeight,
+      left: "-10000px",
+      letterSpacing: styles.letterSpacing,
+      position: "fixed",
+      visibility: "hidden",
+      whiteSpace: "nowrap",
+    });
+    document.body.appendChild(probe);
+
+    const availableWidth =
+      select.clientWidth -
+      Number.parseFloat(styles.paddingLeft) -
+      Number.parseFloat(styles.paddingRight);
+    const clipped = Array.from(select.options, (option) => {
+      probe.textContent = option.textContent.trim();
+      return {
+        text: probe.textContent,
+        textWidth: probe.getBoundingClientRect().width,
+      };
+    }).filter(({ textWidth }) => textWidth > availableWidth + 1);
+
+    probe.remove();
+    return {
+      availableWidth,
+      clipped,
+      selectWidth: select.getBoundingClientRect().width,
+    };
+  });
+
+  assert.deepEqual(
+    report.clipped,
+    [],
+    `${selector} option text should fit when selected: ${JSON.stringify(report)}`
+  );
 }
 
 async function waitForRecipeAlignedBelowSearch(page, recipeTitle, options = {}) {

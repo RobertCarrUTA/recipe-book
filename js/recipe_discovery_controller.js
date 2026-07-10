@@ -64,13 +64,13 @@ export function createRecipeDiscoveryController({
     const allOption = document.createElement("option");
 
     allOption.value = "";
-    allOption.textContent = hasRecipes ? `All recipes (${recipes.length})` : "All recipes";
+    allOption.textContent = "All recipe types";
     optionElements.push(allOption);
 
     options.forEach((option) => {
       const element = document.createElement("option");
       element.value = option.id;
-      element.textContent = hasRecipes ? `${option.label} (${option.count})` : option.label;
+      element.textContent = option.label;
       optionElements.push(element);
     });
 
