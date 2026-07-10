@@ -504,14 +504,22 @@ h2 {
   border-radius: var(--radius-sm);
   background: var(--field);
   color: var(--fg);
+  color-scheme: dark;
   font-size: 1rem;
   font-weight: 800;
   text-overflow: ellipsis;
 }
 
+.recipe-collection-control select option,
+.recipe-sort-control select option {
+  background-color: var(--field);
+  color: var(--fg);
+}
+
 .recipe-collection-control.has-selection select {
   border-color: rgba(122, 199, 163, 0.58);
-  background: rgba(122, 199, 163, 0.1);
+  background-color: var(--field);
+  background-image: linear-gradient(rgba(122, 199, 163, 0.1), rgba(122, 199, 163, 0.1));
   box-shadow: 0 0 0 2px rgba(122, 199, 163, 0.1);
 }
 

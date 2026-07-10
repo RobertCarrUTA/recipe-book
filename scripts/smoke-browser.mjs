@@ -269,6 +269,8 @@ const browserChecks = [
     viewport: { width: 1024, height: 900 },
     async run(page) {
       await openApp(page);
+      await page.selectOption("#recipeCollection", "pizza");
+      await page.selectOption("#recipeSort", "fastest");
       await assertNoHorizontalOverflow(page, [
         ".app-shell",
         ".recipe-search",
@@ -300,6 +302,8 @@ const browserChecks = [
       assert.ok(sortLayout.selectWidth >= sortLayout.controlWidth - 1, "Sort field should use its full control width");
       await assertSelectOptionTextFits(page, "#recipeCollection");
       await assertSelectOptionTextFits(page, "#recipeSort");
+      await assertSelectOptionsReadable(page, "#recipeCollection");
+      await assertSelectOptionsReadable(page, "#recipeSort");
     },
   },
   {
@@ -1188,6 +1192,81 @@ async function assertSelectOptionTextFits(page, selector) {
     report.clipped,
     [],
     `${selector} option text should fit when selected: ${JSON.stringify(report)}`
+  );
+}
+
+async function assertSelectOptionsReadable(page, selector) {
+  const report = await page.locator(selector).evaluate((select) => {
+    function parseColor(value) {
+      const match = String(value || "").match(/^rgba?\(([^)]+)\)$/i);
+      if (!match) return null;
+
+      const values = match[1].split(/[\s,\/]+/).filter(Boolean).map(Number);
+      if (values.length < 3 || values.slice(0, 3).some((channel) => !Number.isFinite(channel))) return null;
+      return {
+        alpha: Number.isFinite(values[3]) ? values[3] : 1,
+        blue: values[2],
+        green: values[1],
+        red: values[0],
+      };
+    }
+
+    function luminance(color) {
+      const channels = [color.red, color.green, color.blue].map((channel) => {
+        const normalized = channel / 255;
+        return normalized <= 0.03928
+          ? normalized / 12.92
+          : ((normalized + 0.055) / 1.055) ** 2.4;
+      });
+      return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+    }
+
+    function readColors(element) {
+      const styles = getComputedStyle(element);
+      const foreground = parseColor(styles.color);
+      const background = parseColor(styles.backgroundColor);
+      let contrast = 0;
+
+      if (foreground && background && foreground.alpha >= 0.99 && background.alpha >= 0.99) {
+        const lighter = Math.max(luminance(foreground), luminance(background));
+        const darker = Math.min(luminance(foreground), luminance(background));
+        contrast = (lighter + 0.05) / (darker + 0.05);
+      }
+
+      return {
+        backgroundAlpha: background?.alpha ?? 0,
+        backgroundColor: styles.backgroundColor,
+        color: styles.color,
+        contrast,
+        foregroundAlpha: foreground?.alpha ?? 0,
+      };
+    }
+
+    return {
+      options: Array.from(select.options, (option) => ({
+        ...readColors(option),
+        text: option.textContent.trim(),
+      })),
+      select: readColors(select),
+    };
+  });
+  const unreadableOptions = report.options.filter(
+    (option) =>
+      option.backgroundAlpha < 0.99 ||
+      option.foregroundAlpha < 0.99 ||
+      option.contrast < 4.5
+  );
+
+  assert.ok(
+    report.select.backgroundAlpha >= 0.99 &&
+      report.select.foregroundAlpha >= 0.99 &&
+      report.select.contrast >= 4.5,
+    `${selector} should keep an opaque, readable selected value: ${JSON.stringify(report.select)}`
+  );
+  assert.deepEqual(
+    unreadableOptions,
+    [],
+    `${selector} options should keep opaque, readable colors: ${JSON.stringify(unreadableOptions)}`
   );
 }
 
