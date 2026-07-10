@@ -590,6 +590,13 @@
       }
     },
     {
+      "item": "cotija cheese",
+      "canonical": {
+        "base": "cotija cheese",
+        "display": "cotija cheese"
+      }
+    },
+    {
       "item": "cream cheese",
       "canonical": {
         "base": "cream cheese",
@@ -731,6 +738,13 @@
       "canonical": {
         "base": "doenjang or white miso",
         "display": "doenjang or white miso"
+      }
+    },
+    {
+      "item": "dried ancho chile",
+      "canonical": {
+        "base": "dried ancho chile",
+        "display": "dried ancho chile"
       }
     },
     {
@@ -1166,6 +1180,20 @@
       }
     },
     {
+      "item": "ground cloves",
+      "canonical": {
+        "base": "ground cloves",
+        "display": "ground cloves"
+      }
+    },
+    {
+      "item": "ground coriander",
+      "canonical": {
+        "base": "ground coriander",
+        "display": "ground coriander"
+      }
+    },
+    {
       "item": "ground cumin",
       "canonical": {
         "base": "ground cumin",
@@ -1490,6 +1518,13 @@
       }
     },
     {
+      "item": "masa harina",
+      "canonical": {
+        "base": "masa harina",
+        "display": "masa harina"
+      }
+    },
+    {
       "item": "mascarpone cheese",
       "canonical": {
         "base": "mascarpone cheese",
@@ -1629,6 +1664,13 @@
       "canonical": {
         "base": "nuts of choice",
         "display": "nuts of choice"
+      }
+    },
+    {
+      "item": "oaxaca cheese",
+      "canonical": {
+        "base": "oaxaca cheese",
+        "display": "oaxaca cheese"
       }
     },
     {

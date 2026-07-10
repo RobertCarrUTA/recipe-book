@@ -1,0 +1,394 @@
+{
+  "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up, plus optional overnight birria chill",
+  "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
+  "cookTime": "5 to 7 minutes for the pizza, plus 3 to 3 1/2 hours for the birria",
+  "description": "A large 15- to 16-inch short rib birria pizza built for a Baking Steel Pro, with a 72-hour masa-enriched crust, reduced chile consomme sauce, crisp-edged shredded short rib, Oaxaca and whole-milk mozzarella, lime crema, pickled red onion, cilantro, white onion, Cotija, and warm consomme for dipping the rim.",
+  "equipment": [
+    "Baking Steel Pro or 16 x 16-inch baking steel",
+    "16-inch pizza peel",
+    "Kitchen scale",
+    "Large mixing bowl",
+    "Covered dough container or large zip-top bag",
+    "Dough scraper or spatula",
+    "Dutch oven or heavy oven-safe pot with lid",
+    "Blender",
+    "Fine-mesh strainer",
+    "Small skillet",
+    "Box grater",
+    "Microplane or fine grater",
+    "Small bowls",
+    "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+    "Cutting board",
+    "Pizza wheel or sharp knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "item": "bread flour",
+      "quantity": 285,
+      "unit": "g"
+    },
+    {
+      "display": "masa harina, preferably Masienda, Bob's Red Mill, or Maseca",
+      "item": "masa harina",
+      "note": "Use 15 grams in the scratch dough for a subtle toasted-corn flavor; replace with 15 grams more bread flour for the easiest stretch.",
+      "quantity": 15,
+      "unit": "g"
+    },
+    {
+      "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
+      "item": "pizza dough",
+      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+      "optional": true,
+      "quantity": 1
+    },
+    {
+      "display": "instant yeast",
+      "item": "active dry or instant yeast",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "honey",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "semolina flour or fine cornmeal",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "display": "bone-in beef short ribs or boneless beef short ribs",
+      "item": "bone-in beef short rib",
+      "note": "Buy 1 1/2 to 2 pounds. Bone-in short ribs give the richest consomme; boneless short ribs are easier to shred. The pizza uses 5 to 6 ounces cooked shredded beef and the rest becomes leftovers.",
+      "quantity": 2,
+      "unit": "lb"
+    },
+    {
+      "display": "dried guajillo chiles",
+      "item": "dried guajillo chile",
+      "quantity": 3
+    },
+    {
+      "display": "dried ancho chile",
+      "item": "dried ancho chile",
+      "quantity": 1
+    },
+    {
+      "display": "dried chile de arbol peppers",
+      "item": "dried chile de arbol",
+      "note": "Use 1 for moderate heat or 2 for a hotter consomme.",
+      "quantity": 2
+    },
+    {
+      "display": "Roma tomatoes",
+      "item": "Roma tomato",
+      "quantity": 2
+    },
+    {
+      "display": "medium white onion",
+      "item": "white onion",
+      "quantity": 1
+    },
+    {
+      "display": "garlic cloves",
+      "item": "garlic clove",
+      "quantity": 5
+    },
+    {
+      "display": "low-sodium beef stock",
+      "item": "low-sodium beef broth",
+      "quantity": 32,
+      "unit": "oz"
+    },
+    {
+      "item": "apple cider vinegar",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "display": "chipotle peppers in adobo",
+      "item": "chipotle pepper in adobo",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "Mexican oregano",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground cumin",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground coriander",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground cinnamon",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground cloves",
+      "quantity": 1,
+      "unit": "pinch"
+    },
+    {
+      "item": "bay leaf",
+      "quantity": 2
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "display": "neutral high-heat oil, such as avocado, grapeseed, canola, or vegetable oil",
+      "item": "neutral high-heat oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "display": "Oaxaca cheese or quesadilla cheese",
+      "item": "Oaxaca cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "display": "low-moisture whole-milk mozzarella block",
+      "item": "low-moisture whole-milk mozzarella cheese",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "display": "Cotija cheese",
+      "item": "Cotija cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "Mexican crema or full-fat sour cream",
+      "item": "sour cream",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "item": "lime",
+      "quantity": 2
+    },
+    {
+      "display": "medium red onion",
+      "item": "red onion",
+      "quantity": 1
+    },
+    {
+      "item": "cilantro",
+      "quantity": 1,
+      "unit": "bunch"
+    },
+    {
+      "display": "serrano chile, optional for the cilantro-onion finish",
+      "item": "serrano pepper",
+      "optional": true,
+      "quantity": 1
+    },
+    {
+      "item": "flaky sea salt",
+      "optional": true,
+      "quantity": 1,
+      "unit": "pinch"
+    }
+  ],
+  "id": "short-rib-birria-pizza",
+  "ingredients": [
+    "285 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+    "15 grams masa harina, preferably Masienda, Bob's Red Mill, or Maseca, or 15 grams more bread flour for the easiest stretch",
+    "200 grams cool water, about 3/4 cup plus 2 tablespoons plus 1 teaspoon",
+    "1/2 teaspoon honey for the dough",
+    "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+    "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+    "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+    "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+    "Optional dough shortcut: 450 to 500 grams prepared dough from Baking Steel 72 Hour Pizza Dough Mix for one large 15- to 16-inch pizza",
+    "1 1/2 to 2 pounds bone-in beef short ribs or boneless beef short ribs, using 5 to 6 ounces cooked shredded beef on the pizza and saving the rest",
+    "1 3/4 teaspoons fine sea salt or Morton Coarse Kosher Salt for the birria, divided, plus small pinches as needed",
+    "1/2 teaspoon black pepper, divided",
+    "1 tablespoon plus 1 teaspoon neutral high-heat oil, such as avocado, grapeseed, canola, or vegetable oil, divided",
+    "3 dried guajillo chiles, stemmed and seeded",
+    "1 dried ancho chile, stemmed and seeded",
+    "1 to 2 dried chile de arbol peppers, stemmed, using 1 for moderate heat or 2 for a hotter consomme",
+    "2 Roma tomatoes, halved",
+    "1 medium white onion, divided: 1/2 onion cut into wedges for the birria and 1/4 cup finely diced onion for finishing",
+    "5 small garlic cloves, divided",
+    "2 cups low-sodium beef stock for the braise, plus more if the pot gets dry",
+    "1 cup water for the braise",
+    "2 tablespoons apple cider vinegar for the birria, plus 1 tablespoon for the pickled onion",
+    "1 chipotle pepper in adobo plus 1 tablespoon adobo sauce",
+    "1 teaspoon Mexican oregano",
+    "1 teaspoon ground cumin",
+    "1/2 teaspoon ground coriander",
+    "1/8 teaspoon ground cinnamon",
+    "Tiny pinch ground cloves",
+    "2 bay leaves",
+    "1 teaspoon honey for the birria",
+    "5 ounces Oaxaca cheese or quesadilla cheese, pulled into thin strings or freshly shredded",
+    "3 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
+    "1 ounce Cotija cheese, finely crumbled",
+    "1/2 medium red onion, thinly sliced",
+    "2 tablespoons fresh lime juice for the pickled onion, plus 1 teaspoon for the crema and 1 teaspoon for the cilantro-onion finish",
+    "1/4 cup Mexican crema or full-fat sour cream",
+    "1/4 teaspoon finely grated lime zest for the crema",
+    "1/4 cup finely chopped fresh cilantro, plus 2 tablespoons cilantro leaves for finishing if you want more freshness",
+    "1/2 small serrano chile, seeded and finely minced, optional",
+    "1 to 2 teaspoons reserved birria fat or extra-virgin olive oil for the finished rim",
+    "Small pinch flaky sea salt for finishing, optional",
+    "1/4 cup warm consomme for dipping the crust, optional but recommended"
+  ],
+  "instructions": [
+    "Using Baking Steel 72 Hour Pizza Dough Mix? Skip to step 13. Using ready-made dough? Skip to step 15 and use 450 to 500 grams prepared dough for one large 15- to 16-inch pizza. Using already cooked shredded birria? After your dough is warming, skip the birria-braising steps and continue at step 37 with 5 to 6 ounces cooked shredded beef and 1/3 cup thick reduced consomme.",
+    "Two to three days before baking, make the scratch dough by whisking 200 grams cool water, 1/2 teaspoon honey, and 8 grams salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+    "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted honey water.",
+    "Add 285 grams high-protein bread flour and 15 grams masa harina to the bowl with the yeasted water.",
+    "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+    "Cover the bowl and rest the dough for 20 minutes so the bread flour and masa harina fully hydrate before kneading.",
+    "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+    "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+    "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+    "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+    "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+    "Cover the dough and refrigerate it for 48 to 72 hours.",
+    "If using Baking Steel 72 Hour Pizza Dough Mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+    "For the Baking Steel mix, portion 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a true 16-inch pizza about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+    "About 3 hours before baking, remove the cold dough from the refrigerator.",
+    "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+    "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+    "For the deepest birria flavor and the easiest fat skimming, make the birria the day before baking, chill it overnight, and rewarm it while the dough warms; for same-day pizza, start the birria 4 to 5 hours before baking.",
+    "Pat 1 1/2 to 2 pounds beef short ribs very dry with paper towels, then season all sides with 1 teaspoon fine sea salt or Morton Coarse Kosher Salt and 1/4 teaspoon black pepper.",
+    "Heat a Dutch oven over medium-high heat for 2 minutes, add 1 tablespoon neutral high-heat oil, and sear the seasoned short ribs for 2 to 3 minutes per side, until deeply browned in spots.",
+    "Transfer the browned short ribs to a plate and reduce the heat under the Dutch oven to medium.",
+    "Toast 3 stemmed and seeded dried guajillo chiles, 1 stemmed and seeded dried ancho chile, and 1 to 2 stemmed chile de arbol peppers in the dry Dutch oven or a dry skillet for 15 to 30 seconds per side, turning often, just until fragrant and pliable, not blackened.",
+    "Place the toasted chiles in a bowl, cover them with hot water, and soak them for 15 minutes while you brown the vegetables.",
+    "Add the halved 2 Roma tomatoes, the 1/2 white onion cut into wedges, and 4 small garlic cloves to the Dutch oven.",
+    "Cook the tomatoes, onion, and garlic over medium heat for 4 to 6 minutes, turning occasionally, until the tomatoes slump, the onion has browned edges, and the garlic smells sweet rather than raw.",
+    "Drain the soaked chiles and discard the soaking water so the consomme stays clean and not bitter.",
+    "Blend the drained softened chiles, browned tomatoes, browned onion, browned garlic, 1 chipotle pepper in adobo, 1 tablespoon adobo sauce, 2 tablespoons apple cider vinegar, 1 teaspoon Mexican oregano, 1 teaspoon ground cumin, 1/2 teaspoon ground coriander, 1/8 teaspoon ground cinnamon, a tiny pinch ground cloves, 1 teaspoon honey, 3/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon black pepper, and 1 cup low-sodium beef stock until completely smooth.",
+    "Pour the blended chile sauce through a fine-mesh strainer back into the Dutch oven, pressing with a spoon so the smooth sauce passes through and any tough chile skins stay behind.",
+    "Simmer the strained chile sauce over medium heat for 2 minutes, scraping the bottom of the Dutch oven to loosen any browned beef and vegetable bits.",
+    "Add the remaining 1 cup low-sodium beef stock, 1 cup water, 2 bay leaves, and the browned short ribs with any plate juices to the Dutch oven.",
+    "Bring the birria to a gentle simmer, cover the Dutch oven, and cook at a bare simmer on the stovetop or in a 300 degrees F oven for 2 1/2 to 3 hours, until the short rib shreds easily with a fork.",
+    "Transfer the tender short ribs to a cutting board, discard the bay leaves, strain the braising liquid through a fine-mesh strainer if it has loose meat or chile bits, and let the braising liquid settle for 5 minutes.",
+    "Skim 1 tablespoon red birria fat from the top of the braising liquid and reserve it in a small bowl for crisping the beef and brushing the finished rim; if there is not enough fat, use extra-virgin olive oil later instead.",
+    "Shred the short rib, discarding bones, thick gristle, and large pockets of fat, then reserve 5 to 6 ounces shredded beef for the pizza and save the remaining beef for tacos, quesadillas, or another pizza.",
+    "Measure 3/4 cup strained birria consomme into a small skillet or saucepan and simmer it for 5 to 8 minutes, stirring often, until reduced to 1/3 cup thick sauce that coats a spoon.",
+    "Taste the 1/3 cup reduced birria sauce; it should be bold, savory, lightly tangy, and a little salty because it has to season a large crust, beef, and cheese. If it tastes flat, stir in a tiny pinch of salt; if it tastes heavy, stir in 1/2 teaspoon fresh lime juice.",
+    "Heat 1 teaspoon reserved birria fat or neutral oil in a small skillet over medium-high heat, add the reserved 5 to 6 ounces shredded short rib, and cook for 45 to 90 seconds without stirring so some edges crisp while the center stays juicy.",
+    "Toss the crisp-edged short rib with 1 tablespoon of the reduced birria sauce, then spread the beef on a plate to cool so it does not melt the cheese on the peel.",
+    "Make the pickled red onion by tossing the thinly sliced 1/2 red onion with 2 tablespoons fresh lime juice, 1 tablespoon apple cider vinegar, and 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt.",
+    "Let the pickled red onion sit for at least 20 minutes, tossing once, then drain off excess liquid before it goes on the baked pizza.",
+    "Make the lime crema by stirring together 1/4 cup Mexican crema or full-fat sour cream, 1 teaspoon fresh lime juice, 1/4 teaspoon finely grated lime zest, 1 finely grated small garlic clove, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
+    "Make the cilantro-onion finish by stirring together 1/4 cup finely diced white onion, 1/4 cup finely chopped fresh cilantro, 1 teaspoon fresh lime juice, 1/2 finely minced serrano chile if using, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
+    "Pull 5 ounces Oaxaca cheese into thin strings or shred it, then freshly shred 3 ounces low-moisture whole-milk mozzarella from a block.",
+    "Toss the 5 ounces Oaxaca cheese and 3 ounces shredded mozzarella together and keep the cheese blend cold until assembly so it melts cleanly instead of oiling out on the peel.",
+    "Finely crumble 1 ounce Cotija cheese and keep it nearby for finishing after the pizza bakes.",
+    "About 75 minutes before baking, place the Baking Steel Pro on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+    "Preheat the oven to 550 degrees F for 60 to 75 minutes so the Baking Steel Pro is fully saturated with heat before the pizza goes in.",
+    "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+    "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+    "Stretch the dough into a 15- to 16-inch round, keeping the center thin and the rim slightly thicker.",
+    "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+    "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+    "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+    "Spread the remaining reduced birria sauce, about 1/4 cup after the beef is seasoned, over the dough in a very thin, even layer, leaving a 3/4-inch rim uncovered.",
+    "Scatter about two-thirds of the cold Oaxaca-mozzarella blend evenly over the birria sauce, covering most of the sauce so the chile paste and beef juices are protected from the broiler.",
+    "Scatter the cooled crisp-edged short rib evenly over the cheese, keeping heavy piles away from the center so the crust bakes crisp.",
+    "Scatter the remaining Oaxaca-mozzarella blend over any exposed beef or sauce.",
+    "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+    "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+    "Launch the pizza onto the fully preheated Baking Steel Pro as soon as it slides freely, ideally within 2 minutes of adding the birria sauce, so the sauce and cheese do not glue the dough to the peel.",
+    "Bake the pizza at 550 degrees F for 2 1/2 minutes with the broiler off.",
+    "At 2 1/2 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+    "Check the bottom crust by lifting one edge with the peel; at 2 1/2 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+    "If the bottom is still pale and flexible at 2 1/2 minutes, leave the pizza directly on the steel for 30 to 60 seconds more before using the broiler.",
+    "If the bottom already has dark brown spots at 2 1/2 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+    "Turn the broiler to high and broil for 30 to 75 seconds, watching constantly, until the rim blisters and the cheese bubbles with scattered golden spots.",
+    "If the rim, beef, or cheese darkens before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+    "If the top still needs more color after 75 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+    "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+    "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+    "Brush only the exposed outer rim with 1 to 2 teaspoons reserved birria fat or extra-virgin olive oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+    "Drain the pickled red onion well, then scatter about 1/3 cup drained pickled onion over the hot pizza.",
+    "Drizzle 2 tablespoons lime crema in thin lines over the pizza, saving the rest for serving if you want extra on individual slices.",
+    "Sprinkle the 1 ounce crumbled Cotija cheese over the pizza.",
+    "Spoon the cilantro-onion finish over the pizza in small clusters, then add the extra 2 tablespoons cilantro leaves if using.",
+    "Add a small pinch of flaky sea salt only if the beef, cheese, or rim tastes underseasoned.",
+    "Serve the pizza immediately with 1/4 cup warm consomme on the side for dipping the outer crust, not pouring over the center.",
+    "Slice the pizza while the bottom crust is crisp, the rim is tender and blistered, the cheese is still bubbling, and the pickled onion and cilantro are fresh."
+  ],
+  "link": null,
+  "notes": [
+    "This pizza is intentionally different from the existing pepperoni, sausage, ricotta, cheese, Korean BBQ, pesto mortadella, and mushroom white pizzas. The main flavors are short rib birria, dried chiles, Oaxaca cheese, lime crema, pickled onion, cilantro, and warm consomme.",
+    "For the most control and the deepest crust flavor, use the scratch dough and cold-ferment it for the full 72 hours. The small amount of masa harina adds a subtle toasted-corn note that works with birria without making the dough taste like a tortilla.",
+    "The scratch dough makes about one 500-gram dough ball, enough for a large 15- to 16-inch pizza with a crisp bottom, a tender rim, and enough structure for beef, cheese, and reduced consomme sauce.",
+    "If using a mix, Baking Steel 72 Hour Pizza Dough Mix is the recommended shortcut for this style because it is built for a long ferment and handles the hot steel bake well. Use 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a true 16-inch pizza.",
+    "If buying ready-made dough instead, ask a strong local pizzeria, Italian market, or bakery for 450 to 500 grams of cold-fermented dough made for a hot deck oven. Avoid canned dough, par-baked crusts, dough that smells sweet, dough that feels oily, or dough that tears immediately when stretched.",
+    "For home ovens at 550 degrees F, strong bread flour usually bakes better than pure Neapolitan 00 flour because it browns and crisps more reliably on a steel.",
+    "For the first bake, stretch to 15 or 15 1/2 inches instead of forcing the full 16 inches. The Baking Steel Pro is 16 x 16 inches, so a true 16-inch round leaves almost no launch margin.",
+    "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
+    "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+    "Preheating the Baking Steel Pro for 60 to 75 minutes matters because the 3/8-inch steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+    "Because dried chiles, honey, and beef juices can darken quickly, keep the reduced birria sauce thin and cover most of it with cheese before baking.",
+    "The broiler is only for finishing. Watch constantly once the broiler is on because the rim, beef edges, and chile sauce can go from blistered to burned quickly.",
+    "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+    "Bone-in short ribs make the richest consomme, but boneless short ribs work well and are easier to shred. If short ribs are unavailable, use well-marbled chuck roast cut into 2-inch pieces.",
+    "Do not skip reducing the consomme for the pizza sauce. Thin consomme is excellent for dipping the rim, but it will soak the center if used straight on the dough.",
+    "Crisping the shredded short rib briefly before topping gives roasted edges and drives off extra moisture, which helps the large steel-baked pizza stay crisp.",
+    "Keep the beef measured. Use 5 ounces on a 15-inch pizza or 6 ounces on a true 16-inch pizza; more beef can make the center heavy even if it tastes good.",
+    "Oaxaca cheese gives the stretch and Mexican flavor, while low-moisture whole-milk mozzarella improves browning and keeps the melt stable in a 550 degrees F oven.",
+    "Use Cotija after baking rather than before baking so it stays salty, crumbly, and bright instead of drying out under the broiler.",
+    "Drain the pickled red onion before topping. The acidity is important, but loose pickling liquid can soften the crust.",
+    "Add lime crema after baking and keep it in thin lines. A little cool crema makes the chile beef taste bigger; too much can make slices messy.",
+    "Serve warm consomme on the side for dipping only the rim or the end of a slice. Pouring consomme over the pizza will soften the crust.",
+    "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+    "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 minutes.",
+    "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
+    "If the center is soft, reduce the consomme sauce to a thicker spoon-coating texture, use 1 tablespoon less sauce next time, keep the beef to 5 ounces, and stretch the center thinner before topping.",
+    "Leftover birria and consomme keep covered in the refrigerator for 4 days or in the freezer for 2 months."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "1 hour 20 minutes active",
+  "rating": null,
+  "servings": "1 large 15- to 16-inch pizza, 3 to 4 servings, with extra birria and consomme",
+  "source": "bundled",
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "pizza-steel"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Short Rib Birria Pizza",
+  "totalTime": "1 hour 45 minutes active, plus 48 to 72 hours dough fermentation, 3 hours dough warm-up, and 3 to 3 1/2 hours birria cooking"
+}
