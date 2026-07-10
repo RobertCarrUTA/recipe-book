@@ -1,0 +1,336 @@
+{
+  "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
+  "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
+  "cookTime": "5 to 7 minutes",
+  "description": "A large 15- to 16-inch Italian pizzeria-style Capricciosa pizza built for a 16 x 16-inch baking steel, with a 72-hour cold-fermented crust, concentrated tomato sauce, whole-milk mozzarella, provolone piccante, drained fresh mozzarella, Pecorino Romano, prosciutto cotto, browned mushrooms, marinated artichokes, olives, basil, and a post-bake oregano-garlic rim oil.",
+  "equipment": [
+    "16 x 16-inch baking steel",
+    "16-inch pizza peel",
+    "Kitchen scale",
+    "Large mixing bowl",
+    "Covered dough container or large zip-top bag",
+    "Dough scraper or spatula",
+    "Fine-mesh strainer",
+    "Box grater",
+    "Microplane or fine grater",
+    "Large skillet",
+    "Small bowls",
+    "Small saucepan or microwave-safe bowl",
+    "Paper towels",
+    "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+    "Cutting board",
+    "Pizza wheel or sharp knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "item": "bread flour",
+      "quantity": 285,
+      "unit": "g"
+    },
+    {
+      "display": "whole wheat flour, preferably stone-ground",
+      "item": "whole wheat flour",
+      "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
+      "quantity": 15,
+      "unit": "g"
+    },
+    {
+      "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
+      "item": "pizza dough",
+      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+      "optional": true,
+      "quantity": 1
+    },
+    {
+      "display": "instant yeast",
+      "item": "active dry or instant yeast",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "honey",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "semolina flour or fine cornmeal",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "display": "San Marzano-style, Bianco DiNapoli, or Gustarosso whole peeled tomatoes",
+      "item": "canned tomatoes",
+      "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed drained tomatoes depending on pizza size.",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "display": "garlic cloves",
+      "item": "garlic clove",
+      "quantity": 2
+    },
+    {
+      "item": "dried oregano",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "display": "Calabrian chile paste, optional in the sauce",
+      "item": "Calabrian chile paste",
+      "note": "The recipe uses 1/8 teaspoon for depth, not real heat. Omit it if you want the pizza fully mild.",
+      "optional": true,
+      "quantity": 1,
+      "unit": "jar"
+    },
+    {
+      "display": "low-moisture whole-milk mozzarella block",
+      "item": "low-moisture whole-milk mozzarella cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "display": "provolone piccante or sharp deli provolone",
+      "item": "provolone cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "fresh mozzarella, fior di latte, or ciliegine",
+      "item": "mozzarella cheese",
+      "note": "Buy a small 4-ounce ball or container if possible; the recipe uses 1 1/2 to 2 ounces after draining.",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "display": "Pecorino Romano cheese",
+      "item": "Pecorino Romano or Parmesan cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "prosciutto cotto or high-quality rosemary ham, sliced thin",
+      "item": "deli ham",
+      "note": "Ask the deli for thin slices. Use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "display": "cremini mushrooms or mixed mushrooms",
+      "item": "mushrooms",
+      "quantity": 6,
+      "unit": "oz"
+    },
+    {
+      "display": "marinated artichoke hearts",
+      "item": "artichoke hearts",
+      "note": "Buy one 6- to 7-ounce jar; the recipe uses 3 to 4 ounces drained artichokes.",
+      "quantity": 1,
+      "unit": "jar"
+    },
+    {
+      "display": "pitted Gaeta, Taggiasca, Castelvetrano, or oil-cured black olives",
+      "item": "olives",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "item": "lemon",
+      "quantity": 1
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "display": "fresh basil",
+      "item": "fresh basil",
+      "quantity": 1,
+      "unit": "small bunch"
+    },
+    {
+      "item": "flaky sea salt",
+      "optional": true,
+      "quantity": 1,
+      "unit": "pinch"
+    }
+  ],
+  "id": "italian-capricciosa-pizza",
+  "ingredients": [
+    "285 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+    "15 grams stone-ground whole wheat flour, or 15 grams more bread flour for the easiest stretch",
+    "198 grams cool water, about 3/4 cup plus 1 tablespoon plus 1 teaspoon",
+    "1/2 teaspoon honey for the dough",
+    "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+    "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+    "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+    "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+    "Optional dough shortcut: 450 to 500 grams prepared dough from 72 Hour Pizza Dough Mix for one large 15- to 16-inch pizza",
+    "1 (14-ounce) can San Marzano-style, Bianco DiNapoli, or Gustarosso whole peeled tomatoes, using 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza or 2/3 cup for a true 16-inch pizza",
+    "1 teaspoon tomato paste",
+    "1 small garlic clove, finely grated for the sauce",
+    "2 teaspoons extra-virgin olive oil for the sauce",
+    "1/2 teaspoon dried oregano for the sauce",
+    "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
+    "1/8 teaspoon Calabrian chile paste for the sauce, optional",
+    "6 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 ounces for a true 16-inch pizza, freshly shredded",
+    "1 ounce provolone piccante or sharp deli provolone, finely diced or shredded",
+    "1 1/2 ounces fresh mozzarella or fior di latte for a 15- to 15 1/2-inch pizza, or 2 ounces for a true 16-inch pizza, drained and torn into 1/2-inch pieces",
+    "1 1/4 ounces Pecorino Romano, finely grated, divided",
+    "3 ounces prosciutto cotto or high-quality rosemary ham for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, sliced thin and torn into 2-inch ribbons",
+    "6 ounces cremini mushrooms or mixed mushrooms, sliced 1/4 inch thick",
+    "2 teaspoons extra-virgin olive oil for the mushrooms",
+    "1/8 teaspoon fine sea salt or Morton Coarse Kosher Salt for the mushrooms",
+    "1/8 teaspoon black pepper for the mushrooms",
+    "3 ounces drained marinated artichoke hearts for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, patted dry and cut into bite-size pieces",
+    "1 1/2 ounces pitted Gaeta, Taggiasca, Castelvetrano, or oil-cured black olives for a 15- to 15 1/2-inch pizza, or 2 ounces for a true 16-inch pizza, halved or roughly chopped",
+    "1 tablespoon extra-virgin olive oil for the oregano-garlic rim oil",
+    "1 small garlic clove, finely grated for the oregano-garlic rim oil",
+    "1/4 teaspoon dried oregano for the oregano-garlic rim oil",
+    "1/4 teaspoon finely grated lemon zest for finishing",
+    "10 to 12 fresh basil leaves, divided",
+    "Small pinch flaky sea salt for finishing, optional"
+  ],
+  "instructions": [
+    "Using 72 Hour Pizza Dough Mix? Skip to step 13. Using ready-made dough from a pizzeria, bakery, or Italian market? Skip to step 15 and use 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+    "Two to three days before baking, make the scratch dough by whisking 198 grams cool water, 1/2 teaspoon honey, and 8 grams salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+    "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted honey water.",
+    "Add 285 grams high-protein bread flour and 15 grams whole wheat flour to the bowl with the yeasted water.",
+    "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+    "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+    "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+    "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+    "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+    "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+    "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+    "Cover the dough and refrigerate it for 48 to 72 hours.",
+    "If using the dough mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+    "For the dough mix, portion 450 grams prepared dough for a 15- to 15 1/2-inch pizza or 500 grams prepared dough for a true 16-inch pizza about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+    "About 3 hours before baking, remove the cold dough from the refrigerator.",
+    "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+    "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+    "About 75 minutes before baking, place the baking steel on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+    "Preheat the oven to 550 degrees F for 60 to 75 minutes so the baking steel is fully saturated with heat before the pizza goes in.",
+    "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
+    "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza, or 2/3 cup thick crushed drained tomatoes for a true 16-inch pizza.",
+    "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, and 1/8 teaspoon Calabrian chile paste if using.",
+    "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, salt, olive oil, and chile season the tomatoes.",
+    "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust, cheese, mushrooms, artichokes, olives, and ham.",
+    "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
+    "Drain 1 1/2 ounces fresh mozzarella or fior di latte for a 15- to 15 1/2-inch pizza, or 2 ounces for a true 16-inch pizza, on a double layer of paper towels for at least 20 minutes, then tear it into 1/2-inch pieces.",
+    "Freshly shred 6 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 ounces for a true 16-inch pizza.",
+    "Finely dice or shred 1 ounce provolone piccante or sharp deli provolone.",
+    "Toss together the measured shredded low-moisture mozzarella, 1 ounce provolone, and 3/4 ounce finely grated Pecorino Romano so the cheese blend distributes evenly.",
+    "Keep the shredded cheese blend and the drained fresh mozzarella cold until assembly so the cheese melts cleanly instead of oiling out on the peel.",
+    "Heat a large skillet over medium-high heat for 2 minutes, then add 2 teaspoons extra-virgin olive oil and all 6 ounces sliced mushrooms.",
+    "Cook the mushrooms for 5 to 7 minutes, stirring every minute, until they release their water, the water evaporates, and the mushroom edges are browned instead of wet.",
+    "Season the browned mushrooms with 1/8 teaspoon fine sea salt or Morton Coarse Kosher Salt and 1/8 teaspoon black pepper, then transfer them to a plate to cool.",
+    "Drain 3 ounces marinated artichoke hearts for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, then pat them very dry with paper towels and cut them into bite-size pieces.",
+    "Halve or roughly chop 1 1/2 ounces olives for a 15- to 15 1/2-inch pizza, or 2 ounces olives for a true 16-inch pizza, then pat them dry if they look wet or oily.",
+    "Tear 3 ounces prosciutto cotto or rosemary ham for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, into loose 2-inch ribbons.",
+    "Make the oregano-garlic rim oil by warming 1 tablespoon extra-virgin olive oil, 1 finely grated small garlic clove, and 1/4 teaspoon dried oregano in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until fragrant.",
+    "Tear 2 fresh basil leaves into the warm oregano-garlic rim oil, then set the oil aside until the pizza is baked.",
+    "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+    "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+    "Stretch the dough into a 15- to 16-inch round, keeping the center thin and the rim slightly thicker.",
+    "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+    "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+    "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+    "Spread all of the measured sauce over the dough in a thin, even layer, leaving a 3/4-inch rim uncovered.",
+    "Scatter about three-fourths of the shredded mozzarella-provolone-Pecorino blend evenly over the sauce.",
+    "Place all of the drained fresh mozzarella pieces across the pizza, spacing the pieces evenly so they make creamy pockets without wetting down one area.",
+    "Scatter the browned mushrooms over the pizza: use about three-fourths of the cooked mushrooms for a 15- to 15 1/2-inch pizza or all of them for a true 16-inch pizza.",
+    "Scatter the dried artichoke pieces over the pizza: use 3 ounces for a 15- to 15 1/2-inch pizza or 4 ounces for a true 16-inch pizza.",
+    "Scatter the olives over the pizza: use 1 1/2 ounces for a 15- to 15 1/2-inch pizza or 2 ounces for a true 16-inch pizza.",
+    "Tuck about half of the torn prosciutto cotto or ham between the cheese and vegetables before baking, using 1 1/2 to 2 ounces now and saving the remaining 1 1/2 to 2 ounces for after the pizza bakes.",
+    "Scatter the remaining shredded mozzarella-provolone-Pecorino blend over any exposed sauced areas.",
+    "Sprinkle 1/4 ounce finely grated Pecorino Romano over the topped pizza before baking.",
+    "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+    "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+    "Launch the pizza onto the fully preheated baking steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the toppings does not glue the dough to the peel.",
+    "Bake the pizza at 550 degrees F for 3 minutes with the broiler off.",
+    "At 3 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+    "Check the bottom crust by lifting one edge with the peel; at 3 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+    "If the bottom is still pale and flexible at 3 minutes, leave the pizza directly on the steel for 45 to 60 seconds more before using the broiler.",
+    "If the bottom already has dark brown spots at 3 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+    "Turn the broiler to high and broil for 45 to 90 seconds, watching constantly, until the rim blisters, the cheese bubbles, and the vegetable edges look roasted without burning.",
+    "If the rim or toppings darken before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+    "If the top still needs more color after 90 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+    "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+    "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+    "Drape the reserved 1 1/2 to 2 ounces torn prosciutto cotto or ham over the hot pizza so it warms gently without drying out.",
+    "Brush only the exposed outer rim with about 2 teaspoons oregano-garlic rim oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+    "Sprinkle the remaining 1/4 ounce finely grated Pecorino Romano over the pizza.",
+    "Grate 1/4 teaspoon lemon zest lightly over the mushrooms, artichokes, olives, and ham.",
+    "Tear the remaining 8 to 10 fresh basil leaves over the pizza and add a small pinch of flaky sea salt if using.",
+    "Slice the pizza and serve immediately while the bottom crust is crisp, the rim is tender and blistered, the cheese is bubbling, and the post-bake ham is still soft."
+  ],
+  "link": null,
+  "notes": [
+    "For deeper crust flavor and more control, use the scratch dough and cold-ferment it for the full 72 hours. The small amount of whole wheat flour adds aroma without making the large dough hard to stretch.",
+    "The scratch dough makes about one 510-gram dough ball, enough for a large 15- to 16-inch pizza with a crisp bottom, a tender rim, and enough structure for the vegetables, cheese, and ham.",
+    "If using a mix, 72 Hour Pizza Dough Mix works well here because it is designed for a long cold ferment and for the same steel-focused baking style. Use 450 grams prepared dough for a 15- to 15 1/2-inch pizza or 500 grams for a true 16-inch pizza.",
+    "If buying ready-made dough instead, ask a local pizzeria, Italian market, or bakery for 450 to 500 grams of cold-fermented dough made for a hot deck oven. Avoid canned dough, par-baked crusts, dough that smells sweet, dough that feels oily, or dough that tears immediately when stretched.",
+    "For home ovens at 550 degrees F, strong bread flour usually bakes better than pure Neapolitan 00 flour because it browns and crisps more reliably on a steel.",
+    "For the first bake, use about 450 grams dough stretched to 15 or 15 1/2 inches with the lower sauce, cheese, vegetable, and ham amounts. Use 500 grams dough, the full 16-inch stretch, and the higher topping amounts once you are comfortable with the launch and bottom color.",
+    "A true 16-inch pizza leaves almost no launch margin on a 16 x 16-inch steel. Stretch to 15 or 15 1/2 inches the first time if you are not completely comfortable launching large pies.",
+    "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
+    "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+    "Preheating the steel for 60 to 75 minutes matters because thick steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+    "The broiler is only for finishing. Watch constantly once the broiler is on because the rim, vegetables, ham, and cheese can go from browned to burned quickly.",
+    "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+    "Keep the sauce thick and measured. Use 1/2 cup sauce for a 15- to 15 1/2-inch pizza and 2/3 cup only for a true 16-inch pizza. Watery sauce or too much sauce will steam the center of the crust before it can crisp.",
+    "Pre-cooking the mushrooms is essential. Raw mushrooms release too much water during a fast steel bake and can make the center crust soft.",
+    "Pat the artichokes and olives dry before topping the pizza. Marinated artichokes and brined olives add flavor, but their extra liquid can soften the crust if it goes onto the dough.",
+    "Low-moisture whole-milk mozzarella from a block is the main cheese because it melts well without flooding the pizza. Avoid pre-shredded mozzarella if possible because anti-caking starches can make the melt drier and less glossy.",
+    "Fresh mozzarella is used in small, drained pieces for creamy pockets. Use 1 1/2 ounces for a 15- to 15 1/2-inch pizza and 2 ounces only for a true 16-inch pizza. Do not add more unless it has been drained very well, or the center crust can soften.",
+    "Provolone piccante and Pecorino Romano add savory depth without making the pizza greasy. If substituting Parmesan for Pecorino, use the same amount and grate it finely.",
+    "Prosciutto cotto is the most Italian-style ham choice. If you cannot find it, use high-quality rosemary ham sliced thin rather than smoky American ham.",
+    "Adding half of the ham before baking gives the pizza savory roasted flavor, while adding half after baking keeps the ham soft and aromatic.",
+    "Brush the rim with oregano-garlic oil after baking, not before baking. Post-bake oil seasons the crust and adds aroma without encouraging the rim to burn.",
+    "The small amount of lemon zest is a finishing accent. It brightens the mushrooms, artichokes, olives, and ham without making the pizza taste lemony.",
+    "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+    "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 1/2 minutes.",
+    "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
+    "If the center is soft, cook the mushrooms longer, pat the artichokes and olives drier, drain the fresh mozzarella longer, use the lower 15-inch topping amounts, and stretch the center thinner before topping.",
+    "Leftover oregano-garlic rim oil keeps covered in the refrigerator for 2 days. Warm it gently before brushing onto another hot crust."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "55 minutes active",
+  "rating": null,
+  "servings": "1 large 15- to 16-inch pizza, 3 to 4 servings",
+  "source": "bundled",
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "pizza-steel"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Italian Capricciosa Pizza",
+  "totalTime": "1 hour 15 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
+}

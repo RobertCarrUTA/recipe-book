@@ -1,0 +1,317 @@
+{
+  "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
+  "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
+  "cookTime": "5 to 7 minutes",
+  "description": "A large 15 1/2- to 16-inch New York-style vodka pepperoni pizza built for a 16 x 16-inch baking steel, with a 72-hour high-gluten crust, thick vodka tomato sauce, whole-milk mozzarella, provolone, Pecorino Romano, cup-and-char pepperoni, pickled hot cherry peppers, basil, and a controlled broiler finish.",
+  "equipment": [
+    "16 x 16-inch baking steel",
+    "16-inch pizza peel",
+    "Kitchen scale",
+    "Large mixing bowl",
+    "Covered dough container or large zip-top bag",
+    "Dough scraper or spatula",
+    "Fine-mesh strainer",
+    "Small saucepan",
+    "Box grater",
+    "Microplane or fine grater",
+    "Small bowls",
+    "Microwave-safe bowl, optional for warming the rim oil",
+    "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+    "Cutting board",
+    "Pizza wheel or sharp knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "high-gluten or high-protein bread flour, preferably King Arthur Sir Lancelot, Central Milling, or another strong bread flour",
+      "item": "bread flour",
+      "quantity": 320,
+      "unit": "g"
+    },
+    {
+      "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
+      "item": "pizza dough",
+      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 500 to 525 grams prepared dough for one large 15 1/2- to 16-inch pizza.",
+      "optional": true,
+      "quantity": 1
+    },
+    {
+      "display": "instant yeast",
+      "item": "active dry or instant yeast",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "semolina flour or fine cornmeal",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "display": "small shallot",
+      "item": "shallot",
+      "quantity": 1
+    },
+    {
+      "display": "garlic cloves",
+      "item": "garlic clove",
+      "quantity": 3
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "vodka",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+      "item": "canned tomatoes",
+      "note": "Buy one 14-ounce can; the recipe uses 2/3 cup thick crushed drained tomatoes.",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "heavy cream",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "dried oregano",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "display": "Calabrian chile paste or crushed red pepper flakes",
+      "item": "Calabrian chile paste",
+      "note": "The recipe uses 1/4 teaspoon for the sauce. Use a small pinch crushed red pepper flakes if you do not have Calabrian chile paste.",
+      "optional": true,
+      "quantity": 1,
+      "unit": "jar"
+    },
+    {
+      "display": "low-moisture whole-milk mozzarella block, preferably Grande, Galbani, Boar's Head, or another whole-milk block",
+      "item": "low-moisture whole-milk mozzarella cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "display": "sharp deli provolone or provolone piccante",
+      "item": "provolone cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "Pecorino Romano cheese",
+      "item": "Pecorino Romano or Parmesan cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "natural-casing cup-and-char pepperoni",
+      "item": "pepperoni",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "display": "sliced pickled hot cherry peppers",
+      "item": "pickled hot cherry peppers",
+      "note": "Buy one small jar; the recipe uses 2 to 3 tablespoons drained and patted dry.",
+      "quantity": 1,
+      "unit": "jar"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "display": "fresh basil",
+      "item": "fresh basil",
+      "quantity": 1,
+      "unit": "small bunch"
+    },
+    {
+      "item": "flaky sea salt",
+      "optional": true,
+      "quantity": 1,
+      "unit": "pinch"
+    }
+  ],
+  "id": "new-york-style-vodka-pepperoni-pizza",
+  "ingredients": [
+    "320 grams high-gluten or high-protein bread flour, preferably King Arthur Sir Lancelot, Central Milling, or another strong bread flour",
+    "198 grams cool water, about 3/4 cup plus 1 tablespoon plus 1 teaspoon",
+    "6 grams granulated sugar for the dough, about 1 1/2 teaspoons",
+    "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+    "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+    "2 teaspoons extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+    "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+    "Optional dough shortcut: 500 to 525 grams prepared dough from 72 Hour Pizza Dough Mix for one large 15 1/2- to 16-inch pizza",
+    "Optional ready-made dough shortcut: 500 to 525 grams fresh cold-fermented New York-style or deck-oven pizzeria dough",
+    "1 (14-ounce) can San Marzano-style or Bianco DiNapoli whole peeled tomatoes, using 2/3 cup thick crushed drained tomatoes",
+    "1 tablespoon extra-virgin olive oil for the sauce",
+    "1 tablespoon unsalted butter for the sauce",
+    "2 tablespoons finely minced shallot, from about 1 small shallot",
+    "2 small garlic cloves, finely grated for the sauce",
+    "1 tablespoon tomato paste",
+    "1/4 cup vodka",
+    "1/2 teaspoon dried oregano for the sauce",
+    "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce, plus more to taste",
+    "1/4 teaspoon Calabrian chile paste for the sauce, or a small pinch crushed red pepper flakes",
+    "2 tablespoons heavy cream",
+    "1 tablespoon finely grated Pecorino Romano for the sauce",
+    "Small pinch granulated sugar, only if the tomatoes taste sharp",
+    "6 1/2 ounces low-moisture whole-milk mozzarella from a block for a 15 1/2-inch pizza, or 7 1/2 ounces for a true 16-inch pizza, freshly shredded",
+    "1 1/2 ounces sharp deli provolone or provolone piccante, finely diced or shredded",
+    "1 1/4 ounces Pecorino Romano, finely grated, divided",
+    "3 1/2 ounces natural-casing cup-and-char pepperoni for a 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, sliced thin",
+    "2 tablespoons drained sliced pickled hot cherry peppers for a 15 1/2-inch pizza, or 3 tablespoons for a true 16-inch pizza, patted dry",
+    "1 tablespoon extra-virgin olive oil for the garlic-oregano rim oil",
+    "1 small garlic clove, finely grated for the garlic-oregano rim oil",
+    "1/8 teaspoon dried oregano for the garlic-oregano rim oil",
+    "1/8 teaspoon black pepper, freshly ground if possible",
+    "10 to 12 fresh basil leaves, torn after baking",
+    "Small pinch flaky sea salt for finishing, optional"
+  ],
+  "instructions": [
+    "Using 72 Hour Pizza Dough Mix? Skip to step 13. Using 500 to 525 grams ready-made cold-fermented pizzeria dough? Skip to step 15.",
+    "Two to three days before baking, make the scratch dough by whisking 198 grams cool water, 6 grams granulated sugar, and 8 grams salt in a large mixing bowl until the sugar dissolves and the salt is mostly dissolved.",
+    "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted sugar water.",
+    "Add all 320 grams high-gluten or high-protein bread flour to the bowl with the yeasted water.",
+    "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+    "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+    "Drizzle 2 teaspoons extra-virgin olive oil over the dough.",
+    "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+    "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+    "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+    "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+    "Cover the dough and refrigerate it for 48 to 72 hours, using the full 72 hours when possible for deeper crust flavor and easier stretching.",
+    "If using the dough mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+    "For the dough mix, portion 500 to 525 grams prepared dough about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+    "About 3 hours before baking, remove the cold scratch dough, dough-mix portion, or ready-made pizzeria dough from the refrigerator.",
+    "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+    "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+    "Place the baking steel on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+    "Preheat the oven to 550 degrees F for 60 to 90 minutes so the baking steel is fully saturated with heat before the pizza goes in.",
+    "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 10 minutes.",
+    "Crush enough drained tomatoes by hand to measure 2/3 cup thick crushed drained tomatoes.",
+    "Make the vodka sauce by warming 1 tablespoon extra-virgin olive oil and 1 tablespoon unsalted butter in a small saucepan over medium-low heat until the butter melts.",
+    "Add 2 tablespoons finely minced shallot to the saucepan and cook for 2 to 3 minutes, stirring often, until the shallot is softened but not browned.",
+    "Add 2 finely grated small garlic cloves, 1 tablespoon tomato paste, 1/2 teaspoon dried oregano, and 1/4 teaspoon Calabrian chile paste or a small pinch crushed red pepper flakes to the shallot mixture.",
+    "Cook the tomato paste mixture for 30 to 45 seconds, stirring constantly, until it smells savory and the tomato paste darkens slightly.",
+    "Add 1/4 cup vodka to the saucepan and simmer for 2 to 3 minutes, stirring often, until the vodka is reduced to about 1 tablespoon and the raw alcohol smell has softened.",
+    "Stir the 2/3 cup thick crushed drained tomatoes and 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt into the reduced vodka mixture.",
+    "Simmer the sauce for 4 to 6 minutes, stirring often, until it is thick enough to leave a path when a spoon is dragged across the bottom of the saucepan.",
+    "Turn off the heat and stir 2 tablespoons heavy cream and 1 tablespoon finely grated Pecorino Romano into the thick tomato sauce.",
+    "Taste the vodka sauce; it should be bright, savory, creamy, and slightly salty because it has to season a large crust, cheese, pepperoni, and cherry peppers.",
+    "If the vodka sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon; if it tastes sharp, stir in a small pinch of granulated sugar.",
+    "Transfer the sauce to a small bowl and let it cool until warm or room temperature before topping the pizza so it does not soften the stretched dough.",
+    "Freshly shred 6 1/2 ounces low-moisture whole-milk mozzarella for a 15 1/2-inch pizza, or 7 1/2 ounces for a true 16-inch pizza.",
+    "Finely dice or shred 1 1/2 ounces sharp deli provolone or provolone piccante.",
+    "Toss together the measured mozzarella, 1 1/2 ounces provolone, and 1/2 ounce finely grated Pecorino Romano so the cheese blend distributes evenly.",
+    "Keep the cheese blend cold until assembly so it melts cleanly instead of oiling out on the peel.",
+    "Slice 3 1/2 ounces pepperoni for a 15 1/2-inch pizza or 4 ounces pepperoni for a true 16-inch pizza, unless the pepperoni is already sliced thin.",
+    "Drain 2 tablespoons sliced pickled hot cherry peppers for a 15 1/2-inch pizza or 3 tablespoons for a true 16-inch pizza, then pat the peppers dry with paper towels so their brine does not soften the center crust.",
+    "Make the garlic-oregano rim oil by warming 1 tablespoon extra-virgin olive oil and 1 finely grated small garlic clove in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until warm and fragrant.",
+    "Stir 1/8 teaspoon dried oregano and 1/8 teaspoon black pepper into the warm garlic oil, then set it aside until the pizza is baked.",
+    "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+    "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and slightly puffy.",
+    "Stretch the dough into a 15 1/2- to 16-inch round, keeping the center thin and the rim just slightly thicker than the center.",
+    "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+    "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+    "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+    "Scatter about 2 ounces of the cold cheese blend directly over the stretched dough in a very thin layer, focusing on the center and leaving a 3/4-inch rim uncovered.",
+    "Spread all of the cooled vodka sauce, about 2/3 to 3/4 cup, over the thin cheese layer in an even layer, leaving the 3/4-inch rim uncovered.",
+    "Scatter the remaining cheese blend evenly over the vodka sauce.",
+    "Arrange 3 1/2 ounces sliced pepperoni over a 15 1/2-inch pizza or 4 ounces over a true 16-inch pizza, leaving a little space between slices so the cheese can bubble through.",
+    "Scatter 2 tablespoons drained and patted-dry pickled hot cherry peppers over a 15 1/2-inch pizza or 3 tablespoons over a true 16-inch pizza, avoiding heavy piles in the center.",
+    "Sprinkle 1/4 ounce finely grated Pecorino Romano over the topped pizza before baking.",
+    "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+    "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+    "Launch the pizza onto the fully preheated baking steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the toppings does not glue the dough to the peel.",
+    "Bake the pizza at 550 degrees F for 3 minutes with the broiler off.",
+    "At 3 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+    "Check the bottom crust by lifting one edge with the peel; at 3 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+    "If the bottom is still pale and flexible at 3 minutes, leave the pizza directly on the steel for 45 to 60 seconds more before using the broiler.",
+    "If the bottom already has dark brown spots at 3 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+    "Turn the broiler to high and broil for 30 to 75 seconds, watching constantly, until the rim blisters, the cheese bubbles, and the pepperoni cups lightly crisp without blackening.",
+    "If the rim or pepperoni darkens before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+    "If the top still needs more color after 75 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+    "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+    "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+    "Brush only the exposed outer rim with about 2 teaspoons garlic-oregano rim oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+    "Sprinkle the remaining 1/2 ounce finely grated Pecorino Romano over the pizza.",
+    "Tear 10 to 12 fresh basil leaves over the pizza and add a small pinch of flaky sea salt if using.",
+    "Slice the pizza and serve immediately while the bottom crust is crisp, the center is foldable, the rim is tender, and the pepperoni oil is still glossy."
+  ],
+  "link": null,
+  "notes": [
+    "For deeper crust flavor and more control, use the scratch dough and cold-ferment it for the full 72 hours. The dough uses sugar and oil for New York-style tenderness and browning, but the amounts are kept moderate so the steel at 550 degrees F does not scorch the bottom before the top finishes.",
+    "The scratch dough makes about one 535-gram dough ball, enough for a large 15 1/2- to 16-inch pizza with a crisp bottom, foldable center, and a rim that has enough structure for vodka sauce and pepperoni.",
+    "If using a mix, 72 Hour Pizza Dough Mix works well here because it is designed for a long ferment and for the same steel-focused baking style. Use 500 grams prepared dough for a 15 1/2-inch pizza or 525 grams for a true 16-inch pizza.",
+    "If buying ready-made dough instead, use 500 to 525 grams of fresh cold-fermented New York-style or deck-oven dough from a local pizzeria, Italian market, or bakery. Ask for dough made with strong bread flour or high-gluten flour. Avoid canned dough, par-baked crusts, very sweet grocery-store dough, oily dough, or dough that tears immediately when stretched.",
+    "For the first bake, use about 500 grams dough stretched to 15 1/2 inches with the lower pepperoni and cherry pepper amounts. Use 525 grams dough, the full 16-inch stretch, and the higher topping amounts once you are comfortable with the launch and bottom color.",
+    "A true 16-inch pizza leaves almost no launch margin on a 16 x 16-inch steel. Stretch to 15 1/2 inches the first time if you are not completely comfortable launching large pies.",
+    "Use a 16-inch peel for this pizza. A smaller peel makes a 15 1/2- to 16-inch dough difficult to launch cleanly.",
+    "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+    "Preheating the steel for 60 to 90 minutes matters because thick steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+    "The broiler is only for finishing. Watch constantly once the broiler is on because pepperoni, cheese, and the rim can go from blistered to burned quickly.",
+    "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+    "Keep the vodka sauce thick, cooled, and measured. Too much sauce or warm sauce can soften the center before the crust sets.",
+    "The thin cheese layer under the vodka sauce helps protect the center crust from the creamy tomato sauce while still keeping the pizza sauce-forward.",
+    "Use low-moisture whole-milk mozzarella from a block because it melts well without flooding the pizza. Grande, Galbani, Boar's Head, or another whole-milk block will melt more cleanly than pre-shredded mozzarella.",
+    "Sharp provolone adds the slice-shop edge without making the center greasy. Keep it to 1 1/2 ounces so the cheese blend stays balanced.",
+    "Natural-casing cup-and-char pepperoni adds savory depth because it curls, crisps at the edges, and releases seasoned oil into the cheese.",
+    "Pat the pickled cherry peppers dry before topping the pizza. Their acidity is important to balance the vodka sauce and pepperoni, but excess brine can soften the crust.",
+    "Brush the rim with garlic-oregano oil after baking, not before baking. Post-bake oil seasons the crust and adds aroma without encouraging the rim to burn.",
+    "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+    "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 1/2 minutes.",
+    "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 90 minutes and bake 1 rack position lower before using the broiler.",
+    "If the center is soft, drain the tomatoes longer, cool the sauce fully, pat the cherry peppers drier, and use 1 to 2 tablespoons less sauce next time.",
+    "For a milder pizza, omit the Calabrian chile paste and reduce the pickled cherry peppers to 1 tablespoon. Keep the pepperoni amount the same so the pizza still has enough savory depth."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "1 hour active",
+  "rating": null,
+  "servings": "1 large 15 1/2- to 16-inch pizza, 3 to 4 servings",
+  "source": "bundled",
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "pizza-steel"
+    ],
+    "status": "not-tried"
+  },
+  "title": "New York Style Vodka Pepperoni Pizza",
+  "totalTime": "1 hour 20 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
+}

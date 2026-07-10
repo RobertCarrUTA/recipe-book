@@ -16821,5 +16821,1724 @@
     },
     "title": "Mortadella Pistachio Pesto Pizza",
     "totalTime": "1 hour 10 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
+  },
+  {
+    "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
+    "cookTime": "5 to 7 minutes for the pizza, plus 15 to 20 minutes topping prep",
+    "description": "A large 15- to 16-inch Korean BBQ pizza built for a 16 x 16-inch baking steel, with a 72-hour cold-fermented crust, thick gochujang BBQ sauce, quickly seared pear-soy ribeye, cooked-down kimchi, mozzarella, smoked Gouda, Monterey Jack, scallions, sesame, gochujang honey, and a crisp cucumber finish.",
+    "equipment": [
+      "16 x 16-inch baking steel",
+      "16-inch pizza peel",
+      "Kitchen scale",
+      "Large mixing bowl",
+      "Covered dough container or large zip-top bag",
+      "Dough scraper or spatula",
+      "Sharp knife",
+      "Cutting board",
+      "Box grater",
+      "Microplane or fine grater",
+      "Fine-mesh strainer",
+      "Paper towels",
+      "Small bowls",
+      "Small saucepan",
+      "Cast-iron skillet, carbon-steel skillet, or stainless steel skillet",
+      "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+      "Pizza wheel or sharp knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "item": "bread flour",
+        "quantity": 285,
+        "unit": "g"
+      },
+      {
+        "display": "whole wheat flour, preferably stone-ground",
+        "item": "whole wheat flour",
+        "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
+        "item": "pizza dough",
+        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+        "optional": true,
+        "quantity": 1
+      },
+      {
+        "display": "instant yeast",
+        "item": "active dry or instant yeast",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "item": "salt",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "honey",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "semolina flour or fine cornmeal",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "display": "boneless ribeye steak or Korean-market thin-sliced ribeye",
+        "item": "boneless ribeye steak",
+        "note": "Buy 8 ounces. Pre-sliced bulgogi ribeye is the easiest option; otherwise chill a small ribeye and slice it 1/8 inch thick across the grain.",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "display": "Asian pear or Bosc pear",
+        "item": "Asian pear or Bosc pear",
+        "quantity": 1
+      },
+      {
+        "item": "low-sodium soy sauce",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "mirin or rice wine",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "rice vinegar",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "gochujang",
+        "quantity": 1,
+        "unit": "jar"
+      },
+      {
+        "item": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "display": "doenjang or white miso, optional but recommended",
+        "item": "doenjang or white miso",
+        "note": "The recipe uses 1 teaspoon in the sauce for deeper savory flavor.",
+        "optional": true,
+        "quantity": 1,
+        "unit": "jar"
+      },
+      {
+        "item": "toasted sesame oil",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "display": "toasted sesame seeds",
+        "item": "sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "display": "garlic cloves",
+        "item": "garlic clove",
+        "quantity": 2
+      },
+      {
+        "item": "fresh ginger",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "display": "napa cabbage kimchi",
+        "item": "kimchi",
+        "note": "Buy at least 8 ounces. The recipe uses 1 cup drained, squeezed, chopped kimchi before cooking.",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "item": "neutral high-heat oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "display": "low-moisture whole-milk mozzarella block",
+        "item": "low-moisture whole-milk mozzarella cheese",
+        "quantity": 6,
+        "unit": "oz"
+      },
+      {
+        "display": "smoked Gouda or young Gouda",
+        "item": "Gouda cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "Monterey Jack cheese",
+        "item": "Monterey Jack cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "item": "green onion",
+        "quantity": 6
+      },
+      {
+        "display": "Persian cucumber or English cucumber",
+        "item": "English cucumber",
+        "quantity": 1
+      },
+      {
+        "display": "fresh cilantro or perilla leaves, optional",
+        "item": "cilantro",
+        "optional": true,
+        "quantity": 1,
+        "unit": "bunch"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "flaky sea salt",
+        "optional": true,
+        "quantity": 1,
+        "unit": "pinch"
+      }
+    ],
+    "id": "korean-bbq-ribeye-kimchi-pizza",
+    "ingredients": [
+      "285 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "15 grams stone-ground whole wheat flour, or 15 grams more bread flour for the easiest stretch",
+      "195 grams cool water, about 3/4 cup plus 1 tablespoon plus 1/2 teaspoon",
+      "1/2 teaspoon honey for the dough",
+      "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+      "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+      "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+      "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+      "Optional dough shortcut: 450 to 500 grams prepared dough from 72 Hour Pizza Dough Mix for one large 15- to 16-inch pizza",
+      "8 ounces boneless ribeye, chilled and sliced across the grain 1/8 inch thick, or Korean-market thin-sliced bulgogi ribeye",
+      "2 tablespoons finely grated Asian pear or Bosc pear with its juice",
+      "2 tablespoons low-sodium soy sauce, divided",
+      "1 tablespoon plus 1 teaspoon mirin or rice wine, divided",
+      "2 tablespoons plus 1/2 teaspoon honey, divided",
+      "1 tablespoon plus 1 1/2 teaspoons rice vinegar, divided",
+      "2 tablespoons plus 2 teaspoons gochujang, divided",
+      "1 tablespoon tomato paste for the sauce",
+      "1 teaspoon doenjang or white miso for the sauce, optional but recommended",
+      "2 teaspoons toasted sesame oil, divided",
+      "1 tablespoon toasted sesame seeds, divided",
+      "2 small garlic cloves, finely grated or minced, divided",
+      "1 1/2 teaspoons finely grated fresh ginger, divided",
+      "1/8 teaspoon black pepper for the ribeye",
+      "1 cup napa cabbage kimchi, drained, squeezed dry, and chopped into 1/2-inch pieces",
+      "1 tablespoon plus 2 teaspoons neutral high-heat oil, such as avocado, grapeseed, canola, or vegetable oil, divided",
+      "5 1/2 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
+      "2 ounces smoked Gouda or young Gouda, finely shredded",
+      "1 ounce Monterey Jack, finely shredded",
+      "4 green onions, thinly sliced, divided",
+      "1 Persian cucumber, or 1/3 English cucumber, halved, seeded, and thinly sliced",
+      "1/4 cup fresh cilantro leaves or thinly sliced perilla leaves, optional",
+      "Small pinch fine sea salt or Morton Coarse Kosher Salt for the cucumber, plus small pinches as needed",
+      "Small pinch flaky sea salt for finishing, optional"
+    ],
+    "instructions": [
+      "Using 72 Hour Pizza Dough Mix? Skip to step 13. Using ready-made dough? Skip to step 15 and use 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+      "Two to three days before baking, make the scratch dough by whisking 195 grams cool water, 1/2 teaspoon honey, and 8 grams salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+      "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted honey water.",
+      "Add 285 grams high-protein bread flour and 15 grams whole wheat flour to the bowl with the yeasted water.",
+      "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+      "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+      "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+      "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+      "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+      "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+      "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+      "Cover the dough and refrigerate it for 48 to 72 hours.",
+      "If using the dough mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+      "For the dough mix, portion 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a true 16-inch pizza about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+      "About 3 hours before baking, remove the cold dough from the refrigerator.",
+      "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+      "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+      "If the ribeye is not already thin-sliced, put the 8 ounces ribeye on a plate and freeze it for 20 minutes, just until firm around the edges but not frozen solid.",
+      "Slice the chilled 8 ounces ribeye across the grain into 1/8-inch-thick pieces, then cut any long slices into 2- to 3-inch strips so they distribute cleanly over the pizza.",
+      "Make the ribeye marinade by stirring together 2 tablespoons grated pear and juice, 1 tablespoon low-sodium soy sauce, 1 teaspoon mirin, 1 teaspoon honey, 1 teaspoon rice vinegar, 1 teaspoon gochujang, 1/2 teaspoon toasted sesame oil, 1 finely grated small garlic clove, 1/2 teaspoon finely grated fresh ginger, 1 teaspoon toasted sesame seeds, and 1/8 teaspoon black pepper in a bowl.",
+      "Add the sliced 8 ounces ribeye to the marinade and toss for 1 minute, separating the slices so every piece is lightly coated.",
+      "Cover and refrigerate the ribeye for 20 to 30 minutes while you prepare the sauce and toppings; do not marinate it for hours because pear can make very thin beef too soft.",
+      "Make the gochujang BBQ sauce by combining 1 tablespoon neutral oil and 1 finely grated small garlic clove in a small saucepan over medium-low heat.",
+      "Cook the garlic in the oil for 20 to 30 seconds, just until fragrant but not browned.",
+      "Stir 2 tablespoons gochujang, 1 tablespoon tomato paste, 1 tablespoon low-sodium soy sauce, 1 tablespoon mirin, 2 teaspoons honey, 2 teaspoons rice vinegar, 1 teaspoon doenjang or white miso if using, 1/2 teaspoon toasted sesame oil, and 1 teaspoon finely grated fresh ginger into the garlic oil.",
+      "Cook the sauce for 1 to 2 minutes, stirring constantly, until thick, glossy, and reduced to about 1/4 cup.",
+      "Taste the sauce; it should be savory, lightly sweet, tangy, and a little salty because only a thin layer goes on the dough.",
+      "If the sauce is too stiff to spread thinly, stir in 1 teaspoon water; if it tastes flat, stir in another 1/2 teaspoon rice vinegar or a tiny pinch of salt.",
+      "Drain 1 cup kimchi in a fine-mesh strainer, squeeze it dry with clean hands or paper towels, and chop it into 1/2-inch pieces.",
+      "Heat a skillet over medium-high heat for 2 minutes, then add 1 teaspoon neutral oil and the chopped drained 1 cup kimchi.",
+      "Cook the kimchi for 4 to 6 minutes, stirring every minute, until the liquid has cooked off, the kimchi smells roasted, and some edges are browned.",
+      "Stir 1/2 teaspoon honey into the cooked kimchi, cook for 30 seconds more, then transfer the kimchi to a plate to cool.",
+      "Wipe out the skillet, set it over high heat for 2 minutes, then add 1 teaspoon neutral oil.",
+      "Lift the marinated ribeye from the bowl, let excess marinade drip back for a few seconds, and spread the ribeye in the hot skillet in a single layer.",
+      "Sear the ribeye for 45 to 60 seconds without stirring, then flip and stir for 30 to 45 seconds more, just until the slices are browned in spots with no raw red areas.",
+      "Transfer the seared ribeye to a plate in a loose layer so it cools quickly; discard the raw marinade left in the bowl.",
+      "Freshly shred 5 1/2 ounces low-moisture whole-milk mozzarella, 2 ounces smoked Gouda or young Gouda, and 1 ounce Monterey Jack.",
+      "Toss the shredded mozzarella, Gouda, and Monterey Jack together and keep the cheese blend cold until assembly so it melts cleanly instead of oiling out on the peel.",
+      "Make the cucumber finish by tossing the sliced cucumber, 2 thinly sliced green onions, 1 teaspoon rice vinegar, 1/2 teaspoon toasted sesame oil, 1 teaspoon toasted sesame seeds, and a small pinch of fine sea salt or Morton Coarse Kosher Salt in a small bowl.",
+      "Let the cucumber finish sit for 10 minutes, then drain off any liquid in the bottom of the bowl so it does not soften the finished pizza.",
+      "Make the gochujang honey drizzle by stirring together 1 tablespoon honey, 1 teaspoon gochujang, 1/2 teaspoon rice vinegar, 1/2 teaspoon toasted sesame oil, and a tiny pinch of salt until smooth.",
+      "Thinly slice the remaining 2 green onions and set them aside with 1/4 cup cilantro leaves or thinly sliced perilla leaves if using.",
+      "About 75 minutes before baking, place the baking steel on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+      "Preheat the oven to 550 degrees F for 60 to 75 minutes so the baking steel is fully saturated with heat before the pizza goes in.",
+      "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+      "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+      "Stretch the dough into a 15- to 16-inch round, keeping the center thin and the rim slightly thicker.",
+      "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+      "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+      "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+      "Spread all 1/4 cup gochujang BBQ sauce over the dough in a thin, even layer, leaving a 3/4-inch rim uncovered.",
+      "Scatter about two-thirds of the cold cheese blend evenly over the sauce, covering most of the sauce so the sugars in the sauce are protected from the broiler.",
+      "Scatter the cooled cooked kimchi evenly over the cheese, keeping heavy piles away from the center.",
+      "Scatter the cooled seared ribeye evenly over the cheese and kimchi, using all of it for a true 16-inch pizza or leaving 2 to 3 tablespoons behind if stretching closer to 15 inches.",
+      "Scatter the remaining cheese blend over any exposed kimchi, ribeye, or sauce so the top browns in spots without scorching the sweet sauce.",
+      "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+      "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+      "Launch the pizza onto the fully preheated baking steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so the gochujang sauce and cheese do not glue the dough to the peel.",
+      "Bake the pizza at 550 degrees F for 2 1/2 minutes with the broiler off.",
+      "At 2 1/2 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+      "Check the bottom crust by lifting one edge with the peel; at 2 1/2 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+      "If the bottom is still pale and flexible at 2 1/2 minutes, leave the pizza directly on the steel for 30 to 60 seconds more before using the broiler.",
+      "If the bottom already has dark brown spots at 2 1/2 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+      "Turn the broiler to high and broil for 30 to 75 seconds, watching constantly, until the rim blisters and the cheese bubbles with scattered golden spots.",
+      "If the rim, kimchi, or cheese darkens before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+      "If the top still needs more color after 75 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+      "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+      "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+      "Brush only the exposed outer rim with 1 to 2 teaspoons gochujang honey drizzle while the crust is hot; keep the drizzle off the bottom crust so it stays crisp.",
+      "Spoon the remaining gochujang honey drizzle in thin lines over the ribeye, kimchi, and cheese, using less if you want the pizza sharper and less sweet.",
+      "Scatter the drained cucumber finish over the center of the pizza, then add the remaining 2 sliced green onions, the optional 1/4 cup cilantro or perilla, and the remaining 1 teaspoon toasted sesame seeds.",
+      "Add a small pinch of flaky sea salt only if the cheese, cucumber, or rim tastes underseasoned.",
+      "Slice the pizza and serve immediately while the bottom crust is crisp, the rim is tender and blistered, the ribeye is hot, and the cucumber finish is still cool and crunchy."
+    ],
+    "link": null,
+    "notes": [
+      "For deeper crust flavor and more control, use the scratch dough and cold-ferment it for the full 72 hours. The small amount of whole wheat flour adds a nutty edge that works with sesame, ribeye, and kimchi.",
+      "The scratch dough makes about one 500-gram dough ball, enough for a large 15- to 16-inch pizza with a crisp bottom, a tender rim, and enough structure for beef, kimchi, sauce, and cheese.",
+      "If using a mix, 72 Hour Pizza Dough Mix works well here because it is designed for a long cold ferment and keeps the ingredient list to flour, sea salt, and yeast.",
+      "One prepared dough mix pack can make 3 larger pizzas if divided evenly. Use 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a true 16-inch pizza.",
+      "If buying ready-made dough instead, ask a local pizzeria, Italian market, or bakery for 450 to 500 grams of cold-fermented dough made for a hot deck oven. Avoid canned dough, par-baked crusts, dough that smells sweet, dough that feels oily, or dough that tears immediately when stretched.",
+      "For home ovens at 550 degrees F, strong bread flour usually bakes better than pure Neapolitan 00 flour because it browns and crisps more reliably on a steel.",
+      "For the first bake, stretch to 15 or 15 1/2 inches instead of forcing the full 16 inches. A true 16-inch round leaves almost no launch margin on a 16 x 16-inch steel.",
+      "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
+      "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+      "Preheating the steel for 60 to 75 minutes matters because thick steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+      "Because gochujang, honey, pear, and kimchi all contain sugars, this pizza can darken faster than a plain cheese pizza. Keep the sauce thin, cover most of it with cheese, and start checking the bottom at 2 1/2 minutes.",
+      "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+      "The broiler is only for finishing. Watch constantly once the broiler is on because the rim, kimchi, and sweet sauce can go from blistered to burned quickly.",
+      "Cook the kimchi until its liquid is gone before it goes on the pizza. Wet kimchi can steam the center crust and make the pizza taste harsh instead of roasted and savory.",
+      "Sear the ribeye quickly before topping the pizza. Raw marinated beef would release too much liquid during a 5- to 7-minute steel bake.",
+      "Ribeye gives the pizza a tender, beefy topping. Korean-market pre-sliced bulgogi ribeye is convenient because it is already thin and tender.",
+      "Do not marinate the thin ribeye for more than 30 minutes. Pear tenderizes quickly and can make thin beef too soft if it sits for hours.",
+      "Keep the cheese measured. More cheese can hide the gochujang and kimchi flavor and make the center greasy.",
+      "Low-moisture whole-milk mozzarella from a block gives stretch without flooding the crust. Smoked Gouda adds depth, and Monterey Jack makes the melt smoother.",
+      "Drain the cucumber finish before adding it after baking. The cool crunch is worth it, but cucumber liquid does not belong on a crisp steel-baked center.",
+      "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+      "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 minutes.",
+      "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
+      "If the center is soft, use 1 tablespoon less sauce next time, cook the kimchi drier, leave 2 to 3 tablespoons ribeye off a 15-inch pizza, and stretch the center thinner before topping.",
+      "Leftover gochujang honey drizzle keeps covered in the refrigerator for 1 week. Warm it for a few seconds and stir before using."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "1 hour active",
+    "rating": null,
+    "servings": "1 large 15- to 16-inch pizza, 3 to 4 servings",
+    "source": "bundled",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "pizza-steel"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Korean BBQ Ribeye Kimchi Pizza",
+    "totalTime": "1 hour 25 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
+  },
+  {
+    "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up, plus optional overnight birria chill",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
+    "cookTime": "5 to 7 minutes for the pizza, plus 3 to 3 1/2 hours for the birria",
+    "description": "A large 15- to 16-inch short rib birria pizza built for a 16 x 16-inch baking steel, with a 72-hour masa-enriched crust, reduced chile consomme sauce, crisp-edged shredded short rib, Oaxaca and whole-milk mozzarella, lime crema, pickled red onion, cilantro, white onion, Cotija, and warm consomme for dipping the rim.",
+    "equipment": [
+      "16 x 16-inch baking steel",
+      "16-inch pizza peel",
+      "Kitchen scale",
+      "Large mixing bowl",
+      "Covered dough container or large zip-top bag",
+      "Dough scraper or spatula",
+      "Dutch oven or heavy oven-safe pot with lid",
+      "Blender",
+      "Fine-mesh strainer",
+      "Small skillet",
+      "Box grater",
+      "Microplane or fine grater",
+      "Small bowls",
+      "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+      "Cutting board",
+      "Pizza wheel or sharp knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "item": "bread flour",
+        "quantity": 285,
+        "unit": "g"
+      },
+      {
+        "display": "masa harina, preferably Masienda, Bob's Red Mill, or Maseca",
+        "item": "masa harina",
+        "note": "Use 15 grams in the scratch dough for a subtle toasted-corn flavor; replace with 15 grams more bread flour for the easiest stretch.",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
+        "item": "pizza dough",
+        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+        "optional": true,
+        "quantity": 1
+      },
+      {
+        "display": "instant yeast",
+        "item": "active dry or instant yeast",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "item": "salt",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "honey",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "semolina flour or fine cornmeal",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "display": "bone-in beef short ribs or boneless beef short ribs",
+        "item": "bone-in beef short rib",
+        "note": "Buy 1 1/2 to 2 pounds. Bone-in short ribs give the consomme more body; boneless short ribs are easier to shred. The pizza uses 5 to 6 ounces cooked shredded beef and the rest becomes leftovers.",
+        "quantity": 2,
+        "unit": "lb"
+      },
+      {
+        "display": "dried guajillo chiles",
+        "item": "dried guajillo chile",
+        "quantity": 3
+      },
+      {
+        "display": "dried ancho chile",
+        "item": "dried ancho chile",
+        "quantity": 1
+      },
+      {
+        "display": "dried chile de arbol peppers",
+        "item": "dried chile de arbol",
+        "note": "Use 1 for moderate heat or 2 for a hotter consomme.",
+        "quantity": 2
+      },
+      {
+        "display": "Roma tomatoes",
+        "item": "Roma tomato",
+        "quantity": 2
+      },
+      {
+        "display": "medium white onion",
+        "item": "white onion",
+        "quantity": 1
+      },
+      {
+        "display": "garlic cloves",
+        "item": "garlic clove",
+        "quantity": 5
+      },
+      {
+        "display": "low-sodium beef stock",
+        "item": "low-sodium beef broth",
+        "quantity": 32,
+        "unit": "oz"
+      },
+      {
+        "item": "apple cider vinegar",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "display": "chipotle peppers in adobo",
+        "item": "chipotle pepper in adobo",
+        "quantity": 1,
+        "unit": "can"
+      },
+      {
+        "item": "Mexican oregano",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "ground coriander",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "ground cinnamon",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "item": "ground cloves",
+        "quantity": 1,
+        "unit": "pinch"
+      },
+      {
+        "item": "bay leaf",
+        "quantity": 2
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "display": "neutral high-heat oil, such as avocado, grapeseed, canola, or vegetable oil",
+        "item": "neutral high-heat oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "display": "Oaxaca cheese or quesadilla cheese",
+        "item": "Oaxaca cheese",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "display": "low-moisture whole-milk mozzarella block",
+        "item": "low-moisture whole-milk mozzarella cheese",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "display": "Cotija cheese",
+        "item": "Cotija cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "Mexican crema or full-fat sour cream",
+        "item": "sour cream",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "item": "lime",
+        "quantity": 2
+      },
+      {
+        "display": "medium red onion",
+        "item": "red onion",
+        "quantity": 1
+      },
+      {
+        "item": "cilantro",
+        "quantity": 1,
+        "unit": "bunch"
+      },
+      {
+        "display": "serrano chile, optional for the cilantro-onion finish",
+        "item": "serrano pepper",
+        "optional": true,
+        "quantity": 1
+      },
+      {
+        "item": "flaky sea salt",
+        "optional": true,
+        "quantity": 1,
+        "unit": "pinch"
+      }
+    ],
+    "id": "short-rib-birria-pizza",
+    "ingredients": [
+      "285 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "15 grams masa harina, preferably Masienda, Bob's Red Mill, or Maseca, or 15 grams more bread flour for the easiest stretch",
+      "200 grams cool water, about 3/4 cup plus 2 tablespoons plus 1 teaspoon",
+      "1/2 teaspoon honey for the dough",
+      "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+      "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+      "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+      "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+      "Optional dough shortcut: 450 to 500 grams prepared dough from 72 Hour Pizza Dough Mix for one large 15- to 16-inch pizza",
+      "1 1/2 to 2 pounds bone-in beef short ribs or boneless beef short ribs, using 5 to 6 ounces cooked shredded beef on the pizza and saving the rest",
+      "1 3/4 teaspoons fine sea salt or Morton Coarse Kosher Salt for the birria, divided, plus small pinches as needed",
+      "1/2 teaspoon black pepper, divided",
+      "1 tablespoon plus 1 teaspoon neutral high-heat oil, such as avocado, grapeseed, canola, or vegetable oil, divided",
+      "3 dried guajillo chiles, stemmed and seeded",
+      "1 dried ancho chile, stemmed and seeded",
+      "1 to 2 dried chile de arbol peppers, stemmed, using 1 for moderate heat or 2 for a hotter consomme",
+      "2 Roma tomatoes, halved",
+      "1 medium white onion, divided: 1/2 onion cut into wedges for the birria and 1/4 cup finely diced onion for finishing",
+      "5 small garlic cloves, divided",
+      "2 cups low-sodium beef stock for the braise, plus more if the pot gets dry",
+      "1 cup water for the braise",
+      "2 tablespoons apple cider vinegar for the birria, plus 1 tablespoon for the pickled onion",
+      "1 chipotle pepper in adobo plus 1 tablespoon adobo sauce",
+      "1 teaspoon Mexican oregano",
+      "1 teaspoon ground cumin",
+      "1/2 teaspoon ground coriander",
+      "1/8 teaspoon ground cinnamon",
+      "Tiny pinch ground cloves",
+      "2 bay leaves",
+      "1 teaspoon honey for the birria",
+      "5 ounces Oaxaca cheese or quesadilla cheese, pulled into thin strings or freshly shredded",
+      "3 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
+      "1 ounce Cotija cheese, finely crumbled",
+      "1/2 medium red onion, thinly sliced",
+      "2 tablespoons fresh lime juice for the pickled onion, plus 1 teaspoon for the crema and 1 teaspoon for the cilantro-onion finish",
+      "1/4 cup Mexican crema or full-fat sour cream",
+      "1/4 teaspoon finely grated lime zest for the crema",
+      "1/4 cup finely chopped fresh cilantro, plus 2 tablespoons cilantro leaves for finishing if you want more freshness",
+      "1/2 small serrano chile, seeded and finely minced, optional",
+      "1 to 2 teaspoons reserved birria fat or extra-virgin olive oil for the finished rim",
+      "Small pinch flaky sea salt for finishing, optional",
+      "1/4 cup warm consomme for dipping the crust, optional but recommended"
+    ],
+    "instructions": [
+      "Using 72 Hour Pizza Dough Mix? Skip to step 13. Using ready-made dough? Skip to step 15 and use 450 to 500 grams prepared dough for one large 15- to 16-inch pizza. Using already cooked shredded birria? After your dough is warming, skip the birria-braising steps and continue at step 37 with 5 to 6 ounces cooked shredded beef and 1/3 cup thick reduced consomme.",
+      "Two to three days before baking, make the scratch dough by whisking 200 grams cool water, 1/2 teaspoon honey, and 8 grams salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+      "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted honey water.",
+      "Add 285 grams high-protein bread flour and 15 grams masa harina to the bowl with the yeasted water.",
+      "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+      "Cover the bowl and rest the dough for 20 minutes so the bread flour and masa harina fully hydrate before kneading.",
+      "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+      "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+      "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+      "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+      "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+      "Cover the dough and refrigerate it for 48 to 72 hours.",
+      "If using the dough mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+      "For the dough mix, portion 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a true 16-inch pizza about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+      "About 3 hours before baking, remove the cold dough from the refrigerator.",
+      "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+      "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+      "For deeper birria flavor and easier fat skimming, make the birria the day before baking, chill it overnight, and rewarm it while the dough warms; for same-day pizza, start the birria 4 to 5 hours before baking.",
+      "Pat 1 1/2 to 2 pounds beef short ribs very dry with paper towels, then season all sides with 1 teaspoon fine sea salt or Morton Coarse Kosher Salt and 1/4 teaspoon black pepper.",
+      "Heat a Dutch oven over medium-high heat for 2 minutes, add 1 tablespoon neutral high-heat oil, and sear the seasoned short ribs for 2 to 3 minutes per side, until deeply browned in spots.",
+      "Transfer the browned short ribs to a plate and reduce the heat under the Dutch oven to medium.",
+      "Toast 3 stemmed and seeded dried guajillo chiles, 1 stemmed and seeded dried ancho chile, and 1 to 2 stemmed chile de arbol peppers in the dry Dutch oven or a dry skillet for 15 to 30 seconds per side, turning often, just until fragrant and pliable, not blackened.",
+      "Place the toasted chiles in a bowl, cover them with hot water, and soak them for 15 minutes while you brown the vegetables.",
+      "Add the halved 2 Roma tomatoes, the 1/2 white onion cut into wedges, and 4 small garlic cloves to the Dutch oven.",
+      "Cook the tomatoes, onion, and garlic over medium heat for 4 to 6 minutes, turning occasionally, until the tomatoes slump, the onion has browned edges, and the garlic smells sweet rather than raw.",
+      "Drain the soaked chiles and discard the soaking water so the consomme stays clean and not bitter.",
+      "Blend the drained softened chiles, browned tomatoes, browned onion, browned garlic, 1 chipotle pepper in adobo, 1 tablespoon adobo sauce, 2 tablespoons apple cider vinegar, 1 teaspoon Mexican oregano, 1 teaspoon ground cumin, 1/2 teaspoon ground coriander, 1/8 teaspoon ground cinnamon, a tiny pinch ground cloves, 1 teaspoon honey, 3/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon black pepper, and 1 cup low-sodium beef stock until completely smooth.",
+      "Pour the blended chile sauce through a fine-mesh strainer back into the Dutch oven, pressing with a spoon so the smooth sauce passes through and any tough chile skins stay behind.",
+      "Simmer the strained chile sauce over medium heat for 2 minutes, scraping the bottom of the Dutch oven to loosen any browned beef and vegetable bits.",
+      "Add the remaining 1 cup low-sodium beef stock, 1 cup water, 2 bay leaves, and the browned short ribs with any plate juices to the Dutch oven.",
+      "Bring the birria to a gentle simmer, cover the Dutch oven, and cook at a bare simmer on the stovetop or in a 300 degrees F oven for 2 1/2 to 3 hours, until the short rib shreds easily with a fork.",
+      "Transfer the tender short ribs to a cutting board, discard the bay leaves, strain the braising liquid through a fine-mesh strainer if it has loose meat or chile bits, and let the braising liquid settle for 5 minutes.",
+      "Skim 1 tablespoon red birria fat from the top of the braising liquid and reserve it in a small bowl for crisping the beef and brushing the finished rim; if there is not enough fat, use extra-virgin olive oil later instead.",
+      "Shred the short rib, discarding bones, thick gristle, and large pockets of fat, then reserve 5 to 6 ounces shredded beef for the pizza and save the remaining beef for tacos, quesadillas, or another pizza.",
+      "Measure 3/4 cup strained birria consomme into a small skillet or saucepan and simmer it for 5 to 8 minutes, stirring often, until reduced to 1/3 cup thick sauce that coats a spoon.",
+      "Taste the 1/3 cup reduced birria sauce; it should be bold, savory, lightly tangy, and a little salty because it has to season a large crust, beef, and cheese. If it tastes flat, stir in a tiny pinch of salt; if it tastes heavy, stir in 1/2 teaspoon fresh lime juice.",
+      "Heat 1 teaspoon reserved birria fat or neutral oil in a small skillet over medium-high heat, add the reserved 5 to 6 ounces shredded short rib, and cook for 45 to 90 seconds without stirring so some edges crisp while the center stays juicy.",
+      "Toss the crisp-edged short rib with 1 tablespoon of the reduced birria sauce, then spread the beef on a plate to cool so it does not melt the cheese on the peel.",
+      "Make the pickled red onion by tossing the thinly sliced 1/2 red onion with 2 tablespoons fresh lime juice, 1 tablespoon apple cider vinegar, and 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt.",
+      "Let the pickled red onion sit for at least 20 minutes, tossing once, then drain off excess liquid before it goes on the baked pizza.",
+      "Make the lime crema by stirring together 1/4 cup Mexican crema or full-fat sour cream, 1 teaspoon fresh lime juice, 1/4 teaspoon finely grated lime zest, 1 finely grated small garlic clove, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
+      "Make the cilantro-onion finish by stirring together 1/4 cup finely diced white onion, 1/4 cup finely chopped fresh cilantro, 1 teaspoon fresh lime juice, 1/2 finely minced serrano chile if using, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
+      "Pull 5 ounces Oaxaca cheese into thin strings or shred it, then freshly shred 3 ounces low-moisture whole-milk mozzarella from a block.",
+      "Toss the 5 ounces Oaxaca cheese and 3 ounces shredded mozzarella together and keep the cheese blend cold until assembly so it melts cleanly instead of oiling out on the peel.",
+      "Finely crumble 1 ounce Cotija cheese and keep it nearby for finishing after the pizza bakes.",
+      "About 75 minutes before baking, place the baking steel on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+      "Preheat the oven to 550 degrees F for 60 to 75 minutes so the baking steel is fully saturated with heat before the pizza goes in.",
+      "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+      "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+      "Stretch the dough into a 15- to 16-inch round, keeping the center thin and the rim slightly thicker.",
+      "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+      "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+      "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+      "Spread the remaining reduced birria sauce, about 1/4 cup after the beef is seasoned, over the dough in a very thin, even layer, leaving a 3/4-inch rim uncovered.",
+      "Scatter about two-thirds of the cold Oaxaca-mozzarella blend evenly over the birria sauce, covering most of the sauce so the chile paste and beef juices are protected from the broiler.",
+      "Scatter the cooled crisp-edged short rib evenly over the cheese, keeping heavy piles away from the center so the crust bakes crisp.",
+      "Scatter the remaining Oaxaca-mozzarella blend over any exposed beef or sauce.",
+      "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+      "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+      "Launch the pizza onto the fully preheated baking steel as soon as it slides freely, ideally within 2 minutes of adding the birria sauce, so the sauce and cheese do not glue the dough to the peel.",
+      "Bake the pizza at 550 degrees F for 2 1/2 minutes with the broiler off.",
+      "At 2 1/2 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+      "Check the bottom crust by lifting one edge with the peel; at 2 1/2 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+      "If the bottom is still pale and flexible at 2 1/2 minutes, leave the pizza directly on the steel for 30 to 60 seconds more before using the broiler.",
+      "If the bottom already has dark brown spots at 2 1/2 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+      "Turn the broiler to high and broil for 30 to 75 seconds, watching constantly, until the rim blisters and the cheese bubbles with scattered golden spots.",
+      "If the rim, beef, or cheese darkens before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+      "If the top still needs more color after 75 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+      "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+      "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+      "Brush only the exposed outer rim with 1 to 2 teaspoons reserved birria fat or extra-virgin olive oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+      "Drain the pickled red onion well, then scatter about 1/3 cup drained pickled onion over the hot pizza.",
+      "Drizzle 2 tablespoons lime crema in thin lines over the pizza, saving the rest for serving if you want extra on individual slices.",
+      "Sprinkle the 1 ounce crumbled Cotija cheese over the pizza.",
+      "Spoon the cilantro-onion finish over the pizza in small clusters, then add the extra 2 tablespoons cilantro leaves if using.",
+      "Add a small pinch of flaky sea salt only if the beef, cheese, or rim tastes underseasoned.",
+      "Serve the pizza immediately with 1/4 cup warm consomme on the side for dipping the outer crust, not pouring over the center.",
+      "Slice the pizza while the bottom crust is crisp, the rim is tender and blistered, the cheese is still bubbling, and the pickled onion and cilantro are fresh."
+    ],
+    "link": null,
+    "notes": [
+      "For deeper crust flavor and more control, use the scratch dough and cold-ferment it for the full 72 hours. The small amount of masa harina adds a subtle toasted-corn note that works with birria without making the dough taste like a tortilla.",
+      "The scratch dough makes about one 500-gram dough ball, enough for a large 15- to 16-inch pizza with a crisp bottom, a tender rim, and enough structure for beef, cheese, and reduced consomme sauce.",
+      "If using a mix, 72 Hour Pizza Dough Mix works well for this style because it is built for a long ferment and handles the hot steel bake well. Use 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a true 16-inch pizza.",
+      "If buying ready-made dough instead, ask a local pizzeria, Italian market, or bakery for 450 to 500 grams of cold-fermented dough made for a hot deck oven. Avoid canned dough, par-baked crusts, dough that smells sweet, dough that feels oily, or dough that tears immediately when stretched.",
+      "For home ovens at 550 degrees F, strong bread flour usually bakes better than pure Neapolitan 00 flour because it browns and crisps more reliably on a steel.",
+      "For the first bake, stretch to 15 or 15 1/2 inches instead of forcing the full 16 inches. A true 16-inch round leaves almost no launch margin on a 16 x 16-inch steel.",
+      "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
+      "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+      "Preheating the steel for 60 to 75 minutes matters because thick steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+      "Because dried chiles, honey, and beef juices can darken quickly, keep the reduced birria sauce thin and cover most of it with cheese before baking.",
+      "The broiler is only for finishing. Watch constantly once the broiler is on because the rim, beef edges, and chile sauce can go from blistered to burned quickly.",
+      "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+      "Bone-in short ribs give the consomme more body, but boneless short ribs work well and are easier to shred. If short ribs are unavailable, use well-marbled chuck roast cut into 2-inch pieces.",
+      "Do not skip reducing the consomme for the pizza sauce. Thin consomme works for dipping the rim, but it will soak the center if used straight on the dough.",
+      "Crisping the shredded short rib briefly before topping gives roasted edges and drives off extra moisture, which helps the large steel-baked pizza stay crisp.",
+      "Keep the beef measured. Use 5 ounces on a 15-inch pizza or 6 ounces on a true 16-inch pizza; more beef can make the center heavy even though it adds flavor.",
+      "Oaxaca cheese gives the stretch and Mexican flavor, while low-moisture whole-milk mozzarella improves browning and keeps the melt stable in a 550 degrees F oven.",
+      "Use Cotija after baking rather than before baking so it stays salty, crumbly, and bright instead of drying out under the broiler.",
+      "Drain the pickled red onion before topping. The acidity is important, but loose pickling liquid can soften the crust.",
+      "Add lime crema after baking and keep it in thin lines. A little cool crema makes the chile beef taste bigger; too much can make slices messy.",
+      "Serve warm consomme on the side for dipping only the rim or the end of a slice. Pouring consomme over the pizza will soften the crust.",
+      "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+      "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 minutes.",
+      "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
+      "If the center is soft, reduce the consomme sauce to a thicker spoon-coating texture, use 1 tablespoon less sauce next time, keep the beef to 5 ounces, and stretch the center thinner before topping.",
+      "Leftover birria and consomme keep covered in the refrigerator for 4 days or in the freezer for 2 months."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "1 hour 20 minutes active",
+    "rating": null,
+    "servings": "1 large 15- to 16-inch pizza, 3 to 4 servings, with extra birria and consomme",
+    "source": "bundled",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "pizza-steel"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Short Rib Birria Pizza",
+    "totalTime": "1 hour 45 minutes active, plus 48 to 72 hours dough fermentation, 3 hours dough warm-up, and 3 to 3 1/2 hours birria cooking"
+  },
+  {
+    "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
+    "cookTime": "5 to 7 minutes",
+    "description": "A large 15- to 16-inch Italian pizzeria-style Diavola pizza built for a 16 x 16-inch baking steel, with a 72-hour cold-fermented crust, concentrated San Marzano-style tomato sauce, whole-milk mozzarella, provolone piccante, small pockets of drained fresh mozzarella, Pecorino Romano, spicy Calabrese salami, late-bake 'nduja, fresh basil, and a post-bake chile-basil rim oil.",
+    "equipment": [
+      "16 x 16-inch baking steel",
+      "16-inch pizza peel",
+      "Kitchen scale",
+      "Large mixing bowl",
+      "Covered dough container or large zip-top bag",
+      "Dough scraper or spatula",
+      "Fine-mesh strainer",
+      "Box grater",
+      "Microplane or fine grater",
+      "Small bowls",
+      "Small saucepan or microwave-safe bowl",
+      "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+      "Cutting board",
+      "Pizza wheel or sharp knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "item": "bread flour",
+        "quantity": 290,
+        "unit": "g"
+      },
+      {
+        "display": "whole wheat flour, preferably stone-ground",
+        "item": "whole wheat flour",
+        "note": "Use 10 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
+        "item": "pizza dough",
+        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+        "optional": true,
+        "quantity": 1
+      },
+      {
+        "display": "instant yeast",
+        "item": "active dry or instant yeast",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "item": "salt",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "honey",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "semolina flour or fine cornmeal",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+        "item": "canned tomatoes",
+        "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed drained tomatoes depending on pizza size.",
+        "quantity": 1,
+        "unit": "can"
+      },
+      {
+        "item": "tomato paste",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "display": "garlic cloves",
+        "item": "garlic clove",
+        "quantity": 2
+      },
+      {
+        "item": "dried oregano",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "fennel seeds",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "display": "Calabrian chile paste",
+        "item": "Calabrian chile paste",
+        "note": "The recipe uses 1/4 teaspoon in the sauce and 1/4 teaspoon in the rim oil.",
+        "quantity": 1,
+        "unit": "jar"
+      },
+      {
+        "item": "granulated sugar",
+        "optional": true,
+        "quantity": 1,
+        "unit": "pinch"
+      },
+      {
+        "display": "low-moisture whole-milk mozzarella block",
+        "item": "low-moisture whole-milk mozzarella cheese",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "display": "provolone piccante or sharp deli provolone",
+        "item": "provolone cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "fresh mozzarella, fior di latte, or ciliegine",
+        "item": "mozzarella cheese",
+        "note": "Buy a small 4-ounce ball or container if possible; the recipe uses 1 1/2 to 2 ounces after draining.",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "display": "Pecorino Romano cheese",
+        "item": "Pecorino Romano or Parmesan cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "thinly sliced spicy Calabrese salami or soppressata piccante",
+        "item": "salami",
+        "note": "Ask for thin slices from the deli if possible; use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "display": "'nduja, optional",
+        "item": "nduja",
+        "note": "Use 1 ounce for a 15-inch pizza or 1 1/2 ounces for a true 16-inch pizza. If unavailable, use 1 extra ounce spicy salami plus another 1/4 teaspoon Calabrian chile paste in the sauce.",
+        "optional": true,
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "display": "fresh basil",
+        "item": "fresh basil",
+        "quantity": 1,
+        "unit": "small bunch"
+      },
+      {
+        "item": "flaky sea salt",
+        "optional": true,
+        "quantity": 1,
+        "unit": "pinch"
+      }
+    ],
+    "id": "italian-diavola-pizza",
+    "ingredients": [
+      "290 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "10 grams stone-ground whole wheat flour, or 10 grams more bread flour for the easiest stretch",
+      "198 grams cool water, about 3/4 cup plus 1 tablespoon plus 1 teaspoon",
+      "1/2 teaspoon honey for the dough",
+      "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+      "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+      "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+      "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+      "Optional dough shortcut: 450 to 500 grams prepared dough from 72 Hour Pizza Dough Mix for one large 15- to 16-inch pizza",
+      "1 (14-ounce) can San Marzano-style or Bianco DiNapoli whole peeled tomatoes, using 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza or 2/3 cup for a true 16-inch pizza",
+      "1 teaspoon tomato paste",
+      "1 small garlic clove, finely grated for the sauce",
+      "2 teaspoons extra-virgin olive oil for the sauce",
+      "1/2 teaspoon dried oregano",
+      "1/8 teaspoon fennel seeds, lightly crushed",
+      "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
+      "1/4 teaspoon Calabrian chile paste for the sauce",
+      "Small pinch granulated sugar, only if the tomatoes taste sharp",
+      "6 1/2 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 1/2 ounces for a true 16-inch pizza, freshly shredded",
+      "1 ounce provolone piccante or sharp deli provolone, finely diced or shredded",
+      "1 1/2 ounces fresh mozzarella or fior di latte for a 15- to 15 1/2-inch pizza, or 2 ounces for a true 16-inch pizza, drained and torn into 1/2-inch pieces",
+      "1 1/4 ounces Pecorino Romano, finely grated, divided",
+      "3 ounces thinly sliced spicy Calabrese salami or soppressata piccante for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza",
+      "1 ounce 'nduja for a 15- to 15 1/2-inch pizza, or 1 1/2 ounces for a true 16-inch pizza, chilled until firm enough to pinch into small pieces",
+      "1 tablespoon extra-virgin olive oil for the chile-basil rim oil",
+      "1/4 teaspoon Calabrian chile paste for the chile-basil rim oil",
+      "1 small garlic clove, finely grated for the chile-basil rim oil",
+      "1/8 teaspoon black pepper, freshly ground if possible",
+      "10 to 12 fresh basil leaves, divided",
+      "Small pinch flaky sea salt for finishing, optional"
+    ],
+    "instructions": [
+      "Using 72 Hour Pizza Dough Mix? Skip to step 13. Using ready-made dough? Skip to step 15 and use 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+      "Two to three days before baking, make the scratch dough by whisking 198 grams cool water, 1/2 teaspoon honey, and 8 grams salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+      "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted honey water.",
+      "Add 290 grams high-protein bread flour and 10 grams whole wheat flour to the bowl with the yeasted water.",
+      "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+      "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+      "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+      "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+      "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+      "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+      "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+      "Cover the dough and refrigerate it for 48 to 72 hours.",
+      "If using the dough mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+      "For the dough mix, portion 450 grams prepared dough for a 15- to 15 1/2-inch pizza or 500 grams prepared dough for a true 16-inch pizza about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+      "About 3 hours before baking, remove the cold dough from the refrigerator.",
+      "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+      "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+      "About 75 minutes before baking, place the baking steel on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+      "Preheat the oven to 550 degrees F for 60 to 75 minutes so the baking steel is fully saturated with heat before the pizza goes in.",
+      "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
+      "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza, or 2/3 cup thick crushed drained tomatoes for a true 16-inch pizza.",
+      "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
+      "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, fennel, salt, and chile season the tomatoes.",
+      "Taste the rested sauce; it should taste bright, savory, and slightly spicy because it has to season a large crust, cheese, salami, and 'nduja.",
+      "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
+      "Drain 1 1/2 ounces fresh mozzarella or fior di latte for a 15- to 15 1/2-inch pizza, or 2 ounces for a true 16-inch pizza, on a double layer of paper towels for at least 20 minutes, then tear it into 1/2-inch pieces.",
+      "Freshly shred 6 1/2 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 1/2 ounces for a true 16-inch pizza.",
+      "Finely dice or shred 1 ounce provolone piccante or sharp deli provolone.",
+      "Toss together the measured shredded low-moisture mozzarella, 1 ounce provolone, and 3/4 ounce finely grated Pecorino Romano so the cheese blend distributes evenly.",
+      "Keep the shredded cheese blend and the drained fresh mozzarella cold until assembly so the cheese melts cleanly instead of oiling out on the peel.",
+      "Slice or separate 3 ounces spicy Calabrese salami for a 15- to 15 1/2-inch pizza, or 4 ounces spicy Calabrese salami for a true 16-inch pizza.",
+      "Chill 1 ounce 'nduja for a 15- to 15 1/2-inch pizza, or 1 1/2 ounces 'nduja for a true 16-inch pizza, until firm enough to pinch into small 1/2-teaspoon pieces for late-bake topping.",
+      "Make the chile-basil rim oil by warming 1 tablespoon extra-virgin olive oil, 1/4 teaspoon Calabrian chile paste, and 1 finely grated small garlic clove in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until fragrant.",
+      "Stir 1/8 teaspoon black pepper and 2 torn fresh basil leaves into the warm chile-basil rim oil, then set it aside until the pizza is baked.",
+      "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+      "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+      "Stretch the dough into a 15- to 16-inch round, keeping the center thin and the rim slightly thicker.",
+      "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+      "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+      "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+      "Spread all of the measured sauce over the dough in a thin, even layer, leaving a 3/4-inch rim uncovered.",
+      "Scatter about three-fourths of the shredded mozzarella-provolone-Pecorino blend evenly over the sauce.",
+      "Place all of the drained fresh mozzarella pieces across the pizza, spacing the pieces evenly so they make creamy pockets without wetting down one area.",
+      "Arrange 3 ounces spicy Calabrese salami over a 15- to 15 1/2-inch pizza, or 4 ounces spicy Calabrese salami over a true 16-inch pizza, leaving a little space between slices so the cheese can bubble through.",
+      "Scatter the remaining shredded mozzarella-provolone-Pecorino blend over any exposed sauced areas.",
+      "Sprinkle 1/4 ounce finely grated Pecorino Romano over the topped pizza before baking.",
+      "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+      "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+      "Launch the pizza onto the fully preheated baking steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the toppings does not glue the dough to the peel.",
+      "Bake the pizza at 550 degrees F for 3 minutes with the broiler off.",
+      "At 3 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+      "Check the bottom crust by lifting one edge with the peel; at 3 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+      "If the bottom is still pale and flexible at 3 minutes, leave the pizza directly on the steel for 45 to 60 seconds more before adding the 'nduja and using the broiler.",
+      "If the bottom already has dark brown spots at 3 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+      "Scatter the chilled 'nduja in 1/2-teaspoon pieces over the hot pizza: use 1 ounce for a 15- to 15 1/2-inch pizza or 1 1/2 ounces for a true 16-inch pizza.",
+      "Turn the broiler to high and broil for 45 to 90 seconds, watching constantly, until the rim blisters, the cheese bubbles, the salami edges lightly crisp, and the 'nduja softens into the cheese.",
+      "If the rim or salami darkens before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+      "If the top still needs more color after 90 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+      "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+      "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+      "Brush only the exposed outer rim with about 2 teaspoons chile-basil rim oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+      "Sprinkle the remaining 1/4 ounce finely grated Pecorino Romano over the pizza.",
+      "Tear the remaining 8 to 10 fresh basil leaves over the pizza and add a small pinch of flaky sea salt if using.",
+      "Slice the pizza and serve immediately while the bottom crust is crisp, the rim is tender and blistered, the salami is lightly crisp, and the 'nduja is warm and glossy."
+    ],
+    "link": null,
+    "notes": [
+      "For deeper crust flavor and more control, use the scratch dough and cold-ferment it for the full 72 hours. The small amount of whole wheat flour adds aroma without making the large dough hard to stretch.",
+      "The scratch dough makes about one 510-gram dough ball, enough for a large 15- to 16-inch pizza with a crisp bottom, a tender rim, and enough structure for salami, cheese, and 'nduja.",
+      "If using a mix, 72 Hour Pizza Dough Mix works well here because it is designed for a long ferment and for the same steel-focused baking style. Use 450 grams prepared dough for a 15- to 15 1/2-inch pizza or 500 grams for a true 16-inch pizza.",
+      "If buying ready-made dough instead, ask a local pizzeria, Italian market, or bakery for 450 to 500 grams of cold-fermented dough made for a hot deck oven. Avoid canned dough, par-baked crusts, dough that smells sweet, dough that feels oily, or dough that tears immediately when stretched.",
+      "For home ovens at 550 degrees F, strong bread flour usually bakes better than pure Neapolitan 00 flour because it browns and crisps more reliably on a steel.",
+      "For the first bake, use about 450 grams dough stretched to 15 or 15 1/2 inches with the lower sauce, cheese, salami, and 'nduja amounts. Use 500 grams dough, the full 16-inch stretch, and the higher topping amounts once you are comfortable with the launch and bottom color.",
+      "A true 16-inch pizza leaves almost no launch margin on a 16 x 16-inch steel. Stretch to 15 or 15 1/2 inches the first time if you are not completely comfortable launching large pies.",
+      "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
+      "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+      "Preheating the steel for 60 to 75 minutes matters because thick steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+      "The broiler is only for finishing. Watch constantly once the broiler is on because the rim, salami, cheese, and 'nduja can go from blistered to burned quickly.",
+      "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+      "Keep the sauce thick and measured. Use 1/2 cup sauce for a 15- to 15 1/2-inch pizza and 2/3 cup only for a true 16-inch pizza. Watery sauce or too much sauce will steam the center of the crust before it can crisp.",
+      "Low-moisture whole-milk mozzarella from a block is the main cheese because it melts well without flooding the pizza. Avoid pre-shredded mozzarella if possible because anti-caking starches can make the melt drier and less glossy.",
+      "Fresh mozzarella is used in small, drained pieces for creamy pockets. Use 1 1/2 ounces for a 15- to 15 1/2-inch pizza and 2 ounces only for a true 16-inch pizza. Do not add more unless it has been drained very well, or the center crust can soften.",
+      "Provolone piccante and Pecorino Romano make the cheese taste more savory without needing a heavy cheese load. If substituting Parmesan for Pecorino, use the same amount and grate it finely.",
+      "Use thinly sliced spicy Calabrese salami or soppressata piccante instead of American pepperoni if you want the most Italian-style flavor. Keep it thin so the edges crisp during the fast bake.",
+      "Nduja is powerful and oily, so add it after the bottom crust has set instead of before launch. Late-bake dots melt into the cheese without flooding the center or scorching on the steel.",
+      "If 'nduja is unavailable, use 1 extra ounce spicy salami and add another 1/4 teaspoon Calabrian chile paste to the sauce.",
+      "Brush the rim with chile-basil oil after baking, not before baking. Post-bake oil seasons the crust and adds aroma without encouraging the rim to burn.",
+      "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+      "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 1/2 minutes.",
+      "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
+      "If the center is soft, drain the tomatoes and fresh mozzarella longer, stretch the center thinner, use the lower 15-inch topping amounts, and add the 'nduja only after the initial bake.",
+      "Leftover chile-basil rim oil keeps covered in the refrigerator for 2 days. Warm it gently before brushing onto another hot crust."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "50 minutes active",
+    "rating": null,
+    "servings": "1 large 15- to 16-inch pizza, 3 to 4 servings",
+    "source": "bundled",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "pizza-steel"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Italian Diavola Pizza",
+    "totalTime": "1 hour 10 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
+  },
+  {
+    "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
+    "cookTime": "5 to 7 minutes",
+    "description": "A large 15- to 16-inch Italian pizzeria-style Capricciosa pizza built for a 16 x 16-inch baking steel, with a 72-hour cold-fermented crust, concentrated tomato sauce, whole-milk mozzarella, provolone piccante, drained fresh mozzarella, Pecorino Romano, prosciutto cotto, browned mushrooms, marinated artichokes, olives, basil, and a post-bake oregano-garlic rim oil.",
+    "equipment": [
+      "16 x 16-inch baking steel",
+      "16-inch pizza peel",
+      "Kitchen scale",
+      "Large mixing bowl",
+      "Covered dough container or large zip-top bag",
+      "Dough scraper or spatula",
+      "Fine-mesh strainer",
+      "Box grater",
+      "Microplane or fine grater",
+      "Large skillet",
+      "Small bowls",
+      "Small saucepan or microwave-safe bowl",
+      "Paper towels",
+      "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+      "Cutting board",
+      "Pizza wheel or sharp knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "item": "bread flour",
+        "quantity": 285,
+        "unit": "g"
+      },
+      {
+        "display": "whole wheat flour, preferably stone-ground",
+        "item": "whole wheat flour",
+        "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
+        "item": "pizza dough",
+        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+        "optional": true,
+        "quantity": 1
+      },
+      {
+        "display": "instant yeast",
+        "item": "active dry or instant yeast",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "item": "salt",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "honey",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "semolina flour or fine cornmeal",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "display": "San Marzano-style, Bianco DiNapoli, or Gustarosso whole peeled tomatoes",
+        "item": "canned tomatoes",
+        "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed drained tomatoes depending on pizza size.",
+        "quantity": 1,
+        "unit": "can"
+      },
+      {
+        "item": "tomato paste",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "display": "garlic cloves",
+        "item": "garlic clove",
+        "quantity": 2
+      },
+      {
+        "item": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "display": "Calabrian chile paste, optional in the sauce",
+        "item": "Calabrian chile paste",
+        "note": "The recipe uses 1/8 teaspoon for depth, not real heat. Omit it if you want the pizza fully mild.",
+        "optional": true,
+        "quantity": 1,
+        "unit": "jar"
+      },
+      {
+        "display": "low-moisture whole-milk mozzarella block",
+        "item": "low-moisture whole-milk mozzarella cheese",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "display": "provolone piccante or sharp deli provolone",
+        "item": "provolone cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "fresh mozzarella, fior di latte, or ciliegine",
+        "item": "mozzarella cheese",
+        "note": "Buy a small 4-ounce ball or container if possible; the recipe uses 1 1/2 to 2 ounces after draining.",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "display": "Pecorino Romano cheese",
+        "item": "Pecorino Romano or Parmesan cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "prosciutto cotto or high-quality rosemary ham, sliced thin",
+        "item": "deli ham",
+        "note": "Ask the deli for thin slices. Use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "display": "cremini mushrooms or mixed mushrooms",
+        "item": "mushrooms",
+        "quantity": 6,
+        "unit": "oz"
+      },
+      {
+        "display": "marinated artichoke hearts",
+        "item": "artichoke hearts",
+        "note": "Buy one 6- to 7-ounce jar; the recipe uses 3 to 4 ounces drained artichokes.",
+        "quantity": 1,
+        "unit": "jar"
+      },
+      {
+        "display": "pitted Gaeta, Taggiasca, Castelvetrano, or oil-cured black olives",
+        "item": "olives",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "item": "lemon",
+        "quantity": 1
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "display": "fresh basil",
+        "item": "fresh basil",
+        "quantity": 1,
+        "unit": "small bunch"
+      },
+      {
+        "item": "flaky sea salt",
+        "optional": true,
+        "quantity": 1,
+        "unit": "pinch"
+      }
+    ],
+    "id": "italian-capricciosa-pizza",
+    "ingredients": [
+      "285 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "15 grams stone-ground whole wheat flour, or 15 grams more bread flour for the easiest stretch",
+      "198 grams cool water, about 3/4 cup plus 1 tablespoon plus 1 teaspoon",
+      "1/2 teaspoon honey for the dough",
+      "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+      "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+      "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+      "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+      "Optional dough shortcut: 450 to 500 grams prepared dough from 72 Hour Pizza Dough Mix for one large 15- to 16-inch pizza",
+      "1 (14-ounce) can San Marzano-style, Bianco DiNapoli, or Gustarosso whole peeled tomatoes, using 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza or 2/3 cup for a true 16-inch pizza",
+      "1 teaspoon tomato paste",
+      "1 small garlic clove, finely grated for the sauce",
+      "2 teaspoons extra-virgin olive oil for the sauce",
+      "1/2 teaspoon dried oregano for the sauce",
+      "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
+      "1/8 teaspoon Calabrian chile paste for the sauce, optional",
+      "6 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 ounces for a true 16-inch pizza, freshly shredded",
+      "1 ounce provolone piccante or sharp deli provolone, finely diced or shredded",
+      "1 1/2 ounces fresh mozzarella or fior di latte for a 15- to 15 1/2-inch pizza, or 2 ounces for a true 16-inch pizza, drained and torn into 1/2-inch pieces",
+      "1 1/4 ounces Pecorino Romano, finely grated, divided",
+      "3 ounces prosciutto cotto or high-quality rosemary ham for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, sliced thin and torn into 2-inch ribbons",
+      "6 ounces cremini mushrooms or mixed mushrooms, sliced 1/4 inch thick",
+      "2 teaspoons extra-virgin olive oil for the mushrooms",
+      "1/8 teaspoon fine sea salt or Morton Coarse Kosher Salt for the mushrooms",
+      "1/8 teaspoon black pepper for the mushrooms",
+      "3 ounces drained marinated artichoke hearts for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, patted dry and cut into bite-size pieces",
+      "1 1/2 ounces pitted Gaeta, Taggiasca, Castelvetrano, or oil-cured black olives for a 15- to 15 1/2-inch pizza, or 2 ounces for a true 16-inch pizza, halved or roughly chopped",
+      "1 tablespoon extra-virgin olive oil for the oregano-garlic rim oil",
+      "1 small garlic clove, finely grated for the oregano-garlic rim oil",
+      "1/4 teaspoon dried oregano for the oregano-garlic rim oil",
+      "1/4 teaspoon finely grated lemon zest for finishing",
+      "10 to 12 fresh basil leaves, divided",
+      "Small pinch flaky sea salt for finishing, optional"
+    ],
+    "instructions": [
+      "Using 72 Hour Pizza Dough Mix? Skip to step 13. Using ready-made dough from a pizzeria, bakery, or Italian market? Skip to step 15 and use 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+      "Two to three days before baking, make the scratch dough by whisking 198 grams cool water, 1/2 teaspoon honey, and 8 grams salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+      "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted honey water.",
+      "Add 285 grams high-protein bread flour and 15 grams whole wheat flour to the bowl with the yeasted water.",
+      "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+      "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+      "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+      "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+      "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+      "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+      "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+      "Cover the dough and refrigerate it for 48 to 72 hours.",
+      "If using the dough mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+      "For the dough mix, portion 450 grams prepared dough for a 15- to 15 1/2-inch pizza or 500 grams prepared dough for a true 16-inch pizza about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+      "About 3 hours before baking, remove the cold dough from the refrigerator.",
+      "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+      "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+      "About 75 minutes before baking, place the baking steel on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+      "Preheat the oven to 550 degrees F for 60 to 75 minutes so the baking steel is fully saturated with heat before the pizza goes in.",
+      "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
+      "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza, or 2/3 cup thick crushed drained tomatoes for a true 16-inch pizza.",
+      "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, and 1/8 teaspoon Calabrian chile paste if using.",
+      "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, salt, olive oil, and chile season the tomatoes.",
+      "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust, cheese, mushrooms, artichokes, olives, and ham.",
+      "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
+      "Drain 1 1/2 ounces fresh mozzarella or fior di latte for a 15- to 15 1/2-inch pizza, or 2 ounces for a true 16-inch pizza, on a double layer of paper towels for at least 20 minutes, then tear it into 1/2-inch pieces.",
+      "Freshly shred 6 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 ounces for a true 16-inch pizza.",
+      "Finely dice or shred 1 ounce provolone piccante or sharp deli provolone.",
+      "Toss together the measured shredded low-moisture mozzarella, 1 ounce provolone, and 3/4 ounce finely grated Pecorino Romano so the cheese blend distributes evenly.",
+      "Keep the shredded cheese blend and the drained fresh mozzarella cold until assembly so the cheese melts cleanly instead of oiling out on the peel.",
+      "Heat a large skillet over medium-high heat for 2 minutes, then add 2 teaspoons extra-virgin olive oil and all 6 ounces sliced mushrooms.",
+      "Cook the mushrooms for 5 to 7 minutes, stirring every minute, until they release their water, the water evaporates, and the mushroom edges are browned instead of wet.",
+      "Season the browned mushrooms with 1/8 teaspoon fine sea salt or Morton Coarse Kosher Salt and 1/8 teaspoon black pepper, then transfer them to a plate to cool.",
+      "Drain 3 ounces marinated artichoke hearts for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, then pat them very dry with paper towels and cut them into bite-size pieces.",
+      "Halve or roughly chop 1 1/2 ounces olives for a 15- to 15 1/2-inch pizza, or 2 ounces olives for a true 16-inch pizza, then pat them dry if they look wet or oily.",
+      "Tear 3 ounces prosciutto cotto or rosemary ham for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, into loose 2-inch ribbons.",
+      "Make the oregano-garlic rim oil by warming 1 tablespoon extra-virgin olive oil, 1 finely grated small garlic clove, and 1/4 teaspoon dried oregano in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until fragrant.",
+      "Tear 2 fresh basil leaves into the warm oregano-garlic rim oil, then set the oil aside until the pizza is baked.",
+      "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+      "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+      "Stretch the dough into a 15- to 16-inch round, keeping the center thin and the rim slightly thicker.",
+      "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+      "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+      "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+      "Spread all of the measured sauce over the dough in a thin, even layer, leaving a 3/4-inch rim uncovered.",
+      "Scatter about three-fourths of the shredded mozzarella-provolone-Pecorino blend evenly over the sauce.",
+      "Place all of the drained fresh mozzarella pieces across the pizza, spacing the pieces evenly so they make creamy pockets without wetting down one area.",
+      "Scatter the browned mushrooms over the pizza: use about three-fourths of the cooked mushrooms for a 15- to 15 1/2-inch pizza or all of them for a true 16-inch pizza.",
+      "Scatter the dried artichoke pieces over the pizza: use 3 ounces for a 15- to 15 1/2-inch pizza or 4 ounces for a true 16-inch pizza.",
+      "Scatter the olives over the pizza: use 1 1/2 ounces for a 15- to 15 1/2-inch pizza or 2 ounces for a true 16-inch pizza.",
+      "Tuck about half of the torn prosciutto cotto or ham between the cheese and vegetables before baking, using 1 1/2 to 2 ounces now and saving the remaining 1 1/2 to 2 ounces for after the pizza bakes.",
+      "Scatter the remaining shredded mozzarella-provolone-Pecorino blend over any exposed sauced areas.",
+      "Sprinkle 1/4 ounce finely grated Pecorino Romano over the topped pizza before baking.",
+      "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+      "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+      "Launch the pizza onto the fully preheated baking steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the toppings does not glue the dough to the peel.",
+      "Bake the pizza at 550 degrees F for 3 minutes with the broiler off.",
+      "At 3 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+      "Check the bottom crust by lifting one edge with the peel; at 3 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+      "If the bottom is still pale and flexible at 3 minutes, leave the pizza directly on the steel for 45 to 60 seconds more before using the broiler.",
+      "If the bottom already has dark brown spots at 3 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+      "Turn the broiler to high and broil for 45 to 90 seconds, watching constantly, until the rim blisters, the cheese bubbles, and the vegetable edges look roasted without burning.",
+      "If the rim or toppings darken before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+      "If the top still needs more color after 90 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+      "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+      "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+      "Drape the reserved 1 1/2 to 2 ounces torn prosciutto cotto or ham over the hot pizza so it warms gently without drying out.",
+      "Brush only the exposed outer rim with about 2 teaspoons oregano-garlic rim oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+      "Sprinkle the remaining 1/4 ounce finely grated Pecorino Romano over the pizza.",
+      "Grate 1/4 teaspoon lemon zest lightly over the mushrooms, artichokes, olives, and ham.",
+      "Tear the remaining 8 to 10 fresh basil leaves over the pizza and add a small pinch of flaky sea salt if using.",
+      "Slice the pizza and serve immediately while the bottom crust is crisp, the rim is tender and blistered, the cheese is bubbling, and the post-bake ham is still soft."
+    ],
+    "link": null,
+    "notes": [
+      "For deeper crust flavor and more control, use the scratch dough and cold-ferment it for the full 72 hours. The small amount of whole wheat flour adds aroma without making the large dough hard to stretch.",
+      "The scratch dough makes about one 510-gram dough ball, enough for a large 15- to 16-inch pizza with a crisp bottom, a tender rim, and enough structure for the vegetables, cheese, and ham.",
+      "If using a mix, 72 Hour Pizza Dough Mix works well here because it is designed for a long cold ferment and for the same steel-focused baking style. Use 450 grams prepared dough for a 15- to 15 1/2-inch pizza or 500 grams for a true 16-inch pizza.",
+      "If buying ready-made dough instead, ask a local pizzeria, Italian market, or bakery for 450 to 500 grams of cold-fermented dough made for a hot deck oven. Avoid canned dough, par-baked crusts, dough that smells sweet, dough that feels oily, or dough that tears immediately when stretched.",
+      "For home ovens at 550 degrees F, strong bread flour usually bakes better than pure Neapolitan 00 flour because it browns and crisps more reliably on a steel.",
+      "For the first bake, use about 450 grams dough stretched to 15 or 15 1/2 inches with the lower sauce, cheese, vegetable, and ham amounts. Use 500 grams dough, the full 16-inch stretch, and the higher topping amounts once you are comfortable with the launch and bottom color.",
+      "A true 16-inch pizza leaves almost no launch margin on a 16 x 16-inch steel. Stretch to 15 or 15 1/2 inches the first time if you are not completely comfortable launching large pies.",
+      "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
+      "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+      "Preheating the steel for 60 to 75 minutes matters because thick steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+      "The broiler is only for finishing. Watch constantly once the broiler is on because the rim, vegetables, ham, and cheese can go from browned to burned quickly.",
+      "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+      "Keep the sauce thick and measured. Use 1/2 cup sauce for a 15- to 15 1/2-inch pizza and 2/3 cup only for a true 16-inch pizza. Watery sauce or too much sauce will steam the center of the crust before it can crisp.",
+      "Pre-cooking the mushrooms is essential. Raw mushrooms release too much water during a fast steel bake and can make the center crust soft.",
+      "Pat the artichokes and olives dry before topping the pizza. Marinated artichokes and brined olives add flavor, but their extra liquid can soften the crust if it goes onto the dough.",
+      "Low-moisture whole-milk mozzarella from a block is the main cheese because it melts well without flooding the pizza. Avoid pre-shredded mozzarella if possible because anti-caking starches can make the melt drier and less glossy.",
+      "Fresh mozzarella is used in small, drained pieces for creamy pockets. Use 1 1/2 ounces for a 15- to 15 1/2-inch pizza and 2 ounces only for a true 16-inch pizza. Do not add more unless it has been drained very well, or the center crust can soften.",
+      "Provolone piccante and Pecorino Romano add savory depth without making the pizza greasy. If substituting Parmesan for Pecorino, use the same amount and grate it finely.",
+      "Prosciutto cotto is the most Italian-style ham choice. If you cannot find it, use high-quality rosemary ham sliced thin rather than smoky American ham.",
+      "Adding half of the ham before baking gives the pizza savory roasted flavor, while adding half after baking keeps the ham soft and aromatic.",
+      "Brush the rim with oregano-garlic oil after baking, not before baking. Post-bake oil seasons the crust and adds aroma without encouraging the rim to burn.",
+      "The small amount of lemon zest is a finishing accent. It brightens the mushrooms, artichokes, olives, and ham without making the pizza taste lemony.",
+      "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+      "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 1/2 minutes.",
+      "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
+      "If the center is soft, cook the mushrooms longer, pat the artichokes and olives drier, drain the fresh mozzarella longer, use the lower 15-inch topping amounts, and stretch the center thinner before topping.",
+      "Leftover oregano-garlic rim oil keeps covered in the refrigerator for 2 days. Warm it gently before brushing onto another hot crust."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "55 minutes active",
+    "rating": null,
+    "servings": "1 large 15- to 16-inch pizza, 3 to 4 servings",
+    "source": "bundled",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "pizza-steel"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Italian Capricciosa Pizza",
+    "totalTime": "1 hour 15 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
+  },
+  {
+    "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
+    "cookTime": "5 to 7 minutes",
+    "description": "A large 15 1/2- to 16-inch New York-style vodka pepperoni pizza built for a 16 x 16-inch baking steel, with a 72-hour high-gluten crust, thick vodka tomato sauce, whole-milk mozzarella, provolone, Pecorino Romano, cup-and-char pepperoni, pickled hot cherry peppers, basil, and a controlled broiler finish.",
+    "equipment": [
+      "16 x 16-inch baking steel",
+      "16-inch pizza peel",
+      "Kitchen scale",
+      "Large mixing bowl",
+      "Covered dough container or large zip-top bag",
+      "Dough scraper or spatula",
+      "Fine-mesh strainer",
+      "Small saucepan",
+      "Box grater",
+      "Microplane or fine grater",
+      "Small bowls",
+      "Microwave-safe bowl, optional for warming the rim oil",
+      "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+      "Cutting board",
+      "Pizza wheel or sharp knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "high-gluten or high-protein bread flour, preferably King Arthur Sir Lancelot, Central Milling, or another strong bread flour",
+        "item": "bread flour",
+        "quantity": 320,
+        "unit": "g"
+      },
+      {
+        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
+        "item": "pizza dough",
+        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 500 to 525 grams prepared dough for one large 15 1/2- to 16-inch pizza.",
+        "optional": true,
+        "quantity": 1
+      },
+      {
+        "display": "instant yeast",
+        "item": "active dry or instant yeast",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "item": "salt",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "granulated sugar",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "semolina flour or fine cornmeal",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "unsalted butter",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "display": "small shallot",
+        "item": "shallot",
+        "quantity": 1
+      },
+      {
+        "display": "garlic cloves",
+        "item": "garlic clove",
+        "quantity": 3
+      },
+      {
+        "item": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "vodka",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+        "item": "canned tomatoes",
+        "note": "Buy one 14-ounce can; the recipe uses 2/3 cup thick crushed drained tomatoes.",
+        "quantity": 1,
+        "unit": "can"
+      },
+      {
+        "item": "heavy cream",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "dried oregano",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "display": "Calabrian chile paste or crushed red pepper flakes",
+        "item": "Calabrian chile paste",
+        "note": "The recipe uses 1/4 teaspoon for the sauce. Use a small pinch crushed red pepper flakes if you do not have Calabrian chile paste.",
+        "optional": true,
+        "quantity": 1,
+        "unit": "jar"
+      },
+      {
+        "display": "low-moisture whole-milk mozzarella block, preferably Grande, Galbani, Boar's Head, or another whole-milk block",
+        "item": "low-moisture whole-milk mozzarella cheese",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "display": "sharp deli provolone or provolone piccante",
+        "item": "provolone cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "Pecorino Romano cheese",
+        "item": "Pecorino Romano or Parmesan cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "natural-casing cup-and-char pepperoni",
+        "item": "pepperoni",
+        "quantity": 4,
+        "unit": "oz"
+      },
+      {
+        "display": "sliced pickled hot cherry peppers",
+        "item": "pickled hot cherry peppers",
+        "note": "Buy one small jar; the recipe uses 2 to 3 tablespoons drained and patted dry.",
+        "quantity": 1,
+        "unit": "jar"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "display": "fresh basil",
+        "item": "fresh basil",
+        "quantity": 1,
+        "unit": "small bunch"
+      },
+      {
+        "item": "flaky sea salt",
+        "optional": true,
+        "quantity": 1,
+        "unit": "pinch"
+      }
+    ],
+    "id": "new-york-style-vodka-pepperoni-pizza",
+    "ingredients": [
+      "320 grams high-gluten or high-protein bread flour, preferably King Arthur Sir Lancelot, Central Milling, or another strong bread flour",
+      "198 grams cool water, about 3/4 cup plus 1 tablespoon plus 1 teaspoon",
+      "6 grams granulated sugar for the dough, about 1 1/2 teaspoons",
+      "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+      "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+      "2 teaspoons extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+      "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+      "Optional dough shortcut: 500 to 525 grams prepared dough from 72 Hour Pizza Dough Mix for one large 15 1/2- to 16-inch pizza",
+      "Optional ready-made dough shortcut: 500 to 525 grams fresh cold-fermented New York-style or deck-oven pizzeria dough",
+      "1 (14-ounce) can San Marzano-style or Bianco DiNapoli whole peeled tomatoes, using 2/3 cup thick crushed drained tomatoes",
+      "1 tablespoon extra-virgin olive oil for the sauce",
+      "1 tablespoon unsalted butter for the sauce",
+      "2 tablespoons finely minced shallot, from about 1 small shallot",
+      "2 small garlic cloves, finely grated for the sauce",
+      "1 tablespoon tomato paste",
+      "1/4 cup vodka",
+      "1/2 teaspoon dried oregano for the sauce",
+      "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce, plus more to taste",
+      "1/4 teaspoon Calabrian chile paste for the sauce, or a small pinch crushed red pepper flakes",
+      "2 tablespoons heavy cream",
+      "1 tablespoon finely grated Pecorino Romano for the sauce",
+      "Small pinch granulated sugar, only if the tomatoes taste sharp",
+      "6 1/2 ounces low-moisture whole-milk mozzarella from a block for a 15 1/2-inch pizza, or 7 1/2 ounces for a true 16-inch pizza, freshly shredded",
+      "1 1/2 ounces sharp deli provolone or provolone piccante, finely diced or shredded",
+      "1 1/4 ounces Pecorino Romano, finely grated, divided",
+      "3 1/2 ounces natural-casing cup-and-char pepperoni for a 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza, sliced thin",
+      "2 tablespoons drained sliced pickled hot cherry peppers for a 15 1/2-inch pizza, or 3 tablespoons for a true 16-inch pizza, patted dry",
+      "1 tablespoon extra-virgin olive oil for the garlic-oregano rim oil",
+      "1 small garlic clove, finely grated for the garlic-oregano rim oil",
+      "1/8 teaspoon dried oregano for the garlic-oregano rim oil",
+      "1/8 teaspoon black pepper, freshly ground if possible",
+      "10 to 12 fresh basil leaves, torn after baking",
+      "Small pinch flaky sea salt for finishing, optional"
+    ],
+    "instructions": [
+      "Using 72 Hour Pizza Dough Mix? Skip to step 13. Using 500 to 525 grams ready-made cold-fermented pizzeria dough? Skip to step 15.",
+      "Two to three days before baking, make the scratch dough by whisking 198 grams cool water, 6 grams granulated sugar, and 8 grams salt in a large mixing bowl until the sugar dissolves and the salt is mostly dissolved.",
+      "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted sugar water.",
+      "Add all 320 grams high-gluten or high-protein bread flour to the bowl with the yeasted water.",
+      "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+      "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+      "Drizzle 2 teaspoons extra-virgin olive oil over the dough.",
+      "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+      "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+      "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+      "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+      "Cover the dough and refrigerate it for 48 to 72 hours, using the full 72 hours when possible for deeper crust flavor and easier stretching.",
+      "If using the dough mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+      "For the dough mix, portion 500 to 525 grams prepared dough about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+      "About 3 hours before baking, remove the cold scratch dough, dough-mix portion, or ready-made pizzeria dough from the refrigerator.",
+      "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+      "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+      "Place the baking steel on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+      "Preheat the oven to 550 degrees F for 60 to 90 minutes so the baking steel is fully saturated with heat before the pizza goes in.",
+      "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 10 minutes.",
+      "Crush enough drained tomatoes by hand to measure 2/3 cup thick crushed drained tomatoes.",
+      "Make the vodka sauce by warming 1 tablespoon extra-virgin olive oil and 1 tablespoon unsalted butter in a small saucepan over medium-low heat until the butter melts.",
+      "Add 2 tablespoons finely minced shallot to the saucepan and cook for 2 to 3 minutes, stirring often, until the shallot is softened but not browned.",
+      "Add 2 finely grated small garlic cloves, 1 tablespoon tomato paste, 1/2 teaspoon dried oregano, and 1/4 teaspoon Calabrian chile paste or a small pinch crushed red pepper flakes to the shallot mixture.",
+      "Cook the tomato paste mixture for 30 to 45 seconds, stirring constantly, until it smells savory and the tomato paste darkens slightly.",
+      "Add 1/4 cup vodka to the saucepan and simmer for 2 to 3 minutes, stirring often, until the vodka is reduced to about 1 tablespoon and the raw alcohol smell has softened.",
+      "Stir the 2/3 cup thick crushed drained tomatoes and 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt into the reduced vodka mixture.",
+      "Simmer the sauce for 4 to 6 minutes, stirring often, until it is thick enough to leave a path when a spoon is dragged across the bottom of the saucepan.",
+      "Turn off the heat and stir 2 tablespoons heavy cream and 1 tablespoon finely grated Pecorino Romano into the thick tomato sauce.",
+      "Taste the vodka sauce; it should be bright, savory, creamy, and slightly salty because it has to season a large crust, cheese, pepperoni, and cherry peppers.",
+      "If the vodka sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon; if it tastes sharp, stir in a small pinch of granulated sugar.",
+      "Transfer the sauce to a small bowl and let it cool until warm or room temperature before topping the pizza so it does not soften the stretched dough.",
+      "Freshly shred 6 1/2 ounces low-moisture whole-milk mozzarella for a 15 1/2-inch pizza, or 7 1/2 ounces for a true 16-inch pizza.",
+      "Finely dice or shred 1 1/2 ounces sharp deli provolone or provolone piccante.",
+      "Toss together the measured mozzarella, 1 1/2 ounces provolone, and 1/2 ounce finely grated Pecorino Romano so the cheese blend distributes evenly.",
+      "Keep the cheese blend cold until assembly so it melts cleanly instead of oiling out on the peel.",
+      "Slice 3 1/2 ounces pepperoni for a 15 1/2-inch pizza or 4 ounces pepperoni for a true 16-inch pizza, unless the pepperoni is already sliced thin.",
+      "Drain 2 tablespoons sliced pickled hot cherry peppers for a 15 1/2-inch pizza or 3 tablespoons for a true 16-inch pizza, then pat the peppers dry with paper towels so their brine does not soften the center crust.",
+      "Make the garlic-oregano rim oil by warming 1 tablespoon extra-virgin olive oil and 1 finely grated small garlic clove in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until warm and fragrant.",
+      "Stir 1/8 teaspoon dried oregano and 1/8 teaspoon black pepper into the warm garlic oil, then set it aside until the pizza is baked.",
+      "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+      "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and slightly puffy.",
+      "Stretch the dough into a 15 1/2- to 16-inch round, keeping the center thin and the rim just slightly thicker than the center.",
+      "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+      "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+      "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+      "Scatter about 2 ounces of the cold cheese blend directly over the stretched dough in a very thin layer, focusing on the center and leaving a 3/4-inch rim uncovered.",
+      "Spread all of the cooled vodka sauce, about 2/3 to 3/4 cup, over the thin cheese layer in an even layer, leaving the 3/4-inch rim uncovered.",
+      "Scatter the remaining cheese blend evenly over the vodka sauce.",
+      "Arrange 3 1/2 ounces sliced pepperoni over a 15 1/2-inch pizza or 4 ounces over a true 16-inch pizza, leaving a little space between slices so the cheese can bubble through.",
+      "Scatter 2 tablespoons drained and patted-dry pickled hot cherry peppers over a 15 1/2-inch pizza or 3 tablespoons over a true 16-inch pizza, avoiding heavy piles in the center.",
+      "Sprinkle 1/4 ounce finely grated Pecorino Romano over the topped pizza before baking.",
+      "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+      "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+      "Launch the pizza onto the fully preheated baking steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the toppings does not glue the dough to the peel.",
+      "Bake the pizza at 550 degrees F for 3 minutes with the broiler off.",
+      "At 3 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+      "Check the bottom crust by lifting one edge with the peel; at 3 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+      "If the bottom is still pale and flexible at 3 minutes, leave the pizza directly on the steel for 45 to 60 seconds more before using the broiler.",
+      "If the bottom already has dark brown spots at 3 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+      "Turn the broiler to high and broil for 30 to 75 seconds, watching constantly, until the rim blisters, the cheese bubbles, and the pepperoni cups lightly crisp without blackening.",
+      "If the rim or pepperoni darkens before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+      "If the top still needs more color after 75 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+      "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+      "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+      "Brush only the exposed outer rim with about 2 teaspoons garlic-oregano rim oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+      "Sprinkle the remaining 1/2 ounce finely grated Pecorino Romano over the pizza.",
+      "Tear 10 to 12 fresh basil leaves over the pizza and add a small pinch of flaky sea salt if using.",
+      "Slice the pizza and serve immediately while the bottom crust is crisp, the center is foldable, the rim is tender, and the pepperoni oil is still glossy."
+    ],
+    "link": null,
+    "notes": [
+      "For deeper crust flavor and more control, use the scratch dough and cold-ferment it for the full 72 hours. The dough uses sugar and oil for New York-style tenderness and browning, but the amounts are kept moderate so the steel at 550 degrees F does not scorch the bottom before the top finishes.",
+      "The scratch dough makes about one 535-gram dough ball, enough for a large 15 1/2- to 16-inch pizza with a crisp bottom, foldable center, and a rim that has enough structure for vodka sauce and pepperoni.",
+      "If using a mix, 72 Hour Pizza Dough Mix works well here because it is designed for a long ferment and for the same steel-focused baking style. Use 500 grams prepared dough for a 15 1/2-inch pizza or 525 grams for a true 16-inch pizza.",
+      "If buying ready-made dough instead, use 500 to 525 grams of fresh cold-fermented New York-style or deck-oven dough from a local pizzeria, Italian market, or bakery. Ask for dough made with strong bread flour or high-gluten flour. Avoid canned dough, par-baked crusts, very sweet grocery-store dough, oily dough, or dough that tears immediately when stretched.",
+      "For the first bake, use about 500 grams dough stretched to 15 1/2 inches with the lower pepperoni and cherry pepper amounts. Use 525 grams dough, the full 16-inch stretch, and the higher topping amounts once you are comfortable with the launch and bottom color.",
+      "A true 16-inch pizza leaves almost no launch margin on a 16 x 16-inch steel. Stretch to 15 1/2 inches the first time if you are not completely comfortable launching large pies.",
+      "Use a 16-inch peel for this pizza. A smaller peel makes a 15 1/2- to 16-inch dough difficult to launch cleanly.",
+      "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+      "Preheating the steel for 60 to 90 minutes matters because thick steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+      "The broiler is only for finishing. Watch constantly once the broiler is on because pepperoni, cheese, and the rim can go from blistered to burned quickly.",
+      "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+      "Keep the vodka sauce thick, cooled, and measured. Too much sauce or warm sauce can soften the center before the crust sets.",
+      "The thin cheese layer under the vodka sauce helps protect the center crust from the creamy tomato sauce while still keeping the pizza sauce-forward.",
+      "Use low-moisture whole-milk mozzarella from a block because it melts well without flooding the pizza. Grande, Galbani, Boar's Head, or another whole-milk block will melt more cleanly than pre-shredded mozzarella.",
+      "Sharp provolone adds the slice-shop edge without making the center greasy. Keep it to 1 1/2 ounces so the cheese blend stays balanced.",
+      "Natural-casing cup-and-char pepperoni adds savory depth because it curls, crisps at the edges, and releases seasoned oil into the cheese.",
+      "Pat the pickled cherry peppers dry before topping the pizza. Their acidity is important to balance the vodka sauce and pepperoni, but excess brine can soften the crust.",
+      "Brush the rim with garlic-oregano oil after baking, not before baking. Post-bake oil seasons the crust and adds aroma without encouraging the rim to burn.",
+      "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+      "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 1/2 minutes.",
+      "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 90 minutes and bake 1 rack position lower before using the broiler.",
+      "If the center is soft, drain the tomatoes longer, cool the sauce fully, pat the cherry peppers drier, and use 1 to 2 tablespoons less sauce next time.",
+      "For a milder pizza, omit the Calabrian chile paste and reduce the pickled cherry peppers to 1 tablespoon. Keep the pepperoni amount the same so the pizza still has enough savory depth."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "1 hour active",
+    "rating": null,
+    "servings": "1 large 15 1/2- to 16-inch pizza, 3 to 4 servings",
+    "source": "bundled",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "pizza-steel"
+      ],
+      "status": "not-tried"
+    },
+    "title": "New York Style Vodka Pepperoni Pizza",
+    "totalTime": "1 hour 20 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
   }
 ]
