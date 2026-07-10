@@ -131,6 +131,7 @@ const ingredientGroups = {
   mortadella: "Deli Meats",
   steak: "Meat",
   "thin-sliced smoked deli ham": "Deli Meats",
+  nduja: "Deli Meats",
   turkey: "Meat",
   "avocado oil": "Pantry",
   "avocado oil or coconut oil": "Pantry",

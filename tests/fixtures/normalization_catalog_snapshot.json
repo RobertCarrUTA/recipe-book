@@ -1625,6 +1625,13 @@
       }
     },
     {
+      "item": "nduja",
+      "canonical": {
+        "base": "nduja",
+        "display": "nduja"
+      }
+    },
+    {
       "item": "neutral frying oil",
       "canonical": {
         "base": "neutral frying oil",
@@ -2108,6 +2115,13 @@
       "canonical": {
         "base": "rotisserie chicken",
         "display": "rotisserie chicken"
+      }
+    },
+    {
+      "item": "salami",
+      "canonical": {
+        "base": "deli salami",
+        "display": "deli salami"
       }
     },
     {
