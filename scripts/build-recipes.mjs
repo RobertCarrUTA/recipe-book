@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { normalizeRecipeBook } from "../js/recipe_schema.js";
+import { isRecipeCollectionId } from "../js/recipe_collections.js";
 
 const rootDir = fileURLToPath(new URL("..", import.meta.url));
 const recipeSourceDir = path.join(rootDir, "data", "recipes");
@@ -30,6 +31,21 @@ function validateRecipeSource(recipe, filePath) {
   if (path.basename(filePath) !== expectedFileName) {
     throw new Error(`${relativePath(filePath)} must be named ${expectedFileName}.`);
   }
+
+  if (!Array.isArray(recipe.collections) || !recipe.collections.length) {
+    throw new Error(`${relativePath(filePath)} must include at least one recipe collection.`);
+  }
+
+  const seenCollections = new Set();
+  recipe.collections.forEach((collectionId) => {
+    if (typeof collectionId !== "string" || !isRecipeCollectionId(collectionId)) {
+      throw new Error(`${relativePath(filePath)} has unknown recipe collection "${collectionId}".`);
+    }
+    if (seenCollections.has(collectionId)) {
+      throw new Error(`${relativePath(filePath)} repeats recipe collection "${collectionId}".`);
+    }
+    seenCollections.add(collectionId);
+  });
 }
 
 async function readJsonFile(filePath) {

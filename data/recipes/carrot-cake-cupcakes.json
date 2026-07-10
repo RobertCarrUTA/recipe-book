@@ -1,6 +1,10 @@
 {
   "additionalTime": null,
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "desserts"
+  ],
   "cookTime": "17 minutes",
   "description": "These moist carrot cake cupcakes are packed with warm spices, fresh grated carrots, and chopped walnuts, then topped with a rich cream cheese frosting. Perfect when you want all the flavors of carrot cake in cupcake form.",
   "equipment": [

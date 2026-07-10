@@ -1,6 +1,10 @@
 {
   "additionalTime": "30 minutes to 12 hours marinating plus 20 minutes beef chill time",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "steak"
+  ],
   "cookTime": "15 minutes",
   "description": "Korean BBQ bulgogi with thin-sliced beef, Asian pear, soy sauce, garlic, ginger, sesame, lightly charred vegetables, and a reserved glaze for finishing in the skillet.",
   "equipment": [

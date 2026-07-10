@@ -1,5 +1,9 @@
 {
   "author": "John Kanell",
+  "collections": [
+    "main-dishes",
+    "soups-stews"
+  ],
   "cookTime": "1 hour 10 minutes",
   "description": "A cozy one-pot Potato Soup recipe the whole family will love! Loaded with bacon bits, hearty potatoes, and the perfect amount of creaminess, all you need is a few simple ingredients for this tasty meal!",
   "equipment": [

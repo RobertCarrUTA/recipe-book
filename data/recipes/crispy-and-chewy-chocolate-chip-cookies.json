@@ -1,6 +1,11 @@
 {
   "additionalTime": "20 minutes",
   "author": "Jess Smith",
+  "collections": [
+    "baking",
+    "cookies",
+    "desserts"
+  ],
   "cookTime": "12 minutes",
   "description": "These crispy and chewy chocolate chip cookies have golden, crisp edges with soft, chewy centers. Chilling the dough briefly and using properly softened butter are the keys to achieving the perfect texture every time.",
   "equipment": [

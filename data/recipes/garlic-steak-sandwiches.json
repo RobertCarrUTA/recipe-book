@@ -1,5 +1,10 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches",
+    "steak"
+  ],
   "cookTime": "25 minutes",
   "description": "A skillet steak sandwich with thin-sliced seared steak, pepperoncini onions, garlic mayo, melted deli provolone, dressed arugula, and a toasted ciabatta or hoagie roll.",
   "equipment": [

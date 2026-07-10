@@ -15,6 +15,7 @@ import { test } from "./test_helpers.mjs";
 const recipe = {
   author: "Robert",
   category: "Dinner",
+  collections: ["main-dishes", "soups-stews"],
   description: "Weeknight dinner",
   equipment: ["Dutch oven"],
   ingredients: ["1 can beans", "2 tbsp chili powder"],
@@ -39,6 +40,7 @@ test("buildRecipeSearchText includes searchable recipe fields", () => {
   assert.ok(searchText.includes("simmer"));
   assert.ok(searchText.includes("extra chipotle"));
   assert.ok(searchText.includes("freezes well"));
+  assert.ok(searchText.includes("soups stews"));
 });
 
 test("recipeMatchesSelectedFilters applies tag groups", () => {
@@ -58,6 +60,61 @@ test("recipeMatchesSelectedFilters accepts array-backed selected filters", () =>
   );
   assert.equal(recipeMatchesSelectedFilters(recipe, { status: ["not-tried"] }), false);
   assert.equal(recipeMatchesSelectedFilters(recipe, { equipment: ["instant-pot"] }), false);
+});
+
+test("recipeMatchesSelectedFilters supports multi-collection membership and within-group OR", () => {
+  const steakSandwich = {
+    collections: ["main-dishes", "sandwiches", "steak"],
+    tags: {
+      difficulty: "easy",
+      status: "tried",
+    },
+  };
+
+  assert.equal(
+    recipeMatchesSelectedFilters(steakSandwich, {
+      collection: new Set(["pizza", "steak"]),
+    }),
+    true
+  );
+  assert.equal(
+    recipeMatchesSelectedFilters(steakSandwich, {
+      collection: ["pizza", "desserts"],
+    }),
+    false
+  );
+  assert.equal(
+    recipeMatchesSelectedFilters({ tags: { status: "tried" } }, {
+      collection: ["steak"],
+    }),
+    false
+  );
+});
+
+test("recipeMatchesSelectedFilters combines collection and tag groups with AND", () => {
+  const steakSandwich = {
+    collections: ["sandwiches", "steak"],
+    tags: {
+      difficulty: "easy",
+      status: "tried",
+    },
+  };
+
+  assert.equal(
+    recipeMatchesSelectedFilters(steakSandwich, {
+      collection: ["steak"],
+      difficulty: ["easy"],
+      status: ["tried"],
+    }),
+    true
+  );
+  assert.equal(
+    recipeMatchesSelectedFilters(steakSandwich, {
+      collection: ["steak"],
+      status: ["not-tried"],
+    }),
+    false
+  );
 });
 
 test("countSelectedRecipeFilters accepts set and array backed filter groups", () => {
@@ -224,6 +281,46 @@ test("getMatchingRecipeIndexes honors array-backed selected filters", () => {
       recipes,
       searchTexts: recipes.map(buildRecipeSearchText),
       selectedFilters: { difficulty: ["medium"] },
+      showFavoriteOnly: false,
+      showSelectedOnly: false,
+    }),
+    [1]
+  );
+});
+
+test("getMatchingRecipeIndexes composes collections with search and status filters", () => {
+  const recipes = [
+    {
+      collections: ["main-dishes", "pizza", "baking"],
+      ingredients: ["pepperoni"],
+      tags: { status: "tried" },
+      title: "Hot Honey Pizza",
+    },
+    {
+      collections: ["main-dishes", "sandwiches", "steak"],
+      ingredients: ["garlic", "sirloin"],
+      tags: { status: "tried" },
+      title: "Garlic Steak Sandwiches",
+    },
+    {
+      collections: ["baking", "cookies", "desserts"],
+      ingredients: ["chocolate chips"],
+      tags: { status: "not-tried" },
+      title: "Chocolate Chip Cookies",
+    },
+  ];
+
+  assert.deepEqual(
+    getMatchingRecipeIndexes({
+      filterText: "garlic",
+      isFavorite: () => false,
+      isSelected: () => false,
+      recipes,
+      searchTexts: recipes.map(buildRecipeSearchText),
+      selectedFilters: {
+        collection: new Set(["pizza", "sandwiches"]),
+        status: new Set(["tried"]),
+      },
       showFavoriteOnly: false,
       showSelectedOnly: false,
     }),

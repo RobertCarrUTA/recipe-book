@@ -1,4 +1,5 @@
 import { normalizeWhitespace, repairTextEncoding } from "./normalization.js";
+import { normalizeRecipeCollections } from "./recipe_collections.js";
 
 const VALID_STATUS = new Set(["tried", "not-tried"]);
 const VALID_RATING = new Set(["great", "good", "okay"]);
@@ -152,13 +153,21 @@ export function normalizeRecipe(recipe, index, warnings = []) {
   }
 
   const title = normalizeString(recipe.title) || `Untitled Recipe ${index + 1}`;
+  const collections = normalizeRecipeCollections(recipe.collections);
   const normalized = {
     id: slugify(recipe.id || title, `recipe-${index + 1}`),
     title,
+    collections,
     ingredients: normalizeStringArray(recipe.ingredients),
     instructions: normalizeStringArray(recipe.instructions),
     tags: normalizeTags(recipe.tags),
   };
+
+  if (!Array.isArray(recipe.collections) || !collections.length) {
+    warnings.push(`"${title}" has no recognized recipe collections.`);
+  } else if (collections.length !== recipe.collections.length) {
+    warnings.push(`"${title}" has invalid or duplicate recipe collections.`);
+  }
 
   normalizeOptionalString(normalized, "author", recipe.author);
   normalizeOptionalString(normalized, "description", recipe.description);

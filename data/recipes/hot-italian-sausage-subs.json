@@ -1,6 +1,10 @@
 {
-  "author": "Robert Carr",
   "additionalTime": "10 minutes sausage mixture rest",
+  "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "25 minutes",
   "description": "A hot Italian sausage sub with homemade sweet Italian-style pork patties, browned peppers and onions, quick tomato pan sauce, a garlic-toasted roll, provolone, mozzarella, Parmesan, and basil.",
   "equipment": [

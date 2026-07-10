@@ -1,5 +1,9 @@
 {
   "author": "Savory Tooth",
+  "collections": [
+    "main-dishes",
+    "soups-stews"
+  ],
   "cookTime": "15 minutes",
   "description": "This Instant Pot Broccoli Cheese Soup comes together quickly and easily using a pressure cooker. The result is a rich, creamy soup with tender broccoli and plenty of melted cheddar, perfect for a comforting meal.",
   "equipment": [

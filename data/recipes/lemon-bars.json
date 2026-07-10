@@ -1,6 +1,11 @@
 {
   "additionalTime": "3 hours",
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "cookies",
+    "desserts"
+  ],
   "cookTime": "55 minutes",
   "description": "These bright and zingy Lemon Bars have a buttery shortbread crust topped with a smooth, tangy lemon filling. They're easy to make, perfectly balanced between sweet and tart, and ideal for make-ahead desserts.",
   "equipment": [

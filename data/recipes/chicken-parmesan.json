@@ -1,5 +1,8 @@
 {
   "author": "John Kanell",
+  "collections": [
+    "main-dishes"
+  ],
   "cookTime": "45 minutes",
   "description": "My easy Chicken Parmesan recipe is so easy to make at home. It cooks in under 30 minutes for a dinner of crispy chicken cutlets topped with tomato sauce and melty cheese!",
   "equipment": [

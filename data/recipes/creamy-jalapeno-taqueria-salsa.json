@@ -1,6 +1,9 @@
 {
   "additionalTime": "10 minutes cooling time plus 20 minutes flavor rest",
   "author": "Robert Carr",
+  "collections": [
+    "salsas-sauces"
+  ],
   "cookTime": "12 minutes",
   "description": "Creamy jalapeno taqueria salsa made by cooking jalapenos, a little white onion, and garlic, then blending them with neutral oil, lime, a little vinegar, cilantro, and salt.",
   "equipment": [

@@ -1,6 +1,10 @@
 {
   "additionalTime": "6 hours",
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "desserts"
+  ],
   "cookTime": "1 hour",
   "description": "This classic baked Cheesecake is ultra-creamy with a crunchy graham cracker crust and a smooth, crack-free finish-no water bath required. With simple techniques and a gradual cool-down, it's an easy, reliable showstopper dessert.",
   "equipment": [

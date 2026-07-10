@@ -1,4 +1,5 @@
 import { listen } from "./dom.js";
+import { getRecipeCollectionOptions } from "./recipe_collections.js";
 import {
   getRecipeDiscoveryResult,
   isRuntimeRecipeSort,
@@ -46,6 +47,43 @@ export function createRecipeDiscoveryController({
     return uiState && typeof uiState === "object" ? uiState : {};
   }
 
+  function syncRecipeCollectionOptions() {
+    const control = byId("recipeCollection");
+    if (!control) return;
+
+    const recipes = getRecipes();
+    const hasRecipes = recipes.length > 0;
+    const options = getRecipeCollectionOptions(recipes, { includeEmpty: !hasRecipes });
+    const uiState = getMutableUiState();
+    const savedCollectionId = Array.isArray(uiState.filters?.collection)
+      ? uiState.filters.collection[0] || ""
+      : "";
+    const availableCollectionIds = new Set(options.map((option) => option.id));
+    const nextCollectionId = availableCollectionIds.has(savedCollectionId) ? savedCollectionId : "";
+    const optionElements = [];
+    const allOption = document.createElement("option");
+
+    allOption.value = "";
+    allOption.textContent = hasRecipes ? `All recipes (${recipes.length})` : "All recipes";
+    optionElements.push(allOption);
+
+    options.forEach((option) => {
+      const element = document.createElement("option");
+      element.value = option.id;
+      element.textContent = hasRecipes ? `${option.label} (${option.count})` : option.label;
+      optionElements.push(element);
+    });
+
+    control.replaceChildren(...optionElements);
+    control.value = nextCollectionId;
+    control.disabled = !hasRecipes;
+
+    if (hasRecipes && savedCollectionId && !nextCollectionId) {
+      uiState.filters = { ...(uiState.filters || {}) };
+      delete uiState.filters.collection;
+    }
+  }
+
   function renderFilteredRecipes(recipeIndexes) {
     if (!renderer) return;
 
@@ -71,10 +109,13 @@ export function createRecipeDiscoveryController({
   function syncRecipeFilterControls({
     activeDiscoveryFilterCount,
     filterText,
+    selectedFilters,
   }) {
     const filterToggle = byId("toggleFilters");
     const clearFiltersButton = byId("clearFilters");
     const recipeSearch = byId("recipeSearch");
+    const recipeCollection = byId("recipeCollection");
+    const recipeCollectionControl = recipeCollection?.closest(".recipe-collection-control");
     const recipeSearchWrap = recipeSearch ? recipeSearch.closest(".recipe-search") : null;
     const filterToggleText = activeDiscoveryFilterCount
       ? `Filters (${activeDiscoveryFilterCount})`
@@ -96,6 +137,13 @@ export function createRecipeDiscoveryController({
     if (recipeSearchWrap) {
       recipeSearchWrap.classList.toggle("has-active-discovery-filters", activeDiscoveryFilterCount > 0);
       recipeSearchWrap.classList.toggle("has-search-text", Boolean(filterText));
+    }
+
+    if (recipeCollectionControl) {
+      recipeCollectionControl.classList.toggle(
+        "has-selection",
+        Boolean(selectedFilters?.collection?.size)
+      );
     }
 
     syncRecipeSearchClearButton();
@@ -142,6 +190,7 @@ export function createRecipeDiscoveryController({
     syncRecipeFilterControls({
       activeDiscoveryFilterCount: discovery.activeDiscoveryFilterCount,
       filterText: discovery.filterText,
+      selectedFilters: discovery.selectedFilters,
     });
     updateSearchMeta(discovery.matchCount);
 
@@ -158,11 +207,13 @@ export function createRecipeDiscoveryController({
     const recipeSearch = byId("recipeSearch");
     const selectedOnly = byId("showSelectedRecipesOnly");
     const favoriteOnly = byId("showFavoriteRecipesOnly");
+    const recipeCollection = byId("recipeCollection");
     const uiState = getMutableUiState();
 
     if (recipeSearch) recipeSearch.value = "";
     if (selectedOnly) selectedOnly.checked = false;
     if (favoriteOnly) favoriteOnly.checked = false;
+    if (recipeCollection) recipeCollection.value = "";
     queryAll(".recipe-filters input").forEach((cb) => {
       cb.checked = false;
     });
@@ -259,6 +310,7 @@ export function createRecipeDiscoveryController({
     const filters = byId("recipeFilters");
     const clearFiltersButton = byId("clearFilters");
     const clearDiscoveryButton = byId("clearRecipeDiscoveryFilters");
+    const recipeCollection = byId("recipeCollection");
 
     if (filterToggle && filters) {
       listen(filterToggle, "click", () => {
@@ -275,11 +327,18 @@ export function createRecipeDiscoveryController({
       });
     });
 
+    listen(recipeCollection, "change", () => {
+      getMutableUiState().filters = readFilterDataFromDom(document);
+      refresh();
+      saveState();
+    });
+
     listen(clearFiltersButton, "click", () => clear());
     listen(clearDiscoveryButton, "click", clear);
   }
 
   function attach() {
+    syncRecipeCollectionOptions();
     attachRecipeSearch();
     attachFilterControls();
   }
@@ -292,6 +351,7 @@ export function createRecipeDiscoveryController({
     refresh,
     shouldRefreshForFavoriteChange,
     shouldRefreshForSelectionChange,
+    syncRecipeCollectionOptions,
     updateSearchMeta,
   };
 }

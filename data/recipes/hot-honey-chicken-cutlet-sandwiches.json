@@ -1,6 +1,10 @@
 {
   "additionalTime": "10 minutes quick soak plus 10 minutes coating rest",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "15 minutes",
   "description": "A quick hot honey chicken cutlet sandwich with a thin chicken breast cutlet, a buttermilk-hot sauce dip, crisp panko crust, garlic mayo, lime slaw, dill pickles, and a toasted potato bun.",
   "equipment": [

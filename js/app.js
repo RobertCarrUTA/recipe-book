@@ -656,6 +656,7 @@ function createRecipeBookApp() {
       const result = await recipeRepository.loadAllRecipes();
       appState.recipes = result.recipes;
       appState.recipeSearchTexts = appState.recipes.map(buildRecipeSearchText);
+      recipeDiscoveryController.syncRecipeCollectionOptions();
       prepareRecipeRuntimeState();
     } catch (error) {
       renderer.renderRecipeLoadError(error);

@@ -1,6 +1,10 @@
 {
   "additionalTime": "1 hour",
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "desserts"
+  ],
   "cookTime": "25 minutes",
   "description": "These Mini Cheesecakes have a crunchy graham cracker pecan crust and a rich, creamy filling that bakes quickly. They're easy to make, perfectly portioned, and ideal for customizing with your favorite toppings.",
   "equipment": [

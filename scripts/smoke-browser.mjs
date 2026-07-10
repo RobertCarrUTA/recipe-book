@@ -134,6 +134,48 @@ const browserChecks = [
     async run(page) {
       await openApp(page, { debug: true });
       const totalCount = await page.evaluate(() => window.recipeBookDebug.getState().recipes.length);
+      const pizzaRecipeIds = await page.evaluate(() =>
+        window.recipeBookDebug
+          .getState()
+          .recipes
+          .filter((recipe) => recipe.collections.includes("pizza"))
+          .map((recipe) => recipe.id)
+      );
+
+      assert.ok(pizzaRecipeIds.length > 0, "recipe data should include a Pizza collection");
+      assert.equal(
+        await page.locator('#recipeCollection option[value="pizza"]').innerText(),
+        `Pizza (${pizzaRecipeIds.length})`
+      );
+
+      await page.selectOption("#recipeCollection", "pizza");
+      await page.waitForFunction(
+        (expectedCount) => document.querySelector("#recipeSearchMeta")?.textContent === `${expectedCount} matches of ${window.recipeBookDebug.getState().recipes.length}`,
+        pizzaRecipeIds.length
+      );
+      const visiblePizzaIds = await page.locator(".recipe:visible").evaluateAll((elements) =>
+        elements.map((element) => element.dataset.recipeId)
+      );
+      assert.ok(visiblePizzaIds.length > 0, "the Pizza collection should render recipe cards");
+      assert.ok(
+        visiblePizzaIds.every((recipeId) => pizzaRecipeIds.includes(recipeId)),
+        "every rendered Pizza result should belong to that collection"
+      );
+
+      await page.reload({ waitUntil: "networkidle" });
+      await page.waitForSelector(".recipe", { timeout: 10000 });
+      assert.equal(await page.locator("#recipeCollection").inputValue(), "pizza");
+      assert.equal(
+        await page.locator("#recipeSearchMeta").innerText(),
+        `${pizzaRecipeIds.length} matches of ${totalCount}`
+      );
+      assert.ok(await visibleRecipeCount(page), "persisted Pizza browsing should render results");
+
+      await page.selectOption("#recipeCollection", "");
+      await page.waitForFunction(
+        (expectedCount) => document.querySelector("#recipeSearchMeta")?.textContent === `${expectedCount} recipes`,
+        totalCount
+      );
 
       await assertVisible(page, "#clearRecipeSearch", false);
       await page.fill("#recipeSearch", "chili");
@@ -188,6 +230,31 @@ const browserChecks = [
       );
       await assertVisible(page, "#recipeNoResults", false);
       assert.ok(await visibleRecipeCount(page), "no-results clear action should restore rendered recipes");
+    },
+  },
+  {
+    name: "recipe browse controls fit the desktop breakpoint",
+    viewport: { width: 1024, height: 900 },
+    async run(page) {
+      await openApp(page);
+      await assertNoHorizontalOverflow(page, [
+        ".app-shell",
+        ".recipe-search",
+        ".recipe-controls-panel",
+        ".recipe-search-field",
+        ".recipe-browse-controls",
+        ".recipe-collection-control",
+        ".recipe-sort-control",
+      ]);
+
+      const controlWidths = await page.evaluate(() => ({
+        collection: document.querySelector(".recipe-collection-control")?.getBoundingClientRect().width || 0,
+        search: document.querySelector(".recipe-search-field")?.getBoundingClientRect().width || 0,
+        sort: document.querySelector(".recipe-sort-control")?.getBoundingClientRect().width || 0,
+      }));
+      assert.ok(controlWidths.search >= 180, "search should remain usable at the desktop breakpoint");
+      assert.ok(controlWidths.collection >= 150, "Browse should remain usable at the desktop breakpoint");
+      assert.ok(controlWidths.sort >= 150, "Sort should remain usable at the desktop breakpoint");
     },
   },
   {
@@ -803,6 +870,9 @@ const browserChecks = [
       await assertNoHorizontalOverflow(page, [
         ".app-shell",
         ".recipe-search",
+        ".recipe-browse-controls",
+        ".recipe-collection-control",
+        ".recipe-sort-control",
         "#recipeContainer",
         ".mobile-view-tabs",
       ]);

@@ -1,6 +1,9 @@
 {
   "additionalTime": null,
   "author": "John Kanell",
+  "collections": [
+    "main-dishes"
+  ],
   "cookTime": "30 minutes",
   "description": "Chicken Florentine is a comforting Italian-inspired dish featuring pan-seared chicken breasts served in a garlicky spinach cream sauce with parmesan. It's quick, easy, and made with simple everyday ingredients.",
   "equipment": [

@@ -13,12 +13,14 @@ import { test } from "./test_helpers.mjs";
 
 const recipes = [
   {
+    collections: ["main-dishes", "soups-stews"],
     id: "chili",
     ingredients: ["beans", "tomatoes"],
     tags: { rating: "great", status: "tried" },
     title: "Dutch Oven Chili",
   },
   {
+    collections: ["baking", "desserts"],
     id: "cake",
     ingredients: ["flour", "blueberries"],
     tags: { rating: "good", status: "not-tried" },
@@ -43,6 +45,16 @@ function createDiscoveryHarness(options = {}) {
   const recipeSearchWrap = createFakeElement({ classes: ["recipe-search"] });
   const recipeSearch = createFocusableElement({ id: "recipeSearch", tagName: "input", value: options.searchValue || "" });
   recipeSearch.closest = (selector) => (selector === ".recipe-search" ? recipeSearchWrap : null);
+  const recipeCollectionControl = createFakeElement({
+    classes: ["recipe-collection-control"],
+    tagName: "label",
+  });
+  const recipeCollection = createFakeElement({
+    disabled: true,
+    id: "recipeCollection",
+    tagName: "select",
+  });
+  recipeCollectionControl.appendChild(recipeCollection);
 
   const filters = options.filters || [];
   const elements = {
@@ -51,6 +63,8 @@ function createDiscoveryHarness(options = {}) {
     clearRecipeSearch: createFakeElement({ hidden: true, id: "clearRecipeSearch", tagName: "button" }),
     recipeFilters: createFakeElement({ classes: ["hidden"], id: "recipeFilters" }),
     recipeNoResults: createFakeElement({ id: "recipeNoResults" }),
+    recipeCollection,
+    recipeCollectionControl,
     recipeSearch,
     recipeSearchMeta: createFakeElement({ id: "recipeSearchMeta" }),
     recipeSearchWrap,
@@ -105,19 +119,20 @@ function createDiscoveryHarness(options = {}) {
   };
   let saveCount = 0;
   const uiState = {
-    filters: {},
+    filters: { ...(options.uiFilters || {}) },
     recipeSearch: options.searchValue || "",
     recipeSort: options.recipeSort || recipeSortModes.default,
     showFavoriteRecipesOnly: Boolean(options.showFavoriteOnly),
     showSelectedRecipesOnly: Boolean(options.showSelectedOnly),
   };
+  let recipeItems = options.recipes === undefined ? recipes : options.recipes;
   const window = options.window || createFakeWindow();
   const controller = createRecipeDiscoveryController({
     debounceMs: 25,
     document,
-    getRecipes: () => recipes,
+    getRecipes: () => recipeItems,
     getRuntimeState: () => ({}),
-    getSearchTexts: () => recipes.map(buildRecipeSearchText),
+    getSearchTexts: () => recipeItems.map(buildRecipeSearchText),
     getUiState: () => uiState,
     isFavorite: (_runtime, _recipe, index) => index === 0,
     isSelected: (_runtime, _recipe, index) => index === 1,
@@ -135,6 +150,9 @@ function createDiscoveryHarness(options = {}) {
     filters,
     getSaveCount: () => saveCount,
     renderCalls,
+    setRecipes(nextRecipes) {
+      recipeItems = nextRecipes;
+    },
     syncCalls,
     uiState,
     window,
@@ -172,7 +190,11 @@ test("recipe discovery controller clears search, filters, visibility toggles, an
     searchValue: "cake",
     showFavoriteOnly: true,
     showSelectedOnly: true,
+    uiFilters: { collection: ["desserts"] },
   });
+  harness.controller.attach();
+
+  assert.equal(harness.elements.recipeCollection.value, "desserts");
 
   harness.controller.clear();
 
@@ -180,6 +202,7 @@ test("recipe discovery controller clears search, filters, visibility toggles, an
   assert.equal(harness.elements.recipeSearch.focused, true);
   assert.equal(harness.elements.showFavoriteRecipesOnly.checked, false);
   assert.equal(harness.elements.showSelectedRecipesOnly.checked, false);
+  assert.equal(harness.elements.recipeCollection.value, "");
   assert.deepEqual(filters.map((filter) => filter.checked), [false, false]);
   assert.deepEqual(harness.uiState, {
     filters: {},
@@ -205,6 +228,58 @@ test("recipe discovery controller toggles recipe tag filters through matching co
   assert.equal(statusFilter.checked, true);
   assert.deepEqual(harness.uiState.filters, { status: ["tried"] });
   assert.deepEqual(harness.renderCalls, [[0]]);
+  assert.equal(harness.getSaveCount(), 1);
+});
+
+test("recipe discovery controller populates collection counts and restores selection after recipes load", () => {
+  const harness = createDiscoveryHarness({
+    recipes: [],
+    uiFilters: { collection: ["desserts"] },
+  });
+
+  harness.controller.attach();
+
+  assert.equal(harness.elements.recipeCollection.disabled, true);
+  assert.equal(harness.elements.recipeCollection.value, "desserts");
+  assert.equal(harness.elements.recipeCollection.children[0].textContent, "All recipes");
+  assert.ok(
+    harness.elements.recipeCollection.children.some(
+      (option) => option.value === "desserts" && option.textContent === "Desserts"
+    )
+  );
+
+  harness.setRecipes(recipes);
+  harness.controller.syncRecipeCollectionOptions();
+  harness.controller.refresh();
+
+  assert.equal(harness.elements.recipeCollection.disabled, false);
+  assert.equal(harness.elements.recipeCollection.value, "desserts");
+  assert.deepEqual(
+    harness.elements.recipeCollection.children.map((option) => [option.value, option.textContent]),
+    [
+      ["", "All recipes (2)"],
+      ["main-dishes", "Main Dishes (1)"],
+      ["soups-stews", "Soups & Stews (1)"],
+      ["baking", "Baking (1)"],
+      ["desserts", "Desserts (1)"],
+    ]
+  );
+  assert.deepEqual(harness.renderCalls, [[1]]);
+  assert.equal(harness.elements.recipeCollectionControl.classList.contains("has-selection"), true);
+});
+
+test("recipe discovery controller filters and persists collection changes", () => {
+  const harness = createDiscoveryHarness();
+  harness.controller.attach();
+
+  harness.elements.recipeCollection.value = "soups-stews";
+  harness.elements.recipeCollection.dispatchEvent(createFakeEvent("change"));
+
+  assert.deepEqual(harness.uiState.filters, { collection: ["soups-stews"] });
+  assert.deepEqual(harness.renderCalls, [[0]]);
+  assert.equal(harness.elements.recipeSearchMeta.textContent, "1 matches of 2");
+  assert.equal(harness.elements.toggleFilters.textContent, "Filters (1)");
+  assert.equal(harness.elements.recipeCollectionControl.classList.contains("has-selection"), true);
   assert.equal(harness.getSaveCount(), 1);
 });
 

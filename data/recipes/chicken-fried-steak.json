@@ -1,6 +1,10 @@
 {
   "additionalTime": "30 minutes to 2 hours buttermilk soak plus 15 minutes coating rest and 3 minutes final rest",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "steak"
+  ],
   "cookTime": "25 minutes",
   "description": "Chicken fried steak with evenly tenderized top round or cube steak, a seasoned hot sauce buttermilk soak, a rough two-layer flour coating, carefully managed shallow fry, and peppered cream gravy built from clean toasted pan drippings.",
   "equipment": [

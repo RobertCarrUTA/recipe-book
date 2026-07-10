@@ -29,6 +29,8 @@ export function readFilterDataFromDom(document) {
     if (!data[checkbox.dataset.filter]) data[checkbox.dataset.filter] = [];
     data[checkbox.dataset.filter].push(checkbox.value);
   });
+  const recipeCollection = byId(document, "recipeCollection");
+  if (recipeCollection?.value) data.collection = [recipeCollection.value];
   return data;
 }
 
@@ -38,6 +40,10 @@ export function applyFilterDataToDom(document, data) {
     checkbox.checked =
       Array.isArray(selected[checkbox.dataset.filter]) && selected[checkbox.dataset.filter].includes(checkbox.value);
   });
+  const recipeCollection = byId(document, "recipeCollection");
+  if (recipeCollection) {
+    recipeCollection.value = Array.isArray(selected.collection) ? selected.collection[0] || "" : "";
+  }
 }
 
 export function getSelectedRecipeFilters(document) {
@@ -48,6 +54,8 @@ export function getSelectedRecipeFilters(document) {
     if (!selected[key]) selected[key] = new Set();
     selected[key].add(checkbox.value);
   });
+  const recipeCollection = byId(document, "recipeCollection");
+  if (recipeCollection?.value) selected.collection = new Set([recipeCollection.value]);
   return selected;
 }
 

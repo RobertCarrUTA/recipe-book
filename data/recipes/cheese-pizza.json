@@ -1,6 +1,11 @@
 {
   "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
   "cookTime": "5 to 7 minutes",
   "description": "A large 15- to 16-inch cheese pizza built for a Baking Steel Pro, with a 72-hour cold-fermented crust, thick garlic-oregano tomato sauce, whole-milk mozzarella, provolone piccante, small pockets of drained fresh mozzarella, Pecorino Romano, basil, and a post-bake garlic-basil rim oil.",
   "equipment": [

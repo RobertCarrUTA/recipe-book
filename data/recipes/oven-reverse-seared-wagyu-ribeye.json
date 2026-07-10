@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "steak"
+  ],
   "cookTime": "35 minutes",
   "description": "A reverse-seared thick-cut Wagyu-style ribeye using a measured salt dry brine, low oven cook, final dry pat, and hard stainless steel pan sear with an optional brief garlic-thyme butter baste.",
   "equipment": [

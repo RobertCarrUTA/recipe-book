@@ -466,6 +466,14 @@ h2 {
   display: none;
 }
 
+.recipe-browse-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
+}
+
+.recipe-collection-control,
 .recipe-sort-control {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -478,6 +486,7 @@ h2 {
   background: var(--surface-soft);
 }
 
+.recipe-collection-control span,
 .recipe-sort-control span {
   color: var(--muted);
   font-size: 0.78rem;
@@ -487,6 +496,7 @@ h2 {
   white-space: nowrap;
 }
 
+.recipe-collection-control select,
 .recipe-sort-control select {
   width: 100%;
   min-height: 36px;
@@ -496,6 +506,15 @@ h2 {
   background: var(--field);
   color: var(--fg);
   font-weight: 800;
+}
+
+.recipe-collection-control.has-selection {
+  border-color: rgba(122, 199, 163, 0.58);
+  background: rgba(122, 199, 163, 0.1);
+}
+
+.recipe-collection-control.has-selection span {
+  color: var(--accent-strong);
 }
 
 .recipe-search-meta {
@@ -3056,6 +3075,7 @@ li {
 
   .quick-controls>button,
   .quick-controls>.switch-control,
+  .recipe-collection-control,
   .recipe-sort-control {
     width: 100%;
   }
@@ -3127,7 +3147,7 @@ li {
   }
 
   .recipe-controls-panel {
-    grid-template-columns: minmax(0, 1fr) minmax(190px, 240px);
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
     align-items: center;
   }
 

@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "sandwiches",
+    "sides-snacks"
+  ],
   "cookTime": "4 minutes",
   "description": "Open-faced ciabatta toast with whole-milk mozzarella, loose folds of prosciutto, pickle-brined arugula, onion, chopped pickles, and light Dijon mayo.",
   "equipment": [

@@ -1,6 +1,10 @@
 {
   "additionalTime": "35 minutes",
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "desserts"
+  ],
   "cookTime": "40 minutes",
   "description": "This Pineapple Upside Down Cake is simple, delicious, and beautifully finished with a caramelized pineapple and cherry topping-so striking that it needs no additional decoration.",
   "equipment": [

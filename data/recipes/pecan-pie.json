@@ -1,6 +1,10 @@
 {
   "additionalTime": null,
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "desserts"
+  ],
   "cookTime": "50 minutes",
   "description": "This classic Pecan Pie features a gooey, sweet filling packed with crunchy pecans and baked in a flaky pie crust. It's easy to make and perfect for holidays or any special occasion.",
   "equipment": [

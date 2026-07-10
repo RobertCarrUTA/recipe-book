@@ -1,6 +1,10 @@
 {
   "additionalTime": "20 minutes",
   "author": "John Kanell",
+  "collections": [
+    "main-dishes",
+    "steak"
+  ],
   "cookTime": "25 minutes",
   "description": "This gourmet-style Beef Tenderloin is incredibly tender, juicy, and melt-in-your-mouth delicious. The whole tenderloin is pan-seared, slathered in garlic herb butter, and roasted to perfection for an elegant yet approachable main dish.",
   "equipment": [

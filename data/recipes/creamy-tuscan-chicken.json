@@ -1,6 +1,9 @@
 {
   "additionalTime": null,
   "author": "John Kanell",
+  "collections": [
+    "main-dishes"
+  ],
   "cookTime": "15 minutes",
   "description": "This Creamy Tuscan Chicken is a quick and flavorful weeknight dinner featuring pan-seared chicken breasts in a rich cream sauce with sun-dried tomatoes, spinach, garlic, and parmesan.",
   "equipment": [

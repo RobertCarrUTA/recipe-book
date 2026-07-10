@@ -1,6 +1,10 @@
 {
   "additionalTime": "30 minutes",
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "desserts"
+  ],
   "cookTime": "30 minutes",
   "description": "Sopapilla Cheesecake combines flaky crescent roll layers with a rich, creamy cheesecake filling and a cinnamon-sugar topping. Inspired by the classic New Mexican dessert, this crowd-pleasing treat is best served warm with honey, berries, or whipped cream.",
   "equipment": [

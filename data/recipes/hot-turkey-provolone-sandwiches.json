@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "25 minutes",
   "description": "A hot turkey provolone sandwich with a seared turkey cutlet, garlic-Dijon mayo, mushroom-onion pan sauce, roasted red peppers, dressed arugula, and a toasted ciabatta or hoagie roll.",
   "equipment": [
