@@ -1,6 +1,11 @@
 {
   "additionalTime": null,
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "cookies",
+    "desserts"
+  ],
   "cookTime": "55 minutes",
   "description": "These soft and chewy chocolate chip cookie bars are incredibly easy to make and packed with chocolatey goodness, featuring rich brown sugar, vanilla, and a hint of salt. Perfect for slicing and sharing.",
   "equipment": [

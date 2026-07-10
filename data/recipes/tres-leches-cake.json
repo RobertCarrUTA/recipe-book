@@ -1,6 +1,10 @@
 {
   "additionalTime": "1 hour",
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "desserts"
+  ],
   "cookTime": "30 minutes",
   "description": "This classic Tres Leches Cake is light, airy, and soaked in a rich three-milk mixture that makes every bite incredibly moist and flavorful. Finished with a fluffy whipped cream topping, it's an easy yet impressive dessert.",
   "equipment": [

@@ -1,5 +1,9 @@
 {
   "author": "Joanna Cismaru",
+  "collections": [
+    "main-dishes",
+    "steak"
+  ],
   "cookTime": "20 minutes",
   "description": "This Instant Pot Mongolian Beef delivers takeout-style flavor at home in a fraction of the time. The beef is tender, saucy, and perfectly sweet-savory, making it a fast and satisfying dinner.",
   "equipment": [

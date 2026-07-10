@@ -1,6 +1,9 @@
 {
   "additionalTime": "10 minutes poblano steam time, 5 minutes cooling time, plus 20 minutes flavor rest",
   "author": "Robert Carr",
+  "collections": [
+    "salsas-sauces"
+  ],
   "cookTime": "20 minutes",
   "description": "Roasted green salsa with deeply broiled tomatillos, poblano, jalapeno, serrano, garlic, onion, cilantro, lime, and a small amount of honey.",
   "equipment": [

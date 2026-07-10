@@ -1,6 +1,11 @@
 {
   "additionalTime": "2 hours 30 minutes",
   "author": "John Kanell",
+  "collections": [
+    "breakfast",
+    "baking",
+    "desserts"
+  ],
   "cookTime": "20 minutes",
   "description": "These easy homemade Cinnamon Rolls bake up soft, fluffy, and gooey, with tender dough swirled with cinnamon brown sugar and finished with a rich cream cheese glaze.",
   "equipment": [

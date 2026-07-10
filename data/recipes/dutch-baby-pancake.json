@@ -1,5 +1,9 @@
 {
   "author": "Sally",
+  "collections": [
+    "breakfast",
+    "baking"
+  ],
   "cookTime": "25 minutes",
   "description": "Make a sweet Dutch baby pancake using this simple, 8-ingredient recipe. It bakes up puffed and golden with crisp edges and a soft center, and can easily be adapted for sweet or savory toppings.",
   "equipment": [

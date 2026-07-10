@@ -1,6 +1,11 @@
 {
   "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
   "cookTime": "5 to 7 minutes",
   "description": "A large 15- to 16-inch pesto pizza built for a Baking Steel Pro, with a 72-hour cold-fermented crust, pistachio-basil pesto, whole-milk mozzarella, provolone, Pecorino Romano, thin mortadella, burrata or stracciatella, chopped pistachios, lemon-dressed arugula, and a light lemon-chile honey finish.",
   "equipment": [

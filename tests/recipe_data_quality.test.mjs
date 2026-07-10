@@ -7,15 +7,69 @@ import {
   selectAllRecipes,
 } from "../js/grocery_model.js";
 import { analyzeRecipeDataQuality } from "../js/recipe_quality_report.js";
+import { recipeCollectionDefinitions } from "../js/recipe_collections.js";
 import { normalizeRecipeBook } from "../js/recipe_schema.js";
 import { formatTotalsForKey } from "../js/units.js";
 import { test } from "./test_helpers.mjs";
 
-async function loadNormalizedRecipes() {
+async function loadRawRecipes() {
   const recipeDataUrl = new URL("../data/recipes.json", import.meta.url);
-  const rawRecipes = JSON.parse(await fs.readFile(recipeDataUrl, "utf8"));
-  return normalizeRecipeBook(rawRecipes);
+  return JSON.parse(await fs.readFile(recipeDataUrl, "utf8"));
 }
+
+async function loadNormalizedRecipes() {
+  return normalizeRecipeBook(await loadRawRecipes());
+}
+
+test("current recipe data uses nonempty known collections", async () => {
+  const rawRecipes = await loadRawRecipes();
+  const knownCollectionIds = new Set(recipeCollectionDefinitions.map(({ id }) => id));
+  const missingCollections = rawRecipes
+    .filter((recipe) => !Array.isArray(recipe.collections) || !recipe.collections.length)
+    .map((recipe) => recipe.id);
+  const unknownCollections = rawRecipes.flatMap((recipe) =>
+    (Array.isArray(recipe.collections) ? recipe.collections : [])
+      .filter((collectionId) => !knownCollectionIds.has(collectionId))
+      .map((collectionId) => `${recipe.id}: ${collectionId}`)
+  );
+  const duplicateCollections = rawRecipes
+    .filter((recipe) =>
+      Array.isArray(recipe.collections) &&
+      new Set(recipe.collections).size !== recipe.collections.length
+    )
+    .map((recipe) => recipe.id);
+  const usedCollectionIds = new Set(rawRecipes.flatMap((recipe) => recipe.collections || []));
+  const unusedCollections = recipeCollectionDefinitions
+    .map(({ id }) => id)
+    .filter((collectionId) => !usedCollectionIds.has(collectionId));
+
+  assert.deepEqual(missingCollections, []);
+  assert.deepEqual(unknownCollections, []);
+  assert.deepEqual(duplicateCollections, []);
+  assert.deepEqual(unusedCollections, []);
+});
+
+test("current recipe data preserves representative collection overlaps", async () => {
+  const rawRecipes = await loadRawRecipes();
+  const recipesById = Object.fromEntries(rawRecipes.map((recipe) => [recipe.id, recipe]));
+  const expectedMemberships = {
+    "baking-steel-pepperoni-sausage-ricotta-pizza": ["main-dishes", "pizza", "baking"],
+    "best-chewy-chocolate-chip-cookies": ["baking", "cookies", "desserts"],
+    "garlic-steak-sandwiches": ["main-dishes", "sandwiches", "steak"],
+    "nonalcoholic-pina-colada": ["drinks"],
+  };
+
+  Object.entries(expectedMemberships).forEach(([recipeId, expectedCollections]) => {
+    const recipe = recipesById[recipeId];
+    assert.ok(recipe, `${recipeId} should exist`);
+    expectedCollections.forEach((collectionId) => {
+      assert.ok(
+        recipe.collections.includes(collectionId),
+        `${recipeId} should belong to ${collectionId}`
+      );
+    });
+  });
+});
 
 test("current recipe data keeps bundled grocery labels out of Other", async () => {
   const { recipes, warnings } = await loadNormalizedRecipes();

@@ -1,6 +1,11 @@
 {
   "additionalTime": "24 to 72 hours dough fermentation plus 2 to 3 hours dough warm-up",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
   "cookTime": "8 to 11 minutes",
   "description": "A large hot honey pepperoni and ricotta pizza with a 24- to 72-hour cold-fermented crust, garlic-Calabrian tomato sauce, whole-milk mozzarella, cup-and-char pepperoni, seasoned ricotta, Pecorino Romano, basil, and warm chile honey.",
   "equipment": [

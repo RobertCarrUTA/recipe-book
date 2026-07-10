@@ -1,5 +1,10 @@
 {
   "author": "Kiley Heard",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
   "cookTime": "25 minutes",
   "description": "This Sourdough Discard Italian Stromboli is made with the best sourdough discard dough, using a self-rising flour mixture and Greek yogurt for a soft yet crisp crust. It's filled with layers of savory pizza sauce, pesto, roasted red peppers, provolone, salami, pepperoni, and melty mozzarella, then baked until golden and crispy. Served hot with a drizzle of hot honey, this stromboli is the perfect mix of cheesy, spicy, and savory flavors—a must-try for any pizza lover!",
   "equipment": [

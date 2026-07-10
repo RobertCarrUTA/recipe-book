@@ -1,5 +1,9 @@
 {
   "author": "John Kanell",
+  "collections": [
+    "main-dishes",
+    "soups-stews"
+  ],
   "cookTime": "30 minutes",
   "description": "My 30-minute corn chowder recipe is a must-try for busy weeknights. Thick, creamy, and loaded with sweetness from fresh corn and savoriness from crispy bacon.",
   "equipment": [

@@ -1,6 +1,11 @@
 {
   "additionalTime": "20 minutes",
   "author": "Jamie Silva",
+  "collections": [
+    "baking",
+    "cookies",
+    "desserts"
+  ],
   "cookTime": "10 minutes",
   "description": "These chewy chocolate chip cookies have ooey-gooey centers, perfectly crisp edges, and melty chunks of dark chocolate. Made easily in one bowl, they can be baked right away or frozen for cookies on demand.",
   "equipment": [

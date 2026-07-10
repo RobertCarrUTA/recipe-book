@@ -1,5 +1,9 @@
 {
   "author": "Brianna May",
+  "collections": [
+    "main-dishes",
+    "soups-stews"
+  ],
   "cookTime": "1 hour 15 minutes",
   "description": "This stovetop Dutch Oven Chili is hearty, rich, and full of flavor. The bacon, chipotle peppers, and adobo sauce add a delicious smokiness. This recipe works well in either an enameled or cast iron Dutch oven.",
   "equipment": [

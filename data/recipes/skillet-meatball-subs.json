@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "30 minutes",
   "description": "A hot oven-finished meatball sub with tender beef-pork meatballs, quick tomato sauce, garlic-Parmesan toasted rolls, provolone, mozzarella, and fresh basil.",
   "equipment": [

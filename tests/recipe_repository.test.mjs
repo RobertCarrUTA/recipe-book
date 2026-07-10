@@ -33,6 +33,7 @@ test("createRecipeRepository loads bundled recipes and tags their source", async
         async json() {
           return [
             {
+              collections: ["breakfast"],
               id: "toast",
               groceryIngredients: [{ item: "bread", quantity: 1, unit: "slice" }],
               ingredients: ["1 slice bread"],

@@ -1,6 +1,10 @@
 {
   "additionalTime": "7 hours",
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "desserts"
+  ],
   "cookTime": "1 hour 10 minutes",
   "description": "This baked Raspberry Cheesecake is ultra-creamy and swirled with a bright, sweet-tart raspberry sauce. With a buttery graham cracker crust and a smooth, elegant finish, it's a stunning dessert that's perfect for special occasions.",
   "equipment": [

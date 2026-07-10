@@ -1,6 +1,10 @@
 {
   "additionalTime": "2 to 8 hours steak marinade, 10 minutes chile soak, 10 minutes steak rest, plus 10 minutes potato steam-dry time",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "steak"
+  ],
   "cookTime": "1 hour",
   "description": "Carne asada burritos with citrus-garlic marinated steak, savory Mexican-style rice, creamy pinto beans, extra-crispy seasoned potatoes, Oaxaca-Jack cheese, avocado crema, quick pickled onions, a toasted flour tortilla, and a smooth hot-oil-simmered roasted arbol-tomatillo drip hot sauce on the side.",
   "equipment": [

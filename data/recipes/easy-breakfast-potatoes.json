@@ -1,5 +1,9 @@
 {
   "author": "Amanda Cooks & Styles",
+  "collections": [
+    "breakfast",
+    "sides-snacks"
+  ],
   "cookTime": "20 minutes",
   "description": "Super simple homemade breakfast potato recipe made with fresh potatoes, herbs and seasonings. Serve with fresh cooked eggs, toast, in a breakfast burrito and more.",
   "equipment": [

@@ -1,6 +1,9 @@
 [
   {
     "author": "Tania",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "3 hours 30 minutes",
     "description": "This Dutch oven pot roast is the ultimate comfort food. It's incredibly flavorful, with fall-apart tender beef slow-braised alongside baby carrots and potatoes for a complete one-pot meal.",
     "equipment": [
@@ -169,6 +172,10 @@
   },
   {
     "author": "Brianna May",
+    "collections": [
+      "main-dishes",
+      "soups-stews"
+    ],
     "cookTime": "1 hour 15 minutes",
     "description": "This stovetop Dutch Oven Chili is hearty, rich, and full of flavor. The bacon, chipotle peppers, and adobo sauce add a delicious smokiness. This recipe works well in either an enameled or cast iron Dutch oven.",
     "equipment": [
@@ -346,6 +353,9 @@
   },
   {
     "author": "Jamie Vespa MS, RD",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "30 minutes",
     "description": "This restaurant-worthy Creamy Lemon Chicken Pasta is easy enough for weeknights, yet impressive enough for company. It's a family-favorite recipe and a guaranteed crowd pleaser.",
     "equipment": [
@@ -526,6 +536,10 @@
   },
   {
     "author": "Sally",
+    "collections": [
+      "breakfast",
+      "baking"
+    ],
     "cookTime": "25 minutes",
     "description": "Make a sweet Dutch baby pancake using this simple, 8-ingredient recipe. It bakes up puffed and golden with crisp edges and a soft center, and can easily be adapted for sweet or savory toppings.",
     "equipment": [
@@ -627,6 +641,10 @@
   },
   {
     "author": "Natasha of NatashasKitchen.com",
+    "collections": [
+      "main-dishes",
+      "steak"
+    ],
     "cookTime": "15 minutes",
     "description": "This pan-seared steak with garlic butter delivers steakhouse-quality flavor at home. The steaks are beautifully seared on the outside, tender on the inside, and finished with an aromatic garlic butter baste.",
     "equipment": [
@@ -731,6 +749,10 @@
   {
     "additionalTime": "5 minutes",
     "author": "Alison",
+    "collections": [
+      "main-dishes",
+      "baking"
+    ],
     "cookTime": "1 hour 10 minutes",
     "description": "This Dutch Oven Chicken Pot Pie is an easy, comforting dinner that feeds a crowd. Using puff pastry, rotisserie chicken, and frozen vegetables makes this a delicious home-cooked meal with minimal prep.",
     "equipment": [
@@ -870,6 +892,9 @@
   },
   {
     "author": "Lauren Allen",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "2 hours 40 minutes",
     "description": "Tender, fall-off-the-bone braised short ribs cooked low and slow in a rich, savory sauce-all in one pot. This comforting dish is perfect served over creamy mashed potatoes for an impressive yet approachable meal.",
     "equipment": [
@@ -997,6 +1022,10 @@
   },
   {
     "author": "Lauren Allen",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "40 minutes",
     "description": "This old-fashioned Peach Cobbler is incredibly easy to make from scratch and can be prepared with fresh or canned peaches, making it a perfect dessert any time of year.",
     "equipment": [
@@ -1118,6 +1147,10 @@
   },
   {
     "author": "Joanna Cismaru",
+    "collections": [
+      "main-dishes",
+      "steak"
+    ],
     "cookTime": "20 minutes",
     "description": "This Instant Pot Mongolian Beef delivers takeout-style flavor at home in a fraction of the time. The beef is tender, saucy, and perfectly sweet-savory, making it a fast and satisfying dinner.",
     "equipment": [
@@ -1247,6 +1280,10 @@
   },
   {
     "author": "Savory Tooth",
+    "collections": [
+      "main-dishes",
+      "soups-stews"
+    ],
     "cookTime": "15 minutes",
     "description": "This Instant Pot Broccoli Cheese Soup comes together quickly and easily using a pressure cooker. The result is a rich, creamy soup with tender broccoli and plenty of melted cheddar, perfect for a comforting meal.",
     "equipment": [
@@ -1361,6 +1398,9 @@
   {
     "additionalTime": "15 minutes",
     "author": "Rachel Gurk",
+    "collections": [
+      "sides-snacks"
+    ],
     "cookTime": "5 minutes",
     "description": "Instant Pot jasmine rice is fluffy, perfectly cooked, and incredibly easy to make. You don't need a rice cooker to get delicious jasmine rice for stir fries, curries, or any Asian-inspired meal.",
     "equipment": [
@@ -1443,6 +1483,9 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "30 minutes",
     "description": "Chicken Florentine is a comforting Italian-inspired dish featuring pan-seared chicken breasts served in a garlicky spinach cream sauce with parmesan. It's quick, easy, and made with simple everyday ingredients.",
     "equipment": [
@@ -1587,6 +1630,10 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "50 minutes",
     "description": "This classic Pecan Pie features a gooey, sweet filling packed with crunchy pecans and baked in a flaky pie crust. It's easy to make and perfect for holidays or any special occasion.",
     "equipment": [
@@ -1696,6 +1743,9 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "15 minutes",
     "description": "This Creamy Tuscan Chicken is a quick and flavorful weeknight dinner featuring pan-seared chicken breasts in a rich cream sauce with sun-dried tomatoes, spinach, garlic, and parmesan.",
     "equipment": [
@@ -1838,6 +1888,11 @@
   {
     "additionalTime": "2 hours 30 minutes",
     "author": "John Kanell",
+    "collections": [
+      "breakfast",
+      "baking",
+      "desserts"
+    ],
     "cookTime": "20 minutes",
     "description": "These easy homemade Cinnamon Rolls bake up soft, fluffy, and gooey, with tender dough swirled with cinnamon brown sugar and finished with a rich cream cheese glaze.",
     "equipment": [
@@ -2015,6 +2070,10 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "17 minutes",
     "description": "These moist carrot cake cupcakes are packed with warm spices, fresh grated carrots, and chopped walnuts, then topped with a rich cream cheese frosting. Perfect when you want all the flavors of carrot cake in cupcake form.",
     "equipment": [
@@ -2193,6 +2252,10 @@
   {
     "additionalTime": "35 minutes",
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "40 minutes",
     "description": "This Pineapple Upside Down Cake is simple, delicious, and beautifully finished with a caramelized pineapple and cherry topping-so striking that it needs no additional decoration.",
     "equipment": [
@@ -2343,6 +2406,11 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "cookies",
+      "desserts"
+    ],
     "cookTime": "20 minutes",
     "description": "These homemade Coconut Macaroons come together quickly with simple ingredients and minimal effort. They're chewy, lightly crisp on the outside, and optionally dipped or drizzled with chocolate for an extra indulgent treat.",
     "equipment": [
@@ -2448,6 +2516,9 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "25 minutes",
     "description": "This easy one-pot Chili Mac has tons of melty cheese, hearty ground beef, and the perfect amount of spice. It's a comforting, family-friendly dinner that's ready in under 40 minutes and great for make-ahead meals.",
     "equipment": [
@@ -2617,6 +2688,10 @@
   {
     "additionalTime": "20 minutes",
     "author": "John Kanell",
+    "collections": [
+      "main-dishes",
+      "steak"
+    ],
     "cookTime": "25 minutes",
     "description": "This gourmet-style Beef Tenderloin is incredibly tender, juicy, and melt-in-your-mouth delicious. The whole tenderloin is pan-seared, slathered in garlic herb butter, and roasted to perfection for an elegant yet approachable main dish.",
     "equipment": [
@@ -2734,6 +2809,10 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "15 minutes",
     "description": "These colorful, moist Red Velvet Cupcakes are soft, tender, and lightly chocolatey, topped with a classic cream cheese frosting. They're festive, easy to make, and perfect for parties or special occasions.",
     "equipment": [
@@ -2901,6 +2980,9 @@
   {
     "additionalTime": "10 minutes",
     "author": "John Kanell",
+    "collections": [
+      "sides-snacks"
+    ],
     "cookTime": "20 minutes",
     "description": "Hush Puppies are a Southern classic-crispy on the outside, fluffy on the inside, and perfect for fish fries or family barbecues. These are easy to make with simple pantry ingredients and fry up beautifully golden.",
     "equipment": [
@@ -3031,6 +3113,9 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "sides-snacks"
+    ],
     "cookTime": "25 minutes",
     "description": "Creamy, fluffy garlic mashed potatoes made with Yukon gold potatoes, butter, milk, and sour cream. This classic side dish is easy to prepare and perfect for holidays, family dinners, or any comforting meal.",
     "equipment": [
@@ -3138,6 +3223,9 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "sides-snacks"
+    ],
     "cookTime": "14 minutes",
     "description": "These Air Fryer Sweet Potato Fries are crispy on the outside, tender on the inside, and incredibly easy to make. Perfect as a quick snack or simple side dish, they're lightly seasoned and ready in under 25 minutes.",
     "equipment": [
@@ -3235,6 +3323,10 @@
   {
     "additionalTime": "1 hour",
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "30 minutes",
     "description": "This classic Tres Leches Cake is light, airy, and soaked in a rich three-milk mixture that makes every bite incredibly moist and flavorful. Finished with a fluffy whipped cream topping, it's an easy yet impressive dessert.",
     "equipment": [
@@ -3387,6 +3479,10 @@
   {
     "additionalTime": "3 hours",
     "author": "John Kanell",
+    "collections": [
+      "main-dishes",
+      "steak"
+    ],
     "cookTime": "2 hours 15 minutes",
     "description": "This classic Prime Rib recipe is rich, tender, and incredibly flavorful, making it perfect for holidays or special occasions. The roast is rubbed with herbs and garlic, roasted at high heat for a beautiful crust, then finished low and slow for a perfectly cooked interior.",
     "equipment": [
@@ -3503,6 +3599,9 @@
   {
     "additionalTime": "10 minutes",
     "author": "John Kanell",
+    "collections": [
+      "sides-snacks"
+    ],
     "cookTime": "30 minutes",
     "description": "These Instant Pot Sweet Potatoes are an easy, no-fuss side dish that turns out perfectly soft and fluffy every time. They're ideal when you need a quick, hands-off way to cook whole sweet potatoes.",
     "equipment": [
@@ -3574,6 +3673,11 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "cookies",
+      "desserts"
+    ],
     "cookTime": "55 minutes",
     "description": "These soft and chewy chocolate chip cookie bars are incredibly easy to make and packed with chocolatey goodness, featuring rich brown sugar, vanilla, and a hint of salt. Perfect for slicing and sharing.",
     "equipment": [
@@ -3705,6 +3809,10 @@
   {
     "additionalTime": "1 hour",
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "25 minutes",
     "description": "These Mini Cheesecakes have a crunchy graham cracker pecan crust and a rich, creamy filling that bakes quickly. They're easy to make, perfectly portioned, and ideal for customizing with your favorite toppings.",
     "equipment": [
@@ -3844,6 +3952,11 @@
   {
     "additionalTime": "3 hours",
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "cookies",
+      "desserts"
+    ],
     "cookTime": "55 minutes",
     "description": "These bright and zingy Lemon Bars have a buttery shortbread crust topped with a smooth, tangy lemon filling. They're easy to make, perfectly balanced between sweet and tart, and ideal for make-ahead desserts.",
     "equipment": [
@@ -3959,6 +4072,10 @@
   {
     "additionalTime": "6 hours",
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "1 hour",
     "description": "This classic baked Cheesecake is ultra-creamy with a crunchy graham cracker crust and a smooth, crack-free finish-no water bath required. With simple techniques and a gradual cool-down, it's an easy, reliable showstopper dessert.",
     "equipment": [
@@ -4092,6 +4209,9 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "3 hours",
     "description": "These Braised Beef Short Ribs are slow-cooked in a rich red wine and herb sauce until the meat is fall-apart tender. Perfect for cozy dinners, special occasions, or make-ahead meals, they're deeply flavorful and incredibly comforting.",
     "equipment": [
@@ -4254,6 +4374,10 @@
   {
     "additionalTime": "30 minutes",
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "30 minutes",
     "description": "Sopapilla Cheesecake combines flaky crescent roll layers with a rich, creamy cheesecake filling and a cinnamon-sugar topping. Inspired by the classic New Mexican dessert, this crowd-pleasing treat is best served warm with honey, berries, or whipped cream.",
     "equipment": [
@@ -4366,6 +4490,10 @@
   {
     "additionalTime": "7 hours",
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "1 hour 10 minutes",
     "description": "This baked Raspberry Cheesecake is ultra-creamy and swirled with a bright, sweet-tart raspberry sauce. With a buttery graham cracker crust and a smooth, elegant finish, it's a stunning dessert that's perfect for special occasions.",
     "equipment": [
@@ -4527,6 +4655,11 @@
   {
     "additionalTime": null,
     "author": "John Kanell",
+    "collections": [
+      "baking",
+      "cookies",
+      "desserts"
+    ],
     "cookTime": "10 minutes",
     "description": "These ultra-easy Peanut Butter Cookies are soft, tender, and melt-in-your-mouth with the perfect balance of salty and sweet. Made with simple pantry ingredients, they bake quickly and set up beautifully as they cool.",
     "equipment": [
@@ -4650,6 +4783,11 @@
   {
     "additionalTime": "20 minutes",
     "author": "Jamie Silva",
+    "collections": [
+      "baking",
+      "cookies",
+      "desserts"
+    ],
     "cookTime": "10 minutes",
     "description": "These chewy chocolate chip cookies have ooey-gooey centers, perfectly crisp edges, and melty chunks of dark chocolate. Made easily in one bowl, they can be baked right away or frozen for cookies on demand.",
     "equipment": [
@@ -4770,6 +4908,11 @@
   {
     "additionalTime": "20 minutes",
     "author": "Jess Smith",
+    "collections": [
+      "baking",
+      "cookies",
+      "desserts"
+    ],
     "cookTime": "12 minutes",
     "description": "These crispy and chewy chocolate chip cookies have golden, crisp edges with soft, chewy centers. Chilling the dough briefly and using properly softened butter are the keys to achieving the perfect texture every time.",
     "equipment": [
@@ -4902,6 +5045,11 @@
   {
     "additionalTime": "2 hours",
     "author": "Eric King",
+    "collections": [
+      "baking",
+      "cookies",
+      "desserts"
+    ],
     "cookTime": "10 minutes",
     "description": "These Best-Ever Chocolate Chip Cookies have crisp edges, gooey centers, and an indulgent amount of chocolate. Using melted butter and a rest period creates deep flavor and the perfect chewy texture.",
     "equipment": [
@@ -5022,6 +5170,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "55 minutes",
     "description": "This Baklava Croissant Bread Pudding is the ultimate mashup of two classic desserts. Buttery croissants are soaked in a rich vanilla bean custard and layered with a gooey honey-nut baklava filling, then baked until golden and served with vanilla ice cream and honey buttermilk syrup.",
     "equipment": [
@@ -5213,6 +5365,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "1 hour 10 minutes",
     "description": "This Brown Butter Blueberry Crumble Cake has the most soft, tender crumb that melts in your mouth with every single bite. The brown butter adds a warm, nutty richness that pairs beautifully with the bright and sweet jammy blueberry layer that runs throughout the cake. Finished with a golden, buttery crumble topping that adds the most incredible crunch to every bite - served warm with a scoop of vanilla ice cream for dessert or with a hot cup of coffee for the ultimate cozy breakfast.",
     "equipment": [
@@ -5410,6 +5566,9 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "breakfast"
+    ],
     "cookTime": "30 minutes",
     "description": "These Banana Coffee Cake Pancakes with Warm Vanilla Bourbon Maple Syrup are soft, fluffy, and tender in the middle with a beautifully golden exterior and perfectly crisp edges in every single bite. A warm cinnamon streusel caramelizes on the bottom and melts into the middle as they cook for that classic coffee cake flavor that pairs absolutely perfectly with the ripe banana throughout. Served warm with a pat of butter and a drizzle of warm vanilla bourbon maple syrup - this is the ultimate cozy breakfast you'll want to make every single weekend.",
     "equipment": [
@@ -5582,6 +5741,9 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "desserts"
+    ],
     "cookTime": "20 minutes",
     "description": "These Old-Fashioned Sour Cream Donuts are soft and fluffy with a beautifully delicate interior and a perfectly golden and slightly crisp exterior that makes every single bite absolutely irresistible. The sour cream adds a subtle tang that works perfectly with a pinch of nutmeg to create that signature old-fashioned donut flavor that feels wonderfully nostalgic in the very best way. Fried until perfectly golden and coated in a silky vanilla bean glaze that melts into every crack and crevice - served warm with a hot cup of coffee, these donuts are the classic treat you'll want to make on repeat!",
     "equipment": [
@@ -5739,6 +5901,9 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "desserts"
+    ],
     "cookTime": "30 minutes",
     "description": "These Sourdough Krispy Kreme Donuts are incredibly soft, fluffy, and tender on the inside with a beautifully golden exterior that is just slightly chewy in the most irresistible way. Made with sourdough discard for a subtle tang and depth of flavor that takes these donuts completely over the top, then coated in a silky vanilla bean or strawberry glaze that gets perfectly crackly on the outside. Served warm with a hot cup of coffee - these donuts are the ultimate homemade treat that rivals your favorite Krispy Kreme every single time!",
     "equipment": [
@@ -5894,6 +6059,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "breakfast",
+      "desserts"
+    ],
     "cookTime": "30 minutes",
     "description": "These Homemade Honey Buns are soft, pillowy, and tender in the center with a perfectly golden, slightly chewy exterior. Filled with warm, gooey swirls of honey butter and cinnamon brown sugar, then fried to golden perfection and coated in a silky honey glaze, these bakery-style honey buns are best enjoyed warm with a hot cup of coffee.",
     "equipment": [
@@ -6089,6 +6258,11 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "baking",
+      "cookies",
+      "desserts"
+    ],
     "cookTime": "12 minutes",
     "description": "These Nutella-Stuffed Banana Bread Chocolate Chip Cookies (with Brown Butter) are soft and gooey in the center with perfectly golden, crisp, crinkly edges. Each cookie is stuffed with melty Nutella and studded with chocolate chips, while ripe banana pairs beautifully with the nutty, toasted flavor of brown butter. Best served warm with flaky sea salt and a cold glass of milk.",
     "equipment": [
@@ -6227,6 +6401,9 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "desserts"
+    ],
     "cookTime": "15 minutes",
     "description": "These Heart Churros With Homemade Chocolate Sauce are golden and crisp on the outside, tender in the middle, and coated in strawberry cinnamon sugar for a festive pink Valentine's Day twist. Shaped into hearts and served warm with a rich homemade chocolate dipping sauce, these fun, romantic churros are the perfect sweet treat for celebrating love.",
     "equipment": [
@@ -6379,6 +6556,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "breakfast",
+      "baking"
+    ],
     "cookTime": "20 minutes",
     "description": "These Cinnamon Crunch Blueberry Butter Swim Biscuits are soft, fluffy, and unbelievably buttery, with juicy, tart blueberries bursting through every bite. Baked until golden and topped with a brown sugar cinnamon crunch for the perfect contrast of texture, these cozy biscuits are best served warm with a pat of butter, flaky sea salt, and a hot cup of coffee.",
     "equipment": [
@@ -6511,6 +6692,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "1 hour 20 minutes",
     "description": "This Vanilla Bean Cheesecake with White Chocolate Mousse starts with a buttery graham cracker crust for the perfect crunch, followed by a creamy, tangy vanilla bean cheesecake filling that lets the vanilla truly shine. It's finished with a lush layer of white chocolate mousse and served with a vibrant berry compote for a beautifully balanced, elegant dessert.",
     "equipment": [
@@ -6679,6 +6864,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "desserts",
+      "drinks"
+    ],
     "cookTime": "30 minutes",
     "description": "These Homemade Beignets with French Hot Chocolate are the ultimate cozy treat. The beignets fry up soft and pillowy on the inside with a perfectly golden, crisp, and slightly chewy exterior, then get buried under a generous snowfall of powdered sugar. Dip them warm into the thick, rich, velvety French hot chocolate that's decadently smooth and topped with marshmallow fluff, homemade whipped cream, and chocolate shavings. It's the dreamiest café-style pairing - cozy, indulgent, and truly unforgettable.",
     "equipment": [
@@ -6861,6 +7050,9 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "breakfast"
+    ],
     "cookTime": "30 minutes",
     "description": "These Pumpkin Cinnamon Roll Pancakes are soft, fluffy, and full of warm pumpkin spice flavor, with caramelized cinnamon sugar swirls that melt into every bite. Cooked to golden perfection and served warm with whipped honey cinnamon butter and a drizzle of maple syrup, they're perfect for a cozy fall breakfast or festive weekend brunch. They taste just like your favorite pumpkin cinnamon rolls-made even easier in pancake form.",
     "equipment": [
@@ -7035,6 +7227,9 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "desserts"
+    ],
     "cookTime": "15 minutes",
     "description": "These Blueberry Lemon Curd Donut Holes are a delicious twist on classic donut holes-made with soft and fluffy blueberry cake donut dough, fried until perfectly golden and crisp, then filled with a bright, sweet-tart lemon curd and coated in a silky vanilla bean buttermilk glaze. A bite-sized burst of flavor, they're best served fresh and warm!",
     "equipment": [
@@ -7218,6 +7413,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "20 minutes",
     "description": "These Mini Brown Butter Lemon Cakes are soft, light, and fluffy with rich, nutty undertones from the brown butter. Each cake is topped with a cloud of stabilized whipped cream and a swirl of homemade lemon curd that's perfectly tart and sweet. Finished with delicate flowers for a charming, spring-ready touch, they're the perfect balance of flavor and elegance-ideal for brunch, tea parties, or any occasion.",
     "equipment": [
@@ -7390,6 +7589,11 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
     "cookTime": "25 minutes",
     "description": "This Sourdough Discard Italian Stromboli is made with the best sourdough discard dough, using a self-rising flour mixture and Greek yogurt for a soft yet crisp crust. It's filled with layers of savory pizza sauce, pesto, roasted red peppers, provolone, salami, pepperoni, and melty mozzarella, then baked until golden and crispy. Served hot with a drizzle of hot honey, this stromboli is the perfect mix of cheesy, spicy, and savory flavors—a must-try for any pizza lover!",
     "equipment": [
@@ -7555,6 +7759,11 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
     "cookTime": "18 minutes",
     "description": "This Sourdough Discard Pizza features a soft and fluffy crust made with sourdough discard, Greek yogurt, and self-rising flour for a light, airy base with a perfectly golden crust. Topped with gooey mozzarella, savory pepperoni, creamy whipped ricotta, fresh basil, hot honey, and a sprinkle of freshly grated parmesan, it's the ultimate pizza that balances flavors and textures in every bite.",
     "equipment": [
@@ -7690,6 +7899,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "sides-snacks",
+      "baking"
+    ],
     "cookTime": "25 minutes",
     "description": "These Salted Honey Butter Sourdough Parker House Rolls are soft, fluffy, and full of flavor! Made with sourdough discard, they're brushed with warm salted honey butter right after baking and sprinkled with flaky sea salt for a perfect sweet-and-salty finish. Ideal for dinner tables, holiday feasts, or any occasion.",
     "equipment": [
@@ -7814,6 +8027,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "35 minutes",
     "description": "These Mini Brown Butter Pumpkin Spice Sourdough Cruffins are flaky and buttery, made with homemade sourdough puff pastry (or store-bought for convenience) and filled with a rich brown butter pumpkin spice filling. Coated in cinnamon sugar, they offer the perfect blend of sweet, spiced flavors and crisp texture.",
     "equipment": [
@@ -7958,6 +8175,9 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "desserts"
+    ],
     "cookTime": "15 minutes",
     "description": "Enjoy the perfect blend of crispy and sweet with Sourdough Fried Peaches. These juicy peach slices are dipped in a tangy sourdough batter, fried to golden perfection, and coated in a cinnamon sugar mixture. Served with a rich homemade crème anglaise, this dessert is a delightful twist on classic Southern comfort food.",
     "equipment": [
@@ -8116,6 +8336,10 @@
   {
     "additionalTime": "30 minutes",
     "author": "Kiley Heard",
+    "collections": [
+      "main-dishes",
+      "burgers"
+    ],
     "cookTime": "30 minutes",
     "description": "Enjoy a delicious twist on a classic with Sourdough Tortilla Smash Burger Tacos. These tacos feature juicy smash burger patties that are smashed directly onto homemade sourdough tortillas and cooked until crispy, then topped with melted cheese, crisp lettuce, tangy pickles, and a homemade burger sauce. Perfect for a quick, flavorful meal that combines the best of both tacos and burgers.",
     "equipment": [
@@ -8280,6 +8504,10 @@
   },
   {
     "author": "Kiley Heard",
+    "collections": [
+      "baking",
+      "desserts"
+    ],
     "cookTime": "30 minutes",
     "description": "Indulge in the zesty delight of this Lemon Poppyseed Sourdough Monkey Bread Skillet, a tangy twist on a classic favorite. Crafted with sourdough discard, each fluffy morsel is coated with a lemon sugar and butter mixture, creating a burst of citrus flavor in every bite. Baked to perfection in a skillet, this delightful treat is finished with an almond glaze, adding a touch of sweetness to complement the tartness of the lemon. Perfect for brunch gatherings or a cozy weekend indulgence, this monkey bread skillet is sure to impress.",
     "equipment": [
@@ -8420,6 +8648,9 @@
   },
   {
     "author": "John Kanell",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "25 minutes",
     "description": "Easy Air Fryer Orange Chicken is about to be your new favorite dinner recipe! It comes together quickly with simple ingredients. Serve it with rice for a satisfying dinner.",
     "equipment": [
@@ -8592,6 +8823,9 @@
   },
   {
     "author": "John Kanell",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "45 minutes",
     "description": "My easy Chicken Parmesan recipe is so easy to make at home. It cooks in under 30 minutes for a dinner of crispy chicken cutlets topped with tomato sauce and melty cheese!",
     "equipment": [
@@ -8736,6 +8970,9 @@
   },
   {
     "author": "John Kanell",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "15 minutes",
     "description": "All you need are a few simple ingredients and one pan to make this Chicken Piccata recipe. Filled with bold flavors thanks to the tangy lemon sauce, you'll want to make this again and again.",
     "equipment": [
@@ -8873,6 +9110,9 @@
   },
   {
     "author": "John Kanell",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "20 minutes",
     "description": "This Chicken Francese recipe comes together quickly with only a few simple ingredients. An easy chicken dinner for a busy weeknight or for entertaining guests, this chicken recipe is perfect!",
     "equipment": [
@@ -9015,6 +9255,10 @@
   },
   {
     "author": "John Kanell",
+    "collections": [
+      "main-dishes",
+      "soups-stews"
+    ],
     "cookTime": "30 minutes",
     "description": "My 30-minute corn chowder recipe is a must-try for busy weeknights. Thick, creamy, and loaded with sweetness from fresh corn and savoriness from crispy bacon.",
     "equipment": [
@@ -9163,6 +9407,10 @@
   },
   {
     "author": "John Kanell",
+    "collections": [
+      "main-dishes",
+      "soups-stews"
+    ],
     "cookTime": "1 hour 10 minutes",
     "description": "A cozy one-pot Potato Soup recipe the whole family will love! Loaded with bacon bits, hearty potatoes, and the perfect amount of creaminess, all you need is a few simple ingredients for this tasty meal!",
     "equipment": [
@@ -9309,6 +9557,10 @@
   },
   {
     "author": "Amanda Cooks & Styles",
+    "collections": [
+      "breakfast",
+      "sides-snacks"
+    ],
     "cookTime": "20 minutes",
     "description": "Super simple homemade breakfast potato recipe made with fresh potatoes, herbs and seasonings. Serve with fresh cooked eggs, toast, in a breakfast burrito and more.",
     "equipment": [
@@ -9399,6 +9651,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "steak"
+    ],
     "cookTime": "35 minutes",
     "description": "A reverse-seared thick-cut Wagyu-style ribeye using a measured salt dry brine, low oven cook, final dry pat, and hard stainless steel pan sear with an optional brief garlic-thyme butter baste.",
     "equipment": [
@@ -9537,6 +9793,10 @@
   {
     "additionalTime": "4 to 24 hours brine time",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "25 minutes",
     "description": "A Nashville hot chicken sandwich with a pickle-buttermilk brined chicken thigh, a rough, crisp fried crust, spicy hot oil, bright pickle slaw, dill pickles, comeback sauce, and a toasted potato or brioche bun.",
     "equipment": [
@@ -9826,6 +10086,10 @@
   {
     "additionalTime": "15 minutes beef chill time",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "burgers"
+    ],
     "cookTime": "15 minutes",
     "description": "A double smash burger with cold 80/20 beef, a thin crisp griddle crust, shaved onion smashed into the patties, melted American cheese, a toasted potato bun, dill pickles, crisp lettuce, and homemade burger sauce.",
     "equipment": [
@@ -10025,6 +10289,10 @@
   {
     "additionalTime": "30 minutes to 2 hours buttermilk soak plus 15 minutes coating rest and 3 minutes final rest",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "steak"
+    ],
     "cookTime": "25 minutes",
     "description": "Chicken fried steak with evenly tenderized top round or cube steak, a seasoned hot sauce buttermilk soak, a rough two-layer flour coating, carefully managed shallow fry, and peppered cream gravy built from clean toasted pan drippings.",
     "equipment": [
@@ -10274,6 +10542,10 @@
   {
     "additionalTime": "8 to 24 hours pork marinade plus 1 hour 30 minutes dough rise",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "3 hours 10 minutes",
     "description": "Mojo roast pork Cubano sandwiches with homemade Cuban-style rolls, citrus-garlic pork shoulder, ham, Swiss cheese, quick garlic pickles, mustard sauce, and a buttered pressed crust.",
     "equipment": [
@@ -10556,6 +10828,10 @@
   {
     "additionalTime": "10 minutes quick soak plus 10 minutes coating rest",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "15 minutes",
     "description": "A quick hot honey chicken cutlet sandwich with a thin chicken breast cutlet, a buttermilk-hot sauce dip, crisp panko crust, garlic mayo, lime slaw, dill pickles, and a toasted potato bun.",
     "equipment": [
@@ -10804,6 +11080,11 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches",
+      "steak"
+    ],
     "cookTime": "25 minutes",
     "description": "A skillet steak sandwich with thin-sliced seared steak, pepperoncini onions, garlic mayo, melted deli provolone, dressed arugula, and a toasted ciabatta or hoagie roll.",
     "equipment": [
@@ -10990,6 +11271,10 @@
   {
     "additionalTime": "30 minutes to 12 hours marinating plus 20 minutes beef chill time",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "steak"
+    ],
     "cookTime": "15 minutes",
     "description": "Korean BBQ bulgogi with thin-sliced beef, Asian pear, soy sauce, garlic, ginger, sesame, lightly charred vegetables, and a reserved glaze for finishing in the skillet.",
     "equipment": [
@@ -11198,6 +11483,9 @@
   {
     "additionalTime": "30 minutes short-rib soak plus 6 to 24 hours marinating",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes"
+    ],
     "cookTime": "20 minutes",
     "description": "Korean BBQ galbi with flanken-cut beef short ribs, pear-soy marinade, garlic, ginger, sesame, scallions, grilled onion, and a simmered glaze for charred edges.",
     "equipment": [
@@ -11398,6 +11686,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "30 minutes",
     "description": "A hot oven-finished meatball sub with tender beef-pork meatballs, quick tomato sauce, garlic-Parmesan toasted rolls, provolone, mozzarella, and fresh basil.",
     "equipment": [
@@ -11615,8 +11907,12 @@
     "totalTime": "50 minutes"
   },
   {
-    "author": "Robert Carr",
     "additionalTime": "10 minutes sausage mixture rest",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "25 minutes",
     "description": "A hot Italian sausage sub with homemade sweet Italian-style pork patties, browned peppers and onions, quick tomato pan sauce, a garlic-toasted roll, provolone, mozzarella, Parmesan, and basil.",
     "equipment": [
@@ -11855,6 +12151,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "25 minutes",
     "description": "A hot turkey provolone sandwich with a seared turkey cutlet, garlic-Dijon mayo, mushroom-onion pan sauce, roasted red peppers, dressed arugula, and a toasted ciabatta or hoagie roll.",
     "equipment": [
@@ -12071,6 +12371,10 @@
   {
     "additionalTime": "10 minutes tomato and onion seasoning time plus 5 minutes sandwich pressing",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "0 minutes",
     "description": "A cold Italian grinder sandwich with thin-sliced ham, Genoa salami, capicola, provolone, garlic-oregano mayo, seasoned tomatoes and onions, chopped giardiniera, pepperoncini, and a red wine vinaigrette grinder salad.",
     "equipment": [
@@ -12286,6 +12590,9 @@
   {
     "additionalTime": "10 minutes dried chile soak plus 15 minutes flavor rest",
     "author": "Robert Carr",
+    "collections": [
+      "salsas-sauces"
+    ],
     "cookTime": "25 minutes",
     "description": "Roasted red taqueria salsa with Roma tomatoes, tomatillos, jalapenos, guajillo, a small amount of chile de arbol, garlic, onion, lime, vinegar, and a brief hot-oil simmer.",
     "equipment": [
@@ -12421,6 +12728,9 @@
   {
     "additionalTime": "10 minutes poblano steam time, 5 minutes cooling time, plus 20 minutes flavor rest",
     "author": "Robert Carr",
+    "collections": [
+      "salsas-sauces"
+    ],
     "cookTime": "20 minutes",
     "description": "Roasted green salsa with deeply broiled tomatillos, poblano, jalapeno, serrano, garlic, onion, cilantro, lime, and a small amount of honey.",
     "equipment": [
@@ -12552,6 +12862,9 @@
   {
     "additionalTime": "10 minutes cooling time plus 20 minutes flavor rest",
     "author": "Robert Carr",
+    "collections": [
+      "salsas-sauces"
+    ],
     "cookTime": "12 minutes",
     "description": "Creamy jalapeno taqueria salsa made by cooking jalapenos, a little white onion, and garlic, then blending them with neutral oil, lime, a little vinegar, cilantro, and salt.",
     "equipment": [
@@ -12661,6 +12974,9 @@
   {
     "additionalTime": "45 minutes flavor rest",
     "author": "Robert Carr",
+    "collections": [
+      "salsas-sauces"
+    ],
     "cookTime": "0 minutes",
     "description": "Fresh table salsa with whole peeled tomatoes, fire-roasted tomatoes, jalapeno, white onion, garlic, cilantro, lime, cumin, salt, and a short low-speed pulse technique that keeps it lightly chunky.",
     "equipment": [
@@ -12778,6 +13094,9 @@
   {
     "additionalTime": "15 minutes dried chile soak plus 15 minutes flavor rest",
     "author": "Robert Carr",
+    "collections": [
+      "salsas-sauces"
+    ],
     "cookTime": "25 minutes",
     "description": "Smooth simmered guajillo-arbol salsa for spooning over burrito bites, with roasted tomatoes, tomatillos, garlic, onion, toasted dried chiles, a little vinegar and lime, honey, and a hot-oil finish.",
     "equipment": [
@@ -12904,6 +13223,10 @@
   {
     "additionalTime": "10 minutes potato steam-dry time, 10 minutes chile soak, 10 minutes sauce rest while the filling cooks, plus 3 to 5 minutes foil rest",
     "author": "Robert Carr",
+    "collections": [
+      "breakfast",
+      "main-dishes"
+    ],
     "cookTime": "45 minutes",
     "description": "A focused sausage, egg, potato, and cheese breakfast burrito with crisp-edged Yukon Gold potatoes, deeply browned sage-forward breakfast sausage, tender low-and-slow scrambled eggs, a three-cheese melt, toasted 10-inch flour tortillas, and a glossy simmered guajillo-arbol drip sauce served warm on the side for adding to each bite.",
     "equipment": [
@@ -13224,6 +13547,10 @@
   {
     "additionalTime": "2 to 8 hours steak marinade, 10 minutes chile soak, 10 minutes steak rest, plus 10 minutes potato steam-dry time",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "steak"
+    ],
     "cookTime": "1 hour",
     "description": "Carne asada burritos with citrus-garlic marinated steak, savory Mexican-style rice, creamy pinto beans, extra-crispy seasoned potatoes, Oaxaca-Jack cheese, avocado crema, quick pickled onions, a toasted flour tortilla, and a smooth hot-oil-simmered roasted arbol-tomatillo drip hot sauce on the side.",
     "equipment": [
@@ -13622,6 +13949,9 @@
   {
     "additionalTime": "0 minutes",
     "author": "Robert Carr",
+    "collections": [
+      "drinks"
+    ],
     "cookTime": "0 minutes",
     "description": "A sweeter, smoother Virgin Islands-style Painkiller with dark rum, pineapple juice, fresh orange juice, extra cream of coconut, crushed ice, freshly grated nutmeg, and a tiny pinch of salt to make the fruit and coconut pop.",
     "equipment": [
@@ -13719,6 +14049,9 @@
   {
     "additionalTime": "0 minutes",
     "author": "Robert Carr",
+    "collections": [
+      "drinks"
+    ],
     "cookTime": "0 minutes",
     "description": "A creamy blended nonalcoholic pina colada with frozen pineapple, pineapple juice, sweetened cream of coconut, coconut milk, ice, and a tiny pinch of salt. It is sweet, smooth, and tropical without rum flavor.",
     "equipment": [
@@ -13801,6 +14134,10 @@
   {
     "additionalTime": "10 minutes patty seasoning rest and sauce rest",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "burgers"
+    ],
     "cookTime": "15 minutes",
     "description": "One thick A5 Wagyu burger with a toasted potato or brioche bun, glossy soy-pickle onions, a little burger sauce, pickles, lettuce, and a skillet cook that builds a crust before gently finishing the center.",
     "equipment": [
@@ -13996,6 +14333,11 @@
   {
     "additionalTime": "24 to 72 hours dough fermentation plus 2 to 3 hours dough warm-up",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
     "cookTime": "8 to 11 minutes",
     "description": "A large hot honey pepperoni and ricotta pizza with a 24- to 72-hour cold-fermented crust, garlic-Calabrian tomato sauce, whole-milk mozzarella, cup-and-char pepperoni, seasoned ricotta, Pecorino Romano, basil, and warm chile honey.",
     "equipment": [
@@ -14291,6 +14633,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "8 minutes",
     "description": "A toasted ciabatta sandwich with warmed salami or chorizo, melted cheddar or mozzarella, quick pickle-brine onion, crisp pickles, greens, and Dijon mayo.",
     "equipment": [
@@ -14407,6 +14753,9 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "sides-snacks"
+    ],
     "cookTime": "0 minutes",
     "description": "A no-cook snack plate with cured meat, cheese, bread, pickles, greens, onion, and a simple Dijon pickle mayo for building balanced bites.",
     "equipment": [
@@ -14512,6 +14861,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "0 minutes",
     "description": "A cold wheat bread sandwich with cheddar, a chopped pickle and greens crunch, onion, and a quick mayo-Dijon-ketchup sauce.",
     "equipment": [
@@ -14613,6 +14966,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "sandwiches",
+      "sides-snacks"
+    ],
     "cookTime": "4 minutes",
     "description": "Open-faced ciabatta toast with whole-milk mozzarella, loose folds of prosciutto, pickle-brined arugula, onion, chopped pickles, and light Dijon mayo.",
     "equipment": [
@@ -14723,6 +15080,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "8 minutes",
     "description": "A wheat bread grilled cheese with crisped chorizo or salami, melted cheddar, thin onion, dill pickles, greens, and a small amount of Dijon burger-style sauce.",
     "equipment": [
@@ -14845,6 +15206,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "breakfast",
+      "sandwiches"
+    ],
     "cookTime": "8 minutes",
     "description": "A hot egg sandwich with butter-toasted wheat bread, warmed chorizo or salami, soft folded egg, cheddar, pickles, greens, onion, and a small Dijon burger-style sauce.",
     "equipment": [
@@ -14980,6 +15345,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "sandwiches"
+    ],
     "cookTime": "10 minutes",
     "description": "A simple egg salad sandwich with chopped dill pickles, onion, lettuce or arugula, and a Dijon mayo dressing on wheat bread or ciabatta.",
     "equipment": [
@@ -15082,6 +15451,10 @@
   },
   {
     "author": "Robert Carr",
+    "collections": [
+      "breakfast",
+      "sandwiches"
+    ],
     "cookTime": "6 minutes",
     "description": "A ciabatta toast with mozzarella, folded prosciutto, a butter-fried egg, and arugula dressed with olive oil and pickle brine.",
     "equipment": [
@@ -15204,6 +15577,11 @@
   {
     "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
     "cookTime": "5 to 7 minutes",
     "description": "A large 15- to 16-inch pepperoni, sausage, ricotta, and basil pizza built for a Baking Steel Pro, with a 48- to 72-hour cold-fermented crust, concentrated tomato sauce, whole-milk mozzarella, provolone, Pecorino Romano, cup-and-char pepperoni, browned Italian sausage, seasoned ricotta, and a short broiler finish.",
     "equipment": [
@@ -15520,6 +15898,11 @@
   {
     "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
     "cookTime": "5 to 7 minutes",
     "description": "A large 15- to 16-inch cheese pizza built for a Baking Steel Pro, with a 72-hour cold-fermented crust, thick garlic-oregano tomato sauce, whole-milk mozzarella, provolone piccante, small pockets of drained fresh mozzarella, Pecorino Romano, basil, and a post-bake garlic-basil rim oil.",
     "equipment": [
@@ -15794,6 +16177,11 @@
   {
     "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
     "cookTime": "5 to 7 minutes",
     "description": "A large 15- to 16-inch white pizza built for a Baking Steel Pro, with a 72-hour cold-fermented crust, garlic-ricotta mascarpone base, porcini-boosted browned mixed mushrooms, caramelized onion, fontina, whole-milk mozzarella, Pecorino Romano, torn speck, and lemon-chive finishing oil.",
     "equipment": [
@@ -16129,6 +16517,11 @@
   {
     "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
     "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
     "cookTime": "5 to 7 minutes",
     "description": "A large 15- to 16-inch pesto pizza built for a Baking Steel Pro, with a 72-hour cold-fermented crust, pistachio-basil pesto, whole-milk mozzarella, provolone, Pecorino Romano, thin mortadella, burrata or stracciatella, chopped pistachios, lemon-dressed arugula, and a light lemon-chile honey finish.",
     "equipment": [

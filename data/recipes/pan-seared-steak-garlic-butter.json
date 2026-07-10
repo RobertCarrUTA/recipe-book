@@ -1,5 +1,9 @@
 {
   "author": "Natasha of NatashasKitchen.com",
+  "collections": [
+    "main-dishes",
+    "steak"
+  ],
   "cookTime": "15 minutes",
   "description": "This pan-seared steak with garlic butter delivers steakhouse-quality flavor at home. The steaks are beautifully seared on the outside, tender on the inside, and finished with an aromatic garlic butter baste.",
   "equipment": [

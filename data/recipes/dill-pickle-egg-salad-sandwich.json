@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "10 minutes",
   "description": "A simple egg salad sandwich with chopped dill pickles, onion, lettuce or arugula, and a Dijon mayo dressing on wheat bread or ciabatta.",
   "equipment": [

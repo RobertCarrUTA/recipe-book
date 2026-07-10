@@ -21,6 +21,7 @@ export function buildRecipeSearchText(recipe) {
   addSearchParts(parts, recipe.title);
   addSearchParts(parts, recipe.author);
   addSearchParts(parts, recipe.category);
+  addSearchParts(parts, recipe.collections);
   addSearchParts(parts, recipe.description);
   addSearchParts(parts, recipe.equipment);
   addSearchParts(parts, recipe.ingredients);
@@ -99,11 +100,20 @@ export function recipeSearchTextMatches(searchText, filterText) {
 
 export function recipeMatchesSelectedFilters(recipe, selected) {
   const tags = recipe && recipe.tags ? recipe.tags : {};
+  const collectionValues = Array.isArray(recipe?.collections)
+    ? recipe.collections.map((value) => String(value))
+    : [];
   const statusValue = tags.status ? String(tags.status) : "not-tried";
   const ratingValue = tags.rating ? String(tags.rating) : "";
   const difficultyValue = tags.difficulty ? String(tags.difficulty) : "";
   const equipmentValues = Array.isArray(tags.equipment) ? tags.equipment.map((value) => String(value)) : [];
 
+  if (
+    getSelectedFilterValueCount(selected.collection) &&
+    !collectionValues.some((value) => selectedFilterIncludes(selected.collection, value))
+  ) {
+    return false;
+  }
   if (getSelectedFilterValueCount(selected.status) && !selectedFilterIncludes(selected.status, statusValue)) return false;
   if (getSelectedFilterValueCount(selected.rating) && !selectedFilterIncludes(selected.rating, ratingValue)) return false;
   if (getSelectedFilterValueCount(selected.difficulty) && !selectedFilterIncludes(selected.difficulty, difficultyValue)) {

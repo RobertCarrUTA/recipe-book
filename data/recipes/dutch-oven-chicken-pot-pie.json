@@ -1,6 +1,10 @@
 {
   "additionalTime": "5 minutes",
   "author": "Alison",
+  "collections": [
+    "main-dishes",
+    "baking"
+  ],
   "cookTime": "1 hour 10 minutes",
   "description": "This Dutch Oven Chicken Pot Pie is an easy, comforting dinner that feeds a crowd. Using puff pastry, rotisserie chicken, and frozen vegetables makes this a delicious home-cooked meal with minimal prep.",
   "equipment": [

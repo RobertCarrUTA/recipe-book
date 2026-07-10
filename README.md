@@ -38,7 +38,7 @@ It is not a hosted recipe service, account system, shared database, or cloud-syn
 
 - Static app shell served from `index.html`, `css/`, `js/`, `data/`, and `sw.js`.
 - Native ES modules with no framework runtime.
-- Recipe browsing with search, filters, favorites, sorting, selected-only view, and lazy-rendered recipe details.
+- Recipe browsing by curated collection, search, filters, favorites, sorting, selected-only view, and lazy-rendered recipe details.
 - Weekly meal planning that can generate grocery selections and recipe quantity counts.
 - Grocery aggregation from recipe selections, recipe multipliers, structured grocery data, and manual one-off items.
 - Collapsible grocery sections, checkmarks, checked-item hiding, source tracing, and plain-text copy.
@@ -87,7 +87,7 @@ Use a local web server instead of opening `index.html` directly. Browser module 
 
 Use the Recipes view to search, filter, sort, favorite, select, and open saved recipes. Expanding a card shows recipe details, source links when available, grocery controls, quantity controls, meal-plan controls, and the Cooking Mode entry point.
 
-Recipes can be filtered by status, rating, difficulty, equipment, selected recipes, and favorites. Sorting supports favorites, grocery-list selections, fastest total time, rating, and easiest difficulty.
+Use the Recipe type selector to focus the list on a collection such as Pizza, Sandwiches, Steak, Baking, Desserts, or Drinks. Collection browsing combines with search, status, rating, difficulty, equipment, selected recipes, and favorites. Sorting supports favorites, grocery-list selections, fastest total time, rating, and easiest difficulty.
 
 ### Meal Plan
 
@@ -137,6 +137,7 @@ data/recipes/chicken-fried-steak.json
 ```json
 {
   "id": "chicken-fried-steak",
+  "collections": ["main-dishes", "steak"],
   "title": "Chicken Fried Steak"
 }
 ```
@@ -155,6 +156,7 @@ Do not hand-edit `data/recipes.json` unless you are intentionally repairing the 
 
 - `id`: Stable unique identifier.
 - `title`: Recipe title.
+- `collections`: One or more controlled collection IDs used by the Browse selector.
 - `ingredients`: Human-readable ingredient lines.
 - `instructions`: Ordered cooking steps.
 - `groceryIngredients`: Structured grocery data used for shopping math.
@@ -177,6 +179,8 @@ Do not hand-edit `data/recipes.json` unless you are intentionally repairing the 
 - `notes`
 - `personalNotes`
 - `link`
+
+Collection membership lives in each recipe source file and may overlap. For example, a steak sandwich can belong to `main-dishes`, `sandwiches`, and `steak`, while a cookie can belong to `baking`, `cookies`, and `desserts`. Use `baking` for oven-baked recipes and projects rather than fried pastries. The allowed IDs, labels, and display order are defined in `js/recipe_collections.js`; recipe builds fail when a source is missing a collection or uses an unknown or duplicate ID.
 
 ## Structured Grocery Data
 
@@ -259,6 +263,7 @@ When a newer service worker is ready, the app header shows an update status with
 - `js/grocery_renderer.js`: Grocery-list rendering.
 - `js/cooking_renderer.js`: Cooking Mode rendering.
 - `js/recipe_sort.js`: Recipe list ranking for browse sort controls.
+- `js/recipe_collections.js`: Controlled recipe collection IDs, labels, ordering, normalization, and counts.
 - `js/grocery_model.js`: Grocery aggregation for selected recipes, quantities, favorites, checks, source details, and parsed display names.
 - `js/grocery_list_exporter.js`: Plain-text grocery list export.
 - `js/meal_plan_model.js`: Weekly meal-plan model and plan-to-grocery generation.
@@ -279,9 +284,10 @@ The app exposes `window.recipeBookDebug` only when the URL includes `?debug=1`.
 
 1. Add or edit one JSON file in `data/recipes/`.
 2. Keep the filename and recipe `id` matched.
-3. Prefer structured `groceryIngredients` for accurate grocery math.
-4. Run `npm run build:recipes`.
-5. Run `npm run verify`.
+3. Assign at least one valid `collections` ID; use multiple IDs when the recipe fits more than one browse path.
+4. Prefer structured `groceryIngredients` for accurate grocery math.
+5. Run `npm run build:recipes`.
+6. Run `npm run verify`.
 
 Recipe-only changes do not require an asset-version bump.
 

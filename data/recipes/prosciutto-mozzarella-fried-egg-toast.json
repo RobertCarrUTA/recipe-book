@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "breakfast",
+    "sandwiches"
+  ],
   "cookTime": "6 minutes",
   "description": "A ciabatta toast with mozzarella, folded prosciutto, a butter-fried egg, and arugula dressed with olive oil and pickle brine.",
   "equipment": [

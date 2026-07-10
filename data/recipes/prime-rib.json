@@ -1,6 +1,10 @@
 {
   "additionalTime": "3 hours",
   "author": "John Kanell",
+  "collections": [
+    "main-dishes",
+    "steak"
+  ],
   "cookTime": "2 hours 15 minutes",
   "description": "This classic Prime Rib recipe is rich, tender, and incredibly flavorful, making it perfect for holidays or special occasions. The roast is rubbed with herbs and garlic, roasted at high heat for a beautiful crust, then finished low and slow for a perfectly cooked interior.",
   "equipment": [

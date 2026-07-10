@@ -466,36 +466,65 @@ h2 {
   display: none;
 }
 
-.recipe-sort-control {
+.recipe-browse-controls {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  padding: 6px 8px 6px 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface-soft);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: end;
+  gap: 8px;
+  min-width: 0;
 }
 
+.recipe-collection-control,
+.recipe-sort-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: end;
+  gap: 5px;
+  min-width: 0;
+}
+
+.recipe-collection-control span,
 .recipe-sort-control span {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 850;
   letter-spacing: 0.04em;
+  padding-inline: 2px;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
+.recipe-collection-control select,
 .recipe-sort-control select {
   width: 100%;
-  min-height: 36px;
-  padding: 0 34px 0 10px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 24px 0 8px;
   border: 1px solid rgba(59, 70, 82, 0.72);
   border-radius: var(--radius-sm);
   background: var(--field);
   color: var(--fg);
+  color-scheme: dark;
+  font-size: 1rem;
   font-weight: 800;
+  text-overflow: ellipsis;
+}
+
+.recipe-collection-control select option,
+.recipe-sort-control select option {
+  background-color: var(--field);
+  color: var(--fg);
+}
+
+.recipe-collection-control.has-selection select {
+  border-color: rgba(122, 199, 163, 0.58);
+  background-color: var(--field);
+  background-image: linear-gradient(rgba(122, 199, 163, 0.1), rgba(122, 199, 163, 0.1));
+  box-shadow: 0 0 0 2px rgba(122, 199, 163, 0.1);
+}
+
+.recipe-collection-control.has-selection span {
+  color: var(--accent-strong);
 }
 
 .recipe-search-meta {
@@ -3056,6 +3085,7 @@ li {
 
   .quick-controls>button,
   .quick-controls>.switch-control,
+  .recipe-collection-control,
   .recipe-sort-control {
     width: 100%;
   }
@@ -3086,6 +3116,12 @@ li {
 
   .recipe-scale-input {
     width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .recipe-browse-controls {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -3127,7 +3163,7 @@ li {
   }
 
   .recipe-controls-panel {
-    grid-template-columns: minmax(0, 1fr) minmax(190px, 240px);
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
     align-items: center;
   }
 

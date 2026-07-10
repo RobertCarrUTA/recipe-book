@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "8 minutes",
   "description": "A toasted ciabatta sandwich with warmed salami or chorizo, melted cheddar or mozzarella, quick pickle-brine onion, crisp pickles, greens, and Dijon mayo.",
   "equipment": [

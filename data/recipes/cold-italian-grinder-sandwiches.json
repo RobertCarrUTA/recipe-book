@@ -1,6 +1,10 @@
 {
   "additionalTime": "10 minutes tomato and onion seasoning time plus 5 minutes sandwich pressing",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "0 minutes",
   "description": "A cold Italian grinder sandwich with thin-sliced ham, Genoa salami, capicola, provolone, garlic-oregano mayo, seasoned tomatoes and onions, chopped giardiniera, pepperoncini, and a red wine vinaigrette grinder salad.",
   "equipment": [

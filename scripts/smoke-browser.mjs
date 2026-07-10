@@ -134,6 +134,80 @@ const browserChecks = [
     async run(page) {
       await openApp(page, { debug: true });
       const totalCount = await page.evaluate(() => window.recipeBookDebug.getState().recipes.length);
+      const recipeTypeSelect = page.getByRole("combobox", { name: "Recipe type", exact: true });
+      const recipeTypePicker = await recipeTypeSelect.evaluate((select) => ({
+        disabled: select.disabled,
+        multiple: select.multiple,
+        sizeAttribute: select.getAttribute("size"),
+        tagName: select.tagName,
+        values: Array.from(select.options, (option) => option.value),
+      }));
+      const lastRecipeTypeValue = recipeTypePicker.values.filter(Boolean).at(-1);
+
+      assert.equal(recipeTypePicker.tagName, "SELECT");
+      assert.equal(recipeTypePicker.disabled, false);
+      assert.equal(recipeTypePicker.multiple, false);
+      assert.equal(recipeTypePicker.sizeAttribute, null);
+      assert.ok(recipeTypePicker.values.length > 10, "the native picker should expose the full collection list");
+      assert.equal(
+        await page.locator("#recipeCollection option:checked").innerText(),
+        "All recipe types"
+      );
+
+      await recipeTypeSelect.selectOption(lastRecipeTypeValue);
+      assert.equal(await recipeTypeSelect.inputValue(), lastRecipeTypeValue);
+      await page.waitForFunction(
+        (collectionId) => {
+          const state = window.recipeBookDebug.getState();
+          const expectedCount = state.recipes.filter((recipe) => recipe.collections.includes(collectionId)).length;
+          return document.querySelector("#recipeSearchMeta")?.textContent === `${expectedCount} matches of ${state.recipes.length}`;
+        },
+        lastRecipeTypeValue
+      );
+      await recipeTypeSelect.selectOption("");
+
+      const pizzaRecipeIds = await page.evaluate(() =>
+        window.recipeBookDebug
+          .getState()
+          .recipes
+          .filter((recipe) => recipe.collections.includes("pizza"))
+          .map((recipe) => recipe.id)
+      );
+
+      assert.ok(pizzaRecipeIds.length > 0, "recipe data should include a Pizza collection");
+      assert.equal(
+        await page.locator('#recipeCollection option[value="pizza"]').innerText(),
+        "Pizza"
+      );
+
+      await page.selectOption("#recipeCollection", "pizza");
+      await page.waitForFunction(
+        (expectedCount) => document.querySelector("#recipeSearchMeta")?.textContent === `${expectedCount} matches of ${window.recipeBookDebug.getState().recipes.length}`,
+        pizzaRecipeIds.length
+      );
+      const visiblePizzaIds = await page.locator(".recipe:visible").evaluateAll((elements) =>
+        elements.map((element) => element.dataset.recipeId)
+      );
+      assert.ok(visiblePizzaIds.length > 0, "the Pizza collection should render recipe cards");
+      assert.ok(
+        visiblePizzaIds.every((recipeId) => pizzaRecipeIds.includes(recipeId)),
+        "every rendered Pizza result should belong to that collection"
+      );
+
+      await page.reload({ waitUntil: "networkidle" });
+      await page.waitForSelector(".recipe", { timeout: 10000 });
+      assert.equal(await page.locator("#recipeCollection").inputValue(), "pizza");
+      assert.equal(
+        await page.locator("#recipeSearchMeta").innerText(),
+        `${pizzaRecipeIds.length} matches of ${totalCount}`
+      );
+      assert.ok(await visibleRecipeCount(page), "persisted Pizza browsing should render results");
+
+      await page.selectOption("#recipeCollection", "");
+      await page.waitForFunction(
+        (expectedCount) => document.querySelector("#recipeSearchMeta")?.textContent === `${expectedCount} recipes`,
+        totalCount
+      );
 
       await assertVisible(page, "#clearRecipeSearch", false);
       await page.fill("#recipeSearch", "chili");
@@ -191,6 +265,48 @@ const browserChecks = [
     },
   },
   {
+    name: "recipe browse controls fit the desktop breakpoint",
+    viewport: { width: 1024, height: 900 },
+    async run(page) {
+      await openApp(page);
+      await page.selectOption("#recipeCollection", "pizza");
+      await page.selectOption("#recipeSort", "fastest");
+      await assertNoHorizontalOverflow(page, [
+        ".app-shell",
+        ".recipe-search",
+        ".recipe-controls-panel",
+        ".recipe-search-field",
+        ".recipe-browse-controls",
+        ".recipe-collection-control",
+        ".recipe-sort-control",
+      ]);
+
+      const controlWidths = await page.evaluate(() => ({
+        collection: document.querySelector(".recipe-collection-control")?.getBoundingClientRect().width || 0,
+        search: document.querySelector(".recipe-search-field")?.getBoundingClientRect().width || 0,
+        sort: document.querySelector(".recipe-sort-control")?.getBoundingClientRect().width || 0,
+      }));
+      const recipeTypeLayout = await getLabeledSelectLayout(
+        page,
+        ".recipe-collection-control",
+        "#recipeCollection"
+      );
+      const sortLayout = await getLabeledSelectLayout(page, ".recipe-sort-control", "#recipeSort");
+
+      assert.ok(controlWidths.search >= 180, "search should remain usable at the desktop breakpoint");
+      assert.ok(controlWidths.collection >= 175, "Recipe type should remain usable at the desktop breakpoint");
+      assert.ok(controlWidths.sort >= 140, "Sort should remain usable at the desktop breakpoint");
+      assert.ok(recipeTypeLayout.labelBottom <= recipeTypeLayout.selectTop + 1, "Recipe type label should sit above its field");
+      assert.ok(sortLayout.labelBottom <= sortLayout.selectTop + 1, "Sort label should sit above its field");
+      assert.ok(recipeTypeLayout.selectWidth >= recipeTypeLayout.controlWidth - 1, "Recipe type field should use its full control width");
+      assert.ok(sortLayout.selectWidth >= sortLayout.controlWidth - 1, "Sort field should use its full control width");
+      await assertSelectOptionTextFits(page, "#recipeCollection");
+      await assertSelectOptionTextFits(page, "#recipeSort");
+      await assertSelectOptionsReadable(page, "#recipeCollection");
+      await assertSelectOptionsReadable(page, "#recipeSort");
+    },
+  },
+  {
     name: "recipe export downloads formatted text and JSON",
     async run(page) {
       await openApp(page, { debug: true });
@@ -235,7 +351,7 @@ const browserChecks = [
   {
     name: "mobile recipe export copies formatted text",
     hasTouch: true,
-    viewport: { width: 390, height: 844 },
+    viewport: { width: 381, height: 844 },
     async run(page) {
       await page.addInitScript(() => {
         Object.defineProperty(navigator, "clipboard", {
@@ -793,7 +909,7 @@ const browserChecks = [
   {
     name: "mobile view tabs and swipes switch directly between recipes and grocery",
     hasTouch: true,
-    viewport: { width: 390, height: 844 },
+    viewport: { width: 381, height: 844 },
     async run(page) {
       await openApp(page);
 
@@ -803,9 +919,37 @@ const browserChecks = [
       await assertNoHorizontalOverflow(page, [
         ".app-shell",
         ".recipe-search",
+        ".recipe-browse-controls",
+        ".recipe-collection-control",
+        ".recipe-sort-control",
         "#recipeContainer",
         ".mobile-view-tabs",
       ]);
+      const mobileRecipeTypeLayout = await getLabeledSelectLayout(
+        page,
+        ".recipe-collection-control",
+        "#recipeCollection"
+      );
+      const mobileSortLayout = await getLabeledSelectLayout(page, ".recipe-sort-control", "#recipeSort");
+
+      assert.ok(
+        mobileRecipeTypeLayout.selectWidth >= mobileRecipeTypeLayout.controlWidth - 1,
+        "Recipe type should use its full mobile control width"
+      );
+      assert.ok(
+        mobileSortLayout.selectWidth >= mobileSortLayout.controlWidth - 1,
+        "Sort should use its full mobile control width"
+      );
+      assert.ok(
+        mobileRecipeTypeLayout.labelBottom <= mobileRecipeTypeLayout.selectTop + 1,
+        "Recipe type label should sit above its mobile field"
+      );
+      assert.ok(
+        mobileSortLayout.labelBottom <= mobileSortLayout.selectTop + 1,
+        "Sort label should sit above its mobile field"
+      );
+      await assertSelectOptionTextFits(page, "#recipeCollection");
+      await assertSelectOptionTextFits(page, "#recipeSort");
       assert.equal(
         await page.locator(".recipe-search").evaluate((element) => getComputedStyle(element).position),
         "sticky"
@@ -987,6 +1131,143 @@ async function assertNoHorizontalOverflow(page, selectors) {
   }, selectors);
 
   assert.deepEqual(overflowReport, []);
+}
+
+async function getLabeledSelectLayout(page, controlSelector, selectSelector) {
+  return page.evaluate(({ controlSelector, selectSelector }) => {
+    const control = document.querySelector(controlSelector);
+    const label = control?.querySelector("span");
+    const select = document.querySelector(selectSelector);
+    const controlRect = control?.getBoundingClientRect();
+    const labelRect = label?.getBoundingClientRect();
+    const selectRect = select?.getBoundingClientRect();
+
+    return {
+      controlWidth: controlRect?.width || 0,
+      labelBottom: labelRect?.bottom || 0,
+      selectTop: selectRect?.top || 0,
+      selectWidth: selectRect?.width || 0,
+    };
+  }, { controlSelector, selectSelector });
+}
+
+async function assertSelectOptionTextFits(page, selector) {
+  const report = await page.locator(selector).evaluate((select) => {
+    const styles = getComputedStyle(select);
+    const probe = document.createElement("span");
+    Object.assign(probe.style, {
+      fontFamily: styles.fontFamily,
+      fontSize: styles.fontSize,
+      fontStyle: styles.fontStyle,
+      fontWeight: styles.fontWeight,
+      left: "-10000px",
+      letterSpacing: styles.letterSpacing,
+      position: "fixed",
+      visibility: "hidden",
+      whiteSpace: "nowrap",
+    });
+    document.body.appendChild(probe);
+
+    const availableWidth =
+      select.clientWidth -
+      Number.parseFloat(styles.paddingLeft) -
+      Number.parseFloat(styles.paddingRight);
+    const clipped = Array.from(select.options, (option) => {
+      probe.textContent = option.textContent.trim();
+      return {
+        text: probe.textContent,
+        textWidth: probe.getBoundingClientRect().width,
+      };
+    }).filter(({ textWidth }) => textWidth > availableWidth + 1);
+
+    probe.remove();
+    return {
+      availableWidth,
+      clipped,
+      selectWidth: select.getBoundingClientRect().width,
+    };
+  });
+
+  assert.deepEqual(
+    report.clipped,
+    [],
+    `${selector} option text should fit when selected: ${JSON.stringify(report)}`
+  );
+}
+
+async function assertSelectOptionsReadable(page, selector) {
+  const report = await page.locator(selector).evaluate((select) => {
+    function parseColor(value) {
+      const match = String(value || "").match(/^rgba?\(([^)]+)\)$/i);
+      if (!match) return null;
+
+      const values = match[1].split(/[\s,\/]+/).filter(Boolean).map(Number);
+      if (values.length < 3 || values.slice(0, 3).some((channel) => !Number.isFinite(channel))) return null;
+      return {
+        alpha: Number.isFinite(values[3]) ? values[3] : 1,
+        blue: values[2],
+        green: values[1],
+        red: values[0],
+      };
+    }
+
+    function luminance(color) {
+      const channels = [color.red, color.green, color.blue].map((channel) => {
+        const normalized = channel / 255;
+        return normalized <= 0.03928
+          ? normalized / 12.92
+          : ((normalized + 0.055) / 1.055) ** 2.4;
+      });
+      return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+    }
+
+    function readColors(element) {
+      const styles = getComputedStyle(element);
+      const foreground = parseColor(styles.color);
+      const background = parseColor(styles.backgroundColor);
+      let contrast = 0;
+
+      if (foreground && background && foreground.alpha >= 0.99 && background.alpha >= 0.99) {
+        const lighter = Math.max(luminance(foreground), luminance(background));
+        const darker = Math.min(luminance(foreground), luminance(background));
+        contrast = (lighter + 0.05) / (darker + 0.05);
+      }
+
+      return {
+        backgroundAlpha: background?.alpha ?? 0,
+        backgroundColor: styles.backgroundColor,
+        color: styles.color,
+        contrast,
+        foregroundAlpha: foreground?.alpha ?? 0,
+      };
+    }
+
+    return {
+      options: Array.from(select.options, (option) => ({
+        ...readColors(option),
+        text: option.textContent.trim(),
+      })),
+      select: readColors(select),
+    };
+  });
+  const unreadableOptions = report.options.filter(
+    (option) =>
+      option.backgroundAlpha < 0.99 ||
+      option.foregroundAlpha < 0.99 ||
+      option.contrast < 4.5
+  );
+
+  assert.ok(
+    report.select.backgroundAlpha >= 0.99 &&
+      report.select.foregroundAlpha >= 0.99 &&
+      report.select.contrast >= 4.5,
+    `${selector} should keep an opaque, readable selected value: ${JSON.stringify(report.select)}`
+  );
+  assert.deepEqual(
+    unreadableOptions,
+    [],
+    `${selector} options should keep opaque, readable colors: ${JSON.stringify(unreadableOptions)}`
+  );
 }
 
 async function waitForRecipeAlignedBelowSearch(page, recipeTitle, options = {}) {

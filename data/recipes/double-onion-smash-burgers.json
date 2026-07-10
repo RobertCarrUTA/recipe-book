@@ -1,6 +1,10 @@
 {
   "additionalTime": "15 minutes beef chill time",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "burgers"
+  ],
   "cookTime": "15 minutes",
   "description": "A double smash burger with cold 80/20 beef, a thin crisp griddle crust, shaved onion smashed into the patties, melted American cheese, a toasted potato bun, dill pickles, crisp lettuce, and homemade burger sauce.",
   "equipment": [

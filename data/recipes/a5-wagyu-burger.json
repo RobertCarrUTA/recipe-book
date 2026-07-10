@@ -1,6 +1,10 @@
 {
   "additionalTime": "10 minutes patty seasoning rest and sauce rest",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "burgers"
+  ],
   "cookTime": "15 minutes",
   "description": "One thick A5 Wagyu burger with a toasted potato or brioche bun, glossy soy-pickle onions, a little burger sauce, pickles, lettuce, and a skillet cook that builds a crust before gently finishing the center.",
   "equipment": [

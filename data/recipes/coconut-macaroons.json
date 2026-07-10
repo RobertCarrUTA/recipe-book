@@ -1,6 +1,11 @@
 {
   "additionalTime": null,
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "cookies",
+    "desserts"
+  ],
   "cookTime": "20 minutes",
   "description": "These homemade Coconut Macaroons come together quickly with simple ingredients and minimal effort. They're chewy, lightly crisp on the outside, and optionally dipped or drizzled with chocolate for an extra indulgent treat.",
   "equipment": [

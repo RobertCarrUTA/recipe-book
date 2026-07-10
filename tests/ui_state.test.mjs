@@ -36,6 +36,7 @@ test("readUiStateFromControls normalizes stale recipe sort values", () => {
     groupToggle: createElement({ checked: true }),
     hideCheckedGroceryItems: createElement({ checked: true }),
     keepScreenAwake: createElement({ checked: true }),
+    recipeCollection: createElement({ value: "soups-stews" }),
     recipeSearch: createElement({ value: "chili" }),
     recipeSort: createElement({ value: "old-sort" }),
     showFavoriteRecipesOnly: createElement({ checked: true }),
@@ -55,7 +56,10 @@ test("readUiStateFromControls normalizes stale recipe sort values", () => {
   assert.equal(uiState.keepScreenAwake, true);
   assert.equal(uiState.showFavoriteRecipesOnly, true);
   assert.equal(uiState.showSelectedRecipesOnly, true);
-  assert.deepEqual(uiState.filters, { status: ["tried"] });
+  assert.deepEqual(uiState.filters, {
+    collection: ["soups-stews"],
+    status: ["tried"],
+  });
 });
 
 test("readUiStateFromControls preserves current booleans when controls are missing", () => {
@@ -83,6 +87,7 @@ test("applyUiStateToControls restores controls and falls back to default sort", 
     groupToggle: createElement(),
     hideCheckedGroceryItems: createElement(),
     keepScreenAwake: createElement(),
+    recipeCollection: createElement(),
     recipeSearch: createElement(),
     recipeSort: createElement({ value: recipeSortModes.fastest }),
     showFavoriteRecipesOnly: createElement(),
@@ -96,6 +101,7 @@ test("applyUiStateToControls restores controls and falls back to default sort", 
 
   applyUiStateToControls(createFakeDocument({ controls, filters }), {
     filters: {
+      collection: ["desserts"],
       rating: ["great"],
       status: ["tried"],
     },
@@ -109,6 +115,7 @@ test("applyUiStateToControls restores controls and falls back to default sort", 
   });
 
   assert.equal(controls.recipeSort.value, recipeSortModes.default);
+  assert.equal(controls.recipeCollection.value, "desserts");
   assert.equal(controls.recipeSearch.value, "beans");
   assert.equal(controls.groupToggle.checked, true);
   assert.equal(controls.hideCheckedGroceryItems.checked, true);
@@ -119,14 +126,45 @@ test("applyUiStateToControls restores controls and falls back to default sort", 
 });
 
 test("getSelectedRecipeFilters returns set-backed checked filter groups", () => {
+  const controls = {
+    recipeCollection: createElement({ value: "pizza" }),
+  };
   const filters = [
     createElement({ checked: true, dataset: { filter: "status" }, value: "tried" }),
     createElement({ checked: true, dataset: { filter: "equipment" }, value: "dutch-oven" }),
     createElement({ checked: false, dataset: { filter: "equipment" }, value: "instant-pot" }),
   ];
 
-  const selected = getSelectedRecipeFilters(createFakeDocument({ filters }));
+  const selected = getSelectedRecipeFilters(createFakeDocument({ controls, filters }));
 
+  assert.deepEqual(selected.collection, new Set(["pizza"]));
   assert.deepEqual(selected.status, new Set(["tried"]));
   assert.deepEqual(selected.equipment, new Set(["dutch-oven"]));
+});
+
+test("recipe collection selection round-trips through UI filter state", () => {
+  const controls = {
+    recipeCollection: createElement(),
+    recipeSearch: createElement({ value: "" }),
+    recipeSort: createElement({ value: recipeSortModes.default }),
+  };
+  const filters = [
+    createElement({ dataset: { filter: "status" }, value: "tried" }),
+    createElement({ dataset: { filter: "rating" }, value: "great" }),
+  ];
+  const document = createFakeDocument({ controls, filters });
+
+  applyUiStateToControls(document, {
+    filters: {
+      collection: ["sandwiches"],
+      status: ["tried"],
+    },
+  });
+  const roundTripped = readUiStateFromControls(document);
+
+  assert.equal(controls.recipeCollection.value, "sandwiches");
+  assert.deepEqual(roundTripped.filters, {
+    collection: ["sandwiches"],
+    status: ["tried"],
+  });
 });

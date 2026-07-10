@@ -1,6 +1,10 @@
 {
   "additionalTime": "4 to 24 hours brine time",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "25 minutes",
   "description": "A Nashville hot chicken sandwich with a pickle-buttermilk brined chicken thigh, a rough, crisp fried crust, spicy hot oil, bright pickle slaw, dill pickles, comeback sauce, and a toasted potato or brioche bun.",
   "equipment": [

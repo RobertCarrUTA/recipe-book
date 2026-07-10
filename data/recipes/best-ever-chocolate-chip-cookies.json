@@ -1,6 +1,11 @@
 {
   "additionalTime": "2 hours",
   "author": "Eric King",
+  "collections": [
+    "baking",
+    "cookies",
+    "desserts"
+  ],
   "cookTime": "10 minutes",
   "description": "These Best-Ever Chocolate Chip Cookies have crisp edges, gooey centers, and an indulgent amount of chocolate. Using melted butter and a rest period creates deep flavor and the perfect chewy texture.",
   "equipment": [

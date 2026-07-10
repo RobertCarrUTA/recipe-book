@@ -1,6 +1,10 @@
 {
   "additionalTime": "10 minutes potato steam-dry time, 10 minutes chile soak, 10 minutes sauce rest while the filling cooks, plus 3 to 5 minutes foil rest",
   "author": "Robert Carr",
+  "collections": [
+    "breakfast",
+    "main-dishes"
+  ],
   "cookTime": "45 minutes",
   "description": "A focused sausage, egg, potato, and cheese breakfast burrito with crisp-edged Yukon Gold potatoes, deeply browned sage-forward breakfast sausage, tender low-and-slow scrambled eggs, a three-cheese melt, toasted 10-inch flour tortillas, and a glossy simmered guajillo-arbol drip sauce served warm on the side for adding to each bite.",
   "equipment": [

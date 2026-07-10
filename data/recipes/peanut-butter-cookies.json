@@ -1,6 +1,11 @@
 {
   "additionalTime": null,
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "cookies",
+    "desserts"
+  ],
   "cookTime": "10 minutes",
   "description": "These ultra-easy Peanut Butter Cookies are soft, tender, and melt-in-your-mouth with the perfect balance of salty and sweet. Made with simple pantry ingredients, they bake quickly and set up beautifully as they cool.",
   "equipment": [

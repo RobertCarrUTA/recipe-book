@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "0 minutes",
   "description": "A cold wheat bread sandwich with cheddar, a chopped pickle and greens crunch, onion, and a quick mayo-Dijon-ketchup sauce.",
   "equipment": [

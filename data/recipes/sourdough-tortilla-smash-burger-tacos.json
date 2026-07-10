@@ -1,6 +1,10 @@
 {
   "additionalTime": "30 minutes",
   "author": "Kiley Heard",
+  "collections": [
+    "main-dishes",
+    "burgers"
+  ],
   "cookTime": "30 minutes",
   "description": "Enjoy a delicious twist on a classic with Sourdough Tortilla Smash Burger Tacos. These tacos feature juicy smash burger patties that are smashed directly onto homemade sourdough tortillas and cooked until crispy, then topped with melted cheese, crisp lettuce, tangy pickles, and a homemade burger sauce. Perfect for a quick, flavorful meal that combines the best of both tacos and burgers.",
   "equipment": [

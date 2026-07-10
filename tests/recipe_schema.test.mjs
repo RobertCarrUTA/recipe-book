@@ -31,6 +31,59 @@ test("normalizeRecipeBook rejects non-array data", () => {
   assert.throws(() => normalizeRecipeBook({}), /recipes\.json must contain an array/);
 });
 
+test("normalizeRecipeBook normalizes valid recipe collections", () => {
+  const { recipes, warnings } = normalizeRecipeBook([
+    {
+      collections: [" Pizza ", "SANDWICHES"],
+      groceryIngredients: [{ item: "flour", quantity: 1, unit: "cup" }],
+      ingredients: ["1 cup flour"],
+      instructions: ["Cook."],
+      title: "Collection Test",
+    },
+  ]);
+
+  assert.deepEqual(recipes[0].collections, ["pizza", "sandwiches"]);
+  assert.deepEqual(
+    warnings.filter((warning) => warning.includes("recipe collections")),
+    []
+  );
+});
+
+test("normalizeRecipeBook warns about invalid, duplicate, and missing recipe collections", () => {
+  const completeRecipe = {
+    groceryIngredients: [{ item: "flour", quantity: 1, unit: "cup" }],
+    ingredients: ["1 cup flour"],
+    instructions: ["Cook."],
+  };
+  const { recipes, warnings } = normalizeRecipeBook([
+    {
+      ...completeRecipe,
+      collections: ["pizza", " PIZZA ", "unknown"],
+      title: "Invalid Collections",
+    },
+    {
+      ...completeRecipe,
+      collections: "drinks",
+      title: "Missing Collections",
+    },
+  ]);
+
+  assert.deepEqual(
+    recipes.find(({ title }) => title === "Invalid Collections").collections,
+    ["pizza"]
+  );
+  assert.deepEqual(
+    recipes.find(({ title }) => title === "Missing Collections").collections,
+    []
+  );
+  assert.ok(
+    warnings.includes('"Invalid Collections" has invalid or duplicate recipe collections.')
+  );
+  assert.ok(
+    warnings.includes('"Missing Collections" has no recognized recipe collections.')
+  );
+});
+
 test("normalizeRecipeBook rejects free-text grocery ingredient entries", () => {
   const { recipes, warnings } = normalizeRecipeBook([
     {

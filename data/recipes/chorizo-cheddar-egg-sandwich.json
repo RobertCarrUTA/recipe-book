@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "breakfast",
+    "sandwiches"
+  ],
   "cookTime": "8 minutes",
   "description": "A hot egg sandwich with butter-toasted wheat bread, warmed chorizo or salami, soft folded egg, cheddar, pickles, greens, onion, and a small Dijon burger-style sauce.",
   "equipment": [

@@ -45,6 +45,7 @@ test("loadRecipes fetches, cache-busts, normalizes, and reports warnings", async
         async json() {
           return [
             {
+              collections: ["breakfast", "baking"],
               id: "banana-bread",
               groceryIngredients: [{ item: "banana", quantity: 2 }],
               ingredients: ["2 bananas"],
@@ -53,6 +54,7 @@ test("loadRecipes fetches, cache-busts, normalizes, and reports warnings", async
               title: "Banana Bread",
             },
             {
+              collections: ["baking", "desserts"],
               id: "apple-crisp",
               groceryIngredients: [{ item: "apple", quantity: 4 }],
               ingredients: [],
@@ -97,6 +99,7 @@ test("loadRecipes can skip cache busting and fails clearly on bad responses", as
         async json() {
           return [
             {
+              collections: ["breakfast"],
               groceryIngredients: [{ item: "egg", quantity: 1 }],
               ingredients: ["1 egg"],
               instructions: ["Cook."],

@@ -1,6 +1,10 @@
 {
   "additionalTime": "8 to 24 hours pork marinade plus 1 hour 30 minutes dough rise",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "3 hours 10 minutes",
   "description": "Mojo roast pork Cubano sandwiches with homemade Cuban-style rolls, citrus-garlic pork shoulder, ham, Swiss cheese, quick garlic pickles, mustard sauce, and a buttered pressed crust.",
   "equipment": [

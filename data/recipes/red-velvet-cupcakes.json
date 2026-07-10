@@ -1,6 +1,10 @@
 {
   "additionalTime": null,
   "author": "John Kanell",
+  "collections": [
+    "baking",
+    "desserts"
+  ],
   "cookTime": "15 minutes",
   "description": "These colorful, moist Red Velvet Cupcakes are soft, tender, and lightly chocolatey, topped with a classic cream cheese frosting. They're festive, easy to make, and perfect for parties or special occasions.",
   "equipment": [

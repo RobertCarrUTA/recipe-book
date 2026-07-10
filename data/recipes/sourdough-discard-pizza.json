@@ -1,5 +1,10 @@
 {
   "author": "Kiley Heard",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
   "cookTime": "18 minutes",
   "description": "This Sourdough Discard Pizza features a soft and fluffy crust made with sourdough discard, Greek yogurt, and self-rising flour for a light, airy base with a perfectly golden crust. Topped with gooey mozzarella, savory pepperoni, creamy whipped ricotta, fresh basil, hot honey, and a sprinkle of freshly grated parmesan, it's the ultimate pizza that balances flavors and textures in every bite.",
   "equipment": [

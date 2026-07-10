@@ -1,5 +1,9 @@
 {
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "sandwiches"
+  ],
   "cookTime": "8 minutes",
   "description": "A wheat bread grilled cheese with crisped chorizo or salami, melted cheddar, thin onion, dill pickles, greens, and a small amount of Dijon burger-style sauce.",
   "equipment": [

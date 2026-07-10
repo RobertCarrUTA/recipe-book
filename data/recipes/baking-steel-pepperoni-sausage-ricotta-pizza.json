@@ -1,6 +1,11 @@
 {
   "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
   "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
   "cookTime": "5 to 7 minutes",
   "description": "A large 15- to 16-inch pepperoni, sausage, ricotta, and basil pizza built for a Baking Steel Pro, with a 48- to 72-hour cold-fermented crust, concentrated tomato sauce, whole-milk mozzarella, provolone, Pecorino Romano, cup-and-char pepperoni, browned Italian sausage, seasoned ricotta, and a short broiler finish.",
   "equipment": [
