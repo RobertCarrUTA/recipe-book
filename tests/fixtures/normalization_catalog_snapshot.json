@@ -108,6 +108,13 @@
       }
     },
     {
+      "item": "artichoke hearts",
+      "canonical": {
+        "base": "artichoke hearts",
+        "display": "artichoke hearts"
+      }
+    },
+    {
       "item": "asian pear or bosc pear",
       "canonical": {
         "base": "asian pear or bosc pear",
@@ -274,6 +281,13 @@
       "canonical": {
         "base": "boneless pork shoulder",
         "display": "boneless pork shoulder"
+      }
+    },
+    {
+      "item": "boneless ribeye steak",
+      "canonical": {
+        "base": "ribeye steak",
+        "display": "ribeye steak"
       }
     },
     {
@@ -583,6 +597,13 @@
       }
     },
     {
+      "item": "cotija cheese",
+      "canonical": {
+        "base": "cotija cheese",
+        "display": "cotija cheese"
+      }
+    },
+    {
       "item": "cream cheese",
       "canonical": {
         "base": "cream cheese",
@@ -717,6 +738,20 @@
       "canonical": {
         "base": "dill pickle chips",
         "display": "dill pickle chips"
+      }
+    },
+    {
+      "item": "doenjang or white miso",
+      "canonical": {
+        "base": "doenjang or white miso",
+        "display": "doenjang or white miso"
+      }
+    },
+    {
+      "item": "dried ancho chile",
+      "canonical": {
+        "base": "dried ancho chile",
+        "display": "dried ancho chile"
       }
     },
     {
@@ -1152,6 +1187,20 @@
       }
     },
     {
+      "item": "ground cloves",
+      "canonical": {
+        "base": "ground cloves",
+        "display": "ground cloves"
+      }
+    },
+    {
+      "item": "ground coriander",
+      "canonical": {
+        "base": "ground coriander",
+        "display": "ground coriander"
+      }
+    },
+    {
       "item": "ground cumin",
       "canonical": {
         "base": "ground cumin",
@@ -1476,6 +1525,13 @@
       }
     },
     {
+      "item": "masa harina",
+      "canonical": {
+        "base": "masa harina",
+        "display": "masa harina"
+      }
+    },
+    {
       "item": "mascarpone cheese",
       "canonical": {
         "base": "mascarpone cheese",
@@ -1576,6 +1632,13 @@
       }
     },
     {
+      "item": "nduja",
+      "canonical": {
+        "base": "nduja",
+        "display": "nduja"
+      }
+    },
+    {
       "item": "neutral frying oil",
       "canonical": {
         "base": "neutral frying oil",
@@ -1618,6 +1681,13 @@
       }
     },
     {
+      "item": "oaxaca cheese",
+      "canonical": {
+        "base": "oaxaca cheese",
+        "display": "oaxaca cheese"
+      }
+    },
+    {
       "item": "oaxaca cheese or low-moisture whole-milk mozzarella",
       "canonical": {
         "base": "milk",
@@ -1651,6 +1721,13 @@
       "canonical": {
         "base": "olive or avocado oil",
         "display": "olive or avocado oil"
+      }
+    },
+    {
+      "item": "olives",
+      "canonical": {
+        "base": "olives",
+        "display": "olives"
       }
     },
     {
@@ -1799,6 +1876,13 @@
       "canonical": {
         "base": "pickle brine",
         "display": "pickle brine"
+      }
+    },
+    {
+      "item": "pickled hot cherry peppers",
+      "canonical": {
+        "base": "pickled hot cherry peppers",
+        "display": "pickled hot cherry peppers"
       }
     },
     {
@@ -2055,6 +2139,13 @@
       }
     },
     {
+      "item": "salami",
+      "canonical": {
+        "base": "deli salami",
+        "display": "deli salami"
+      }
+    },
+    {
       "item": "salt",
       "canonical": {
         "base": "salt",
@@ -2111,6 +2202,13 @@
       "canonical": {
         "base": "sesame seeds",
         "display": "sesame seeds"
+      }
+    },
+    {
+      "item": "shallot",
+      "canonical": {
+        "base": "shallot",
+        "display": "shallot"
       }
     },
     {
@@ -2325,6 +2423,13 @@
       "canonical": {
         "base": "vegetable oil",
         "display": "vegetable oil"
+      }
+    },
+    {
+      "item": "vodka",
+      "canonical": {
+        "base": "vodka",
+        "display": "vodka"
       }
     },
     {

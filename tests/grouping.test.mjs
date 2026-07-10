@@ -23,6 +23,7 @@ test("determineGroupForKey classifies common recipe catalog grocery labels", () 
     ["cream of coconut", "Pantry"],
     ["sesame oil", "Pantry"],
     ["tomato sauce", "Pantry"],
+    ["shallot", "Produce"],
     ["half-and-half", "Dairy"],
     ["blueberries", "Fruit"],
     ["banana", "Fruit"],
@@ -38,9 +39,12 @@ test("determineGroupForKey classifies common recipe catalog grocery labels", () 
     ["prosciutto", "Deli Meats"],
     ["thin-sliced smoked deli ham", "Deli Meats"],
     ["dijon mustard", "Sauces, Marinades, & Condiments"],
+    ["doenjang or white miso", "Sauces, Marinades, & Condiments"],
     ["gochujang", "Sauces, Marinades, & Condiments"],
     ["kimchi", "Sauces, Marinades, & Condiments"],
+    ["olives", "Sauces, Marinades, & Condiments"],
     ["pickle brine", "Sauces, Marinades, & Condiments"],
+    ["sliced pickled hot cherry peppers", "Sauces, Marinades, & Condiments"],
     ["sliced pepperoncini peppers", "Sauces, Marinades, & Condiments"],
     ["soy sauce", "Sauces, Marinades, & Condiments"],
     ["anchovy paste", "Sauces, Marinades, & Condiments"],
@@ -51,6 +55,7 @@ test("determineGroupForKey classifies common recipe catalog grocery labels", () 
     ["pumpkin pie spice", "Spices"],
     ["baby arugula", "Vegetables"],
     ["baby spinach", "Vegetables"],
+    ["artichoke hearts", "Vegetables"],
     ["avocado", "Vegetables"],
     ["broccoli", "Vegetables"],
     ["fresh shiitake or cremini mushrooms", "Vegetables"],
@@ -61,6 +66,7 @@ test("determineGroupForKey classifies common recipe catalog grocery labels", () 
     ["bourbon whiskey", "Wine"],
     ["dark rum", "Wine"],
     ["dry white wine", "Wine"],
+    ["vodka", "Wine"],
   ];
 
   cases.forEach(([key, expected]) => {
