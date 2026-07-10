@@ -1,0 +1,303 @@
+{
+  "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
+  "author": "Robert Carr",
+  "cookTime": "5 to 7 minutes",
+  "description": "A large 15- to 16-inch pesto pizza built for a Baking Steel Pro, with a 72-hour cold-fermented crust, pistachio-basil pesto, whole-milk mozzarella, provolone, Pecorino Romano, thin mortadella, burrata or stracciatella, chopped pistachios, lemon-dressed arugula, and a light lemon-chile honey finish.",
+  "equipment": [
+    "Baking Steel Pro or 16 x 16-inch baking steel",
+    "16-inch pizza peel",
+    "Kitchen scale",
+    "Large mixing bowl",
+    "Covered dough container or large zip-top bag",
+    "Dough scraper or spatula",
+    "Food processor, mini chopper, or mortar and pestle",
+    "Small dry skillet",
+    "Box grater",
+    "Microplane or fine grater",
+    "Fine-mesh strainer or paper towels",
+    "Small bowls",
+    "Small saucepan or microwave-safe bowl",
+    "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+    "Cutting board",
+    "Pizza wheel or sharp knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "item": "bread flour",
+      "quantity": 285,
+      "unit": "g"
+    },
+    {
+      "display": "whole wheat flour, preferably stone-ground",
+      "item": "whole wheat flour",
+      "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
+      "quantity": 15,
+      "unit": "g"
+    },
+    {
+      "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
+      "item": "pizza dough",
+      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+      "optional": true,
+      "quantity": 1
+    },
+    {
+      "display": "instant yeast",
+      "item": "active dry or instant yeast",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "item": "salt",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "honey",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "item": "semolina flour or fine cornmeal",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "display": "fresh basil",
+      "item": "fresh basil",
+      "note": "Buy 1 large bunch or 2 small bunches; the recipe uses 2 packed cups leaves for pesto plus 8 to 10 small leaves for finishing.",
+      "quantity": 1,
+      "unit": "bunch"
+    },
+    {
+      "display": "roasted unsalted shelled pistachios",
+      "item": "pistachios",
+      "note": "Buy at least 3 ounces so there is enough for the pesto and the chopped post-bake finish.",
+      "quantity": 3,
+      "unit": "oz"
+    },
+    {
+      "display": "Pecorino Romano cheese",
+      "item": "Pecorino Romano or Parmesan cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "garlic cloves",
+      "item": "garlic clove",
+      "quantity": 1
+    },
+    {
+      "item": "lemon",
+      "quantity": 1
+    },
+    {
+      "display": "anchovy paste, optional but recommended for the pesto",
+      "item": "anchovy paste",
+      "note": "The recipe uses 1/4 teaspoon for savory depth; it should not make the pesto taste fishy.",
+      "optional": true,
+      "quantity": 1,
+      "unit": "tube"
+    },
+    {
+      "display": "low-moisture whole-milk mozzarella block",
+      "item": "low-moisture whole-milk mozzarella cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "display": "provolone piccante or sharp deli provolone",
+      "item": "provolone cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "burrata or stracciatella",
+      "item": "burrata cheese",
+      "note": "Buy one 4-ounce ball or the smallest container available; use 3 ounces for a 15-inch pizza or all 4 ounces for a true 16-inch pizza.",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "display": "very thinly sliced mortadella",
+      "item": "mortadella",
+      "note": "Ask the deli to slice it very thin. Mortadella with pistachios works well here if available.",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "item": "baby arugula",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "item": "Calabrian chile paste",
+      "optional": true,
+      "quantity": 1,
+      "unit": "jar"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "flaky sea salt",
+      "optional": true,
+      "quantity": 0.0625,
+      "unit": "tsp"
+    }
+  ],
+  "id": "mortadella-pistachio-pesto-pizza",
+  "ingredients": [
+    "285 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+    "15 grams stone-ground whole wheat flour, or 15 grams more bread flour for the easiest stretch",
+    "195 grams cool water, about 3/4 cup plus 1 tablespoon plus 1/2 teaspoon",
+    "1/2 teaspoon honey for the dough",
+    "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+    "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+    "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+    "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+    "Optional dough shortcut: 450 to 500 grams prepared dough from Baking Steel 72 Hour Pizza Dough Mix for one large 15- to 16-inch pizza",
+    "6 tablespoons roasted unsalted shelled pistachios, divided: 1/4 cup for pesto and 2 tablespoons chopped for finishing",
+    "2 packed cups fresh basil leaves for pesto, plus 8 to 10 small basil leaves for finishing",
+    "1 small garlic clove",
+    "1 1/2 ounces Pecorino Romano, finely grated, divided",
+    "1 lemon, zested and juiced, divided",
+    "1/4 cup plus 4 teaspoons extra-virgin olive oil, divided",
+    "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the pesto, plus 1/8 teaspoon for the arugula and small pinches as needed",
+    "1/8 teaspoon black pepper for the pesto, plus 1/8 teaspoon for the arugula",
+    "1/4 teaspoon anchovy paste for the pesto, optional but recommended",
+    "6 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
+    "1 1/2 ounces provolone piccante or sharp deli provolone, finely diced or shredded",
+    "3 ounces burrata or stracciatella for a 15-inch pizza, or 4 ounces for a true 16-inch pizza, drained on paper towels for 10 minutes",
+    "3 ounces very thin mortadella for a 15-inch pizza, or 4 ounces for a true 16-inch pizza, torn into loose 2-inch ribbons",
+    "1 1/2 cups baby arugula for a 15-inch pizza, or 2 cups for a true 16-inch pizza",
+    "1 tablespoon honey for the lemon-chile honey",
+    "1/4 teaspoon Calabrian chile paste for the lemon-chile honey, optional",
+    "Small pinch flaky sea salt for finishing, optional"
+  ],
+  "instructions": [
+    "Using Baking Steel 72 Hour Pizza Dough Mix? Skip to step 13. Using ready-made dough? Skip to step 15 and use the prepared dough amount listed in the ingredients.",
+    "Two to three days before baking, make the scratch dough by whisking 195 grams cool water, 1/2 teaspoon honey, and 8 grams salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+    "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted honey water.",
+    "Add 285 grams high-protein bread flour and 15 grams whole wheat flour to the bowl with the yeasted water.",
+    "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+    "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+    "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+    "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+    "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+    "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+    "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+    "Cover the dough and refrigerate it for 48 to 72 hours.",
+    "If using Baking Steel 72 Hour Pizza Dough Mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+    "For the Baking Steel mix, portion 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a 16-inch pizza with a thicker rim about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+    "About 3 hours before baking, remove the cold dough from the refrigerator.",
+    "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+    "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+    "About 75 minutes before baking, place the Baking Steel Pro on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+    "Preheat the oven to 550 degrees F for 60 to 75 minutes so the Baking Steel Pro is fully saturated with heat before the pizza goes in.",
+    "While the steel preheats, toast all 6 tablespoons roasted pistachios in a small dry skillet over medium-low heat for 2 to 3 minutes, shaking the skillet often, until the nuts smell fragrant but do not darken.",
+    "Transfer the toasted pistachios to a cutting board, chop 2 tablespoons for finishing, and leave 1/4 cup whole or roughly chopped for the pesto.",
+    "Make the pesto by adding the 1/4 cup pistachios, 2 packed cups fresh basil leaves, 1 small garlic clove, 1 ounce finely grated Pecorino Romano, 1/2 teaspoon finely grated lemon zest, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/8 teaspoon black pepper, and 1/4 teaspoon anchovy paste if using to a food processor or mini chopper.",
+    "Pulse the pesto mixture 8 to 10 times, scraping the bowl once, until the basil and pistachios are finely chopped but not pureed smooth.",
+    "Add 1/4 cup extra-virgin olive oil to the pesto and pulse 3 to 5 times more, just until spoonable.",
+    "Stir 1 teaspoon fresh lemon juice into the pesto, then taste it; it should be bold, salty, nutty, and bright because only a thin measured layer goes on the pizza.",
+    "Measure 1/4 cup pesto for a 15-inch pizza or 1/3 cup pesto for a true 16-inch pizza, then reserve 1 tablespoon pesto for the finished rim.",
+    "Freshly shred 6 ounces low-moisture whole-milk mozzarella from a block.",
+    "Finely dice or shred 1 1/2 ounces provolone piccante or sharp deli provolone.",
+    "Toss together the 6 ounces shredded mozzarella, 1 1/2 ounces provolone, and 1/4 ounce finely grated Pecorino Romano so the cheese blend distributes evenly.",
+    "Keep the cheese blend cold until assembly so the cheese melts cleanly instead of oiling out on the peel.",
+    "Drain 3 ounces burrata or stracciatella for a 15-inch pizza, or 4 ounces for a true 16-inch pizza, on paper towels or in a fine-mesh strainer for 10 minutes so it tastes creamy instead of watery.",
+    "Tear the very thin mortadella into loose 2-inch ribbons: use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
+    "Make the lemon-chile honey by warming 1 tablespoon honey, 1/4 teaspoon Calabrian chile paste if using, 1/2 teaspoon fresh lemon juice, and a tiny pinch of fine sea salt or Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until loose and glossy.",
+    "Make the arugula finish by tossing 1 1/2 cups baby arugula for a 15-inch pizza or 2 cups for a true 16-inch pizza with 1 teaspoon extra-virgin olive oil, 1 teaspoon fresh lemon juice, 1/8 teaspoon fine sea salt or Morton Coarse Kosher Salt, and 1/8 teaspoon black pepper.",
+    "Stir the reserved 1 tablespoon pesto with 1 teaspoon extra-virgin olive oil to make a loose post-bake rim oil.",
+    "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+    "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+    "Stretch the dough into a 15- to 16-inch round, keeping the center thin and the rim slightly thicker.",
+    "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+    "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+    "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+    "Spread the measured 1/4 cup pesto for a 15-inch pizza or 1/3 cup pesto for a true 16-inch pizza over the dough in a very thin, even layer, leaving a 3/4-inch rim uncovered.",
+    "Scatter about three-fourths of the cold mozzarella-provolone-Pecorino blend evenly over the pesto.",
+    "Scatter the remaining mozzarella-provolone-Pecorino blend over any spots where the pesto is fully exposed; a little green showing through is good, but heavy exposed pesto can scorch under the broiler.",
+    "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+    "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+    "Launch the pizza onto the fully preheated Baking Steel Pro as soon as it slides freely, ideally within 2 minutes of adding pesto, so moisture and oil from the pesto do not glue the dough to the peel.",
+    "Bake the pizza at 550 degrees F for 2 1/2 minutes with the broiler off.",
+    "At 2 1/2 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+    "Check the bottom crust by lifting one edge with the peel; at 2 1/2 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+    "If the bottom is still pale and flexible at 2 1/2 minutes, leave the pizza directly on the steel for 30 to 60 seconds more before using the broiler.",
+    "If the bottom already has dark brown spots at 2 1/2 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+    "Turn the broiler to high and broil for 30 to 75 seconds, watching constantly, until the rim blisters and the cheese bubbles with scattered golden spots.",
+    "If the rim darkens before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+    "If the top still needs more color after 75 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+    "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+    "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+    "Brush only the exposed outer rim with 2 to 3 teaspoons of the reserved pesto rim oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+    "Drape the torn mortadella over the hot pizza in loose folds: use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
+    "Spoon or tear the drained burrata or stracciatella over the mortadella and cheese: use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
+    "Sprinkle the chopped 2 tablespoons toasted pistachios and the remaining 1/4 ounce finely grated Pecorino Romano over the pizza.",
+    "Tear 8 to 10 small fresh basil leaves over the pizza and grate a light pinch of fresh lemon zest over the burrata.",
+    "Pile the dressed arugula lightly over the center and around the mortadella, leaving some rim exposed.",
+    "Drizzle 1 to 2 teaspoons lemon-chile honey over the mortadella, burrata, and arugula; use the lighter amount if you want the crust to stay crisper.",
+    "Add a small pinch of flaky sea salt if the burrata or rim tastes underseasoned.",
+    "Slice the pizza and serve immediately while the bottom crust is crisp, the rim is tender and blistered, the mortadella is warm, and the burrata is still creamy and cool."
+  ],
+  "link": null,
+  "notes": [
+    "This pizza uses pistachio-basil pesto, mortadella, burrata, lemon, arugula, and toasted nuts instead of a red sauce or white cheese base.",
+    "For more crust flavor and control, use the scratch dough and cold-ferment it for the full 72 hours. The small amount of whole wheat flour adds nutty flavor without making the large dough hard to stretch.",
+    "The scratch dough makes about one 500-gram dough ball, enough for a large 15- to 16-inch pizza with a crisp bottom, a tender rim, and enough structure for pesto, cheese, mortadella, burrata, and arugula.",
+    "If using a mix, Baking Steel 72 Hour Pizza Dough Mix is a good shortcut for this recipe because it is designed for a 72-hour cold ferment and uses Central Milling organic flour, sea salt, and yeast.",
+    "One prepared Baking Steel dough mix pack can make 3 larger pizzas if divided evenly. Use 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a true 16-inch pizza.",
+    "If buying ready-made dough instead, ask a local pizzeria, Italian market, or bakery for 450 to 500 grams of cold-fermented dough made for a hot deck oven. Avoid canned dough, par-baked crusts, dough that smells sweet, dough that feels oily, or dough that tears immediately when stretched.",
+    "For home ovens at 550 degrees F, strong bread flour usually bakes better than pure Neapolitan 00 flour because it browns and crisps more reliably on a steel.",
+    "For the first bake, stretch to 15 or 15 1/2 inches instead of forcing the full 16 inches. The Baking Steel Pro is 16 x 16 inches, so a true 16-inch round leaves almost no launch margin.",
+    "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
+    "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+    "Preheating the Baking Steel Pro for 60 to 75 minutes matters because the 3/8-inch steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+    "This pesto pizza has less tomato moisture than a red-sauce pizza and more exposed oil, so the bottom can brown fast. Start checking the bottom at 2 1/2 minutes.",
+    "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+    "The broiler is only for finishing. Watch constantly once the broiler is on because the rim, cheese, and pesto can go from blistered to burned quickly.",
+    "Keep the pesto measured and thin. Too much oil can soften the center crust and make the pizza stick to the peel.",
+    "Cover most of the pesto with cheese before baking. Protected pesto stays green and aromatic; large uncovered streaks can scorch under the broiler.",
+    "Use roasted unsalted pistachios and toast them briefly even if they are already roasted. The short toast refreshes the nut flavor without making the finish taste bitter.",
+    "The anchovy paste is optional but useful. At 1/4 teaspoon it deepens the pesto and cheese without making the pizza taste fishy.",
+    "Use low-moisture whole-milk mozzarella from a block because it melts well without flooding the pizza. Avoid pre-shredded mozzarella if possible because anti-caking starches can make the melt drier and less glossy.",
+    "Burrata or stracciatella goes on after baking so it stays creamy and does not waterlog the fast steel bake. Drain it for 10 minutes and use 3 ounces on a 15-inch pizza or 4 ounces only for a true 16-inch pizza.",
+    "Mortadella goes on after baking so it warms gently instead of drying out, curling hard, or turning greasy under the broiler.",
+    "Dress the arugula lightly and add it after baking. The lemon and greens cut the richness from the mortadella, burrata, pistachios, and cheese.",
+    "The lemon-chile honey is a finishing accent, not a sauce. Use 1 to 2 teaspoons so the pizza gets a few bright, sweet, spicy bites without making the crust sticky.",
+    "Brush the rim with pesto oil after baking, not before baking. Post-bake pesto oil seasons the crust without encouraging the rim to burn.",
+    "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+    "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 minutes.",
+    "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
+    "If the center is soft, use 1 tablespoon less pesto next time, drain the burrata longer, use the 15-inch topping amounts, and stretch the center thinner before topping.",
+    "Leftover pesto keeps covered in the refrigerator for 2 days. Press plastic wrap directly onto the surface or cover it with a thin film of olive oil to slow browning."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "50 minutes active",
+  "rating": null,
+  "servings": "1 large 15- to 16-inch pizza, 3 to 4 servings",
+  "source": "bundled",
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "pizza-steel"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Mortadella Pistachio Pesto Pizza",
+  "totalTime": "1 hour 10 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
+}
