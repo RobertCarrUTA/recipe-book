@@ -1,0 +1,316 @@
+{
+  "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
+  "author": "Robert Carr",
+  "cookTime": "5 to 7 minutes",
+  "description": "A large 15- to 16-inch pepperoni, sausage, ricotta, and basil pizza built for a Baking Steel Pro, with a 48- to 72-hour cold-fermented crust, concentrated tomato sauce, whole-milk mozzarella, provolone, Pecorino Romano, cup-and-char pepperoni, browned Italian sausage, seasoned ricotta, and a short broiler finish.",
+  "equipment": [
+    "Baking Steel Pro or 16 x 16-inch baking steel",
+    "16-inch pizza peel",
+    "Kitchen scale",
+    "Large mixing bowl",
+    "Covered dough container or large zip-top bag",
+    "Dough scraper or spatula",
+    "Fine-mesh strainer",
+    "Box grater",
+    "Cast-iron skillet or small saute pan",
+    "Instant-read thermometer",
+    "Small bowls",
+    "Small saucepan or microwave-safe bowl",
+    "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+    "Cutting board",
+    "Pizza wheel or sharp knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "item": "bread flour",
+      "quantity": 280,
+      "unit": "g"
+    },
+    {
+      "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
+      "item": "pizza dough",
+      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, then divide the prepared batch into 3 larger dough balls for 14- to 16-inch pizzas.",
+      "optional": true,
+      "quantity": 1
+    },
+    {
+      "display": "instant yeast",
+      "item": "active dry or instant yeast",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "item": "salt",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "honey",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "semolina flour or fine cornmeal",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+      "item": "canned tomatoes",
+      "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed tomatoes depending on pizza size.",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "display": "garlic cloves",
+      "item": "garlic clove",
+      "quantity": 2
+    },
+    {
+      "item": "dried oregano",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "fennel seeds",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "item": "Calabrian chile paste",
+      "quantity": 1,
+      "unit": "jar"
+    },
+    {
+      "item": "granulated sugar",
+      "optional": true,
+      "quantity": 0.0625,
+      "unit": "tsp"
+    },
+    {
+      "display": "low-moisture whole-milk mozzarella block",
+      "item": "mozzarella cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "display": "provolone piccante or deli provolone",
+      "item": "provolone cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "Pecorino Romano cheese",
+      "item": "Pecorino Romano or Parmesan cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "natural-casing cup-and-char pepperoni",
+      "item": "pepperoni",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "display": "hot Italian sausage link or bulk hot Italian sausage",
+      "item": "pork sausage",
+      "quantity": 4,
+      "unit": "oz"
+    },
+    {
+      "display": "whole-milk ricotta",
+      "item": "ricotta cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "item": "lemon",
+      "quantity": 1
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "display": "red wine vinegar or apple cider vinegar",
+      "item": "apple cider vinegar or red wine vinegar",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "fresh basil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "flaky sea salt",
+      "optional": true,
+      "quantity": 0.0625,
+      "unit": "tsp"
+    }
+  ],
+  "id": "baking-steel-pepperoni-sausage-ricotta-pizza",
+  "ingredients": [
+    "280 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+    "182 grams cool water, about 3/4 cup plus 1 teaspoon",
+    "1/2 teaspoon honey for the dough",
+    "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+    "7 grams salt for the dough: about 1 1/4 level teaspoons fine sea salt, 1 1/2 level teaspoons Morton Coarse Kosher Salt, or 2 1/4 level teaspoons Diamond Crystal kosher salt",
+    "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+    "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+    "Optional dough shortcut: 1 prepared large dough ball from Baking Steel 72 Hour Pizza Dough Mix, ideally one-third of a prepared pack for a 14- to 15-inch pizza or 400 to 450 grams prepared dough for a 16-inch pizza with a thicker rim",
+    "1 (14-ounce) can San Marzano-style or Bianco DiNapoli whole peeled tomatoes, using 1/2 cup thick crushed tomatoes for a 15-inch pizza or 2/3 cup for a 16-inch pizza",
+    "1 teaspoon tomato paste",
+    "1 small garlic clove, finely grated for the sauce",
+    "2 teaspoons extra-virgin olive oil for the sauce",
+    "1/2 teaspoon dried oregano",
+    "1/8 teaspoon fennel seeds, lightly crushed",
+    "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
+    "1/4 teaspoon Calabrian chile paste for the sauce",
+    "Small pinch granulated sugar, only if the tomatoes taste sharp",
+    "6 1/2 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
+    "1 1/2 ounces provolone piccante or deli provolone, finely diced or shredded",
+    "1 1/2 ounces Pecorino Romano, finely grated, divided",
+    "3 ounces natural-casing cup-and-char pepperoni for a 15-inch pizza, or 4 ounces for a 16-inch pizza, sliced thin",
+    "4 ounces hot Italian sausage, casing removed if using a link; use about 3 ounces cooked sausage on a 15-inch pizza or all 4 ounces on a 16-inch pizza",
+    "1/3 cup whole-milk ricotta for a 15-inch pizza, or 1/2 cup for a 16-inch pizza, drained for 15 minutes if loose or wet",
+    "1 teaspoon extra-virgin olive oil for the ricotta",
+    "1/4 teaspoon finely grated lemon zest",
+    "1/8 teaspoon black pepper, freshly ground if possible",
+    "Small pinch fine sea salt or Morton Coarse Kosher Salt for the ricotta",
+    "2 tablespoons honey for the chile honey",
+    "1 teaspoon Calabrian chile paste for the chile honey",
+    "1/2 teaspoon red wine vinegar or apple cider vinegar",
+    "1 small garlic clove, smashed for the chile honey",
+    "1 teaspoon extra-virgin olive oil for brushing the finished rim",
+    "10 to 12 fresh basil leaves, torn after baking",
+    "Small pinch flaky sea salt for finishing, optional"
+  ],
+  "instructions": [
+    "Using Baking Steel 72 Hour Pizza Dough Mix? Skip to step 13. Using ready-made dough? Skip to step 15 and use the prepared dough amount listed in the ingredients.",
+    "Two to three days before baking, make the scratch dough by whisking 182 grams cool water, 1/2 teaspoon honey, and 7 grams salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+    "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted honey water.",
+    "Add all 280 grams high-protein bread flour to the bowl with the yeasted water.",
+    "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+    "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+    "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+    "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+    "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+    "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+    "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+    "Cover the dough and refrigerate it for 48 to 72 hours.",
+    "If using Baking Steel 72 Hour Pizza Dough Mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+    "For the Baking Steel mix, divide the prepared dough into 3 larger balls about 3 hours before baking for 14- to 15-inch pizzas, or portion 400 to 450 grams prepared dough from the batch for one 16-inch pizza with a thicker rim.",
+    "About 3 hours before baking, remove the cold dough from the refrigerator.",
+    "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+    "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+    "Place the Baking Steel Pro on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+    "Preheat the oven to 550 degrees F for 60 to 75 minutes so the Baking Steel Pro is fully saturated with heat before the pizza goes in.",
+    "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
+    "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed tomatoes for a 15-inch pizza or 2/3 cup thick crushed tomatoes for a 16-inch pizza.",
+    "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
+    "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, fennel, salt, and chile season the tomatoes.",
+    "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust, cheese, pepperoni, sausage, and ricotta.",
+    "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
+    "Cook all 4 ounces hot Italian sausage in a cast-iron skillet or small saute pan over medium heat for 4 to 6 minutes, breaking it into 1/2-inch crumbles, until browned and cooked through to 160 degrees F.",
+    "Transfer the browned sausage crumbles to a paper towel-lined plate and let them cool while you prepare the cheeses.",
+    "Freshly shred 6 1/2 ounces low-moisture whole-milk mozzarella from a block.",
+    "Finely dice or shred 1 1/2 ounces provolone, then toss the provolone together with the 6 1/2 ounces shredded mozzarella so the cheeses distribute evenly.",
+    "Measure 1/3 cup whole-milk ricotta for a 15-inch pizza or 1/2 cup whole-milk ricotta for a 16-inch pizza.",
+    "If the measured whole-milk ricotta looks loose or wet, drain it in a fine-mesh strainer or on a double layer of paper towels for 15 minutes.",
+    "Make the seasoned ricotta by stirring together the drained measured ricotta, 1/2 ounce finely grated Pecorino Romano, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon finely grated lemon zest, 1/8 teaspoon black pepper, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
+    "Keep the seasoned ricotta cold until the pizza has started baking so it stays creamy when added near the end.",
+    "Make the chile honey by warming 2 tablespoons honey, 1 teaspoon Calabrian chile paste, 1/2 teaspoon red wine vinegar or apple cider vinegar, and 1 smashed small garlic clove in a small saucepan or microwave-safe bowl just until loose and fragrant.",
+    "Let the chile honey sit off the heat for at least 10 minutes, then remove and discard the smashed garlic clove.",
+    "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+    "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+    "Stretch the dough into a 15- to 16-inch round, keeping the center thin and the rim slightly thicker.",
+    "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+    "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+    "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+    "Spread all of the measured sauce over the dough in a thin, even layer, leaving a 3/4-inch rim uncovered.",
+    "Scatter about three-fourths of the mozzarella-provolone blend evenly over the sauce.",
+    "Arrange 3 ounces sliced cup-and-char pepperoni over a 15-inch pizza or 4 ounces over a 16-inch pizza, leaving a little space between slices so the cheese can bubble through.",
+    "Scatter about 3 ounces cooked sausage crumbles over a 15-inch pizza or all 4 ounces over a 16-inch pizza, avoiding heavy piles in the center.",
+    "Scatter the remaining mozzarella-provolone blend over any exposed sauced areas.",
+    "Sprinkle 1/2 ounce finely grated Pecorino Romano over the topped pizza before baking.",
+    "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+    "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+    "Launch the pizza onto the fully preheated Baking Steel Pro as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the toppings does not glue the dough to the peel.",
+    "Bake the pizza at 550 degrees F for 3 minutes with the broiler off.",
+    "At 3 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+    "Check the bottom crust by lifting one edge with the peel; at 3 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+    "If the bottom is still pale and flexible at 3 minutes, leave the pizza directly on the steel for 45 to 60 seconds more before adding the ricotta.",
+    "If the bottom already has dark brown spots at 3 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+    "Add the seasoned ricotta in teaspoon-size dollops across the pizza after the 3-minute rotation.",
+    "Turn the broiler to high and broil for 45 to 90 seconds, watching constantly, until the rim blisters, the cheese bubbles, and the pepperoni cups lightly crisp.",
+    "If the rim or pepperoni darkens before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+    "If the top still needs more color after 90 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+    "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+    "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+    "Brush only the exposed outer rim with 1 teaspoon extra-virgin olive oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+    "Drizzle 1 to 2 tablespoons chile honey over the pepperoni, sausage, and ricotta, using the lighter amount if you want the crust to stay crisper.",
+    "Sprinkle the remaining 1/2 ounce finely grated Pecorino Romano over the pizza.",
+    "Tear 10 to 12 fresh basil leaves over the pizza and add a small pinch of flaky sea salt if using.",
+    "Slice the pizza and serve immediately while the bottom crust is crisp, the rim is tender and blistered, and the cheese is still bubbling."
+  ],
+  "link": null,
+  "notes": [
+    "For more crust flavor and control, use the scratch dough and cold-ferment it for the full 72 hours. The long rest gives the crust more aroma, better browning, and easier stretching.",
+    "The scratch dough makes about one 475-gram dough ball, enough for a large 15- to 16-inch pizza with a crisp bottom and a defined rim without making the center too bready.",
+    "If using a dough shortcut, Baking Steel 72 Hour Pizza Dough Mix fits this recipe because it is designed for a 72-hour cold ferment and uses organic Central Milling flour with only flour, salt, and yeast. It is a better choice here than canned dough, par-baked crusts, or a sweet grocery-store dough ball.",
+    "One prepared Baking Steel dough mix pack can be divided into 3 larger dough balls for 14- to 16-inch pizzas. For a 16-inch pizza with a thicker rim, use 400 to 450 grams prepared dough instead of a smaller 330-gram ball.",
+    "If buying a ready-made dough ball from a pizzeria, ask for 400 to 450 grams of cold-fermented dough made for a hot deck oven. Avoid dough that smells sweet, feels oily, or tears immediately when stretched.",
+    "The Baking Steel Pro is 16 x 16 inches, so a true 16-inch pizza leaves no room for launch error. Stretch to 15 inches the first time if you are not completely comfortable launching large pies.",
+    "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
+    "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+    "Preheating the Baking Steel Pro for 60 to 75 minutes matters because the 3/8-inch steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+    "The broiler is only for finishing. Watch constantly once the broiler is on because pepperoni, cheese, and the rim can go from blistered to burned quickly.",
+    "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+    "For the first bake, 15 inches is the safer target because it launches more cleanly and gives the rim a little more structure. Move to 16 inches once you are comfortable with the launch and bottom color.",
+    "Keep the sauce thick and measured. Use 1/2 cup sauce for a 15-inch pizza and 2/3 cup sauce only when stretching to a true 16 inches. Watery sauce or too much sauce will steam the center of the crust before it can crisp.",
+    "Use low-moisture whole-milk mozzarella from a block because it melts well without flooding the pizza. Avoid pre-shredded mozzarella if possible because anti-caking starches can make the melt drier.",
+    "The small amount of provolone adds savory depth without turning the center greasy. Provolone piccante gives a stronger flavor, but deli provolone works.",
+    "Brown the sausage before topping the pizza. Raw sausage can leak too much fat and may not cook evenly during a fast 5- to 7-minute steel bake.",
+    "Do not overload the center. Use the lower pepperoni, sausage, ricotta, and sauce amounts for a 15-inch pizza; use the higher amounts only for a true 16-inch pizza.",
+    "Add the ricotta near the end of baking instead of at the beginning. This warms it through while keeping it creamy and reducing the chance that it waters down the pizza.",
+    "The chile honey goes on after baking because honey can scorch at 550 degrees F and under the broiler.",
+    "Brush the rim with olive oil after baking, not before baking. Post-bake oil seasons the crust and adds sheen without encouraging the rim to burn.",
+    "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+    "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 1/2 minutes.",
+    "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
+    "If the center is soft, use the 15-inch topping amounts next time, drain the tomatoes longer, and stretch the center thinner before topping.",
+    "For a milder pizza, use sweet Italian sausage instead of hot Italian sausage and reduce the Calabrian chile paste in the sauce to 1/8 teaspoon.",
+    "For a pepperoni-only version, omit the sausage and increase the pepperoni to 4 ounces. Keep the cheese and sauce amounts the same.",
+    "Leftover chile honey keeps covered at room temperature for 1 week. Warm it for a few seconds before drizzling."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "45 minutes active",
+  "rating": null,
+  "servings": "1 large 15- to 16-inch pizza, 3 to 4 servings",
+  "source": "bundled",
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "pizza-steel"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Baking Steel Pepperoni Sausage Ricotta Pizza",
+  "totalTime": "1 hour active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
+}
