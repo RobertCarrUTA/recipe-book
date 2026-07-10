@@ -181,6 +181,7 @@ const ingredientGroups = {
   "chipotle peppers in adobo sauce": "Sauces, Marinades, & Condiments",
   "dijon mustard": "Sauces, Marinades, & Condiments",
   "dill pickle chips": "Sauces, Marinades, & Condiments",
+  "doenjang or white miso": "Sauces, Marinades, & Condiments",
   "hot honey": "Sauces, Marinades, & Condiments",
   "hot sauce": "Sauces, Marinades, & Condiments",
   ketchup: "Sauces, Marinades, & Condiments",

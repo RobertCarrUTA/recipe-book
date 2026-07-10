@@ -277,6 +277,13 @@
       }
     },
     {
+      "item": "boneless ribeye steak",
+      "canonical": {
+        "base": "ribeye steak",
+        "display": "ribeye steak"
+      }
+    },
+    {
       "item": "boneless ribeye, top sirloin, or skirt steak",
       "canonical": {
         "base": "boneless ribeye, top sirloin, or skirt steak",
@@ -717,6 +724,13 @@
       "canonical": {
         "base": "dill pickle chips",
         "display": "dill pickle chips"
+      }
+    },
+    {
+      "item": "doenjang or white miso",
+      "canonical": {
+        "base": "doenjang or white miso",
+        "display": "doenjang or white miso"
       }
     },
     {

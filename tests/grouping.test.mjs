@@ -38,6 +38,7 @@ test("determineGroupForKey classifies common recipe catalog grocery labels", () 
     ["prosciutto", "Deli Meats"],
     ["thin-sliced smoked deli ham", "Deli Meats"],
     ["dijon mustard", "Sauces, Marinades, & Condiments"],
+    ["doenjang or white miso", "Sauces, Marinades, & Condiments"],
     ["gochujang", "Sauces, Marinades, & Condiments"],
     ["kimchi", "Sauces, Marinades, & Condiments"],
     ["pickle brine", "Sauces, Marinades, & Condiments"],

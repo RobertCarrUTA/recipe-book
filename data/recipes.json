@@ -16821,5 +16821,363 @@
     },
     "title": "Mortadella Pistachio Pesto Pizza",
     "totalTime": "1 hour 10 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
+  },
+  {
+    "additionalTime": "48 to 72 hours dough fermentation plus 3 hours dough warm-up",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "pizza",
+      "baking"
+    ],
+    "cookTime": "5 to 7 minutes for the pizza, plus 15 to 20 minutes topping prep",
+    "description": "A large 15- to 16-inch Korean BBQ pizza built for a Baking Steel Pro, with a 72-hour cold-fermented crust, thick gochujang BBQ sauce, quickly seared pear-soy ribeye, cooked-down kimchi, mozzarella, smoked Gouda, Monterey Jack, scallions, sesame, gochujang honey, and a crisp cucumber finish.",
+    "equipment": [
+      "Baking Steel Pro or 16 x 16-inch baking steel",
+      "16-inch pizza peel",
+      "Kitchen scale",
+      "Large mixing bowl",
+      "Covered dough container or large zip-top bag",
+      "Dough scraper or spatula",
+      "Sharp knife",
+      "Cutting board",
+      "Box grater",
+      "Microplane or fine grater",
+      "Fine-mesh strainer",
+      "Paper towels",
+      "Small bowls",
+      "Small saucepan",
+      "Cast-iron skillet, carbon-steel skillet, or stainless steel skillet",
+      "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+      "Pizza wheel or sharp knife"
+    ],
+    "groceryIngredients": [
+      {
+        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "item": "bread flour",
+        "quantity": 285,
+        "unit": "g"
+      },
+      {
+        "display": "whole wheat flour, preferably stone-ground",
+        "item": "whole wheat flour",
+        "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
+        "item": "pizza dough",
+        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+        "optional": true,
+        "quantity": 1
+      },
+      {
+        "display": "instant yeast",
+        "item": "active dry or instant yeast",
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "item": "salt",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "honey",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "semolina flour or fine cornmeal",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "display": "boneless ribeye steak or Korean-market thin-sliced ribeye",
+        "item": "boneless ribeye steak",
+        "note": "Buy 8 ounces. Pre-sliced bulgogi ribeye is the easiest option; otherwise chill a small ribeye and slice it 1/8 inch thick across the grain.",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "display": "Asian pear or Bosc pear",
+        "item": "Asian pear or Bosc pear",
+        "quantity": 1
+      },
+      {
+        "item": "low-sodium soy sauce",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "mirin or rice wine",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "rice vinegar",
+        "quantity": 0.25,
+        "unit": "cup"
+      },
+      {
+        "item": "gochujang",
+        "quantity": 1,
+        "unit": "jar"
+      },
+      {
+        "item": "tomato paste",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "display": "doenjang or white miso, optional but recommended",
+        "item": "doenjang or white miso",
+        "note": "The recipe uses 1 teaspoon in the sauce for deeper savory flavor.",
+        "optional": true,
+        "quantity": 1,
+        "unit": "jar"
+      },
+      {
+        "item": "toasted sesame oil",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "display": "toasted sesame seeds",
+        "item": "sesame seeds",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "display": "garlic cloves",
+        "item": "garlic clove",
+        "quantity": 2
+      },
+      {
+        "item": "fresh ginger",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "display": "napa cabbage kimchi",
+        "item": "kimchi",
+        "note": "Buy at least 8 ounces. The recipe uses 1 cup drained, squeezed, chopped kimchi before cooking.",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "item": "neutral high-heat oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "display": "low-moisture whole-milk mozzarella block",
+        "item": "low-moisture whole-milk mozzarella cheese",
+        "quantity": 6,
+        "unit": "oz"
+      },
+      {
+        "display": "smoked Gouda or young Gouda",
+        "item": "Gouda cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "display": "Monterey Jack cheese",
+        "item": "Monterey Jack cheese",
+        "quantity": 2,
+        "unit": "oz"
+      },
+      {
+        "item": "green onion",
+        "quantity": 6
+      },
+      {
+        "display": "Persian cucumber or English cucumber",
+        "item": "English cucumber",
+        "quantity": 1
+      },
+      {
+        "display": "fresh cilantro or perilla leaves, optional",
+        "item": "cilantro",
+        "optional": true,
+        "quantity": 1,
+        "unit": "bunch"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "flaky sea salt",
+        "optional": true,
+        "quantity": 1,
+        "unit": "pinch"
+      }
+    ],
+    "id": "korean-bbq-ribeye-kimchi-pizza",
+    "ingredients": [
+      "285 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "15 grams stone-ground whole wheat flour, or 15 grams more bread flour for the easiest stretch",
+      "195 grams cool water, about 3/4 cup plus 1 tablespoon plus 1/2 teaspoon",
+      "1/2 teaspoon honey for the dough",
+      "Scant 1/8 teaspoon instant yeast, about 0.4 grams",
+      "8 grams salt for the dough: about 1 1/2 level teaspoons fine sea salt, 1 3/4 level teaspoons Morton Coarse Kosher Salt, or 2 1/2 level teaspoons Diamond Crystal kosher salt",
+      "1 teaspoon extra-virgin olive oil for the dough, plus 1 teaspoon for the dough container",
+      "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+      "Optional dough shortcut: 450 to 500 grams prepared dough from Baking Steel 72 Hour Pizza Dough Mix for one large 15- to 16-inch pizza",
+      "8 ounces boneless ribeye, chilled and sliced across the grain 1/8 inch thick, or Korean-market thin-sliced bulgogi ribeye",
+      "2 tablespoons finely grated Asian pear or Bosc pear with its juice",
+      "2 tablespoons low-sodium soy sauce, divided",
+      "1 tablespoon plus 1 teaspoon mirin or rice wine, divided",
+      "2 tablespoons plus 1/2 teaspoon honey, divided",
+      "1 tablespoon plus 1 1/2 teaspoons rice vinegar, divided",
+      "2 tablespoons plus 2 teaspoons gochujang, divided",
+      "1 tablespoon tomato paste for the sauce",
+      "1 teaspoon doenjang or white miso for the sauce, optional but recommended",
+      "2 teaspoons toasted sesame oil, divided",
+      "1 tablespoon toasted sesame seeds, divided",
+      "2 small garlic cloves, finely grated or minced, divided",
+      "1 1/2 teaspoons finely grated fresh ginger, divided",
+      "1/8 teaspoon black pepper for the ribeye",
+      "1 cup napa cabbage kimchi, drained, squeezed dry, and chopped into 1/2-inch pieces",
+      "1 tablespoon plus 2 teaspoons neutral high-heat oil, such as avocado, grapeseed, canola, or vegetable oil, divided",
+      "5 1/2 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
+      "2 ounces smoked Gouda or young Gouda, finely shredded",
+      "1 ounce Monterey Jack, finely shredded",
+      "4 green onions, thinly sliced, divided",
+      "1 Persian cucumber, or 1/3 English cucumber, halved, seeded, and thinly sliced",
+      "1/4 cup fresh cilantro leaves or thinly sliced perilla leaves, optional",
+      "Small pinch fine sea salt or Morton Coarse Kosher Salt for the cucumber, plus small pinches as needed",
+      "Small pinch flaky sea salt for finishing, optional"
+    ],
+    "instructions": [
+      "Using Baking Steel 72 Hour Pizza Dough Mix? Skip to step 13. Using ready-made dough? Skip to step 15 and use 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
+      "Two to three days before baking, make the scratch dough by whisking 195 grams cool water, 1/2 teaspoon honey, and 8 grams salt in a large mixing bowl until the honey dissolves and the salt is mostly dissolved.",
+      "Whisk the scant 1/8 teaspoon instant yeast, about 0.4 grams, into the salted honey water.",
+      "Add 285 grams high-protein bread flour and 15 grams whole wheat flour to the bowl with the yeasted water.",
+      "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+      "Cover the bowl and rest the dough for 20 minutes so the flour hydrates before kneading.",
+      "Drizzle 1 teaspoon extra-virgin olive oil over the dough.",
+      "Knead or fold the dough in the bowl for 3 to 4 minutes, until the oil is absorbed and the dough looks smoother but still slightly tacky.",
+      "Cover the bowl again and rest the dough at room temperature for 30 minutes.",
+      "With wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+      "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1 teaspoon extra-virgin olive oil, and place the dough inside.",
+      "Cover the dough and refrigerate it for 48 to 72 hours.",
+      "If using Baking Steel 72 Hour Pizza Dough Mix instead of the scratch dough, pour the mix into a bowl, add 1 3/4 cups water, knead for 2 to 3 minutes, rest the covered dough at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
+      "For the Baking Steel mix, portion 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a true 16-inch pizza about 3 hours before baking, shape that portion into a smooth ball, and save the remaining dough for another pizza or bread.",
+      "About 3 hours before baking, remove the cold dough from the refrigerator.",
+      "If the dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
+      "Place the dough ball in a lightly oiled bowl or container, cover it, and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
+      "If the ribeye is not already thin-sliced, put the 8 ounces ribeye on a plate and freeze it for 20 minutes, just until firm around the edges but not frozen solid.",
+      "Slice the chilled 8 ounces ribeye across the grain into 1/8-inch-thick pieces, then cut any long slices into 2- to 3-inch strips so they distribute cleanly over the pizza.",
+      "Make the ribeye marinade by stirring together 2 tablespoons grated pear and juice, 1 tablespoon low-sodium soy sauce, 1 teaspoon mirin, 1 teaspoon honey, 1 teaspoon rice vinegar, 1 teaspoon gochujang, 1/2 teaspoon toasted sesame oil, 1 finely grated small garlic clove, 1/2 teaspoon finely grated fresh ginger, 1 teaspoon toasted sesame seeds, and 1/8 teaspoon black pepper in a bowl.",
+      "Add the sliced 8 ounces ribeye to the marinade and toss for 1 minute, separating the slices so every piece is lightly coated.",
+      "Cover and refrigerate the ribeye for 20 to 30 minutes while you prepare the sauce and toppings; do not marinate it for hours because pear can make very thin beef too soft.",
+      "Make the gochujang BBQ sauce by combining 1 tablespoon neutral oil and 1 finely grated small garlic clove in a small saucepan over medium-low heat.",
+      "Cook the garlic in the oil for 20 to 30 seconds, just until fragrant but not browned.",
+      "Stir 2 tablespoons gochujang, 1 tablespoon tomato paste, 1 tablespoon low-sodium soy sauce, 1 tablespoon mirin, 2 teaspoons honey, 2 teaspoons rice vinegar, 1 teaspoon doenjang or white miso if using, 1/2 teaspoon toasted sesame oil, and 1 teaspoon finely grated fresh ginger into the garlic oil.",
+      "Cook the sauce for 1 to 2 minutes, stirring constantly, until thick, glossy, and reduced to about 1/4 cup.",
+      "Taste the sauce; it should be savory, lightly sweet, tangy, and a little salty because only a thin layer goes on the dough.",
+      "If the sauce is too stiff to spread thinly, stir in 1 teaspoon water; if it tastes flat, stir in another 1/2 teaspoon rice vinegar or a tiny pinch of salt.",
+      "Drain 1 cup kimchi in a fine-mesh strainer, squeeze it dry with clean hands or paper towels, and chop it into 1/2-inch pieces.",
+      "Heat a skillet over medium-high heat for 2 minutes, then add 1 teaspoon neutral oil and the chopped drained 1 cup kimchi.",
+      "Cook the kimchi for 4 to 6 minutes, stirring every minute, until the liquid has cooked off, the kimchi smells roasted, and some edges are browned.",
+      "Stir 1/2 teaspoon honey into the cooked kimchi, cook for 30 seconds more, then transfer the kimchi to a plate to cool.",
+      "Wipe out the skillet, set it over high heat for 2 minutes, then add 1 teaspoon neutral oil.",
+      "Lift the marinated ribeye from the bowl, let excess marinade drip back for a few seconds, and spread the ribeye in the hot skillet in a single layer.",
+      "Sear the ribeye for 45 to 60 seconds without stirring, then flip and stir for 30 to 45 seconds more, just until the slices are browned in spots with no raw red areas.",
+      "Transfer the seared ribeye to a plate in a loose layer so it cools quickly; discard the raw marinade left in the bowl.",
+      "Freshly shred 5 1/2 ounces low-moisture whole-milk mozzarella, 2 ounces smoked Gouda or young Gouda, and 1 ounce Monterey Jack.",
+      "Toss the shredded mozzarella, Gouda, and Monterey Jack together and keep the cheese blend cold until assembly so it melts cleanly instead of oiling out on the peel.",
+      "Make the cucumber finish by tossing the sliced cucumber, 2 thinly sliced green onions, 1 teaspoon rice vinegar, 1/2 teaspoon toasted sesame oil, 1 teaspoon toasted sesame seeds, and a small pinch of fine sea salt or Morton Coarse Kosher Salt in a small bowl.",
+      "Let the cucumber finish sit for 10 minutes, then drain off any liquid in the bottom of the bowl so it does not soften the finished pizza.",
+      "Make the gochujang honey drizzle by stirring together 1 tablespoon honey, 1 teaspoon gochujang, 1/2 teaspoon rice vinegar, 1/2 teaspoon toasted sesame oil, and a tiny pinch of salt until smooth.",
+      "Thinly slice the remaining 2 green onions and set them aside with 1/4 cup cilantro leaves or thinly sliced perilla leaves if using.",
+      "About 75 minutes before baking, place the Baking Steel Pro on the second-highest rack, ideally about 5 to 6 inches below the broiler element.",
+      "Preheat the oven to 550 degrees F for 60 to 75 minutes so the Baking Steel Pro is fully saturated with heat before the pizza goes in.",
+      "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+      "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
+      "Stretch the dough into a 15- to 16-inch round, keeping the center thin and the rim slightly thicker.",
+      "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+      "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides.",
+      "If any part sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+      "Spread all 1/4 cup gochujang BBQ sauce over the dough in a thin, even layer, leaving a 3/4-inch rim uncovered.",
+      "Scatter about two-thirds of the cold cheese blend evenly over the sauce, covering most of the sauce so the sugars in the sauce are protected from the broiler.",
+      "Scatter the cooled cooked kimchi evenly over the cheese, keeping heavy piles away from the center.",
+      "Scatter the cooled seared ribeye evenly over the cheese and kimchi, using all of it for a true 16-inch pizza or leaving 2 to 3 tablespoons behind if stretching closer to 15 inches.",
+      "Scatter the remaining cheese blend over any exposed kimchi, ribeye, or sauce so the top browns in spots without scorching the sweet sauce.",
+      "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+      "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+      "Launch the pizza onto the fully preheated Baking Steel Pro as soon as it slides freely, ideally within 2 minutes of adding sauce, so the gochujang sauce and cheese do not glue the dough to the peel.",
+      "Bake the pizza at 550 degrees F for 2 1/2 minutes with the broiler off.",
+      "At 2 1/2 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+      "Check the bottom crust by lifting one edge with the peel; at 2 1/2 minutes it should be set and lightly browned, not floppy, dark brown, or black.",
+      "If the bottom is still pale and flexible at 2 1/2 minutes, leave the pizza directly on the steel for 30 to 60 seconds more before using the broiler.",
+      "If the bottom already has dark brown spots at 2 1/2 minutes, slide the pizza onto a room-temperature rimless baking sheet before continuing so the bottom stops darkening on the steel.",
+      "Turn the broiler to high and broil for 30 to 75 seconds, watching constantly, until the rim blisters and the cheese bubbles with scattered golden spots.",
+      "If the rim, kimchi, or cheese darkens before the cheese is fully bubbling, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+      "If the top still needs more color after 75 seconds under the broiler, turn the broiler off, return the oven to 550 degrees F, and bake for 1 to 2 minutes more while checking the bottom every 30 seconds.",
+      "If the bottom becomes deep golden before the top is finished, move the pizza onto the room-temperature rimless baking sheet and finish the top under the broiler for 30 to 60 seconds.",
+      "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the crust stays crisp when sliced.",
+      "Brush only the exposed outer rim with 1 to 2 teaspoons gochujang honey drizzle while the crust is hot; keep the drizzle off the bottom crust so it stays crisp.",
+      "Spoon the remaining gochujang honey drizzle in thin lines over the ribeye, kimchi, and cheese, using less if you want the pizza sharper and less sweet.",
+      "Scatter the drained cucumber finish over the center of the pizza, then add the remaining 2 sliced green onions, the optional 1/4 cup cilantro or perilla, and the remaining 1 teaspoon toasted sesame seeds.",
+      "Add a small pinch of flaky sea salt only if the cheese, cucumber, or rim tastes underseasoned.",
+      "Slice the pizza and serve immediately while the bottom crust is crisp, the rim is tender and blistered, the ribeye is hot, and the cucumber finish is still cool and crunchy."
+    ],
+    "link": null,
+    "notes": [
+      "This pizza is intentionally different from the current pepperoni, sausage, ricotta, pesto, mortadella, mushroom, and white pizza flavor profiles. The main flavors are Korean BBQ ribeye, gochujang, sesame, kimchi, scallion, and cucumber.",
+      "For the most control and the deepest crust flavor, use the scratch dough and cold-ferment it for the full 72 hours. The small amount of whole wheat flour adds a nutty edge that works especially well with sesame, ribeye, and kimchi.",
+      "The scratch dough makes about one 500-gram dough ball, enough for a large 15- to 16-inch pizza with a crisp bottom, a tender rim, and enough structure for beef, kimchi, sauce, and cheese.",
+      "If using a mix, Baking Steel 72 Hour Pizza Dough Mix is the best shortcut for this recipe because it is designed for a long cold ferment, uses organic Central Milling flour, and keeps the ingredient list to flour, sea salt, and yeast.",
+      "One prepared Baking Steel dough mix pack can make 3 larger pizzas if divided evenly. Use 450 grams prepared dough for a 15-inch pizza or 500 grams prepared dough for a true 16-inch pizza.",
+      "If buying ready-made dough instead, ask a strong local pizzeria, Italian market, or bakery for 450 to 500 grams of cold-fermented dough made for a hot deck oven. Avoid canned dough, par-baked crusts, dough that smells sweet, dough that feels oily, or dough that tears immediately when stretched.",
+      "For home ovens at 550 degrees F, strong bread flour usually bakes better than pure Neapolitan 00 flour because it browns and crisps more reliably on a steel.",
+      "For the first bake, stretch to 15 or 15 1/2 inches instead of forcing the full 16 inches. The Baking Steel Pro is 16 x 16 inches, so a true 16-inch round leaves almost no launch margin.",
+      "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
+      "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+      "Preheating the Baking Steel Pro for 60 to 75 minutes matters because the 3/8-inch steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+      "Because gochujang, honey, pear, and kimchi all contain sugars, this pizza can darken faster than a plain cheese pizza. Keep the sauce thin, cover most of it with cheese, and start checking the bottom at 2 1/2 minutes.",
+      "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the top finish without more direct steel contact.",
+      "The broiler is only for finishing. Watch constantly once the broiler is on because the rim, kimchi, and sweet sauce can go from blistered to burned quickly.",
+      "Cook the kimchi until its liquid is gone before it goes on the pizza. Wet kimchi can steam the center crust and make the pizza taste harsh instead of roasted and savory.",
+      "Sear the ribeye quickly before topping the pizza. Raw marinated beef would release too much liquid during a 5- to 7-minute steel bake.",
+      "Ribeye gives the richest result. Korean-market pre-sliced bulgogi ribeye is the easiest premium option because it is already thin and tender.",
+      "Do not marinate the thin ribeye for more than 30 minutes. Pear tenderizes quickly and can make thin beef too soft if it sits for hours.",
+      "Keep the cheese measured. More cheese can hide the gochujang and kimchi flavor and make the center greasy.",
+      "Low-moisture whole-milk mozzarella from a block gives stretch without flooding the crust. Smoked Gouda adds depth, and Monterey Jack makes the melt smoother.",
+      "Drain the cucumber finish before adding it after baking. The cool crunch is worth it, but cucumber liquid does not belong on a crisp steel-baked center.",
+      "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+      "If the bottom is too dark before the top is browned, use the room-temperature sheet sooner during that bake; next time, either move the steel one rack lower or start checking the bottom at 2 minutes.",
+      "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
+      "If the center is soft, use 1 tablespoon less sauce next time, cook the kimchi drier, leave 2 to 3 tablespoons ribeye off a 15-inch pizza, and stretch the center thinner before topping.",
+      "Leftover gochujang honey drizzle keeps covered in the refrigerator for 1 week. Warm it for a few seconds and stir before using."
+    ],
+    "nutrition": null,
+    "personalNotes": [],
+    "prepTime": "1 hour active",
+    "rating": null,
+    "servings": "1 large 15- to 16-inch pizza, 3 to 4 servings",
+    "source": "bundled",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "pizza-steel"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Korean BBQ Ribeye Kimchi Pizza",
+    "totalTime": "1 hour 25 minutes active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
   }
 ]
