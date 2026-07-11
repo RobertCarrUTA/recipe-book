@@ -250,11 +250,13 @@ export function createRecipeActionsRenderer({
   }
 
   function createRecipeActions(recipe, recipeIndex) {
+    const recipeTitle = recipe.title || "recipe";
     const isFavorite = actions.isRecipeFavorite(recipe, recipeIndex);
     const isSelected = actions.isRecipeSelected(recipe, recipeIndex);
     const actionsWrap = createElement(document, "div", { className: "recipe-actions" });
     const planSelect = createRecipePlanSelect(recipe, recipeIndex);
     const addToListCheckbox = createElement(document, "input", {
+      attributes: { "aria-label": `Include ${recipeTitle} in grocery list` },
       checked: isSelected,
       dataset: { recipeId: actions.getRecipeKey(recipe, recipeIndex) },
       type: "checkbox",
@@ -269,23 +271,29 @@ export function createRecipeActionsRenderer({
     });
     const scaleControl = createRecipeScaleControl(recipe, recipeIndex);
     const favoriteButton = createButton({
-      attributes: { "aria-pressed": isFavorite ? "true" : "false" },
+      attributes: {
+        "aria-label": `Favorite ${recipeTitle}`,
+        "aria-pressed": isFavorite ? "true" : "false",
+      },
       className: "favorite-recipe-button",
       onClick: () => actions.onFavoriteRecipe(recipe, recipeIndex, !actions.isRecipeFavorite(recipe, recipeIndex)),
       textContent: isFavorite ? "Favorited" : "Favorite",
     });
     const cookButton = createButton({
+      attributes: { "aria-label": `Cook ${recipeTitle}` },
       className: "primary-button cooking-mode-button",
       onClick: () => openCookingMode(recipe, recipeIndex),
       textContent: "Cook mode",
     });
     const viewPlanButton = createButton({
+      attributes: { "aria-label": `View meal plan for ${recipeTitle}` },
       className: "view-plan-button",
       hidden: !isRecipePlanned(recipe, recipeIndex),
       onClick: actions.onViewMealPlan,
       textContent: "View plan",
     });
     const viewGroceryButton = createButton({
+      attributes: { "aria-label": `View grocery list for ${recipeTitle}` },
       className: "view-grocery-button",
       hidden: !addToListCheckbox.checked,
       onClick: actions.onViewGroceryList,
@@ -308,6 +316,7 @@ export function createRecipeActionsRenderer({
 
     if (recipe.link) {
       actionsWrap.appendChild(createElement(document, "a", {
+        attributes: { "aria-label": `View full recipe for ${recipeTitle} (opens in a new tab)` },
         className: "recipe-link recipe-action-link",
         href: recipe.link,
         rel: "noopener noreferrer",

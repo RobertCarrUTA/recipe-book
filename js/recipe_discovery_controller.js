@@ -235,7 +235,7 @@ export function createRecipeDiscoveryController({
     );
   }
 
-  function handleTagToggle(filterKey, filterValue) {
+  function handleTagToggle(filterKey, filterValue, options = {}) {
     const checkbox = findFilterCheckbox(filterKey, filterValue);
     if (!checkbox) return;
 
@@ -243,6 +243,9 @@ export function createRecipeDiscoveryController({
     getMutableUiState().filters = readFilterDataFromDom(document);
     refresh();
     saveState();
+    if (options.recipeId && typeof renderer?.revealRecipeById === "function") {
+      renderer.revealRecipeById(options.recipeId);
+    }
   }
 
   function isControlChecked(id) {

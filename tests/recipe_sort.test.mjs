@@ -44,6 +44,8 @@ test("parseRecipeDurationMinutes handles common recipe time labels", () => {
   assert.equal(parseRecipeDurationMinutes("2 hours"), 120);
   assert.equal(parseRecipeDurationMinutes("PT1H30M"), 90);
   assert.equal(parseRecipeDurationMinutes("1:05"), 65);
+  assert.equal(parseRecipeDurationMinutes("1:99"), null);
+  assert.equal(parseRecipeDurationMinutes("0:00"), null);
   assert.equal(parseRecipeDurationMinutes(""), null);
 });
 

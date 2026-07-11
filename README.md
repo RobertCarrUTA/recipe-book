@@ -152,7 +152,7 @@ Use **Export backup** and **Import backup** in the Grocery List controls when mo
 The browser smoke suite checks recipe loading, discovery controls, exports, sorting, meal planning, grocery interactions, Cooking Mode, and mobile navigation. It uses, in order:
 
 1. `PLAYWRIGHT_CHROMIUM_EXECUTABLE`, when set;
-2. a detected local Chrome or Edge executable on supported systems;
+2. a common local Chrome, Edge, or Chromium installation on Windows, macOS, or Linux;
 3. Playwright's managed Chromium, when installed.
 
 `RECIPE_BOOK_SMOKE_PORT` overrides the default local smoke-test port. `RECIPE_BOOK_ALLOW_SMOKE_SKIP=1` permits an intentional prerequisite skip; never use it to hide a browser regression or in the normal CI gate.

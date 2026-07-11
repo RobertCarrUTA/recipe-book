@@ -32,7 +32,7 @@ test("downloadTextFile creates a temporary text download link", async () => {
   assert.equal(link.tagName, "A");
   assert.equal(link.href, "blob:recipe-export");
   assert.equal(link.download, "recipe.txt");
-  assert.equal(link.style.display, "none");
+  assert.equal(link.hidden, true);
   assert.equal(link.removed, true);
   assert.deepEqual(document.body.children, []);
   assert.equal(await createdBlobs[0].text(), "2 eggs\n1 cup flour");
@@ -53,4 +53,36 @@ test("downloadTextFile reports unavailable browser download APIs", () => {
       ),
     /Downloads are not available/
   );
+});
+
+test("downloadTextFile cleans up when the browser rejects the download click", () => {
+  const document = createFakeDocument();
+  const window = createFakeWindow();
+  const revokedUrls = [];
+  const createElement = document.createElement;
+  document.createElement = (tagName) => {
+    const element = createElement(tagName);
+    element.click = () => {
+      throw new Error("download blocked");
+    };
+    return element;
+  };
+  const urlApi = {
+    createObjectURL: () => "blob:blocked-download",
+    revokeObjectURL: (url) => revokedUrls.push(url),
+  };
+
+  assert.throws(
+    () => downloadTextFile(
+      { fileName: "recipe.txt", mimeType: "text/plain", text: "Recipe" },
+      { document, urlApi, window }
+    ),
+    /download blocked/
+  );
+
+  assert.equal(document.createdElements[0].removed, true);
+  assert.deepEqual(document.body.children, []);
+  assert.equal(window.timers.length, 1);
+  window.timers[0].callback();
+  assert.deepEqual(revokedUrls, ["blob:blocked-download"]);
 });

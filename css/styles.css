@@ -11,12 +11,21 @@
   --muted-strong: #c3cbc6;
   --border: #2d363f;
   --border-strong: #3b4652;
+  --control-border: #667482;
+  --control-border-strong: #8292a2;
   --accent: #7ac7a3;
   --accent-strong: #9fe2bf;
   --accent-ink: #092017;
   --blue: #80b7f3;
   --amber: #f1bd69;
   --red: #f08a8a;
+  --info-border: #587eaa;
+  --info-fg: #cfe5ff;
+  --success-border: #567f6b;
+  --warning-border: #8f7040;
+  --warning-fg: #ffe0a8;
+  --danger-border: #985959;
+  --danger-fg: #ffcaca;
   --shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.24);
   --field: #0f1317;
@@ -27,6 +36,10 @@
   --radius: 8px;
   --radius-lg: 8px;
   --content-max: 1440px;
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
 }
 
 * {
@@ -58,7 +71,7 @@ select {
 
 button {
   min-height: 42px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius-sm);
   background: var(--surface-strong);
   color: var(--fg);
@@ -76,7 +89,7 @@ button {
 }
 
 button:hover {
-  border-color: var(--border-strong);
+  border-color: var(--control-border-strong);
   background: var(--surface-hover);
 }
 
@@ -129,8 +142,8 @@ a {
 
 .skip-link {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: max(10px, var(--safe-area-top));
+  left: max(10px, var(--safe-area-left));
   z-index: 200;
   padding: 10px 12px;
   transform: translateY(calc(-100% - 20px));
@@ -151,7 +164,10 @@ a {
 .app-shell {
   width: min(100%, var(--content-max));
   margin: 0 auto;
-  padding: 18px 14px calc(104px + env(safe-area-inset-bottom));
+  padding-top: calc(18px + var(--safe-area-top));
+  padding-right: max(14px, var(--safe-area-right));
+  padding-bottom: calc(104px + var(--safe-area-bottom));
+  padding-left: max(14px, var(--safe-area-left));
 }
 
 .app-header {
@@ -233,19 +249,19 @@ h2 {
 .offline-status[data-state="offline"] {
   border-color: rgba(241, 189, 105, 0.5);
   background: rgba(241, 189, 105, 0.12);
-  color: #ffe0a8;
+  color: var(--warning-fg);
 }
 
 .offline-status[data-state="update"] {
   border-color: rgba(128, 183, 243, 0.52);
   background: rgba(128, 183, 243, 0.14);
-  color: #cfe5ff;
+  color: var(--info-fg);
 }
 
 .offline-status[data-state="error"] {
   border-color: rgba(240, 138, 138, 0.52);
   background: rgba(240, 138, 138, 0.12);
-  color: #ffcaca;
+  color: var(--danger-fg);
 }
 
 .offline-status[hidden] {
@@ -260,17 +276,17 @@ h2 {
 
 .mobile-view-tabs {
   position: fixed;
-  right: auto;
-  bottom: max(12px, env(safe-area-inset-bottom));
-  left: 50%;
+  right: max(12px, var(--safe-area-right));
+  bottom: max(12px, var(--safe-area-bottom));
+  left: max(12px, var(--safe-area-left));
   z-index: 30;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6px;
-  width: min(520px, calc(100% - 24px));
+  width: auto;
+  max-width: 520px;
   margin: 0 auto;
   padding: 6px;
-  transform: translateX(-50%);
   border: 1px solid rgba(59, 70, 82, 0.9);
   border-radius: var(--radius);
   background: rgba(16, 18, 20, 0.94);
@@ -346,7 +362,7 @@ h2 {
 /* Recipe discovery controls */
 .recipe-search {
   position: sticky;
-  top: 10px;
+  top: calc(10px + var(--safe-area-top));
   z-index: 20;
   display: grid;
   gap: 10px;
@@ -406,7 +422,7 @@ h2 {
   width: 100%;
   min-height: 48px;
   padding: 0 46px 0 14px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius);
   background: var(--field);
   color: var(--fg);
@@ -503,7 +519,7 @@ h2 {
   min-width: 0;
   min-height: 44px;
   padding: 0 24px 0 8px;
-  border: 1px solid rgba(59, 70, 82, 0.72);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius-sm);
   background: var(--field);
   color: var(--fg);
@@ -578,7 +594,7 @@ h2 {
   gap: 9px;
   min-height: 42px;
   padding: 0 10px 0 8px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius);
   background: var(--surface-soft);
   color: var(--muted-strong);
@@ -660,9 +676,9 @@ h2 {
 .filter-toggle,
 .meal-plan-open-button,
 .recipe-controls-toggle {
-  border-color: rgba(128, 183, 243, 0.45);
+  border-color: var(--info-border);
   background: rgba(128, 183, 243, 0.12);
-  color: #cfe5ff;
+  color: var(--info-fg);
 }
 
 .filter-toggle[aria-expanded="true"],
@@ -724,7 +740,7 @@ h2 {
   gap: 6px;
   min-height: 36px;
   padding: 0 10px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--control-border);
   border-radius: 999px;
   background: var(--surface-soft);
   color: var(--muted-strong);
@@ -951,9 +967,12 @@ h2 {
 .recipe-title {
   min-width: 0;
   color: var(--fg);
+  cursor: text;
   font-size: 1.01rem;
   font-weight: 850;
   line-height: 1.25;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 .recipe-header-badges {
@@ -981,13 +1000,13 @@ h2 {
 .recipe-favorite-badge {
   border: 1px solid rgba(241, 189, 105, 0.46);
   background: rgba(241, 189, 105, 0.13);
-  color: #ffe0a8;
+  color: var(--warning-fg);
 }
 
 .recipe-planned-badge {
   border: 1px solid rgba(128, 183, 243, 0.44);
   background: rgba(128, 183, 243, 0.13);
-  color: #cfe5ff;
+  color: var(--info-fg);
 }
 
 .recipe-selected-badge {
@@ -1025,13 +1044,13 @@ h2 {
 .recipe-header-chip.primary {
   border-color: rgba(241, 189, 105, 0.3);
   background: rgba(241, 189, 105, 0.1);
-  color: #ffe0a8;
+  color: var(--warning-fg);
 }
 
 .recipe-header-chip.rating {
   border-color: rgba(128, 183, 243, 0.36);
   background: rgba(128, 183, 243, 0.12);
-  color: #cfe5ff;
+  color: var(--info-fg);
 }
 
 .accordion-header[aria-expanded="true"]::after {
@@ -1093,7 +1112,7 @@ h2 {
 
 .tag-okay {
   background: rgba(128, 183, 243, 0.16);
-  color: #cfe5ff;
+  color: var(--info-fg);
 }
 
 .tag-good,
@@ -1104,12 +1123,12 @@ h2 {
 
 .tag-medium {
   background: rgba(241, 189, 105, 0.16);
-  color: #ffe0a8;
+  color: var(--warning-fg);
 }
 
 .tag-hard {
   background: rgba(240, 138, 138, 0.16);
-  color: #ffcaca;
+  color: var(--danger-fg);
 }
 
 .tag-equipment {
@@ -1139,10 +1158,10 @@ h2 {
 .recipe-plan-select {
   min-height: 42px;
   padding: 0 34px 0 12px;
-  border: 1px solid rgba(128, 183, 243, 0.42);
+  border: 1px solid var(--info-border);
   border-radius: var(--radius);
   background: var(--surface-soft);
-  color: #cfe5ff;
+  color: var(--info-fg);
   cursor: pointer;
   font-weight: 800;
 }
@@ -1175,7 +1194,7 @@ h2 {
 .recipe-export-button {
   min-height: 32px;
   padding: 0 7px;
-  border-color: rgba(59, 70, 82, 0.82);
+  border-color: var(--control-border);
   background: rgba(255, 255, 255, 0.035);
   color: var(--muted-strong);
   font-size: 0.74rem;
@@ -1197,7 +1216,7 @@ h2 {
 }
 
 .recipe-export-status.is-error {
-  color: #ffcaca;
+  color: var(--danger-fg);
 }
 
 .recipe-export-status[hidden] {
@@ -1215,7 +1234,7 @@ h2 {
 .recipe-add-toggle {
   justify-content: center;
   padding: 0 12px;
-  border: 1px solid rgba(122, 199, 163, 0.45);
+  border: 1px solid var(--success-border);
   border-radius: var(--radius);
   background: rgba(122, 199, 163, 0.12);
   color: var(--accent-strong);
@@ -1239,7 +1258,7 @@ h2 {
   width: 100%;
   min-height: 42px;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius);
   background: var(--surface-soft);
 }
@@ -1265,7 +1284,7 @@ h2 {
   min-height: 40px;
   padding: 0;
   border: 0;
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--control-border);
   border-radius: 0;
   background: transparent;
   color: var(--accent-strong);
@@ -1284,7 +1303,7 @@ h2 {
   min-height: 40px;
   padding: 0 6px;
   border: 0;
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--control-border);
   border-radius: 0;
   background: rgba(15, 19, 23, 0.86);
   color: var(--fg);
@@ -1308,7 +1327,7 @@ h2 {
   justify-content: center;
   min-height: 42px;
   padding: 0 12px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius);
   color: var(--fg);
   line-height: 1.15;
@@ -1327,7 +1346,7 @@ h2 {
 }
 
 .primary-button {
-  border-color: rgba(122, 199, 163, 0.58);
+  border-color: var(--success-border);
   background: var(--accent);
   color: var(--accent-ink);
 }
@@ -1348,9 +1367,9 @@ h2 {
 .favorite-recipe-button {
   min-width: min(100%, 96px);
   padding: 0 12px;
-  border-color: rgba(241, 189, 105, 0.38);
+  border-color: var(--warning-border);
   background: rgba(241, 189, 105, 0.1);
-  color: #ffe0a8;
+  color: var(--warning-fg);
 }
 
 .favorite-recipe-button[aria-pressed="true"] {
@@ -1369,9 +1388,9 @@ h2 {
   display: none;
   min-width: min(100%, 86px);
   padding: 0 12px;
-  border-color: rgba(128, 183, 243, 0.45);
+  border-color: var(--info-border);
   background: rgba(128, 183, 243, 0.12);
-  color: #cfe5ff;
+  color: var(--info-fg);
 }
 
 .view-plan-button[hidden],
@@ -1386,7 +1405,7 @@ h2 {
   padding: 0 9px;
   border-radius: 999px;
   background: rgba(241, 189, 105, 0.16);
-  color: #ffe0a8;
+  color: var(--warning-fg);
   font-size: 0.75rem;
   font-weight: 800;
 }
@@ -1600,9 +1619,9 @@ li {
 }
 
 .meal-plan-remove-button {
-  border-color: rgba(240, 138, 138, 0.32);
+  border-color: var(--danger-border);
   background: rgba(240, 138, 138, 0.08);
-  color: #ffcaca;
+  color: var(--danger-fg);
 }
 
 .meal-plan-empty-day {
@@ -1618,7 +1637,7 @@ li {
   width: 100%;
   min-height: 40px;
   padding: 0 34px 0 11px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius);
   background: var(--field);
   color: var(--fg);
@@ -1676,7 +1695,7 @@ li {
   position: relative;
   min-height: 38px;
   padding: 0 30px 0 12px;
-  border-color: rgba(122, 199, 163, 0.36);
+  border-color: var(--success-border);
   background: rgba(122, 199, 163, 0.1);
   color: var(--accent-strong);
   font-size: 0.84rem;
@@ -1726,7 +1745,7 @@ li {
   width: 100%;
   min-height: 44px;
   padding: 0 12px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius);
   background: var(--field);
   color: var(--fg);
@@ -1788,7 +1807,7 @@ li {
 }
 
 .state-tools-status.is-error {
-  color: #ffcaca;
+  color: var(--danger-fg);
 }
 
 .state-tools-status[hidden] {
@@ -1825,9 +1844,9 @@ li {
 }
 
 .clear-grocery-button {
-  border-color: rgba(240, 138, 138, 0.42);
+  border-color: var(--danger-border);
   background: rgba(240, 138, 138, 0.12);
-  color: #ffcaca;
+  color: var(--danger-fg);
 }
 
 .secondary-button {
@@ -1845,10 +1864,15 @@ li {
   gap: 8px;
 }
 
-.grocery-group-header {
+.grocery-group-heading {
   position: sticky;
   top: -14px;
   z-index: 2;
+  margin: 0;
+}
+
+.grocery-group-header {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
@@ -1856,7 +1880,7 @@ li {
   width: 100%;
   min-height: 42px;
   padding: 0 12px 0 34px;
-  border-color: rgba(59, 70, 82, 0.74);
+  border-color: var(--control-border);
   background: rgba(20, 24, 28, 0.96);
   box-shadow: 0 1px 0 rgba(45, 54, 63, 0.72);
   color: var(--fg);
@@ -1989,7 +2013,7 @@ li {
   justify-content: center;
   min-height: 34px;
   padding: 0 10px;
-  border: 1px solid rgba(122, 199, 163, 0.34);
+  border: 1px solid var(--success-border);
   border-radius: 999px;
   background: rgba(122, 199, 163, 0.08);
   color: var(--accent-strong);
@@ -2021,10 +2045,10 @@ li {
   min-width: 34px;
   min-height: 34px;
   padding: 0;
-  border-color: rgba(240, 138, 138, 0.32);
+  border-color: var(--danger-border);
   border-radius: 50%;
   background: rgba(240, 138, 138, 0.08);
-  color: #ffcaca;
+  color: var(--danger-fg);
   font-size: 1rem;
   line-height: 1;
 }
@@ -2348,7 +2372,10 @@ li {
   position: fixed;
   inset: 0;
   z-index: 100;
-  padding: 12px;
+  padding-top: max(12px, var(--safe-area-top));
+  padding-right: max(12px, var(--safe-area-right));
+  padding-bottom: max(12px, var(--safe-area-bottom));
+  padding-left: max(12px, var(--safe-area-left));
   background: rgba(10, 12, 14, 0.94);
   backdrop-filter: blur(18px);
 }
@@ -2682,7 +2709,7 @@ li {
 /* Responsive layouts */
 @media (max-width: 979px) {
   .app-mode-grocery .app-shell {
-    padding-top: 0;
+    padding-top: var(--safe-area-top);
   }
 
   .app-mode-grocery .app-header {
@@ -2707,7 +2734,7 @@ li {
   }
 
   .recipe-search {
-    top: 8px;
+    top: calc(8px + var(--safe-area-top));
     padding: 10px 12px;
   }
 
@@ -2731,7 +2758,7 @@ li {
   .grocery-list {
     min-height: 100dvh;
     margin: 0 -14px;
-    padding: 0 14px calc(24px + env(safe-area-inset-bottom));
+    padding: 0 14px calc(24px + var(--safe-area-bottom));
     border: 0;
     border-radius: 0;
     background: transparent;
@@ -2746,7 +2773,10 @@ li {
     min-height: 100dvh;
     margin: 0;
     overflow: auto;
-    padding: 0 14px calc(24px + env(safe-area-inset-bottom));
+    padding-top: var(--safe-area-top);
+    padding-right: max(14px, var(--safe-area-right));
+    padding-bottom: calc(24px + var(--safe-area-bottom));
+    padding-left: max(14px, var(--safe-area-left));
     border: 0;
     border-radius: 0;
     background: var(--bg);
@@ -2759,7 +2789,7 @@ li {
 
   .meal-plan-bar {
     position: sticky;
-    top: 0;
+    top: var(--safe-area-top);
     z-index: 24;
     margin: 0 -14px 12px;
     padding: 10px 14px;
@@ -2818,7 +2848,7 @@ li {
 
   .grocery-shopping-bar {
     position: sticky;
-    top: 0;
+    top: var(--safe-area-top);
     z-index: 24;
     margin: 0 -14px 12px;
     padding: 10px 14px;
@@ -2897,8 +2927,11 @@ li {
     min-height: 48px;
   }
 
-  .grocery-group-header {
+  .grocery-group-heading {
     top: 0;
+  }
+
+  .grocery-group-header {
     min-height: 46px;
   }
 
@@ -2991,7 +3024,10 @@ li {
     width: 100%;
     height: 100dvh;
     gap: 10px;
-    padding: 14px 14px 0;
+    padding-top: calc(14px + var(--safe-area-top));
+    padding-right: max(14px, var(--safe-area-right));
+    padding-bottom: 0;
+    padding-left: max(14px, var(--safe-area-left));
     border: 0;
     border-radius: 0;
     box-shadow: none;
@@ -3076,7 +3112,7 @@ li {
     z-index: 1;
     gap: 10px;
     margin: 0 -14px;
-    padding: 10px 14px calc(14px + env(safe-area-inset-bottom));
+    padding: 10px 14px calc(14px + var(--safe-area-bottom));
     border-top: 1px solid rgba(45, 54, 63, 0.9);
     background: rgba(16, 18, 20, 0.98);
     box-shadow: 0 -14px 32px rgba(0, 0, 0, 0.24);
@@ -3093,6 +3129,18 @@ li {
 
   .cooking-nav button {
     min-height: 48px;
+  }
+}
+
+@media (max-width: 979px) and (max-height: 600px) {
+  .recipe-controls-panel:not([hidden]),
+  .grocery-controls-panel:not([hidden]) {
+    max-height: calc(100vh - 96px);
+    max-height: calc(100dvh - var(--safe-area-top) - var(--safe-area-bottom) - 96px);
+    padding-right: 4px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
   }
 }
 
@@ -3165,7 +3213,10 @@ li {
 
 @media (min-width: 640px) {
   .app-shell {
-    padding: 26px 24px calc(110px + env(safe-area-inset-bottom));
+    padding-top: calc(26px + var(--safe-area-top));
+    padding-right: max(24px, var(--safe-area-right));
+    padding-bottom: calc(110px + var(--safe-area-bottom));
+    padding-left: max(24px, var(--safe-area-left));
   }
 
   h1 {
@@ -3179,7 +3230,10 @@ li {
 
 @media (min-width: 980px) {
   .app-shell {
-    padding: 34px 28px;
+    padding-top: calc(34px + var(--safe-area-top));
+    padding-right: max(28px, var(--safe-area-right));
+    padding-bottom: max(34px, var(--safe-area-bottom));
+    padding-left: max(28px, var(--safe-area-left));
   }
 
   .mobile-view-tabs {
@@ -3193,7 +3247,7 @@ li {
   }
 
   .recipe-search {
-    top: 18px;
+    top: calc(18px + var(--safe-area-top));
   }
 
   .recipe-controls-panel[hidden] {
@@ -3253,7 +3307,7 @@ li {
 
   .grocery-list {
     position: sticky;
-    top: 18px;
+    top: max(18px, var(--safe-area-top));
     max-height: calc(100vh - 36px);
     overflow: auto;
     scroll-padding-top: 92px;
@@ -3324,9 +3378,9 @@ li {
 
   .is-meal-plan-open .meal-plan {
     position: fixed;
-    top: 18px;
-    right: 28px;
-    bottom: 18px;
+    top: max(18px, var(--safe-area-top));
+    right: max(28px, var(--safe-area-right));
+    bottom: max(18px, var(--safe-area-bottom));
     z-index: 60;
     width: min(440px, calc(100vw - 56px));
     min-height: 0;
@@ -3351,7 +3405,10 @@ li {
   }
 
   .cooking-mode {
-    padding: 22px;
+    padding-top: max(22px, var(--safe-area-top));
+    padding-right: max(22px, var(--safe-area-right));
+    padding-bottom: max(22px, var(--safe-area-bottom));
+    padding-left: max(22px, var(--safe-area-left));
   }
 
   .cooking-shell {

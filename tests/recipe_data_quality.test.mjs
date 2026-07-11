@@ -80,6 +80,14 @@ test("current recipe data keeps bundled grocery labels out of Other", async () =
   assert.deepEqual(ungroupedLabels, []);
 });
 
+test("current recipe data has no grocery parse failures or unknown units", async () => {
+  const { recipes, warnings } = await loadNormalizedRecipes();
+  const report = analyzeRecipeDataQuality(recipes, { schemaWarnings: warnings });
+
+  assert.deepEqual(report.grocery.parseFailures, []);
+  assert.deepEqual(report.grocery.unknownUnits, []);
+});
+
 test("Robert Carr grocery labels keep shopping-specific recipe wording", async () => {
   const { recipes } = await loadNormalizedRecipes();
   const recipesById = Object.fromEntries(recipes.map((recipe) => [recipe.id, recipe]));

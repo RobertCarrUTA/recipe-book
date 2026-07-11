@@ -87,7 +87,10 @@ test("backup controller imports valid backups through the file input", async () 
   const controller = createBackupController({
     document,
     getState: () => ({}),
-    onRestore: (state) => restoredStates.push(state),
+    onRestore(state) {
+      restoredStates.push(state);
+      return { applied: true, persisted: true };
+    },
     window,
   });
   const backupFile = {
@@ -113,6 +116,81 @@ test("backup controller imports valid backups through the file input", async () 
   assert.equal(restoredStates[0].ui.recipeSort, "fastest");
   assert.equal(elements.stateBackupStatus.textContent, "Backup restored.");
   assert.equal(elements.stateBackupStatus.hidden, false);
+});
+
+test("backup controller keeps import unavailable until the recipe catalog is ready", async () => {
+  const { document, elements, window } = createBackupDom();
+  let restoreCount = 0;
+  const controller = createBackupController({
+    document,
+    getState: () => ({}),
+    importAvailable: false,
+    onRestore: () => {
+      restoreCount += 1;
+      return { applied: true, persisted: true };
+    },
+    window,
+  });
+  const backupFile = {
+    text: async () => JSON.stringify(createCompatibleBackup()),
+  };
+
+  controller.attach();
+
+  assert.equal(elements.importStateBackup.disabled, true);
+  assert.equal(elements.stateBackupInput.disabled, true);
+  assert.match(elements.importStateBackup.title, /until recipes finish loading/i);
+  assert.equal(await controller.importBackup(backupFile), false);
+  assert.equal(restoreCount, 0);
+  assert.match(elements.stateBackupStatus.textContent, /until recipes finish loading/i);
+
+  controller.setImportAvailable(true);
+  assert.equal(elements.importStateBackup.disabled, false);
+  assert.equal(elements.stateBackupInput.disabled, false);
+  assert.equal(elements.importStateBackup.title, "");
+  assert.equal(await controller.importBackup(backupFile), true);
+  assert.equal(restoreCount, 1);
+});
+
+test("backup controller reports an in-memory restore that could not be persisted", async () => {
+  const { document, elements, window } = createBackupDom();
+  const controller = createBackupController({
+    document,
+    getState: () => ({}),
+    onRestore: async () => ({ applied: true, persisted: false }),
+    window,
+  });
+
+  const imported = await controller.importBackup({
+    text: async () => JSON.stringify(createCompatibleBackup({ selectedRecipeIds: { chili: true } })),
+  });
+
+  assert.equal(imported, false);
+  assert.match(elements.stateBackupStatus.textContent, /applied for this session/i);
+  assert.equal(elements.stateBackupStatus.classList.contains("is-error"), true);
+  assert.equal(window.timers.length, 0, "durability warnings should remain visible");
+});
+
+test("backup controller reports export failures without leaking an unhandled error", () => {
+  const { document, elements, window } = createBackupDom();
+  const warnings = [];
+  const controller = createBackupController({
+    document,
+    getState: () => ({}),
+    logger: { warn: (...args) => warnings.push(args) },
+    urlApi: {
+      createObjectURL() {
+        throw new Error("downloads blocked");
+      },
+      revokeObjectURL() {},
+    },
+    window,
+  });
+
+  assert.equal(controller.exportBackup(), false);
+  assert.equal(warnings.length, 1);
+  assert.equal(elements.stateBackupStatus.textContent, "Backup could not be exported.");
+  assert.equal(elements.stateBackupStatus.classList.contains("is-error"), true);
 });
 
 test("backup controller keeps invalid imports non-fatal and sticky", async () => {

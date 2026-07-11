@@ -151,13 +151,18 @@ export function createRecipeSourceNavigationController({
     }
   }
 
+  function hasRecipeSource(recipeKey) {
+    const targetRecipeKey = String(recipeKey || "");
+    return Boolean(
+      targetRecipeKey &&
+      getRecipes().some((recipe, index) => getRecipeKey(recipe, index) === targetRecipeKey)
+    );
+  }
+
   function revealRecipeSourceById(recipeKey) {
     const targetRecipeKey = String(recipeKey || "");
-    if (!targetRecipeKey) return false;
-
-    const hasRecipe = getRecipes().some((recipe, index) => getRecipeKey(recipe, index) === targetRecipeKey);
-    if (!hasRecipe) {
-      logger.warn("Grocery source recipe was not found", targetRecipeKey);
+    if (!hasRecipeSource(targetRecipeKey)) {
+      if (targetRecipeKey) logger.warn("Grocery source recipe was not found", targetRecipeKey);
       return false;
     }
 
@@ -178,6 +183,12 @@ export function createRecipeSourceNavigationController({
   }
 
   function viewRecipeSource(recipeKey, options = {}) {
+    if (!hasRecipeSource(recipeKey)) {
+      const targetRecipeKey = String(recipeKey || "");
+      if (targetRecipeKey) logger.warn("Grocery source recipe was not found", targetRecipeKey);
+      return false;
+    }
+
     let returnPosition = null;
     if (isCompactLayout()) {
       const preparedPosition = normalizeGroceryReturnPosition(groceryReturnPosition);
@@ -190,7 +201,7 @@ export function createRecipeSourceNavigationController({
     groceryReturnPosition = returnPosition;
     syncRecipeSourceHistory(recipeKey, returnPosition);
     setMobileView("recipes");
-    revealRecipeSourceById(recipeKey);
+    return revealRecipeSourceById(recipeKey);
   }
 
   function viewGroceryList() {

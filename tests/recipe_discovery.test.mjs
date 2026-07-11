@@ -91,6 +91,17 @@ test("getRecipeDiscoveryResult normalizes invalid sort and empty recipe inputs",
   assert.equal(result.activeDiscoveryFilterCount, 3);
 });
 
+test("getRecipeDiscoveryResult safely normalizes supplied search caches", () => {
+  const result = getRecipeDiscoveryResult({
+    filterText: "creme",
+    recipes: [{ title: "Crème Anglaise" }],
+    searchTexts: ["Crème Anglaise"],
+    selectedFilters: {},
+  });
+
+  assert.deepEqual(result.recipeIndexes, [0]);
+});
+
 test("isRuntimeRecipeSort identifies sorts that depend on favorite or selected state", () => {
   assert.equal(isRuntimeRecipeSort(recipeSortModes.favoritesFirst), true);
   assert.equal(isRuntimeRecipeSort(recipeSortModes.selectedFirst), true);

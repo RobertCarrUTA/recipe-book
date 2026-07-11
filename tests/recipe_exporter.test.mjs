@@ -19,7 +19,9 @@ test("createRecipeFormattedText exports readable recipe sections", () => {
     notes: ["Serve with rice."],
     nutrition: {
       calories: "320",
+      potassium: "410mg",
       protein: "18g",
+      vitaminK2: "8mcg",
     },
     personalNotes: ["Use less salt."],
     prepTime: "10 minutes",
@@ -36,6 +38,8 @@ test("createRecipeFormattedText exports readable recipe sections", () => {
   assert.match(text, /^Weeknight Chili\n\nCategory: Dinner\nAuthor: Robert\nRating: 4\.8 stars \(12 reviews\)/);
   assert.match(text, /\nIngredients\n- 1 can beans\n- 2 cups broth\n\nInstructions\n1\. Brown beef\.\n2\. Simmer\./);
   assert.match(text, /\nNutrition\n- Calories: 320\n- Protein: 18g/);
+  assert.match(text, /- Potassium: 410mg/);
+  assert.match(text, /- Vitamin K 2: 8mcg/);
   assert.match(text, /\nPersonal Notes\n- Use less salt\./);
   assert.ok(text.endsWith("https://example.test/chili\n"));
 });

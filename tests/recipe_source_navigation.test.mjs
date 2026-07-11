@@ -188,3 +188,26 @@ test("recipe source navigation avoids return-history state on wide layouts", () 
   assert.deepEqual(views, [{ options: undefined, view: "recipes" }]);
   assert.deepEqual(window.historyCalls, []);
 });
+
+test("recipe source navigation rejects stale recipe ids before changing view or history", () => {
+  const window = createWindow({ compact: true });
+  const views = [];
+  const warnings = [];
+  const controller = createRecipeSourceNavigationController({
+    document: createDocument({ rows: [createGroceryRow("milk", 100)] }),
+    getRecipeKey: (recipe) => recipe.id,
+    getRecipes: () => [{ id: "recipe-a" }],
+    logger: { warn: (...args) => warnings.push(args) },
+    revealRecipeById: () => {
+      throw new Error("invalid ids must not reach the renderer");
+    },
+    setMobileView: (view) => views.push(view),
+    window,
+  });
+
+  controller.prepareRecipeSourceNavigation("milk");
+  assert.equal(controller.viewRecipeSource("missing", { canonicalKey: "milk" }), false);
+  assert.deepEqual(views, []);
+  assert.deepEqual(window.historyCalls, []);
+  assert.equal(warnings.length, 1);
+});

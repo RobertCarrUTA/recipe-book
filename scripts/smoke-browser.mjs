@@ -61,6 +61,12 @@ async function visibleRecipeCount(page) {
   return page.locator(".recipe:visible").count();
 }
 
+function isExpectedConsoleMessage(message, expectedPatterns = []) {
+  return expectedPatterns.some((pattern) =>
+    pattern instanceof RegExp ? pattern.test(message) : message.includes(String(pattern))
+  );
+}
+
 async function runBrowserCheck(browser, check) {
   const context = await browser.newContext({
     acceptDownloads: true,
@@ -103,9 +109,12 @@ async function runBrowserCheck(browser, check) {
 
   try {
     await check.run(page);
+    const unexpectedConsoleMessages = consoleMessages.filter(
+      (message) => !isExpectedConsoleMessage(message, check.expectedConsoleMessages)
+    );
 
-    if (pageErrors.length || consoleMessages.length) {
-      throw new Error(`Browser errors: ${[...pageErrors, ...consoleMessages].join("; ")}`);
+    if (pageErrors.length || unexpectedConsoleMessages.length) {
+      throw new Error(`Browser errors: ${[...pageErrors, ...unexpectedConsoleMessages].join("; ")}`);
     }
 
     console.log(`ok - ${check.name}`);
@@ -147,6 +156,7 @@ const browserChecks = [
   },
   {
     name: "reloads the complete app and recipe data while offline",
+    expectedConsoleMessages: [/Failed to load resource: net::ERR_INTERNET_DISCONNECTED/],
     async run(page) {
       await openApp(page, { debug: true });
       const offlineReady = await page.evaluate(async () => {

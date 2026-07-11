@@ -13,6 +13,7 @@ import { formatTotalsForKey } from "./units.js";
 
 export function createGroceryRenderer({ document, getRuntimeState, getUiState, actions }) {
   const byId = (id) => document.getElementById(id);
+  let groceryGroupIdCounter = 0;
   let sourceDetailsIdCounter = 0;
 
   function createButton(options = {}) {
@@ -281,8 +282,9 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const searchLink = createGrocerySearchLink(displayName);
     const totalsText = entry.totals ? formatTotalsForKey(entry.totals, { canonicalKey, displayName }) : "";
     const isManual = actions.isManualGroceryItem(canonicalKey);
+    const itemText = totalsText ? `${displayName} - ${totalsText}${notesText}` : `${displayName}${notesText}`;
     const cb = createElement(document, "input", {
-      attributes: { "aria-label": displayName },
+      attributes: { "aria-label": itemText },
       checked: Boolean(runtimeState.groceryCheckedByKey[canonicalKey]),
       type: "checkbox",
       listeners: {
@@ -303,7 +305,7 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
       children: createTextElement(
         document,
         "span",
-        totalsText ? `${displayName} - ${totalsText}${notesText}` : `${displayName}${notesText}`,
+        itemText,
         { className: "grocery-item-name" }
       ),
       className: "grocery-item-content",
@@ -348,7 +350,7 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     return li;
   }
 
-  function createGroupHeader(group, entries) {
+  function createGroupHeader(group, entries, { listId, titleId }) {
     const uiState = getUiState();
     const checkedCount = entries.filter((entry) => entry.checked).length;
     const isCollapsed = Boolean(uiState.collapsedGroceryGroups && uiState.collapsedGroceryGroups[group]);
@@ -356,14 +358,22 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
       ? `${checkedCount}/${entries.length} checked`
       : formatCount(entries.length, "item", "items");
 
-    return createButton({
-      attributes: { "aria-expanded": isCollapsed ? "false" : "true" },
+    const button = createButton({
+      attributes: {
+        "aria-controls": listId,
+        "aria-expanded": isCollapsed ? "false" : "true",
+      },
       children: [
-        createTextElement(document, "span", group, { className: "grocery-group-title" }),
+        createTextElement(document, "span", group, { className: "grocery-group-title", id: titleId }),
         createTextElement(document, "span", countText, { className: "grocery-group-count" }),
       ],
       className: "grocery-group-header",
       listeners: { click: () => actions.onGroceryGroupToggle(group, !isCollapsed) },
+    });
+
+    return createElement(document, "h3", {
+      children: button,
+      className: "grocery-group-heading",
     });
   }
 
@@ -371,7 +381,11 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const uiState = getUiState();
     const visibleEntries = uiState.hideCheckedGroceryItems ? entries.filter((entry) => !entry.checked) : entries;
     const isCollapsed = Boolean(uiState.collapsedGroceryGroups && uiState.collapsedGroceryGroups[group]);
-    const list = createElement(document, "ul", { hidden: isCollapsed });
+    const groupId = `grocery-group-${groceryGroupIdCounter}`;
+    groceryGroupIdCounter += 1;
+    const listId = `${groupId}-items`;
+    const titleId = `${groupId}-title`;
+    const list = createElement(document, "ul", { hidden: isCollapsed, id: listId });
 
     visibleEntries.forEach((entry) => {
       list.appendChild(createGroceryItem(entry.canonicalKey, entry, allKeys, selectedRecipeCount));
@@ -384,7 +398,8 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     }
 
     container.appendChild(createElement(document, "section", {
-      children: [createGroupHeader(group, entries), list],
+      attributes: { "aria-labelledby": titleId },
+      children: [createGroupHeader(group, entries, { listId, titleId }), list],
       className: "grocery-group",
     }));
   }
@@ -428,6 +443,7 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const entries = [];
     const fragment = document.createDocumentFragment();
 
+    groceryGroupIdCounter = 0;
     sourceDetailsIdCounter = 0;
     updateGrocerySummary(allKeys);
 

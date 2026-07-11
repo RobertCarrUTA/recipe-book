@@ -4,6 +4,7 @@ import { createRecipeRenderer } from "../js/recipe_renderer.js";
 import {
   createFakeDocument,
   createFakeElement,
+  createFakeEvent,
   createFakeWindow,
 } from "./dom_test_helpers.mjs";
 import { test } from "./test_helpers.mjs";
@@ -13,8 +14,10 @@ const recipes = [
     id: "chili",
     ingredients: ["1 can beans"],
     instructions: ["Simmer until hot."],
+    link: "https://example.test/chili",
     tags: { rating: "great", status: "tried" },
     title: "Chili",
+    totalTime: "45 minutes",
   },
   {
     id: "cake",
@@ -42,6 +45,7 @@ function createRendererHarness(options = {}) {
   const plannedDayKeysById = { ...(options.plannedDayKeysById || {}) };
   const multipliersById = { ...(options.multipliersById || {}) };
   const batchNotifications = [];
+  const tagToggleCalls = [];
 
   Object.assign(window, {
     matchMedia() {
@@ -66,7 +70,9 @@ function createRendererHarness(options = {}) {
     isRecipeFavorite: (recipe) => favoriteRecipeIds.has(recipe.id),
     isRecipeSelected: (recipe) => selectedRecipeIds.has(recipe.id),
     onRecipeBatchRendered: (payload) => batchNotifications.push(payload),
-    onRecipeTagToggle() {},
+    onRecipeTagToggle(...args) {
+      tagToggleCalls.push(args);
+    },
     onRenderError() {},
     onSelectRecipe(recipe, _recipeIndex, selected) {
       if (selected) selectedRecipeIds.add(recipe.id);
@@ -76,7 +82,7 @@ function createRendererHarness(options = {}) {
   const renderer = createRecipeRenderer({
     actions,
     document,
-    getRecipes: () => recipes,
+    getRecipes: () => options.recipes ?? recipes,
     openCookingMode() {},
     recipeBatchSize: options.recipeBatchSize,
   });
@@ -90,6 +96,7 @@ function createRendererHarness(options = {}) {
     plannedDayKeysById,
     renderer,
     selectedRecipeIds,
+    tagToggleCalls,
     window,
   };
 }
@@ -144,15 +151,88 @@ test("recipe renderer uses article and heading semantics without static Tab stop
   const heading = recipeElement.querySelector(".recipe-heading");
   const header = recipeElement.querySelector(".accordion-header");
   const title = recipeElement.querySelector(".recipe-title");
+  const status = recipeElement.querySelector(".recipe-header-badges");
+  const meta = recipeElement.querySelector(".recipe-header-meta");
   const listItems = recipeElement.querySelectorAll(".accordion-content li");
 
   assert.equal(recipeElement.tagName, "ARTICLE");
   assert.equal(heading.tagName, "H3");
   assert.equal(header.parentElement, heading);
   assert.equal(header.getAttribute("aria-labelledby"), title.id);
+  assert.deepEqual(header.getAttribute("aria-describedby").split(" "), [status.id, meta.id]);
   assert.equal(recipeElement.getAttribute("aria-labelledby"), title.id);
   assert.ok(listItems.length > 0);
   assert.equal(listItems.every((item) => item.tabIndex === undefined), true);
+  assert.equal(recipeElement.querySelector(".favorite-recipe-button").getAttribute("aria-label"), "Favorite Chili");
+  assert.equal(recipeElement.querySelector(".cooking-mode-button").getAttribute("aria-label"), "Cook Chili");
+  assert.equal(
+    recipeElement.querySelector('.recipe-add-toggle input[type="checkbox"]').getAttribute("aria-label"),
+    "Include Chili in grocery list"
+  );
+  assert.equal(
+    recipeElement.querySelector(".recipe-link").getAttribute("aria-label"),
+    "View full recipe for Chili (opens in a new tab)"
+  );
+});
+
+test("recipe renderer lets pointer selections keep title text selected without toggling", () => {
+  const harness = createRendererHarness();
+  harness.renderer.renderRecipes();
+  const recipeElement = findRecipeElement(harness.document, "chili");
+  const header = recipeElement.querySelector(".accordion-header");
+  const title = recipeElement.querySelector(".recipe-title");
+  const content = recipeElement.querySelector(".accordion-content");
+  harness.window.getSelection = () => ({
+    containsNode: (node) => node === title,
+    isCollapsed: false,
+  });
+
+  const selectionClick = createFakeEvent("click", { target: title });
+  selectionClick.detail = 1;
+  header.dispatchEvent(selectionClick);
+  assert.equal(content.classList.contains("open"), false);
+
+  const keyboardClick = createFakeEvent("click", { target: header });
+  keyboardClick.detail = 0;
+  header.dispatchEvent(keyboardClick);
+  assert.equal(content.classList.contains("open"), true);
+
+  header.click();
+  harness.window.getSelection = () => ({ isCollapsed: true });
+  const pointerClick = createFakeEvent("click", { target: title });
+  pointerClick.detail = 1;
+  header.dispatchEvent(pointerClick);
+  assert.equal(content.classList.contains("open"), true);
+});
+
+test("recipe renderer passes recipe context when a rendered tag changes discovery filters", () => {
+  const harness = createRendererHarness();
+  harness.renderer.renderRecipes();
+  const recipeElement = openRecipe(harness.document, "chili");
+
+  recipeElement.querySelector(".recipe-tag").click();
+
+  assert.deepEqual(harness.tagToggleCalls[0], ["status", "tried", { recipeId: "chili" }]);
+});
+
+test("recipe renderer shows an announced empty state for an empty catalog", () => {
+  const harness = createRendererHarness({ recipes: [] });
+
+  harness.renderer.renderRecipes();
+
+  const empty = harness.container.querySelector(".recipe-list-state");
+  assert.ok(empty);
+  assert.equal(empty.getAttribute("role"), "status");
+  assert.equal(empty.querySelector("strong").textContent, "No recipes are available.");
+  assert.equal(harness.container.getAttribute("aria-busy"), "false");
+});
+
+test("recipe renderer announces recipe load failures", () => {
+  const harness = createRendererHarness();
+
+  harness.renderer.renderRecipeLoadError(new Error("Unavailable"));
+
+  assert.equal(harness.container.querySelector(".recipe-list-state").getAttribute("role"), "alert");
 });
 
 test("recipe renderer renders offscreen recipes before revealing them", () => {

@@ -29,6 +29,60 @@ test("normalizeRecipeBook repairs text, defaults tags, and de-duplicates ids", (
 
 test("normalizeRecipeBook rejects non-array data", () => {
   assert.throws(() => normalizeRecipeBook({}), /recipes\.json must contain an array/);
+  assert.throws(() => normalizeRecipeBook([]), /at least one recipe/);
+});
+
+test("normalizeRecipeBook resolves generated id collisions", () => {
+  const recipe = (id, title) => ({
+    groceryIngredients: [{ item: "flour", quantity: 1, unit: "cup" }],
+    id,
+    ingredients: ["1 cup flour"],
+    instructions: ["Mix."],
+    title,
+  });
+  const { recipes } = normalizeRecipeBook([
+    recipe("dish-2", "A"),
+    recipe("dish", "B"),
+    recipe("dish", "C"),
+  ]);
+
+  assert.equal(new Set(recipes.map(({ id }) => id)).size, recipes.length);
+  assert.deepEqual(recipes.map(({ id }) => id), ["dish-2", "dish", "dish-3"]);
+});
+
+test("normalizeRecipeBook rejects malformed field types and unsafe numeric values", () => {
+  const { recipes, warnings } = normalizeRecipeBook([
+    {
+      author: { name: "Not a string" },
+      groceryIngredients: [
+        { item: "salt", quantity: -1, unit: "pinch" },
+        { item: "flour", quantity: { min: 4, max: 2 }, unit: "cup" },
+        { item: "sugar", quantity: "many", unit: "cup" },
+      ],
+      id: { invalid: true },
+      ingredients: ["1 cup flour", 42],
+      instructions: ["Mix."],
+      nutrition: { protein: { amount: "4g" } },
+      rating: { count: -2, value: 8 },
+      tags: { equipment: ["!!!", 5], status: { invalid: true } },
+      title: { invalid: true },
+    },
+  ]);
+
+  const [recipe] = recipes;
+  assert.equal(recipe.title, "Untitled Recipe 1");
+  assert.equal(recipe.id, "untitled-recipe-1");
+  assert.deepEqual(recipe.ingredients, ["1 cup flour"]);
+  assert.deepEqual(recipe.groceryIngredients.map(({ quantity }) => quantity), [undefined, undefined, undefined]);
+  assert.equal(recipe.author, undefined);
+  assert.equal(recipe.rating, undefined);
+  assert.equal(recipe.nutrition, undefined);
+  assert.equal(recipe.tags.equipment, undefined);
+  assert.equal(recipe.tags.status, "not-tried");
+  assert.ok(warnings.some((warning) => warning.includes("invalid title")));
+  assert.ok(warnings.some((warning) => warning.includes("invalid rating value")));
+  assert.ok(warnings.some((warning) => warning.includes("invalid rating count")));
+  assert.equal(warnings.filter((warning) => warning.includes("invalid grocery quantity")).length, 3);
 });
 
 test("normalizeRecipeBook normalizes valid recipe collections", () => {

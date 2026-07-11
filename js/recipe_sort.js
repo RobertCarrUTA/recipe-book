@@ -47,7 +47,8 @@ export function parseRecipeDurationMinutes(value) {
   if (hourMinuteMatch) {
     const hours = Number(hourMinuteMatch[1]);
     const minutes = Number(hourMinuteMatch[2]);
-    if (Number.isFinite(hours) && Number.isFinite(minutes)) return hours * 60 + minutes;
+    const total = hours * 60 + minutes;
+    if (Number.isFinite(hours) && Number.isFinite(minutes) && minutes < 60 && total > 0) return total;
   }
 
   return null;

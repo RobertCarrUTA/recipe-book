@@ -156,7 +156,7 @@ export function createRecipeRenderer({
     return formatPlannedBadgeText(getRecipePlanDayKeys(recipe, recipeIndex));
   }
 
-  function renderRecipeTags(tags) {
+  function renderRecipeTags(tags, recipeKey) {
     const t = tags || {};
     const wrap = createElement(document, "div", { className: "recipe-tags" });
 
@@ -171,7 +171,7 @@ export function createRecipeRenderer({
         listeners: {
           click: (event) => {
             event.stopPropagation();
-            actions.onRecipeTagToggle(filterKey, filterValue);
+            actions.onRecipeTagToggle(filterKey, filterValue, { recipeId: recipeKey });
           },
         },
       }));
@@ -291,7 +291,7 @@ export function createRecipeRenderer({
     if (!content || content.dataset.rendered === "true") return;
 
     content.dataset.rendered = "true";
-    content.appendChild(renderRecipeTags(recipe.tags));
+    content.appendChild(renderRecipeTags(recipe.tags, actions.getRecipeKey(recipe, recipeIndex)));
     content.appendChild(recipeActions.createRecipeActions(recipe, recipeIndex));
 
     if (recipe.category) {
@@ -318,12 +318,36 @@ export function createRecipeRenderer({
     header.setAttribute("aria-expanded", open ? "true" : "false");
   }
 
+  function pointerSelectionIncludesTitle(event, title) {
+    if (!event || Number(event.detail) <= 0 || !title || typeof windowLike.getSelection !== "function") {
+      return false;
+    }
+
+    const selection = windowLike.getSelection();
+    if (!selection || selection.isCollapsed) return false;
+
+    if (typeof selection.containsNode === "function") {
+      try {
+        return selection.containsNode(title, true);
+      } catch (error) {
+        // Fall back to checking the selection endpoints below.
+      }
+    }
+
+    return Boolean(
+      (selection.anchorNode && title.contains?.(selection.anchorNode)) ||
+      (selection.focusNode && title.contains?.(selection.focusNode))
+    );
+  }
+
   function renderRecipeShell(recipeIndex) {
     const recipes = getRecipes();
     const recipe = recipes[recipeIndex];
     const recipeKey = actions.getRecipeKey(recipe, recipeIndex);
     const contentId = `recipe-content-${recipeIndex}`;
     const titleId = `recipe-title-${recipeIndex}`;
+    const statusId = `recipe-status-${recipeIndex}`;
+    const metaId = `recipe-meta-${recipeIndex}`;
     const isSelected = actions.isRecipeSelected(recipe, recipeIndex);
     const isFavorite = actions.isRecipeFavorite(recipe, recipeIndex);
     const plannedDayKeys = getRecipePlanDayKeys(recipe, recipeIndex);
@@ -348,20 +372,24 @@ export function createRecipeRenderer({
         }),
       ],
       className: "recipe-header-badges",
+      id: statusId,
+    });
+    const title = createTextElement(document, "span", recipe.title, {
+      className: "recipe-title",
+      id: titleId,
     });
     const headerTop = createElement(document, "div", {
       children: [
-        createTextElement(document, "span", recipe.title, {
-          className: "recipe-title",
-          id: titleId,
-        }),
+        title,
         headerBadges,
       ],
       className: "recipe-header-top",
     });
+    const headerMetaItems = getRecipeHeaderMeta(recipe);
     const header = createElement(document, "button", {
       attributes: {
         "aria-controls": contentId,
+        "aria-describedby": [statusId, headerMetaItems.length ? metaId : ""].filter(Boolean).join(" "),
         "aria-expanded": "false",
         "aria-labelledby": titleId,
       },
@@ -369,14 +397,14 @@ export function createRecipeRenderer({
       className: "accordion-header",
       type: "button",
       listeners: {
-        click: () => {
+        click: (event) => {
+          if (pointerSelectionIncludesTitle(event, title)) return;
           setRecipeContentOpen(recipe, recipeIndex, header, content, !content.classList.contains("open"));
         },
         keydown: (event) => handleRecipeHeaderKeydown(event, header),
       },
     });
 
-    const headerMetaItems = getRecipeHeaderMeta(recipe);
     if (headerMetaItems.length) {
       header.appendChild(createElement(document, "div", {
         children: headerMetaItems.map((item) =>
@@ -389,6 +417,7 @@ export function createRecipeRenderer({
           })
         ),
         className: "recipe-header-meta",
+        id: metaId,
       }));
     }
 
@@ -696,6 +725,19 @@ export function createRecipeRenderer({
       ? options.recipeIndexes.filter((index) => Number.isInteger(index) && index >= 0 && index < recipes.length)
       : recipes.map((_recipe, index) => index);
 
+    if (!recipes.length) {
+      const empty = createEmptyState(document, {
+        body: "Add recipes to the collection, then refresh the app.",
+        className: "empty-state recipe-list-state",
+        title: "No recipes are available.",
+      });
+      empty.setAttribute("role", "status");
+      recipeContainer.appendChild(empty);
+      setRecipeContainerBusy(recipeContainer, false);
+      notifyRecipeBatchRendered();
+      return;
+    }
+
     if (!currentRecipeIndexes.length) {
       setRecipeContainerBusy(recipeContainer, false);
       notifyRecipeBatchRendered();
@@ -851,6 +893,7 @@ export function createRecipeRenderer({
       className: "empty-state recipe-list-state",
       title: "Recipes could not load.",
     });
+    message.setAttribute("role", "alert");
     recipeContainer.replaceChildren(message);
 
     const meta = byId("recipeSearchMeta");
