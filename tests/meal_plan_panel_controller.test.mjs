@@ -16,6 +16,7 @@ function makeFocusable(element, document) {
 function createMealPlanPanelFixture() {
   const appHeader = createFakeElement({ classes: ["app-header"] });
   const mobileTabs = createFakeElement({ classes: ["mobile-view-tabs"] });
+  const skipLink = createFakeElement({ classes: ["skip-link"], tagName: "a" });
   const elements = {
     buildGroceryListFromMealPlan: createFakeElement({ id: "buildGroceryListFromMealPlan", tagName: "button" }),
     clearMealPlan: createFakeElement({ id: "clearMealPlan", tagName: "button" }),
@@ -28,6 +29,7 @@ function createMealPlanPanelFixture() {
   const queryResults = {
     ".app-header": appHeader,
     ".mobile-view-tabs": mobileTabs,
+    ".skip-link": skipLink,
   };
   const document = createFakeDocument({ elements });
   const containedElements = new Set([
@@ -43,10 +45,19 @@ function createMealPlanPanelFixture() {
   document.querySelector = (selector) => queryResults[selector] || null;
   document.contains = (element) => containedElements.has(element);
   makeFocusable(elements.openMealPlan, document);
-  makeFocusable(elements.closeMealPlanPanel, document);
+  elements.mealPlanPanel.ownerDocument = document;
+  [
+    elements.buildGroceryListFromMealPlan,
+    elements.clearMealPlan,
+    elements.closeMealPlanPanel,
+  ].forEach((element) => {
+    makeFocusable(element, document);
+    elements.mealPlanPanel.appendChild(element);
+  });
 
   return {
     backgroundElements: [
+      skipLink,
       appHeader,
       elements.recipesPanel,
       elements.groceryPanel,
@@ -112,6 +123,33 @@ test("meal plan panel controller attaches controls and Escape handling", () => {
   assert.equal(clearCount, 1);
   assert.equal(escapeEvent.defaultPrevented, true);
   assert.equal(controller.isOpen(), false);
+});
+
+test("meal plan panel controller contains Tab focus while open", () => {
+  const { document, elements } = createMealPlanPanelFixture();
+  const controller = createMealPlanPanelController({
+    document,
+    onBuildGroceryList() {},
+    onClearMealPlan() {},
+  });
+
+  controller.attach();
+  controller.open();
+
+  const forwardEvent = createFakeEvent("keydown");
+  forwardEvent.key = "Tab";
+  document.dispatchEvent(forwardEvent);
+
+  assert.equal(forwardEvent.defaultPrevented, true);
+  assert.equal(document.activeElement, elements.buildGroceryListFromMealPlan);
+
+  const backwardEvent = createFakeEvent("keydown");
+  backwardEvent.key = "Tab";
+  backwardEvent.shiftKey = true;
+  document.dispatchEvent(backwardEvent);
+
+  assert.equal(backwardEvent.defaultPrevented, true);
+  assert.equal(document.activeElement, elements.closeMealPlanPanel);
 });
 
 test("meal plan panel controller can close without restoring focus", () => {

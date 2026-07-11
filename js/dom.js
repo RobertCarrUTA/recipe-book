@@ -10,6 +10,66 @@ export function listen(target, type, listener, options) {
   return target;
 }
 
+const FOCUSABLE_SELECTOR = [
+  "a[href]",
+  "button",
+  "input",
+  "select",
+  "textarea",
+  "[contenteditable='true']",
+  "[tabindex]",
+].join(", ");
+
+function isUnavailableFocusTarget(element, container) {
+  if (!element || element.disabled || element.type === "hidden") return true;
+  if (element.getAttribute?.("aria-disabled") === "true") return true;
+
+  const tabIndexAttribute = element.getAttribute?.("tabindex");
+  if (tabIndexAttribute != null && Number(tabIndexAttribute) < 0) return true;
+
+  let current = element;
+  while (current) {
+    if (
+      current.hidden ||
+      current.inert ||
+      current.getAttribute?.("aria-hidden") === "true"
+    ) {
+      return true;
+    }
+    if (current === container) break;
+    current = current.parentElement;
+  }
+
+  return typeof element.getClientRects === "function" && element.getClientRects().length === 0;
+}
+
+export function containTabFocus(event, container) {
+  if (!event || event.defaultPrevented || event.key !== "Tab" || !container) return false;
+
+  const focusableElements = Array.from(container.querySelectorAll?.(FOCUSABLE_SELECTOR) || [])
+    .filter((element) => !isUnavailableFocusTarget(element, container));
+
+  if (!focusableElements.length) {
+    event.preventDefault();
+    container.focus?.();
+    return true;
+  }
+
+  const ownerDocument = container.ownerDocument || (typeof document !== "undefined" ? document : null);
+  const activeElement = ownerDocument?.activeElement;
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+  const focusIsOutside = !activeElement || activeElement === container || !container.contains?.(activeElement);
+  const shouldWrapBackward = event.shiftKey && (focusIsOutside || activeElement === firstElement);
+  const shouldWrapForward = !event.shiftKey && (focusIsOutside || activeElement === lastElement);
+
+  if (!shouldWrapBackward && !shouldWrapForward) return false;
+
+  event.preventDefault();
+  (shouldWrapBackward ? lastElement : firstElement).focus();
+  return true;
+}
+
 export function createElement(document, tagName, options = {}) {
   const element = document.createElement(tagName);
   if (options.className) element.className = options.className;

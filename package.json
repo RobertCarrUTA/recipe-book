@@ -3,6 +3,9 @@
   "private": true,
   "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build:recipes": "node scripts/build-recipes.mjs",
     "check:recipes": "node scripts/build-recipes.mjs --check",
@@ -12,7 +15,8 @@
     "report:data-quality": "node scripts/report-data-quality.mjs",
     "smoke:browser": "node scripts/smoke-browser.mjs",
     "test": "node scripts/run-tests.mjs",
-    "verify": "node scripts/check-syntax.mjs && node scripts/build-recipes.mjs --check && node scripts/run-tests.mjs && node scripts/verify-app.mjs",
+    "verify:app": "node scripts/verify-app.mjs",
+    "verify": "npm run check:syntax && npm run check:recipes && npm run test && npm run verify:app",
     "verify:full": "npm run verify && npm run smoke:browser"
   },
   "devDependencies": {

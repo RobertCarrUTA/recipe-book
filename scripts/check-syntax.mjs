@@ -1,8 +1,9 @@
 import { spawnSync } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const rootDir = path.resolve(new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
+const rootDir = fileURLToPath(new URL("..", import.meta.url));
 const checkDirs = ["js", "scripts", "tests"];
 const checkFiles = ["sw.js"];
 

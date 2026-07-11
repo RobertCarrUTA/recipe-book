@@ -41,6 +41,25 @@ test("restorePersistentState returns safe defaults when storage is unavailable",
   assert.equal(restored.ui.skipClearGroceryConfirmation, false);
 });
 
+test("restorePersistentState survives blocked localStorage access", () => {
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, "localStorage");
+
+  try {
+    Object.defineProperty(globalThis, "localStorage", {
+      configurable: true,
+      get() {
+        throw new DOMException("Blocked", "SecurityError");
+      },
+    });
+
+    assert.deepEqual(restorePersistentState().selectedRecipeIds, {});
+    assert.equal(savePersistentState({ runtime: {}, ui: {} }), false);
+  } finally {
+    if (descriptor) Object.defineProperty(globalThis, "localStorage", descriptor);
+    else delete globalThis.localStorage;
+  }
+});
+
 test("restorePersistentState reads safe recipe multipliers", () => {
   const storage = createMemoryStorage({
     [storageKeys.recipeMultipliers]: JSON.stringify({ chili: 2, soup: "bad", stew: 0.5 }),
@@ -133,6 +152,25 @@ test("migratePersistentState promotes legacy selected recipes", () => {
   assert.equal(result.migrated, true);
   assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion));
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.selectedRecipes)), { chili: true });
+  assert.equal(storage.getItem(storageKeys.groceryState), null);
+});
+
+test("newer storage versions are preserved for a newer app", () => {
+  const storage = createMemoryStorage({
+    [storageKeys.groceryState]: JSON.stringify({ selectedRecipeIds: { chili: true } }),
+    [storageKeys.selectedRecipes]: JSON.stringify({ chili: true }),
+    [storageKeys.version]: String(currentStorageVersion + 1),
+  });
+
+  const result = migratePersistentState(storage);
+
+  assert.equal(result.incompatible, true);
+  assert.equal(result.migrated, false);
+  assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion + 1));
+  assert.equal(savePersistentState({ runtime: {}, ui: {} }, storage), false);
+  clearGroceryPersistence(storage);
+  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.selectedRecipes)), { chili: true });
+  assert.notEqual(storage.getItem(storageKeys.groceryState), null);
 });
 
 test("savePersistentState writes versioned runtime and ui state", () => {
@@ -183,6 +221,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   assert.equal(storage.getItem(storageKeys.recipeSort), "fastest");
   assert.equal(storage.getItem(storageKeys.showSelectedRecipesOnly), "1");
   assert.equal(storage.getItem(storageKeys.skipClearGroceryConfirmation), "1");
+  assert.equal(storage.getItem(storageKeys.groceryState), null, "derived grocery totals should not be persisted");
 });
 
 test("clearGroceryPersistence removes list state without clearing preferences", () => {
@@ -268,7 +307,10 @@ test("normalizePersistentStateBackup returns safe restored state", () => {
     data: {
       favoriteRecipeIds: { chili: true, soup: 0 },
       groceryCheckedByKey: { beans: true },
-      manualGroceryItemsById: { manual1: { id: "manual1", name: "Dish soap" } },
+      manualGroceryItemsById: {
+        manual1: { id: "manual1", name: "Dish soap" },
+        staleKey: { id: "canonical-id", name: "Paper towels" },
+      },
       mealPlan: { days: { monday: ["chili", "chili", ""], friday: ["soup"] } },
       recipeMultipliersById: { chili: 3, soup: "bad" },
       selectedRecipeIds: { chili: true },
@@ -284,7 +326,10 @@ test("normalizePersistentStateBackup returns safe restored state", () => {
 
   assert.deepEqual(restored.favoriteRecipeIds, { chili: true });
   assert.deepEqual(restored.groceryCheckedByKey, { beans: true });
-  assert.deepEqual(restored.manualGroceryItemsById, { manual1: { id: "manual1", name: "Dish soap" } });
+  assert.deepEqual(restored.manualGroceryItemsById, {
+    "canonical-id": { id: "canonical-id", name: "Paper towels" },
+    manual1: { id: "manual1", name: "Dish soap" },
+  });
   assert.deepEqual(restored.mealPlan.days.monday, ["chili"]);
   assert.deepEqual(restored.mealPlan.days.friday, ["soup"]);
   assert.deepEqual(restored.recipeMultipliersById, { chili: 3 });

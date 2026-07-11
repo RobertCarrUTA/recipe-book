@@ -2,6 +2,7 @@ const CACHE_VERSION = "20260710-9";
 const CACHE_PREFIX = "recipe-book-";
 const SHELL_CACHE = `recipe-book-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `recipe-book-data-${CACHE_VERSION}`;
+const INDEX_URL = new URL("./index.html", self.location.href).href;
 const RECIPE_DATA_URL = new URL("./data/recipes.json", self.location.href).href;
 
 const SHELL_URLS = [
@@ -71,66 +72,105 @@ async function deleteOldCaches() {
 }
 
 async function cacheShellOnInstall() {
-  try {
-    const cache = await caches.open(SHELL_CACHE);
-    await Promise.all(SHELL_URLS.map((url) => cache.add(url).catch(() => undefined)));
-  } catch (error) {
-    // Network fetches after activation can fill any missing shell cache entries.
-  }
+  const cache = await caches.open(SHELL_CACHE);
+  const requests = SHELL_URLS.map(
+    (url) => new Request(new URL(url, self.location.href).href, { cache: "reload" })
+  );
+  await cache.addAll(requests);
 }
 
 async function cacheRecipeDataOnInstall() {
+  const cache = await caches.open(DATA_CACHE);
+  const response = await fetch(RECIPE_DATA_URL, { cache: "reload" });
+  if (!(await isValidRecipeDataResponse(response))) {
+    throw new Error("Recipe data could not be validated during service worker installation.");
+  }
+  await cache.put(RECIPE_DATA_URL, response);
+}
+
+async function cacheRequiredAssetsOnInstall() {
   try {
-    const cache = await caches.open(DATA_CACHE);
-    await cache.add(RECIPE_DATA_URL);
+    await Promise.all([cacheShellOnInstall(), cacheRecipeDataOnInstall()]);
   } catch (error) {
-    // The app will cache recipe data after the next successful in-page load.
+    await Promise.all([caches.delete(SHELL_CACHE), caches.delete(DATA_CACHE)]);
+    throw error;
+  }
+}
+
+function fetchFresh(request) {
+  return fetch(request, { cache: "no-store" });
+}
+
+async function isValidRecipeDataResponse(response) {
+  if (!response || !response.ok) return false;
+  const contentType = response.headers.get("content-type") || "";
+  if (!contentType.toLowerCase().includes("json")) return false;
+
+  try {
+    const recipes = await response.clone().json();
+    return Boolean(
+      Array.isArray(recipes) &&
+      recipes.length &&
+      recipes.every((recipe) => recipe && typeof recipe.id === "string" && typeof recipe.title === "string")
+    );
+  } catch (error) {
+    return false;
   }
 }
 
 async function handleNavigation(request) {
   const cache = await caches.open(SHELL_CACHE);
+  let response = null;
 
   try {
-    const response = await fetch(request);
-    if (response.ok) await cache.put("./index.html", response.clone());
-    return response;
+    response = await fetchFresh(request);
+    if (response.ok) {
+      await cache.put(INDEX_URL, response.clone());
+      return response;
+    }
   } catch (error) {
-    return (await cache.match("./index.html")) || Response.error();
+    // Use the last complete shell below.
   }
+
+  return (await cache.match(INDEX_URL)) || response || Response.error();
 }
 
 async function handleRecipeData(request) {
   const cache = await caches.open(DATA_CACHE);
+  let response = null;
 
   try {
-    const response = await fetch(request);
-    if (response.ok) await cache.put(RECIPE_DATA_URL, response.clone());
-    return response;
+    response = await fetchFresh(request);
+    if (await isValidRecipeDataResponse(response)) {
+      await cache.put(RECIPE_DATA_URL, response.clone());
+      return response;
+    }
   } catch (error) {
-    return (await cache.match(RECIPE_DATA_URL)) || Response.error();
+    // Use the last validated recipe response below.
   }
+
+  return (await cache.match(RECIPE_DATA_URL)) || response || Response.error();
 }
 
 async function handleShellAsset(request) {
   const cache = await caches.open(SHELL_CACHE);
+  let response = null;
 
   try {
-    const response = await fetch(request);
-    if (response.ok) await cache.put(request, response.clone());
-    return response;
+    response = await fetchFresh(request);
+    if (response.ok) {
+      await cache.put(request, response.clone());
+      return response;
+    }
   } catch (error) {
-    return (await cache.match(request, { ignoreSearch: true })) || Response.error();
+    // Use the last complete shell below.
   }
+
+  return (await cache.match(request, { ignoreSearch: true })) || response || Response.error();
 }
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    Promise.all([
-      cacheShellOnInstall(),
-      cacheRecipeDataOnInstall(),
-    ])
-  );
+  event.waitUntil(cacheRequiredAssetsOnInstall());
 });
 
 self.addEventListener("activate", (event) => {
@@ -139,7 +179,7 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
-    self.skipWaiting();
+    event.waitUntil(self.skipWaiting());
   }
 });
 

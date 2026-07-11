@@ -3,15 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <title>Robert's Recipe Book and Grocery List</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A private, offline-capable recipe book, meal planner, and grocery list." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#101214" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; form-action 'self'"
+    />
     <link rel="stylesheet" href="css/styles.css?v=20260710-9" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
   </head>
   <body class="app-mode-recipes">
-    <a class="skip-link" href="#recipesPanel">Skip to recipes</a>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
     <div class="app-shell">
       <header class="app-header">
         <div>
@@ -28,16 +34,16 @@
       </header>
 
       <nav class="mobile-view-tabs" aria-label="Primary views">
-        <button class="mobile-view-tab active" type="button" data-view="recipes" aria-controls="recipesPanel">
+        <button class="mobile-view-tab active" type="button" data-view="recipes" aria-controls="recipesPanel" aria-pressed="true">
           Recipes
         </button>
-        <button class="mobile-view-tab" type="button" data-view="grocery" aria-controls="groceryPanel">
+        <button class="mobile-view-tab" type="button" data-view="grocery" aria-controls="groceryPanel" aria-pressed="false">
           Grocery List
           <span id="mobileGroceryBadge" class="mobile-tab-badge" hidden>0</span>
         </button>
       </nav>
 
-      <main id="mainContent" class="app-layout">
+      <main id="mainContent" class="app-layout" tabindex="-1">
         <section id="recipesPanel" class="workspace recipes-section" aria-labelledby="recipesTitle">
           <div class="workspace-header">
             <div>
@@ -104,7 +110,7 @@
                 </label>
               </div>
 
-              <div class="quick-controls" aria-label="Recipe options">
+              <div class="quick-controls" role="group" aria-label="Recipe options">
                 <label class="switch-control">
                   <input id="showSelectedRecipesOnly" type="checkbox" />
                   <span class="switch-track" aria-hidden="true"></span>
@@ -130,25 +136,25 @@
               </div>
 
               <div class="recipe-filters hidden" id="recipeFilters">
-                <div class="filter-group">
-                  <strong>Status</strong>
+                <div class="filter-group" role="group" aria-labelledby="recipeFilterStatusLabel">
+                  <strong id="recipeFilterStatusLabel">Status</strong>
                   <label><input type="checkbox" data-filter="status" value="tried" /> Tried</label>
                   <label><input type="checkbox" data-filter="status" value="not-tried" /> Not Tried</label>
                 </div>
-                <div class="filter-group">
-                  <strong>Rating</strong>
+                <div class="filter-group" role="group" aria-labelledby="recipeFilterRatingLabel">
+                  <strong id="recipeFilterRatingLabel">Rating</strong>
                   <label><input type="checkbox" data-filter="rating" value="great" /> Great</label>
                   <label><input type="checkbox" data-filter="rating" value="good" /> Good</label>
                   <label><input type="checkbox" data-filter="rating" value="okay" /> Okay</label>
                 </div>
-                <div class="filter-group">
-                  <strong>Difficulty</strong>
+                <div class="filter-group" role="group" aria-labelledby="recipeFilterDifficultyLabel">
+                  <strong id="recipeFilterDifficultyLabel">Difficulty</strong>
                   <label><input type="checkbox" data-filter="difficulty" value="easy" /> Easy</label>
                   <label><input type="checkbox" data-filter="difficulty" value="medium" /> Medium</label>
                   <label><input type="checkbox" data-filter="difficulty" value="hard" /> Hard</label>
                 </div>
-                <div class="filter-group">
-                  <strong>Equipment</strong>
+                <div class="filter-group" role="group" aria-labelledby="recipeFilterEquipmentLabel">
+                  <strong id="recipeFilterEquipmentLabel">Equipment</strong>
                   <label><input type="checkbox" data-filter="equipment" value="dutch-oven" /> Dutch Oven</label>
                   <label><input type="checkbox" data-filter="equipment" value="instant-pot" /> Instant Pot</label>
                 </div>
@@ -169,7 +175,14 @@
           </div>
         </section>
 
-        <aside id="mealPlanPanel" class="workspace meal-plan" aria-labelledby="mealPlanTitle">
+        <aside
+          id="mealPlanPanel"
+          class="workspace meal-plan"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mealPlanTitle"
+          tabindex="-1"
+        >
           <div class="meal-plan-bar">
             <div class="workspace-header meal-plan-header">
               <div>
@@ -245,7 +258,7 @@
                 <button id="addAllRecipesToGroceryList" class="secondary-button" type="button">Add all recipes</button>
               </div>
 
-              <div class="state-tools" aria-label="List and backup tools">
+              <div class="state-tools" role="group" aria-label="List and backup tools">
                 <button id="copyGroceryList" class="secondary-button" type="button" disabled>Copy list</button>
                 <button id="exportStateBackup" class="secondary-button" type="button">Export backup</button>
                 <button id="importStateBackup" class="secondary-button" type="button">Import backup</button>
@@ -271,7 +284,15 @@
       </main>
     </div>
 
-    <section id="cookingMode" class="cooking-mode" aria-labelledby="cookingTitle" hidden>
+    <section
+      id="cookingMode"
+      class="cooking-mode"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookingTitle"
+      tabindex="-1"
+      hidden
+    >
       <div class="cooking-shell">
         <header id="cookingHeader" class="cooking-header">
           <div class="cooking-header-copy">

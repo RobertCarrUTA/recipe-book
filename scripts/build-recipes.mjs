@@ -87,7 +87,7 @@ async function loadRecipeSources() {
 
   const { warnings } = normalizeRecipeBook(recipes);
   if (warnings.length) {
-    console.warn(`${warnings.length} recipe data warnings found while building recipes.`);
+    throw new Error(`Recipe validation failed:\n- ${warnings.join("\n- ")}`);
   }
 
   return recipes;

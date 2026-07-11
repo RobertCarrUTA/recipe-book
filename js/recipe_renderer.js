@@ -200,7 +200,7 @@ export function createRecipeRenderer({
     title.textContent = titleText;
 
     items.forEach((item) => {
-      list.appendChild(createTextElement(document, "li", item, { tabIndex: 0 }));
+      list.appendChild(createTextElement(document, "li", item));
     });
 
     content.appendChild(title);
@@ -280,7 +280,7 @@ export function createRecipeRenderer({
     ];
     const nutritionItems = nutritionLabelOrder
       .filter(([key]) => nutrition[key])
-      .map(([key, label]) => createTextElement(document, "li", `${label}: ${nutrition[key]}`, { tabIndex: 0 }));
+      .map(([key, label]) => createTextElement(document, "li", `${label}: ${nutrition[key]}`));
 
     if (!nutritionItems.length) return;
     content.appendChild(createTextElement(document, "h4", "Nutrition", { className: "recipe-section-title" }));
@@ -323,6 +323,7 @@ export function createRecipeRenderer({
     const recipe = recipes[recipeIndex];
     const recipeKey = actions.getRecipeKey(recipe, recipeIndex);
     const contentId = `recipe-content-${recipeIndex}`;
+    const titleId = `recipe-title-${recipeIndex}`;
     const isSelected = actions.isRecipeSelected(recipe, recipeIndex);
     const isFavorite = actions.isRecipeFavorite(recipe, recipeIndex);
     const plannedDayKeys = getRecipePlanDayKeys(recipe, recipeIndex);
@@ -350,7 +351,10 @@ export function createRecipeRenderer({
     });
     const headerTop = createElement(document, "div", {
       children: [
-        createTextElement(document, "span", recipe.title, { className: "recipe-title" }),
+        createTextElement(document, "span", recipe.title, {
+          className: "recipe-title",
+          id: titleId,
+        }),
         headerBadges,
       ],
       className: "recipe-header-top",
@@ -359,6 +363,7 @@ export function createRecipeRenderer({
       attributes: {
         "aria-controls": contentId,
         "aria-expanded": "false",
+        "aria-labelledby": titleId,
       },
       children: headerTop,
       className: "accordion-header",
@@ -387,8 +392,14 @@ export function createRecipeRenderer({
       }));
     }
 
-    return createElement(document, "div", {
-      children: [header, content],
+    const heading = createElement(document, "h3", {
+      children: header,
+      className: "recipe-heading",
+    });
+
+    return createElement(document, "article", {
+      attributes: { "aria-labelledby": titleId },
+      children: [heading, content],
       classList: [
         isSelected ? "recipe-selected" : "",
         isFavorite ? "recipe-favorite" : "",

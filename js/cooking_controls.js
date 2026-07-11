@@ -1,4 +1,7 @@
+import { containTabFocus } from "./dom.js";
+
 export function attachCookingModeControls({ document, renderer, window }) {
+  const cookingMode = document.getElementById("cookingMode");
   const closeButton = document.getElementById("closeCookingMode");
   const headerToggle = document.getElementById("toggleCookingHeader");
   const previousButton = document.getElementById("previousCookingStep");
@@ -18,7 +21,12 @@ export function attachCookingModeControls({ document, renderer, window }) {
   attachCookingStepSwipe({ document, renderer });
 
   document.addEventListener("keydown", (event) => {
-    if (!renderer.isCookingModeOpen()) return;
+    if (event.defaultPrevented || !renderer.isCookingModeOpen()) return;
+
+    if (event.key === "Tab") {
+      containTabFocus(event, cookingMode);
+      return;
+    }
 
     if (event.key === "Escape") {
       event.preventDefault();

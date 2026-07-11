@@ -1,2 +1,8 @@
 node_modules/
 npm-debug.log*
+coverage/
+playwright-report/
+test-results/
+*.trace.zip
+.DS_Store
+Thumbs.db

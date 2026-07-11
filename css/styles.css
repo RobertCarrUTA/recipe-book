@@ -1,3 +1,4 @@
+/* Design tokens and global elements */
 :root {
   color-scheme: dark;
   --bg: #101214;
@@ -20,7 +21,7 @@
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.24);
   --field: #0f1317;
   --surface-hover: #242b34;
-  --focus-ring: rgba(122, 199, 163, 0.36);
+  --focus-ring: var(--accent-strong);
   --transition-fast: 160ms ease;
   --radius-sm: 6px;
   --radius: 8px;
@@ -93,11 +94,11 @@ button:disabled:hover {
   background: var(--surface-strong);
 }
 
+/* Keep keyboard focus visible across native and custom controls. */
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 .accordion-header:focus-visible,
-.grocery-list li:focus-visible,
 .grocery-list li:has(input:focus-visible),
 .grocery-item-search-link:focus-visible,
 .grocery-source-link:focus-visible,
@@ -146,6 +147,7 @@ a {
   transform: translateY(0);
 }
 
+/* Application shell and primary navigation */
 .app-shell {
   width: min(100%, var(--content-max));
   margin: 0 auto;
@@ -341,6 +343,7 @@ h2 {
   min-width: 0;
 }
 
+/* Recipe discovery controls */
 .recipe-search {
   position: sticky;
   top: 10px;
@@ -754,6 +757,7 @@ h2 {
   background: transparent;
 }
 
+/* Recipe cards and details */
 .recipe-list {
   display: grid;
   gap: 10px;
@@ -893,6 +897,10 @@ h2 {
   box-shadow:
     0 0 0 3px rgba(122, 199, 163, 0.26),
     var(--shadow-soft);
+}
+
+.recipe-heading {
+  margin: 0;
 }
 
 .accordion-header {
@@ -1439,6 +1447,7 @@ li {
   line-height: 1.45;
 }
 
+/* Meal planner */
 .meal-plan {
   display: none;
   min-height: 320px;
@@ -1617,6 +1626,7 @@ li {
   font-weight: 760;
 }
 
+/* Grocery workspace */
 .grocery-list {
   min-height: 320px;
   padding: 14px;
@@ -2269,6 +2279,7 @@ li {
   min-height: 40px;
 }
 
+/* Dialogs and focused cooking mode */
 .confirm-dialog {
   width: min(420px, calc(100% - 28px));
   padding: 0;
@@ -2608,6 +2619,7 @@ li {
   min-height: 50px;
 }
 
+/* Input and accessibility capabilities */
 @media (hover: hover) {
   * {
     scrollbar-color: var(--border-strong) transparent;
@@ -2631,6 +2643,31 @@ li {
   }
 }
 
+/* Preserve control state and focus visibility in OS accessibility modes. */
+@media (forced-colors: active) {
+  :root {
+    --focus-ring: Highlight;
+  }
+
+  .switch-track {
+    forced-color-adjust: none;
+    border: 2px solid ButtonText;
+    background: Canvas;
+  }
+
+  .switch-track::after {
+    background: ButtonText;
+  }
+
+  .switch-control input:checked + .switch-track {
+    background: Highlight;
+  }
+
+  .switch-control input:checked + .switch-track::after {
+    background: HighlightText;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -2642,6 +2679,7 @@ li {
   }
 }
 
+/* Responsive layouts */
 @media (max-width: 979px) {
   .app-mode-grocery .app-shell {
     padding-top: 0;

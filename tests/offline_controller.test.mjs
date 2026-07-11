@@ -98,9 +98,6 @@ test("offline controller exposes waiting updates and reloads only after refresh 
   assert.equal(elements.offlineStatus.dataset.state, "update");
   assert.equal(elements.refreshAppUpdate.hidden, false);
 
-  serviceWorker.dispatchEvent(createFakeEvent("controllerchange"));
-  assert.equal(reloadCount, 0, "passive controller changes should not reload the app");
-
   elements.refreshAppUpdate.click();
   assert.equal(elements.refreshAppUpdate.disabled, true);
   assert.deepEqual(postedMessages, [{ type: "SKIP_WAITING" }]);
@@ -108,6 +105,54 @@ test("offline controller exposes waiting updates and reloads only after refresh 
   serviceWorker.dispatchEvent(createFakeEvent("controllerchange"));
   serviceWorker.dispatchEvent(createFakeEvent("controllerchange"));
   assert.equal(reloadCount, 1, "the requested refresh should reload once");
+});
+
+test("offline controller observes a worker that was already installing", async () => {
+  const { document, elements } = createOfflineDom();
+  const installingWorker = createFakeEventTarget({ state: "installing" });
+  const registration = createFakeEventTarget({ installing: installingWorker });
+  const serviceWorker = createFakeEventTarget({
+    controller: {},
+    async register() {
+      return registration;
+    },
+  });
+
+  await createOfflineController({
+    document,
+    navigator: { onLine: true, serviceWorker },
+    window: createFakeWindow(),
+  }).attach();
+
+  installingWorker.state = "installed";
+  installingWorker.dispatchEvent(createFakeEvent("statechange"));
+
+  assert.equal(elements.offlineStatus.textContent, "Update ready");
+  assert.equal(elements.refreshAppUpdate.hidden, false);
+});
+
+test("passive service worker activation clears stale update controls", async () => {
+  const { document, elements } = createOfflineDom();
+  const waitingWorker = createFakeEventTarget({ postMessage() {} });
+  const registration = createFakeEventTarget({ waiting: waitingWorker });
+  const serviceWorker = createFakeEventTarget({
+    controller: {},
+    async register() {
+      return registration;
+    },
+  });
+
+  await createOfflineController({
+    document,
+    navigator: { onLine: true, serviceWorker },
+    window: createFakeWindow(),
+  }).attach();
+  assert.equal(elements.refreshAppUpdate.hidden, false);
+
+  serviceWorker.dispatchEvent(createFakeEvent("controllerchange"));
+
+  assert.equal(elements.offlineStatus.textContent, "Offline ready");
+  assert.equal(elements.refreshAppUpdate.hidden, true);
 });
 
 test("offline controller surfaces registration failures without breaking the app", async () => {

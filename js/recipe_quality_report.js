@@ -4,36 +4,9 @@ import {
 } from "./grocery_ingredient_parser.js";
 import { determineGroupForKey } from "./grouping.js";
 import { normalizeWhitespace } from "./normalization.js";
+import { unitAliasEntries } from "./normalization_rules.js";
 
-const knownGroceryUnits = new Set([
-  "tsp",
-  "tbsp",
-  "cup",
-  "oz",
-  "lb",
-  "g",
-  "kg",
-  "ml",
-  "l",
-  "bag",
-  "block",
-  "bottle",
-  "bunch",
-  "can",
-  "clove",
-  "egg",
-  "egg white",
-  "jar",
-  "leaf",
-  "package",
-  "sheet",
-  "slice",
-  "sprig",
-  "stalk",
-  "stick",
-  "yolk",
-  "item",
-]);
+const knownGroceryUnits = new Set(["item", ...unitAliasEntries.map(([, canonical]) => canonical)]);
 
 const noisyStructuredNotePatterns = [
   /\bto taste\b/i,

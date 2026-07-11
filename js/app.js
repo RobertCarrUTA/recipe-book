@@ -8,6 +8,7 @@ import {
   isRecipeFavorite,
   isManualGroceryItemKey,
   isRecipeSelected,
+  pruneRecipeRuntimeState,
   recomputeGroceryState,
   removeManualGroceryItem,
   selectAllRecipes,
@@ -26,7 +27,7 @@ import {
 } from "./collapsible_controls.js";
 import { attachCookingModeControls } from "./cooking_controls.js";
 import { downloadTextFile } from "./download.js";
-import { listen } from "./dom.js";
+import { createEmptyState, listen } from "./dom.js";
 import { createLogger, isDebugEnabled } from "./logger.js";
 import {
   addRecipeToMealPlan,
@@ -104,6 +105,7 @@ function createRecipeBookApp() {
     window,
   });
   const setStateToolsStatus = stateToolsStatus.set;
+  let persistenceFailureReported = false;
 
   function byId(id) {
     return document.getElementById(id);
@@ -141,7 +143,15 @@ function createRecipeBookApp() {
 
   function persistAppState() {
     syncUiStateFromControls();
-    savePersistentState(appState);
+    const saved = savePersistentState(appState);
+    if (saved || persistenceFailureReported) return;
+
+    persistenceFailureReported = true;
+    logger.warn("App state could not be saved");
+    setStateToolsStatus("Changes could not be saved. Refresh the app or export a backup.", {
+      kind: "error",
+      sticky: true,
+    });
   }
 
   const appStatePersistence = createAppStatePersistenceController({
@@ -161,6 +171,7 @@ function createRecipeBookApp() {
     appState.ui = normalizeUiState(restoredState.ui);
 
     applyUiStateToControls();
+    wakeLockController?.applyPreference(appState.ui.keepScreenAwake);
     syncRecipeControlsPanel();
     syncGroceryControlsPanel();
     prepareRecipeRuntimeState();
@@ -170,8 +181,10 @@ function createRecipeBookApp() {
   }
 
   function prepareRecipeRuntimeState() {
-    pruneMealPlanForRecipes(appState.mealPlan, appState.recipes);
+    const mealPlanChanged = pruneMealPlanForRecipes(appState.mealPlan, appState.recipes);
+    const runtimeChanged = pruneRecipeRuntimeState(appState.runtime, appState.recipes);
     recomputeGroceryState(appState.runtime, appState.recipes);
+    return mealPlanChanged || runtimeChanged;
   }
 
   function renderLoadedAppState() {
@@ -657,7 +670,8 @@ function createRecipeBookApp() {
       appState.recipes = result.recipes;
       appState.recipeSearchTexts = appState.recipes.map(buildRecipeSearchText);
       recipeDiscoveryController.syncRecipeCollectionOptions();
-      prepareRecipeRuntimeState();
+      const loadedStateChanged = prepareRecipeRuntimeState();
+      if (loadedStateChanged) saveAppState({ immediate: true });
     } catch (error) {
       renderer.renderRecipeLoadError(error);
       return;
@@ -671,4 +685,22 @@ function createRecipeBookApp() {
   return { start };
 }
 
-createRecipeBookApp().start();
+function renderFatalAppError(error) {
+  console.error("[recipe-book] App startup failed", error);
+  const recipeContainer = document.getElementById("recipeContainer");
+  if (!recipeContainer) return;
+
+  recipeContainer.setAttribute("aria-busy", "false");
+  recipeContainer.replaceChildren(createEmptyState(document, {
+    body: "Refresh the page. If the problem continues, restore a recent backup after the app loads.",
+    className: "recipe-list-state",
+    title: "The recipe book could not start.",
+  }));
+}
+
+async function startRecipeBookApp() {
+  const app = createRecipeBookApp();
+  await app.start();
+}
+
+startRecipeBookApp().catch(renderFatalAppError);

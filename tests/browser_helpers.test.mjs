@@ -62,6 +62,25 @@ test("writeTextToClipboard falls back to a temporary textarea", async () => {
   assert.equal(document.createdElements[0].removed, true);
 });
 
+test("writeTextToClipboard removes its fallback control when copying throws", async () => {
+  const document = createFakeDocument();
+  const createElement = document.createElement;
+  document.createElement = (tagName) => {
+    const element = createElement(tagName);
+    element.select = () => {};
+    return element;
+  };
+  document.execCommand = () => {
+    throw new Error("copy blocked");
+  };
+
+  await assert.rejects(
+    writeTextToClipboard("flour", { document, navigator: {} }),
+    /copy blocked/
+  );
+  assert.equal(document.createdElements[0].removed, true);
+});
+
 test("syncCollapsibleControlsPanel syncs visibility, container class, and toggle labels", () => {
   const container = createFakeElement({ tagName: "section" });
   const panel = createFakeElement({ id: "recipeControlsPanel" });

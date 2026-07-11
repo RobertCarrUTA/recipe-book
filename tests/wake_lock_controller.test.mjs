@@ -101,3 +101,64 @@ test("wake lock controller requests, releases, and re-requests screen wake locks
   assert.equal(saveCount, 1);
   assert.deepEqual(releasedLocks, [locks[1]]);
 });
+
+test("wake lock controller releases a request that resolves after the preference changes", async () => {
+  const { document, toggles } = createWakeLockDom({ checked: true });
+  const window = createFakeWindow();
+  let resolveRequest;
+  let requestCount = 0;
+  const releasedLocks = [];
+  const lock = createFakeEventTarget({
+    async release() {
+      releasedLocks.push(lock);
+    },
+  });
+  const navigator = {
+    wakeLock: {
+      request() {
+        requestCount += 1;
+        return new Promise((resolve) => {
+          resolveRequest = resolve;
+        });
+      },
+    },
+  };
+  const controller = createWakeLockController({
+    document,
+    getUiState: () => ({ keepScreenAwake: toggles[0].checked }),
+    logger: { debug() {}, warn() {} },
+    navigator,
+    saveState() {},
+    window,
+  });
+
+  controller.attach();
+  controller.syncScreenWakeLock();
+  assert.equal(requestCount, 1, "concurrent syncs should share the pending request");
+
+  toggles[0].checked = false;
+  toggles[0].dispatchEvent(createFakeEvent("change", { target: toggles[0] }));
+  resolveRequest(lock);
+  await Promise.resolve();
+  await Promise.resolve();
+
+  assert.deepEqual(toggles.map((toggle) => toggle.checked), [false, false]);
+  assert.deepEqual(releasedLocks, [lock]);
+});
+
+test("wake lock preference application synchronizes both controls", () => {
+  const { document, toggles } = createWakeLockDom();
+  const ui = { keepScreenAwake: false };
+  const controller = createWakeLockController({
+    document,
+    getUiState: () => ui,
+    logger: { debug() {}, warn() {} },
+    navigator: { wakeLock: { request: async () => createFakeEventTarget({ release: async () => {} }) } },
+    saveState() {},
+    window: createFakeWindow(),
+  });
+
+  assert.equal(controller.applyPreference(true), true);
+  assert.deepEqual(toggles.map((toggle) => toggle.checked), [true, true]);
+  assert.equal(ui.keepScreenAwake, true);
+});
