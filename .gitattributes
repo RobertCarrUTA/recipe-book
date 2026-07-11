@@ -1,2 +1,2 @@
-data/recipes.json linguist-generated=true
-tests/fixtures/normalization_catalog_snapshot.json linguist-generated=true
+data/recipes.json linguist-generated=true text eol=lf
+tests/fixtures/normalization_catalog_snapshot.json linguist-generated=true text eol=lf
