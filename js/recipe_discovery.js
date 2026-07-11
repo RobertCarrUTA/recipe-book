@@ -36,7 +36,6 @@ export function getRecipeDiscoveryResult({
     isSelected,
     recipes: items,
     searchTexts,
-    searchTextsAreNormalized: true,
     selectedFilters: selected,
     showFavoriteOnly: Boolean(showFavoriteOnly),
     showSelectedOnly: Boolean(showSelectedOnly),

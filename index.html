@@ -261,8 +261,23 @@
               <div class="state-tools" role="group" aria-label="List and backup tools">
                 <button id="copyGroceryList" class="secondary-button" type="button" disabled>Copy list</button>
                 <button id="exportStateBackup" class="secondary-button" type="button">Export backup</button>
-                <button id="importStateBackup" class="secondary-button" type="button">Import backup</button>
-                <input id="stateBackupInput" type="file" accept="application/json,.json" hidden />
+                <button
+                  id="importStateBackup"
+                  class="secondary-button"
+                  type="button"
+                  title="Backup import is unavailable until recipes finish loading."
+                  disabled
+                >
+                  Import backup
+                </button>
+                <input id="stateBackupInput" type="file" accept="application/json,.json" hidden disabled />
+                <span
+                  id="statePersistenceStatus"
+                  class="state-tools-status"
+                  role="alert"
+                  aria-live="assertive"
+                  hidden
+                ></span>
                 <span id="stateBackupStatus" class="state-tools-status" role="status" aria-live="polite" hidden></span>
               </div>
             </div>

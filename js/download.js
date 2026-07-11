@@ -7,20 +7,36 @@ export function downloadTextFile(payload, options = {}) {
   if (!documentLike?.body || typeof documentLike.createElement !== "function") {
     throw new Error("Downloads require a document body.");
   }
-  if (typeof BlobCtor !== "function" || typeof urlApi?.createObjectURL !== "function") {
+  if (
+    typeof BlobCtor !== "function" ||
+    typeof urlApi?.createObjectURL !== "function" ||
+    typeof urlApi?.revokeObjectURL !== "function"
+  ) {
     throw new Error("Downloads are not available in this browser.");
   }
 
   const link = documentLike.createElement("a");
-  const blob = new BlobCtor([payload.text], { type: payload.mimeType });
-  const objectUrl = urlApi.createObjectURL(blob);
+  let objectUrl = null;
 
-  link.href = objectUrl;
-  link.download = payload.fileName;
-  link.style.display = "none";
-  documentLike.body.appendChild(link);
-  link.click();
-  link.remove();
+  try {
+    const blob = new BlobCtor([payload.text], { type: payload.mimeType });
+    objectUrl = urlApi.createObjectURL(blob);
+    link.href = objectUrl;
+    link.download = payload.fileName;
+    link.hidden = true;
+    documentLike.body.appendChild(link);
+    link.click();
+  } finally {
+    link.remove();
 
-  windowLike.setTimeout(() => urlApi.revokeObjectURL(objectUrl), 0);
+    if (objectUrl) {
+      if (windowLike && typeof windowLike.setTimeout === "function") {
+        windowLike.setTimeout(() => urlApi.revokeObjectURL(objectUrl), 0);
+      } else {
+        urlApi.revokeObjectURL(objectUrl);
+      }
+    }
+  }
+
+  return true;
 }

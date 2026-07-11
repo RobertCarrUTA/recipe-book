@@ -15,12 +15,18 @@ import {
 } from "../js/storage.js";
 import { test } from "./test_helpers.mjs";
 
-function createMemoryStorage(initial = {}) {
+function createMemoryStorage(initial = {}, options = {}) {
   const data = new Map(Object.entries(initial));
   return {
     getItem: (key) => (data.has(key) ? data.get(key) : null),
-    removeItem: (key) => data.delete(key),
-    setItem: (key, value) => data.set(key, String(value)),
+    removeItem(key) {
+      if (options.failRemovals?.has(key)) throw new Error(`remove blocked: ${key}`);
+      data.delete(key);
+    },
+    setItem(key, value) {
+      if (options.failWrites?.has(key)) throw new Error(`write blocked: ${key}`);
+      data.set(key, String(value));
+    },
     snapshot: () => Object.fromEntries(data),
   };
 }
@@ -153,6 +159,38 @@ test("migratePersistentState promotes legacy selected recipes", () => {
   assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion));
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.selectedRecipes)), { chili: true });
   assert.equal(storage.getItem(storageKeys.groceryState), null);
+});
+
+test("migration preserves legacy selections when promotion cannot be written", () => {
+  const legacyState = JSON.stringify({ selectedRecipeIds: { chili: true } });
+  const storage = createMemoryStorage(
+    { [storageKeys.groceryState]: legacyState },
+    { failWrites: new Set([storageKeys.selectedRecipes]) }
+  );
+
+  const result = migratePersistentState(storage);
+
+  assert.equal(result.failed, true);
+  assert.equal(result.migrated, false);
+  assert.equal(storage.getItem(storageKeys.version), null);
+  assert.equal(storage.getItem(storageKeys.groceryState), legacyState);
+  assert.deepEqual(restorePersistentState(storage).selectedRecipeIds, { chili: true });
+});
+
+test("migration remains retryable when the version write fails", () => {
+  const legacyState = JSON.stringify({ selectedRecipeIds: { chili: true } });
+  const storage = createMemoryStorage(
+    { [storageKeys.groceryState]: legacyState },
+    { failWrites: new Set([storageKeys.version]) }
+  );
+
+  const result = migratePersistentState(storage);
+
+  assert.equal(result.failed, true);
+  assert.equal(result.migrated, false);
+  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.selectedRecipes)), { chili: true });
+  assert.equal(storage.getItem(storageKeys.groceryState), legacyState);
+  assert.equal(storage.getItem(storageKeys.version), null);
 });
 
 test("newer storage versions are preserved for a newer app", () => {

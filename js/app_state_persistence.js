@@ -12,7 +12,7 @@ export function createAppStatePersistenceController({
   let pendingSaveTimer = null;
 
   function persistNow() {
-    if (typeof persist === "function") persist();
+    return typeof persist === "function" ? persist() : undefined;
   }
 
   function clearPendingSave() {
@@ -32,17 +32,16 @@ export function createAppStatePersistenceController({
   }
 
   function flush() {
-    if (pendingSaveTimer === null && pendingIdleSaveHandle === null) return;
+    if (pendingSaveTimer === null && pendingIdleSaveHandle === null) return undefined;
     clearPendingSave();
-    persistNow();
+    return persistNow();
   }
 
   function save(options = {}) {
     clearPendingSave();
 
     if (options.immediate || !window || typeof window.setTimeout !== "function") {
-      persistNow();
-      return;
+      return persistNow();
     }
 
     pendingSaveTimer = window.setTimeout(() => {
@@ -61,6 +60,8 @@ export function createAppStatePersistenceController({
 
       persistNow();
     }, debounceMs);
+
+    return undefined;
   }
 
   function attachFlushHandlers() {

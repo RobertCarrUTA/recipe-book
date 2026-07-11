@@ -44,6 +44,7 @@ test("buildRecipeSearchText includes searchable recipe fields", () => {
 });
 
 test("recipeMatchesSelectedFilters applies tag groups", () => {
+  assert.equal(recipeMatchesSelectedFilters(recipe), true);
   assert.equal(recipeMatchesSelectedFilters(recipe, { status: new Set(["tried"]) }), true);
   assert.equal(recipeMatchesSelectedFilters(recipe, { difficulty: new Set(["hard"]) }), false);
   assert.equal(recipeMatchesSelectedFilters(recipe, { equipment: new Set(["dutch-oven"]) }), true);
@@ -126,6 +127,7 @@ test("countSelectedRecipeFilters accepts set and array backed filter groups", ()
     }),
     3
   );
+  assert.equal(countSelectedRecipeFilters({ futureFilter: ["ignored"] }), 0);
 });
 
 test("countActiveRecipeDiscoveryFilters includes search and visibility toggles", () => {
@@ -194,6 +196,7 @@ test("recipeMatchesVisibilityOptions skips search text work when search is blank
 
 test("normalizeForSearch collapses whitespace and case", () => {
   assert.equal(normalizeForSearch("  Dutch   Oven  "), "dutch oven");
+  assert.equal(normalizeForSearch("Crème Anglaise with Jalapeño"), "creme anglaise with jalapeno");
 });
 
 test("normalizeForSearch makes common separators searchable as spaces", () => {

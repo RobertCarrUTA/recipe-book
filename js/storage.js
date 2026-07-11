@@ -91,8 +91,10 @@ function writeBoolean(storage, key, value) {
 function remove(storage, key) {
   try {
     storage.removeItem(key);
+    return true;
   } catch (error) {
     // Storage failures are non-fatal; the app remains usable in-memory.
+    return false;
   }
 }
 
@@ -193,7 +195,7 @@ export function normalizeUiState(uiState) {
 }
 
 function writeStorageVersion(storage, version) {
-  write(storage, storageKeys.version, String(version));
+  return write(storage, storageKeys.version, String(version));
 }
 
 function readStorageVersion(storage) {
@@ -218,30 +220,39 @@ export function migratePersistentState(storage = getDefaultStorage()) {
     };
   }
 
-  let migrated = false;
-
   if (fromVersion < 2) {
     const savedGroceryState = readObject(storage, storageKeys.groceryState);
     const selectedFromLegacyState = truthyRecord(savedGroceryState.selectedRecipeIds);
     const selectedRecipes = readObject(storage, storageKeys.selectedRecipes);
 
     if (Object.keys(selectedFromLegacyState).length && !Object.keys(selectedRecipes).length) {
-      write(storage, storageKeys.selectedRecipes, JSON.stringify(selectedFromLegacyState));
+      if (!writeJson(storage, storageKeys.selectedRecipes, selectedFromLegacyState)) {
+        return {
+          failed: true,
+          fromVersion,
+          migrated: false,
+          toVersion: fromVersion,
+        };
+      }
     }
-    migrated = true;
   }
 
-  if (fromVersion < 6) {
-    remove(storage, storageKeys.groceryState);
-    migrated = true;
+  if (fromVersion !== currentStorageVersion && !writeStorageVersion(storage, currentStorageVersion)) {
+    return {
+      failed: true,
+      fromVersion,
+      migrated: false,
+      toVersion: fromVersion,
+    };
   }
 
-  if (fromVersion !== currentStorageVersion) {
-    writeStorageVersion(storage, currentStorageVersion);
-    migrated = true;
-  }
+  if (fromVersion < 6) remove(storage, storageKeys.groceryState);
 
-  return { fromVersion, toVersion: currentStorageVersion, migrated };
+  return {
+    fromVersion,
+    toVersion: currentStorageVersion,
+    migrated: fromVersion !== currentStorageVersion,
+  };
 }
 
 export function createDefaultUiState() {

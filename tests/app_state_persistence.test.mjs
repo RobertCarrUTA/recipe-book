@@ -128,3 +128,19 @@ test("app state persistence cancels idle saves before immediate writes", () => {
   assert.equal(window.idleCallbacks[0].canceled, true);
   assert.equal(persistCount, 1);
 });
+
+test("app state persistence reports immediate and flushed write results", () => {
+  const window = createFakeWindow();
+  const results = [true, false];
+  const controller = createAppStatePersistenceController({
+    document: createFakeDocument(),
+    persist: () => results.shift(),
+    window,
+  });
+
+  assert.equal(controller.save({ immediate: true }), true);
+
+  controller.save();
+  assert.equal(controller.flush(), false);
+  assert.equal(controller.flush(), undefined);
+});

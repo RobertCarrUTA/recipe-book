@@ -1,9 +1,15 @@
 import { normalizeWhitespace } from "./normalization.js";
 
 const searchSeparatorPattern = /[\u2010-\u2015/_-]+/g;
+const recipeFilterKeys = Object.freeze(["collection", "status", "rating", "difficulty", "equipment"]);
 
 export function normalizeForSearch(text) {
-  return normalizeWhitespace(String(text || "").replace(searchSeparatorPattern, " ")).toLowerCase();
+  return normalizeWhitespace(
+    String(text || "")
+      .normalize("NFKD")
+      .replace(/\p{Mark}+/gu, "")
+      .replace(searchSeparatorPattern, " ")
+  ).toLowerCase();
 }
 
 function addSearchParts(parts, value) {
@@ -52,12 +58,14 @@ function selectedFilterIncludes(values, value) {
 }
 
 function hasSelectedFilterValues(selected) {
-  return Object.values(selected || {}).some((values) => getSelectedFilterValueCount(values) > 0);
+  const filters = selected || {};
+  return recipeFilterKeys.some((key) => getSelectedFilterValueCount(filters[key]) > 0);
 }
 
 export function countSelectedRecipeFilters(selected) {
-  return Object.values(selected || {}).reduce(
-    (count, values) => count + getSelectedFilterValueCount(values),
+  const filters = selected || {};
+  return recipeFilterKeys.reduce(
+    (count, key) => count + getSelectedFilterValueCount(filters[key]),
     0
   );
 }
@@ -98,7 +106,7 @@ export function recipeSearchTextMatches(searchText, filterText) {
   );
 }
 
-export function recipeMatchesSelectedFilters(recipe, selected) {
+export function recipeMatchesSelectedFilters(recipe, selected = {}) {
   const tags = recipe && recipe.tags ? recipe.tags : {};
   const collectionValues = Array.isArray(recipe?.collections)
     ? recipe.collections.map((value) => String(value))

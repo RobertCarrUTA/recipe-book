@@ -3,6 +3,7 @@ import {
   formatServingsText,
   getRecipeServingsText,
 } from "./recipe_formatting.js";
+import { getNutritionEntries } from "./nutrition.js";
 
 const recipeExportFormats = new Set(["json", "text"]);
 const recipeExportMimeTypes = Object.freeze({
@@ -13,21 +14,6 @@ const recipeExportExtensions = Object.freeze({
   json: "json",
   text: "txt",
 });
-
-const nutritionLabelOrder = Object.freeze([
-  ["calories", "Calories"],
-  ["carbohydrates", "Carbohydrates"],
-  ["protein", "Protein"],
-  ["fat", "Fat"],
-  ["saturatedFat", "Saturated Fat"],
-  ["polyunsaturatedFat", "Polyunsaturated Fat"],
-  ["monounsaturatedFat", "Monounsaturated Fat"],
-  ["transFat", "Trans Fat"],
-  ["cholesterol", "Cholesterol"],
-  ["sodium", "Sodium"],
-  ["fiber", "Fiber"],
-  ["sugar", "Sugar"],
-]);
 
 function normalizeExportFormat(format) {
   const normalized = String(format || "text").toLowerCase();
@@ -63,11 +49,8 @@ function pushListSection(lines, title, items, options = {}) {
 }
 
 function getNutritionLines(nutrition) {
-  if (!nutrition || !Object.keys(nutrition).length) return [];
-
-  return nutritionLabelOrder
-    .filter(([key]) => hasValue(nutrition[key]))
-    .map(([key, label]) => `${label}: ${nutrition[key]}`);
+  return getNutritionEntries(nutrition)
+    .map(({ label, value }) => `${label}: ${value}`);
 }
 
 export function getRecipeExportFileName(recipe = {}, format = "text") {

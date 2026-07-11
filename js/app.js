@@ -93,11 +93,13 @@ function createRecipeBookApp() {
   const restored = restorePersistentState();
   const appState = createRecipeBookState(restored);
   let renderer = null;
+  let backupController = null;
   let mobileViewController = null;
   let mealPlanPanelController = null;
   let recipeDiscoveryController = null;
   let recipeSourceNavigationController = null;
   let wakeLockController = null;
+  let recipesReady = false;
   const stateToolsStatus = createStatusMessageController({
     document,
     statusId: "stateBackupStatus",
@@ -105,6 +107,11 @@ function createRecipeBookApp() {
     window,
   });
   const setStateToolsStatus = stateToolsStatus.set;
+  const persistenceStatus = createStatusMessageController({
+    document,
+    statusId: "statePersistenceStatus",
+    window,
+  });
   let persistenceFailureReported = false;
 
   function byId(id) {
@@ -144,14 +151,22 @@ function createRecipeBookApp() {
   function persistAppState() {
     syncUiStateFromControls();
     const saved = savePersistentState(appState);
-    if (saved || persistenceFailureReported) return;
+    if (saved) {
+      if (persistenceFailureReported) {
+        persistenceFailureReported = false;
+        persistenceStatus.clear();
+      }
+      return true;
+    }
+    if (persistenceFailureReported) return false;
 
     persistenceFailureReported = true;
     logger.warn("App state could not be saved");
-    setStateToolsStatus("Changes could not be saved. Refresh the app or export a backup.", {
+    persistenceStatus.set("Changes could not be saved. Export a backup before refreshing.", {
       kind: "error",
       sticky: true,
     });
+    return false;
   }
 
   const appStatePersistence = createAppStatePersistenceController({
@@ -166,6 +181,10 @@ function createRecipeBookApp() {
   }
 
   function applyRestoredPersistentState(restoredState) {
+    if (!recipesReady) {
+      return { applied: false, persisted: false, reason: "recipes-not-ready" };
+    }
+
     appState.runtime = createRecipeRuntimeState(restoredState);
     appState.mealPlan = normalizeMealPlan(restoredState.mealPlan);
     appState.ui = normalizeUiState(restoredState.ui);
@@ -177,7 +196,10 @@ function createRecipeBookApp() {
     prepareRecipeRuntimeState();
     renderLoadedAppState();
     closeMealPlanPanel({ restoreFocus: false });
-    saveAppState({ immediate: true });
+    return {
+      applied: true,
+      persisted: saveAppState({ immediate: true }) === true,
+    };
   }
 
   function prepareRecipeRuntimeState() {
@@ -232,8 +254,8 @@ function createRecipeBookApp() {
     }
   }
 
-  function handleRecipeTagToggle(filterKey, filterValue) {
-    recipeDiscoveryController?.handleTagToggle(filterKey, filterValue);
+  function handleRecipeTagToggle(filterKey, filterValue, options) {
+    recipeDiscoveryController?.handleTagToggle(filterKey, filterValue, options);
   }
 
   function updateRecipeSearchMeta(matchCount) {
@@ -649,17 +671,19 @@ function createRecipeBookApp() {
     attachClearGroceryDialog();
     attachManualGroceryForm();
     mealPlanPanelController.attach();
-    createBackupController({
+    backupController = createBackupController({
       document,
       getState: () => {
         syncUiStateFromControls();
         return appState;
       },
       logger,
+      importAvailable: false,
       onRestore: applyRestoredPersistentState,
       setStatus: setStateToolsStatus,
       window,
-    }).attach();
+    });
+    backupController.attach();
     createOfflineController({ document, logger, navigator, window }).attach();
     mobileViewController.attach();
     window.addEventListener("popstate", handleRecipeBookHistoryNavigation);
@@ -671,8 +695,19 @@ function createRecipeBookApp() {
       appState.recipeSearchTexts = appState.recipes.map(buildRecipeSearchText);
       recipeDiscoveryController.syncRecipeCollectionOptions();
       const loadedStateChanged = prepareRecipeRuntimeState();
+      recipesReady = true;
+      backupController.setImportAvailable(true);
       if (loadedStateChanged) saveAppState({ immediate: true });
     } catch (error) {
+      recipesReady = false;
+      backupController.setImportAvailable(
+        false,
+        "Backup import is unavailable because recipes did not load."
+      );
+      setStateToolsStatus("Backup import is unavailable because recipes did not load.", {
+        kind: "error",
+        sticky: true,
+      });
       renderer.renderRecipeLoadError(error);
       return;
     }

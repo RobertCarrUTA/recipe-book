@@ -145,6 +145,7 @@ export function createMealPlanRenderer({
 
     if (item) {
       const cookButton = createElement(document, "button", {
+        attributes: { "aria-label": `Cook ${titleText}` },
         className: "secondary-button",
         textContent: "Cook",
         type: "button",

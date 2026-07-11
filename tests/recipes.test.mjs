@@ -3,21 +3,6 @@ import assert from "node:assert/strict";
 import { addRecipeDataCacheBuster, loadRecipes } from "../js/recipes.js";
 import { test } from "./test_helpers.mjs";
 
-async function withMockFetch(fetchImplementation, run) {
-  const originalFetch = globalThis.fetch;
-  globalThis.fetch = fetchImplementation;
-
-  try {
-    await run();
-  } finally {
-    if (originalFetch === undefined) {
-      delete globalThis.fetch;
-    } else {
-      globalThis.fetch = originalFetch;
-    }
-  }
-}
-
 test("addRecipeDataCacheBuster appends a cache key to recipe data urls", () => {
   assert.equal(
     addRecipeDataCacheBuster("data/recipes.json", "release-1"),
@@ -37,8 +22,7 @@ test("loadRecipes fetches, cache-busts, normalizes, and reports warnings", async
   const requests = [];
   const warnings = [];
 
-  await withMockFetch(
-    async (url, options) => {
+  const fetchImpl = async (url, options) => {
       requests.push({ options, url });
       return {
         ok: true,
@@ -64,35 +48,34 @@ test("loadRecipes fetches, cache-busts, normalizes, and reports warnings", async
           ];
         },
       };
-    },
-    async () => {
-      const result = await loadRecipes({
-        cacheBuster: "unit test",
-        logger: { warn: (...args) => warnings.push(args) },
-        url: "data/test-recipes.json",
-      });
+    };
+  const result = await loadRecipes({
+    cacheBuster: "unit test",
+    fetchImpl,
+    logger: { warn: (...args) => warnings.push(args) },
+    url: "data/test-recipes.json",
+  });
 
-      assert.deepEqual(requests, [
-        {
-          options: { cache: "no-store" },
-          url: "data/test-recipes.json?_=unit%20test",
-        },
-      ]);
-      assert.deepEqual(result.recipes.map((recipe) => recipe.title), ["Apple Crisp", "Banana Bread"]);
-      assert.equal(result.recipes[0].tags.status, "not-tried");
-      assert.equal(result.warnings.length, 1);
-      assert.equal(warnings.length, 1);
-      assert.equal(warnings[0][0], "1 recipe data warnings");
-      assert.deepEqual(warnings[0][1], result.warnings);
-    }
-  );
+  assert.deepEqual(requests, [
+    {
+      options: { cache: "no-store" },
+      url: "data/test-recipes.json?_=unit%20test",
+    },
+  ]);
+  assert.deepEqual(result.recipes.map((recipe) => recipe.title), ["Apple Crisp", "Banana Bread"]);
+  assert.equal(result.recipes[0].tags.status, "not-tried");
+  assert.equal(result.warnings.length, 1);
+  assert.equal(warnings.length, 1);
+  assert.equal(warnings[0][0], "1 recipe data warnings");
+  assert.deepEqual(warnings[0][1], result.warnings);
 });
 
 test("loadRecipes can skip cache busting and fails clearly on bad responses", async () => {
   const requests = [];
 
-  await withMockFetch(
-    async (url, options) => {
+  await loadRecipes({
+    cacheBust: false,
+    fetchImpl: async (url, options) => {
       requests.push({ options, url });
       return {
         ok: true,
@@ -109,19 +92,16 @@ test("loadRecipes can skip cache busting and fails clearly on bad responses", as
         },
       };
     },
-    async () => {
-      await loadRecipes({ cacheBust: false, url: "data/plain.json" });
-      assert.deepEqual(requests, [{ options: { cache: "no-store" }, url: "data/plain.json" }]);
-    }
-  );
+    url: "data/plain.json",
+  });
+  assert.deepEqual(requests, [{ options: { cache: "no-store" }, url: "data/plain.json" }]);
 
-  await withMockFetch(
-    async () => ({ ok: false, status: 503 }),
-    async () => {
-      await assert.rejects(
-        () => loadRecipes({ cacheBust: false, url: "data/missing.json" }),
-        /Unable to load recipes\.json \(503\)/
-      );
-    }
+  await assert.rejects(
+    () => loadRecipes({
+      cacheBust: false,
+      fetchImpl: async () => ({ ok: false, status: 503 }),
+      url: "data/missing.json",
+    }),
+    /Unable to load recipes\.json \(503\)/
   );
 });

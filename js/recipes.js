@@ -21,7 +21,11 @@ export async function loadRecipes(options = {}) {
     ? baseUrl
     : addRecipeDataCacheBuster(baseUrl, options.cacheBuster === undefined ? Date.now() : options.cacheBuster);
   const logger = options.logger || console;
-  const response = await fetch(url, { cache: "no-store" });
+  const fetchImpl = options.fetchImpl || globalThis.fetch;
+  if (typeof fetchImpl !== "function") {
+    throw new Error("Recipe loading requires the Fetch API.");
+  }
+  const response = await fetchImpl(url, { cache: "no-store" });
 
   if (!response.ok) {
     throw new Error(`Unable to load recipes.json (${response.status})`);
