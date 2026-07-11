@@ -2,13 +2,18 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import http from "node:http";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { findBrowserExecutable } from "./browser-executable.mjs";
 import { resolveSmokePrerequisiteFailure } from "./smoke-prerequisites.mjs";
 
-const rootDir = path.resolve(new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
-const port = Number(process.env.RECIPE_BOOK_SMOKE_PORT || 8787);
-const url = `http://127.0.0.1:${port}/`;
+const rootDir = fileURLToPath(new URL("..", import.meta.url));
+const configuredPort = process.env.RECIPE_BOOK_SMOKE_PORT;
+const requestedPort = configuredPort === undefined || configuredPort === "" ? 0 : Number(configuredPort);
+if (!Number.isInteger(requestedPort) || requestedPort < 0 || requestedPort > 65535) {
+  throw new Error("RECIPE_BOOK_SMOKE_PORT must be an integer from 0 through 65535.");
+}
+let url = "http://127.0.0.1/";
 
 const mimeTypes = new Map([
   [".css", "text/css; charset=utf-8"],
@@ -25,8 +30,9 @@ function createStaticServer() {
       const requestUrl = new URL(request.url || "/", url);
       const requestPath = decodeURIComponent(requestUrl.pathname === "/" ? "/index.html" : requestUrl.pathname);
       const absolutePath = path.resolve(rootDir, requestPath.replace(/^\/+/, ""));
+      const relativePath = path.relative(rootDir, absolutePath);
 
-      if (!absolutePath.startsWith(rootDir)) {
+      if (relativePath.startsWith(`..${path.sep}`) || path.isAbsolute(relativePath)) {
         response.writeHead(403, { "content-type": "text/plain; charset=utf-8" });
         response.end("Forbidden");
         return;
@@ -124,9 +130,48 @@ const browserChecks = [
       assert.ok(renderedCount <= recipeCount, "rendered card count should not exceed loaded data");
       assert.equal(await page.locator("#recipeSearchMeta").innerText(), `${recipeCount} recipes`);
 
+      const firstRecipe = page.locator(".recipe").first();
       const firstHeader = page.locator(".recipe .accordion-header").first();
+      const firstTitle = firstRecipe.locator(".recipe-title");
+      assert.equal(await firstRecipe.evaluate((element) => element.tagName), "ARTICLE");
+      assert.equal(await firstRecipe.locator(".recipe-heading").evaluate((element) => element.tagName), "H3");
       assert.equal(await firstHeader.evaluate((element) => element.tagName), "BUTTON");
       assert.ok(await firstHeader.getAttribute("aria-controls"), "recipe headers should control their content panel");
+      assert.equal(await firstHeader.getAttribute("aria-labelledby"), await firstTitle.getAttribute("id"));
+      assert.equal(await page.locator(".skip-link").getAttribute("href"), "#mainContent");
+      assert.equal(await page.locator("#mainContent").getAttribute("tabindex"), "-1");
+      assert.equal(await page.locator(".quick-controls").getAttribute("role"), "group");
+      assert.equal(await page.locator(".state-tools").getAttribute("role"), "group");
+      assert.equal(await page.locator(".filter-group[role='group']").count(), 4);
+    },
+  },
+  {
+    name: "reloads the complete app and recipe data while offline",
+    async run(page) {
+      await openApp(page, { debug: true });
+      const offlineReady = await page.evaluate(async () => {
+        if (!("serviceWorker" in navigator) || !("caches" in window)) return false;
+        await navigator.serviceWorker.ready;
+        if (!navigator.serviceWorker.controller) {
+          await new Promise((resolve) => {
+            navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
+          });
+        }
+        const cacheNames = await caches.keys();
+        return cacheNames.some((name) => name.startsWith("recipe-book-shell-")) &&
+          cacheNames.some((name) => name.startsWith("recipe-book-data-"));
+      });
+      assert.equal(offlineReady, true, "the service worker should finish caching before offline reload");
+
+      await page.context().setOffline(true);
+      try {
+        await page.reload({ waitUntil: "domcontentloaded" });
+        await page.waitForSelector(".recipe", { timeout: 10000 });
+        assert.ok(await page.locator(".recipe").count(), "cached recipes should render offline");
+        await expectLocatorText(page.locator("#offlineStatus"), /^Offline$/);
+      } finally {
+        await page.context().setOffline(false);
+      }
     },
   },
   {
@@ -456,6 +501,20 @@ const browserChecks = [
       await assertVisible(page, "#mealPlanPanel", false);
       await page.locator("#openMealPlan").click();
       await assertVisible(page, "#mealPlanPanel", true);
+      assert.equal(await page.locator("#mealPlanPanel").getAttribute("role"), "dialog");
+      assert.equal(await page.locator("#mealPlanPanel").getAttribute("aria-modal"), "true");
+      assert.equal(await page.locator("#recipesPanel").evaluate((element) => element.inert), true);
+      assert.equal(await page.locator(".skip-link").evaluate((element) => element.inert), true);
+      const mealPlanFocusables = page.locator(
+        "#mealPlanPanel button:not(:disabled), #mealPlanPanel input:not(:disabled), #mealPlanPanel select:not(:disabled)"
+      );
+      await mealPlanFocusables.last().focus();
+      await page.keyboard.press("Tab");
+      assert.equal(
+        await page.locator("#buildGroceryListFromMealPlan").evaluate((element) => document.activeElement === element),
+        true,
+        "meal-plan Tab focus should wrap to its first enabled control"
+      );
       const mealPlanOptionCounts = await page.locator(".meal-plan-add-form select").evaluateAll((selects) =>
         selects.map((select) => select.options.length)
       );
@@ -464,10 +523,23 @@ const browserChecks = [
         Array(7).fill(target.recipeCount + 1),
         "each meal-plan add select should include the placeholder and every recipe"
       );
-      await page
+      const plannedItem = page
         .locator('.meal-plan-day[data-day="monday"] .meal-plan-item')
-        .filter({ hasText: target.title })
-        .waitFor({ timeout: 5000 });
+        .filter({ hasText: target.title });
+      await plannedItem.waitFor({ timeout: 5000 });
+      const plannedCookButton = plannedItem.getByRole("button", { name: "Cook", exact: true });
+      await plannedCookButton.click();
+      await page.waitForSelector("#cookingMode:not([hidden])", { timeout: 5000 });
+      await page.keyboard.press("Escape");
+      await page.waitForFunction(() => document.querySelector("#cookingMode")?.hidden === true);
+      await assertVisible(page, "#mealPlanPanel", true);
+      assert.equal(await page.locator("body").evaluate((element) => element.classList.contains("is-meal-plan-open")), true);
+      assert.equal(await page.locator(".skip-link").evaluate((element) => element.inert), true);
+      assert.equal(
+        await plannedCookButton.evaluate((element) => document.activeElement === element),
+        true,
+        "closing cooking mode should return to the still-open meal plan"
+      );
 
       await page.locator("#buildGroceryListFromMealPlan").click();
       await expectText(page, "#grocerySummary", /from 1 recipe/);
@@ -529,6 +601,9 @@ const browserChecks = [
         /^0 of \d+ grocery items checked$/
       );
       const firstGroceryItem = page.locator("#groceryList li").first();
+      const firstGroceryCheckbox = firstGroceryItem.locator('input[type="checkbox"]');
+      assert.ok(await firstGroceryCheckbox.getAttribute("aria-label"), "grocery checkboxes should have names");
+      assert.equal(await firstGroceryItem.getAttribute("tabindex"), null);
       const firstSearchLink = firstGroceryItem.locator(".grocery-item-search-link");
       await firstSearchLink.waitFor({ timeout: 5000 });
       assert.equal(await firstSearchLink.innerText(), "Search");
@@ -792,6 +867,17 @@ const browserChecks = [
       await cookButton.click();
       await page.waitForSelector("#cookingMode:not([hidden])", { timeout: 5000 });
 
+      assert.equal(await page.locator("#cookingMode").getAttribute("role"), "dialog");
+      assert.equal(await page.locator("#cookingMode").getAttribute("aria-modal"), "true");
+      assert.equal(await page.locator(".app-shell").evaluate((element) => element.inert), true);
+      assert.equal(await page.locator(".app-shell").getAttribute("aria-hidden"), "true");
+      assert.equal(await page.locator(".skip-link").evaluate((element) => element.inert), true);
+      await page.keyboard.press("Tab");
+      assert.equal(
+        await page.locator("#toggleCookingHeader").evaluate((element) => document.activeElement === element),
+        true,
+        "cooking-mode Tab focus should wrap to its first control"
+      );
       assert.match(await page.locator("#cookingStepCount").innerText(), /^Step 1 of \d+$/i);
       assert.match(await page.locator(".cooking-progress").getAttribute("aria-valuetext"), /^Step 1 of \d+, \d+% complete$/i);
       assert.equal(await page.locator("#toggleCookingHeader").getAttribute("aria-expanded"), "true");
@@ -829,6 +915,9 @@ const browserChecks = [
 
       await page.locator("#closeCookingMode").click();
       await page.waitForFunction(() => document.querySelector("#cookingMode")?.hidden === true);
+      assert.equal(await page.locator(".app-shell").evaluate((element) => element.inert), false);
+      assert.equal(await page.locator(".app-shell").getAttribute("aria-hidden"), null);
+      assert.equal(await page.locator(".skip-link").evaluate((element) => element.inert), false);
       assert.equal(
         await cookButton.evaluate((element) => document.activeElement === element),
         true,
@@ -1394,18 +1483,37 @@ async function run() {
   }
 
   const server = createStaticServer();
-  await new Promise((resolve) => server.listen(port, "127.0.0.1", resolve));
+  await new Promise((resolve, reject) => {
+    const handleError = (error) => {
+      server.off("listening", handleListening);
+      reject(error);
+    };
+    const handleListening = () => {
+      server.off("error", handleError);
+      resolve();
+    };
+    server.once("error", handleError);
+    server.once("listening", handleListening);
+    server.listen(requestedPort, "127.0.0.1");
+  });
 
-  const browser = await playwright.chromium.launch({ executablePath, headless: true });
+  const address = server.address();
+  if (!address || typeof address === "string") {
+    await new Promise((resolve) => server.close(resolve));
+    throw new Error("Browser smoke server did not expose a TCP port.");
+  }
+  url = `http://127.0.0.1:${address.port}/`;
+  let browser = null;
 
   try {
+    browser = await playwright.chromium.launch({ executablePath, headless: true });
     for (const check of browserChecks) {
       await runBrowserCheck(browser, check);
     }
 
     console.log(`Browser smoke test passed (${browserChecks.length} checks).`);
   } finally {
-    await browser.close();
+    if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
   }
 }

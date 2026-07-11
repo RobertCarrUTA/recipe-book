@@ -136,6 +136,25 @@ test("recipe renderer batches recipes and keeps a manual load-more fallback", ()
   ]);
 });
 
+test("recipe renderer uses article and heading semantics without static Tab stops", () => {
+  const harness = createRendererHarness({ recipeBatchSize: 3 });
+
+  harness.renderer.renderRecipes();
+  const recipeElement = openRecipe(harness.document, "chili");
+  const heading = recipeElement.querySelector(".recipe-heading");
+  const header = recipeElement.querySelector(".accordion-header");
+  const title = recipeElement.querySelector(".recipe-title");
+  const listItems = recipeElement.querySelectorAll(".accordion-content li");
+
+  assert.equal(recipeElement.tagName, "ARTICLE");
+  assert.equal(heading.tagName, "H3");
+  assert.equal(header.parentElement, heading);
+  assert.equal(header.getAttribute("aria-labelledby"), title.id);
+  assert.equal(recipeElement.getAttribute("aria-labelledby"), title.id);
+  assert.ok(listItems.length > 0);
+  assert.equal(listItems.every((item) => item.tabIndex === undefined), true);
+});
+
 test("recipe renderer renders offscreen recipes before revealing them", () => {
   const harness = createRendererHarness({ recipeBatchSize: 1 });
 

@@ -1,15 +1,30 @@
 name: Verify
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
       - main
 
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   verify:
-    name: Static app checks
-    runs-on: ubuntu-latest
+    name: Static app checks (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
 
     steps:
       - name: Check out repository
@@ -25,7 +40,12 @@ jobs:
         run: npm ci
 
       - name: Install browser
+        if: runner.os == 'Linux'
         run: npx playwright install --with-deps chromium
 
-      - name: Run full verification
-        run: npm run verify:full
+      - name: Run core verification
+        run: npm run verify
+
+      - name: Run browser smoke tests
+        if: runner.os == 'Linux'
+        run: npm run smoke:browser

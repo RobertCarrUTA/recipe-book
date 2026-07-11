@@ -24,7 +24,10 @@ export function createOfflineController({
     const refreshButton = byId("refreshAppUpdate");
     refreshWorker = worker;
     setOfflineStatus("Update ready", "update");
-    if (refreshButton) refreshButton.hidden = false;
+    if (refreshButton) {
+      refreshButton.disabled = false;
+      refreshButton.hidden = false;
+    }
   }
 
   function syncConnectionStatus() {
@@ -57,22 +60,27 @@ export function createOfflineController({
     });
   }
 
+  function observeWorker(worker) {
+    if (!worker) return;
+
+    worker.addEventListener("statechange", () => {
+      if (worker.state === "installed" && navigator.serviceWorker.controller) {
+        showRefreshButton(worker);
+      } else if (worker.state === "activated") {
+        syncConnectionStatus();
+      }
+    });
+  }
+
   function observeRegistration(registration) {
     if (registration.waiting && navigator.serviceWorker.controller) {
       showRefreshButton(registration.waiting);
     }
 
-    registration.addEventListener("updatefound", () => {
-      const worker = registration.installing;
-      if (!worker) return;
+    observeWorker(registration.installing);
 
-      worker.addEventListener("statechange", () => {
-        if (worker.state === "installed" && navigator.serviceWorker.controller) {
-          showRefreshButton(worker);
-        } else if (worker.state === "activated") {
-          syncConnectionStatus();
-        }
-      });
+    registration.addEventListener("updatefound", () => {
+      observeWorker(registration.installing);
     });
   }
 
@@ -96,10 +104,14 @@ export function createOfflineController({
     try {
       const registration = await navigator.serviceWorker.register(SERVICE_WORKER_URL);
       observeRegistration(registration);
+      if (navigator.serviceWorker.ready && typeof navigator.serviceWorker.ready.then === "function") {
+        await navigator.serviceWorker.ready;
+      }
       syncConnectionStatus();
 
       navigator.serviceWorker.addEventListener("controllerchange", () => {
         if (!refreshRequested) {
+          refreshWorker = null;
           syncConnectionStatus();
           return;
         }

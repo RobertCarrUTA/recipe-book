@@ -9,6 +9,7 @@ import {
   getRecipeMultiplier,
   getManualGroceryItemKey,
   isRecipeSelected,
+  pruneRecipeRuntimeState,
   removeManualGroceryItem,
   selectAllRecipes,
   setGroceryChecked,
@@ -38,6 +39,21 @@ test("setRecipeSelected recomputes grocery totals from structured ingredients", 
   assert.deepEqual(runtime.grocery.totalsByKey["kidney beans"].can, { min: 2, max: 2 });
   assert.deepEqual(runtime.grocery.totalsByKey.garlic.clove, { min: 3, max: 3 });
   assert.equal(runtime.displayNamesByKey.garlic, "garlic");
+});
+
+test("recipe runtime state keeps one selection source and prunes removed recipes", () => {
+  const runtime = createRecipeRuntimeState({
+    favoriteRecipeIds: { chili: true, removed: true },
+    recipeMultipliersById: { chili: 2, removed: 3 },
+    selectedRecipeIds: { chili: true, removed: true },
+  });
+
+  assert.equal(Object.hasOwn(runtime.grocery, "selectedRecipeIds"), false);
+  assert.equal(pruneRecipeRuntimeState(runtime, recipes), true);
+  assert.deepEqual(runtime.favoriteRecipeIds, { chili: true });
+  assert.deepEqual(runtime.recipeMultipliersById, { chili: 2 });
+  assert.deepEqual(runtime.selectedRecipeIds, { chili: true });
+  assert.equal(pruneRecipeRuntimeState(runtime, recipes), false);
 });
 
 test("getRecipeGroceryIngredients ignores display ingredients when structured grocery data is missing", () => {

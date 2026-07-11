@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 
 import {
   appendChildren,
+  containTabFocus,
   createElement,
   createEmptyState,
   createTextElement,
@@ -84,6 +85,63 @@ test("listen attaches optional DOM listeners and returns the target", () => {
   button.dispatchEvent(createFakeEvent("click"));
   assert.equal(clicked, true);
   assert.equal(listen(null, "click", () => {}), null);
+});
+
+test("containTabFocus wraps focus at both edges and skips disabled controls", () => {
+  const document = createFakeDocument();
+  const container = createFakeElement({ tagName: "section" });
+  const first = createFakeElement({ tagName: "button" });
+  const disabled = createFakeElement({ disabled: true, tagName: "button" });
+  const last = createFakeElement({ tagName: "button" });
+
+  container.ownerDocument = document;
+  [first, disabled, last].forEach((element) => {
+    element.focusCount = 0;
+    element.focus = () => {
+      element.focusCount += 1;
+      document.activeElement = element;
+    };
+    container.appendChild(element);
+  });
+
+  document.activeElement = last;
+  const forwardEvent = createFakeEvent("keydown");
+  forwardEvent.key = "Tab";
+
+  assert.equal(containTabFocus(forwardEvent, container), true);
+  assert.equal(forwardEvent.defaultPrevented, true);
+  assert.equal(first.focusCount, 1);
+  assert.equal(disabled.focusCount, 0);
+
+  const backwardEvent = createFakeEvent("keydown");
+  backwardEvent.key = "Tab";
+  backwardEvent.shiftKey = true;
+
+  assert.equal(containTabFocus(backwardEvent, container), true);
+  assert.equal(backwardEvent.defaultPrevented, true);
+  assert.equal(last.focusCount, 1);
+});
+
+test("containTabFocus leaves interior focus and unrelated keys alone", () => {
+  const document = createFakeDocument();
+  const container = createFakeElement({ tagName: "section" });
+  const first = createFakeElement({ tagName: "button" });
+  const middle = createFakeElement({ tagName: "input" });
+  const last = createFakeElement({ tagName: "button" });
+
+  container.ownerDocument = document;
+  [first, middle, last].forEach((element) => container.appendChild(element));
+  document.activeElement = middle;
+
+  const tabEvent = createFakeEvent("keydown");
+  tabEvent.key = "Tab";
+  assert.equal(containTabFocus(tabEvent, container), false);
+  assert.equal(tabEvent.defaultPrevented, false);
+
+  const escapeEvent = createFakeEvent("keydown");
+  escapeEvent.key = "Escape";
+  assert.equal(containTabFocus(escapeEvent, container), false);
+  assert.equal(escapeEvent.defaultPrevented, false);
 });
 
 test("createEmptyState renders a standard empty-state block", () => {

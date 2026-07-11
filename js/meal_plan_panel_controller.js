@@ -1,6 +1,7 @@
-import { listen, setElementInert } from "./dom.js";
+import { containTabFocus, listen, setElementInert } from "./dom.js";
 
 const BACKGROUND_SELECTORS = [
+  ".skip-link",
   ".app-header",
   "#recipesPanel",
   "#groceryPanel",
@@ -48,6 +49,11 @@ export function createMealPlanPanelController({
     return document.body.classList.contains("is-meal-plan-open");
   }
 
+  function isCoveredByCookingMode() {
+    const cookingMode = byId("cookingMode");
+    return Boolean(cookingMode && !cookingMode.hidden);
+  }
+
   function open() {
     if (isOpen()) return;
     if (!byId("mealPlanPanel")) return;
@@ -83,10 +89,15 @@ export function createMealPlanPanelController({
     listen(byId("closeMealPlanPanel"), "click", () => close());
 
     listen(document, "keydown", (event) => {
-      if (event.key === "Escape" && isOpen()) {
+      if (event.defaultPrevented || !isOpen() || isCoveredByCookingMode()) return;
+
+      if (event.key === "Escape") {
         event.preventDefault();
         close();
+        return;
       }
+
+      if (event.key === "Tab") containTabFocus(event, byId("mealPlanPanel"));
     });
   }
 

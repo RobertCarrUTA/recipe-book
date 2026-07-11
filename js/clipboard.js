@@ -26,10 +26,15 @@ export async function writeTextToClipboard(text, options = {}) {
   textarea.style.top = "0";
   textarea.style.left = "-9999px";
   document.body.appendChild(textarea);
-  textarea.select();
 
-  const copied = document.execCommand && document.execCommand("copy");
-  textarea.remove();
+  let copied = false;
+  try {
+    textarea.select();
+    copied = Boolean(document.execCommand && document.execCommand("copy"));
+  } finally {
+    textarea.remove();
+  }
+
   if (!copied) throw new Error("Clipboard copy failed.");
 
   return true;

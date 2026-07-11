@@ -282,6 +282,7 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
     const totalsText = entry.totals ? formatTotalsForKey(entry.totals, { canonicalKey, displayName }) : "";
     const isManual = actions.isManualGroceryItem(canonicalKey);
     const cb = createElement(document, "input", {
+      attributes: { "aria-label": displayName },
       checked: Boolean(runtimeState.groceryCheckedByKey[canonicalKey]),
       type: "checkbox",
       listeners: {
@@ -315,18 +316,9 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
         cb.checked ? "checked" : "",
       ],
       dataset: { groceryKey: canonicalKey },
-      tabIndex: 0,
       listeners: {
         click: (event) => {
           if (isInteractiveGroceryTarget(event.target)) return;
-          cb.checked = !cb.checked;
-          cb.dispatchEvent(new Event("change"));
-        },
-        keydown: (event) => {
-          if (event.target !== li) return;
-          if (event.key !== " " && event.key !== "Enter") return;
-
-          event.preventDefault();
           cb.checked = !cb.checked;
           cb.dispatchEvent(new Event("change"));
         },

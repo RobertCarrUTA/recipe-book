@@ -26,7 +26,6 @@ export function createRecipeRuntimeState(savedState = {}) {
     favoriteRecipeIds: { ...(savedState.favoriteRecipeIds || {}) },
     grocery: {
       ...createEmptyGroceryState(),
-      selectedRecipeIds: { ...(savedState.selectedRecipeIds || {}) },
     },
     groceryCheckedByKey: { ...(savedState.groceryCheckedByKey || {}) },
     manualGroceryItemsById: { ...(savedState.manualGroceryItemsById || {}) },
@@ -325,6 +324,25 @@ export function recomputeGroceryState(runtimeState, recipes) {
   Object.values(runtimeState.manualGroceryItemsById || {}).forEach((item) => {
     addManualItemToGroceryState(runtimeState, item);
   });
+}
+
+export function pruneRecipeRuntimeState(runtimeState, recipes) {
+  const validRecipeIds = new Set(
+    (Array.isArray(recipes) ? recipes : []).map((recipe, index) => getRecipeKey(recipe, index))
+  );
+  let changed = false;
+
+  ["favoriteRecipeIds", "recipeMultipliersById", "selectedRecipeIds"].forEach((field) => {
+    const record = runtimeState[field] || {};
+    Object.keys(record).forEach((recipeId) => {
+      if (validRecipeIds.has(recipeId)) return;
+      delete record[recipeId];
+      changed = true;
+    });
+    runtimeState[field] = record;
+  });
+
+  return changed;
 }
 
 export function selectAllRecipes(runtimeState, recipes) {

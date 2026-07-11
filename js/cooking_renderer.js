@@ -1,12 +1,15 @@
 import { getCookingIngredients, getCookingSteps } from "./cooking_model.js";
-import { syncDisclosureToggle } from "./dom.js";
+import { setElementInert, syncDisclosureToggle } from "./dom.js";
 import { getRecipeHeaderMeta } from "./recipe_formatting.js";
+
+const BACKGROUND_SELECTORS = [".skip-link", ".app-shell"];
 
 export function createCookingRenderer({ document }) {
   const byId = (id) => document.getElementById(id);
   const windowLike = document.defaultView || globalThis;
 
   const cookingModeState = {
+    backgroundState: [],
     recipe: null,
     recipeIndex: -1,
     stepIndex: 0,
@@ -19,6 +22,29 @@ export function createCookingRenderer({ document }) {
 
   function isMobileCookingLayout() {
     return windowLike.matchMedia && windowLike.matchMedia("(max-width: 979px)").matches;
+  }
+
+  function setBackgroundInert(inert) {
+    if (inert) {
+      if (cookingModeState.backgroundState.length) return;
+      cookingModeState.backgroundState = BACKGROUND_SELECTORS
+        .map((selector) => document.querySelector(selector))
+        .filter(Boolean)
+        .map((element) => ({
+          ariaHidden: element.getAttribute("aria-hidden"),
+          element,
+          inert: Boolean(element.inert),
+        }));
+      cookingModeState.backgroundState.forEach(({ element }) => setElementInert(element, true));
+      return;
+    }
+
+    cookingModeState.backgroundState.forEach(({ ariaHidden, element, inert: wasInert }) => {
+      if ("inert" in element) element.inert = wasInert;
+      if (ariaHidden === null) element.removeAttribute("aria-hidden");
+      else element.setAttribute("aria-hidden", ariaHidden);
+    });
+    cookingModeState.backgroundState = [];
   }
 
   function openCookingMode(recipe, recipeIndex) {
@@ -37,6 +63,7 @@ export function createCookingRenderer({ document }) {
     const cookingMode = byId("cookingMode");
     if (!cookingMode) return;
 
+    setBackgroundInert(true);
     cookingMode.hidden = false;
     document.body.classList.add("is-cooking-mode");
     renderCookingMode();
@@ -49,6 +76,7 @@ export function createCookingRenderer({ document }) {
     const cookingMode = byId("cookingMode");
     if (cookingMode) cookingMode.hidden = true;
     document.body.classList.remove("is-cooking-mode");
+    setBackgroundInert(false);
 
     const focusTarget = cookingModeState.returnFocusTarget;
     cookingModeState.returnFocusTarget = null;

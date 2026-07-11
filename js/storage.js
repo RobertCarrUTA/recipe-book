@@ -26,7 +26,7 @@ export const storageKeys = Object.freeze({
   filters: "offline_recipebook_filters_v1",
 });
 
-export const currentStorageVersion = 5;
+export const currentStorageVersion = 6;
 export const backupAppId = "robert-recipe-book";
 export const backupSchemaVersion = 1;
 const mobileViews = new Set(["recipes", "grocery"]);
@@ -43,6 +43,14 @@ const uiBooleanStorageBindings = Object.freeze([
 
 function isPlainObject(value) {
   return Boolean(value && typeof value === "object" && !Array.isArray(value));
+}
+
+function getDefaultStorage() {
+  try {
+    return globalThis.localStorage;
+  } catch (error) {
+    return null;
+  }
 }
 
 export function safeJsonParse(text, fallback = null) {
@@ -130,13 +138,14 @@ function normalizeManualGroceryItems(value) {
     const name = String(item.name || "").trim();
     if (!name) return items;
 
-    items[id] = {
-      id: String(item.id || id),
+    const itemId = String(item.id || id).trim() || String(id);
+    items[itemId] = {
+      id: itemId,
       name,
     };
 
     const note = String(item.note || "").trim();
-    if (note) items[id].note = note;
+    if (note) items[itemId].note = note;
 
     return items;
   }, {});
@@ -187,11 +196,28 @@ function writeStorageVersion(storage, version) {
   write(storage, storageKeys.version, String(version));
 }
 
-export function migratePersistentState(storage = globalThis.localStorage) {
+function readStorageVersion(storage) {
+  const version = Number(read(storage, storageKeys.version));
+  return Number.isInteger(version) && version > 0 ? version : 1;
+}
+
+function hasFutureStorageVersion(storage) {
+  return readStorageVersion(storage) > currentStorageVersion;
+}
+
+export function migratePersistentState(storage = getDefaultStorage()) {
   if (!storage) return { fromVersion: 0, toVersion: currentStorageVersion, migrated: false };
 
-  const rawVersion = Number(read(storage, storageKeys.version));
-  const fromVersion = Number.isFinite(rawVersion) && rawVersion > 0 ? rawVersion : 1;
+  const fromVersion = readStorageVersion(storage);
+  if (fromVersion > currentStorageVersion) {
+    return {
+      fromVersion,
+      incompatible: true,
+      migrated: false,
+      toVersion: currentStorageVersion,
+    };
+  }
+
   let migrated = false;
 
   if (fromVersion < 2) {
@@ -202,6 +228,11 @@ export function migratePersistentState(storage = globalThis.localStorage) {
     if (Object.keys(selectedFromLegacyState).length && !Object.keys(selectedRecipes).length) {
       write(storage, storageKeys.selectedRecipes, JSON.stringify(selectedFromLegacyState));
     }
+    migrated = true;
+  }
+
+  if (fromVersion < 6) {
+    remove(storage, storageKeys.groceryState);
     migrated = true;
   }
 
@@ -290,7 +321,7 @@ export function normalizePersistentStateBackup(backup) {
   };
 }
 
-export function restorePersistentState(storage = globalThis.localStorage) {
+export function restorePersistentState(storage = getDefaultStorage()) {
   if (!storage) {
     return {
       favoriteRecipeIds: {},
@@ -326,22 +357,13 @@ export function restorePersistentState(storage = globalThis.localStorage) {
   };
 }
 
-export function savePersistentState(state, storage = globalThis.localStorage) {
-  if (!storage) return false;
+export function savePersistentState(state, storage = getDefaultStorage()) {
+  if (!storage || hasFutureStorageVersion(storage)) return false;
 
   const runtime = state.runtime || {};
   const ui = state.ui || createDefaultUiState();
-  const grocery = runtime.grocery || {};
-
   const writes = [
     write(storage, storageKeys.version, String(currentStorageVersion)),
-    writeJson(storage, storageKeys.groceryState, {
-      selectedRecipeIds: runtime.selectedRecipeIds || {},
-      totalsByKey: grocery.totalsByKey || {},
-      notesByKey: grocery.notesByKey || {},
-      sourcesByKey: grocery.sourcesByKey || {},
-      recipeMultipliersById: runtime.recipeMultipliersById || {},
-    }),
     writeJson(storage, storageKeys.selectedRecipes, runtime.selectedRecipeIds || {}),
     writeJson(storage, storageKeys.recipeMultipliers, runtime.recipeMultipliersById || {}),
     writeJson(storage, storageKeys.groceryChecked, runtime.groceryCheckedByKey || {}),
@@ -359,8 +381,8 @@ export function savePersistentState(state, storage = globalThis.localStorage) {
   return writes.every(Boolean);
 }
 
-export function clearGroceryPersistence(storage = globalThis.localStorage) {
-  if (!storage) return;
+export function clearGroceryPersistence(storage = getDefaultStorage()) {
+  if (!storage || hasFutureStorageVersion(storage)) return;
 
   remove(storage, storageKeys.groceryState);
   remove(storage, storageKeys.groceryChecked);

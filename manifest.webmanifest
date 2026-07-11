@@ -2,11 +2,14 @@
   "name": "Robert's Recipe Book",
   "short_name": "Recipe Book",
   "description": "Robert's recipe book and grocery list.",
+  "id": "./",
+  "lang": "en-US",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#101214",
   "theme_color": "#101214",
+  "categories": ["food", "lifestyle", "utilities"],
   "icons": [
     {
       "src": "icons/icon.svg",

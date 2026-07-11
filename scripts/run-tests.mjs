@@ -1,10 +1,10 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { runRegisteredTests } from "../tests/test_helpers.mjs";
 
-const rootDir = path.resolve(new URL("..", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
+const rootDir = fileURLToPath(new URL("..", import.meta.url));
 const testsDir = path.join(rootDir, "tests");
 
 async function collectTestFiles(dir) {
