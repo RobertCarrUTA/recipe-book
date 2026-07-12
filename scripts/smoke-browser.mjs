@@ -537,7 +537,7 @@ const browserChecks = [
         .locator('.meal-plan-day[data-day="monday"] .meal-plan-item')
         .filter({ hasText: target.title });
       await plannedItem.waitFor({ timeout: 5000 });
-      const plannedCookButton = plannedItem.getByRole("button", { name: "Cook", exact: true });
+      const plannedCookButton = plannedItem.getByRole("button", { name: `Cook ${target.title}`, exact: true });
       await plannedCookButton.click();
       await page.waitForSelector("#cookingMode:not([hidden])", { timeout: 5000 });
       await page.keyboard.press("Escape");
