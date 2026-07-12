@@ -236,7 +236,9 @@
     "Serve right after brushing with hot honey butter so the crust stays crisp and the bun stays toasted."
   ],
   "nutrition": null,
-  "personalNotes": [],
+  "personalNotes": [
+    "I personally wouldn't try this again (unless I am modifying the recipe to try and make it better). I do not think it is worth the time or effort when I live so close to something like Rule the Roost. This sandwich came out okay, I think the chicken cutlet I used was too big for the bun I had, and the sauce that was made wasn't right. It wasn't a bad sauce, but it wasn't the right sauce for this kind of sandwich. Also maybe a chicken thigh might be better? Also would a brine or marinade help with the flavor of the chicken? These are just questions for myself if I try to improve this recipe going forward."
+  ],
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "1 sandwich",
@@ -246,7 +248,8 @@
       "cast-iron skillet",
       "stovetop"
     ],
-    "status": "not-tried"
+    "rating": "okay",
+    "status": "tried"
   },
   "title": "Hot Honey Chicken Cutlet Sandwich",
   "totalTime": "35 to 40 minutes"
