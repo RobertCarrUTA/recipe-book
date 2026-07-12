@@ -319,7 +319,8 @@ export function createRecipeRenderer({
   }
 
   function pointerSelectionIncludesTitle(event, title) {
-    if (!event || Number(event.detail) <= 0 || !title || typeof windowLike.getSelection !== "function") {
+    const clickCount = Number(event?.detail);
+    if (!Number.isFinite(clickCount) || clickCount <= 0 || !title || typeof windowLike.getSelection !== "function") {
       return false;
     }
 

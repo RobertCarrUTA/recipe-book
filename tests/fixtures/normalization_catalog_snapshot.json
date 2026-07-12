@@ -2555,10 +2555,6 @@
   ],
   "units": [
     {
-      "unit": "15-ounce can",
-      "normalized": "15-ounce can"
-    },
-    {
       "unit": "bunch",
       "normalized": "bunch"
     },
