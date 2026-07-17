@@ -1,0 +1,244 @@
+{
+  "additionalTime": "1 1/2 to 6 hours dough proof plus 60 to 75 minutes steel preheat",
+  "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
+  "cookTime": "5 to 7 minutes",
+  "description": "A large 15-inch New York-style cheese pizza tuned for a 550 degrees F home oven, a hot baking steel, and a same-day dough. The crust is thin, crisp underneath, tender at the rim, and topped with a concentrated tomato sauce, low-moisture mozzarella, provolone, Pecorino Romano, and a short broiler finish.",
+  "equipment": [
+    "Baking Steel Pro or 16 x 16-inch baking steel",
+    "16-inch pizza peel",
+    "Kitchen scale",
+    "Large mixing bowl",
+    "Covered dough container or large zip-top bag",
+    "Dough scraper or spatula",
+    "Fine-mesh strainer",
+    "Box grater",
+    "Small bowls",
+    "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
+    "Cutting board",
+    "Pizza wheel or sharp knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour",
+      "item": "bread flour",
+      "quantity": 275,
+      "unit": "g"
+    },
+    {
+      "display": "prepared pizza dough ball or pizza dough mix, optional shortcut",
+      "item": "pizza dough",
+      "note": "Use enough for one 430- to 450-gram dough ball if skipping the scratch dough.",
+      "optional": true,
+      "quantity": 450,
+      "unit": "g"
+    },
+    {
+      "display": "instant yeast or active dry yeast",
+      "item": "active dry or instant yeast",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "item": "salt",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "semolina flour or fine cornmeal",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+      "item": "canned tomatoes",
+      "note": "Buy one 14-ounce can; the recipe uses about 1/2 cup plus 1 tablespoon thick crushed tomatoes.",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "dried oregano",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "onion powder",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "garlic powder",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "red pepper flakes",
+      "optional": true,
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "display": "low-moisture whole-milk mozzarella block",
+      "item": "mozzarella cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "display": "provolone piccante or deli provolone",
+      "item": "provolone cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "Pecorino Romano cheese or Parmesan cheese",
+      "item": "Pecorino Romano or Parmesan cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "item": "fresh basil",
+      "optional": true,
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "flaky sea salt",
+      "optional": true,
+      "quantity": 0.0625,
+      "unit": "tsp"
+    }
+  ],
+  "id": "new-york-style-cheese-pizza",
+  "ingredients": [
+    "275 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour",
+    "172 grams water: use 95 to 100 degrees F water for the fast dough or cool room-temperature water for the 4- to 6-hour same-day ferment",
+    "4 grams granulated sugar, about 1 teaspoon",
+    "2 grams instant yeast, about 2/3 teaspoon, for the fast dough; use 1.5 grams, about 1/2 teaspoon, for the 4- to 6-hour same-day ferment",
+    "7 grams fine sea salt or Morton Coarse Kosher Salt for the dough, about 1 1/4 level teaspoons fine sea salt, 1 1/2 level teaspoons Morton Coarse Kosher Salt, or 2 1/4 level teaspoons Diamond Crystal kosher salt",
+    "6 grams extra-virgin olive oil for the dough, about 1 1/2 teaspoons, plus 1/2 teaspoon for the dough container",
+    "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+    "Optional dough shortcut: 430 to 450 grams prepared pizza dough or one prepared dough ball from a dough mix, at room temperature",
+    "1 (14-ounce) can San Marzano-style or Bianco DiNapoli whole peeled tomatoes, drained and crushed to measure 1/2 cup plus 1 tablespoon thick crushed tomatoes, about 140 grams",
+    "1 teaspoon tomato paste",
+    "1 teaspoon extra-virgin olive oil for the sauce",
+    "1/4 teaspoon dried oregano",
+    "1/8 teaspoon onion powder",
+    "1/8 teaspoon garlic powder",
+    "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
+    "1/8 teaspoon red pepper flakes, optional",
+    "7 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
+    "1 ounce provolone piccante or deli provolone, finely shredded or diced",
+    "1 ounce Pecorino Romano or Parmesan, finely grated, divided",
+    "1 teaspoon extra-virgin olive oil for brushing the finished rim",
+    "6 to 8 fresh basil leaves, optional, torn after baking",
+    "Small pinch flaky sea salt for finishing, optional"
+  ],
+  "instructions": [
+    "Using prepared dough or a dough mix? Use 430 to 450 grams room-temperature dough and skip to step 15. Making scratch dough? Use steps 2 through 14; choose the fast dough if you want to bake as soon as the dough is ready, or the 4- to 6-hour same-day ferment if you have extra time.",
+    "For the fast dough, add 172 grams 95 to 100 degrees F water, 4 grams granulated sugar, and 2 grams instant yeast to a large mixing bowl. For the 4- to 6-hour same-day ferment, use 172 grams cool room-temperature water, 4 grams granulated sugar, and 1.5 grams instant yeast.",
+    "If using active dry yeast instead of instant yeast, stir the yeast into the sugared water and wait 5 minutes before adding flour.",
+    "Add all 275 grams high-protein bread flour to the bowl with the water, sugar, and yeast.",
+    "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+    "Cover the bowl and rest the shaggy dough for 15 minutes so the flour hydrates before kneading.",
+    "Sprinkle 7 grams fine sea salt or Morton Coarse Kosher Salt over the dough, then drizzle 6 grams extra-virgin olive oil over the dough.",
+    "Knead the dough in the bowl or on an unfloured counter for 4 to 5 minutes, until the salt and oil are fully absorbed and the dough turns smoother, stretchy, and slightly tacky.",
+    "Cover the dough and rest it for 10 minutes.",
+    "With lightly wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+    "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1/2 teaspoon extra-virgin olive oil, and place the dough smooth-side up inside.",
+    "For the fast dough, cover the dough and let it proof at room temperature for 75 to 90 minutes, until puffy, relaxed, and about 50 percent larger. If your kitchen is cooler than 70 degrees F, give the fast dough up to 2 hours; once it reaches this point, continue to step 14 and do not also use the longer ferment.",
+    "For the 4- to 6-hour same-day ferment instead, cover the dough and let it sit at room temperature for 4 to 6 hours, until airy, relaxed, and about doubled but not collapsed.",
+    "If the dough doubles before you are ready to bake, refrigerate the covered dough for up to 2 hours, then bring it back to room temperature for 30 minutes before stretching.",
+    "Place the baking steel on the second-highest oven rack, ideally about 5 to 6 inches below the broiler element. If that rack puts the steel closer than 4 inches from the broiler, use the next lower rack so the rim does not burn before the bottom crisps.",
+    "Preheat the oven to 550 degrees F for 60 to 75 minutes so the steel is fully heated before the pizza goes in.",
+    "While the oven preheats, spoon the tomatoes from the can into a fine-mesh strainer and drain them for 5 minutes.",
+    "Crush the drained tomatoes by hand until they are saucy but still lightly textured, then measure 1/2 cup plus 1 tablespoon thick crushed tomatoes, about 140 grams.",
+    "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon dried oregano, 1/8 teaspoon onion powder, 1/8 teaspoon garlic powder, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, and 1/8 teaspoon red pepper flakes if using.",
+    "Let the sauce sit for at least 20 minutes while the oven continues preheating so the oregano, onion powder, garlic powder, salt, and pepper flakes season the tomatoes.",
+    "Freshly shred 7 ounces low-moisture whole-milk mozzarella from a block.",
+    "Finely shred or dice 1 ounce provolone, then toss the provolone with the 7 ounces shredded mozzarella so the cheeses melt evenly.",
+    "Finely grate 1 ounce Pecorino Romano or Parmesan, then divide it into two 1/2-ounce portions.",
+    "Keep the mozzarella-provolone blend and grated Pecorino cold until the dough is stretched so the cheese melts cleanly instead of oiling out before the crust finishes.",
+    "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+    "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched for the rim.",
+    "Stretch the dough into a 15-inch round, keeping the center thin and the outer rim slightly thicker.",
+    "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+    "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides freely.",
+    "If any part of the dough sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+    "Spread all 1/2 cup plus 1 tablespoon sauce over the dough in a thin, even layer, leaving the outer 3/4 inch uncovered.",
+    "Sprinkle 1/2 ounce finely grated Pecorino Romano or Parmesan evenly over the sauce.",
+    "Scatter all of the mozzarella-provolone blend over the pizza, keeping the cheese even and avoiding heavy piles in the center.",
+    "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+    "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+    "Launch the pizza onto the fully preheated steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the sauce does not glue the dough to the peel.",
+    "Bake the pizza at 550 degrees F for 3 minutes with the broiler off.",
+    "At 3 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+    "Bake for 1 to 2 minutes more, checking the bottom every 30 seconds; the bottom should be golden brown with medium-brown freckles, not black or bitter-smelling.",
+    "If you see black patches on the bottom larger than a dime or smell bitter scorching, slide the pizza onto the room-temperature rimless baking sheet immediately before continuing.",
+    "If the bottom reaches deep brown before the cheese has browned in spots, slide the pizza onto the room-temperature rimless baking sheet so the bottom stops darkening on the steel.",
+    "Turn the broiler to high only after the bottom has set and browned, then broil for 30 to 75 seconds, watching constantly, until the rim blisters lightly and the cheese bubbles with a few browned spots.",
+    "If the rim or cheese starts to darken too fast under the broiler, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+    "Transfer the baked pizza to a cutting board and let it rest for 2 minutes so the cheese settles and the bottom crust stays crisp when sliced.",
+    "Brush only the exposed outer rim with 1 teaspoon extra-virgin olive oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+    "Sprinkle the remaining 1/2 ounce finely grated Pecorino Romano or Parmesan over the pizza.",
+    "Tear 6 to 8 fresh basil leaves over the pizza if using, then add a small pinch of flaky sea salt only if the cheese tastes like it needs a final pop.",
+    "Slice the pizza and serve immediately while the bottom is crisp, the rim is tender, and the cheese is still molten."
+  ],
+  "link": null,
+  "notes": [
+    "The 4- to 6-hour same-day ferment gives better flavor, browning, and stretch than the fast dough. The fast dough is the no-days option when you want pizza the same day with the shortest practical proof.",
+    "Do not bake the dough immediately after mixing. Even a fast same-day dough needs enough time to relax and trap gas, or the crust will be dense, tight, and hard to stretch.",
+    "Use 15 inches as the target size on a 16 x 16-inch steel. A true 16-inch pizza leaves very little launch margin and is easier to wrinkle or hang over an edge.",
+    "A 430- to 450-gram dough ball gives a New York-style crust that is thin in the center but still has enough rim to avoid cracker-like edges.",
+    "If using prepared dough, let it sit covered at room temperature until it is soft, relaxed, and no longer refrigerator-cold in the center before stretching.",
+    "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+    "Preheating the steel for 60 to 75 minutes matters. A short preheat can leave the top cooked before the bottom crisps.",
+    "The broiler is only for finishing. Keep it off until the bottom crust is already set and browned, then watch constantly because the rim and cheese can darken quickly.",
+    "Use the room-temperature rimless baking sheet if the bottom browns faster than the top. It lets the cheese and rim finish without more direct steel contact.",
+    "If the bottom is too dark before the top is browned, use the rimless baking sheet earlier during that bake; next time, move the steel one rack lower or start checking the bottom at 2 1/2 minutes.",
+    "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes before launching.",
+    "Keep the sauce thick and measured. Watery sauce or too much sauce will steam the center of the crust before it can crisp.",
+    "Use low-moisture whole-milk mozzarella from a block because it melts well without flooding the pizza. Avoid fresh mozzarella for this recipe unless it is sliced, drained very well, and used sparingly.",
+    "The small amount of provolone adds pizzeria-style depth without making the pizza taste overloaded. Provolone piccante gives the strongest savory edge, but deli provolone works.",
+    "Pecorino Romano gives the sharpest classic finish. Parmesan is milder and works well if that is what you have.",
+    "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+    "If the center is soft, drain the tomatoes longer next time, keep the sauce to the measured amount, and stretch the center thinner before topping.",
+    "Brush the rim with olive oil after baking, not before baking. Post-bake oil seasons the crust and adds sheen without encouraging the rim to burn.",
+    "For a plain cheese pizza, skip the basil. For a slightly brighter finish, add the basil only after baking so it stays fresh."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "50 minutes active",
+  "rating": null,
+  "servings": "1 large 15-inch pizza, 2 to 3 servings",
+  "source": "bundled",
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "pizza-steel"
+    ],
+    "status": "not-tried"
+  },
+  "title": "New York-Style Cheese Pizza",
+  "totalTime": "2 1/2 to 8 hours, depending on dough path"
+}
