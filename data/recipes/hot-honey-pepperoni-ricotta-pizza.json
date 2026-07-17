@@ -7,9 +7,9 @@
     "baking"
   ],
   "cookTime": "5 to 6 minutes",
-  "description": "A large 15- to 16-inch hot honey pepperoni and ricotta pizza built for a Baking Steel Pro, with a 72-hour lean crust, concentrated garlic-Calabrian tomato sauce, whole-milk mozzarella, provolone, cup-and-char pepperoni, seasoned ricotta, Pecorino Romano, basil, and warm chile honey.",
+  "description": "A large 15- to 16-inch hot honey pepperoni and ricotta pizza built for a hot baking steel, with a 72-hour lean crust, concentrated garlic-Calabrian tomato sauce, whole-milk mozzarella, provolone, cup-and-char pepperoni, seasoned ricotta, Pecorino Romano, basil, and warm chile honey.",
   "equipment": [
-    "Baking Steel Pro or 16 x 16-inch baking steel",
+    "16 x 16-inch baking steel, 3/8-inch thick preferred",
     "16-inch pizza peel",
     "Kitchen scale",
     "Large mixing bowl",
@@ -25,15 +25,15 @@
   ],
   "groceryIngredients": [
     {
-      "display": "Baking Steel 72 Hour Pizza Dough Mix pack",
+      "display": "72-hour pizza dough mix pack or prepared lean pizza dough",
       "item": "pizza dough",
-      "note": "Preferred dough for this recipe. One pack makes more than this pizza needs; use 400 to 450 grams prepared dough for one large Baking Steel Pro pizza.",
+      "note": "A lean 72-hour dough mix is the preferred shortcut. If using the mix you ordered, one pack makes more than this pizza needs; use 400 to 450 grams prepared dough for one large pizza.",
       "quantity": 1
     },
     {
       "display": "high-protein bread flour, optional scratch dough fallback",
       "item": "bread flour",
-      "note": "Only needed if you are not using Baking Steel 72 Hour Pizza Dough Mix.",
+      "note": "Only needed if making the scratch dough instead of using prepared dough.",
       "optional": true,
       "quantity": 255,
       "unit": "g"
@@ -41,7 +41,7 @@
     {
       "display": "instant yeast, optional scratch dough fallback",
       "item": "active dry or instant yeast",
-      "note": "Only needed if you are not using Baking Steel 72 Hour Pizza Dough Mix.",
+      "note": "Only needed if making the scratch dough instead of using prepared dough.",
       "optional": true,
       "quantity": 0.125,
       "unit": "tsp"
@@ -171,7 +171,7 @@
   ],
   "id": "hot-honey-pepperoni-ricotta-pizza",
   "ingredients": [
-    "Preferred dough: 400 to 450 grams prepared Baking Steel 72 Hour Pizza Dough Mix dough, with 430 grams ideal for one 15- to 16-inch Baking Steel Pro pizza; prepare the full mix pack with 1 3/4 cups water, then portion one large dough ball for this pizza",
+    "Preferred dough: 400 to 450 grams prepared lean 72-hour pizza dough, with 430 grams ideal for one 15- to 16-inch baking steel pizza; if using a full dough mix pack, prepare it with 1 3/4 cups water, then portion one large dough ball for this pizza",
     "Scratch dough fallback, only if not using the mix: 255 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
     "Scratch dough fallback: 179 grams room-temperature water, about 3/4 cup",
     "Scratch dough fallback: 8 grams fine sea salt, about 1 1/2 level teaspoons Morton Coarse Kosher Salt or 2 1/2 level teaspoons Diamond Crystal kosher salt",
@@ -206,8 +206,8 @@
     "Small pinch flaky sea salt for finishing, optional"
   ],
   "instructions": [
-    "Choose the dough path before starting: for Baking Steel 72 Hour Pizza Dough Mix, follow steps 2 through 4, then skip to step 15; for scratch dough, follow steps 5 through 13, then continue to step 15; for 400 to 450 grams already-fermented pizzeria dough, skip to step 14.",
-    "About 72 hours before baking, pour the full Baking Steel 72 Hour Pizza Dough Mix pack into a large bowl, add 1 3/4 cups water, and mix until no dry spots remain.",
+    "Choose the dough path before starting: for a 72-hour dough mix, follow steps 2 through 4, then skip to step 15; for scratch dough, follow steps 5 through 13, then continue to step 15; for 400 to 450 grams already-fermented pizzeria dough, skip to step 14.",
+    "About 72 hours before baking, pour the full dough mix pack into a large bowl, add 1 3/4 cups water, and mix until no dry spots remain.",
     "Knead the mix dough in the bowl for 2 to 3 minutes, cover the bowl tightly, let it rest at room temperature for 12 to 24 hours, then refrigerate the covered dough for 2 days.",
     "About 3 hours before baking, portion 400 to 450 grams prepared mix dough for this pizza, with 430 grams ideal, shape it into a tight ball, place it in a lightly floured or lightly oiled covered container, and let it warm until relaxed and slightly puffy.",
     "For scratch dough, about 72 hours before baking, whisk together all 255 grams high-protein bread flour, 8 grams fine sea salt or the listed kosher salt equivalent, and the scant 1/8 teaspoon instant yeast in a large bowl.",
@@ -220,8 +220,8 @@
     "If the scratch dough has spread in the container, gently tighten it back into a smooth ball without heavily kneading or degassing it.",
     "Place the scratch dough ball in a lightly floured or lightly oiled covered container and let it warm at room temperature for about 3 hours, until relaxed, slightly puffy, and no longer refrigerator-cold in the center.",
     "If using 400 to 450 grams ready-made pizzeria dough, shape it into a smooth ball, place it in a lightly floured or lightly oiled covered container, and let it warm at room temperature for about 3 hours before stretching.",
-    "Place the Baking Steel Pro on the second-highest oven rack, ideally 5 to 6 inches below the broiler element, and make sure the 16 x 16-inch steel sits flat and fully supported.",
-    "Preheat the oven to 550 degrees F for 60 to 75 minutes so the 3/8-inch Baking Steel Pro is fully saturated with heat before the pizza goes in.",
+    "Place the baking steel on the second-highest oven rack, ideally 5 to 6 inches below the broiler element, and make sure the 16 x 16-inch steel sits flat and fully supported.",
+    "Preheat the oven to 550 degrees F for 60 to 75 minutes so the 3/8-inch steel is fully saturated with heat before the pizza goes in.",
     "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
     "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed tomatoes for a 15-inch pizza or 2/3 cup thick crushed tomatoes for a true 16-inch pizza.",
     "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
@@ -250,7 +250,7 @@
     "Sprinkle 1/2 ounce finely grated Pecorino Romano over the topped pizza before baking.",
     "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
     "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
-    "Launch the pizza onto the fully preheated Baking Steel Pro as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the toppings does not glue the dough to the peel.",
+    "Launch the pizza onto the fully preheated steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the toppings does not glue the dough to the peel.",
     "Bake the pizza at 550 degrees F for 2 1/2 to 3 minutes with the broiler off.",
     "Rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
     "Check the bottom crust by lifting one edge with the peel; it should be set and lightly browned, not floppy, deep brown, or black.",
@@ -269,14 +269,14 @@
   ],
   "link": null,
   "notes": [
-    "For this Baking Steel Pro version, the Baking Steel 72 Hour Pizza Dough Mix is the preferred dough path because it is a lean 72-hour dough built around steel baking. The scratch fallback uses the same lean flour-water-salt-yeast logic rather than oil or sugar, which helps the crust brown without burning at 550 degrees F.",
+    "For this steel-baked version, a lean 72-hour dough is the preferred dough path because it browns cleanly and develops strong flavor without added oil or sugar. The scratch fallback uses the same flour-water-salt-yeast logic, which helps the crust brown without burning at 550 degrees F.",
     "Use 430 grams prepared dough for the best balance of crisp bottom, chewy rim, and safe launch on a 16 x 16-inch steel. Use 400 grams for a thinner 15-inch pizza, or up to 450 grams if you want a fuller 16-inch rim.",
-    "If dividing a prepared Baking Steel mix pack into 3 equal dough balls, each ball will be thinner than the 430-gram target. That still works well for a 14- to 15-inch pizza; use 400 to 450 grams when you want the full Baking Steel Pro pizza.",
+    "If dividing a prepared dough mix pack into 3 equal dough balls, each ball will be thinner than the 430-gram target. That still works well for a 14- to 15-inch pizza; use 400 to 450 grams when you want the full 15- to 16-inch steel-baked pizza.",
     "If buying ready-made dough, ask for 400 to 450 grams of cold-fermented, lean pizzeria dough made for a hot deck oven. Avoid canned dough, par-baked crusts, sweet grocery-store dough, or very oily dough because they can brown too fast on steel.",
-    "The Baking Steel Pro is 16 x 16 inches, so a true 16-inch pizza leaves little room for launch error. Stretch to 15 inches the first time if you are not completely comfortable launching large pies.",
+    "A 16 x 16-inch steel leaves little room for launch error with a true 16-inch pizza. Stretch to 15 inches the first time if you are not completely comfortable launching large pies.",
     "Use a 16-inch peel for this pizza. A smaller peel makes a 15- to 16-inch dough difficult to launch cleanly.",
     "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
-    "Preheating the Baking Steel Pro for 60 to 75 minutes matters because the 3/8-inch steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
+    "Preheating the steel for 60 to 75 minutes matters because a 3/8-inch steel needs time to heat through. A short preheat can leave the top cooked before the bottom crisps.",
     "The short pre-launch broiler burst helps the top of the oven recover for better rim blistering, but the pizza should launch with the oven back on 550 degrees F bake so the top does not burn before the bottom sets.",
     "The broiler finish is optional and fast. Watch constantly once the broiler is on because pepperoni, cheese, and the rim can go from blistered to burned quickly.",
     "Use the room-temperature rimless baking sheet whenever the bottom reaches deep golden brown before the top is done. It lets the top finish without more direct steel contact.",
