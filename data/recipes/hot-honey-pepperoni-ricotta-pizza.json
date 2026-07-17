@@ -7,7 +7,7 @@
     "baking"
   ],
   "cookTime": "5 to 6 minutes",
-  "description": "A large 15- to 16-inch hot honey pepperoni and ricotta pizza built for a hot baking steel, with a 72-hour lean crust, concentrated garlic-Calabrian tomato sauce, whole-milk mozzarella, provolone, cup-and-char pepperoni, seasoned ricotta, Pecorino Romano, basil, and warm chile honey.",
+  "description": "A large 15- to 16-inch hot honey pepperoni and ricotta pizza built for a hot baking steel, with a 72-hour lean crust, concentrated garlic-Calabrian tomato sauce, whole-milk mozzarella, provolone, cup-and-char pepperoni, seasoned ricotta, Pecorino Romano, basil, and warm hot honey.",
   "equipment": [
     "16 x 16-inch baking steel, 3/8-inch thick preferred",
     "16-inch pizza peel",
@@ -18,7 +18,7 @@
     "Fine-mesh strainer",
     "Small bowls",
     "Box grater",
-    "Small saucepan or microwave-safe bowl",
+    "Small microwave-safe bowl",
     "Room-temperature rimless baking sheet, for finishing if the bottom crust browns early",
     "Cutting board",
     "Pizza wheel or sharp knife"
@@ -71,9 +71,9 @@
       "unit": "tsp"
     },
     {
-      "display": "garlic cloves",
+      "display": "garlic clove",
       "item": "garlic clove",
-      "quantity": 2
+      "quantity": 1
     },
     {
       "item": "extra-virgin olive oil",
@@ -142,20 +142,9 @@
       "unit": "tsp"
     },
     {
-      "item": "honey",
+      "item": "hot honey",
       "quantity": 3,
       "unit": "tbsp"
-    },
-    {
-      "item": "unsalted butter",
-      "quantity": 1,
-      "unit": "tsp"
-    },
-    {
-      "display": "apple cider vinegar or red wine vinegar",
-      "item": "apple cider vinegar or red wine vinegar",
-      "quantity": 0.5,
-      "unit": "tsp"
     },
     {
       "item": "fresh basil",
@@ -195,12 +184,8 @@
     "1 teaspoon extra-virgin olive oil for the ricotta",
     "1/4 teaspoon finely grated lemon zest",
     "1/8 teaspoon black pepper, freshly ground if possible",
-    "Small pinch fine sea salt or Morton Coarse Kosher Salt for the ricotta, plus a very small pinch for the hot honey",
-    "2 tablespoons honey for the hot honey",
-    "1 teaspoon Calabrian chile paste for the hot honey",
-    "1 teaspoon unsalted butter",
-    "1/2 teaspoon apple cider vinegar or red wine vinegar",
-    "1 small garlic clove, smashed for the hot honey",
+    "Small pinch fine sea salt or Morton Coarse Kosher Salt for the ricotta",
+    "2 to 3 tablespoons hot honey",
     "1 teaspoon extra-virgin olive oil for brushing the finished rim",
     "10 to 12 fresh basil leaves, torn after baking",
     "Small pinch flaky sea salt for finishing, optional"
@@ -234,8 +219,7 @@
     "If the 1/2 cup ricotta looks loose or wet, drain it in a fine-mesh strainer or on a double layer of paper towels for 15 minutes.",
     "Make the seasoned ricotta by stirring together the drained 1/2 cup ricotta, 1/2 ounce finely grated Pecorino Romano, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon finely grated lemon zest, 1/8 teaspoon black pepper, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
     "Keep the seasoned ricotta cold until the pizza has started baking so it stays creamy when added near the end.",
-    "Make the hot honey by warming 2 tablespoons honey, 1 teaspoon Calabrian chile paste, 1 teaspoon unsalted butter, 1/2 teaspoon apple cider vinegar or red wine vinegar, 1 smashed small garlic clove, and a very small pinch of fine sea salt or Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until loose and fragrant.",
-    "Let the hot honey sit off the heat for at least 10 minutes, then remove and discard the smashed garlic clove.",
+    "Pour 2 to 3 tablespoons hot honey into a small microwave-safe bowl and warm it briefly, just until loose enough to drizzle.",
     "Five minutes before launching the pizza, switch the oven from 550 degrees F bake to high broil just until the broiler element glows red, then switch the oven back to 550 degrees F bake before launching.",
     "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
     "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
@@ -294,7 +278,7 @@
     "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes and bake 1 rack position lower before using the broiler.",
     "If the center is soft, use the 15-inch topping amounts next time, drain the tomatoes longer, and stretch the center thinner before topping.",
     "For a milder pizza, reduce the Calabrian chile paste in the sauce to 1/8 teaspoon and drizzle only 1 tablespoon hot honey after baking.",
-    "Leftover hot honey keeps covered at room temperature for 1 week. Warm it for a few seconds before drizzling."
+    "Choose a hot honey with a heat level you like. Warm it for a few seconds before drizzling if it is thick."
   ],
   "nutrition": null,
   "personalNotes": [],
