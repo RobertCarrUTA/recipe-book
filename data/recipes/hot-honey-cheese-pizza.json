@@ -27,23 +27,13 @@
   ],
   "groceryIngredients": [
     {
-      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour",
       "item": "bread flour",
       "quantity": 275,
       "unit": "g"
     },
     {
-      "display": "white whole wheat flour, whole wheat flour, or high-extraction flour, optional same-day flavor boost",
-      "item": "whole wheat flour",
-      "note": "Use 15 grams with 260 grams bread flour, or skip it and use 275 grams bread flour total.",
-      "optional": true,
-      "quantity": 15,
-      "unit": "g"
-    },
-    {
-      "display": "prepared pizza dough ball or pizza dough mix, optional shortcut",
+      "display": "prepared pizza dough",
       "item": "pizza dough",
-      "note": "Use enough for one 450- to 475-gram room-temperature dough ball if skipping the scratch dough.",
       "optional": true,
       "quantity": 475,
       "unit": "g"
@@ -55,7 +45,7 @@
       "unit": "tsp"
     },
     {
-      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "display": "fine sea salt or kosher salt",
       "item": "salt",
       "quantity": 2,
       "unit": "tsp"
@@ -76,9 +66,8 @@
       "unit": "tbsp"
     },
     {
-      "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+      "display": "Bianco DiNapoli or San Marzano-style whole peeled tomatoes",
       "item": "canned tomatoes",
-      "note": "Buy one 14-ounce can; the recipe uses 1/2 cup plus 1 tablespoon thick crushed drained tomatoes.",
       "quantity": 1,
       "unit": "can"
     },
@@ -109,7 +98,7 @@
       "unit": "jar"
     },
     {
-      "display": "low-moisture whole-milk mozzarella block",
+      "display": "low-moisture whole-milk mozzarella",
       "item": "mozzarella cheese",
       "quantity": 8,
       "unit": "oz"
@@ -127,7 +116,7 @@
       "unit": "oz"
     },
     {
-      "display": "Pecorino Romano cheese or Parmesan cheese",
+      "display": "Pecorino Romano or Parmesan",
       "item": "Pecorino Romano or Parmesan cheese",
       "quantity": 2,
       "unit": "oz"
@@ -142,32 +131,9 @@
       "unit": "tsp"
     },
     {
-      "display": "Mike's Hot Honey Original or another balanced bottled hot honey",
+      "display": "Mike's Hot Honey Original",
       "item": "hot honey",
-      "note": "A 12-ounce bottle is the best buy if available; the recipe uses 1 1/2 to 2 tablespoons.",
       "quantity": 1
-    },
-    {
-      "item": "honey",
-      "note": "Only needed if making the homemade hot honey fallback instead of buying bottled hot honey.",
-      "optional": true,
-      "quantity": 3,
-      "unit": "tbsp"
-    },
-    {
-      "item": "unsalted butter",
-      "note": "Only needed if making the homemade hot honey fallback instead of buying bottled hot honey.",
-      "optional": true,
-      "quantity": 1,
-      "unit": "tsp"
-    },
-    {
-      "display": "apple cider vinegar or red wine vinegar",
-      "item": "apple cider vinegar or red wine vinegar",
-      "note": "Only needed if making the homemade hot honey fallback instead of buying bottled hot honey.",
-      "optional": true,
-      "quantity": 0.5,
-      "unit": "tsp"
     },
     {
       "item": "fresh basil",
