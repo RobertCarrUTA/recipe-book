@@ -1,0 +1,338 @@
+{
+  "additionalTime": "60 to 90 minutes dough proof while the steel preheats",
+  "author": "Robert Carr",
+  "collections": [
+    "main-dishes",
+    "pizza",
+    "baking"
+  ],
+  "cookTime": "6 to 7 minutes",
+  "description": "A large 15-inch hot honey pizza with same-day dough, browned hot Italian sausage, concentrated garlic-Calabrian tomato sauce, whole-milk mozzarella, provolone, lemony ricotta, Pecorino Romano, basil, and warm chile honey.",
+  "equipment": [
+    "Baking Steel Pro or 16 x 16-inch baking steel",
+    "16-inch pizza peel",
+    "Kitchen scale",
+    "Large mixing bowl",
+    "Covered dough container or large zip-top bag",
+    "Dough scraper or spatula",
+    "Fine-mesh strainer",
+    "Box grater",
+    "Cast-iron skillet or stainless steel skillet",
+    "Small bowls",
+    "Small saucepan or microwave-safe bowl",
+    "16-inch aluminum pizza screen, optional, for slowing bottom browning and venting the finished crust",
+    "Wire cooling rack, optional, for venting the finished crust if you do not have a pizza screen",
+    "Room-temperature rimless baking sheet, for emergency finishing if the bottom crust is already too dark",
+    "Cutting board",
+    "Pizza wheel or sharp knife"
+  ],
+  "groceryIngredients": [
+    {
+      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour",
+      "item": "bread flour",
+      "quantity": 275,
+      "unit": "g"
+    },
+    {
+      "display": "white whole wheat flour, whole wheat flour, or high-extraction flour, optional same-day flavor boost",
+      "item": "whole wheat flour",
+      "note": "Use 15 grams with 260 grams bread flour, or skip it and use 275 grams bread flour total.",
+      "optional": true,
+      "quantity": 15,
+      "unit": "g"
+    },
+    {
+      "display": "prepared pizza dough ball or pizza dough mix, optional shortcut",
+      "item": "pizza dough",
+      "note": "Use enough for one 450- to 475-gram room-temperature dough ball if skipping the scratch dough.",
+      "optional": true,
+      "quantity": 475,
+      "unit": "g"
+    },
+    {
+      "display": "instant yeast or active dry yeast",
+      "item": "active dry or instant yeast",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "item": "salt",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "granulated sugar",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "semolina flour or fine cornmeal",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+      "item": "canned tomatoes",
+      "note": "Buy one 14-ounce can; the recipe uses 1/2 cup plus 1 tablespoon thick crushed drained tomatoes.",
+      "quantity": 1,
+      "unit": "can"
+    },
+    {
+      "item": "tomato paste",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "display": "garlic cloves",
+      "item": "garlic clove",
+      "quantity": 3,
+      "unit": "clove"
+    },
+    {
+      "item": "dried oregano",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "onion powder",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "fennel seeds",
+      "quantity": 0.125,
+      "unit": "tsp"
+    },
+    {
+      "item": "Calabrian chile paste",
+      "quantity": 1,
+      "unit": "jar"
+    },
+    {
+      "display": "hot Italian sausage link or bulk hot Italian sausage",
+      "item": "pork sausage",
+      "quantity": 6,
+      "unit": "oz"
+    },
+    {
+      "display": "low-moisture whole-milk mozzarella block",
+      "item": "mozzarella cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "display": "provolone piccante or sharp deli provolone",
+      "item": "provolone cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "display": "whole-milk ricotta",
+      "item": "ricotta cheese",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "display": "Pecorino Romano cheese or Parmesan cheese",
+      "item": "Pecorino Romano or Parmesan cheese",
+      "quantity": 2,
+      "unit": "oz"
+    },
+    {
+      "item": "lemon",
+      "quantity": 1
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "honey",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
+      "item": "unsalted butter",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "display": "apple cider vinegar or red wine vinegar",
+      "item": "apple cider vinegar or red wine vinegar",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "fresh basil",
+      "quantity": 0.25,
+      "unit": "cup"
+    },
+    {
+      "item": "flaky sea salt",
+      "optional": true,
+      "quantity": 0.0625,
+      "unit": "tsp"
+    }
+  ],
+  "id": "hot-honey-sausage-ricotta-pizza",
+  "ingredients": [
+    "260 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour, plus 15 grams white whole wheat, whole wheat, or high-extraction flour; or use 275 grams bread flour total",
+    "178 grams water, warmed to 95 to 100 degrees F for the fast same-day dough",
+    "5 grams granulated sugar, about 1 1/4 teaspoons",
+    "2.25 grams instant yeast, about 3/4 teaspoon; active dry yeast works too if bloomed in the warm sugared water for 5 minutes",
+    "6 grams fine sea salt or Morton Coarse Kosher Salt for the dough, about 1 level teaspoon fine sea salt, 1 1/4 level teaspoons Morton Coarse Kosher Salt, or 2 level teaspoons Diamond Crystal kosher salt",
+    "10 grams extra-virgin olive oil for the dough, about 2 1/4 teaspoons, plus 1/2 teaspoon for the dough container",
+    "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
+    "Optional dough shortcut: 450 to 475 grams prepared pizza dough or already-risen dough from a dough mix, at room temperature",
+    "1 (14-ounce) can San Marzano-style or Bianco DiNapoli whole peeled tomatoes, drained and crushed to measure 1/2 cup plus 1 tablespoon thick crushed tomatoes, about 140 grams",
+    "1 teaspoon tomato paste",
+    "1 small garlic clove, finely grated for the sauce",
+    "1 teaspoon extra-virgin olive oil for the sauce",
+    "1/4 teaspoon dried oregano for the sauce",
+    "1/8 teaspoon onion powder",
+    "1/8 teaspoon fennel seeds, lightly crushed",
+    "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
+    "1/4 teaspoon Calabrian chile paste for the sauce",
+    "Small pinch granulated sugar for the sauce, only if the tomatoes taste sharp",
+    "6 ounces hot Italian sausage, casing removed if using links",
+    "1 teaspoon extra-virgin olive oil for browning the sausage, only if the skillet looks dry",
+    "6 ounces low-moisture whole-milk mozzarella from a block, half freshly shredded and half cut into 1/4-inch dice",
+    "1 1/2 ounces provolone piccante or sharp deli provolone, finely shredded or diced",
+    "1/3 cup whole-milk ricotta, drained for 15 minutes if loose or wet",
+    "1 1/2 ounces Pecorino Romano or Parmesan, finely grated, divided",
+    "1 teaspoon extra-virgin olive oil for the ricotta",
+    "1/4 teaspoon finely grated lemon zest",
+    "1/8 teaspoon black pepper, freshly ground if possible",
+    "Small pinch fine sea salt or Morton Coarse Kosher Salt for the ricotta, plus a very small pinch for the hot honey",
+    "2 tablespoons honey for the hot honey",
+    "1 teaspoon Calabrian chile paste for the hot honey",
+    "1 teaspoon unsalted butter",
+    "1/2 teaspoon apple cider vinegar or red wine vinegar",
+    "1 small garlic clove, smashed for the hot honey",
+    "2 teaspoons extra-virgin olive oil for brushing the finished rim",
+    "1 small garlic clove, finely grated for the rim oil",
+    "1/8 teaspoon dried oregano for the rim oil",
+    "8 to 10 fresh basil leaves, torn after baking",
+    "Small pinch flaky sea salt for finishing, optional"
+  ],
+  "instructions": [
+    "Using 450 to 475 grams room-temperature prepared dough or already-risen dough from a dough mix? Skip to step 16. Making scratch same-day dough? Start at step 2; the fastest good scratch path needs 60 to 90 minutes to proof while the steel preheats, because dough baked immediately after mixing will be tight and dense.",
+    "Place the steel on an upper-middle rack, ideally about 6 to 7 inches below the broiler element. If your rack choices put the steel closer than 5 inches from the broiler, use the next lower rack so the rim does not burn before the bottom crisps.",
+    "Set the oven to 550 degrees F so the steel can preheat for 60 to 75 minutes while you make and proof the dough.",
+    "Add 178 grams 95 to 100 degrees F water, 5 grams granulated sugar, and 2.25 grams instant yeast to a large mixing bowl.",
+    "If using active dry yeast instead of instant yeast, stir the active dry yeast into the warm sugared water and wait 5 minutes, until the surface looks slightly foamy.",
+    "Add 260 grams high-protein bread flour and 15 grams white whole wheat, whole wheat, or high-extraction flour to the bowl with the water, sugar, and yeast. If skipping the whole wheat flour, add 275 grams bread flour total.",
+    "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
+    "Cover the bowl and rest the shaggy dough for 15 minutes so the flour hydrates before kneading.",
+    "Sprinkle 6 grams fine sea salt or Morton Coarse Kosher Salt over the dough, then drizzle 10 grams extra-virgin olive oil over the dough.",
+    "Knead the dough in the bowl or on an unfloured counter for 4 to 5 minutes, until the salt and oil are fully absorbed and the dough turns smoother, stretchy, and slightly tacky.",
+    "Cover the dough and rest it for 10 minutes.",
+    "With lightly wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
+    "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1/2 teaspoon extra-virgin olive oil, and place the dough smooth-side up inside.",
+    "Cover the dough and let it proof at room temperature for 60 to 90 minutes while the steel preheats, until the dough is puffy, relaxed, and about 50 percent larger. If your kitchen is cooler than 70 degrees F, give the dough up to 2 hours.",
+    "If the dough is ready before the toppings are ready, keep it covered at room temperature for up to 30 minutes more; if it more than doubles, refrigerate it until 30 minutes before stretching.",
+    "If using prepared dough, keep the 450 to 475 grams dough covered at room temperature until it is soft, relaxed, and no longer refrigerator-cold in the center before stretching.",
+    "While the oven continues preheating, spoon the tomatoes from the can into a fine-mesh strainer and drain them for 5 minutes.",
+    "Crush the drained tomatoes by hand until they are saucy but still lightly textured, then measure 1/2 cup plus 1 tablespoon thick crushed tomatoes, about 140 grams.",
+    "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon dried oregano, 1/8 teaspoon onion powder, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
+    "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, onion powder, fennel, salt, and chile season the tomatoes.",
+    "Taste the rested sauce; it should taste bright, savory, faintly spicy, and slightly salty because it has to season a large crust, cheese, sausage, and ricotta. If it tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
+    "Heat a cast-iron or stainless steel skillet over medium heat for 2 minutes.",
+    "Add all 6 ounces hot Italian sausage to the skillet, using 1 teaspoon extra-virgin olive oil only if the skillet looks dry or the sausage is very lean.",
+    "Cook the sausage for 5 to 7 minutes, breaking it into 1/2-inch crumbles, until browned, no longer pink, and cooked through to 160 degrees F.",
+    "Transfer the browned sausage crumbles to a paper towel-lined plate and let them cool for at least 10 minutes so they do not melt the cheese on the peel.",
+    "Freshly shred 3 ounces of the low-moisture whole-milk mozzarella from a block, then cut the remaining 3 ounces mozzarella into 1/4-inch dice.",
+    "Finely shred or dice 1 1/2 ounces provolone, then toss the provolone with all 6 ounces prepared mozzarella so the cheeses distribute evenly.",
+    "Finely grate 1 1/2 ounces Pecorino Romano or Parmesan, then divide it into one 1/2-ounce portion for the ricotta, one 1/2-ounce portion for topping before baking, and one 1/2-ounce portion for finishing.",
+    "Measure 1/3 cup whole-milk ricotta. If the ricotta looks loose or wet, drain that 1/3 cup ricotta in a fine-mesh strainer or on a double layer of paper towels for 15 minutes.",
+    "Make the seasoned ricotta by stirring together the drained 1/3 cup ricotta, 1/2 ounce finely grated Pecorino Romano or Parmesan, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon finely grated lemon zest, 1/8 teaspoon black pepper, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
+    "Keep the seasoned ricotta cold until the pizza has started baking so it stays creamy instead of spreading into the cheese.",
+    "Make the hot honey by warming 2 tablespoons honey, 1 teaspoon Calabrian chile paste, 1 teaspoon unsalted butter, 1/2 teaspoon apple cider vinegar or red wine vinegar, 1 smashed small garlic clove, and a very small pinch of fine sea salt or Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until loose and fragrant.",
+    "Let the hot honey sit off the heat for at least 10 minutes, then remove and discard the smashed garlic clove.",
+    "Make the rim oil by warming 2 teaspoons extra-virgin olive oil and 1 finely grated small garlic clove in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until fragrant, then stir in 1/8 teaspoon dried oregano.",
+    "Keep the mozzarella-provolone blend, seasoned ricotta, and grated Pecorino cold until assembly so the cheeses melt cleanly instead of oiling out before the crust finishes.",
+    "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
+    "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched for the rim.",
+    "Stretch the dough into a 15-inch round, keeping the center thin and even and the outer rim slightly thicker.",
+    "If the dough springs back while stretching, cover it and rest it for 5 minutes, then continue stretching.",
+    "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides freely.",
+    "If any part of the dough sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
+    "Spread all 1/2 cup plus 1 tablespoon sauce over the dough in a thin, even layer, leaving the outer 3/4 inch uncovered.",
+    "Sprinkle 1/2 ounce finely grated Pecorino Romano or Parmesan evenly over the sauce.",
+    "Scatter about three-fourths of the 7 1/2-ounce mozzarella-provolone blend evenly over the pizza, keeping the very center a little lighter than the outer half.",
+    "Scatter about 5 ounces browned sausage crumbles over the cheese, leaving a little space between crumbles so the cheese can bubble through and the center does not get heavy.",
+    "Tuck the remaining mozzarella-provolone blend into open sauced areas without burying all of the sausage.",
+    "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
+    "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
+    "Launch the pizza onto the fully preheated steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the sauce does not glue the dough to the peel.",
+    "Bake the pizza at 550 degrees F for 3 minutes with the broiler off.",
+    "At 3 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
+    "Bake for 1 1/2 to 2 minutes more, then lift one edge with the peel and check the bottom; it should be golden brown with medium-brown freckles, not pale, black, or bitter-smelling.",
+    "If the bottom is still pale or flexible after 5 minutes total, keep the pizza directly on the steel for 30 to 60 seconds more before adding the ricotta.",
+    "If the bottom is golden and crisp but the cheese still needs color, slide the pizza onto a room-temperature pizza screen and set the screen back on the steel so the top can finish while the bottom browns more slowly.",
+    "If you see black patches on the bottom larger than a dime or smell bitter scorching, slide the pizza onto the room-temperature rimless baking sheet immediately; the solid sheet is a stronger heat shield than a screen.",
+    "Add the seasoned ricotta in teaspoon-size dollops across the pizza after the bottom has set and browned, using all of the 1/3 cup ricotta mixture.",
+    "Turn the broiler to high only after the bottom has set and browned, then broil for 30 to 60 seconds, watching constantly, until the rim blisters lightly, the cheese bubbles, and the sausage edges sizzle without blackening.",
+    "If the rim, cheese, or sausage starts to darken too fast under the broiler, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
+    "Transfer the baked pizza to a pizza screen or wire rack for 1 minute so steam can escape from the bottom crust. If you do not have either, use a cutting board and rest the pizza for only 1 minute.",
+    "Move the pizza to a cutting board, then brush only the exposed outer rim with about 2 teaspoons garlic-oregano oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+    "Drizzle 1 1/2 to 2 tablespoons warm hot honey over the sausage, ricotta, and cheese, using the lighter amount if you want the crust to stay crisper.",
+    "Sprinkle the remaining 1/2 ounce finely grated Pecorino Romano or Parmesan over the pizza.",
+    "Tear 8 to 10 fresh basil leaves over the pizza and add a small pinch of flaky sea salt only if the cheese and sausage taste like they need a final pop.",
+    "Slice the pizza and serve immediately while the bottom crust is crisp, the rim is tender, the sausage is savory, the ricotta is creamy, and the hot honey is glossy."
+  ],
+  "link": null,
+  "notes": [
+    "Prepared dough is the true immediate-cook path: once the dough is room-temperature, relaxed, and already risen, skip the scratch dough steps and use this recipe for shaping, topping, and baking.",
+    "Do not bake scratch dough immediately after mixing. Even a fast same-day dough needs enough time to relax and trap gas, or the crust will be dense, tight, and hard to stretch.",
+    "The 60- to 90-minute proof is the shortest practical scratch path for a great no-days crust. The dough improves if it gets the full 90 minutes, especially in a cool kitchen.",
+    "A dough mix marketed for long fermentation will taste best when it has had its intended rest. If you are starting from a dry mix on the same day, use this scratch dough instead unless the mix directions specifically give a same-day rise.",
+    "The small amount of whole wheat, white whole wheat, or high-extraction flour adds wheat aroma and a little more color to a same-day dough. Skip it and use all bread flour if you want the cleanest classic pizzeria flavor.",
+    "Use 15 inches as the target size on a 16 x 16-inch steel. A true 16-inch pizza leaves very little launch margin and is easier to wrinkle or hang over an edge.",
+    "A 450- to 475-gram dough ball gives enough rim for a tender, chewy edge while keeping the center thin enough to crisp under sauce, sausage, cheese, ricotta, and honey.",
+    "Do not use parchment paper at 550 degrees F or under the broiler. A semolina-dusted peel gives a clean launch and avoids scorched paper edges.",
+    "Preheating the steel for 60 to 75 minutes matters. A short preheat can leave the top cooked before the bottom crisps.",
+    "The broiler is only for finishing. Keep it off until the bottom crust is already set and browned, then watch constantly because the rim, cheese, sausage, and honey-rich toppings can darken quickly.",
+    "A pizza screen is better than a baking sheet when the bottom is already crisp and you only need to slow browning while the top finishes. A room-temperature rimless baking sheet is better when the bottom is already too dark because it blocks more direct heat.",
+    "Do not launch on a pizza screen by default. Direct contact with the steel gives the best bottom crust; use the screen only as a control tool unless your oven consistently burns bottoms.",
+    "If your oven consistently burns the bottom before the top is done, launch the next pizza on a room-temperature pizza screen set on the steel for the first 2 minutes, then slide the screen out and finish directly on the steel.",
+    "Resting the finished pizza briefly on a pizza screen or wire rack keeps the bottom crisper than resting it directly on a cutting board.",
+    "If the bottom is too dark before the top is browned, use the rimless baking sheet earlier during that bake; next time, move the steel one rack lower or start checking the bottom at 2 1/2 minutes.",
+    "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes before launching.",
+    "Keep the sauce thick and measured. Watery sauce or too much sauce will steam the center of the crust before it can crisp.",
+    "Use low-moisture whole-milk mozzarella from a block because it melts well without flooding the pizza. Avoid part-skim mozzarella, pre-shredded mozzarella, and fresh mozzarella for this recipe unless the fresh mozzarella is sliced, drained very well, and used sparingly.",
+    "Shredding half the mozzarella and dicing half gives better texture than a fully shredded blanket: the shreds melt evenly, while the dice leave small pockets of sauce and cheese.",
+    "The provolone adds savory depth without making the center greasy. Provolone piccante gives the strongest edge, but sharp deli provolone works.",
+    "Brown the sausage before topping the pizza. Raw sausage can leak fat and may not cook evenly during a fast steel bake.",
+    "Use about 5 ounces cooked sausage on the pizza and save any extra browned sausage for another slice, eggs, or pasta. More sausage can make the center heavy.",
+    "Add the ricotta near the end of baking instead of at the beginning. This warms it through while keeping it creamy and reducing the chance that it waters down the pizza.",
+    "The hot honey goes on after baking because honey can scorch at 550 degrees F and under the broiler.",
+    "Brush the rim with garlic-oregano oil after baking, not before baking. Post-bake oil seasons the crust and adds aroma without encouraging the rim to burn.",
+    "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
+    "If the center is soft, use no more than 5 ounces cooked sausage, drain the tomatoes longer next time, keep the sauce to the measured amount, and stretch the center thinner before topping.",
+    "For a milder pizza, use sweet Italian sausage instead of hot Italian sausage, reduce the Calabrian chile paste in the sauce to 1/8 teaspoon, and drizzle only 1 tablespoon hot honey after baking.",
+    "Leftover hot honey keeps covered at room temperature for 1 week. Warm it for a few seconds before drizzling."
+  ],
+  "nutrition": null,
+  "personalNotes": [],
+  "prepTime": "55 minutes active",
+  "rating": null,
+  "servings": "1 large 15-inch pizza, 2 to 3 servings",
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "pizza-steel"
+    ],
+    "status": "not-tried"
+  },
+  "title": "Hot Honey Sausage Ricotta Pizza",
+  "totalTime": "1 hour 45 minutes to 2 hours 15 minutes, depending on dough proof"
+}
