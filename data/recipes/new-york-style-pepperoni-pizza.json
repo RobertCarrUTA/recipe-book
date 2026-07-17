@@ -155,7 +155,7 @@
       "unit": "tsp"
     }
   ],
-  "id": "same-day-pepperoni-pizza",
+  "id": "new-york-style-pepperoni-pizza",
   "ingredients": [
     "260 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour, plus 15 grams white whole wheat, whole wheat, or high-extraction flour; or use 275 grams bread flour total",
     "178 grams water: use 95 to 100 degrees F water for the fast dough or cool room-temperature water for the 4- to 6-hour same-day ferment",
@@ -285,6 +285,6 @@
     ],
     "status": "not-tried"
   },
-  "title": "Same-Day Pepperoni Pizza",
+  "title": "New York-Style Pepperoni Pizza",
   "totalTime": "3 to 8 hours, depending on dough path"
 }
