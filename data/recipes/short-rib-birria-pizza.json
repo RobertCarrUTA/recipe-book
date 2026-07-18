@@ -48,7 +48,7 @@
     {
       "display": "fine sea salt",
       "item": "salt",
-      "quantity": 3.25,
+      "quantity": 3.625,
       "unit": "tsp"
     },
     {
@@ -161,7 +161,7 @@
       "unit": "tsp"
     },
     {
-      "display": "Oaxaca cheese",
+      "display": "Oaxaca cheese or quesadilla cheese",
       "item": "Oaxaca cheese",
       "quantity": 5,
       "unit": "oz"
@@ -179,7 +179,7 @@
       "unit": "oz"
     },
     {
-      "display": "full-fat sour cream",
+      "display": "Mexican crema or full-fat sour cream",
       "item": "sour cream",
       "quantity": 0.25,
       "unit": "cup"
