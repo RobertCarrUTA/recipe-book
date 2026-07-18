@@ -1777,8 +1777,38 @@ li {
   width: 100%;
 }
 
-.grocery-toolbar #addAllRecipesToGroceryList {
-  grid-column: 1 / -1;
+.grocery-search-suffix-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  width: 100%;
+}
+
+.grocery-search-suffix-control input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-sm);
+  background: var(--field);
+  color: var(--fg);
+  font-size: 1rem;
+  font-weight: 800;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.grocery-search-suffix-control input::placeholder {
+  color: #748078;
+}
+
+.grocery-search-suffix-control input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(122, 199, 163, 0.16);
+  outline: none;
 }
 
 .state-tools {
@@ -2903,7 +2933,6 @@ li {
   }
 
   .grocery-toolbar #addAllRecipesToGroceryList {
-    grid-column: 1 / -1;
     min-height: 44px;
   }
 
@@ -2923,6 +2952,7 @@ li {
   }
 
   .grocery-add-form input,
+  .grocery-search-suffix-control input,
   .grocery-add-form button {
     min-height: 48px;
   }
@@ -3356,6 +3386,12 @@ li {
     min-height: 36px;
     padding-right: 8px;
     padding-left: 7px;
+    font-size: 0.78rem;
+  }
+
+  .grocery-search-suffix-control input {
+    min-height: 36px;
+    padding: 0 9px;
     font-size: 0.78rem;
   }
 

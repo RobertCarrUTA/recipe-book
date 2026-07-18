@@ -7,6 +7,7 @@ import {
   formatGrocerySourceSummary,
   getGrocerySourceDetail,
   getDisplayNotes,
+  getGrocerySearchQuery,
 } from "../js/grocery_view_model.js";
 import { formatRatingText, formatServingsText, getRecipeHeaderMeta } from "../js/recipe_formatting.js";
 import { formatTotalsForKey } from "../js/units.js";
@@ -77,12 +78,17 @@ test("grocery view helpers hide noisy notes and summarize sources", () => {
 });
 
 test("grocery search URLs use a fixed destination with encoded item text", () => {
-  const searchUrl = createGrocerySearchUrl("  whole milk  <script>alert(1)</script>  ");
+  const searchUrl = createGrocerySearchUrl(
+    "  whole milk  <script>alert(1)</script>  ",
+    "  Central   Market  "
+  );
   const parsed = new URL(searchUrl);
 
   assert.equal(parsed.origin, "https://www.google.com");
   assert.equal(parsed.pathname, "/search");
-  assert.equal(parsed.searchParams.get("q"), "whole milk <script>alert(1)</script>");
+  assert.equal(parsed.searchParams.get("q"), "whole milk <script>alert(1)</script> Central Market");
+  assert.equal(getGrocerySearchQuery("whole milk", "Walmart"), "whole milk Walmart");
+  assert.equal(getGrocerySearchQuery("   ", "Walmart"), "");
   assert.equal(createGrocerySearchUrl("   "), "");
 });
 

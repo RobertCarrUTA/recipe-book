@@ -17,6 +17,7 @@ export const storageKeys = Object.freeze({
   showSelectedRecipesOnly: "offline_recipebook_show_selected_recipes_only_v1",
   hideCheckedGroceryItems: "offline_recipebook_hide_checked_grocery_items_v1",
   groceryControlsCollapsed: "offline_recipebook_grocery_controls_collapsed_v1",
+  grocerySearchSuffix: "offline_recipebook_grocery_search_suffix_v1",
   recipeControlsCollapsed: "offline_recipebook_recipe_controls_collapsed_v1",
   groupToggle: "offline_recipebook_group_toggle_v1",
   keepScreenAwake: "offline_recipebook_keep_screen_awake_v1",
@@ -181,6 +182,7 @@ export function normalizeUiState(uiState) {
     collapsedGroceryGroups: truthyRecord(ui.collapsedGroceryGroups),
     filters: normalizeFilterData(ui.filters),
     groceryControlsCollapsed: Boolean(ui.groceryControlsCollapsed),
+    grocerySearchSuffix: String(ui.grocerySearchSuffix || "").trim(),
     groupItems: Boolean(ui.groupItems),
     hideCheckedGroceryItems: Boolean(ui.hideCheckedGroceryItems),
     keepScreenAwake: Boolean(ui.keepScreenAwake),
@@ -260,6 +262,7 @@ export function createDefaultUiState() {
     collapsedGroceryGroups: {},
     filters: {},
     groceryControlsCollapsed: false,
+    grocerySearchSuffix: "",
     groupItems: false,
     hideCheckedGroceryItems: false,
     keepScreenAwake: false,
@@ -278,6 +281,7 @@ function readPersistedUiState(storage) {
 
   ui.filters = normalizeFilterData(readObject(storage, storageKeys.filters));
   ui.collapsedGroceryGroups = truthyRecord(readObject(storage, storageKeys.collapsedGroceryGroups));
+  ui.grocerySearchSuffix = read(storage, storageKeys.grocerySearchSuffix) || "";
   ui.mobileView = normalizeMobileView(read(storage, storageKeys.mobileView));
   ui.recipeSearch = read(storage, storageKeys.recipeSearch) || "";
   ui.recipeSort = normalizeRecipeSort(read(storage, storageKeys.recipeSort));
@@ -383,6 +387,7 @@ export function savePersistentState(state, storage = getDefaultStorage()) {
     writeJson(storage, storageKeys.mealPlan, normalizeMealPlan(state.mealPlan)),
     writeJson(storage, storageKeys.collapsedGroceryGroups, ui.collapsedGroceryGroups || {}),
     writeJson(storage, storageKeys.filters, ui.filters || {}),
+    write(storage, storageKeys.grocerySearchSuffix, ui.grocerySearchSuffix || ""),
     write(storage, storageKeys.mobileView, normalizeMobileView(ui.mobileView)),
     write(storage, storageKeys.recipeSearch, ui.recipeSearch || ""),
     write(storage, storageKeys.recipeSort, normalizeRecipeSort(ui.recipeSort)),

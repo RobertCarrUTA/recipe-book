@@ -11,8 +11,20 @@ export function formatCount(count, singular, plural) {
   return `${count} ${count === 1 ? singular : plural}`;
 }
 
-export function createGrocerySearchUrl(searchText) {
-  const query = String(searchText || "").trim().replace(/\s+/g, " ");
+function normalizeGrocerySearchPart(value) {
+  return String(value || "").trim().replace(/\s+/g, " ");
+}
+
+export function getGrocerySearchQuery(searchText, searchSuffix = "") {
+  const item = normalizeGrocerySearchPart(searchText);
+  if (!item) return "";
+
+  const suffix = normalizeGrocerySearchPart(searchSuffix);
+  return [item, suffix].filter(Boolean).join(" ");
+}
+
+export function createGrocerySearchUrl(searchText, searchSuffix = "") {
+  const query = getGrocerySearchQuery(searchText, searchSuffix);
   if (!query) return "";
 
   const url = new URL(GROCERY_SEARCH_URL);

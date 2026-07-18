@@ -5,6 +5,7 @@ import {
   formatGrocerySourceSummary,
   getGrocerySourceDetail,
   getDisplayNotes,
+  getGrocerySearchQuery,
   getSortedGrocerySources,
   formatCount,
 } from "./grocery_view_model.js";
@@ -168,12 +169,14 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
   }
 
   function createGrocerySearchLink(displayName) {
-    const href = createGrocerySearchUrl(displayName);
+    const searchSuffix = getUiState().grocerySearchSuffix || "";
+    const searchQuery = getGrocerySearchQuery(displayName, searchSuffix);
+    const href = createGrocerySearchUrl(displayName, searchSuffix);
     if (!href) return null;
 
     return createElement(document, "a", {
       attributes: {
-        "aria-label": `Search for ${displayName} in a new tab`,
+        "aria-label": `Search for ${searchQuery} in a new tab`,
         referrerpolicy: "no-referrer",
       },
       className: "grocery-item-search-link",
@@ -182,7 +185,7 @@ export function createGroceryRenderer({ document, getRuntimeState, getUiState, a
       rel: "noopener noreferrer",
       target: "_blank",
       textContent: "Search",
-      title: `Search for ${displayName}`,
+      title: `Search for ${searchQuery}`,
     });
   }
 

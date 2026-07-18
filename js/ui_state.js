@@ -60,11 +60,15 @@ export function getSelectedRecipeFilters(document) {
 }
 
 export function readUiStateFromControls(document, currentUiState = {}) {
+  const grocerySearchSuffix = byId(document, "grocerySearchSuffix");
   const recipeSearch = byId(document, "recipeSearch");
   const recipeSort = byId(document, "recipeSort");
   const nextState = {
     ...currentUiState,
     filters: readFilterDataFromDom(document),
+    grocerySearchSuffix: grocerySearchSuffix
+      ? grocerySearchSuffix.value || ""
+      : currentUiState.grocerySearchSuffix || "",
     recipeSearch: recipeSearch ? recipeSearch.value || "" : currentUiState.recipeSearch || "",
     recipeSort: normalizeRecipeSort(recipeSort ? recipeSort.value : currentUiState.recipeSort),
   };
@@ -77,12 +81,14 @@ export function readUiStateFromControls(document, currentUiState = {}) {
 }
 
 export function applyUiStateToControls(document, uiState) {
+  const grocerySearchSuffix = byId(document, "grocerySearchSuffix");
   const recipeSearch = byId(document, "recipeSearch");
   const recipeSort = byId(document, "recipeSort");
 
   checkedControlBindings.forEach(([key, id]) => {
     writeCheckedControl(document, id, uiState[key]);
   });
+  if (grocerySearchSuffix) grocerySearchSuffix.value = uiState.grocerySearchSuffix || "";
   if (recipeSearch) recipeSearch.value = uiState.recipeSearch || "";
   if (recipeSort) recipeSort.value = normalizeRecipeSort(uiState.recipeSort);
   applyFilterDataToDom(document, uiState.filters);
