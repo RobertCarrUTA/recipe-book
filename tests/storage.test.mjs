@@ -41,6 +41,7 @@ test("restorePersistentState returns safe defaults when storage is unavailable",
   assert.deepEqual(restored.ui.collapsedGroceryGroups, {});
   assert.equal(restored.ui.hideCheckedGroceryItems, false);
   assert.equal(restored.ui.groceryControlsCollapsed, false);
+  assert.equal(restored.ui.grocerySearchSuffix, "");
   assert.equal(restored.ui.mobileView, "recipes");
   assert.equal(restored.ui.recipeControlsCollapsed, false);
   assert.equal(restored.ui.recipeSort, "default");
@@ -102,6 +103,7 @@ test("restorePersistentState reads persisted UI preferences", () => {
   const storage = createMemoryStorage({
     [storageKeys.collapsedGroceryGroups]: JSON.stringify({ Produce: true, Dairy: false }),
     [storageKeys.groceryControlsCollapsed]: "1",
+    [storageKeys.grocerySearchSuffix]: " Central Market ",
     [storageKeys.groupToggle]: "1",
     [storageKeys.hideCheckedGroceryItems]: "1",
     [storageKeys.keepScreenAwake]: "1",
@@ -118,6 +120,7 @@ test("restorePersistentState reads persisted UI preferences", () => {
 
   assert.deepEqual(restored.ui.collapsedGroceryGroups, { Produce: true });
   assert.equal(restored.ui.groceryControlsCollapsed, true);
+  assert.equal(restored.ui.grocerySearchSuffix, " Central Market ");
   assert.equal(restored.ui.groupItems, true);
   assert.equal(restored.ui.hideCheckedGroceryItems, true);
   assert.equal(restored.ui.keepScreenAwake, true);
@@ -135,6 +138,7 @@ test("normalizeUiState returns safe defaults for partial restored UI state", () 
     collapsedGroceryGroups: { Produce: true, Dairy: false },
     filters: { difficulty: ["easy", "", "easy"], rating: "great" },
     mobileView: "bad",
+    grocerySearchSuffix: " Walmart ",
     recipeSearch: " pasta ",
     recipeSort: "old-sort",
     showSelectedRecipesOnly: 1,
@@ -143,6 +147,7 @@ test("normalizeUiState returns safe defaults for partial restored UI state", () 
   assert.deepEqual(ui.collapsedGroceryGroups, { Produce: true });
   assert.deepEqual(ui.filters, { difficulty: ["easy"] });
   assert.equal(ui.mobileView, "recipes");
+  assert.equal(ui.grocerySearchSuffix, "Walmart");
   assert.equal(ui.recipeSearch, "pasta");
   assert.equal(ui.recipeSort, "default");
   assert.equal(ui.showSelectedRecipesOnly, true);
@@ -228,6 +233,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
         collapsedGroceryGroups: { Produce: true },
         filters: { status: ["tried"] },
         groceryControlsCollapsed: true,
+        grocerySearchSuffix: "Central Market",
         groupItems: true,
         hideCheckedGroceryItems: true,
         keepScreenAwake: false,
@@ -253,6 +259,7 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.recipeMultipliers)), { chili: 2 });
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.collapsedGroceryGroups)), { Produce: true });
   assert.equal(storage.getItem(storageKeys.groceryControlsCollapsed), "1");
+  assert.equal(storage.getItem(storageKeys.grocerySearchSuffix), "Central Market");
   assert.equal(storage.getItem(storageKeys.hideCheckedGroceryItems), "1");
   assert.equal(storage.getItem(storageKeys.mobileView), "grocery");
   assert.equal(storage.getItem(storageKeys.recipeControlsCollapsed), "1");
@@ -303,6 +310,7 @@ test("createPersistentStateBackup exports portable runtime and ui state", () => 
       ui: {
         collapsedGroceryGroups: { Produce: true, Dairy: false },
         filters: { status: ["tried", "tried", ""], empty: [] },
+        grocerySearchSuffix: " Walmart ",
         groupItems: true,
         mobileView: "grocery",
         recipeSort: "highest-rated",
@@ -326,6 +334,7 @@ test("createPersistentStateBackup exports portable runtime and ui state", () => 
   assert.deepEqual(backup.data.recipeMultipliersById, { chili: 2 });
   assert.deepEqual(backup.data.ui.collapsedGroceryGroups, { Produce: true });
   assert.deepEqual(backup.data.ui.filters, { status: ["tried"] });
+  assert.equal(backup.data.ui.grocerySearchSuffix, "Walmart");
   assert.equal(backup.data.ui.mobileView, "grocery");
   assert.equal(backup.data.ui.recipeSort, "highest-rated");
 });
@@ -355,6 +364,7 @@ test("normalizePersistentStateBackup returns safe restored state", () => {
       ui: {
         filters: { difficulty: ["easy", ""] },
         hideCheckedGroceryItems: true,
+        grocerySearchSuffix: "Central Market",
         mobileView: "bad",
         recipeSort: "selected-first",
         recipeSearch: "beans",
@@ -373,6 +383,7 @@ test("normalizePersistentStateBackup returns safe restored state", () => {
   assert.deepEqual(restored.recipeMultipliersById, { chili: 3 });
   assert.deepEqual(restored.selectedRecipeIds, { chili: true });
   assert.deepEqual(restored.ui.filters, { difficulty: ["easy"] });
+  assert.equal(restored.ui.grocerySearchSuffix, "Central Market");
   assert.equal(restored.ui.hideCheckedGroceryItems, true);
   assert.equal(restored.ui.mobileView, "recipes");
   assert.equal(restored.ui.recipeSort, "selected-first");

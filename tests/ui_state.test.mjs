@@ -33,6 +33,7 @@ function createFakeDocument({ controls = {}, filters = [] } = {}) {
 
 test("readUiStateFromControls normalizes stale recipe sort values", () => {
   const controls = {
+    grocerySearchSuffix: createElement({ value: "Central Market" }),
     groupToggle: createElement({ checked: true }),
     hideCheckedGroceryItems: createElement({ checked: true }),
     keepScreenAwake: createElement({ checked: true }),
@@ -51,6 +52,7 @@ test("readUiStateFromControls normalizes stale recipe sort values", () => {
 
   assert.equal(uiState.recipeSort, recipeSortModes.default);
   assert.equal(uiState.recipeSearch, "chili");
+  assert.equal(uiState.grocerySearchSuffix, "Central Market");
   assert.equal(uiState.groupItems, true);
   assert.equal(uiState.hideCheckedGroceryItems, true);
   assert.equal(uiState.keepScreenAwake, true);
@@ -65,6 +67,7 @@ test("readUiStateFromControls normalizes stale recipe sort values", () => {
 test("readUiStateFromControls preserves current booleans when controls are missing", () => {
   const uiState = readUiStateFromControls(createFakeDocument(), {
     groupItems: true,
+    grocerySearchSuffix: "Walmart",
     hideCheckedGroceryItems: true,
     keepScreenAwake: true,
     recipeSearch: "soup",
@@ -74,6 +77,7 @@ test("readUiStateFromControls preserves current booleans when controls are missi
   });
 
   assert.equal(uiState.groupItems, true);
+  assert.equal(uiState.grocerySearchSuffix, "Walmart");
   assert.equal(uiState.hideCheckedGroceryItems, true);
   assert.equal(uiState.keepScreenAwake, true);
   assert.equal(uiState.recipeSearch, "soup");
@@ -84,6 +88,7 @@ test("readUiStateFromControls preserves current booleans when controls are missi
 
 test("applyUiStateToControls restores controls and falls back to default sort", () => {
   const controls = {
+    grocerySearchSuffix: createElement(),
     groupToggle: createElement(),
     hideCheckedGroceryItems: createElement(),
     keepScreenAwake: createElement(),
@@ -105,6 +110,7 @@ test("applyUiStateToControls restores controls and falls back to default sort", 
       rating: ["great"],
       status: ["tried"],
     },
+    grocerySearchSuffix: "Central Market",
     groupItems: true,
     hideCheckedGroceryItems: true,
     keepScreenAwake: true,
@@ -116,6 +122,7 @@ test("applyUiStateToControls restores controls and falls back to default sort", 
 
   assert.equal(controls.recipeSort.value, recipeSortModes.default);
   assert.equal(controls.recipeCollection.value, "desserts");
+  assert.equal(controls.grocerySearchSuffix.value, "Central Market");
   assert.equal(controls.recipeSearch.value, "beans");
   assert.equal(controls.groupToggle.checked, true);
   assert.equal(controls.hideCheckedGroceryItems.checked, true);

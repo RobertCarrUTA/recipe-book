@@ -523,6 +523,17 @@ function createRecipeBookApp() {
     });
   }
 
+  function attachGrocerySearchSuffixControl() {
+    const input = byId("grocerySearchSuffix");
+    if (!input) return;
+
+    listen(input, "input", () => {
+      appState.ui.grocerySearchSuffix = input.value || "";
+      renderer.renderGroceryList();
+      saveAppState();
+    });
+  }
+
   function attachClearGroceryDialog() {
     const dialog = byId("confirmClearGroceryDialog");
     const confirmButton = byId("confirmClearGroceryList");
@@ -562,6 +573,7 @@ function createRecipeBookApp() {
     onId("copyGroceryList", "click", handleCopyGroceryList);
     attachCollapsedPanelToggle("toggleRecipeControls", "recipeControlsCollapsed", syncRecipeControlsPanel);
     attachCollapsedPanelToggle("toggleGroceryControls", "groceryControlsCollapsed", syncGroceryControlsPanel);
+    attachGrocerySearchSuffixControl();
   }
 
   function createRendererActions() {
