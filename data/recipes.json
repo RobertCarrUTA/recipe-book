@@ -14442,8 +14442,8 @@
       {
         "display": "whole-milk ricotta",
         "item": "ricotta cheese",
-        "quantity": 0.5,
-        "unit": "cup"
+        "quantity": 4,
+        "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
@@ -15692,8 +15692,8 @@
       {
         "display": "whole-milk ricotta",
         "item": "ricotta cheese",
-        "quantity": "0.3333-0.5",
-        "unit": "cup"
+        "quantity": "3-4",
+        "unit": "oz"
       },
       {
         "item": "lemon",
@@ -16247,14 +16247,14 @@
       {
         "display": "whole-milk ricotta",
         "item": "ricotta cheese",
-        "quantity": 0.3333,
-        "unit": "cup"
+        "quantity": 3,
+        "unit": "oz"
       },
       {
         "display": "mascarpone",
         "item": "mascarpone cheese",
-        "quantity": 2,
-        "unit": "tbsp"
+        "quantity": 1,
+        "unit": "oz"
       },
       {
         "display": "low-moisture whole-milk mozzarella",
@@ -19032,8 +19032,8 @@
       {
         "display": "whole-milk ricotta",
         "item": "ricotta cheese",
-        "quantity": 0.3333,
-        "unit": "cup"
+        "quantity": 3,
+        "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
