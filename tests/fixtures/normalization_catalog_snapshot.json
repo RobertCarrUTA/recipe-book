@@ -2524,6 +2524,13 @@
       }
     },
     {
+      "item": "whole wheat flour",
+      "canonical": {
+        "base": "whole wheat flour",
+        "display": "whole wheat flour"
+      }
+    },
+    {
       "item": "worcestershire sauce",
       "canonical": {
         "base": "worcestershire sauce",

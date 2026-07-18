@@ -18469,7 +18469,14 @@
       {
         "display": "high-protein bread flour",
         "item": "bread flour",
-        "quantity": 275,
+        "quantity": 260,
+        "unit": "g"
+      },
+      {
+        "display": "white whole wheat, whole wheat, or high-extraction flour",
+        "item": "whole wheat flour",
+        "note": "Or skip and use 275 g bread flour total.",
+        "quantity": 15,
         "unit": "g"
       },
       {
