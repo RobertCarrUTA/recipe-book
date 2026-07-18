@@ -43,13 +43,13 @@
     {
       "display": "fine sea salt",
       "item": "salt",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 1.5625,
+      "unit": "tsp"
     },
     {
       "item": "honey",
-      "quantity": 3,
-      "unit": "tbsp"
+      "quantity": 7,
+      "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
@@ -57,8 +57,9 @@
       "unit": "tsp"
     },
     {
+      "display": "semolina flour or fine cornmeal",
       "item": "semolina flour",
-      "quantity": 2,
+      "quantity": "1-2",
       "unit": "tbsp"
     },
     {
@@ -73,19 +74,19 @@
     },
     {
       "item": "low-sodium soy sauce",
-      "quantity": 0.25,
-      "unit": "cup"
-    },
-    {
-      "display": "mirin",
-      "item": "mirin or rice wine",
       "quantity": 2,
       "unit": "tbsp"
     },
     {
+      "display": "mirin",
+      "item": "mirin or rice wine",
+      "quantity": 4,
+      "unit": "tsp"
+    },
+    {
       "item": "rice vinegar",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": 4.5,
+      "unit": "tsp"
     },
     {
       "item": "gochujang",
@@ -106,8 +107,8 @@
     },
     {
       "item": "toasted sesame oil",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 2,
+      "unit": "tsp"
     },
     {
       "display": "toasted sesame seeds",
@@ -122,25 +123,25 @@
     },
     {
       "item": "fresh ginger",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 1.5,
+      "unit": "tsp"
     },
     {
       "display": "napa cabbage kimchi",
       "item": "kimchi",
-      "quantity": 8,
-      "unit": "oz"
+      "quantity": 1,
+      "unit": "cup"
     },
     {
+      "display": "avocado oil",
       "item": "neutral high-heat oil",
-      "quantity": 2,
-      "unit": "tbsp",
-      "display": "avocado oil"
+      "quantity": 5,
+      "unit": "tsp"
     },
     {
       "display": "low-moisture whole-milk mozzarella",
       "item": "low-moisture mozzarella cheese",
-      "quantity": 6,
+      "quantity": 5.5,
       "unit": "oz"
     },
     {
@@ -152,27 +153,27 @@
     {
       "display": "Monterey Jack cheese",
       "item": "Monterey Jack cheese",
-      "quantity": 2,
+      "quantity": 1,
       "unit": "oz"
     },
     {
       "item": "green onion",
-      "quantity": 6
+      "quantity": 4
     },
     {
       "item": "Persian cucumber",
       "quantity": 1
     },
     {
-      "display": "fresh cilantro",
+      "display": "fresh cilantro leaves",
       "item": "cilantro",
       "optional": true,
-      "quantity": 1,
-      "unit": "bunch"
+      "quantity": 0.25,
+      "unit": "cup"
     },
     {
       "item": "black pepper",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {

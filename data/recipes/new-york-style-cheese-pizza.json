@@ -40,22 +40,23 @@
     {
       "display": "fine sea salt",
       "item": "salt",
-      "quantity": 2,
+      "quantity": 1.25,
       "unit": "tsp"
     },
     {
       "item": "granulated sugar",
-      "quantity": 2,
+      "quantity": "1.25-1.3125",
       "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 4.75,
+      "unit": "tsp"
     },
     {
+      "display": "semolina flour or fine cornmeal",
       "item": "semolina flour",
-      "quantity": 2,
+      "quantity": "1-2",
       "unit": "tbsp"
     },
     {
@@ -71,17 +72,17 @@
     },
     {
       "item": "dried oregano",
-      "quantity": 0.5,
+      "quantity": 0.25,
       "unit": "tsp"
     },
     {
       "item": "onion powder",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
       "item": "garlic powder",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
@@ -93,26 +94,27 @@
     {
       "display": "low-moisture whole-milk mozzarella",
       "item": "low-moisture mozzarella cheese",
-      "quantity": 8,
+      "quantity": 6.5,
       "unit": "oz"
     },
     {
       "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
       "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 2,
+      "quantity": 1,
       "unit": "oz"
     },
     {
+      "display": "fresh basil leaves",
       "item": "fresh basil",
       "optional": true,
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": "6-8",
+      "unit": "leaf"
     },
     {
       "item": "flaky sea salt",

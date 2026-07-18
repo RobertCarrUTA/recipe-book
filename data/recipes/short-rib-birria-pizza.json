@@ -48,22 +48,23 @@
     {
       "display": "fine sea salt",
       "item": "salt",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 3.25,
+      "unit": "tsp"
     },
     {
       "item": "honey",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 1.5,
+      "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": "3-4",
+      "unit": "tsp"
     },
     {
+      "display": "semolina flour or fine cornmeal",
       "item": "semolina flour",
-      "quantity": 2,
+      "quantity": "1-2",
       "unit": "tbsp"
     },
     {
@@ -105,17 +106,17 @@
     {
       "display": "low-sodium beef stock",
       "item": "low-sodium beef broth",
-      "quantity": 32,
-      "unit": "oz"
-    },
-    {
-      "item": "apple cider vinegar",
-      "quantity": 0.25,
+      "quantity": 2,
       "unit": "cup"
     },
     {
+      "item": "apple cider vinegar",
+      "quantity": 3,
+      "unit": "tbsp"
+    },
+    {
       "display": "chipotle peppers in adobo",
-      "item": "chipotle pepper in adobo",
+      "item": "chipotle peppers in adobo sauce",
       "quantity": 1,
       "unit": "can"
     },
@@ -156,32 +157,32 @@
     {
       "display": "avocado oil",
       "item": "neutral high-heat oil",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 4,
+      "unit": "tsp"
     },
     {
       "display": "Oaxaca cheese",
       "item": "Oaxaca cheese",
-      "quantity": 8,
+      "quantity": 5,
       "unit": "oz"
     },
     {
       "display": "low-moisture whole-milk mozzarella",
       "item": "low-moisture mozzarella cheese",
-      "quantity": 4,
+      "quantity": 3,
       "unit": "oz"
     },
     {
       "display": "Cotija cheese",
       "item": "Cotija cheese",
-      "quantity": 2,
+      "quantity": 1,
       "unit": "oz"
     },
     {
       "display": "full-fat sour cream",
       "item": "sour cream",
-      "quantity": 4,
-      "unit": "oz"
+      "quantity": 0.25,
+      "unit": "cup"
     },
     {
       "item": "lime",
@@ -190,18 +191,19 @@
     {
       "display": "medium red onion",
       "item": "red onion",
-      "quantity": 1
+      "quantity": 0.5
     },
     {
+      "display": "fresh cilantro",
       "item": "cilantro",
-      "quantity": 1,
-      "unit": "bunch"
+      "quantity": 0.375,
+      "unit": "cup"
     },
     {
       "display": "serrano chile, optional for the cilantro-onion finish",
       "item": "serrano pepper",
       "optional": true,
-      "quantity": 1
+      "quantity": 0.5
     },
     {
       "item": "flaky sea salt",

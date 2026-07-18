@@ -40,22 +40,23 @@
     {
       "display": "fine sea salt",
       "item": "salt",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 1.75,
+      "unit": "tsp"
     },
     {
       "item": "honey",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 0.5,
+      "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": 7,
+      "unit": "tsp"
     },
     {
+      "display": "semolina flour or fine cornmeal",
       "item": "semolina flour",
-      "quantity": 2,
+      "quantity": "1-2",
       "unit": "tbsp"
     },
     {
@@ -100,13 +101,13 @@
     {
       "display": "low-moisture whole-milk mozzarella",
       "item": "low-moisture mozzarella cheese",
-      "quantity": 8,
+      "quantity": "6.5-7.5",
       "unit": "oz"
     },
     {
       "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 2,
+      "quantity": 1,
       "unit": "oz"
     },
     {
@@ -118,7 +119,7 @@
     {
       "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 2,
+      "quantity": 1.25,
       "unit": "oz"
     },
     {
@@ -130,7 +131,6 @@
     {
       "display": "'nduja",
       "item": "nduja",
-      "optional": true,
       "quantity": "1-1.5",
       "unit": "oz"
     },
@@ -140,10 +140,10 @@
       "unit": "tsp"
     },
     {
-      "display": "fresh basil",
+      "display": "fresh basil leaves",
       "item": "fresh basil",
-      "quantity": 1,
-      "unit": "small bunch"
+      "quantity": "10-12",
+      "unit": "leaf"
     },
     {
       "item": "flaky sea salt",

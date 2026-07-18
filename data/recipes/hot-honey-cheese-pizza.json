@@ -27,10 +27,10 @@
   ],
   "groceryIngredients": [
     {
+      "display": "high-protein bread flour",
       "item": "bread flour",
       "quantity": 275,
-      "unit": "g",
-      "display": "high-protein bread flour"
+      "unit": "g"
     },
     {
       "display": "instant yeast",
@@ -41,22 +41,23 @@
     {
       "display": "fine sea salt",
       "item": "salt",
-      "quantity": 2,
+      "quantity": 1.3125,
       "unit": "tsp"
     },
     {
       "item": "granulated sugar",
-      "quantity": 2,
+      "quantity": "1.25-1.3125",
       "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": 6.75,
+      "unit": "tsp"
     },
     {
+      "display": "semolina flour or fine cornmeal",
       "item": "semolina flour",
-      "quantity": 2,
+      "quantity": "1-2",
       "unit": "tbsp"
     },
     {
@@ -73,37 +74,36 @@
     {
       "display": "garlic cloves",
       "item": "garlic clove",
-      "quantity": 3,
-      "unit": "clove"
+      "quantity": 2
     },
     {
       "item": "dried oregano",
-      "quantity": 1,
+      "quantity": 0.375,
       "unit": "tsp"
     },
     {
       "item": "onion powder",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
-      "item": "Calabrian chile paste",
-      "quantity": 0.125,
-      "unit": "tsp",
       "display": "Calabrian chile paste",
+      "item": "Calabrian chile paste",
+      "note": "Sub red pepper flakes.",
       "optional": true,
-      "note": "Sub red pepper flakes."
+      "quantity": 0.125,
+      "unit": "tsp"
     },
     {
       "display": "low-moisture whole-milk mozzarella",
       "item": "low-moisture mozzarella cheese",
-      "quantity": 8,
+      "quantity": 6.5,
       "unit": "oz"
     },
     {
       "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
@@ -115,7 +115,7 @@
     {
       "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
@@ -124,7 +124,7 @@
     },
     {
       "item": "black pepper",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
@@ -134,9 +134,10 @@
       "unit": "tbsp"
     },
     {
+      "display": "fresh basil leaves",
       "item": "fresh basil",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": "8-10",
+      "unit": "leaf"
     },
     {
       "item": "flaky sea salt",

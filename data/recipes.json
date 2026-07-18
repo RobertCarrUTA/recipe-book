@@ -14369,12 +14369,13 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 2,
+        "quantity": 0.3125,
         "unit": "tsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -14395,8 +14396,8 @@
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 2,
-        "unit": "tbsp"
+        "quantity": 4,
+        "unit": "tsp"
       },
       {
         "item": "dried oregano",
@@ -14409,11 +14410,11 @@
         "unit": "tsp"
       },
       {
-        "item": "Calabrian chile paste",
-        "quantity": 0.25,
-        "unit": "tsp",
         "display": "Calabrian chile paste",
-        "note": "Sub red pepper flakes."
+        "item": "Calabrian chile paste",
+        "note": "Sub red pepper flakes.",
+        "quantity": 0.25,
+        "unit": "tsp"
       },
       {
         "item": "granulated sugar",
@@ -14430,7 +14431,7 @@
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
@@ -14448,7 +14449,7 @@
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
@@ -14457,7 +14458,7 @@
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
@@ -14466,9 +14467,10 @@
         "unit": "tbsp"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -15602,22 +15604,22 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 2,
+        "quantity": 1.5625,
         "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 3,
-        "unit": "tbsp"
+        "quantity": 6.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 2,
+        "unit": "tbsp"
       },
       {
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -15647,11 +15649,11 @@
         "unit": "tsp"
       },
       {
-        "item": "Calabrian chile paste",
-        "quantity": 1.25,
-        "unit": "tsp",
         "display": "Calabrian chile paste",
-        "note": "Sub red pepper flakes."
+        "item": "Calabrian chile paste",
+        "note": "Sub red pepper flakes.",
+        "quantity": 1.25,
+        "unit": "tsp"
       },
       {
         "item": "granulated sugar",
@@ -15662,25 +15664,25 @@
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": 6.5,
         "unit": "oz"
       },
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "natural-casing cup-and-char pepperoni",
         "item": "pepperoni",
-        "quantity": 4,
+        "quantity": "3-4",
         "unit": "oz"
       },
       {
@@ -15701,18 +15703,20 @@
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
+        "display": "red wine vinegar or apple cider vinegar",
         "item": "red wine vinegar",
         "quantity": 0.5,
         "unit": "tsp"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -15915,22 +15919,23 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.75,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 0.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 7,
+        "unit": "tsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -15971,13 +15976,13 @@
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": "6.5-7.5",
         "unit": "oz"
       },
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
@@ -15989,7 +15994,7 @@
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "oz"
       },
       {
@@ -15998,10 +16003,10 @@
         "unit": "tsp"
       },
       {
-        "display": "fresh basil",
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 1,
-        "unit": "small bunch"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -16187,13 +16192,13 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 2.0625,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 0.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
@@ -16201,8 +16206,9 @@
         "unit": "cup"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -16212,10 +16218,10 @@
         "unit": "oz"
       },
       {
-        "display": "dried porcini mushrooms",
+        "display": "porcini powder or finely ground dried porcini mushrooms",
         "item": "dried porcini mushrooms",
-        "quantity": 0.25,
-        "unit": "oz"
+        "quantity": 1,
+        "unit": "tsp"
       },
       {
         "display": "yellow onion",
@@ -16239,10 +16245,10 @@
         "unit": "bunch"
       },
       {
-        "display": "sherry vinegar",
+        "display": "sherry vinegar or red wine vinegar",
         "item": "sherry vinegar",
         "quantity": 1,
-        "unit": "tbsp"
+        "unit": "tsp"
       },
       {
         "display": "whole-milk ricotta",
@@ -16253,25 +16259,25 @@
       {
         "display": "mascarpone",
         "item": "mascarpone cheese",
-        "quantity": 1,
-        "unit": "oz"
+        "quantity": 2,
+        "unit": "tbsp"
       },
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": 5,
         "unit": "oz"
       },
       {
         "display": "fontina cheese",
         "item": "fontina cheese",
-        "quantity": 4,
+        "quantity": 3,
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
@@ -16288,13 +16294,13 @@
         "display": "fresh chives",
         "item": "chives",
         "quantity": 1,
-        "unit": "bunch"
+        "unit": "tbsp"
       },
       {
         "display": "fresh Italian parsley",
         "item": "fresh parsley",
         "quantity": 1,
-        "unit": "bunch"
+        "unit": "tbsp"
       },
       {
         "item": "black pepper",
@@ -16304,8 +16310,8 @@
       {
         "item": "red pepper flakes",
         "optional": true,
-        "quantity": 0.25,
-        "unit": "tsp"
+        "quantity": 1,
+        "unit": "pinch"
       },
       {
         "item": "flaky sea salt",
@@ -16510,26 +16516,27 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.875,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 2,
-        "unit": "tbsp"
+        "quantity": 3.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.5,
-        "unit": "cup"
-      },
-      {
-        "item": "semolina flour",
-        "quantity": 2,
+        "quantity": 6,
         "unit": "tbsp"
       },
       {
-        "display": "fresh basil",
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
+        "unit": "tbsp"
+      },
+      {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
         "quantity": 2,
         "unit": "bunch"
@@ -16537,17 +16544,17 @@
       {
         "display": "roasted unsalted shelled pistachios",
         "item": "pistachios",
-        "quantity": 3,
-        "unit": "oz"
+        "quantity": 6,
+        "unit": "tbsp"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
-        "display": "garlic cloves",
+        "display": "garlic clove",
         "item": "garlic clove",
         "quantity": 1
       },
@@ -16565,13 +16572,13 @@
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": 6,
         "unit": "oz"
       },
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
@@ -16588,16 +16595,16 @@
       },
       {
         "item": "baby arugula",
-        "quantity": 2,
+        "quantity": "1.5-2",
         "unit": "cup"
       },
       {
+        "display": "Calabrian chile paste",
         "item": "Calabrian chile paste",
+        "note": "Sub red pepper flakes.",
         "optional": true,
         "quantity": 0.25,
-        "unit": "tsp",
-        "display": "Calabrian chile paste",
-        "note": "Sub red pepper flakes."
+        "unit": "tsp"
       },
       {
         "item": "black pepper",
@@ -16802,13 +16809,13 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.5625,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 3,
-        "unit": "tbsp"
+        "quantity": 7,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
@@ -16816,8 +16823,9 @@
         "unit": "tsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -16832,19 +16840,19 @@
       },
       {
         "item": "low-sodium soy sauce",
-        "quantity": 0.25,
-        "unit": "cup"
-      },
-      {
-        "display": "mirin",
-        "item": "mirin or rice wine",
         "quantity": 2,
         "unit": "tbsp"
       },
       {
+        "display": "mirin",
+        "item": "mirin or rice wine",
+        "quantity": 4,
+        "unit": "tsp"
+      },
+      {
         "item": "rice vinegar",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 4.5,
+        "unit": "tsp"
       },
       {
         "item": "gochujang",
@@ -16865,8 +16873,8 @@
       },
       {
         "item": "toasted sesame oil",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 2,
+        "unit": "tsp"
       },
       {
         "display": "toasted sesame seeds",
@@ -16881,25 +16889,25 @@
       },
       {
         "item": "fresh ginger",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.5,
+        "unit": "tsp"
       },
       {
         "display": "napa cabbage kimchi",
         "item": "kimchi",
-        "quantity": 8,
-        "unit": "oz"
+        "quantity": 1,
+        "unit": "cup"
       },
       {
+        "display": "avocado oil",
         "item": "neutral high-heat oil",
-        "quantity": 2,
-        "unit": "tbsp",
-        "display": "avocado oil"
+        "quantity": 5,
+        "unit": "tsp"
       },
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 6,
+        "quantity": 5.5,
         "unit": "oz"
       },
       {
@@ -16911,27 +16919,27 @@
       {
         "display": "Monterey Jack cheese",
         "item": "Monterey Jack cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
         "item": "green onion",
-        "quantity": 6
+        "quantity": 4
       },
       {
         "item": "Persian cucumber",
         "quantity": 1
       },
       {
-        "display": "fresh cilantro",
+        "display": "fresh cilantro leaves",
         "item": "cilantro",
         "optional": true,
-        "quantity": 1,
-        "unit": "bunch"
+        "quantity": 0.25,
+        "unit": "cup"
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
@@ -17147,22 +17155,23 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 3.25,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "3-4",
+        "unit": "tsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -17204,17 +17213,17 @@
       {
         "display": "low-sodium beef stock",
         "item": "low-sodium beef broth",
-        "quantity": 32,
-        "unit": "oz"
-      },
-      {
-        "item": "apple cider vinegar",
-        "quantity": 0.25,
+        "quantity": 2,
         "unit": "cup"
       },
       {
+        "item": "apple cider vinegar",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
         "display": "chipotle peppers in adobo",
-        "item": "chipotle pepper in adobo",
+        "item": "chipotle peppers in adobo sauce",
         "quantity": 1,
         "unit": "can"
       },
@@ -17255,32 +17264,32 @@
       {
         "display": "avocado oil",
         "item": "neutral high-heat oil",
-        "quantity": 2,
-        "unit": "tbsp"
+        "quantity": 4,
+        "unit": "tsp"
       },
       {
         "display": "Oaxaca cheese",
         "item": "Oaxaca cheese",
-        "quantity": 8,
+        "quantity": 5,
         "unit": "oz"
       },
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 4,
+        "quantity": 3,
         "unit": "oz"
       },
       {
         "display": "Cotija cheese",
         "item": "Cotija cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
         "display": "full-fat sour cream",
         "item": "sour cream",
-        "quantity": 4,
-        "unit": "oz"
+        "quantity": 0.25,
+        "unit": "cup"
       },
       {
         "item": "lime",
@@ -17289,18 +17298,19 @@
       {
         "display": "medium red onion",
         "item": "red onion",
-        "quantity": 1
+        "quantity": 0.5
       },
       {
+        "display": "fresh cilantro",
         "item": "cilantro",
-        "quantity": 1,
-        "unit": "bunch"
+        "quantity": 0.375,
+        "unit": "cup"
       },
       {
         "display": "serrano chile, optional for the cilantro-onion finish",
         "item": "serrano pepper",
         "optional": true,
-        "quantity": 1
+        "quantity": 0.5
       },
       {
         "item": "flaky sea salt",
@@ -17522,22 +17532,23 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.75,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 0.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 7,
+        "unit": "tsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -17582,13 +17593,13 @@
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": "6.5-7.5",
         "unit": "oz"
       },
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
@@ -17600,7 +17611,7 @@
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "oz"
       },
       {
@@ -17612,7 +17623,6 @@
       {
         "display": "'nduja",
         "item": "nduja",
-        "optional": true,
         "quantity": "1-1.5",
         "unit": "oz"
       },
@@ -17622,10 +17632,10 @@
         "unit": "tsp"
       },
       {
-        "display": "fresh basil",
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 1,
-        "unit": "small bunch"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -17822,22 +17832,23 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.875,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 0.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 3,
+        "unit": "tbsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -17858,7 +17869,7 @@
       },
       {
         "item": "dried oregano",
-        "quantity": 1,
+        "quantity": 0.75,
         "unit": "tsp"
       },
       {
@@ -17872,13 +17883,13 @@
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": "6-7",
         "unit": "oz"
       },
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
@@ -17890,7 +17901,7 @@
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "oz"
       },
       {
@@ -17914,7 +17925,7 @@
       {
         "display": "Castelvetrano olives",
         "item": "olives",
-        "quantity": 2,
+        "quantity": "1.5-2",
         "unit": "oz"
       },
       {
@@ -17923,14 +17934,14 @@
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
-        "display": "fresh basil",
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 1,
-        "unit": "small bunch"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -18139,22 +18150,23 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.75,
+        "unit": "tsp"
       },
       {
         "item": "granulated sugar",
-        "quantity": 2,
+        "quantity": "1.5-1.5625",
         "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 3,
+        "unit": "tbsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -18190,12 +18202,12 @@
       },
       {
         "item": "heavy cream",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 2,
+        "unit": "tbsp"
       },
       {
         "item": "dried oregano",
-        "quantity": 1,
+        "quantity": 0.625,
         "unit": "tsp"
       },
       {
@@ -18209,43 +18221,42 @@
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": "6.5-7.5",
         "unit": "oz"
       },
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "natural-casing cup-and-char pepperoni",
         "item": "pepperoni",
-        "quantity": 4,
+        "quantity": "3.5-4",
         "unit": "oz"
       },
       {
-        "display": "pickled hot cherry peppers",
         "item": "pickled hot cherry peppers",
         "quantity": "2-3",
         "unit": "tbsp"
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
-        "display": "fresh basil",
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 1,
-        "unit": "small bunch"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -18446,22 +18457,23 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "tsp"
       },
       {
         "item": "granulated sugar",
-        "quantity": 2,
+        "quantity": "1.25-1.3125",
         "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 2,
-        "unit": "tbsp"
+        "quantity": 4.75,
+        "unit": "tsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -18477,17 +18489,17 @@
       },
       {
         "item": "dried oregano",
-        "quantity": 0.5,
+        "quantity": 0.25,
         "unit": "tsp"
       },
       {
         "item": "onion powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
         "item": "garlic powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
@@ -18499,26 +18511,27 @@
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": 6.5,
         "unit": "oz"
       },
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
         "optional": true,
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "6-8",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -18691,22 +18704,23 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "tsp"
       },
       {
         "item": "granulated sugar",
-        "quantity": 2,
+        "quantity": "1.25-1.3125",
         "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 3,
-        "unit": "tbsp"
+        "quantity": 6.75,
+        "unit": "tsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -18727,17 +18741,17 @@
       },
       {
         "item": "dried oregano",
-        "quantity": 0.5,
+        "quantity": 0.375,
         "unit": "tsp"
       },
       {
         "item": "onion powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
         "item": "garlic powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
@@ -18748,38 +18762,39 @@
       {
         "item": "red pepper flakes",
         "optional": true,
-        "quantity": 0.125,
-        "unit": "tsp"
+        "quantity": 1,
+        "unit": "pinch"
       },
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": 6.5,
         "unit": "oz"
       },
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
         "display": "natural-casing cup-and-char pepperoni",
         "item": "pepperoni",
-        "quantity": 4,
+        "quantity": "3-3.5",
         "unit": "oz"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
         "optional": true,
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "6-8",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -18950,10 +18965,10 @@
     ],
     "groceryIngredients": [
       {
+        "display": "high-protein bread flour",
         "item": "bread flour",
         "quantity": 275,
-        "unit": "g",
-        "display": "high-protein bread flour"
+        "unit": "g"
       },
       {
         "display": "instant yeast",
@@ -18964,22 +18979,23 @@
       {
         "display": "fine sea salt",
         "item": "salt",
-        "quantity": 2,
+        "quantity": 1.3125,
         "unit": "tsp"
       },
       {
         "item": "granulated sugar",
-        "quantity": 2,
+        "quantity": "1.25-1.3125",
         "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 6.75,
+        "unit": "tsp"
       },
       {
+        "display": "semolina flour or fine cornmeal",
         "item": "semolina flour",
-        "quantity": 2,
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -18996,37 +19012,36 @@
       {
         "display": "garlic cloves",
         "item": "garlic clove",
-        "quantity": 3,
-        "unit": "clove"
+        "quantity": 2
       },
       {
         "item": "dried oregano",
-        "quantity": 1,
+        "quantity": 0.375,
         "unit": "tsp"
       },
       {
         "item": "onion powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
-        "item": "Calabrian chile paste",
-        "quantity": 0.125,
-        "unit": "tsp",
         "display": "Calabrian chile paste",
+        "item": "Calabrian chile paste",
+        "note": "Sub red pepper flakes.",
         "optional": true,
-        "note": "Sub red pepper flakes."
+        "quantity": 0.125,
+        "unit": "tsp"
       },
       {
         "display": "low-moisture whole-milk mozzarella",
         "item": "low-moisture mozzarella cheese",
-        "quantity": 8,
+        "quantity": 6.5,
         "unit": "oz"
       },
       {
         "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
@@ -19038,7 +19053,7 @@
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
@@ -19047,7 +19062,7 @@
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
@@ -19057,9 +19072,10 @@
         "unit": "tbsp"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "8-10",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",

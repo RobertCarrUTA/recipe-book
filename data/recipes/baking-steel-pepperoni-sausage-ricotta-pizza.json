@@ -41,22 +41,22 @@
     {
       "display": "fine sea salt",
       "item": "salt",
-      "quantity": 2,
+      "quantity": 1.5625,
       "unit": "tsp"
     },
     {
       "item": "honey",
-      "quantity": 3,
-      "unit": "tbsp"
+      "quantity": 6.5,
+      "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": 2,
+      "unit": "tbsp"
     },
     {
       "item": "semolina flour",
-      "quantity": 2,
+      "quantity": "1-2",
       "unit": "tbsp"
     },
     {
@@ -86,11 +86,11 @@
       "unit": "tsp"
     },
     {
-      "item": "Calabrian chile paste",
-      "quantity": 1.25,
-      "unit": "tsp",
       "display": "Calabrian chile paste",
-      "note": "Sub red pepper flakes."
+      "item": "Calabrian chile paste",
+      "note": "Sub red pepper flakes.",
+      "quantity": 1.25,
+      "unit": "tsp"
     },
     {
       "item": "granulated sugar",
@@ -101,25 +101,25 @@
     {
       "display": "low-moisture whole-milk mozzarella",
       "item": "low-moisture mozzarella cheese",
-      "quantity": 8,
+      "quantity": 6.5,
       "unit": "oz"
     },
     {
       "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
       "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
       "display": "natural-casing cup-and-char pepperoni",
       "item": "pepperoni",
-      "quantity": 4,
+      "quantity": "3-4",
       "unit": "oz"
     },
     {
@@ -140,18 +140,20 @@
     },
     {
       "item": "black pepper",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
+      "display": "red wine vinegar or apple cider vinegar",
       "item": "red wine vinegar",
       "quantity": 0.5,
       "unit": "tsp"
     },
     {
+      "display": "fresh basil leaves",
       "item": "fresh basil",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": "10-12",
+      "unit": "leaf"
     },
     {
       "item": "flaky sea salt",

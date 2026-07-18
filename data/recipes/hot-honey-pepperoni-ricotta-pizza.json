@@ -33,12 +33,13 @@
     {
       "display": "fine sea salt",
       "item": "salt",
-      "quantity": 2,
+      "quantity": 0.3125,
       "unit": "tsp"
     },
     {
+      "display": "semolina flour or fine cornmeal",
       "item": "semolina flour",
-      "quantity": 2,
+      "quantity": "1-2",
       "unit": "tbsp"
     },
     {
@@ -59,8 +60,8 @@
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 4,
+      "unit": "tsp"
     },
     {
       "item": "dried oregano",
@@ -73,11 +74,11 @@
       "unit": "tsp"
     },
     {
-      "item": "Calabrian chile paste",
-      "quantity": 0.25,
-      "unit": "tsp",
       "display": "Calabrian chile paste",
-      "note": "Sub red pepper flakes."
+      "item": "Calabrian chile paste",
+      "note": "Sub red pepper flakes.",
+      "quantity": 0.25,
+      "unit": "tsp"
     },
     {
       "item": "granulated sugar",
@@ -94,7 +95,7 @@
     {
       "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
@@ -112,7 +113,7 @@
     {
       "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
@@ -121,7 +122,7 @@
     },
     {
       "item": "black pepper",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
@@ -130,9 +131,10 @@
       "unit": "tbsp"
     },
     {
+      "display": "fresh basil leaves",
       "item": "fresh basil",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": "10-12",
+      "unit": "leaf"
     },
     {
       "item": "flaky sea salt",

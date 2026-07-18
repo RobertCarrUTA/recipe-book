@@ -42,26 +42,27 @@
     {
       "display": "fine sea salt",
       "item": "salt",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 1.875,
+      "unit": "tsp"
     },
     {
       "item": "honey",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 3.5,
+      "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 0.5,
-      "unit": "cup"
-    },
-    {
-      "item": "semolina flour",
-      "quantity": 2,
+      "quantity": 6,
       "unit": "tbsp"
     },
     {
-      "display": "fresh basil",
+      "display": "semolina flour or fine cornmeal",
+      "item": "semolina flour",
+      "quantity": "1-2",
+      "unit": "tbsp"
+    },
+    {
+      "display": "fresh basil leaves",
       "item": "fresh basil",
       "quantity": 2,
       "unit": "bunch"
@@ -69,17 +70,17 @@
     {
       "display": "roasted unsalted shelled pistachios",
       "item": "pistachios",
-      "quantity": 3,
-      "unit": "oz"
+      "quantity": 6,
+      "unit": "tbsp"
     },
     {
       "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
-      "display": "garlic cloves",
+      "display": "garlic clove",
       "item": "garlic clove",
       "quantity": 1
     },
@@ -97,13 +98,13 @@
     {
       "display": "low-moisture whole-milk mozzarella",
       "item": "low-moisture mozzarella cheese",
-      "quantity": 8,
+      "quantity": 6,
       "unit": "oz"
     },
     {
       "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
@@ -120,16 +121,16 @@
     },
     {
       "item": "baby arugula",
-      "quantity": 2,
+      "quantity": "1.5-2",
       "unit": "cup"
     },
     {
+      "display": "Calabrian chile paste",
       "item": "Calabrian chile paste",
+      "note": "Sub red pepper flakes.",
       "optional": true,
       "quantity": 0.25,
-      "unit": "tsp",
-      "display": "Calabrian chile paste",
-      "note": "Sub red pepper flakes."
+      "unit": "tsp"
     },
     {
       "item": "black pepper",
