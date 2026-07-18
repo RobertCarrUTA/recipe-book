@@ -28,24 +28,10 @@
   ],
   "groceryIngredients": [
     {
-      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "display": "high-protein bread flour",
       "item": "bread flour",
-      "quantity": 285,
+      "quantity": 300,
       "unit": "g"
-    },
-    {
-      "display": "whole wheat flour, preferably stone-ground",
-      "item": "whole wheat flour",
-      "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
-      "quantity": 15,
-      "unit": "g"
-    },
-    {
-      "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
-      "item": "pizza dough",
-      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-      "optional": true,
-      "quantity": 1
     },
     {
       "display": "instant yeast",
@@ -54,48 +40,47 @@
       "unit": "tsp"
     },
     {
-      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "display": "fine sea salt",
       "item": "salt",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 1.875,
+      "unit": "tsp"
     },
     {
       "item": "honey",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 3.5,
+      "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 0.5,
-      "unit": "cup"
-    },
-    {
-      "item": "semolina flour or fine cornmeal",
-      "quantity": 2,
+      "quantity": 6,
       "unit": "tbsp"
     },
     {
-      "display": "fresh basil",
+      "display": "semolina flour or fine cornmeal",
+      "item": "semolina flour",
+      "quantity": "1-2",
+      "unit": "tbsp"
+    },
+    {
+      "display": "fresh basil leaves",
       "item": "fresh basil",
-      "note": "Buy 1 large bunch or 2 small bunches; the recipe uses 2 packed cups leaves for pesto plus 8 to 10 small leaves for finishing.",
-      "quantity": 1,
+      "quantity": 2,
       "unit": "bunch"
     },
     {
       "display": "roasted unsalted shelled pistachios",
       "item": "pistachios",
-      "note": "Buy at least 3 ounces so there is enough for the pesto and the chopped post-bake finish.",
-      "quantity": 3,
-      "unit": "oz"
+      "quantity": 6,
+      "unit": "tbsp"
     },
     {
       "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
-      "display": "garlic cloves",
+      "display": "garlic clove",
       "item": "garlic clove",
       "quantity": 1
     },
@@ -104,49 +89,48 @@
       "quantity": 1
     },
     {
-      "display": "anchovy paste, optional but recommended for the pesto",
+      "display": "anchovy paste",
       "item": "anchovy paste",
-      "note": "The recipe uses 1/4 teaspoon for savory depth; it should not make the pesto taste fishy.",
       "optional": true,
-      "quantity": 1,
-      "unit": "tube"
+      "quantity": 0.25,
+      "unit": "tsp"
     },
     {
-      "display": "low-moisture whole-milk mozzarella block",
-      "item": "low-moisture whole-milk mozzarella cheese",
-      "quantity": 8,
+      "display": "low-moisture whole-milk mozzarella",
+      "item": "low-moisture mozzarella cheese",
+      "quantity": 6,
       "unit": "oz"
     },
     {
-      "display": "provolone piccante or sharp deli provolone",
+      "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
-      "display": "burrata or stracciatella",
+      "display": "burrata",
       "item": "burrata cheese",
-      "note": "Buy one 4-ounce ball or the smallest container available; use 3 ounces for a 15-inch pizza or all 4 ounces for a true 16-inch pizza.",
-      "quantity": 4,
+      "quantity": "3-4",
       "unit": "oz"
     },
     {
-      "display": "very thinly sliced mortadella",
+      "display": "thin-sliced mortadella",
       "item": "mortadella",
-      "note": "Ask the deli to slice it very thin. Mortadella with pistachios works well here if available.",
-      "quantity": 4,
+      "quantity": "3-4",
       "unit": "oz"
     },
     {
       "item": "baby arugula",
-      "quantity": 2,
+      "quantity": "1.5-2",
       "unit": "cup"
     },
     {
+      "display": "Calabrian chile paste",
       "item": "Calabrian chile paste",
+      "note": "Sub red pepper flakes.",
       "optional": true,
-      "quantity": 1,
-      "unit": "jar"
+      "quantity": 0.25,
+      "unit": "tsp"
     },
     {
       "item": "black pepper",
@@ -186,7 +170,7 @@
     "3 ounces very thin mortadella for a 15-inch pizza, or 4 ounces for a true 16-inch pizza, torn into loose 2-inch ribbons",
     "1 1/2 cups baby arugula for a 15-inch pizza, or 2 cups for a true 16-inch pizza",
     "1 tablespoon honey for the lemon-chile honey",
-    "1/4 teaspoon Calabrian chile paste for the lemon-chile honey, optional",
+    "1/4 teaspoon Calabrian chile paste for the lemon-chile honey, optional, or 1/8 teaspoon red pepper flakes",
     "Small pinch flaky sea salt for finishing, optional"
   ],
   "instructions": [
@@ -222,7 +206,7 @@
     "Keep the cheese blend cold until assembly so the cheese melts cleanly instead of oiling out on the peel.",
     "Drain 3 ounces burrata or stracciatella for a 15-inch pizza, or 4 ounces for a true 16-inch pizza, on paper towels or in a fine-mesh strainer for 10 minutes so it tastes creamy instead of watery.",
     "Tear the very thin mortadella into loose 2-inch ribbons: use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
-    "Make the lemon-chile honey by warming 1 tablespoon honey, 1/4 teaspoon Calabrian chile paste if using, 1/2 teaspoon fresh lemon juice, and a tiny pinch of fine sea salt or Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until loose and glossy.",
+    "Make the lemon-chile honey by warming 1 tablespoon honey, 1/4 teaspoon Calabrian chile paste or 1/8 teaspoon red pepper flakes if using, 1/2 teaspoon fresh lemon juice, and a tiny pinch of fine sea salt or Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until loose and glossy.",
     "Make the arugula finish by tossing 1 1/2 cups baby arugula for a 15-inch pizza or 2 cups for a true 16-inch pizza with 1 teaspoon extra-virgin olive oil, 1 teaspoon fresh lemon juice, 1/8 teaspoon fine sea salt or Morton Coarse Kosher Salt, and 1/8 teaspoon black pepper.",
     "Stir the reserved 1 tablespoon pesto with 1 teaspoon extra-virgin olive oil to make a loose post-bake rim oil.",
     "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",

@@ -101,13 +101,6 @@
       }
     },
     {
-      "item": "apple cider vinegar or red wine vinegar",
-      "canonical": {
-        "base": "apple cider vinegar or red wine vinegar",
-        "display": "apple cider vinegar or red wine vinegar"
-      }
-    },
-    {
       "item": "artichoke hearts",
       "canonical": {
         "base": "artichoke hearts",
@@ -323,6 +316,13 @@
       "canonical": {
         "base": "boneless skinless turkey breast cutlet",
         "display": "boneless skinless turkey breast cutlet"
+      }
+    },
+    {
+      "item": "bosc pear",
+      "canonical": {
+        "base": "bosc pear",
+        "display": "bosc pear"
       }
     },
     {
@@ -871,14 +871,6 @@
       }
     },
     {
-      "item": "fine sea salt or kosher salt",
-      "canonical": {
-        "base": "sea salt",
-        "display": "sea salt",
-        "notes": []
-      }
-    },
-    {
       "item": "fire-roasted diced tomatoes",
       "canonical": {
         "base": "fire-roasted diced tomatoes",
@@ -1006,6 +998,13 @@
         "base": "lemon juice",
         "display": "lemon juice",
         "notes": []
+      }
+    },
+    {
+      "item": "fresh mozzarella cheese",
+      "canonical": {
+        "base": "fresh mozzarella cheese",
+        "display": "fresh mozzarella cheese"
       }
     },
     {
@@ -1475,6 +1474,13 @@
       }
     },
     {
+      "item": "low-moisture mozzarella cheese",
+      "canonical": {
+        "base": "low-moisture mozzarella cheese",
+        "display": "low-moisture mozzarella cheese"
+      }
+    },
+    {
       "item": "low-moisture whole-milk mozzarella cheese",
       "canonical": {
         "base": "milk",
@@ -1872,6 +1878,13 @@
       }
     },
     {
+      "item": "persian cucumber",
+      "canonical": {
+        "base": "persian cucumber",
+        "display": "persian cucumber"
+      }
+    },
+    {
       "item": "pickle brine",
       "canonical": {
         "base": "pickle brine",
@@ -2177,10 +2190,10 @@
       }
     },
     {
-      "item": "semolina flour or fine cornmeal",
+      "item": "semolina flour",
       "canonical": {
-        "base": "semolina flour or fine cornmeal",
-        "display": "semolina flour or fine cornmeal"
+        "base": "semolina flour",
+        "display": "semolina flour"
       }
     },
     {
@@ -2209,6 +2222,13 @@
       "canonical": {
         "base": "shallot",
         "display": "shallot"
+      }
+    },
+    {
+      "item": "sherry vinegar",
+      "canonical": {
+        "base": "sherry vinegar",
+        "display": "sherry vinegar"
       }
     },
     {
@@ -2579,10 +2599,6 @@
       "normalized": "head"
     },
     {
-      "unit": "jar",
-      "normalized": "jar"
-    },
-    {
       "unit": "lb",
       "normalized": "lb"
     },
@@ -2625,10 +2641,6 @@
     {
       "unit": "tsp",
       "normalized": "tsp"
-    },
-    {
-      "unit": "tube",
-      "normalized": "tube"
     },
     {
       "unit": "yolk",

@@ -25,45 +25,52 @@
   ],
   "groceryIngredients": [
     {
-      "display": "72-hour pizza dough mix pack or prepared lean pizza dough",
+      "display": "prepared pizza dough",
       "item": "pizza dough",
-      "note": "A lean 72-hour dough mix is the preferred shortcut. If using the mix you ordered, one pack makes more than this pizza needs; use 400 to 450 grams prepared dough for one large pizza.",
-      "quantity": 1
+      "quantity": "400-450",
+      "unit": "g"
     },
     {
-      "display": "high-protein bread flour, optional scratch dough fallback",
+      "display": "high-protein bread flour",
       "item": "bread flour",
-      "note": "Only needed if making the scratch dough instead of using prepared dough.",
+      "note": "For scratch dough fallback.",
       "optional": true,
       "quantity": 255,
       "unit": "g"
     },
     {
-      "display": "instant yeast, optional scratch dough fallback",
+      "display": "instant yeast",
       "item": "active dry or instant yeast",
-      "note": "Only needed if making the scratch dough instead of using prepared dough.",
+      "note": "For scratch dough fallback.",
       "optional": true,
       "quantity": 0.125,
       "unit": "tsp"
     },
     {
-      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
-      "item": "fine sea salt or kosher salt",
-      "note": "Needed for sauce, ricotta, and finishing; use 8 grams more if making the scratch dough.",
-      "quantity": 2,
+      "display": "fine sea salt",
+      "item": "salt",
+      "note": "For scratch dough fallback.",
+      "optional": true,
+      "quantity": 1.5,
       "unit": "tsp"
     },
     {
-      "item": "semolina flour or fine cornmeal",
-      "quantity": 2,
+      "display": "fine sea salt",
+      "item": "salt",
+      "quantity": 0.3125,
+      "unit": "tsp"
+    },
+    {
+      "display": "semolina flour or fine cornmeal",
+      "item": "semolina flour",
+      "quantity": "1-2",
       "unit": "tbsp"
     },
     {
-      "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+      "display": "Bianco DiNapoli whole peeled tomatoes",
       "item": "canned tomatoes",
-      "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed tomatoes depending on pizza size.",
-      "quantity": 1,
-      "unit": "can"
+      "quantity": "0.5-0.6667",
+      "unit": "cup"
     },
     {
       "item": "tomato paste",
@@ -77,8 +84,8 @@
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 2,
-      "unit": "tbsp"
+      "quantity": 4,
+      "unit": "tsp"
     },
     {
       "item": "dried oregano",
@@ -91,9 +98,11 @@
       "unit": "tsp"
     },
     {
+      "display": "Calabrian chile paste",
       "item": "Calabrian chile paste",
-      "quantity": 1,
-      "unit": "jar"
+      "note": "Sub red pepper flakes.",
+      "quantity": 0.25,
+      "unit": "tsp"
     },
     {
       "item": "granulated sugar",
@@ -102,34 +111,33 @@
       "unit": "tsp"
     },
     {
-      "display": "low-moisture whole-milk mozzarella block",
-      "item": "mozzarella cheese",
+      "display": "low-moisture whole-milk mozzarella",
+      "item": "low-moisture mozzarella cheese",
       "quantity": 7,
       "unit": "oz"
     },
     {
-      "display": "aged provolone or deli provolone",
+      "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
       "display": "natural-casing cup-and-char pepperoni",
       "item": "pepperoni",
-      "note": "Buy a 4-ounce package if that is how it is sold.",
       "quantity": 4,
       "unit": "oz"
     },
     {
       "display": "whole-milk ricotta",
       "item": "ricotta cheese",
-      "quantity": 8,
+      "quantity": 4,
       "unit": "oz"
     },
     {
       "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
@@ -138,18 +146,19 @@
     },
     {
       "item": "black pepper",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
       "item": "hot honey",
-      "quantity": 3,
+      "quantity": "2-3",
       "unit": "tbsp"
     },
     {
+      "display": "fresh basil leaves",
       "item": "fresh basil",
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": "10-12",
+      "unit": "leaf"
     },
     {
       "item": "flaky sea salt",
@@ -174,7 +183,7 @@
     "1/2 teaspoon dried oregano",
     "1/8 teaspoon fennel seeds, lightly crushed",
     "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
-    "1/4 teaspoon Calabrian chile paste for the sauce",
+    "1/4 teaspoon Calabrian chile paste for the sauce, or a small pinch red pepper flakes",
     "Small pinch granulated sugar, only if the tomatoes taste sharp",
     "7 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
     "1 1/2 ounces aged provolone or deli provolone, finely diced or shredded",
@@ -209,7 +218,7 @@
     "Preheat the oven to 550 degrees F for 60 to 75 minutes so the 3/8-inch steel is fully saturated with heat before the pizza goes in.",
     "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
     "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed tomatoes for a 15-inch pizza or 2/3 cup thick crushed tomatoes for a true 16-inch pizza.",
-    "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
+    "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste or a small pinch red pepper flakes, and a small pinch of sugar only if the tomatoes taste sharp.",
     "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, fennel, salt, and chile season the tomatoes.",
     "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust, cheese, pepperoni, and ricotta.",
     "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",

@@ -14361,45 +14361,52 @@
     ],
     "groceryIngredients": [
       {
-        "display": "72-hour pizza dough mix pack or prepared lean pizza dough",
+        "display": "prepared pizza dough",
         "item": "pizza dough",
-        "note": "A lean 72-hour dough mix is the preferred shortcut. If using the mix you ordered, one pack makes more than this pizza needs; use 400 to 450 grams prepared dough for one large pizza.",
-        "quantity": 1
+        "quantity": "400-450",
+        "unit": "g"
       },
       {
-        "display": "high-protein bread flour, optional scratch dough fallback",
+        "display": "high-protein bread flour",
         "item": "bread flour",
-        "note": "Only needed if making the scratch dough instead of using prepared dough.",
+        "note": "For scratch dough fallback.",
         "optional": true,
         "quantity": 255,
         "unit": "g"
       },
       {
-        "display": "instant yeast, optional scratch dough fallback",
+        "display": "instant yeast",
         "item": "active dry or instant yeast",
-        "note": "Only needed if making the scratch dough instead of using prepared dough.",
+        "note": "For scratch dough fallback.",
         "optional": true,
         "quantity": 0.125,
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
-        "item": "fine sea salt or kosher salt",
-        "note": "Needed for sauce, ricotta, and finishing; use 8 grams more if making the scratch dough.",
-        "quantity": 2,
+        "display": "fine sea salt",
+        "item": "salt",
+        "note": "For scratch dough fallback.",
+        "optional": true,
+        "quantity": 1.5,
         "unit": "tsp"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "display": "fine sea salt",
+        "item": "salt",
+        "quantity": 0.3125,
+        "unit": "tsp"
+      },
+      {
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
-        "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+        "display": "Bianco DiNapoli whole peeled tomatoes",
         "item": "canned tomatoes",
-        "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed tomatoes depending on pizza size.",
-        "quantity": 1,
-        "unit": "can"
+        "quantity": "0.5-0.6667",
+        "unit": "cup"
       },
       {
         "item": "tomato paste",
@@ -14413,8 +14420,8 @@
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 2,
-        "unit": "tbsp"
+        "quantity": 4,
+        "unit": "tsp"
       },
       {
         "item": "dried oregano",
@@ -14427,9 +14434,11 @@
         "unit": "tsp"
       },
       {
+        "display": "Calabrian chile paste",
         "item": "Calabrian chile paste",
-        "quantity": 1,
-        "unit": "jar"
+        "note": "Sub red pepper flakes.",
+        "quantity": 0.25,
+        "unit": "tsp"
       },
       {
         "item": "granulated sugar",
@@ -14438,34 +14447,33 @@
         "unit": "tsp"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "mozzarella cheese",
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
         "quantity": 7,
         "unit": "oz"
       },
       {
-        "display": "aged provolone or deli provolone",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "natural-casing cup-and-char pepperoni",
         "item": "pepperoni",
-        "note": "Buy a 4-ounce package if that is how it is sold.",
         "quantity": 4,
         "unit": "oz"
       },
       {
         "display": "whole-milk ricotta",
         "item": "ricotta cheese",
-        "quantity": 8,
+        "quantity": 4,
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
@@ -14474,18 +14482,19 @@
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
         "item": "hot honey",
-        "quantity": 3,
+        "quantity": "2-3",
         "unit": "tbsp"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -14510,7 +14519,7 @@
       "1/2 teaspoon dried oregano",
       "1/8 teaspoon fennel seeds, lightly crushed",
       "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
-      "1/4 teaspoon Calabrian chile paste for the sauce",
+      "1/4 teaspoon Calabrian chile paste for the sauce, or a small pinch red pepper flakes",
       "Small pinch granulated sugar, only if the tomatoes taste sharp",
       "7 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
       "1 1/2 ounces aged provolone or deli provolone, finely diced or shredded",
@@ -14545,7 +14554,7 @@
       "Preheat the oven to 550 degrees F for 60 to 75 minutes so the 3/8-inch steel is fully saturated with heat before the pizza goes in.",
       "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
       "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed tomatoes for a 15-inch pizza or 2/3 cup thick crushed tomatoes for a true 16-inch pizza.",
-      "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
+      "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste or a small pinch red pepper flakes, and a small pinch of sugar only if the tomatoes taste sharp.",
       "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, fennel, salt, and chile season the tomatoes.",
       "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust, cheese, pepperoni, and ricotta.",
       "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
@@ -15605,17 +15614,10 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
         "quantity": 280,
         "unit": "g"
-      },
-      {
-        "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
-        "item": "pizza dough",
-        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, then divide the prepared batch into 3 larger dough balls for 14- to 16-inch pizzas.",
-        "optional": true,
-        "quantity": 1
       },
       {
         "display": "instant yeast",
@@ -15624,32 +15626,31 @@
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 2,
+        "quantity": 1.5625,
         "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 3,
-        "unit": "tbsp"
+        "quantity": 6.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
-      },
-      {
-        "item": "semolina flour or fine cornmeal",
         "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+        "item": "semolina flour",
+        "quantity": "1-2",
+        "unit": "tbsp"
+      },
+      {
+        "display": "Bianco DiNapoli whole peeled tomatoes",
         "item": "canned tomatoes",
-        "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed tomatoes depending on pizza size.",
-        "quantity": 1,
-        "unit": "can"
+        "quantity": "0.5-0.6667",
+        "unit": "cup"
       },
       {
         "item": "tomato paste",
@@ -15672,9 +15673,11 @@
         "unit": "tsp"
       },
       {
+        "display": "Calabrian chile paste",
         "item": "Calabrian chile paste",
-        "quantity": 1,
-        "unit": "jar"
+        "note": "Sub red pepper flakes.",
+        "quantity": 1.25,
+        "unit": "tsp"
       },
       {
         "item": "granulated sugar",
@@ -15683,27 +15686,27 @@
         "unit": "tsp"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "mozzarella cheese",
-        "quantity": 8,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": 6.5,
         "unit": "oz"
       },
       {
-        "display": "provolone piccante or deli provolone",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "natural-casing cup-and-char pepperoni",
         "item": "pepperoni",
-        "quantity": 4,
+        "quantity": "3-4",
         "unit": "oz"
       },
       {
@@ -15715,7 +15718,7 @@
       {
         "display": "whole-milk ricotta",
         "item": "ricotta cheese",
-        "quantity": 8,
+        "quantity": "3-4",
         "unit": "oz"
       },
       {
@@ -15724,19 +15727,20 @@
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
         "display": "red wine vinegar or apple cider vinegar",
-        "item": "apple cider vinegar or red wine vinegar",
+        "item": "red wine vinegar",
         "quantity": 0.5,
         "unit": "tsp"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -15762,7 +15766,7 @@
       "1/2 teaspoon dried oregano",
       "1/8 teaspoon fennel seeds, lightly crushed",
       "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
-      "1/4 teaspoon Calabrian chile paste for the sauce",
+      "1/4 teaspoon Calabrian chile paste for the sauce, or a small pinch red pepper flakes",
       "Small pinch granulated sugar, only if the tomatoes taste sharp",
       "6 1/2 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
       "1 1/2 ounces provolone piccante or deli provolone, finely diced or shredded",
@@ -15775,7 +15779,7 @@
       "1/8 teaspoon black pepper, freshly ground if possible",
       "Small pinch fine sea salt or Morton Coarse Kosher Salt for the ricotta",
       "2 tablespoons honey for the chile honey",
-      "1 teaspoon Calabrian chile paste for the chile honey",
+      "1 teaspoon Calabrian chile paste for the chile honey, or 1/4 teaspoon red pepper flakes",
       "1/2 teaspoon red wine vinegar or apple cider vinegar",
       "1 small garlic clove, smashed for the chile honey",
       "1 teaspoon extra-virgin olive oil for brushing the finished rim",
@@ -15804,7 +15808,7 @@
       "Preheat the oven to 550 degrees F for 60 to 75 minutes so the Baking Steel Pro is fully saturated with heat before the pizza goes in.",
       "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
       "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed tomatoes for a 15-inch pizza or 2/3 cup thick crushed tomatoes for a 16-inch pizza.",
-      "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
+      "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste or a small pinch red pepper flakes, and a small pinch of sugar only if the tomatoes taste sharp.",
       "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, fennel, salt, and chile season the tomatoes.",
       "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust, cheese, pepperoni, sausage, and ricotta.",
       "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
@@ -15816,7 +15820,7 @@
       "If the measured whole-milk ricotta looks loose or wet, drain it in a fine-mesh strainer or on a double layer of paper towels for 15 minutes.",
       "Make the seasoned ricotta by stirring together the drained measured ricotta, 1/2 ounce finely grated Pecorino Romano, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon finely grated lemon zest, 1/8 teaspoon black pepper, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
       "Keep the seasoned ricotta cold until the pizza has started baking so it stays creamy when added near the end.",
-      "Make the chile honey by warming 2 tablespoons honey, 1 teaspoon Calabrian chile paste, 1/2 teaspoon red wine vinegar or apple cider vinegar, and 1 smashed small garlic clove in a small saucepan or microwave-safe bowl just until loose and fragrant.",
+      "Make the chile honey by warming 2 tablespoons honey, 1 teaspoon Calabrian chile paste or 1/4 teaspoon red pepper flakes, 1/2 teaspoon red wine vinegar or apple cider vinegar, and 1 smashed small garlic clove in a small saucepan or microwave-safe bowl just until loose and fragrant.",
       "Let the chile honey sit off the heat for at least 10 minutes, then remove and discard the smashed garlic clove.",
       "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
       "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
@@ -15925,17 +15929,10 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
         "quantity": 300,
         "unit": "g"
-      },
-      {
-        "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
-        "item": "pizza dough",
-        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-        "optional": true,
-        "quantity": 1
       },
       {
         "display": "instant yeast",
@@ -15944,32 +15941,32 @@
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.75,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 0.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 7,
+        "unit": "tsp"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
-        "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+        "display": "Bianco DiNapoli whole peeled tomatoes",
         "item": "canned tomatoes",
-        "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed drained tomatoes depending on pizza size.",
-        "quantity": 1,
-        "unit": "can"
+        "quantity": "0.5-0.6667",
+        "unit": "cup"
       },
       {
         "item": "tomato paste",
@@ -15987,12 +15984,12 @@
         "unit": "tsp"
       },
       {
-        "display": "Calabrian chile paste, optional in the sauce",
+        "display": "Calabrian chile paste",
         "item": "Calabrian chile paste",
-        "note": "The recipe uses 1/8 teaspoon for depth, not real heat. Omit it if you want a very mild cheese pizza.",
+        "note": "Sub red pepper flakes.",
         "optional": true,
-        "quantity": 1,
-        "unit": "jar"
+        "quantity": 0.125,
+        "unit": "tsp"
       },
       {
         "item": "granulated sugar",
@@ -16001,28 +15998,27 @@
         "unit": "pinch"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "low-moisture whole-milk mozzarella cheese",
-        "quantity": 8,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": "6.5-7.5",
         "unit": "oz"
       },
       {
-        "display": "provolone piccante or sharp deli provolone",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
-        "display": "fresh mozzarella, fior di latte, or ciliegine",
-        "item": "mozzarella cheese",
-        "note": "Buy a small 4-ounce ball or container if possible; the recipe uses 1 1/2 to 2 ounces after draining.",
-        "quantity": 4,
+        "display": "fresh mozzarella",
+        "item": "fresh mozzarella cheese",
+        "quantity": "1.5-2",
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "oz"
       },
       {
@@ -16031,10 +16027,10 @@
         "unit": "tsp"
       },
       {
-        "display": "fresh basil",
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 1,
-        "unit": "small bunch"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -16059,7 +16055,7 @@
       "2 teaspoons extra-virgin olive oil for the sauce",
       "1/2 teaspoon dried oregano",
       "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
-      "1/8 teaspoon Calabrian chile paste for the sauce, optional",
+      "1/8 teaspoon Calabrian chile paste for the sauce, optional, or a small pinch red pepper flakes",
       "Small pinch granulated sugar, only if the tomatoes taste sharp",
       "6 1/2 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 1/2 ounces for a true 16-inch pizza, freshly shredded",
       "1 1/2 ounces provolone piccante or sharp deli provolone, finely diced or shredded",
@@ -16093,7 +16089,7 @@
       "Preheat the oven to 550 degrees F for 60 to 75 minutes so the Baking Steel Pro is fully saturated with heat before the pizza goes in.",
       "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
       "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza, or 2/3 cup thick crushed drained tomatoes for a true 16-inch pizza.",
-      "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/8 teaspoon Calabrian chile paste if using, and a small pinch of sugar only if the tomatoes taste sharp.",
+      "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/8 teaspoon Calabrian chile paste or a small pinch red pepper flakes if using, and a small pinch of sugar only if the tomatoes taste sharp.",
       "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, salt, and chile season the tomatoes.",
       "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust and a full layer of cheese.",
       "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
@@ -16206,24 +16202,10 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
-        "quantity": 285,
+        "quantity": 300,
         "unit": "g"
-      },
-      {
-        "display": "whole wheat flour, preferably stone-ground",
-        "item": "whole wheat flour",
-        "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
-        "quantity": 15,
-        "unit": "g"
-      },
-      {
-        "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
-        "item": "pizza dough",
-        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-        "optional": true,
-        "quantity": 1
       },
       {
         "display": "instant yeast",
@@ -16232,15 +16214,15 @@
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 2.0625,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 0.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
@@ -16248,26 +16230,25 @@
         "unit": "cup"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
-        "display": "mixed mushrooms, such as cremini, shiitake, oyster, or maitake",
+        "display": "mixed mushrooms",
         "item": "mushrooms",
-        "note": "Buy 12 ounces total. A mix with at least 4 ounces shiitake, oyster, or maitake gives a deeper flavor than all button mushrooms.",
         "quantity": 12,
         "unit": "oz"
       },
       {
-        "display": "dried porcini mushrooms or porcini powder",
+        "display": "porcini powder or finely ground dried porcini mushrooms",
         "item": "dried porcini mushrooms",
-        "note": "Buy a small package; the recipe uses 1 teaspoon finely ground porcini powder and the rest keeps well for future sauces, soups, and pizzas.",
-        "quantity": 0.25,
-        "unit": "oz"
+        "quantity": 1,
+        "unit": "tsp"
       },
       {
-        "display": "medium yellow onion or sweet onion",
+        "display": "yellow onion",
         "item": "yellow onion",
         "quantity": 1
       },
@@ -16289,45 +16270,44 @@
       },
       {
         "display": "sherry vinegar or red wine vinegar",
-        "item": "red wine vinegar",
+        "item": "sherry vinegar",
         "quantity": 1,
-        "unit": "tbsp"
+        "unit": "tsp"
       },
       {
         "display": "whole-milk ricotta",
         "item": "ricotta cheese",
-        "quantity": 8,
+        "quantity": 3,
         "unit": "oz"
       },
       {
         "display": "mascarpone",
         "item": "mascarpone cheese",
-        "quantity": 4,
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": 5,
         "unit": "oz"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "low-moisture whole-milk mozzarella cheese",
-        "quantity": 8,
-        "unit": "oz"
-      },
-      {
-        "display": "Italian fontina or fontina Val d'Aosta",
+        "display": "fontina cheese",
         "item": "fontina cheese",
-        "quantity": 4,
+        "quantity": 3,
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
-        "display": "thinly sliced speck or prosciutto",
+        "display": "speck",
         "item": "prosciutto",
-        "note": "Speck gives the smokiest finish; prosciutto is the easiest substitute. Buy 3 ounces if sliced to order; the recipe uses 2 ounces.",
-        "quantity": 3,
+        "quantity": 2,
         "unit": "oz"
       },
       {
@@ -16338,13 +16318,13 @@
         "display": "fresh chives",
         "item": "chives",
         "quantity": 1,
-        "unit": "bunch"
+        "unit": "tbsp"
       },
       {
         "display": "fresh Italian parsley",
         "item": "fresh parsley",
         "quantity": 1,
-        "unit": "bunch"
+        "unit": "tbsp"
       },
       {
         "item": "black pepper",
@@ -16354,8 +16334,8 @@
       {
         "item": "red pepper flakes",
         "optional": true,
-        "quantity": 0.25,
-        "unit": "tsp"
+        "quantity": 1,
+        "unit": "pinch"
       },
       {
         "item": "flaky sea salt",
@@ -16546,24 +16526,10 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
-        "quantity": 285,
+        "quantity": 300,
         "unit": "g"
-      },
-      {
-        "display": "whole wheat flour, preferably stone-ground",
-        "item": "whole wheat flour",
-        "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
-        "quantity": 15,
-        "unit": "g"
-      },
-      {
-        "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
-        "item": "pizza dough",
-        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-        "optional": true,
-        "quantity": 1
       },
       {
         "display": "instant yeast",
@@ -16572,48 +16538,47 @@
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.875,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 2,
-        "unit": "tbsp"
+        "quantity": 3.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.5,
-        "unit": "cup"
-      },
-      {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "quantity": 6,
         "unit": "tbsp"
       },
       {
-        "display": "fresh basil",
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
+        "unit": "tbsp"
+      },
+      {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "note": "Buy 1 large bunch or 2 small bunches; the recipe uses 2 packed cups leaves for pesto plus 8 to 10 small leaves for finishing.",
-        "quantity": 1,
+        "quantity": 2,
         "unit": "bunch"
       },
       {
         "display": "roasted unsalted shelled pistachios",
         "item": "pistachios",
-        "note": "Buy at least 3 ounces so there is enough for the pesto and the chopped post-bake finish.",
-        "quantity": 3,
-        "unit": "oz"
+        "quantity": 6,
+        "unit": "tbsp"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
-        "display": "garlic cloves",
+        "display": "garlic clove",
         "item": "garlic clove",
         "quantity": 1
       },
@@ -16622,49 +16587,48 @@
         "quantity": 1
       },
       {
-        "display": "anchovy paste, optional but recommended for the pesto",
+        "display": "anchovy paste",
         "item": "anchovy paste",
-        "note": "The recipe uses 1/4 teaspoon for savory depth; it should not make the pesto taste fishy.",
         "optional": true,
-        "quantity": 1,
-        "unit": "tube"
+        "quantity": 0.25,
+        "unit": "tsp"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "low-moisture whole-milk mozzarella cheese",
-        "quantity": 8,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": 6,
         "unit": "oz"
       },
       {
-        "display": "provolone piccante or sharp deli provolone",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
-        "display": "burrata or stracciatella",
+        "display": "burrata",
         "item": "burrata cheese",
-        "note": "Buy one 4-ounce ball or the smallest container available; use 3 ounces for a 15-inch pizza or all 4 ounces for a true 16-inch pizza.",
-        "quantity": 4,
+        "quantity": "3-4",
         "unit": "oz"
       },
       {
-        "display": "very thinly sliced mortadella",
+        "display": "thin-sliced mortadella",
         "item": "mortadella",
-        "note": "Ask the deli to slice it very thin. Mortadella with pistachios works well here if available.",
-        "quantity": 4,
+        "quantity": "3-4",
         "unit": "oz"
       },
       {
         "item": "baby arugula",
-        "quantity": 2,
+        "quantity": "1.5-2",
         "unit": "cup"
       },
       {
+        "display": "Calabrian chile paste",
         "item": "Calabrian chile paste",
+        "note": "Sub red pepper flakes.",
         "optional": true,
-        "quantity": 1,
-        "unit": "jar"
+        "quantity": 0.25,
+        "unit": "tsp"
       },
       {
         "item": "black pepper",
@@ -16704,7 +16668,7 @@
       "3 ounces very thin mortadella for a 15-inch pizza, or 4 ounces for a true 16-inch pizza, torn into loose 2-inch ribbons",
       "1 1/2 cups baby arugula for a 15-inch pizza, or 2 cups for a true 16-inch pizza",
       "1 tablespoon honey for the lemon-chile honey",
-      "1/4 teaspoon Calabrian chile paste for the lemon-chile honey, optional",
+      "1/4 teaspoon Calabrian chile paste for the lemon-chile honey, optional, or 1/8 teaspoon red pepper flakes",
       "Small pinch flaky sea salt for finishing, optional"
     ],
     "instructions": [
@@ -16740,7 +16704,7 @@
       "Keep the cheese blend cold until assembly so the cheese melts cleanly instead of oiling out on the peel.",
       "Drain 3 ounces burrata or stracciatella for a 15-inch pizza, or 4 ounces for a true 16-inch pizza, on paper towels or in a fine-mesh strainer for 10 minutes so it tastes creamy instead of watery.",
       "Tear the very thin mortadella into loose 2-inch ribbons: use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
-      "Make the lemon-chile honey by warming 1 tablespoon honey, 1/4 teaspoon Calabrian chile paste if using, 1/2 teaspoon fresh lemon juice, and a tiny pinch of fine sea salt or Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until loose and glossy.",
+      "Make the lemon-chile honey by warming 1 tablespoon honey, 1/4 teaspoon Calabrian chile paste or 1/8 teaspoon red pepper flakes if using, 1/2 teaspoon fresh lemon juice, and a tiny pinch of fine sea salt or Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until loose and glossy.",
       "Make the arugula finish by tossing 1 1/2 cups baby arugula for a 15-inch pizza or 2 cups for a true 16-inch pizza with 1 teaspoon extra-virgin olive oil, 1 teaspoon fresh lemon juice, 1/8 teaspoon fine sea salt or Morton Coarse Kosher Salt, and 1/8 teaspoon black pepper.",
       "Stir the reserved 1 tablespoon pesto with 1 teaspoon extra-virgin olive oil to make a loose post-bake rim oil.",
       "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
@@ -16855,24 +16819,10 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
-        "quantity": 285,
+        "quantity": 300,
         "unit": "g"
-      },
-      {
-        "display": "whole wheat flour, preferably stone-ground",
-        "item": "whole wheat flour",
-        "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
-        "quantity": 15,
-        "unit": "g"
-      },
-      {
-        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
-        "item": "pizza dough",
-        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-        "optional": true,
-        "quantity": 1
       },
       {
         "display": "instant yeast",
@@ -16881,15 +16831,15 @@
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.5625,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 3,
-        "unit": "tbsp"
+        "quantity": 7,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
@@ -16897,41 +16847,41 @@
         "unit": "tsp"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
-        "display": "boneless ribeye steak or Korean-market thin-sliced ribeye",
+        "display": "thin-sliced ribeye steak",
         "item": "boneless ribeye steak",
-        "note": "Buy 8 ounces. Pre-sliced bulgogi ribeye is the easiest option; otherwise chill a small ribeye and slice it 1/8 inch thick across the grain.",
         "quantity": 8,
         "unit": "oz"
       },
       {
-        "display": "Asian pear or Bosc pear",
-        "item": "Asian pear or Bosc pear",
+        "item": "Bosc pear",
         "quantity": 1
       },
       {
         "item": "low-sodium soy sauce",
-        "quantity": 0.25,
-        "unit": "cup"
-      },
-      {
-        "item": "mirin or rice wine",
         "quantity": 2,
         "unit": "tbsp"
       },
       {
+        "display": "mirin",
+        "item": "mirin or rice wine",
+        "quantity": 4,
+        "unit": "tsp"
+      },
+      {
         "item": "rice vinegar",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 4.5,
+        "unit": "tsp"
       },
       {
         "item": "gochujang",
-        "quantity": 1,
-        "unit": "jar"
+        "quantity": 2.6667,
+        "unit": "tbsp"
       },
       {
         "item": "tomato paste",
@@ -16939,17 +16889,16 @@
         "unit": "tbsp"
       },
       {
-        "display": "doenjang or white miso, optional but recommended",
+        "display": "white miso",
         "item": "doenjang or white miso",
-        "note": "The recipe uses 1 teaspoon in the sauce for deeper savory flavor.",
         "optional": true,
         "quantity": 1,
-        "unit": "jar"
+        "unit": "tsp"
       },
       {
         "item": "toasted sesame oil",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 2,
+        "unit": "tsp"
       },
       {
         "display": "toasted sesame seeds",
@@ -16964,29 +16913,29 @@
       },
       {
         "item": "fresh ginger",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.5,
+        "unit": "tsp"
       },
       {
         "display": "napa cabbage kimchi",
         "item": "kimchi",
-        "note": "Buy at least 8 ounces. The recipe uses 1 cup drained, squeezed, chopped kimchi before cooking.",
-        "quantity": 8,
-        "unit": "oz"
+        "quantity": 1,
+        "unit": "cup"
       },
       {
+        "display": "avocado oil",
         "item": "neutral high-heat oil",
-        "quantity": 2,
-        "unit": "tbsp"
+        "quantity": 5,
+        "unit": "tsp"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "low-moisture whole-milk mozzarella cheese",
-        "quantity": 6,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": 5.5,
         "unit": "oz"
       },
       {
-        "display": "smoked Gouda or young Gouda",
+        "display": "smoked Gouda",
         "item": "Gouda cheese",
         "quantity": 2,
         "unit": "oz"
@@ -16994,28 +16943,27 @@
       {
         "display": "Monterey Jack cheese",
         "item": "Monterey Jack cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
         "item": "green onion",
-        "quantity": 6
+        "quantity": 4
       },
       {
-        "display": "Persian cucumber or English cucumber",
-        "item": "English cucumber",
+        "item": "Persian cucumber",
         "quantity": 1
       },
       {
-        "display": "fresh cilantro or perilla leaves, optional",
+        "display": "fresh cilantro leaves",
         "item": "cilantro",
         "optional": true,
-        "quantity": 1,
-        "unit": "bunch"
+        "quantity": 0.25,
+        "unit": "cup"
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
@@ -17211,24 +17159,16 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
         "quantity": 285,
         "unit": "g"
       },
       {
-        "display": "masa harina, preferably Masienda, Bob's Red Mill, or Maseca",
+        "display": "masa harina",
         "item": "masa harina",
-        "note": "Use 15 grams in the scratch dough for a subtle toasted-corn flavor; replace with 15 grams more bread flour for the easiest stretch.",
         "quantity": 15,
         "unit": "g"
-      },
-      {
-        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
-        "item": "pizza dough",
-        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-        "optional": true,
-        "quantity": 1
       },
       {
         "display": "instant yeast",
@@ -17237,31 +17177,31 @@
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 3.625,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "3-4",
+        "unit": "tsp"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
-        "display": "bone-in beef short ribs or boneless beef short ribs",
+        "display": "beef short ribs",
         "item": "bone-in beef short rib",
-        "note": "Buy 1 1/2 to 2 pounds. Bone-in short ribs give the consomme more body; boneless short ribs are easier to shred. The pizza uses 5 to 6 ounces cooked shredded beef and the rest becomes leftovers.",
-        "quantity": 2,
+        "quantity": "1.5-2",
         "unit": "lb"
       },
       {
@@ -17277,8 +17217,7 @@
       {
         "display": "dried chile de arbol peppers",
         "item": "dried chile de arbol",
-        "note": "Use 1 for moderate heat or 2 for a hotter consomme.",
-        "quantity": 2
+        "quantity": "1-2"
       },
       {
         "display": "Roma tomatoes",
@@ -17298,17 +17237,17 @@
       {
         "display": "low-sodium beef stock",
         "item": "low-sodium beef broth",
-        "quantity": 32,
-        "unit": "oz"
-      },
-      {
-        "item": "apple cider vinegar",
-        "quantity": 0.25,
+        "quantity": 2,
         "unit": "cup"
       },
       {
+        "item": "apple cider vinegar",
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
         "display": "chipotle peppers in adobo",
-        "item": "chipotle pepper in adobo",
+        "item": "chipotle peppers in adobo sauce",
         "quantity": 1,
         "unit": "can"
       },
@@ -17347,34 +17286,34 @@
         "unit": "tsp"
       },
       {
-        "display": "neutral high-heat oil, such as avocado, grapeseed, canola, or vegetable oil",
+        "display": "avocado oil",
         "item": "neutral high-heat oil",
-        "quantity": 2,
-        "unit": "tbsp"
+        "quantity": 4,
+        "unit": "tsp"
       },
       {
         "display": "Oaxaca cheese or quesadilla cheese",
         "item": "Oaxaca cheese",
-        "quantity": 8,
+        "quantity": 5,
         "unit": "oz"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "low-moisture whole-milk mozzarella cheese",
-        "quantity": 4,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": 3,
         "unit": "oz"
       },
       {
         "display": "Cotija cheese",
         "item": "Cotija cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
         "display": "Mexican crema or full-fat sour cream",
         "item": "sour cream",
-        "quantity": 4,
-        "unit": "oz"
+        "quantity": 0.25,
+        "unit": "cup"
       },
       {
         "item": "lime",
@@ -17383,18 +17322,19 @@
       {
         "display": "medium red onion",
         "item": "red onion",
-        "quantity": 1
+        "quantity": 0.5
       },
       {
+        "display": "fresh cilantro",
         "item": "cilantro",
-        "quantity": 1,
-        "unit": "bunch"
+        "quantity": 0.375,
+        "unit": "cup"
       },
       {
         "display": "serrano chile, optional for the cilantro-onion finish",
         "item": "serrano pepper",
         "optional": true,
-        "quantity": 1
+        "quantity": 0.5
       },
       {
         "item": "flaky sea salt",
@@ -17602,24 +17542,10 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
-        "quantity": 290,
+        "quantity": 300,
         "unit": "g"
-      },
-      {
-        "display": "whole wheat flour, preferably stone-ground",
-        "item": "whole wheat flour",
-        "note": "Use 10 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
-        "quantity": 10,
-        "unit": "g"
-      },
-      {
-        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
-        "item": "pizza dough",
-        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-        "optional": true,
-        "quantity": 1
       },
       {
         "display": "instant yeast",
@@ -17628,32 +17554,32 @@
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.75,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 0.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 7,
+        "unit": "tsp"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
-        "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+        "display": "Bianco DiNapoli whole peeled tomatoes",
         "item": "canned tomatoes",
-        "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed drained tomatoes depending on pizza size.",
-        "quantity": 1,
-        "unit": "can"
+        "quantity": "0.5-0.6667",
+        "unit": "cup"
       },
       {
         "item": "tomato paste",
@@ -17678,9 +17604,9 @@
       {
         "display": "Calabrian chile paste",
         "item": "Calabrian chile paste",
-        "note": "The recipe uses 1/4 teaspoon in the sauce and 1/4 teaspoon in the rim oil.",
-        "quantity": 1,
-        "unit": "jar"
+        "note": "Sub red pepper flakes.",
+        "quantity": 0.5,
+        "unit": "tsp"
       },
       {
         "item": "granulated sugar",
@@ -17689,43 +17615,39 @@
         "unit": "pinch"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "low-moisture whole-milk mozzarella cheese",
-        "quantity": 8,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": "6.5-7.5",
         "unit": "oz"
       },
       {
-        "display": "provolone piccante or sharp deli provolone",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
-        "display": "fresh mozzarella, fior di latte, or ciliegine",
-        "item": "mozzarella cheese",
-        "note": "Buy a small 4-ounce ball or container if possible; the recipe uses 1 1/2 to 2 ounces after draining.",
-        "quantity": 4,
+        "display": "fresh mozzarella",
+        "item": "fresh mozzarella cheese",
+        "quantity": "1.5-2",
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "oz"
       },
       {
-        "display": "thinly sliced spicy Calabrese salami or soppressata piccante",
+        "display": "spicy Calabrese salami",
         "item": "salami",
-        "note": "Ask for thin slices from the deli if possible; use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
-        "quantity": 4,
+        "quantity": "3-4",
         "unit": "oz"
       },
       {
-        "display": "'nduja, optional",
+        "display": "'nduja",
         "item": "nduja",
-        "note": "Use 1 ounce for a 15-inch pizza or 1 1/2 ounces for a true 16-inch pizza. If unavailable, use 1 extra ounce spicy salami plus another 1/4 teaspoon Calabrian chile paste in the sauce.",
-        "optional": true,
-        "quantity": 2,
+        "quantity": "1-1.5",
         "unit": "oz"
       },
       {
@@ -17734,10 +17656,10 @@
         "unit": "tsp"
       },
       {
-        "display": "fresh basil",
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 1,
-        "unit": "small bunch"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -17764,7 +17686,7 @@
       "1/2 teaspoon dried oregano",
       "1/8 teaspoon fennel seeds, lightly crushed",
       "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
-      "1/4 teaspoon Calabrian chile paste for the sauce",
+      "1/4 teaspoon Calabrian chile paste for the sauce, or a small pinch red pepper flakes",
       "Small pinch granulated sugar, only if the tomatoes taste sharp",
       "6 1/2 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 1/2 ounces for a true 16-inch pizza, freshly shredded",
       "1 ounce provolone piccante or sharp deli provolone, finely diced or shredded",
@@ -17773,7 +17695,7 @@
       "3 ounces thinly sliced spicy Calabrese salami or soppressata piccante for a 15- to 15 1/2-inch pizza, or 4 ounces for a true 16-inch pizza",
       "1 ounce 'nduja for a 15- to 15 1/2-inch pizza, or 1 1/2 ounces for a true 16-inch pizza, chilled until firm enough to pinch into small pieces",
       "1 tablespoon extra-virgin olive oil for the chile-basil rim oil",
-      "1/4 teaspoon Calabrian chile paste for the chile-basil rim oil",
+      "1/4 teaspoon Calabrian chile paste for the chile-basil rim oil, or 1/8 teaspoon red pepper flakes",
       "1 small garlic clove, finely grated for the chile-basil rim oil",
       "1/8 teaspoon black pepper, freshly ground if possible",
       "10 to 12 fresh basil leaves, divided",
@@ -17801,7 +17723,7 @@
       "Preheat the oven to 550 degrees F for 60 to 75 minutes so the baking steel is fully saturated with heat before the pizza goes in.",
       "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
       "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza, or 2/3 cup thick crushed drained tomatoes for a true 16-inch pizza.",
-      "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
+      "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste or a small pinch red pepper flakes, and a small pinch of sugar only if the tomatoes taste sharp.",
       "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, fennel, salt, and chile season the tomatoes.",
       "Taste the rested sauce; it should taste bright, savory, and slightly spicy because it has to season a large crust, cheese, salami, and 'nduja.",
       "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
@@ -17812,7 +17734,7 @@
       "Keep the shredded cheese blend and the drained fresh mozzarella cold until assembly so the cheese melts cleanly instead of oiling out on the peel.",
       "Slice or separate 3 ounces spicy Calabrese salami for a 15- to 15 1/2-inch pizza, or 4 ounces spicy Calabrese salami for a true 16-inch pizza.",
       "Chill 1 ounce 'nduja for a 15- to 15 1/2-inch pizza, or 1 1/2 ounces 'nduja for a true 16-inch pizza, until firm enough to pinch into small 1/2-teaspoon pieces for late-bake topping.",
-      "Make the chile-basil rim oil by warming 1 tablespoon extra-virgin olive oil, 1/4 teaspoon Calabrian chile paste, and 1 finely grated small garlic clove in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until fragrant.",
+      "Make the chile-basil rim oil by warming 1 tablespoon extra-virgin olive oil, 1/4 teaspoon Calabrian chile paste or 1/8 teaspoon red pepper flakes, and 1 finely grated small garlic clove in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until fragrant.",
       "Stir 1/8 teaspoon black pepper and 2 torn fresh basil leaves into the warm chile-basil rim oil, then set it aside until the pizza is baked.",
       "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
       "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
@@ -17920,24 +17842,10 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
-        "quantity": 285,
+        "quantity": 300,
         "unit": "g"
-      },
-      {
-        "display": "whole wheat flour, preferably stone-ground",
-        "item": "whole wheat flour",
-        "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
-        "quantity": 15,
-        "unit": "g"
-      },
-      {
-        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
-        "item": "pizza dough",
-        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-        "optional": true,
-        "quantity": 1
       },
       {
         "display": "instant yeast",
@@ -17946,32 +17854,32 @@
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.875,
+        "unit": "tsp"
       },
       {
         "item": "honey",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 0.5,
+        "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
-      },
-      {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "quantity": 3,
         "unit": "tbsp"
       },
       {
-        "display": "San Marzano-style, Bianco DiNapoli, or Gustarosso whole peeled tomatoes",
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
+        "unit": "tbsp"
+      },
+      {
+        "display": "Bianco DiNapoli whole peeled tomatoes",
         "item": "canned tomatoes",
-        "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed drained tomatoes depending on pizza size.",
-        "quantity": 1,
-        "unit": "can"
+        "quantity": "0.5-0.6667",
+        "unit": "cup"
       },
       {
         "item": "tomato paste",
@@ -17985,51 +17893,49 @@
       },
       {
         "item": "dried oregano",
-        "quantity": 1,
+        "quantity": 0.75,
         "unit": "tsp"
       },
       {
-        "display": "Calabrian chile paste, optional in the sauce",
+        "display": "Calabrian chile paste",
         "item": "Calabrian chile paste",
-        "note": "The recipe uses 1/8 teaspoon for depth, not real heat. Omit it if you want the pizza fully mild.",
+        "note": "Sub red pepper flakes.",
         "optional": true,
-        "quantity": 1,
-        "unit": "jar"
+        "quantity": 0.125,
+        "unit": "tsp"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "low-moisture whole-milk mozzarella cheese",
-        "quantity": 8,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": "6-7",
         "unit": "oz"
       },
       {
-        "display": "provolone piccante or sharp deli provolone",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
-        "display": "fresh mozzarella, fior di latte, or ciliegine",
-        "item": "mozzarella cheese",
-        "note": "Buy a small 4-ounce ball or container if possible; the recipe uses 1 1/2 to 2 ounces after draining.",
-        "quantity": 4,
+        "display": "fresh mozzarella",
+        "item": "fresh mozzarella cheese",
+        "quantity": "1.5-2",
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "oz"
       },
       {
-        "display": "prosciutto cotto or high-quality rosemary ham, sliced thin",
+        "display": "prosciutto cotto",
         "item": "deli ham",
-        "note": "Ask the deli for thin slices. Use 3 ounces for a 15-inch pizza or 4 ounces for a true 16-inch pizza.",
-        "quantity": 4,
+        "quantity": "3-4",
         "unit": "oz"
       },
       {
-        "display": "cremini mushrooms or mixed mushrooms",
+        "display": "cremini mushrooms",
         "item": "mushrooms",
         "quantity": 6,
         "unit": "oz"
@@ -18037,14 +17943,13 @@
       {
         "display": "marinated artichoke hearts",
         "item": "artichoke hearts",
-        "note": "Buy one 6- to 7-ounce jar; the recipe uses 3 to 4 ounces drained artichokes.",
-        "quantity": 1,
-        "unit": "jar"
+        "quantity": "3-4",
+        "unit": "oz"
       },
       {
-        "display": "pitted Gaeta, Taggiasca, Castelvetrano, or oil-cured black olives",
+        "display": "Castelvetrano olives",
         "item": "olives",
-        "quantity": 2,
+        "quantity": "1.5-2",
         "unit": "oz"
       },
       {
@@ -18053,14 +17958,14 @@
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
-        "display": "fresh basil",
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 1,
-        "unit": "small bunch"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -18086,7 +17991,7 @@
       "2 teaspoons extra-virgin olive oil for the sauce",
       "1/2 teaspoon dried oregano for the sauce",
       "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
-      "1/8 teaspoon Calabrian chile paste for the sauce, optional",
+      "1/8 teaspoon Calabrian chile paste for the sauce, optional, or a small pinch red pepper flakes",
       "6 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 ounces for a true 16-inch pizza, freshly shredded",
       "1 ounce provolone piccante or sharp deli provolone, finely diced or shredded",
       "1 1/2 ounces fresh mozzarella or fior di latte for a 15- to 15 1/2-inch pizza, or 2 ounces for a true 16-inch pizza, drained and torn into 1/2-inch pieces",
@@ -18127,7 +18032,7 @@
       "Preheat the oven to 550 degrees F for 60 to 75 minutes so the baking steel is fully saturated with heat before the pizza goes in.",
       "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
       "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza, or 2/3 cup thick crushed drained tomatoes for a true 16-inch pizza.",
-      "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, and 1/8 teaspoon Calabrian chile paste if using.",
+      "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, and 1/8 teaspoon Calabrian chile paste or a small pinch red pepper flakes if using.",
       "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, salt, olive oil, and chile season the tomatoes.",
       "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust, cheese, mushrooms, artichokes, olives, and ham.",
       "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
@@ -18255,17 +18160,10 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-gluten or high-protein bread flour, preferably King Arthur Sir Lancelot, Central Milling, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
         "quantity": 320,
         "unit": "g"
-      },
-      {
-        "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
-        "item": "pizza dough",
-        "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 500 to 525 grams prepared dough for one large 15 1/2- to 16-inch pizza.",
-        "optional": true,
-        "quantity": 1
       },
       {
         "display": "instant yeast",
@@ -18274,24 +18172,25 @@
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 1,
-        "unit": "tbsp"
+        "quantity": 1.75,
+        "unit": "tsp"
       },
       {
         "item": "granulated sugar",
-        "quantity": 2,
+        "quantity": "1.5-1.5625",
         "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 3,
+        "unit": "tbsp"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
@@ -18320,71 +18219,67 @@
         "unit": "cup"
       },
       {
-        "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+        "display": "Bianco DiNapoli whole peeled tomatoes",
         "item": "canned tomatoes",
-        "note": "Buy one 14-ounce can; the recipe uses 2/3 cup thick crushed drained tomatoes.",
-        "quantity": 1,
-        "unit": "can"
-      },
-      {
-        "item": "heavy cream",
-        "quantity": 0.25,
+        "quantity": 0.6667,
         "unit": "cup"
       },
       {
+        "item": "heavy cream",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
         "item": "dried oregano",
-        "quantity": 1,
+        "quantity": 0.625,
         "unit": "tsp"
       },
       {
-        "display": "Calabrian chile paste or crushed red pepper flakes",
+        "display": "Calabrian chile paste",
         "item": "Calabrian chile paste",
-        "note": "The recipe uses 1/4 teaspoon for the sauce. Use a small pinch crushed red pepper flakes if you do not have Calabrian chile paste.",
-        "optional": true,
-        "quantity": 1,
-        "unit": "jar"
+        "note": "Sub red pepper flakes.",
+        "quantity": 0.25,
+        "unit": "tsp"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block, preferably Grande, Galbani, Boar's Head, or another whole-milk block",
-        "item": "low-moisture whole-milk mozzarella cheese",
-        "quantity": 8,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": "6.5-7.5",
         "unit": "oz"
       },
       {
-        "display": "sharp deli provolone or provolone piccante",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "natural-casing cup-and-char pepperoni",
         "item": "pepperoni",
-        "quantity": 4,
+        "quantity": "3.5-4",
         "unit": "oz"
       },
       {
-        "display": "sliced pickled hot cherry peppers",
         "item": "pickled hot cherry peppers",
-        "note": "Buy one small jar; the recipe uses 2 to 3 tablespoons drained and patted dry.",
-        "quantity": 1,
-        "unit": "jar"
+        "quantity": "2-3",
+        "unit": "tbsp"
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
-        "display": "fresh basil",
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 1,
-        "unit": "small bunch"
+        "quantity": "10-12",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -18413,7 +18308,7 @@
       "1/4 cup vodka",
       "1/2 teaspoon dried oregano for the sauce",
       "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce, plus more to taste",
-      "1/4 teaspoon Calabrian chile paste for the sauce, or a small pinch crushed red pepper flakes",
+      "1/4 teaspoon Calabrian chile paste for the sauce, or a small pinch red pepper flakes",
       "2 tablespoons heavy cream",
       "1 tablespoon finely grated Pecorino Romano for the sauce",
       "Small pinch granulated sugar, only if the tomatoes taste sharp",
@@ -18571,60 +18466,51 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
-        "quantity": 275,
+        "quantity": 260,
         "unit": "g"
       },
       {
-        "display": "white whole wheat flour, whole wheat flour, or high-extraction flour, optional same-day flavor boost",
+        "display": "white whole wheat, whole wheat, or high-extraction flour",
         "item": "whole wheat flour",
-        "note": "Use 15 grams with 260 grams bread flour, or skip it and use 275 grams bread flour total.",
-        "optional": true,
+        "note": "Or skip and use 275 g bread flour total.",
         "quantity": 15,
         "unit": "g"
       },
       {
-        "display": "prepared pizza dough ball or pizza dough mix, optional shortcut",
-        "item": "pizza dough",
-        "note": "Use enough for one 450- to 475-gram dough ball if skipping the scratch dough.",
-        "optional": true,
-        "quantity": 475,
-        "unit": "g"
-      },
-      {
-        "display": "instant yeast or active dry yeast",
+        "display": "instant yeast",
         "item": "active dry or instant yeast",
         "quantity": 0.75,
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "tsp"
       },
       {
         "item": "granulated sugar",
-        "quantity": 2,
+        "quantity": "1.25-1.3125",
         "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 2,
+        "quantity": 4.75,
+        "unit": "tsp"
+      },
+      {
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
-        "unit": "tbsp"
-      },
-      {
-        "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+        "display": "Bianco DiNapoli whole peeled tomatoes",
         "item": "canned tomatoes",
-        "note": "Buy one 14-ounce can; the recipe uses about 1/2 cup plus 1 tablespoon thick crushed tomatoes.",
-        "quantity": 1,
-        "unit": "can"
+        "quantity": 0.5625,
+        "unit": "cup"
       },
       {
         "item": "tomato paste",
@@ -18633,17 +18519,17 @@
       },
       {
         "item": "dried oregano",
-        "quantity": 0.5,
+        "quantity": 0.25,
         "unit": "tsp"
       },
       {
         "item": "onion powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
         "item": "garlic powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
@@ -18653,28 +18539,29 @@
         "unit": "tsp"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "mozzarella cheese",
-        "quantity": 8,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": 6.5,
         "unit": "oz"
       },
       {
-        "display": "provolone piccante, deli provolone, or aged mozzarella",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
-        "display": "Pecorino Romano cheese or Parmesan cheese",
+        "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
         "optional": true,
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "6-8",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -18833,60 +18720,51 @@
     ],
     "groceryIngredients": [
       {
-        "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour",
+        "display": "high-protein bread flour",
         "item": "bread flour",
-        "quantity": 275,
+        "quantity": 260,
         "unit": "g"
       },
       {
-        "display": "white whole wheat flour, whole wheat flour, or high-extraction flour, optional same-day flavor boost",
+        "display": "white whole wheat, whole wheat, or high-extraction flour",
         "item": "whole wheat flour",
-        "note": "Use 15 grams with 260 grams bread flour, or skip it and use 275 grams bread flour total.",
-        "optional": true,
+        "note": "Or skip and use 275 g bread flour total.",
         "quantity": 15,
         "unit": "g"
       },
       {
-        "display": "prepared pizza dough ball or pizza dough mix, optional shortcut",
-        "item": "pizza dough",
-        "note": "Use enough for one 450- to 475-gram room-temperature dough ball if skipping the scratch dough.",
-        "optional": true,
-        "quantity": 475,
-        "unit": "g"
-      },
-      {
-        "display": "instant yeast or active dry yeast",
+        "display": "instant yeast",
         "item": "active dry or instant yeast",
         "quantity": 0.75,
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 2,
+        "quantity": 1.25,
         "unit": "tsp"
       },
       {
         "item": "granulated sugar",
-        "quantity": 2,
+        "quantity": "1.25-1.3125",
         "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 3,
+        "quantity": 6.75,
+        "unit": "tsp"
+      },
+      {
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
-        "unit": "tbsp"
-      },
-      {
-        "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+        "display": "Bianco DiNapoli whole peeled tomatoes",
         "item": "canned tomatoes",
-        "note": "Buy one 14-ounce can; the recipe uses about 1/2 cup plus 1 tablespoon thick crushed drained tomatoes.",
-        "quantity": 1,
-        "unit": "can"
+        "quantity": 0.5625,
+        "unit": "cup"
       },
       {
         "item": "tomato paste",
@@ -18900,17 +18778,17 @@
       },
       {
         "item": "dried oregano",
-        "quantity": 0.5,
+        "quantity": 0.375,
         "unit": "tsp"
       },
       {
         "item": "onion powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
         "item": "garlic powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
@@ -18921,38 +18799,39 @@
       {
         "item": "red pepper flakes",
         "optional": true,
-        "quantity": 0.125,
-        "unit": "tsp"
+        "quantity": 1,
+        "unit": "pinch"
       },
       {
-        "display": "low-moisture whole-milk mozzarella block",
-        "item": "mozzarella cheese",
-        "quantity": 8,
+        "display": "low-moisture whole-milk mozzarella",
+        "item": "low-moisture mozzarella cheese",
+        "quantity": 6.5,
         "unit": "oz"
       },
       {
-        "display": "provolone piccante, sharp deli provolone, or aged mozzarella",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
-        "display": "Pecorino Romano cheese or Parmesan cheese",
+        "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1,
         "unit": "oz"
       },
       {
         "display": "natural-casing cup-and-char pepperoni",
         "item": "pepperoni",
-        "quantity": 4,
+        "quantity": "3-3.5",
         "unit": "oz"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
         "optional": true,
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "6-8",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -19123,49 +19002,44 @@
     ],
     "groceryIngredients": [
       {
+        "display": "high-protein bread flour",
         "item": "bread flour",
         "quantity": 275,
         "unit": "g"
       },
       {
-        "display": "prepared pizza dough",
-        "item": "pizza dough",
-        "optional": true,
-        "quantity": 475,
-        "unit": "g"
-      },
-      {
-        "display": "instant yeast or active dry yeast",
+        "display": "instant yeast",
         "item": "active dry or instant yeast",
         "quantity": 0.75,
         "unit": "tsp"
       },
       {
-        "display": "fine sea salt or kosher salt",
+        "display": "fine sea salt",
         "item": "salt",
-        "quantity": 2,
+        "quantity": 1.3125,
         "unit": "tsp"
       },
       {
         "item": "granulated sugar",
-        "quantity": 2,
+        "quantity": "1.25-1.3125",
         "unit": "tsp"
       },
       {
         "item": "extra-virgin olive oil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": 6.75,
+        "unit": "tsp"
       },
       {
-        "item": "semolina flour or fine cornmeal",
-        "quantity": 2,
+        "display": "semolina flour or fine cornmeal",
+        "item": "semolina flour",
+        "quantity": "1-2",
         "unit": "tbsp"
       },
       {
-        "display": "Bianco DiNapoli or San Marzano-style whole peeled tomatoes",
+        "display": "Bianco DiNapoli whole peeled tomatoes",
         "item": "canned tomatoes",
-        "quantity": 1,
-        "unit": "can"
+        "quantity": 0.5625,
+        "unit": "cup"
       },
       {
         "item": "tomato paste",
@@ -19175,46 +19049,48 @@
       {
         "display": "garlic cloves",
         "item": "garlic clove",
-        "quantity": 3,
-        "unit": "clove"
+        "quantity": 2
       },
       {
         "item": "dried oregano",
-        "quantity": 1,
+        "quantity": 0.375,
         "unit": "tsp"
       },
       {
         "item": "onion powder",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
+        "display": "Calabrian chile paste",
         "item": "Calabrian chile paste",
-        "quantity": 1,
-        "unit": "jar"
+        "note": "Sub red pepper flakes.",
+        "optional": true,
+        "quantity": 0.125,
+        "unit": "tsp"
       },
       {
         "display": "low-moisture whole-milk mozzarella",
-        "item": "mozzarella cheese",
-        "quantity": 8,
+        "item": "low-moisture mozzarella cheese",
+        "quantity": 6.5,
         "unit": "oz"
       },
       {
-        "display": "provolone piccante or sharp deli provolone",
+        "display": "deli provolone",
         "item": "provolone cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
         "display": "whole-milk ricotta",
         "item": "ricotta cheese",
-        "quantity": 8,
+        "quantity": 3,
         "unit": "oz"
       },
       {
-        "display": "Pecorino Romano or Parmesan",
+        "display": "Pecorino Romano cheese",
         "item": "Pecorino Romano or Parmesan cheese",
-        "quantity": 2,
+        "quantity": 1.5,
         "unit": "oz"
       },
       {
@@ -19223,18 +19099,20 @@
       },
       {
         "item": "black pepper",
-        "quantity": 0.25,
+        "quantity": 0.125,
         "unit": "tsp"
       },
       {
-        "display": "Mike's Hot Honey Original",
+        "display": "Mike's Hot Honey",
         "item": "hot honey",
-        "quantity": 1
+        "quantity": "1.5-2",
+        "unit": "tbsp"
       },
       {
+        "display": "fresh basil leaves",
         "item": "fresh basil",
-        "quantity": 0.25,
-        "unit": "cup"
+        "quantity": "8-10",
+        "unit": "leaf"
       },
       {
         "item": "flaky sea salt",
@@ -19260,7 +19138,7 @@
       "1/4 teaspoon dried oregano for the sauce",
       "1/8 teaspoon onion powder",
       "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
-      "1/8 teaspoon Calabrian chile paste for the sauce, optional but recommended for depth under the hot honey",
+      "1/8 teaspoon Calabrian chile paste for the sauce, optional, or a small pinch red pepper flakes",
       "Small pinch granulated sugar for the sauce, only if the tomatoes taste sharp",
       "6 1/2 ounces low-moisture whole-milk mozzarella from a block, half freshly shredded and half cut into 1/4-inch dice",
       "1 1/2 ounces provolone piccante or sharp deli provolone, finely shredded or diced",
@@ -19271,7 +19149,7 @@
       "1/8 teaspoon black pepper, freshly ground if possible",
       "Small pinch fine sea salt or Morton Coarse Kosher Salt for the ricotta",
       "Recommended bottled hot honey: 1 1/2 to 2 tablespoons Mike's Hot Honey Original or another balanced hot honey, warmed just enough to drizzle",
-      "Homemade fallback if bottled hot honey is unavailable: 2 tablespoons honey, 1 teaspoon Calabrian chile paste, 1 teaspoon unsalted butter, 1/2 teaspoon apple cider vinegar or red wine vinegar, 1 smashed small garlic clove, and a very small pinch fine sea salt or Morton Coarse Kosher Salt",
+      "Homemade fallback if bottled hot honey is unavailable: 2 tablespoons honey, 1 teaspoon Calabrian chile paste or 1/4 teaspoon red pepper flakes, 1 teaspoon unsalted butter, 1/2 teaspoon apple cider vinegar or red wine vinegar, 1 smashed small garlic clove, and a very small pinch fine sea salt or Morton Coarse Kosher Salt",
       "2 teaspoons extra-virgin olive oil for brushing the finished rim",
       "1 small garlic clove, finely grated for the rim oil",
       "1/8 teaspoon dried oregano for the rim oil",
@@ -19297,7 +19175,7 @@
       "If using prepared dough, keep the 450 to 475 grams dough covered at room temperature until it is soft, relaxed, and no longer refrigerator-cold in the center before stretching.",
       "While the oven continues preheating, spoon the tomatoes from the can into a fine-mesh strainer and drain them for 5 minutes.",
       "Crush the drained tomatoes by hand until they are saucy but still lightly textured, then measure 1/2 cup plus 1 tablespoon thick crushed tomatoes, about 140 grams.",
-      "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon dried oregano, 1/8 teaspoon onion powder, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/8 teaspoon Calabrian chile paste if using, and a small pinch of sugar only if the tomatoes taste sharp.",
+      "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon dried oregano, 1/8 teaspoon onion powder, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/8 teaspoon Calabrian chile paste or a small pinch red pepper flakes if using, and a small pinch of sugar only if the tomatoes taste sharp.",
       "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, onion powder, salt, and chile season the tomatoes.",
       "Taste the rested sauce; it should taste bright, savory, lightly spicy, and slightly salty because it has to season a large crust and a lot of cheese. If it tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
       "Freshly shred about 3 1/4 ounces of the low-moisture whole-milk mozzarella from a block, then cut the remaining 3 1/4 ounces mozzarella into 1/4-inch dice.",
@@ -19307,7 +19185,7 @@
       "Make the seasoned ricotta by stirring together the drained 1/3 cup ricotta, 1/2 ounce finely grated Pecorino Romano or Parmesan, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon finely grated lemon zest, 1/8 teaspoon black pepper, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
       "Keep the seasoned ricotta cold until the pizza has started baking so it stays creamy instead of spreading into the cheese.",
       "If using bottled hot honey, warm 1 1/2 to 2 tablespoons hot honey in a small microwave-safe bowl for 5 to 10 seconds, just until it drizzles easily, then set it aside for finishing.",
-      "If making the homemade fallback, warm 2 tablespoons honey, 1 teaspoon Calabrian chile paste, 1 teaspoon unsalted butter, 1/2 teaspoon apple cider vinegar or red wine vinegar, 1 smashed small garlic clove, and a very small pinch of fine sea salt or Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until loose and fragrant; let it sit off the heat for at least 10 minutes, then remove and discard the smashed garlic clove.",
+      "If making the homemade fallback, warm 2 tablespoons honey, 1 teaspoon Calabrian chile paste or 1/4 teaspoon red pepper flakes, 1 teaspoon unsalted butter, 1/2 teaspoon apple cider vinegar or red wine vinegar, 1 smashed small garlic clove, and a very small pinch of fine sea salt or Morton Coarse Kosher Salt in a small saucepan or microwave-safe bowl just until loose and fragrant; let it sit off the heat for at least 10 minutes, then remove and discard the smashed garlic clove.",
       "Make the rim oil by warming 2 teaspoons extra-virgin olive oil and 1 finely grated small garlic clove in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until fragrant, then stir in 1/8 teaspoon dried oregano.",
       "Keep the mozzarella-provolone blend, seasoned ricotta, and grated Pecorino cold until assembly so the cheeses melt cleanly instead of oiling out before the crust finishes.",
       "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",

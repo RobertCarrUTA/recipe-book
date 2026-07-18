@@ -27,60 +27,51 @@
   ],
   "groceryIngredients": [
     {
-      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour",
+      "display": "high-protein bread flour",
       "item": "bread flour",
-      "quantity": 275,
+      "quantity": 260,
       "unit": "g"
     },
     {
-      "display": "white whole wheat flour, whole wheat flour, or high-extraction flour, optional same-day flavor boost",
+      "display": "white whole wheat, whole wheat, or high-extraction flour",
       "item": "whole wheat flour",
-      "note": "Use 15 grams with 260 grams bread flour, or skip it and use 275 grams bread flour total.",
-      "optional": true,
+      "note": "Or skip and use 275 g bread flour total.",
       "quantity": 15,
       "unit": "g"
     },
     {
-      "display": "prepared pizza dough ball or pizza dough mix, optional shortcut",
-      "item": "pizza dough",
-      "note": "Use enough for one 450- to 475-gram room-temperature dough ball if skipping the scratch dough.",
-      "optional": true,
-      "quantity": 475,
-      "unit": "g"
-    },
-    {
-      "display": "instant yeast or active dry yeast",
+      "display": "instant yeast",
       "item": "active dry or instant yeast",
       "quantity": 0.75,
       "unit": "tsp"
     },
     {
-      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "display": "fine sea salt",
       "item": "salt",
-      "quantity": 2,
+      "quantity": 1.25,
       "unit": "tsp"
     },
     {
       "item": "granulated sugar",
-      "quantity": 2,
+      "quantity": "1.25-1.3125",
       "unit": "tsp"
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 3,
+      "quantity": 6.75,
+      "unit": "tsp"
+    },
+    {
+      "display": "semolina flour or fine cornmeal",
+      "item": "semolina flour",
+      "quantity": "1-2",
       "unit": "tbsp"
     },
     {
-      "item": "semolina flour or fine cornmeal",
-      "quantity": 2,
-      "unit": "tbsp"
-    },
-    {
-      "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+      "display": "Bianco DiNapoli whole peeled tomatoes",
       "item": "canned tomatoes",
-      "note": "Buy one 14-ounce can; the recipe uses about 1/2 cup plus 1 tablespoon thick crushed drained tomatoes.",
-      "quantity": 1,
-      "unit": "can"
+      "quantity": 0.5625,
+      "unit": "cup"
     },
     {
       "item": "tomato paste",
@@ -94,17 +85,17 @@
     },
     {
       "item": "dried oregano",
-      "quantity": 0.5,
+      "quantity": 0.375,
       "unit": "tsp"
     },
     {
       "item": "onion powder",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
       "item": "garlic powder",
-      "quantity": 0.25,
+      "quantity": 0.125,
       "unit": "tsp"
     },
     {
@@ -115,38 +106,39 @@
     {
       "item": "red pepper flakes",
       "optional": true,
-      "quantity": 0.125,
-      "unit": "tsp"
+      "quantity": 1,
+      "unit": "pinch"
     },
     {
-      "display": "low-moisture whole-milk mozzarella block",
-      "item": "mozzarella cheese",
-      "quantity": 8,
+      "display": "low-moisture whole-milk mozzarella",
+      "item": "low-moisture mozzarella cheese",
+      "quantity": 6.5,
       "unit": "oz"
     },
     {
-      "display": "provolone piccante, sharp deli provolone, or aged mozzarella",
+      "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 2,
+      "quantity": 1.5,
       "unit": "oz"
     },
     {
-      "display": "Pecorino Romano cheese or Parmesan cheese",
+      "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 2,
+      "quantity": 1,
       "unit": "oz"
     },
     {
       "display": "natural-casing cup-and-char pepperoni",
       "item": "pepperoni",
-      "quantity": 4,
+      "quantity": "3-3.5",
       "unit": "oz"
     },
     {
+      "display": "fresh basil leaves",
       "item": "fresh basil",
       "optional": true,
-      "quantity": 0.25,
-      "unit": "cup"
+      "quantity": "6-8",
+      "unit": "leaf"
     },
     {
       "item": "flaky sea salt",
