@@ -26,17 +26,10 @@
   ],
   "groceryIngredients": [
     {
-      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "display": "high-protein bread flour",
       "item": "bread flour",
       "quantity": 300,
       "unit": "g"
-    },
-    {
-      "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
-      "item": "pizza dough",
-      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-      "optional": true,
-      "quantity": 1
     },
     {
       "display": "instant yeast",
@@ -45,7 +38,7 @@
       "unit": "tsp"
     },
     {
-      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "display": "fine sea salt",
       "item": "salt",
       "quantity": 1,
       "unit": "tbsp"
@@ -61,16 +54,15 @@
       "unit": "cup"
     },
     {
-      "item": "semolina flour or fine cornmeal",
+      "item": "semolina flour",
       "quantity": 2,
       "unit": "tbsp"
     },
     {
-      "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+      "display": "Bianco DiNapoli whole peeled tomatoes",
       "item": "canned tomatoes",
-      "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed drained tomatoes depending on pizza size.",
-      "quantity": 1,
-      "unit": "can"
+      "quantity": "0.5-0.6667",
+      "unit": "cup"
     },
     {
       "item": "tomato paste",
@@ -88,12 +80,12 @@
       "unit": "tsp"
     },
     {
-      "display": "Calabrian chile paste, optional in the sauce",
+      "display": "Calabrian chile paste",
       "item": "Calabrian chile paste",
-      "note": "The recipe uses 1/8 teaspoon for depth, not real heat. Omit it if you want a very mild cheese pizza.",
+      "note": "Sub red pepper flakes.",
       "optional": true,
-      "quantity": 1,
-      "unit": "jar"
+      "quantity": 0.125,
+      "unit": "tsp"
     },
     {
       "item": "granulated sugar",
@@ -102,22 +94,21 @@
       "unit": "pinch"
     },
     {
-      "display": "low-moisture whole-milk mozzarella block",
-      "item": "low-moisture whole-milk mozzarella cheese",
+      "display": "low-moisture whole-milk mozzarella",
+      "item": "low-moisture mozzarella cheese",
       "quantity": 8,
       "unit": "oz"
     },
     {
-      "display": "provolone piccante or sharp deli provolone",
+      "display": "deli provolone",
       "item": "provolone cheese",
       "quantity": 2,
       "unit": "oz"
     },
     {
-      "display": "fresh mozzarella, fior di latte, or ciliegine",
-      "item": "mozzarella cheese",
-      "note": "Buy a small 4-ounce ball or container if possible; the recipe uses 1 1/2 to 2 ounces after draining.",
-      "quantity": 4,
+      "display": "fresh mozzarella",
+      "item": "fresh mozzarella cheese",
+      "quantity": "1.5-2",
       "unit": "oz"
     },
     {
@@ -160,7 +151,7 @@
     "2 teaspoons extra-virgin olive oil for the sauce",
     "1/2 teaspoon dried oregano",
     "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
-    "1/8 teaspoon Calabrian chile paste for the sauce, optional",
+    "1/8 teaspoon Calabrian chile paste for the sauce, optional, or a small pinch red pepper flakes",
     "Small pinch granulated sugar, only if the tomatoes taste sharp",
     "6 1/2 ounces low-moisture whole-milk mozzarella from a block for a 15- to 15 1/2-inch pizza, or 7 1/2 ounces for a true 16-inch pizza, freshly shredded",
     "1 1/2 ounces provolone piccante or sharp deli provolone, finely diced or shredded",
@@ -194,7 +185,7 @@
     "Preheat the oven to 550 degrees F for 60 to 75 minutes so the Baking Steel Pro is fully saturated with heat before the pizza goes in.",
     "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
     "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed drained tomatoes for a 15- to 15 1/2-inch pizza, or 2/3 cup thick crushed drained tomatoes for a true 16-inch pizza.",
-    "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/8 teaspoon Calabrian chile paste if using, and a small pinch of sugar only if the tomatoes taste sharp.",
+    "Make the sauce by stirring together the measured thick crushed drained tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/8 teaspoon Calabrian chile paste or a small pinch red pepper flakes if using, and a small pinch of sugar only if the tomatoes taste sharp.",
     "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, salt, and chile season the tomatoes.",
     "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust and a full layer of cheese.",
     "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",

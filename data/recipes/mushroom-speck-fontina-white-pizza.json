@@ -28,24 +28,10 @@
   ],
   "groceryIngredients": [
     {
-      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "display": "high-protein bread flour",
       "item": "bread flour",
-      "quantity": 285,
+      "quantity": 300,
       "unit": "g"
-    },
-    {
-      "display": "whole wheat flour, preferably stone-ground",
-      "item": "whole wheat flour",
-      "note": "Use 15 grams in the scratch dough for extra crust flavor; replace with more bread flour if you want the easiest stretch.",
-      "quantity": 15,
-      "unit": "g"
-    },
-    {
-      "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
-      "item": "pizza dough",
-      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-      "optional": true,
-      "quantity": 1
     },
     {
       "display": "instant yeast",
@@ -54,7 +40,7 @@
       "unit": "tsp"
     },
     {
-      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "display": "fine sea salt",
       "item": "salt",
       "quantity": 1,
       "unit": "tbsp"
@@ -70,26 +56,24 @@
       "unit": "cup"
     },
     {
-      "item": "semolina flour or fine cornmeal",
+      "item": "semolina flour",
       "quantity": 2,
       "unit": "tbsp"
     },
     {
-      "display": "mixed mushrooms, such as cremini, shiitake, oyster, or maitake",
+      "display": "mixed mushrooms",
       "item": "mushrooms",
-      "note": "Buy 12 ounces total. A mix with at least 4 ounces shiitake, oyster, or maitake gives a deeper flavor than all button mushrooms.",
       "quantity": 12,
       "unit": "oz"
     },
     {
-      "display": "dried porcini mushrooms or porcini powder",
+      "display": "dried porcini mushrooms",
       "item": "dried porcini mushrooms",
-      "note": "Buy a small package; the recipe uses 1 teaspoon finely ground porcini powder and the rest keeps well for future sauces, soups, and pizzas.",
       "quantity": 0.25,
       "unit": "oz"
     },
     {
-      "display": "medium yellow onion or sweet onion",
+      "display": "yellow onion",
       "item": "yellow onion",
       "quantity": 1
     },
@@ -110,31 +94,31 @@
       "unit": "bunch"
     },
     {
-      "display": "sherry vinegar or red wine vinegar",
-      "item": "red wine vinegar",
+      "display": "sherry vinegar",
+      "item": "sherry vinegar",
       "quantity": 1,
       "unit": "tbsp"
     },
     {
       "display": "whole-milk ricotta",
       "item": "ricotta cheese",
-      "quantity": 8,
-      "unit": "oz"
+      "quantity": 0.3333,
+      "unit": "cup"
     },
     {
       "display": "mascarpone",
       "item": "mascarpone cheese",
-      "quantity": 4,
-      "unit": "oz"
+      "quantity": 2,
+      "unit": "tbsp"
     },
     {
-      "display": "low-moisture whole-milk mozzarella block",
-      "item": "low-moisture whole-milk mozzarella cheese",
+      "display": "low-moisture whole-milk mozzarella",
+      "item": "low-moisture mozzarella cheese",
       "quantity": 8,
       "unit": "oz"
     },
     {
-      "display": "Italian fontina or fontina Val d'Aosta",
+      "display": "fontina cheese",
       "item": "fontina cheese",
       "quantity": 4,
       "unit": "oz"
@@ -146,10 +130,9 @@
       "unit": "oz"
     },
     {
-      "display": "thinly sliced speck or prosciutto",
+      "display": "speck",
       "item": "prosciutto",
-      "note": "Speck gives the smokiest finish; prosciutto is the easiest substitute. Buy 3 ounces if sliced to order; the recipe uses 2 ounces.",
-      "quantity": 3,
+      "quantity": 2,
       "unit": "oz"
     },
     {

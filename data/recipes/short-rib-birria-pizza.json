@@ -28,24 +28,16 @@
   ],
   "groceryIngredients": [
     {
-      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "display": "high-protein bread flour",
       "item": "bread flour",
       "quantity": 285,
       "unit": "g"
     },
     {
-      "display": "masa harina, preferably Masienda, Bob's Red Mill, or Maseca",
+      "display": "masa harina",
       "item": "masa harina",
-      "note": "Use 15 grams in the scratch dough for a subtle toasted-corn flavor; replace with 15 grams more bread flour for the easiest stretch.",
       "quantity": 15,
       "unit": "g"
-    },
-    {
-      "display": "72 Hour Pizza Dough Mix pack, optional dough shortcut",
-      "item": "pizza dough",
-      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, ferment as directed, then portion 450 to 500 grams prepared dough for one large 15- to 16-inch pizza.",
-      "optional": true,
-      "quantity": 1
     },
     {
       "display": "instant yeast",
@@ -54,7 +46,7 @@
       "unit": "tsp"
     },
     {
-      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "display": "fine sea salt",
       "item": "salt",
       "quantity": 1,
       "unit": "tbsp"
@@ -70,15 +62,14 @@
       "unit": "cup"
     },
     {
-      "item": "semolina flour or fine cornmeal",
+      "item": "semolina flour",
       "quantity": 2,
       "unit": "tbsp"
     },
     {
-      "display": "bone-in beef short ribs or boneless beef short ribs",
+      "display": "beef short ribs",
       "item": "bone-in beef short rib",
-      "note": "Buy 1 1/2 to 2 pounds. Bone-in short ribs give the consomme more body; boneless short ribs are easier to shred. The pizza uses 5 to 6 ounces cooked shredded beef and the rest becomes leftovers.",
-      "quantity": 2,
+      "quantity": "1.5-2",
       "unit": "lb"
     },
     {
@@ -94,8 +85,7 @@
     {
       "display": "dried chile de arbol peppers",
       "item": "dried chile de arbol",
-      "note": "Use 1 for moderate heat or 2 for a hotter consomme.",
-      "quantity": 2
+      "quantity": "1-2"
     },
     {
       "display": "Roma tomatoes",
@@ -164,20 +154,20 @@
       "unit": "tsp"
     },
     {
-      "display": "neutral high-heat oil, such as avocado, grapeseed, canola, or vegetable oil",
+      "display": "avocado oil",
       "item": "neutral high-heat oil",
       "quantity": 2,
       "unit": "tbsp"
     },
     {
-      "display": "Oaxaca cheese or quesadilla cheese",
+      "display": "Oaxaca cheese",
       "item": "Oaxaca cheese",
       "quantity": 8,
       "unit": "oz"
     },
     {
-      "display": "low-moisture whole-milk mozzarella block",
-      "item": "low-moisture whole-milk mozzarella cheese",
+      "display": "low-moisture whole-milk mozzarella",
+      "item": "low-moisture mozzarella cheese",
       "quantity": 4,
       "unit": "oz"
     },
@@ -188,7 +178,7 @@
       "unit": "oz"
     },
     {
-      "display": "Mexican crema or full-fat sour cream",
+      "display": "full-fat sour cream",
       "item": "sour cream",
       "quantity": 4,
       "unit": "oz"

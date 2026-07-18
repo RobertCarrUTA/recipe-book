@@ -27,17 +27,10 @@
   ],
   "groceryIngredients": [
     {
-      "display": "high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, or another strong bread flour",
+      "display": "high-protein bread flour",
       "item": "bread flour",
       "quantity": 280,
       "unit": "g"
-    },
-    {
-      "display": "Baking Steel 72 Hour Pizza Dough Mix pack, optional dough shortcut",
-      "item": "pizza dough",
-      "note": "Buy one pack if using instead of scratch dough; add 1 3/4 cups water to the mix, then divide the prepared batch into 3 larger dough balls for 14- to 16-inch pizzas.",
-      "optional": true,
-      "quantity": 1
     },
     {
       "display": "instant yeast",
@@ -46,7 +39,7 @@
       "unit": "tsp"
     },
     {
-      "display": "fine sea salt, Morton Coarse Kosher Salt, or Diamond Crystal kosher salt",
+      "display": "fine sea salt",
       "item": "salt",
       "quantity": 2,
       "unit": "tsp"
@@ -62,16 +55,15 @@
       "unit": "cup"
     },
     {
-      "item": "semolina flour or fine cornmeal",
+      "item": "semolina flour",
       "quantity": 2,
       "unit": "tbsp"
     },
     {
-      "display": "San Marzano-style or Bianco DiNapoli whole peeled tomatoes",
+      "display": "Bianco DiNapoli whole peeled tomatoes",
       "item": "canned tomatoes",
-      "note": "Buy one 14-ounce can; the recipe uses 1/2 to 2/3 cup thick crushed tomatoes depending on pizza size.",
-      "quantity": 1,
-      "unit": "can"
+      "quantity": "0.5-0.6667",
+      "unit": "cup"
     },
     {
       "item": "tomato paste",
@@ -95,8 +87,10 @@
     },
     {
       "item": "Calabrian chile paste",
-      "quantity": 1,
-      "unit": "jar"
+      "quantity": 1.25,
+      "unit": "tsp",
+      "display": "Calabrian chile paste",
+      "note": "Sub red pepper flakes."
     },
     {
       "item": "granulated sugar",
@@ -105,13 +99,13 @@
       "unit": "tsp"
     },
     {
-      "display": "low-moisture whole-milk mozzarella block",
-      "item": "mozzarella cheese",
+      "display": "low-moisture whole-milk mozzarella",
+      "item": "low-moisture mozzarella cheese",
       "quantity": 8,
       "unit": "oz"
     },
     {
-      "display": "provolone piccante or deli provolone",
+      "display": "deli provolone",
       "item": "provolone cheese",
       "quantity": 2,
       "unit": "oz"
@@ -137,8 +131,8 @@
     {
       "display": "whole-milk ricotta",
       "item": "ricotta cheese",
-      "quantity": 8,
-      "unit": "oz"
+      "quantity": "0.3333-0.5",
+      "unit": "cup"
     },
     {
       "item": "lemon",
@@ -150,8 +144,7 @@
       "unit": "tsp"
     },
     {
-      "display": "red wine vinegar or apple cider vinegar",
-      "item": "apple cider vinegar or red wine vinegar",
+      "item": "red wine vinegar",
       "quantity": 0.5,
       "unit": "tsp"
     },
@@ -184,7 +177,7 @@
     "1/2 teaspoon dried oregano",
     "1/8 teaspoon fennel seeds, lightly crushed",
     "1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt for the sauce",
-    "1/4 teaspoon Calabrian chile paste for the sauce",
+    "1/4 teaspoon Calabrian chile paste for the sauce, or a small pinch red pepper flakes",
     "Small pinch granulated sugar, only if the tomatoes taste sharp",
     "6 1/2 ounces low-moisture whole-milk mozzarella from a block, freshly shredded",
     "1 1/2 ounces provolone piccante or deli provolone, finely diced or shredded",
@@ -197,7 +190,7 @@
     "1/8 teaspoon black pepper, freshly ground if possible",
     "Small pinch fine sea salt or Morton Coarse Kosher Salt for the ricotta",
     "2 tablespoons honey for the chile honey",
-    "1 teaspoon Calabrian chile paste for the chile honey",
+    "1 teaspoon Calabrian chile paste for the chile honey, or 1/4 teaspoon red pepper flakes",
     "1/2 teaspoon red wine vinegar or apple cider vinegar",
     "1 small garlic clove, smashed for the chile honey",
     "1 teaspoon extra-virgin olive oil for brushing the finished rim",
@@ -226,7 +219,7 @@
     "Preheat the oven to 550 degrees F for 60 to 75 minutes so the Baking Steel Pro is fully saturated with heat before the pizza goes in.",
     "While the steel preheats, spoon the tomatoes from the can into a fine-mesh strainer and let watery juice drain for 5 minutes.",
     "Crush enough drained tomatoes by hand to measure 1/2 cup thick crushed tomatoes for a 15-inch pizza or 2/3 cup thick crushed tomatoes for a 16-inch pizza.",
-    "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste, and a small pinch of sugar only if the tomatoes taste sharp.",
+    "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 finely grated small garlic clove, 2 teaspoons extra-virgin olive oil, 1/2 teaspoon dried oregano, 1/8 teaspoon lightly crushed fennel seeds, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/4 teaspoon Calabrian chile paste or a small pinch red pepper flakes, and a small pinch of sugar only if the tomatoes taste sharp.",
     "Let the sauce sit for at least 20 minutes while the oven continues preheating so the garlic, oregano, fennel, salt, and chile season the tomatoes.",
     "Taste the rested sauce; it should taste bright, savory, and slightly salty because it has to season a large crust, cheese, pepperoni, sausage, and ricotta.",
     "If the sauce tastes flat, stir in another tiny pinch of fine sea salt or Morton Coarse Kosher Salt, about 1/16 teaspoon.",
@@ -238,7 +231,7 @@
     "If the measured whole-milk ricotta looks loose or wet, drain it in a fine-mesh strainer or on a double layer of paper towels for 15 minutes.",
     "Make the seasoned ricotta by stirring together the drained measured ricotta, 1/2 ounce finely grated Pecorino Romano, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon finely grated lemon zest, 1/8 teaspoon black pepper, and a small pinch of fine sea salt or Morton Coarse Kosher Salt.",
     "Keep the seasoned ricotta cold until the pizza has started baking so it stays creamy when added near the end.",
-    "Make the chile honey by warming 2 tablespoons honey, 1 teaspoon Calabrian chile paste, 1/2 teaspoon red wine vinegar or apple cider vinegar, and 1 smashed small garlic clove in a small saucepan or microwave-safe bowl just until loose and fragrant.",
+    "Make the chile honey by warming 2 tablespoons honey, 1 teaspoon Calabrian chile paste or 1/4 teaspoon red pepper flakes, 1/2 teaspoon red wine vinegar or apple cider vinegar, and 1 smashed small garlic clove in a small saucepan or microwave-safe bowl just until loose and fragrant.",
     "Let the chile honey sit off the heat for at least 10 minutes, then remove and discard the smashed garlic clove.",
     "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
     "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched and puffy.",
