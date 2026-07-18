@@ -14367,6 +14367,30 @@
         "unit": "g"
       },
       {
+        "display": "high-protein bread flour",
+        "item": "bread flour",
+        "note": "For scratch dough fallback.",
+        "optional": true,
+        "quantity": 255,
+        "unit": "g"
+      },
+      {
+        "display": "instant yeast",
+        "item": "active dry or instant yeast",
+        "note": "For scratch dough fallback.",
+        "optional": true,
+        "quantity": 0.125,
+        "unit": "tsp"
+      },
+      {
+        "display": "fine sea salt",
+        "item": "salt",
+        "note": "For scratch dough fallback.",
+        "optional": true,
+        "quantity": 1.5,
+        "unit": "tsp"
+      },
+      {
         "display": "fine sea salt",
         "item": "salt",
         "quantity": 0.3125,
