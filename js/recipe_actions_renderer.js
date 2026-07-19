@@ -158,7 +158,7 @@ export function createRecipeActionsRenderer({
     });
     const label = createElement(document, "span", {
       className: "recipe-export-label",
-      textContent: "Export",
+      textContent: "Share & export",
     });
     const status = createElement(document, "span", {
       attributes: { "aria-live": "polite" },

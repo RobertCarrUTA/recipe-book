@@ -1167,20 +1167,22 @@ h2 {
 }
 
 .recipe-export-actions {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  min-height: 42px;
-  padding: 4px 5px 4px 8px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface-soft);
+  gap: 8px;
+  min-height: 0;
+  padding: 4px 0 0;
+  border: 0;
+  background: transparent;
 }
 
 .recipe-export-label {
-  min-width: 0;
-  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  margin-right: 2px;
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 850;
@@ -1192,10 +1194,11 @@ h2 {
 }
 
 .recipe-export-button {
-  min-height: 32px;
-  padding: 0 7px;
-  border-color: var(--control-border);
-  background: rgba(255, 255, 255, 0.035);
+  min-width: 72px;
+  min-height: 36px;
+  padding: 0 12px;
+  border-color: rgba(102, 116, 130, 0.82);
+  background: rgba(255, 255, 255, 0.025);
   color: var(--muted-strong);
   font-size: 0.74rem;
   font-weight: 850;
@@ -1208,7 +1211,7 @@ h2 {
 }
 
 .recipe-export-status {
-  grid-column: 1 / -1;
+  flex: 1 0 100%;
   color: var(--accent-strong);
   font-size: 0.74rem;
   font-weight: 800;
@@ -3313,18 +3316,14 @@ li {
     flex: 0 0 auto;
   }
 
-  .recipe-actions>.recipe-scale-control,
-  .recipe-actions>.recipe-export-actions {
+  .recipe-actions>.recipe-scale-control {
     width: 174px;
     flex: 0 0 174px;
   }
 
-  .recipe-export-actions {
-    grid-template-columns: minmax(0, 1fr) auto auto;
-  }
-
-  .recipe-export-copy-button {
-    display: none;
+  .recipe-actions>.recipe-export-actions {
+    width: 100%;
+    flex: 1 0 100%;
   }
 
   .recipe-add-toggle {
