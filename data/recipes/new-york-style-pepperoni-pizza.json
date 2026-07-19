@@ -1,12 +1,12 @@
 {
-  "additionalTime": "1 1/2 to 6 hours dough proof plus 60 to 75 minutes steel preheat",
+  "additionalTime": "4 to 6 hours recommended dough proof, or 1 1/2 to 2 hours for the fast dough, plus 60 to 75 minutes steel preheat",
   "author": "Robert Carr",
   "collections": [
     "main-dishes",
     "pizza",
     "baking"
   ],
-  "cookTime": "6 to 7 minutes",
+  "cookTime": "5 to 7 minutes",
   "description": "A large 15-inch pepperoni pizza tuned for a 550 degrees F home oven, a hot baking steel, and a same-day dough. The crust is thin, crisp underneath, foldable, tender at the rim, and topped with concentrated tomato sauce, whole-milk mozzarella, provolone, Pecorino Romano, natural-casing pepperoni, and a short broiler finish.",
   "equipment": [
     "Baking Steel Pro or 16 x 16-inch baking steel",
@@ -42,7 +42,8 @@
     {
       "display": "instant yeast",
       "item": "active dry or instant yeast",
-      "quantity": 0.75,
+      "note": "Use 3/4 teaspoon only for the fast dough.",
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
@@ -130,7 +131,7 @@
     {
       "display": "natural-casing cup-and-char pepperoni",
       "item": "pepperoni",
-      "quantity": "3-3.5",
+      "quantity": 3,
       "unit": "oz"
     },
     {
@@ -139,20 +140,14 @@
       "optional": true,
       "quantity": "6-8",
       "unit": "leaf"
-    },
-    {
-      "item": "flaky sea salt",
-      "optional": true,
-      "quantity": 0.0625,
-      "unit": "tsp"
     }
   ],
   "id": "new-york-style-pepperoni-pizza",
   "ingredients": [
     "260 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour, plus 15 grams white whole wheat, whole wheat, or high-extraction flour; or use 275 grams bread flour total",
-    "178 grams water: use 95 to 100 degrees F water for the fast dough or cool room-temperature water for the 4- to 6-hour same-day ferment",
+    "178 grams water: use cool room-temperature water for the recommended 4- to 6-hour same-day ferment or 95 to 100 degrees F water for the fast dough",
     "5 grams granulated sugar, about 1 1/4 teaspoons",
-    "2.25 grams instant yeast, about 3/4 teaspoon, for the fast dough; use 1.5 grams, about 1/2 teaspoon, for the 4- to 6-hour same-day ferment",
+    "1.5 grams instant yeast, about 1/2 teaspoon, for the recommended 4- to 6-hour same-day ferment; use 2.25 grams, about 3/4 teaspoon, only for the fast dough",
     "6 grams fine sea salt or Morton Coarse Kosher Salt for the dough, about 1 level teaspoon fine sea salt, 1 1/4 level teaspoons Morton Coarse Kosher Salt, or 2 level teaspoons Diamond Crystal kosher salt",
     "10 grams extra-virgin olive oil for the dough, about 2 1/4 teaspoons, plus 1/2 teaspoon for the dough container",
     "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
@@ -170,16 +165,15 @@
     "6 1/2 ounces low-moisture whole-milk mozzarella from a block, half freshly shredded and half cut into 1/4-inch dice",
     "1 1/2 ounces provolone piccante, sharp deli provolone, or aged mozzarella, finely shredded or diced",
     "1 ounce Pecorino Romano or Parmesan, finely grated, divided",
-    "3 ounces natural-casing cup-and-char pepperoni for a balanced 15-inch pizza, or 3 1/2 ounces if you want heavier pepperoni coverage, sliced thin",
+    "3 ounces natural-casing cup-and-char pepperoni, thinly sliced",
     "1 tablespoon extra-virgin olive oil for brushing the finished rim",
     "1 small garlic clove, finely grated for the rim oil",
     "1/8 teaspoon dried oregano for the rim oil",
-    "6 to 8 fresh basil leaves, optional, torn after baking",
-    "Small pinch flaky sea salt for finishing, optional"
+    "6 to 8 fresh basil leaves, optional, torn after baking"
   ],
   "instructions": [
-    "Using prepared dough or already-risen dough from a dough mix? Use 450 to 475 grams room-temperature dough and skip to step 15. Making scratch dough? Use steps 2 through 14; choose the fast dough if you want to bake as soon as the dough is ready, or the 4- to 6-hour same-day ferment if you have extra time.",
-    "For the fast dough, add 178 grams 95 to 100 degrees F water, 5 grams granulated sugar, and 2.25 grams instant yeast to a large mixing bowl. For the 4- to 6-hour same-day ferment, use 178 grams cool room-temperature water, 5 grams granulated sugar, and 1.5 grams instant yeast.",
+    "Using prepared dough or already-risen dough from a dough mix? Use 450 to 475 grams room-temperature dough and skip to step 15. Making scratch dough? Use steps 2 through 14. The 4- to 6-hour same-day ferment is the recommended path for better flavor, browning, and stretch; use the fast dough only when you need the shortest practical same-day option.",
+    "For the recommended 4- to 6-hour same-day ferment, add 178 grams cool room-temperature water, 5 grams granulated sugar, and 1.5 grams instant yeast to a large mixing bowl. For the fast dough, use 178 grams 95 to 100 degrees F water, 5 grams granulated sugar, and 2.25 grams instant yeast.",
     "If using active dry yeast instead of instant yeast, stir the yeast into the sugared water and wait 5 minutes before adding flour.",
     "Add 260 grams high-protein bread flour and 15 grams white whole wheat, whole wheat, or high-extraction flour to the bowl with the water, sugar, and yeast. If skipping the whole wheat flour, add 275 grams bread flour total.",
     "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
@@ -190,7 +184,7 @@
     "With lightly wet hands, stretch one side of the dough up and fold it over the center, then rotate the bowl and repeat 3 more times so all 4 sides have been folded.",
     "Shape the dough into a tight ball, lightly coat a covered dough container or large zip-top bag with 1/2 teaspoon extra-virgin olive oil, and place the dough smooth-side up inside.",
     "For the fast dough, cover the dough and let it proof at room temperature for 75 to 90 minutes, until puffy, relaxed, and about 50 percent larger. If your kitchen is cooler than 70 degrees F, give the fast dough up to 2 hours; once it reaches this point, continue to step 14 and do not also use the longer ferment.",
-    "For the 4- to 6-hour same-day ferment instead, cover the dough and let it sit at room temperature for 4 to 6 hours, until airy, relaxed, and about doubled but not collapsed.",
+    "For the recommended 4- to 6-hour same-day ferment, cover the dough and let it sit at room temperature for 4 to 6 hours, until airy, relaxed, and about doubled but not collapsed.",
     "If the dough doubles before you are ready to bake, refrigerate the covered dough for up to 2 hours, then bring it back to room temperature for 30 minutes before stretching.",
     "Place the steel on an upper-middle rack, ideally about 6 to 7 inches below the broiler element. If your oven rack choices put the steel closer than 5 inches from the broiler, use the next lower rack so the rim does not burn before the bottom crisps.",
     "Preheat the oven to 550 degrees F for 60 to 75 minutes so the steel is fully heated before the pizza goes in.",
@@ -203,7 +197,7 @@
     "Finely shred or dice 1 1/2 ounces provolone or aged mozzarella, then toss it with the shredded and diced mozzarella so the cheeses distribute evenly.",
     "Finely grate 1 ounce Pecorino Romano or Parmesan, then divide it into two 1/2-ounce portions.",
     "Keep the mozzarella-provolone blend and grated Pecorino cold until the dough is stretched so the cheese melts cleanly instead of oiling out before the crust finishes.",
-    "Use 3 ounces thin-sliced natural-casing pepperoni for balanced coverage, or 3 1/2 ounces for heavier coverage. If the pepperoni slices are larger than 1 1/2 inches wide, cut them in half so they distribute evenly without weighing down the center.",
+    "Use 3 ounces thinly sliced natural-casing pepperoni for balanced coverage and a crisp center. If the pepperoni slices are larger than 1 1/2 inches wide, cut them in half so they distribute evenly without weighing down the center.",
     "Make the rim oil by warming 1 tablespoon extra-virgin olive oil and 1 finely grated small garlic clove in a small saucepan over very low heat or in a microwave-safe bowl for 10 to 15 seconds, just until fragrant, then stir in 1/8 teaspoon dried oregano.",
     "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
     "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched for the rim.",
@@ -214,15 +208,15 @@
     "Spread all 1/2 cup plus 1 tablespoon sauce over the dough in a thin, even layer, leaving the outer 3/4 inch uncovered.",
     "Sprinkle 1/2 ounce finely grated Pecorino Romano or Parmesan evenly over the sauce.",
     "Scatter about three-fourths of the mozzarella-provolone blend evenly over the pizza, keeping the cheese level and avoiding heavy piles in the center.",
-    "Arrange the 3 to 3 1/2 ounces sliced pepperoni over the cheese, leaving a little space between slices so the cheese can bubble through and the pepperoni can crisp at the edges.",
+    "Arrange the 3 ounces sliced pepperoni over the cheese, leaving a little space between slices so the cheese can bubble through and the pepperoni can crisp at the edges.",
     "Scatter the remaining mozzarella-provolone blend over any exposed sauced areas, then sprinkle 1/4 ounce finely grated Pecorino Romano or Parmesan over the topped pizza before baking.",
     "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
     "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
     "Launch the pizza onto the fully preheated steel as soon as it slides freely, ideally within 2 minutes of adding sauce, so moisture from the sauce does not glue the dough to the peel.",
     "Bake the pizza at 550 degrees F for 3 minutes with the broiler off.",
     "At 3 minutes, rotate the pizza 180 degrees with the peel so the back edge does not brown faster than the front edge.",
-    "Bake for 2 minutes more, then lift one edge with the peel and check the bottom; it should be golden brown with medium-brown freckles, not pale, black, or bitter-smelling.",
-    "If the bottom is still pale or flexible after 5 minutes total, keep the pizza directly on the steel for 30 to 60 seconds more before using the broiler.",
+    "Bake for 1 minute more, then lift one edge with the peel and check the bottom at 4 minutes total; it should be developing golden-brown color with medium-brown freckles, not pale, black, or bitter-smelling.",
+    "If the bottom is still pale or flexible at 4 minutes, continue baking directly on the steel in 30-second increments, checking after each interval, until it is golden and crisp enough to support the toppings before using the broiler.",
     "If the bottom is golden and crisp but the cheese or pepperoni still needs color, slide the pizza onto a room-temperature pizza screen and set the screen back on the steel so the top can finish while the bottom browns more slowly.",
     "If you see black patches on the bottom larger than a dime or smell bitter scorching, slide the pizza onto the room-temperature rimless baking sheet immediately; the solid sheet is a stronger heat shield than a screen.",
     "Turn the broiler to high only after the bottom has set and browned, then broil for 30 to 60 seconds, watching constantly, until the rim blisters lightly, the cheese bubbles, and the pepperoni cups and crisps at the edges without blackening.",
@@ -230,12 +224,11 @@
     "Transfer the baked pizza to a pizza screen or wire rack for 1 minute so steam can escape from the bottom crust. If you do not have either, use a cutting board and rest the pizza for only 1 minute.",
     "Move the pizza to a cutting board, then brush only the exposed outer rim with about 2 teaspoons garlic-oregano oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
     "Sprinkle the remaining 1/4 ounce finely grated Pecorino Romano or Parmesan over the pizza.",
-    "Tear 6 to 8 fresh basil leaves over the pizza if using, then add a small pinch of flaky sea salt only if the cheese and pepperoni taste like they need a final pop.",
+    "Tear 6 to 8 fresh basil leaves over the pizza if using.",
     "Slice the pizza and serve immediately while the bottom is crisp, the rim is tender, and the cheese is still molten."
   ],
-  "link": null,
   "notes": [
-    "The 4- to 6-hour same-day ferment gives better flavor, browning, and stretch than the fast dough. The fast dough is the shortest practical no-days option, but the longer same-day path is the better-tasting choice when you can spare the time.",
+    "Use the 4- to 6-hour same-day ferment whenever possible. It gives better flavor, browning, and stretch than the fast dough; the fast dough is included only as the shortest practical no-days option.",
     "Do not bake scratch dough immediately after mixing. Even a fast same-day dough needs enough time to relax and trap gas, or the crust will be dense, tight, and hard to stretch.",
     "Prepared dough is the true immediate-cook path: once the dough is room-temperature, relaxed, and already risen, skip the scratch dough steps and use this recipe for shaping, topping, and baking.",
     "A dough mix marketed for long fermentation will taste best when it has had its intended rest. If you are starting from a dry mix on the same day, use this scratch dough instead unless the mix directions specifically give a same-day rise.",
@@ -250,23 +243,20 @@
     "Do not launch on a pizza screen by default. Direct contact with the steel gives the best New York-style bottom crust; use the screen only as a control tool unless your oven consistently burns bottoms.",
     "If your oven consistently burns the bottom before the top is done, launch the next pizza on a room-temperature pizza screen set on the steel for the first 2 minutes, then slide the screen out and finish directly on the steel.",
     "Resting the finished pizza briefly on a pizza screen or wire rack keeps the bottom crisper than resting it directly on a cutting board.",
-    "If the bottom is too dark before the top is browned, use the rimless baking sheet earlier during that bake; next time, move the steel one rack lower or start checking the bottom at 2 1/2 minutes.",
+    "If the bottom is too dark before the top is browned, use the rimless baking sheet earlier during that bake; next time, move the steel one rack lower or begin checking the bottom before 4 minutes.",
     "If the top browns before the bottom crisps, keep the broiler off longer; next time, preheat the steel for the full 75 minutes before launching.",
     "Keep the sauce thick and measured. Watery sauce or too much sauce will steam the center of the crust before it can crisp.",
     "Use low-moisture whole-milk mozzarella from a block because it melts well without flooding the pizza. Avoid part-skim mozzarella, pre-shredded mozzarella, and fresh mozzarella for this recipe unless the fresh mozzarella is sliced, drained very well, and used sparingly.",
     "Shredding about half the mozzarella and dicing the rest gives better texture than a fully shredded blanket: the shreds melt evenly, while the dice leave small pockets of sauce and cheese like a good slice-shop pie.",
     "The provolone or aged mozzarella adds pizzeria-style depth without making the pizza taste overloaded. Provolone piccante gives the strongest savory edge, but deli provolone works.",
     "Pecorino Romano gives the sharpest classic finish. Parmesan is milder and works well if that is what you have.",
-    "Natural-casing cup-and-char pepperoni gives the best texture because it curls, crisps at the edges, and releases seasoned oil into the cheese. Use the lower pepperoni amount for the crispest center.",
+    "Natural-casing cup-and-char pepperoni gives the best texture because it curls, crisps at the edges, and releases seasoned oil into the cheese. Three ounces provides full coverage without making the center unnecessarily greasy or heavy.",
     "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
     "If the center is soft, drain the tomatoes longer next time, keep the sauce and pepperoni to the measured amounts, and stretch the center thinner before topping.",
     "Brush the rim with garlic-oregano oil after baking, not before baking. Post-bake oil seasons the crust and adds aroma without encouraging the rim to burn.",
     "For a more classic pepperoni-only finish, skip the basil. For a slightly brighter finish, add the basil only after baking so it stays fresh."
   ],
-  "nutrition": null,
-  "personalNotes": [],
   "prepTime": "1 hour active",
-  "rating": null,
   "servings": "1 large 15-inch pizza, 2 to 3 servings",
   "source": "bundled",
   "tags": {
