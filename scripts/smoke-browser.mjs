@@ -218,9 +218,18 @@ const browserChecks = [
     async run(page) {
       await page.addInitScript(() => {
         window.__recipeBookAlerted = false;
+        window.__recipeBookCopiedText = "";
         window.alert = () => {
           window.__recipeBookAlerted = true;
         };
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          value: {
+            async writeText(text) {
+              window.__recipeBookCopiedText = text;
+            },
+          },
+        });
       });
 
       await openApp(page, { path: "recipe-book/%3Cscript%3Ealert(1)%3C%2Fscript%3E" });
@@ -230,6 +239,14 @@ const browserChecks = [
       await openApp(page, { path: "recipe-book/a5-wagyu-burger" });
       assert.equal(new URL(page.url()).pathname, "/recipe-book/a5-wagyu-burger");
       await assertRecipeDeepLinkOpen(page, "a5-wagyu-burger");
+      await page
+        .locator('.recipe[data-recipe-id="a5-wagyu-burger"] .recipe-export-button')
+        .filter({ hasText: "Link" })
+        .click();
+      assert.equal(
+        await page.evaluate(() => window.__recipeBookCopiedText),
+        new URL("/recipe-book/a5-wagyu-burger", page.url()).href
+      );
 
       await openApp(page, { path: "recipe-book/chicken-fried-steak" });
       assert.equal(new URL(page.url()).pathname, "/recipe-book/chicken-fried-steak");

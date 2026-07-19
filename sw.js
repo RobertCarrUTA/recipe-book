@@ -1,4 +1,4 @@
-const CACHE_VERSION = "20260719-3";
+const CACHE_VERSION = "20260719-5";
 const CACHE_PREFIX = "recipe-book-";
 const SHELL_CACHE = `recipe-book-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `recipe-book-data-${CACHE_VERSION}`;

@@ -2,6 +2,7 @@ const DEFAULT_COMPACT_LAYOUT_QUERY = "(max-width: 979px)";
 const HISTORY_STATE_KEY = "recipeBook";
 const MAX_RECIPE_DEEP_LINK_ID_LENGTH = 160;
 const NON_RECIPE_PATH_SEGMENTS = new Set(["404.html", "index.html", "recipe-book"]);
+const SHELL_FILE_PATH_SEGMENTS = new Set(["404.html", "index.html"]);
 const RECIPE_DEEP_LINK_ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const RECIPE_DEEP_LINK_PARAM = "recipe";
 
@@ -70,6 +71,19 @@ function getLocationPathname(locationLike) {
   }
 }
 
+function decodePathSegment(segment) {
+  try {
+    return decodeURIComponent(segment);
+  } catch (error) {
+    return "";
+  }
+}
+
+function toRecipeIdSet(recipeIds) {
+  if (recipeIds instanceof Set) return recipeIds;
+  return new Set(Array.isArray(recipeIds) ? recipeIds.map((recipeId) => String(recipeId || "")) : []);
+}
+
 export function getRecipeDeepLinkIdFromHash(hash) {
   const rawHash = typeof hash === "string" ? hash : "";
   const fragment = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
@@ -92,17 +106,53 @@ export function getRecipeDeepLinkIdFromPathname(pathname) {
   const encodedRecipeId = segments.at(-1) || "";
   if (!encodedRecipeId || NON_RECIPE_PATH_SEGMENTS.has(encodedRecipeId)) return "";
 
-  try {
-    return normalizeRecipeDeepLinkId(decodeURIComponent(encodedRecipeId));
-  } catch (error) {
-    return "";
-  }
+  return normalizeRecipeDeepLinkId(decodePathSegment(encodedRecipeId));
 }
 
 export function getRecipeDeepLinkIdFromLocation(locationLike) {
   const hash = getLocationHash(locationLike);
   if (hash) return getRecipeDeepLinkIdFromHash(hash);
   return getRecipeDeepLinkIdFromPathname(getLocationPathname(locationLike));
+}
+
+export function getRecipeDeepLinkBasePath(pathname, options = {}) {
+  const rawPathname = typeof pathname === "string" ? pathname : "/";
+  if (!rawPathname || rawPathname === "/") return "";
+  if (rawPathname.endsWith("/")) return rawPathname.replace(/\/+$/, "");
+
+  const recipeIds = toRecipeIdSet(options.recipeIds);
+  const segments = rawPathname.split("/").filter(Boolean);
+  const encodedLastSegment = segments.at(-1) || "";
+  const lastSegment = decodePathSegment(encodedLastSegment);
+  const lastSegmentIsShellFile = SHELL_FILE_PATH_SEGMENTS.has(lastSegment);
+  const lastSegmentIsKnownRecipe = recipeIds.has(lastSegment);
+  const lastSegmentLooksLikeFile = /\.[^./]+$/.test(lastSegment);
+
+  if (
+    lastSegmentIsShellFile ||
+    lastSegmentIsKnownRecipe ||
+    (!lastSegmentLooksLikeFile && segments.length > 1)
+  ) {
+    segments.pop();
+  }
+
+  return segments.length ? `/${segments.join("/")}` : "";
+}
+
+export function createRecipeDeepLinkUrl(recipeId, locationLike, options = {}) {
+  const recipeKey = normalizeRecipeDeepLinkId(recipeId);
+  if (!recipeKey) return "";
+
+  try {
+    const url = new URL(String(locationLike?.href || ""));
+    const basePath = getRecipeDeepLinkBasePath(url.pathname, options);
+    url.pathname = `${basePath}/${encodeURIComponent(recipeKey)}`;
+    url.search = "";
+    url.hash = "";
+    return url.href;
+  } catch (error) {
+    return "";
+  }
 }
 
 export function createRecipeSourceNavigationController({
@@ -227,6 +277,10 @@ export function createRecipeSourceNavigationController({
     );
   }
 
+  function getRecipeSourceKeys() {
+    return new Set(getRecipes().map((recipe, index) => getRecipeKey(recipe, index)));
+  }
+
   function revealRecipeSourceById(recipeKey) {
     const targetRecipeKey = String(recipeKey || "");
     if (!hasRecipeSource(targetRecipeKey)) {
@@ -242,6 +296,19 @@ export function createRecipeSourceNavigationController({
       return false;
     }
     return true;
+  }
+
+  function getRecipeDeepLinkUrl(recipeKey) {
+    const targetRecipeKey = normalizeRecipeDeepLinkId(recipeKey);
+    if (!targetRecipeKey) return "";
+    if (!hasRecipeSource(targetRecipeKey)) {
+      logger.warn("Recipe share link target was not found", targetRecipeKey);
+      return "";
+    }
+
+    return createRecipeDeepLinkUrl(targetRecipeKey, window?.location, {
+      recipeIds: getRecipeSourceKeys(),
+    });
   }
 
   function viewDeepLinkedRecipeFromLocation() {
@@ -332,6 +399,7 @@ export function createRecipeSourceNavigationController({
     handleHistoryNavigation,
     handleMobileViewChange,
     prepareRecipeSourceNavigation,
+    getRecipeDeepLinkUrl,
     revealRecipeSourceById,
     restoreGroceryReturnPosition,
     viewDeepLinkedRecipeFromLocation,

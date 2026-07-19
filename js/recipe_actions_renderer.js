@@ -210,6 +210,14 @@ export function createRecipeActionsRenderer({
 
     wrap.appendChild(label);
     [
+      typeof actions.onCopyRecipeLink === "function" && {
+        className: "recipe-export-copy-link-button",
+        errorText: "Link failed.",
+        exportLabel: "Copy recipe link",
+        run: () => actions.onCopyRecipeLink(recipe, recipeIndex),
+        successText: "Link copied.",
+        text: "Link",
+      },
       typeof actions.onCopyRecipeText === "function" && {
         className: "recipe-export-copy-button",
         errorText: "Copy failed.",
@@ -218,14 +226,14 @@ export function createRecipeActionsRenderer({
         successText: "Copied.",
         text: "Copy",
       },
-      {
+      typeof actions.onExportRecipe === "function" && {
         errorText: "Download failed.",
         exportLabel: "Export formatted text",
         run: () => actions.onExportRecipe(recipe, recipeIndex, "text"),
         successText: "Downloaded text.",
         text: "Text",
       },
-      {
+      typeof actions.onExportRecipe === "function" && {
         errorText: "Download failed.",
         exportLabel: "Export JSON",
         run: () => actions.onExportRecipe(recipe, recipeIndex, "json"),
@@ -301,7 +309,11 @@ export function createRecipeActionsRenderer({
     });
 
     appendChildren(actionsWrap, [favoriteButton, cookButton, planSelect, toggle, scaleControl]);
-    if (typeof actions.onExportRecipe === "function") {
+    if (
+      typeof actions.onCopyRecipeLink === "function" ||
+      typeof actions.onCopyRecipeText === "function" ||
+      typeof actions.onExportRecipe === "function"
+    ) {
       actionsWrap.appendChild(createRecipeExportActions(recipe, recipeIndex));
     }
     appendChildren(actionsWrap, [viewPlanButton, viewGroceryButton]);

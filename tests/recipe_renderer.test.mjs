@@ -78,6 +78,7 @@ function createRendererHarness(options = {}) {
       if (selected) selectedRecipeIds.add(recipe.id);
       else selectedRecipeIds.delete(recipe.id);
     },
+    ...(options.actions || {}),
   };
   const renderer = createRecipeRenderer({
     actions,
@@ -213,6 +214,33 @@ test("recipe renderer passes recipe context when a rendered tag changes discover
   recipeElement.querySelector(".recipe-tag").click();
 
   assert.deepEqual(harness.tagToggleCalls[0], ["status", "tried", { recipeId: "chili" }]);
+});
+
+test("recipe renderer exposes a recipe link copy action", async () => {
+  const copyLinkCalls = [];
+  const harness = createRendererHarness({
+    actions: {
+      onCopyRecipeLink: async (recipe, recipeIndex) => {
+        copyLinkCalls.push({ recipeId: recipe.id, recipeIndex });
+        return true;
+      },
+      onExportRecipe: () => true,
+    },
+  });
+
+  harness.renderer.renderRecipes();
+  const recipeElement = openRecipe(harness.document, "chili");
+  const linkButton = recipeElement.querySelectorAll(".recipe-export-button")
+    .find((button) => button.textContent === "Link");
+
+  assert.ok(linkButton);
+  assert.equal(linkButton.getAttribute("aria-label"), "Copy recipe link for Chili");
+
+  linkButton.click();
+  await Promise.resolve();
+
+  assert.deepEqual(copyLinkCalls, [{ recipeId: "chili", recipeIndex: 0 }]);
+  assert.equal(recipeElement.querySelector(".recipe-export-status").textContent, "Link copied.");
 });
 
 test("recipe renderer shows an announced empty state for an empty catalog", () => {

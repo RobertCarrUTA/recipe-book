@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
 
 import {
+  createRecipeDeepLinkUrl,
   createRecipeSourceNavigationController,
   getRecipeDeepLinkIdFromHash,
+  getRecipeDeepLinkBasePath,
   getRecipeDeepLinkIdFromLocation,
   getRecipeDeepLinkIdFromPathname,
 } from "../js/recipe_source_navigation.js";
@@ -101,6 +103,33 @@ test("recipe deep link parser accepts only explicit safe recipe slugs", () => {
   assert.equal(getRecipeDeepLinkIdFromPathname("/recipe-book/..%2Fdata%2Frecipes.json"), "");
   assert.equal(getRecipeDeepLinkIdFromPathname("/recipe-book/%3Cscript%3Ealert(1)%3C%2Fscript%3E"), "");
   assert.equal(getRecipeDeepLinkIdFromPathname(`/recipe-book/${"a".repeat(161)}`), "");
+});
+
+test("recipe deep link URL builder creates clean share URLs from app paths", () => {
+  const recipeIds = new Set(["a5-wagyu-burger", "chili"]);
+
+  assert.equal(getRecipeDeepLinkBasePath("/recipe-book/"), "/recipe-book");
+  assert.equal(getRecipeDeepLinkBasePath("/recipe-book", { recipeIds }), "/recipe-book");
+  assert.equal(getRecipeDeepLinkBasePath("/recipe-book/a5-wagyu-burger", { recipeIds }), "/recipe-book");
+  assert.equal(getRecipeDeepLinkBasePath("/recipe-book/index.html", { recipeIds }), "/recipe-book");
+  assert.equal(getRecipeDeepLinkBasePath("/recipe-book/%3Cscript%3Ealert(1)%3C%2Fscript%3E", { recipeIds }), "/recipe-book");
+
+  assert.equal(
+    createRecipeDeepLinkUrl("chili", {
+      href: "https://example.test/recipe-book/?debug=1#recipe=a5-wagyu-burger",
+    }, { recipeIds }),
+    "https://example.test/recipe-book/chili"
+  );
+  assert.equal(
+    createRecipeDeepLinkUrl("chili", {
+      href: "https://example.test/recipe-book/a5-wagyu-burger?debug=1",
+    }, { recipeIds }),
+    "https://example.test/recipe-book/chili"
+  );
+  assert.equal(createRecipeDeepLinkUrl("../data/recipes.json", {
+    href: "https://example.test/recipe-book/",
+  }, { recipeIds }), "");
+  assert.equal(createRecipeDeepLinkUrl("chili", { href: "not a url" }, { recipeIds }), "");
 });
 
 test("recipe deep links switch to recipes and reveal matching loaded recipes", () => {
@@ -242,6 +271,28 @@ test("recipe deep links reject unknown recipe ids before changing view", () => {
   assert.deepEqual(calls.views, []);
   assert.deepEqual(calls.reveal, []);
   assert.equal(calls.warnings.length, 1);
+});
+
+test("recipe source navigation creates share links only for loaded safe recipe ids", () => {
+  const warnings = [];
+  const controller = createRecipeSourceNavigationController({
+    document: createDocument(),
+    getRecipeKey: (recipe) => recipe.id,
+    getRecipes: () => [{ id: "recipe-a" }],
+    logger: { warn: (...args) => warnings.push(args) },
+    window: createWindow({
+      location: {
+        hash: "",
+        href: "https://example.test/recipe-book/",
+        pathname: "/recipe-book/",
+      },
+    }),
+  });
+
+  assert.equal(controller.getRecipeDeepLinkUrl("recipe-a"), "https://example.test/recipe-book/recipe-a");
+  assert.equal(controller.getRecipeDeepLinkUrl("%3Cscript%3E"), "");
+  assert.equal(controller.getRecipeDeepLinkUrl("missing"), "");
+  assert.equal(warnings.length, 1);
 });
 
 test("recipe source navigation stores compact return history and reveals filtered recipes", () => {
