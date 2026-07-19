@@ -7,7 +7,7 @@
     "baking"
   ],
   "cookTime": "6 to 7 minutes",
-  "description": "A large 15-inch New York-style cheese pizza tuned for a 550 degrees F home oven, a hot baking steel, and a same-day dough. The crust is thin, crisp underneath, foldable, tender at the rim, and topped with a concentrated tomato sauce, whole-milk mozzarella, provolone, Pecorino Romano, and a short broiler finish.",
+  "description": "A large 15-inch New York-style cheese pizza tuned for a 550 degrees F home oven, a hot baking steel, and a same-day dough. The crust is thin, crisp underneath, foldable, tender at the rim, and topped with a bright concentrated tomato sauce, whole-milk mozzarella, a restrained amount of provolone, Pecorino Romano, and a short broiler finish.",
   "equipment": [
     "Baking Steel Pro or 16 x 16-inch baking steel",
     "16-inch pizza peel",
@@ -41,7 +41,8 @@
     {
       "display": "instant yeast",
       "item": "active dry or instant yeast",
-      "quantity": 0.75,
+      "note": "Use 3/4 tsp for the fast dough or 3/8 tsp for the 4- to 6-hour same-day ferment.",
+      "quantity": "0.375-0.75",
       "unit": "tsp"
     },
     {
@@ -57,7 +58,7 @@
     },
     {
       "item": "extra-virgin olive oil",
-      "quantity": 4.75,
+      "quantity": 4.25,
       "unit": "tsp"
     },
     {
@@ -71,11 +72,6 @@
       "item": "canned tomatoes",
       "quantity": 0.5625,
       "unit": "cup"
-    },
-    {
-      "item": "tomato paste",
-      "quantity": 1,
-      "unit": "tsp"
     },
     {
       "item": "dried oregano",
@@ -107,21 +103,14 @@
     {
       "display": "deli provolone",
       "item": "provolone cheese",
-      "quantity": 1.5,
+      "quantity": 1.25,
       "unit": "oz"
     },
     {
       "display": "Pecorino Romano cheese",
       "item": "Pecorino Romano or Parmesan cheese",
-      "quantity": 1,
+      "quantity": 0.75,
       "unit": "oz"
-    },
-    {
-      "display": "fresh basil leaves",
-      "item": "fresh basil",
-      "optional": true,
-      "quantity": "6-8",
-      "unit": "leaf"
     },
     {
       "item": "flaky sea salt",
@@ -135,13 +124,12 @@
     "260 grams high-protein bread flour, preferably Central Milling, King Arthur Sir Lancelot, King Arthur Bread Flour, or another strong bread flour, plus 15 grams white whole wheat, whole wheat, or high-extraction flour; or use 275 grams bread flour total",
     "178 grams water: use 95 to 100 degrees F water for the fast dough or cool room-temperature water for the 4- to 6-hour same-day ferment",
     "5 grams granulated sugar, about 1 1/4 teaspoons",
-    "2.25 grams instant yeast, about 3/4 teaspoon, for the fast dough; use 1.5 grams, about 1/2 teaspoon, for the 4- to 6-hour same-day ferment",
+    "2.25 grams instant yeast, about 3/4 teaspoon, for the fast dough; use 1.25 grams, about 3/8 teaspoon, for the 4- to 6-hour same-day ferment",
     "6 grams fine sea salt or Morton Coarse Kosher Salt for the dough, about 1 level teaspoon fine sea salt, 1 1/4 level teaspoons Morton Coarse Kosher Salt, or 2 level teaspoons Diamond Crystal kosher salt",
     "10 grams extra-virgin olive oil for the dough, about 2 1/4 teaspoons, plus 1/2 teaspoon for the dough container",
     "1 to 2 tablespoons semolina flour or fine cornmeal, for dusting the peel",
     "Optional dough shortcut: 450 to 475 grams prepared pizza dough or one prepared dough ball from a dough mix, at room temperature",
     "1 (14-ounce) can San Marzano-style or Bianco DiNapoli whole peeled tomatoes, drained and crushed to measure 1/2 cup plus 1 tablespoon thick crushed tomatoes, about 140 grams",
-    "1 teaspoon tomato paste",
     "1 teaspoon extra-virgin olive oil for the sauce",
     "1/4 teaspoon dried oregano",
     "1/8 teaspoon onion powder",
@@ -150,15 +138,14 @@
     "1/8 teaspoon red pepper flakes, optional",
     "Small pinch granulated sugar for the sauce, only if the tomatoes taste sharp",
     "6 1/2 ounces low-moisture whole-milk mozzarella from a block, half freshly shredded and half cut into 1/4-inch dice",
-    "1 1/2 ounces provolone piccante, deli provolone, or aged mozzarella, finely shredded or diced",
-    "1 ounce Pecorino Romano or Parmesan, finely grated, divided",
-    "1 teaspoon extra-virgin olive oil for brushing the finished rim",
-    "6 to 8 fresh basil leaves, optional, torn after baking",
+    "1 1/4 ounces provolone piccante, deli provolone, or aged mozzarella, finely shredded or diced",
+    "3/4 ounce Pecorino Romano or Parmesan, finely grated, divided",
+    "1/2 teaspoon extra-virgin olive oil for lightly brushing the finished rim",
     "Small pinch flaky sea salt for finishing, optional"
   ],
   "instructions": [
     "Using prepared dough or already-risen dough from a dough mix? Use 450 to 475 grams room-temperature dough and skip to step 15. Making scratch dough? Use steps 2 through 14; choose the fast dough if you want to bake as soon as the dough is ready, or the 4- to 6-hour same-day ferment if you have extra time.",
-    "For the fast dough, add 178 grams 95 to 100 degrees F water, 5 grams granulated sugar, and 2.25 grams instant yeast to a large mixing bowl. For the 4- to 6-hour same-day ferment, use 178 grams cool room-temperature water, 5 grams granulated sugar, and 1.5 grams instant yeast.",
+    "For the fast dough, add 178 grams 95 to 100 degrees F water, 5 grams granulated sugar, and 2.25 grams instant yeast to a large mixing bowl. For the 4- to 6-hour same-day ferment, use 178 grams cool room-temperature water, 5 grams granulated sugar, and 1.25 grams instant yeast.",
     "If using active dry yeast instead of instant yeast, stir the yeast into the sugared water and wait 5 minutes before adding flour.",
     "Add 260 grams high-protein bread flour and 15 grams white whole wheat, whole wheat, or high-extraction flour to the bowl with the water, sugar, and yeast. If skipping the whole wheat flour, add 275 grams bread flour total.",
     "Mix with a dough scraper, spatula, or your hand for 1 to 2 minutes, until no dry flour remains and the dough looks shaggy.",
@@ -175,11 +162,11 @@
     "Preheat the oven to 550 degrees F for 60 to 75 minutes so the steel is fully heated before the pizza goes in.",
     "While the oven preheats, spoon the tomatoes from the can into a fine-mesh strainer and drain them for 5 minutes.",
     "Crush the drained tomatoes by hand until they are saucy but still lightly textured, then measure 1/2 cup plus 1 tablespoon thick crushed tomatoes, about 140 grams.",
-    "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon tomato paste, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon dried oregano, 1/8 teaspoon onion powder, 1/8 teaspoon garlic powder, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/8 teaspoon red pepper flakes if using, and a small pinch of sugar only if the tomatoes taste sharp.",
+    "Make the sauce by stirring together the measured crushed tomatoes, 1 teaspoon extra-virgin olive oil, 1/4 teaspoon dried oregano, 1/8 teaspoon onion powder, 1/8 teaspoon garlic powder, 1/4 teaspoon fine sea salt or Morton Coarse Kosher Salt, 1/8 teaspoon red pepper flakes if using, and a small pinch of sugar only if the tomatoes taste sharp.",
     "Let the sauce sit for at least 20 minutes while the oven continues preheating so the oregano, onion powder, garlic powder, salt, and pepper flakes season the tomatoes.",
     "Freshly shred about half of the 6 1/2 ounces low-moisture whole-milk mozzarella from a block, then cut the remaining mozzarella into 1/4-inch dice.",
-    "Finely shred or dice 1 1/2 ounces provolone or aged mozzarella, then toss it with the shredded and diced mozzarella so the cheeses distribute evenly.",
-    "Finely grate 1 ounce Pecorino Romano or Parmesan, then divide it into two 1/2-ounce portions.",
+    "Finely shred or dice 1 1/4 ounces provolone or aged mozzarella, then toss it with the shredded and diced mozzarella so the cheeses distribute evenly.",
+    "Finely grate 3/4 ounce Pecorino Romano or Parmesan, then divide it into two equal portions.",
     "Keep the mozzarella-provolone blend and grated Pecorino cold until the dough is stretched so the cheese melts cleanly instead of oiling out before the crust finishes.",
     "Dust a 16-inch pizza peel with 1 tablespoon semolina flour or fine cornmeal.",
     "Lightly flour the counter, place the room-temperature dough on the counter, and press from the center outward with your fingertips, leaving the outer 3/4 inch untouched for the rim.",
@@ -188,7 +175,7 @@
     "Transfer the stretched dough to the semolina-dusted peel and gently shake the peel once to confirm the dough slides freely.",
     "If any part of the dough sticks to the peel, lift that edge and dust a little more semolina flour or fine cornmeal underneath before topping.",
     "Spread all 1/2 cup plus 1 tablespoon sauce over the dough in a thin, even layer, leaving the outer 3/4 inch uncovered.",
-    "Sprinkle 1/2 ounce finely grated Pecorino Romano or Parmesan evenly over the sauce.",
+    "Sprinkle half of the finely grated Pecorino Romano or Parmesan evenly over the sauce.",
     "Scatter all of the mozzarella-provolone blend over the pizza, keeping the cheese even and avoiding heavy piles in the center.",
     "Gently shake the peel again before launching the topped pizza; the pizza should slide freely as one piece.",
     "If any spot sticks after topping, lift that edge with floured fingers or a bench scraper and dust a small pinch of semolina flour or fine cornmeal underneath.",
@@ -202,14 +189,13 @@
     "Turn the broiler to high only after the bottom has set and browned, then broil for 30 to 60 seconds, watching constantly, until the rim blisters lightly and the cheese bubbles with a few browned spots.",
     "If the rim or cheese starts to darken too fast under the broiler, turn the broiler off and finish at 550 degrees F for 30 to 90 seconds.",
     "Transfer the baked pizza to a pizza screen or wire rack for 1 minute so steam can escape from the bottom crust. If you do not have either, use a cutting board and rest the pizza for only 1 minute.",
-    "Move the pizza to a cutting board, then brush only the exposed outer rim with 1 teaspoon extra-virgin olive oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
-    "Sprinkle the remaining 1/2 ounce finely grated Pecorino Romano or Parmesan over the pizza.",
-    "Tear 6 to 8 fresh basil leaves over the pizza if using, then add a small pinch of flaky sea salt only if the cheese tastes like it needs a final pop.",
+    "Move the pizza to a cutting board, then lightly brush only the exposed outer rim with 1/2 teaspoon extra-virgin olive oil while the crust is still hot; avoid brushing the center so the pizza does not turn greasy.",
+    "Sprinkle the remaining finely grated Pecorino Romano or Parmesan over the pizza.",
+    "Add a small pinch of flaky sea salt only if the finished pizza tastes like it needs a final pop.",
     "Slice the pizza and serve immediately while the bottom is crisp, the rim is tender, and the cheese is still molten."
   ],
-  "link": null,
   "notes": [
-    "The 4- to 6-hour same-day ferment gives better flavor, browning, and stretch than the fast dough. The fast dough is the shortest practical no-days option, but the longer same-day path is the better-tasting choice when you can spare the time.",
+    "The 4- to 6-hour same-day ferment gives better flavor, browning, and stretch than the fast dough. The fast dough is the shortest practical no-days option, but the longer same-day path is the better-tasting choice when you can spare the time. The 1.25 grams of instant yeast is tuned for a moderately warm kitchen; if your kitchen is below 70 degrees F, allow extra proofing time.",
     "Do not bake the dough immediately after mixing. Even a fast same-day dough needs enough time to relax and trap gas, or the crust will be dense, tight, and hard to stretch.",
     "The small amount of whole wheat, white whole wheat, or high-extraction flour adds wheat aroma and a little more color to a same-day dough. Skip it and use all bread flour if you want the cleanest classic slice-shop flavor.",
     "Use 15 inches as the target size on a 16 x 16-inch steel. A true 16-inch pizza leaves very little launch margin and is easier to wrinkle or hang over an edge.",
@@ -227,17 +213,13 @@
     "Keep the sauce thick and measured. Watery sauce or too much sauce will steam the center of the crust before it can crisp.",
     "Use low-moisture whole-milk mozzarella from a block because it melts well without flooding the pizza. Avoid part-skim mozzarella, pre-shredded mozzarella, and fresh mozzarella for this recipe unless the fresh mozzarella is sliced, drained very well, and used sparingly.",
     "Shredding about half the mozzarella and dicing the rest gives better texture than a fully shredded blanket: the shreds melt evenly, while the dice leave small pockets of sauce and cheese like a good slice-shop pie.",
-    "The provolone or aged mozzarella adds pizzeria-style depth without making the pizza taste overloaded. Provolone piccante gives the strongest savory edge, but deli provolone works.",
-    "Pecorino Romano gives the sharpest classic finish. Parmesan is milder and works well if that is what you have.",
+    "The smaller amount of provolone or aged mozzarella adds pizzeria-style depth without overpowering the tomato sauce or making the pizza excessively rich. Provolone piccante gives the strongest savory edge, but deli provolone works.",
+    "Three-quarters of an ounce of Pecorino Romano gives the pizza a sharp, classic finish without making it overly salty. Parmesan is milder and works well if that is what you have.",
     "If the dough resists stretching, rest it for 5 minutes. Forcing tight dough knocks out gas and can make the rim dense.",
     "If the center is soft, drain the tomatoes longer next time, keep the sauce to the measured amount, and stretch the center thinner before topping.",
-    "Brush the rim with olive oil after baking, not before baking. Post-bake oil seasons the crust and adds sheen without encouraging the rim to burn.",
-    "For a plain cheese pizza, skip the basil. For a slightly brighter finish, add the basil only after baking so it stays fresh."
+    "Brush the rim very lightly with olive oil after baking, not before baking. A thin post-bake coating seasons the crust and adds sheen without making it greasy or encouraging the rim to burn."
   ],
-  "nutrition": null,
-  "personalNotes": [],
   "prepTime": "55 minutes active",
-  "rating": null,
   "servings": "1 large 15-inch pizza, 2 to 3 servings",
   "source": "bundled",
   "tags": {
