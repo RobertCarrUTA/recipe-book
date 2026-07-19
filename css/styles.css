@@ -111,7 +111,6 @@ button:disabled:hover {
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
-.accordion-header:focus-visible,
 .grocery-list li:has(input:focus-visible),
 .grocery-item-search-link:focus-visible,
 .grocery-source-link:focus-visible,
@@ -900,19 +899,16 @@ h2 {
 }
 
 .recipe:not(.recipe-selected):not(.recipe-favorite):not(.recipe-planned):has(.accordion-header[aria-expanded="true"]) {
-  border-color: rgba(122, 199, 163, 0.4);
+  border-color: rgba(59, 70, 82, 0.98);
   box-shadow: var(--shadow-soft);
 }
 
 .recipe:has(.accordion-header[aria-expanded="true"]) .accordion-header {
-  background: rgba(122, 199, 163, 0.04);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .recipe.recipe-reveal-highlight {
-  border-color: var(--accent-strong);
-  box-shadow:
-    0 0 0 3px rgba(122, 199, 163, 0.26),
-    var(--shadow-soft);
+  box-shadow: var(--shadow-soft);
 }
 
 .recipe-heading {
@@ -942,6 +938,10 @@ h2 {
 
 .accordion-header:active:not(:disabled) {
   transform: none;
+}
+
+.accordion-header:focus-visible {
+  outline: none;
 }
 
 .accordion-header::after {
