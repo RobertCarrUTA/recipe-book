@@ -14,6 +14,7 @@ if (!/^[a-zA-Z0-9._-]+$/.test(assetVersion)) {
 }
 
 const indexUrl = new URL("../index.html", import.meta.url);
+const fallbackUrl = new URL("../404.html", import.meta.url);
 const serviceWorkerUrl = new URL("../sw.js", import.meta.url);
 const indexHtml = await fs.readFile(indexUrl, "utf8");
 const serviceWorkerJs = await fs.readFile(serviceWorkerUrl, "utf8");
@@ -63,5 +64,6 @@ const nextServiceWorkerJs = replaceRequiredBlock(
 );
 
 await fs.writeFile(indexUrl, nextHtml);
+await fs.writeFile(fallbackUrl, nextHtml);
 await fs.writeFile(serviceWorkerUrl, nextServiceWorkerJs);
-console.log(`Set asset and service worker cache version to ${assetVersion}`);
+console.log(`Set asset, fallback shell, and service worker cache version to ${assetVersion}`);

@@ -351,6 +351,10 @@ function createRecipeBookApp() {
     recipeSourceNavigationController?.handleHistoryNavigation(event);
   }
 
+  function handleRecipeBookDeepLinkNavigation() {
+    recipeSourceNavigationController?.viewDeepLinkedRecipeFromLocation();
+  }
+
   function handleMobileViewChange(event) {
     recipeSourceNavigationController?.handleMobileViewChange(event);
   }
@@ -498,6 +502,23 @@ function createRecipeBookApp() {
     });
   }
 
+  async function handleCopyRecipeLink(recipe, recipeIndex) {
+    const recipeKey = getRecipeKey(recipe, recipeIndex);
+    const url = recipeSourceNavigationController?.getRecipeDeepLinkUrl(recipeKey);
+    if (!url) {
+      logger.warn("Recipe link could not be created", { recipeIndex, recipeKey });
+      setStateToolsStatus("Recipe link could not be copied.", { kind: "error", sticky: true });
+      return false;
+    }
+
+    return copyTextWithStatus(url, {
+      failureMessage: "Recipe link could not be copied.",
+      logContext: { recipeIndex, recipeKey },
+      logMessage: "Recipe link copy failed",
+      successMessage: "Recipe link copied.",
+    });
+  }
+
   function attachManualGroceryForm() {
     const form = byId("manualGroceryForm");
     const input = byId("manualGroceryInput");
@@ -593,6 +614,7 @@ function createRecipeBookApp() {
       onPlanRecipe: handlePlanRecipe,
       onPrepareRecipeSourceNavigation: handlePrepareRecipeSourceNavigation,
       onRecipeBatchRendered: ({ totalCount }) => updateRecipeSearchMeta(totalCount),
+      onCopyRecipeLink: handleCopyRecipeLink,
       onCopyRecipeText: handleCopyRecipeText,
       onExportRecipe: handleExportRecipe,
       onRecipeMultiplierChange: handleRecipeMultiplierChange,
@@ -699,6 +721,7 @@ function createRecipeBookApp() {
     createOfflineController({ document, logger, navigator, window }).attach();
     mobileViewController.attach();
     window.addEventListener("popstate", handleRecipeBookHistoryNavigation);
+    window.addEventListener("hashchange", handleRecipeBookDeepLinkNavigation);
     attachCookingModeControls({ document, renderer, window });
 
     try {
@@ -725,6 +748,7 @@ function createRecipeBookApp() {
     }
 
     renderLoadedAppState();
+    handleRecipeBookDeepLinkNavigation();
     wakeLockController.attach();
     exposeDebugApi();
   }

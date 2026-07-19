@@ -76,6 +76,14 @@ test("index.html local shell references are versioned and point to files", async
   getAssetVersion(indexHtml);
 });
 
+test("404.html mirrors the app shell for static path deep links", async () => {
+  assert.equal(
+    await readProjectFile("404.html"),
+    await readProjectFile("index.html"),
+    "GitHub Pages fallback shell should stay identical to index.html"
+  );
+});
+
 test("index.html static DOM references stay wired", async () => {
   const indexHtml = await readProjectFile("index.html");
   const ids = extractAllAttributeValues(indexHtml, "id").filter(Boolean);
