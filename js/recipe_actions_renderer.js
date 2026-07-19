@@ -151,14 +151,10 @@ export function createRecipeActionsRenderer({
     const recipeTitle = recipe.title || "recipe";
     const wrap = createElement(document, "div", {
       attributes: {
-        "aria-label": `Export ${recipeTitle}`,
+        "aria-label": `Share and export ${recipeTitle}`,
         role: "group",
       },
       className: "recipe-export-actions",
-    });
-    const label = createElement(document, "span", {
-      className: "recipe-export-label",
-      textContent: "Export",
     });
     const status = createElement(document, "span", {
       attributes: { "aria-live": "polite" },
@@ -208,7 +204,6 @@ export function createRecipeActionsRenderer({
       }));
     }
 
-    wrap.appendChild(label);
     [
       typeof actions.onCopyRecipeLink === "function" && {
         className: "recipe-export-copy-link-button",
@@ -216,7 +211,7 @@ export function createRecipeActionsRenderer({
         exportLabel: "Copy recipe link",
         run: () => actions.onCopyRecipeLink(recipe, recipeIndex),
         successText: "Link copied.",
-        text: "Link",
+        text: "Copy link",
       },
       typeof actions.onCopyRecipeText === "function" && {
         className: "recipe-export-copy-button",
@@ -224,21 +219,21 @@ export function createRecipeActionsRenderer({
         exportLabel: "Copy formatted text",
         run: () => actions.onCopyRecipeText(recipe, recipeIndex),
         successText: "Copied.",
-        text: "Copy",
+        text: "Copy text",
       },
       typeof actions.onExportRecipe === "function" && {
         errorText: "Download failed.",
         exportLabel: "Export formatted text",
         run: () => actions.onExportRecipe(recipe, recipeIndex, "text"),
         successText: "Downloaded text.",
-        text: "Text",
+        text: "Text file",
       },
       typeof actions.onExportRecipe === "function" && {
         errorText: "Download failed.",
         exportLabel: "Export JSON",
         run: () => actions.onExportRecipe(recipe, recipeIndex, "json"),
         successText: "Downloaded JSON.",
-        text: "JSON",
+        text: "JSON file",
       },
     ].filter(Boolean).forEach((exportAction) => {
       addButton(
