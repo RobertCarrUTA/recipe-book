@@ -351,6 +351,10 @@ function createRecipeBookApp() {
     recipeSourceNavigationController?.handleHistoryNavigation(event);
   }
 
+  function handleRecipeBookDeepLinkNavigation() {
+    recipeSourceNavigationController?.viewDeepLinkedRecipeFromLocation();
+  }
+
   function handleMobileViewChange(event) {
     recipeSourceNavigationController?.handleMobileViewChange(event);
   }
@@ -699,6 +703,7 @@ function createRecipeBookApp() {
     createOfflineController({ document, logger, navigator, window }).attach();
     mobileViewController.attach();
     window.addEventListener("popstate", handleRecipeBookHistoryNavigation);
+    window.addEventListener("hashchange", handleRecipeBookDeepLinkNavigation);
     attachCookingModeControls({ document, renderer, window });
 
     try {
@@ -725,6 +730,7 @@ function createRecipeBookApp() {
     }
 
     renderLoadedAppState();
+    handleRecipeBookDeepLinkNavigation();
     wakeLockController.attach();
     exposeDebugApi();
   }

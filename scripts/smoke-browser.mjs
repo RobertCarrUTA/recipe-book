@@ -14,6 +14,7 @@ if (!Number.isInteger(requestedPort) || requestedPort < 0 || requestedPort > 655
   throw new Error("RECIPE_BOOK_SMOKE_PORT must be an integer from 0 through 65535.");
 }
 let url = "http://127.0.0.1/";
+const githubPagesProjectPath = "/recipe-book";
 
 const mimeTypes = new Map([
   [".css", "text/css; charset=utf-8"],
@@ -28,7 +29,13 @@ function createStaticServer() {
   return http.createServer(async (request, response) => {
     try {
       const requestUrl = new URL(request.url || "/", url);
-      const requestPath = decodeURIComponent(requestUrl.pathname === "/" ? "/index.html" : requestUrl.pathname);
+      const pathname = requestUrl.pathname === githubPagesProjectPath
+        ? `${githubPagesProjectPath}/`
+        : requestUrl.pathname;
+      const projectPath = pathname.startsWith(`${githubPagesProjectPath}/`)
+        ? pathname.slice(githubPagesProjectPath.length) || "/"
+        : pathname;
+      const requestPath = decodeURIComponent(projectPath === "/" ? "/index.html" : projectPath);
       const absolutePath = path.resolve(rootDir, requestPath.replace(/^\/+/, ""));
       const relativePath = path.relative(rootDir, absolutePath);
 
@@ -44,6 +51,17 @@ function createStaticServer() {
       });
       response.end(bytes);
     } catch (error) {
+      if (error && error.code === "ENOENT" && acceptsHtml(request)) {
+        try {
+          const fallbackBytes = await fs.readFile(path.join(rootDir, "404.html"));
+          response.writeHead(404, { "content-type": mimeTypes.get(".html") });
+          response.end(fallbackBytes);
+          return;
+        } catch (fallbackError) {
+          // Fall through to the generic server error below.
+        }
+      }
+
       response.writeHead(error && error.code === "ENOENT" ? 404 : 500, {
         "content-type": "text/plain; charset=utf-8",
       });
@@ -52,8 +70,18 @@ function createStaticServer() {
   });
 }
 
+function acceptsHtml(request) {
+  const acceptHeader = request.headers.accept || "";
+  return /\btext\/html\b/i.test(acceptHeader);
+}
+
 async function openApp(page, options = {}) {
-  await page.goto(options.debug ? `${url}?debug=1` : url, { waitUntil: "networkidle" });
+  const appUrl = new URL(url);
+  if (options.path) appUrl.pathname = `/${String(options.path).replace(/^\/+/, "")}`;
+  if (options.debug) appUrl.searchParams.set("debug", "1");
+  if (options.hash) appUrl.hash = options.hash;
+
+  await page.goto(appUrl.href, { waitUntil: "networkidle" });
   await page.waitForSelector(".recipe", { timeout: 10000 });
 }
 
@@ -182,6 +210,30 @@ const browserChecks = [
       } finally {
         await page.context().setOffline(false);
       }
+    },
+  },
+  {
+    name: "recipe path deep links open matching recipes and ignore unsafe paths",
+    expectedConsoleMessages: [/Failed to load resource: the server responded with a status of 404/],
+    async run(page) {
+      await page.addInitScript(() => {
+        window.__recipeBookAlerted = false;
+        window.alert = () => {
+          window.__recipeBookAlerted = true;
+        };
+      });
+
+      await openApp(page, { path: "recipe-book/%3Cscript%3Ealert(1)%3C%2Fscript%3E" });
+      assert.equal(await page.evaluate(() => window.__recipeBookAlerted), false);
+      assert.equal(await page.locator(".recipe .accordion-header[aria-expanded='true']").count(), 0);
+
+      await openApp(page, { path: "recipe-book/a5-wagyu-burger" });
+      assert.equal(new URL(page.url()).pathname, "/recipe-book/a5-wagyu-burger");
+      await assertRecipeDeepLinkOpen(page, "a5-wagyu-burger");
+
+      await openApp(page, { path: "recipe-book/chicken-fried-steak" });
+      assert.equal(new URL(page.url()).pathname, "/recipe-book/chicken-fried-steak");
+      await assertRecipeDeepLinkOpen(page, "chicken-fried-steak");
     },
   },
   {
@@ -1208,6 +1260,21 @@ async function expectLocatorText(locator, pattern) {
 async function assertVisible(page, selector, expected) {
   const actual = await page.locator(selector).isVisible();
   assert.equal(actual, expected, `${selector} visibility should be ${expected}`);
+}
+
+async function assertRecipeDeepLinkOpen(page, recipeId) {
+  await page.waitForFunction(
+    (targetRecipeId) => {
+      const recipe = Array.from(document.querySelectorAll(".recipe[data-recipe-id]"))
+        .find((element) => element.dataset.recipeId === targetRecipeId);
+      const header = recipe?.querySelector(".accordion-header");
+      const content = recipe?.querySelector(".accordion-content");
+      return header?.getAttribute("aria-expanded") === "true" &&
+        content?.classList.contains("open");
+    },
+    recipeId,
+    { timeout: 10000 }
+  );
 }
 
 async function assertNoHorizontalOverflow(page, selectors) {

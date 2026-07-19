@@ -8,6 +8,7 @@ The simplest host can serve the repository root. A narrower production artifact 
 
 ```text
 index.html
+404.html
 css/
 js/
 data/recipes.json
@@ -28,7 +29,8 @@ All deployed recipe data is public. Personal grocery, meal-plan, favorite, and p
 - Serve every app file from the same origin.
 - Preserve the application directory: `sw.js` is registered relative to the page and controls that directory scope.
 - Relative URLs in the HTML, manifest, modules, repository, and worker support deployment at `/` or a subdirectory such as `/recipes/`.
-- Serve the directory URL as `index.html`. The app has no client-side routes and does not need a catch-all rewrite for arbitrary asset paths.
+- Serve the directory URL as `index.html`.
+- For clean recipe links such as `/recipe-book/a5-wagyu-burger`, route missing page navigations to the app shell. On GitHub Pages, `404.html` mirrors `index.html` for that fallback.
 - Return real `404` responses for missing JavaScript, CSS, JSON, and icon files instead of rewriting them to HTML.
 
 For subdirectory hosting, validate the manifest start URL, worker scope, recipe request, and offline reload from the final public URL rather than only from local root hosting.
@@ -91,6 +93,7 @@ Test recipe downloads, backup import/export, source links, clipboard behavior, S
 
 - the version query on `css/styles.css` in `index.html`;
 - the version query on `js/app.js` in `index.html`;
+- the matching GitHub Pages fallback shell in `404.html`;
 - `CACHE_VERSION` in `sw.js`;
 - the generated service-worker shell asset list.
 
@@ -132,6 +135,7 @@ Verify the public URL, not just the host's preview URL:
 
 - `index.html`, CSS, the app module, imported modules, the manifest, icon, worker, and recipe JSON return `200` with correct content types.
 - The recipe count loads without console errors or schema warnings.
+- A clean recipe URL such as `/recipe-book/a5-wagyu-burger` opens that recipe directly.
 - Search, a recipe expansion, grocery selection, and Cooking Mode work.
 - Recipe and backup downloads are permitted by the host policy.
 - `sw.js` registers with the expected scope.

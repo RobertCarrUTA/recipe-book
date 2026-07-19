@@ -1,5 +1,9 @@
 const DEFAULT_COMPACT_LAYOUT_QUERY = "(max-width: 979px)";
 const HISTORY_STATE_KEY = "recipeBook";
+const MAX_RECIPE_DEEP_LINK_ID_LENGTH = 160;
+const NON_RECIPE_PATH_SEGMENTS = new Set(["404.html", "index.html", "recipe-book"]);
+const RECIPE_DEEP_LINK_ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const RECIPE_DEEP_LINK_PARAM = "recipe";
 
 function noop() {}
 
@@ -35,6 +39,70 @@ function normalizeGroceryReturnPosition(position) {
     rowTop: Number.isFinite(rowTop) ? rowTop : null,
     scrollY: Number.isFinite(scrollY) ? scrollY : 0,
   };
+}
+
+function normalizeRecipeDeepLinkId(value) {
+  const recipeId = typeof value === "string" ? value : "";
+  if (!recipeId || recipeId.length > MAX_RECIPE_DEEP_LINK_ID_LENGTH) return "";
+  return RECIPE_DEEP_LINK_ID_PATTERN.test(recipeId) ? recipeId : "";
+}
+
+function getLocationHash(locationLike) {
+  const hash = typeof locationLike?.hash === "string" ? locationLike.hash : "";
+  if (hash) return hash;
+
+  const href = typeof locationLike?.href === "string" ? locationLike.href : "";
+  const hashIndex = href.indexOf("#");
+  return hashIndex === -1 ? "" : href.slice(hashIndex);
+}
+
+function getLocationPathname(locationLike) {
+  const pathname = typeof locationLike?.pathname === "string" ? locationLike.pathname : "";
+  if (pathname) return pathname;
+
+  const href = typeof locationLike?.href === "string" ? locationLike.href : "";
+  if (!href) return "";
+
+  try {
+    return new URL(href).pathname;
+  } catch (error) {
+    return "";
+  }
+}
+
+export function getRecipeDeepLinkIdFromHash(hash) {
+  const rawHash = typeof hash === "string" ? hash : "";
+  const fragment = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+  if (!fragment) return "";
+
+  try {
+    const params = new URLSearchParams(fragment);
+    const recipeIds = params.getAll(RECIPE_DEEP_LINK_PARAM);
+    return recipeIds.length === 1 ? normalizeRecipeDeepLinkId(recipeIds[0]) : "";
+  } catch (error) {
+    return "";
+  }
+}
+
+export function getRecipeDeepLinkIdFromPathname(pathname) {
+  const rawPathname = typeof pathname === "string" ? pathname : "";
+  if (!rawPathname || rawPathname === "/") return "";
+
+  const segments = rawPathname.split("/").filter(Boolean);
+  const encodedRecipeId = segments.at(-1) || "";
+  if (!encodedRecipeId || NON_RECIPE_PATH_SEGMENTS.has(encodedRecipeId)) return "";
+
+  try {
+    return normalizeRecipeDeepLinkId(decodeURIComponent(encodedRecipeId));
+  } catch (error) {
+    return "";
+  }
+}
+
+export function getRecipeDeepLinkIdFromLocation(locationLike) {
+  const hash = getLocationHash(locationLike);
+  if (hash) return getRecipeDeepLinkIdFromHash(hash);
+  return getRecipeDeepLinkIdFromPathname(getLocationPathname(locationLike));
 }
 
 export function createRecipeSourceNavigationController({
@@ -176,6 +244,18 @@ export function createRecipeSourceNavigationController({
     return true;
   }
 
+  function viewDeepLinkedRecipeFromLocation() {
+    const recipeKey = getRecipeDeepLinkIdFromLocation(window?.location);
+    if (!recipeKey) return false;
+    if (!hasRecipeSource(recipeKey)) {
+      logger.warn("Recipe deep link was not found", recipeKey);
+      return false;
+    }
+
+    setMobileView("recipes");
+    return revealRecipeSourceById(recipeKey);
+  }
+
   function prepareRecipeSourceNavigation(canonicalKey) {
     if (isCompactLayout()) {
       groceryReturnPosition = captureGroceryReturnPosition(canonicalKey);
@@ -254,6 +334,7 @@ export function createRecipeSourceNavigationController({
     prepareRecipeSourceNavigation,
     revealRecipeSourceById,
     restoreGroceryReturnPosition,
+    viewDeepLinkedRecipeFromLocation,
     viewGroceryList,
     viewRecipeSource,
   };
