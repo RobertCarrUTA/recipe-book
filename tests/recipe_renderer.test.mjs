@@ -231,7 +231,7 @@ test("recipe renderer exposes a recipe link copy action", async () => {
   harness.renderer.renderRecipes();
   const recipeElement = openRecipe(harness.document, "chili");
   const linkButton = recipeElement.querySelectorAll(".recipe-export-button")
-    .find((button) => button.textContent === "Link");
+    .find((button) => button.textContent === "Copy link");
 
   assert.ok(linkButton);
   assert.equal(linkButton.getAttribute("aria-label"), "Copy recipe link for Chili");

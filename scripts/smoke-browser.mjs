@@ -241,7 +241,7 @@ const browserChecks = [
       await assertRecipeDeepLinkOpen(page, "a5-wagyu-burger");
       await page
         .locator('.recipe[data-recipe-id="a5-wagyu-burger"] .recipe-export-button')
-        .filter({ hasText: "Link" })
+        .filter({ hasText: /^Copy link$/ })
         .click();
       assert.equal(
         await page.evaluate(() => window.__recipeBookCopiedText),
@@ -453,7 +453,7 @@ const browserChecks = [
       await assertVisible(page, `.recipe[data-recipe-index="${target.index}"] .recipe-export-actions`, true);
 
       const textDownloadPromise = page.waitForEvent("download");
-      await recipe.locator(".recipe-export-button").filter({ hasText: "Text" }).click();
+      await recipe.locator(".recipe-export-button").filter({ hasText: /^Text file$/ }).click();
       const textDownload = await textDownloadPromise;
       const textPath = await textDownload.path();
       const text = await fs.readFile(textPath, "utf8");
@@ -463,7 +463,7 @@ const browserChecks = [
       assert.match(text, /\nInstructions\n1\. /);
 
       const jsonDownloadPromise = page.waitForEvent("download");
-      await recipe.locator(".recipe-export-button").filter({ hasText: "JSON" }).click();
+      await recipe.locator(".recipe-export-button").filter({ hasText: /^JSON file$/ }).click();
       const jsonDownload = await jsonDownloadPromise;
       const jsonPath = await jsonDownload.path();
       const json = JSON.parse(await fs.readFile(jsonPath, "utf8"));
