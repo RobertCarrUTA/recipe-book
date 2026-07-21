@@ -14627,7 +14627,8 @@
         "oven",
         "pizza-steel"
       ],
-      "status": "not-tried"
+      "rating": "great",
+      "status": "tried"
     },
     "title": "Hot Honey Pepperoni and Ricotta Pizza",
     "totalTime": "1 hour active, plus 72 hours dough fermentation and 3 hours dough warm-up"
@@ -16146,7 +16147,8 @@
         "oven",
         "pizza-steel"
       ],
-      "status": "not-tried"
+      "rating": "great",
+      "status": "tried"
     },
     "title": "Cheese Pizza",
     "totalTime": "1 hour active, plus 48 to 72 hours dough fermentation and 3 hours dough warm-up"
