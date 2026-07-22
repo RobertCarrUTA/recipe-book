@@ -44,6 +44,7 @@ const ingredientGroups = {
   "sourdough discard": "Baking",
   sugar: "Baking",
   "sweetened shredded coconut": "Baking",
+  "tapioca starch": "Baking",
   "vanilla bean": "Baking",
   "vanilla bean paste": "Baking",
   "vanilla extract": "Baking",

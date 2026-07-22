@@ -1,28 +1,33 @@
 {
-  "additionalTime": "1 hour dough chill plus 4 hours cooling",
+  "additionalTime": "1 hour dough chill, 30 minutes shaped-crust chill, and at least 4 hours cooling",
   "author": "Robert Carr",
   "collections": [
     "baking",
     "desserts"
   ],
-  "cookTime": "1 hour 20 minutes",
-  "description": "A single-crust blueberry pie with a concentrated lemon-blueberry filling, a sealed flaky crust, and a brown butter oat-pecan crumble that bakes crisp over jammy berries.",
+  "cookTime": "1 hour 40 minutes",
+  "description": "A deep-dish blueberry pie with a vivid fresh-and-wild blueberry lemon filling, a flaky egg-white-sealed butter crust, and a crisp nut-free brown butter lemon-oat crumble.",
   "equipment": [
-    "9-inch deep-dish pie pan",
-    "Rimmed baking sheet",
-    "Mixing bowls",
+    "9-inch deep-dish metal pie pan",
+    "Baking steel or pizza stone",
+    "Digital kitchen scale",
+    "Digital thermometer",
+    "Fine grater",
+    "Large mixing bowl",
+    "Medium heatproof bowl",
     "Medium saucepan",
-    "Rolling pin",
-    "Pastry cutter or fork",
     "Parchment paper",
-    "Pie weights or dried beans",
     "Pastry brush",
+    "Pastry cutter or fork",
+    "Pie weights or dried beans",
+    "Rimmed baking sheet",
+    "Rolling pin",
     "Wire rack"
   ],
   "groceryIngredients": [
     {
       "item": "all-purpose flour",
-      "quantity": 1.25,
+      "quantity": 1.667,
       "unit": "cup"
     },
     {
@@ -32,7 +37,7 @@
     },
     {
       "item": "kosher salt",
-      "quantity": 0.5,
+      "quantity": 1,
       "unit": "tsp"
     },
     {
@@ -48,8 +53,8 @@
     {
       "item": "water",
       "quantity": {
-        "min": 3,
-        "max": 4
+        "max": 5,
+        "min": 4
       },
       "unit": "tbsp"
     },
@@ -60,45 +65,43 @@
     },
     {
       "item": "large egg",
-      "quantity": 1,
-      "note": "use the white to seal the crust"
-    },
-    {
-      "item": "blueberries",
-      "quantity": 2,
-      "unit": "lb"
-    },
-    {
-      "item": "lemon",
-      "quantity": 3,
-      "note": "for 4 teaspoons zest and 1/4 cup juice"
-    },
-    {
-      "item": "granulated sugar",
-      "quantity": 0.75,
-      "unit": "cup"
-    },
-    {
-      "item": "granny smith apple",
+      "note": "use the white to seal the crust",
       "quantity": 1
     },
     {
-      "item": "cornstarch",
-      "quantity": 0.25,
+      "item": "fresh blueberries",
+      "quantity": 24,
+      "unit": "oz"
+    },
+    {
+      "item": "frozen wild blueberries",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "item": "lemon",
+      "note": "for 5 teaspoons zest and 3 tablespoons juice",
+      "quantity": 3
+    },
+    {
+      "item": "granulated sugar",
+      "note": "1 cup plus 2 tablespoons",
+      "quantity": 1.125,
       "unit": "cup"
     },
     {
+      "item": "tapioca starch",
+      "note": "cassava-based",
+      "quantity": 45,
+      "unit": "g"
+    },
+    {
       "item": "kosher salt",
-      "quantity": 0.25,
+      "quantity": 0.5,
       "unit": "tsp"
     },
     {
-      "item": "vanilla extract",
-      "quantity": 1,
-      "unit": "tsp"
-    },
-    {
-      "item": "almond extract",
+      "item": "ground coriander",
       "quantity": 0.25,
       "unit": "tsp"
     },
@@ -108,8 +111,13 @@
       "unit": "tbsp"
     },
     {
+      "item": "water",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
       "item": "all-purpose flour",
-      "quantity": 0.75,
+      "quantity": 1,
       "unit": "cup"
     },
     {
@@ -123,86 +131,85 @@
       "unit": "cup"
     },
     {
-      "item": "toasted pecans",
-      "quantity": 0.5,
-      "unit": "cup"
-    },
-    {
-      "item": "cinnamon",
-      "quantity": 0.5,
-      "unit": "tsp"
-    },
-    {
       "item": "kosher salt",
-      "quantity": 0.25,
+      "quantity": 0.5,
       "unit": "tsp"
     }
   ],
   "id": "blueberry-lemon-crumble-pie",
   "ingredients": [
-    "1 1/4 cups all-purpose flour, for the crust",
-    "1 tablespoon granulated sugar, for the crust",
-    "1/2 teaspoon Diamond Crystal kosher salt, for the crust",
-    "10 tablespoons cold unsalted butter, cut into 1/2-inch cubes, for the crust",
+    "1 2/3 cups (200 grams) all-purpose flour, for the crust",
+    "1 tablespoon (12 grams) granulated sugar, for the crust",
+    "1 teaspoon (3 grams) Diamond Crystal kosher salt, for the crust",
+    "10 tablespoons (142 grams) cold unsalted butter, cut into 1/2-inch cubes, for the crust",
     "1 teaspoon apple cider vinegar",
-    "3 to 4 tablespoons ice water",
+    "4 to 5 tablespoons ice water",
     "2 tablespoons all-purpose flour, for rolling the crust",
     "1 large egg white, lightly beaten, for sealing the crust",
-    "6 cups fresh blueberries, about 2 pounds, divided",
-    "4 teaspoons finely grated lemon zest, divided, from about 3 large lemons",
-    "1/4 cup fresh lemon juice, divided",
-    "3/4 cup granulated sugar, for the filling",
-    "1 small Granny Smith apple, peeled and finely grated, about 1/2 cup",
-    "1/4 cup cornstarch",
-    "1/4 teaspoon Diamond Crystal kosher salt, for the filling",
-    "1 teaspoon vanilla extract",
-    "1/4 teaspoon almond extract",
-    "8 tablespoons unsalted butter, for the crumble",
-    "3/4 cup all-purpose flour, for the crumble",
-    "1/2 cup old-fashioned rolled oats",
-    "1/2 cup packed light brown sugar",
-    "1/2 cup finely chopped toasted pecans",
-    "1/2 teaspoon cinnamon",
-    "1/4 teaspoon Diamond Crystal kosher salt, for the crumble"
+    "24 ounces (680 grams) fresh cultivated blueberries, about 4 cups",
+    "8 ounces (225 grams) frozen wild blueberries, about 2 cups, kept frozen",
+    "5 teaspoons finely grated lemon zest, divided, from about 3 large lemons",
+    "3 tablespoons (45 grams) fresh lemon juice",
+    "1 cup plus 2 tablespoons (225 grams) granulated sugar, for the filling",
+    "45 grams cassava-based tapioca starch",
+    "1/2 teaspoon (2 grams) Diamond Crystal kosher salt, for the filling",
+    "1/4 teaspoon ground coriander",
+    "8 tablespoons (113 grams) unsalted butter, for the crumble",
+    "1 tablespoon room-temperature water, for the crumble",
+    "1 cup (120 grams) all-purpose flour, for the crumble",
+    "1/2 cup (45 grams) old-fashioned rolled oats",
+    "1/2 cup packed (106 grams) light brown sugar",
+    "1/2 teaspoon Diamond Crystal kosher salt, for the crumble"
   ],
   "instructions": [
-    "Make the crust dough: in a medium bowl, whisk together 1 1/4 cups all-purpose flour, 1 tablespoon granulated sugar, and 1/2 teaspoon Diamond Crystal kosher salt.",
-    "Add the 10 tablespoons cold cubed unsalted butter to the flour mixture and cut it in with a pastry cutter or fork until the butter pieces range from pea-size to small almond-size.",
-    "Drizzle 1 teaspoon apple cider vinegar and 3 tablespoons ice water over the flour-butter mixture. Toss with a fork until the dough begins to clump when squeezed. If dry flour remains at the bottom of the bowl, add the remaining 1 tablespoon ice water 1 teaspoon at a time.",
-    "Turn the dough onto a clean surface, press it into a 1-inch-thick disk, wrap tightly, and refrigerate for at least 1 hour.",
-    "Make the crumble while the dough chills: melt 8 tablespoons unsalted butter in a medium saucepan over medium heat. Cook for 4 to 6 minutes, stirring often, until the butter smells nutty and the milk solids at the bottom turn deep golden brown.",
-    "Immediately pour the brown butter, including the browned bits, into a medium heatproof bowl and let it cool for 10 minutes.",
-    "Stir 3/4 cup all-purpose flour, 1/2 cup old-fashioned rolled oats, 1/2 cup packed light brown sugar, 1/2 cup finely chopped toasted pecans, 1 teaspoon of the lemon zest, 1/2 teaspoon cinnamon, and 1/4 teaspoon Diamond Crystal kosher salt into the cooled brown butter until the mixture forms moist crumbs. Refrigerate the crumble while you prepare the filling and crust.",
-    "Make the blueberry-lemon base: in the same medium saucepan, combine 2 cups of the blueberries, 3/4 cup granulated sugar, the finely grated Granny Smith apple, 1 tablespoon of the lemon zest, 2 tablespoons of the lemon juice, and 1/4 teaspoon Diamond Crystal kosher salt.",
-    "Cook the blueberry mixture over medium heat for 8 to 10 minutes, stirring often and gently mashing only some of the berries, until about half of the berries have burst and the juices look glossy.",
-    "In a small bowl, whisk 1/4 cup cornstarch with the remaining 2 tablespoons lemon juice until smooth. Stir the cornstarch slurry into the hot blueberry mixture and cook for 60 to 90 seconds, stirring constantly, until the mixture turns thick and shiny.",
-    "Remove the saucepan from the heat. Stir in 1 teaspoon vanilla extract and 1/4 teaspoon almond extract, then fold in the remaining 4 cups fresh blueberries. Set the filling aside to cool while you roll and par-bake the crust.",
-    "Dust the work surface and rolling pin with up to 2 tablespoons all-purpose flour. Roll the chilled dough into a 12-inch round, turning it often so it does not stick.",
-    "Fit the dough into a 9-inch deep-dish pie pan without stretching it. Trim the overhang to about 1 inch, tuck the overhang under itself, crimp the edge, and freeze the shaped crust for 20 minutes.",
-    "While the crust freezes, place a rimmed baking sheet on the lower-middle oven rack and preheat the oven to 400 degrees F.",
-    "Line the frozen crust with parchment paper and fill it to the top with pie weights or dried beans. Bake the weighted crust on the hot baking sheet for 18 minutes.",
-    "Carefully lift out the parchment and pie weights. Brush the bottom and sides of the hot crust with the lightly beaten egg white, then bake the crust for 3 to 5 minutes more, until the surface looks dry and lightly set.",
-    "Scrape all of the cooled blueberry filling into the par-baked crust and spread it evenly. Break the chilled crumble into 1/2-inch clumps and scatter it evenly over the filling, leaving a few small blueberry gaps so steam can escape.",
-    "Bake the assembled pie on the hot baking sheet at 400 degrees F for 20 minutes.",
-    "Reduce the oven temperature to 375 degrees F and continue baking for 35 to 45 minutes, until the crumble is deep golden brown and the blueberry filling bubbles thickly near the center of the pie. Shield the crust edge with foil if it browns before the filling bubbles in the center.",
-    "Transfer the pie to a wire rack and cool for at least 4 hours before slicing so the lemon-blueberry filling sets into clean, jammy slices."
+    "Make the crust dough: in a medium bowl, whisk together 1 2/3 cups (200 grams) all-purpose flour, 1 tablespoon (12 grams) granulated sugar, and 1 teaspoon (3 grams) Diamond Crystal kosher salt.",
+    "Add 10 tablespoons (142 grams) cold cubed unsalted butter. Cut the butter into the flour with a pastry cutter or fork until most pieces are pea-size and several remain about the size of small almonds.",
+    "Combine 1 teaspoon apple cider vinegar with 4 tablespoons ice water. Drizzle it over the flour-butter mixture while tossing with a fork. Squeeze a handful of dough; if it holds together without crumbling, stop. If dry flour remains, add the final 1 tablespoon ice water 1 teaspoon at a time.",
+    "Turn the shaggy dough onto a clean surface and press it into a rough rectangle. Fold it into thirds like a letter, then gently press it into a 1-inch-thick disk. Wrap tightly and refrigerate for at least 1 hour.",
+    "Make the crumble while the dough chills: melt 8 tablespoons (113 grams) unsalted butter in a light-colored medium saucepan over medium heat. Cook, stirring and scraping the bottom often, until the sputtering subsides and the milk solids turn deep golden brown, about 5 to 7 minutes after the butter melts.",
+    "Immediately pour the brown butter, including all browned bits, into a medium heatproof bowl. Let it cool for 10 minutes, then slowly stir in 1 tablespoon room-temperature water to replace the moisture lost during browning.",
+    "Combine 1/2 cup packed (106 grams) light brown sugar and 2 teaspoons of the lemon zest in a small bowl. Rub the zest into the sugar with your fingertips until the sugar feels slightly damp and smells strongly of lemon.",
+    "Stir the lemon-infused brown sugar, 1 cup (120 grams) all-purpose flour, 1/2 cup (45 grams) old-fashioned rolled oats, and 1/2 teaspoon Diamond Crystal kosher salt into the brown butter until no dry flour remains and moist crumbs form. Squeeze some of the mixture into irregular 1/2-inch clumps, cover, and refrigerate.",
+    "Remove the chilled crust dough from the refrigerator. If it is too firm to roll without cracking, let it stand at room temperature for 5 to 10 minutes.",
+    "Dust the work surface and rolling pin with up to 2 tablespoons all-purpose flour. Roll the dough from the center outward into a 14-inch round, rotating it frequently and dusting underneath only as needed to prevent sticking.",
+    "Gently settle the dough into a 9-inch deep-dish metal pie pan without stretching it. Press it firmly against the bottom and sides, trim the overhang to 1 inch, tuck the overhang under itself, and crimp the edge. Refrigerate the shaped crust for 30 minutes.",
+    "While the crust chills, place a baking steel or pizza stone on the lower-middle oven rack with a rimmed baking sheet on top. Preheat the oven to 400 degrees F for at least 30 minutes. If no steel or stone is available, preheat the rimmed baking sheet by itself.",
+    "Line the chilled crust with parchment paper and fill it to the top with pie weights or dried beans, pressing the weights gently against the sides. Place the pie pan on the hot rimmed baking sheet and bake for 20 minutes.",
+    "Carefully remove the parchment and pie weights. Brush the bottom and sides of the hot crust with the lightly beaten egg white, using a thin coat without puddles. Return the crust to the hot baking sheet and bake for 5 to 7 minutes, until the surface looks dry and the bottom is just beginning to color. Let the crust cool for 10 minutes.",
+    "Make the filling while the crust cools: combine 1 cup plus 2 tablespoons (225 grams) granulated sugar and the remaining 1 tablespoon lemon zest in a large mixing bowl. Rub the zest into the sugar with your fingertips until the sugar feels damp and highly fragrant.",
+    "Whisk 45 grams cassava-based tapioca starch, 1/2 teaspoon (2 grams) Diamond Crystal kosher salt, and 1/4 teaspoon ground coriander into the lemon sugar until evenly distributed with no starch clumps.",
+    "Add 24 ounces (680 grams) fresh cultivated blueberries, 8 ounces (225 grams) frozen wild blueberries, and 3 tablespoons (45 grams) fresh lemon juice. Fold gently with a flexible spatula until every berry is evenly coated. Let the filling stand for 15 minutes, then fold it once more from the bottom to redistribute the juices and starch.",
+    "Scrape the filling and every drop of accumulated juice into the par-baked crust. Spread the berries evenly without crushing them.",
+    "Scatter the chilled crumble evenly over the filling, keeping the pieces irregular and leaving several small gaps where the blueberry filling remains visible so steam can escape.",
+    "Bake the assembled pie on the hot rimmed baking sheet at 400 degrees F for 20 minutes.",
+    "Reduce the oven temperature to 375 degrees F and continue baking for 45 to 60 minutes. The pie is done when the crumble is deeply golden and the filling bubbles slowly and thickly in several places near the center, not only around the edge. The center of the filling should register about 210 to 213 degrees F, depending on elevation.",
+    "Shield the crimped crust edge with foil if it becomes deeply browned. If the crumble reaches a deep golden brown before the filling bubbles at the center, loosely tent the entire pie with foil and continue baking.",
+    "Transfer the pie to a wire rack and cool completely, uncovered, for at least 4 hours and preferably until the center is no warmer than 85 degrees F. Do not slice it while warm."
   ],
   "link": null,
   "notes": [
-    "Fresh blueberries are the best choice here because they keep the filling bright and help the pie set cleanly. If using frozen blueberries, do not thaw them, add 1 extra tablespoon cornstarch to the slurry, and expect the final bake to take about 10 minutes longer.",
-    "The grated Granny Smith apple will not make the pie taste like apple; it adds pectin, brightness, and body so the blueberry filling slices cleanly instead of running.",
-    "The egg white seal is a small step that helps protect the bottom crust from the juicy blueberry filling.",
-    "The pie is done only when the filling bubbles thickly near the center, not just at the edges.",
-    "Do not slice the pie warm. Four hours of cooling is what turns the filling from delicious sauce into clean pie slices.",
-    "Store leftover pie loosely covered at room temperature for 1 day or refrigerated for up to 4 days."
+    "This recipe is formulated by weight because the sugar and tapioca starch ratios depend on the weight of the fruit. Use the gram measurements whenever possible.",
+    "Use cassava-based tapioca starch rather than quick-cooking tapioca pearls. Do not substitute the same quantity of cornstarch, flour, or Instant ClearJel because each thickener behaves differently.",
+    "Do not thaw the frozen wild blueberries. They provide a deeper, more concentrated blueberry flavor while the fresh cultivated berries provide larger, juicier fruit.",
+    "The filling is intentionally not precooked. Baking the raw berries preserves their natural juice and fresher blueberry flavor instead of turning part of the filling into a cooked jam.",
+    "Do not reduce the filling sugar. Its quantity is balanced with the fruit and tapioca starch so the starch sets correctly without becoming pasty.",
+    "The coriander should not be identifiable as a spice. At 1/4 teaspoon, it reinforces the floral and citrus-like aromas already present in blueberries.",
+    "The nut-free crumble contains no cinnamon, vanilla, or almond extract so the dominant flavors remain blueberry, lemon, brown butter, and toasted oats.",
+    "Adding 1 tablespoon water to the brown butter replaces moisture lost during browning and keeps the crumble crisp and clumpy rather than greasy or sandy.",
+    "The egg white coating and partial blind bake protect the bottom crust from the raw berry filling.",
+    "The pie is not done when only the outer filling bubbles. Wait for slow, thick bubbles near the center so the tapioca starch fully activates.",
+    "Cooling to 85 degrees F or below is essential for clean slices. The filling will be loose if the pie is cut while warm.",
+    "For the crispest crust and crumble, serve the pie the day it is baked. Store leftovers loosely covered at room temperature for up to 2 days or refrigerated for up to 4 days.",
+    "To refresh refrigerated slices, warm them on a baking sheet in a 350 degrees F oven for 8 to 10 minutes, then let them stand for 10 minutes before serving."
   ],
   "nutrition": null,
   "personalNotes": [],
-  "prepTime": "55 minutes",
+  "prepTime": "1 hour",
   "servings": "8",
   "tags": {
     "difficulty": "medium",
     "equipment": [
+      "baking-steel",
       "oven",
       "pie-pan",
       "saucepan"
@@ -210,5 +217,5 @@
     "status": "not-tried"
   },
   "title": "Blueberry Lemon Crumble Pie",
-  "totalTime": "6 hours 15 minutes"
+  "totalTime": "8 hours 10 minutes"
 }

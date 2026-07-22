@@ -965,6 +965,13 @@
       }
     },
     {
+      "item": "fresh blueberries",
+      "canonical": {
+        "base": "blueberries",
+        "display": "blueberries"
+      }
+    },
+    {
       "item": "fresh cremini mushrooms",
       "canonical": {
         "base": "fresh cremini mushrooms",
@@ -1071,6 +1078,13 @@
       }
     },
     {
+      "item": "frozen wild blueberries",
+      "canonical": {
+        "base": "blueberries",
+        "display": "blueberries"
+      }
+    },
+    {
       "item": "garlic",
       "canonical": {
         "base": "garlic",
@@ -1124,13 +1138,6 @@
       "canonical": {
         "base": "graham crackers",
         "display": "graham crackers"
-      }
-    },
-    {
-      "item": "granny smith apple",
-      "canonical": {
-        "base": "granny smith apple",
-        "display": "granny smith apple"
       }
     },
     {
@@ -2351,6 +2358,13 @@
       "canonical": {
         "base": "swiss cheese",
         "display": "swiss cheese"
+      }
+    },
+    {
+      "item": "tapioca starch",
+      "canonical": {
+        "base": "tapioca starch",
+        "display": "tapioca starch"
       }
     },
     {
