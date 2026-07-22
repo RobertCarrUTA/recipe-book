@@ -965,6 +965,13 @@
       }
     },
     {
+      "item": "fresh blueberries",
+      "canonical": {
+        "base": "blueberries",
+        "display": "blueberries"
+      }
+    },
+    {
       "item": "fresh cremini mushrooms",
       "canonical": {
         "base": "fresh cremini mushrooms",
@@ -1068,6 +1075,13 @@
       "canonical": {
         "base": "frozen pineapple chunks",
         "display": "frozen pineapple chunks"
+      }
+    },
+    {
+      "item": "frozen wild blueberries",
+      "canonical": {
+        "base": "blueberries",
+        "display": "blueberries"
       }
     },
     {
@@ -2138,6 +2152,13 @@
       }
     },
     {
+      "item": "rolled oats",
+      "canonical": {
+        "base": "rolled oats",
+        "display": "rolled oats"
+      }
+    },
+    {
       "item": "roma tomato",
       "canonical": {
         "base": "roma tomato",
@@ -2337,6 +2358,13 @@
       "canonical": {
         "base": "swiss cheese",
         "display": "swiss cheese"
+      }
+    },
+    {
+      "item": "tapioca starch",
+      "canonical": {
+        "base": "tapioca starch",
+        "display": "tapioca starch"
       }
     },
     {
