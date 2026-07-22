@@ -1127,6 +1127,13 @@
       }
     },
     {
+      "item": "granny smith apple",
+      "canonical": {
+        "base": "granny smith apple",
+        "display": "granny smith apple"
+      }
+    },
+    {
       "item": "granulated garlic or garlic powder",
       "canonical": {
         "base": "granulated garlic or garlic powder",
@@ -2135,6 +2142,13 @@
       "canonical": {
         "base": "roasted red peppers",
         "display": "roasted red peppers"
+      }
+    },
+    {
+      "item": "rolled oats",
+      "canonical": {
+        "base": "rolled oats",
+        "display": "rolled oats"
       }
     },
     {
