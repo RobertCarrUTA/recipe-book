@@ -19435,5 +19435,80 @@
     },
     "title": "Blueberry Lemon Crumble Pie",
     "totalTime": "8 hours 10 minutes"
+  },
+  {
+    "additionalTime": "72 hours fermentation plus 3 to 4 hours final proof",
+    "author": "Baking Steel",
+    "category": "Pizza dough",
+    "collections": [
+      "pizza",
+      "baking"
+    ],
+    "description": "Baking Steel's printable 72-hour pizza dough formula with a 24-hour room-temperature rise, 48 hours in the refrigerator, and a covered room-temperature proof after balling.",
+    "equipment": [
+      "Kitchen scale",
+      "Large mixing bowl",
+      "Dough whisk or clean hand",
+      "Covered dough container or plastic wrap",
+      "Bench scraper"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "bread flour",
+        "quantity": 500,
+        "unit": "g"
+      },
+      {
+        "display": "sea salt",
+        "item": "salt",
+        "quantity": 16,
+        "unit": "g"
+      },
+      {
+        "display": "instant yeast",
+        "item": "active dry or instant yeast",
+        "quantity": 0.25,
+        "unit": "tsp"
+      }
+    ],
+    "id": "baking-steel-72-hour-pizza-dough",
+    "ingredients": [
+      "500 grams bread flour",
+      "16 grams sea salt",
+      "1 gram instant yeast, about 1/4 teaspoon",
+      "350 grams room-temperature water"
+    ],
+    "instructions": [
+      "Add 500 grams bread flour to a large bowl.",
+      "Scatter 1 gram instant yeast over the flour and whisk until evenly distributed.",
+      "Add 16 grams sea salt and whisk again.",
+      "Pour in 350 grams room-temperature water.",
+      "Mix by hand or with a dough whisk until the flour is fully hydrated.",
+      "Knead by hand in the bowl for 2 to 3 minutes, until the dough comes together and feels slightly sticky.",
+      "Cover the bowl and let the dough rise at room temperature for 24 hours.",
+      "Transfer the covered dough to the refrigerator for 48 hours.",
+      "Remove the dough from the refrigerator, divide it into 2 pieces, and shape each piece into a dough ball.",
+      "Proof the dough balls covered at room temperature for 3 to 4 hours before using."
+    ],
+    "link": "https://bakingsteel.com/pages/printable-72-hour-dough",
+    "notes": [
+      "Formula from Baking Steel's printable 72-hour pizza dough recipe.",
+      "The source yield is 2 dough balls for 12- to 14-inch pizzas.",
+      "This is the printable scratch formula, not the larger packaged dough mix formula."
+    ],
+    "nutrition": {},
+    "personalNotes": [],
+    "prepTime": "15 minutes",
+    "servings": "2 dough balls, for 12- to 14-inch pizzas",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "mixing-bowl"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Baking Steel 72-Hour Pizza Dough",
+    "totalTime": "15 minutes active, plus 72 hours fermentation and 3 to 4 hours final proof",
+    "yield": "2 dough balls"
   }
 ]
