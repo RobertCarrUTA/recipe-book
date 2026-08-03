@@ -19433,6 +19433,9 @@
       "For the crispest crust and crumble, serve the pie the day it is baked. Store leftovers loosely covered at room temperature for up to 2 days or refrigerated for up to 4 days.",
       "To refresh refrigerated slices, warm them on a baking sheet in a 350 degrees F oven for 8 to 10 minutes, then let them stand for 10 minutes before serving."
     ],
+    "personalNotes": [
+      "The pie was good. It took a long time to make. The pie crust was a bit of a pain to make and after the pie was finished, it seemed like all the flattened tablespoons of butter in the crust were hard to cut through. The pie crust was still good, but I think it could be better. Before cooking the berry mix was so good, after cooking it seemed to lose a bit of that flavor. Note to myself, instructions for making the pie crust need to be more clear, as well as when rolling it out."
+    ],
     "prepTime": "1 hour",
     "servings": "8",
     "source": "bundled",
@@ -19445,7 +19448,8 @@
         "pie-pan",
         "saucepan"
       ],
-      "status": "not-tried"
+      "rating": "good",
+      "status": "tried"
     },
     "title": "Blueberry Lemon Crumble Pie",
     "totalTime": "10 hours"
