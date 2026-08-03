@@ -19445,7 +19445,8 @@
         "pie-pan",
         "saucepan"
       ],
-      "status": "not-tried"
+      "rating": "good",
+      "status": "tried"
     },
     "title": "Blueberry Lemon Crumble Pie",
     "totalTime": "10 hours"
