@@ -141,7 +141,9 @@
     "Homemade cake flour: Measure 3 3/4 level cups of all-purpose flour. Remove 7 tablespoons of flour. Replace with 7 tablespoons cornstarch and sift together 4-5 times."
   ],
   "nutrition": null,
-  "personalNotes": [],
+  "personalNotes": [
+    "These were okay. Not sure I'd make them again or recommend them. I followed the instructions pretty well and my donuts did not turn out like hers."
+  ],
   "prepTime": "45 minutes",
   "rating": {
     "count": 0,
@@ -152,8 +154,8 @@
     "equipment": [
       "dutch-oven"
     ],
-    "rating": null,
-    "status": "not-tried"
+    "rating": "okay",
+    "status": "tried"
   },
   "title": "The Best Old-Fashioned Sour Cream Donuts",
   "totalTime": "3 hours 5 minutes"
