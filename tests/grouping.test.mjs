@@ -80,6 +80,22 @@ test("determineGroupForKey prefers specific matches before broad words", () => {
   assert.equal(determineGroupForKey("semi-sweet chocolate chips"), "Baking");
 });
 
+test("hot dog grocery labels use the correct shopping groups", () => {
+  const cases = [
+    ["all-beef hot dogs", "Meat"],
+    ["hot dog buns", "Pantry"],
+    ["potato hot dog buns", "Pantry"],
+    ["pickled jalapenos", "Sauces, Marinades, & Condiments"],
+    ["sliced pickled jalapenos", "Sauces, Marinades, & Condiments"],
+    ["jalapeno", "Vegetables"],
+    ["potato", "Vegetables"],
+  ];
+
+  cases.forEach(([key, expected]) => {
+    assert.equal(determineGroupForKey(key), expected, key);
+  });
+});
+
 test("sortGroceryGroups uses shopping flow order and keeps Other last", () => {
   assert.deepEqual(
     sortGroceryGroups([
