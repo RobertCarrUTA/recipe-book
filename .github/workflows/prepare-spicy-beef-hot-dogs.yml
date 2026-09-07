@@ -1,0 +1,105 @@
+name: Prepare spicy beef hot dog recipe
+
+on:
+  push:
+    branches:
+      - recipes/spicy-beef-hot-dogs
+    paths:
+      - .github/workflows/prepare-spicy-beef-hot-dogs.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prepare-spicy-beef-hot-dogs
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.repository == 'RobertCarrUTA/recipe-book' && github.ref == 'refs/heads/recipes/spicy-beef-hot-dogs'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out the triggering commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Verify the existing main baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          baseline="${RUNNER_TEMP}/recipe-book-baseline"
+          git worktree add --detach "$baseline" origin/main
+          cd "$baseline"
+          npm ci
+          npm run verify
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Build recipe data and refresh the intentional catalog change
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object data/recipes/spicy-beef-hot-dogs.json)" = "512d8e12a5c38ecac7cbf60f63fe6981607011ad"
+          npm run build:recipes
+          npm run update:normalization-snapshot
+          npm run report:data-quality
+
+      - name: Confirm the approved recipe and preserve every existing recipe
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import assert from "node:assert/strict";
+          import fs from "node:fs";
+          import childProcess from "node:child_process";
+
+          const id = "spicy-beef-hot-dogs";
+          const source = JSON.parse(fs.readFileSync(`data/recipes/${id}.json`, "utf8"));
+          const before = JSON.parse(childProcess.execFileSync("git", ["show", "HEAD:data/recipes.json"], { encoding: "utf8" }));
+          const after = JSON.parse(fs.readFileSync("data/recipes.json", "utf8"));
+          assert.equal(source.author, "Robert Carr");
+          assert.equal(source.instructions.length, 7);
+          assert.equal(source.tags.status, "not-tried");
+          assert.equal(source.rating, null);
+          assert.equal(source.notes.some((note) => /not kitchen-tested|Original recipe developed|No star rating/i.test(note)), false);
+          assert.equal(before.some((recipe) => recipe.id === id), false);
+          assert.equal(after.length, before.length + 1);
+          assert.deepEqual(after.filter((recipe) => recipe.id !== id), before);
+          assert.deepEqual(after.find((recipe) => recipe.id === id), source);
+          const changed = childProcess.execFileSync("git", ["diff", "--name-only"], { encoding: "utf8" }).trim().split("\n").filter(Boolean);
+          const allowed = new Set(["data/recipes.json", "tests/fixtures/normalization_catalog_snapshot.json"]);
+          assert.ok(changed.every((path) => allowed.has(path)), `Unexpected changes: ${changed.join(", ")}`);
+          console.log(`Verified ${before.length} unchanged recipes and the approved new recipe.`);
+          NODE
+
+      - name: Run full core verification
+        run: npm run verify
+
+      - name: Show the generated changes for review
+        run: |
+          git diff --stat
+          git diff -- tests/fixtures/normalization_catalog_snapshot.json
+
+      - name: Commit only the generated data to the recipe branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add data/recipes.json tests/fixtures/normalization_catalog_snapshot.json
+          if git diff --cached --quiet; then
+            echo "Generated files are already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Build hot dog recipe bundle and update grocery snapshot"
+          git push origin HEAD:refs/heads/recipes/spicy-beef-hot-dogs
