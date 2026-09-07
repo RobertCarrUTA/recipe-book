@@ -750,8 +750,8 @@
     {
       "item": "dill pickles",
       "canonical": {
-        "base": "pickles",
-        "display": "pickles"
+        "base": "dill pickles",
+        "display": "dill pickles"
       }
     },
     {
@@ -2041,8 +2041,8 @@
     {
       "item": "potato hot dog buns",
       "canonical": {
-        "base": "potato",
-        "display": "potato"
+        "base": "potato hot dog buns",
+        "display": "potato hot dog buns"
       }
     },
     {

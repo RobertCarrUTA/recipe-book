@@ -4,6 +4,7 @@ import {
   normalizeParsedIngredients,
   parseStructuredGroceryIngredient,
 } from "../js/grocery_ingredient_parser.js";
+import { determineGroupForKey } from "../js/grouping.js";
 import { test } from "./test_helpers.mjs";
 
 function parsedSnapshot(parsed) {
@@ -258,4 +259,25 @@ test("parseStructuredGroceryIngredient preserves shopping-critical specific labe
       },
     ]
   );
+});
+
+test("parsed hot dog ingredients preserve shopping labels and groups", () => {
+  const cases = [
+    ["all-beef hot dogs", "all-beef hot dogs", "Meat"],
+    ["potato hot dog buns", "potato hot dog buns", "Pantry"],
+    ["dill pickles", "dill pickles", "Sauces, Marinades, & Condiments"],
+    ["pickled jalapenos", "pickled jalapenos", "Sauces, Marinades, & Condiments"],
+    ["potatoes", "potato", "Vegetables"],
+    ["dill pickle chips", "dill pickle chips", "Sauces, Marinades, & Condiments"],
+    ["pickles", "pickles", "Sauces, Marinades, & Condiments"],
+  ];
+
+  cases.forEach(([item, expectedLabel, expectedGroup]) => {
+    const parsed = parseStructuredGroceryIngredient({ item, quantity: 2, unit: "item" });
+    assert.equal(parsed.canonical.base, expectedLabel, item);
+    assert.equal(parsed.canonical.display, expectedLabel, item);
+    assert.equal(parsed.unitKey, "item", item);
+    assert.deepEqual(parsed.quantityRange, { min: 2, max: 2 }, item);
+    assert.equal(determineGroupForKey(parsed.canonical.base), expectedGroup, item);
+  });
 });
