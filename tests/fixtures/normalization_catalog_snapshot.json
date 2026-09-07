@@ -50,6 +50,13 @@
       }
     },
     {
+      "item": "all-beef hot dogs",
+      "canonical": {
+        "base": "all-beef hot dogs",
+        "display": "all-beef hot dogs"
+      }
+    },
+    {
       "item": "all-purpose flour",
       "canonical": {
         "base": "all-purpose flour",
@@ -738,6 +745,13 @@
       "canonical": {
         "base": "dill pickle chips",
         "display": "dill pickle chips"
+      }
+    },
+    {
+      "item": "dill pickles",
+      "canonical": {
+        "base": "dill pickles",
+        "display": "dill pickles"
       }
     },
     {
@@ -1913,6 +1927,13 @@
       }
     },
     {
+      "item": "pickled jalapenos",
+      "canonical": {
+        "base": "pickled jalapenos",
+        "display": "pickled jalapenos"
+      }
+    },
+    {
       "item": "pickles",
       "canonical": {
         "base": "pickles",
@@ -2015,6 +2036,13 @@
       "canonical": {
         "base": "potato bun or brioche bun",
         "display": "potato bun or brioche bun"
+      }
+    },
+    {
+      "item": "potato hot dog buns",
+      "canonical": {
+        "base": "potato hot dog buns",
+        "display": "potato hot dog buns"
       }
     },
     {
@@ -2243,6 +2271,14 @@
       "canonical": {
         "base": "shallot",
         "display": "shallot"
+      }
+    },
+    {
+      "item": "sharp cheddar cheese",
+      "canonical": {
+        "base": "cheddar cheese",
+        "display": "cheddar cheese",
+        "notes": []
       }
     },
     {
@@ -2625,6 +2661,10 @@
     {
       "unit": "head",
       "normalized": "head"
+    },
+    {
+      "unit": "item",
+      "normalized": "item"
     },
     {
       "unit": "lb",
