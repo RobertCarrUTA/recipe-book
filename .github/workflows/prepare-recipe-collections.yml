@@ -44,6 +44,19 @@ jobs:
           test "$(git write-tree)" = f08eae7173e0e14a29d00fb54bf1c0348e168833
           git apply --check "$RUNNER_TEMP/recipe-collections.patch"
           git apply "$RUNNER_TEMP/recipe-collections.patch"
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          let css = fs.readFileSync('css/styles.css', 'utf8');
+          for (const [before, after] of [
+            ['@media (max-width: 420px)', '@media (max-width: 480px)'],
+            ['grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);', 'grid-template-columns: minmax(0, 1fr) minmax(370px, 0.72fr);'],
+          ]) {
+            assert.equal(css.split(before).length, 2);
+            css = css.replace(before, after);
+          }
+          fs.writeFileSync('css/styles.css', css);
+          JS
       - name: Install dependencies and browser
         run: |
           npm ci
@@ -61,6 +74,7 @@ jobs:
           python -m http.server 8765 --bind 127.0.0.1 > "$RUNNER_TEMP/preview-server.log" 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid"' EXIT
+          for attempt in {1..20}; do curl --silent --fail http://127.0.0.1:8765/ > /dev/null && break || sleep 0.2; done
           node --input-type=module <<'JS'
           import { chromium } from 'playwright';
           const browser = await chromium.launch({headless:true});
@@ -68,6 +82,7 @@ jobs:
             const page = await browser.newPage({viewport:{width,height:900}});
             await page.goto('http://127.0.0.1:8765/', {waitUntil:'networkidle'});
             await page.waitForSelector('.recipe');
+            if (!await page.locator('#recipeCollection').isVisible()) await page.locator('#toggleRecipeControls').click();
             await page.selectOption('#recipeCollection', 'health-conscious');
             await page.waitForFunction(() => document.querySelectorAll('.recipe').length === 5);
             await page.screenshot({path:process.env.RUNNER_TEMP + '/collections-' + width + '.png',fullPage:true});
@@ -84,7 +99,7 @@ jobs:
         run: |
           set -euo pipefail
           git add -A
-          test "$(git write-tree)" = 15820e800e3478932764637688b4b84d900a8963
+          test "$(git write-tree)" = 0e15f1c0a8c7008e53b4c7e5b0039ea4c894a041
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Add scoped health-conscious and meal-prep collections; remove temporary workflow'
