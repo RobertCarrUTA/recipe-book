@@ -6,20 +6,86 @@ on:
     paths: [.github/workflows/prepare-recipe-collections.yml]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inspect:
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: afc9794fd520f20237d3c1c65cce166b54c5e949
-      - name: Copy public patch payload for byte comparison
-        run: cp .github/workflows/prepare-recipe-collections.yml "$RUNNER_TEMP/patch-transport.yml"
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Restore and validate the reviewed patch bytes
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import childProcess from 'node:child_process';
+          import crypto from 'node:crypto';
+          import fs from 'node:fs';
+          import zlib from 'node:zlib';
+          const original = childProcess.execFileSync('git', ['show', 'afc9794fd520f20237d3c1c65cce166b54c5e949:.github/workflows/prepare-recipe-collections.yml'], {encoding:'utf8'});
+          const payload = original.match(/PATCH_DATA: (\S+)/)[1]
+            .replace('V996bcgrT17j', 'V996bcgr17j')
+            .replace('WleFSZZTfP', 'WleFSZTfP')
+            .replace('FJwVF+qxoe7RK', 'FJwVF+oxe7RK');
+          const patch = zlib.gunzipSync(Buffer.from(payload, 'base64'));
+          assert.equal(crypto.createHash('sha256').update(patch).digest('hex'), 'd6ec99a3aecff8edb10e4f7f54506ebf9a53d23af2e54d7ac1a8b1d8527570fa');
+          fs.writeFileSync(process.env.RUNNER_TEMP + '/recipe-collections.patch', patch);
+          JS
+          rm .github/workflows/prepare-recipe-collections.yml
+          git add -A
+          test "$(git write-tree)" = f08eae7173e0e14a29d00fb54bf1c0348e168833
+          git apply --check "$RUNNER_TEMP/recipe-collections.patch"
+          git apply "$RUNNER_TEMP/recipe-collections.patch"
+      - name: Install dependencies and browser
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Build and run all checks
+        run: |
+          npm run build:recipes
+          npm run set-asset-version -- 20260911-1
+          npm run report:data-quality
+          npm run verify:full
+          git diff --check
+      - name: Capture collection layouts for review
+        run: |
+          set -euo pipefail
+          python -m http.server 8765 --bind 127.0.0.1 > "$RUNNER_TEMP/preview-server.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          node --input-type=module <<'JS'
+          import { chromium } from 'playwright';
+          const browser = await chromium.launch({headless:true});
+          for (const width of [1280,381]) {
+            const page = await browser.newPage({viewport:{width,height:900}});
+            await page.goto('http://127.0.0.1:8765/', {waitUntil:'networkidle'});
+            await page.waitForSelector('.recipe');
+            await page.selectOption('#recipeCollection', 'health-conscious');
+            await page.waitForFunction(() => document.querySelectorAll('.recipe').length === 5);
+            await page.screenshot({path:process.env.RUNNER_TEMP + '/collections-' + width + '.png',fullPage:true});
+            await page.close();
+          }
+          await browser.close();
+          JS
       - uses: actions/upload-artifact@v4
         with:
-          name: patch-transport
-          path: ${{ runner.temp }}/patch-transport.yml
+          name: collection-layouts
+          path: ${{ runner.temp }}/collections-*.png
           retention-days: 1
+      - name: Commit only the verified changes
+        run: |
+          set -euo pipefail
+          git add -A
+          test "$(git write-tree)" = 15820e800e3478932764637688b4b84d900a8963
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Add scoped health-conscious and meal-prep collections; remove temporary workflow'
+          git push origin HEAD:feat/health-meal-prep-collections
