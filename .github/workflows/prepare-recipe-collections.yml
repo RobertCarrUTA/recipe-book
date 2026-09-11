@@ -1,0 +1,25 @@
+name: Prepare recipe collections
+
+on:
+  push:
+    branches: [feat/health-meal-prep-collections]
+    paths: [.github/workflows/prepare-recipe-collections.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 07f3103f1763ade966197a4aa407524b6b186ce4
+      - name: Archive the exact recipe baseline
+        run: git archive --format=tar HEAD > "$RUNNER_TEMP/recipe-collections-base.tar"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: recipe-collections-base
+          path: ${{ runner.temp }}/recipe-collections-base.tar
+          retention-days: 1
