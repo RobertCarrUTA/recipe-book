@@ -51,12 +51,17 @@ jobs:
           for (const [before, after] of [
             ['@media (max-width: 420px)', '@media (max-width: 480px)'],
             ['grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);', 'grid-template-columns: repeat(auto-fit, minmax(min(100%, 370px), 1fr));'],
-            ['@media (max-width: 979px) {\n', '@media (max-width: 979px) {\n  .recipe-search:has(.recipe-filters:not(.hidden)) {\n    position: static;\n  }\n\n'],
+            ['@media (max-width: 979px) {\n', '@media (max-width: 979px) {\n  /* Expanded filtered controls must not cover recipe actions on small screens. */\n  .recipe-search.has-active-discovery-filters:not(.is-compact),\n  .recipe-search:has(.recipe-filters:not(.hidden)):not(.is-compact) {\n    position: static;\n  }\n\n'],
           ]) {
             assert.equal(css.split(before).length, 2);
             css = css.replace(before, after);
           }
           fs.writeFileSync('css/styles.css', css);
+          let smoke = fs.readFileSync('scripts/smoke-browser.mjs', 'utf8');
+          const before = '      await page.selectOption("#recipeSort", "fastest");\n      assert.equal(await visibleRecipeCount(page), 5);';
+          const after = '      if (viewport.width < 980) {\n        const search = page.locator(".recipe-search");\n        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "static");\n        await page.locator("#toggleRecipeControls").click();\n        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "sticky");\n        await page.locator("#toggleRecipeControls").click();\n        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "static");\n      }\n' + before;
+          assert.equal(smoke.split(before).length, 2);
+          fs.writeFileSync('scripts/smoke-browser.mjs', smoke.replace(before, after));
           JS
       - name: Install dependencies and browser
         run: |
@@ -100,7 +105,7 @@ jobs:
         run: |
           set -euo pipefail
           git add -A
-          test "$(git write-tree)" = d61fac7f616debfebe1fde492988a75e6bde6c85
+          test "$(git write-tree)" = 747d852964d3c54b47f9da8601feb8bfe2acd436
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Add scoped health-conscious and meal-prep collections; remove temporary workflow'
