@@ -354,6 +354,20 @@
       }
     },
     {
+      "item": "broccoli florets",
+      "canonical": {
+        "base": "broccoli",
+        "display": "broccoli"
+      }
+    },
+    {
+      "item": "brown basmati rice",
+      "canonical": {
+        "base": "brown basmati rice",
+        "display": "brown basmati rice"
+      }
+    },
+    {
       "item": "brown sugar",
       "canonical": {
         "base": "brown sugar",
@@ -637,6 +651,13 @@
       "canonical": {
         "base": "croissants",
         "display": "croissants"
+      }
+    },
+    {
+      "item": "crushed red pepper",
+      "canonical": {
+        "base": "crushed red pepper",
+        "display": "crushed red pepper"
       }
     },
     {
@@ -2401,6 +2422,14 @@
       "canonical": {
         "base": "swiss cheese",
         "display": "swiss cheese"
+      }
+    },
+    {
+      "item": "table salt",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
       }
     },
     {
