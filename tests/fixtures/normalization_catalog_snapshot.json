@@ -192,6 +192,13 @@
       }
     },
     {
+      "item": "balsamic vinegar",
+      "canonical": {
+        "base": "balsamic vinegar",
+        "display": "balsamic vinegar"
+      }
+    },
+    {
       "item": "banana",
       "canonical": {
         "base": "banana",
@@ -238,6 +245,13 @@
       "canonical": {
         "base": "berries",
         "display": "berries"
+      }
+    },
+    {
+      "item": "black beans",
+      "canonical": {
+        "base": "black beans",
+        "display": "black beans"
       }
     },
     {
@@ -430,6 +444,20 @@
       "canonical": {
         "base": "canned tomatoes",
         "display": "canned tomatoes"
+      }
+    },
+    {
+      "item": "cannellini beans",
+      "canonical": {
+        "base": "cannellini beans",
+        "display": "cannellini beans"
+      }
+    },
+    {
+      "item": "canola oil",
+      "canonical": {
+        "base": "canola oil",
+        "display": "canola oil"
       }
     },
     {
@@ -1225,6 +1253,13 @@
       "canonical": {
         "base": "ground beef",
         "display": "ground beef"
+      }
+    },
+    {
+      "item": "ground chipotle pepper",
+      "canonical": {
+        "base": "ground chipotle pepper",
+        "display": "ground chipotle pepper"
       }
     },
     {
