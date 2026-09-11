@@ -1,5 +1,8 @@
 import { listen } from "./dom.js";
-import { getRecipeCollectionOptions } from "./recipe_collections.js";
+import {
+  getRecipeCollectionDescription,
+  getRecipeCollectionOptions,
+} from "./recipe_collections.js";
 import {
   getRecipeDiscoveryResult,
   isRuntimeRecipeSort,
@@ -64,7 +67,7 @@ export function createRecipeDiscoveryController({
     const allOption = document.createElement("option");
 
     allOption.value = "";
-    allOption.textContent = "All recipe types";
+    allOption.textContent = "All collections";
     optionElements.push(allOption);
 
     options.forEach((option) => {
@@ -144,6 +147,13 @@ export function createRecipeDiscoveryController({
         "has-selection",
         Boolean(selectedFilters?.collection?.size)
       );
+    }
+
+    const collectionHelp = byId("recipeCollectionHelp");
+    if (collectionHelp) {
+      const description = getRecipeCollectionDescription(recipeCollection?.value);
+      collectionHelp.textContent = description;
+      collectionHelp.hidden = !description;
     }
 
     syncRecipeSearchClearButton();

@@ -335,3 +335,23 @@ test("recipe renderer syncs runtime badges and opened recipe controls", () => {
   assert.equal(cake.classList.contains("recipe-planned"), false);
   assert.equal(cake.querySelector(".view-plan-button").hidden, true);
 });
+
+
+test("recipe renderer shows editorial labels in collapsed headers without adding controls", () => {
+  const labelledRecipes = [
+    { ...recipes[0], collections: ["main-dishes", "health-conscious", "meal-prep-friendly"] },
+    { ...recipes[1], collections: ["desserts"] },
+  ];
+  const harness = createRendererHarness({ recipes: labelledRecipes });
+  harness.renderer.renderRecipes();
+  const recipe = findRecipeElement(harness.document, "chili");
+  const badges = recipe.querySelectorAll(".recipe-collection-badge");
+  assert.deepEqual(badges.map((badge) => badge.textContent), ["Health-conscious", "Meal-prep friendly"]);
+  assert.deepEqual(badges.map((badge) => badge.dataset.collectionId), ["health-conscious", "meal-prep-friendly"]);
+  assert.ok(badges.every((badge) => badge.tagName === "SPAN" && badge.title));
+  const header = recipe.querySelector(".accordion-header");
+  assert.equal(header.getAttribute("aria-expanded"), "false");
+  assert.ok(header.getAttribute("aria-describedby").includes("recipe-meta-0"));
+  assert.equal(findRecipeElement(harness.document, "cake").querySelectorAll(".recipe-collection-badge").length, 0);
+  assert.equal(harness.tagToggleCalls.length, 0);
+});

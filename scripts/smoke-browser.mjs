@@ -155,6 +155,58 @@ async function runBrowserCheck(browser, check) {
 }
 
 const browserChecks = [
+  ...[{ width: 1280, height: 900 }, { width: 381, height: 844 }].map((viewport) => ({
+    name: "editorial collections filter, persist, reset, and show badges at " + viewport.width + "px",
+    viewport,
+    async run(page) {
+      await openApp(page, { debug: true });
+      const expectedIds = [
+        "chipotle-lime-chicken-with-sweet-potatoes", "oatmeal-with-fruit",
+        "orange-ginger-chicken-with-brown-rice", "smoky-lemon-chicken-with-brown-rice",
+        "tomato-balsamic-chicken-with-white-beans",
+      ];
+      for (const collectionId of ["health-conscious", "meal-prep-friendly"]) {
+        await page.selectOption("#recipeCollection", collectionId);
+        await page.waitForFunction(() => document.querySelectorAll(".recipe").length === 5);
+        assert.deepEqual(await page.locator(".recipe:visible").evaluateAll(
+          (elements) => elements.map((element) => element.dataset.recipeId).sort()
+        ), expectedIds);
+        assert.equal(await page.locator(".recipe-collection-badge:visible").count(), 10);
+        assert.equal(await page.locator("#recipeCollectionHelp").isVisible(), true);
+        assert.equal(await page.locator("#recipeCollection").getAttribute("aria-describedby"), "recipeCollectionHelp");
+        await assertNoHorizontalOverflow(page, ["#recipeCollection", "#recipeCollectionHelp", ".recipe"]);
+        await assertSelectOptionTextFits(page, "#recipeCollection");
+        await page.reload({ waitUntil: "networkidle" });
+        await page.waitForSelector(".recipe");
+        assert.equal(await page.locator("#recipeCollection").inputValue(), collectionId);
+        assert.equal(await visibleRecipeCount(page), 5);
+      }
+      if (viewport.width < 980) {
+        const search = page.locator(".recipe-search");
+        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "static");
+        await page.locator("#toggleRecipeControls").click();
+        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "sticky");
+        await page.locator("#toggleRecipeControls").click();
+        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "static");
+      }
+      await page.selectOption("#recipeSort", "fastest");
+      assert.equal(await visibleRecipeCount(page), 5);
+      await page.fill("#recipeSearch", "oatmeal");
+      await page.waitForFunction(() => document.querySelectorAll(".recipe").length === 1);
+      assert.equal(await page.locator(".recipe").getAttribute("data-recipe-id"), "oatmeal-with-fruit");
+      await page.locator("#toggleFilters").click();
+      await page.locator('.recipe-filters input[data-filter="equipment"][value="instant-pot"]').check();
+      await page.waitForFunction(() => !document.querySelector("#recipeNoResults").hidden);
+      assert.equal(await visibleRecipeCount(page), 0);
+      await page.locator("#clearRecipeDiscoveryFilters").click();
+      await page.waitForFunction(() => document.querySelectorAll(".recipe").length > 5);
+      assert.equal(await page.locator("#recipeCollection").inputValue(), "");
+      assert.equal(await page.locator("#recipeSearch").inputValue(), "");
+      assert.equal(await page.locator("#recipeCollectionHelp").isVisible(), false);
+      assert.equal(await page.locator("#recipeCollectionHelp").textContent(), "");
+      assert.equal(await page.locator('.recipe-filters input:checked').count(), 0);
+    },
+  })),
   {
     name: "loads recipe data and renders the initial recipe stream",
     async run(page) {
@@ -258,7 +310,7 @@ const browserChecks = [
     async run(page) {
       await openApp(page, { debug: true });
       const totalCount = await page.evaluate(() => window.recipeBookDebug.getState().recipes.length);
-      const recipeTypeSelect = page.getByRole("combobox", { name: "Recipe type", exact: true });
+      const recipeTypeSelect = page.getByRole("combobox", { name: "Collection", exact: true });
       const recipeTypePicker = await recipeTypeSelect.evaluate((select) => ({
         disabled: select.disabled,
         multiple: select.multiple,
@@ -275,7 +327,7 @@ const browserChecks = [
       assert.ok(recipeTypePicker.values.length > 10, "the native picker should expose the full collection list");
       assert.equal(
         await page.locator("#recipeCollection option:checked").innerText(),
-        "All recipe types"
+        "All collections"
       );
 
       await recipeTypeSelect.selectOption(lastRecipeTypeValue);

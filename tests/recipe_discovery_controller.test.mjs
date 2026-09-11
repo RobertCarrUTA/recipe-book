@@ -65,6 +65,7 @@ function createDiscoveryHarness(options = {}) {
     recipeNoResults: createFakeElement({ id: "recipeNoResults" }),
     recipeCollection,
     recipeCollectionControl,
+    recipeCollectionHelp: createFakeElement({ hidden: true, id: "recipeCollectionHelp" }),
     recipeSearch,
     recipeSearchMeta: createFakeElement({ id: "recipeSearchMeta" }),
     recipeSearchWrap,
@@ -241,7 +242,7 @@ test("recipe discovery controller populates collection options and restores sele
 
   assert.equal(harness.elements.recipeCollection.disabled, true);
   assert.equal(harness.elements.recipeCollection.value, "desserts");
-  assert.equal(harness.elements.recipeCollection.children[0].textContent, "All recipe types");
+  assert.equal(harness.elements.recipeCollection.children[0].textContent, "All collections");
   assert.ok(
     harness.elements.recipeCollection.children.some(
       (option) => option.value === "desserts" && option.textContent === "Desserts"
@@ -257,7 +258,7 @@ test("recipe discovery controller populates collection options and restores sele
   assert.deepEqual(
     harness.elements.recipeCollection.children.map((option) => [option.value, option.textContent]),
     [
-      ["", "All recipe types"],
+      ["", "All collections"],
       ["main-dishes", "Main Dishes"],
       ["soups-stews", "Soups & Stews"],
       ["baking", "Baking"],
@@ -309,4 +310,56 @@ test("recipe discovery controller attaches debounced search and filter controls"
   harness.elements.toggleFilters.click();
   assert.equal(harness.elements.recipeFilters.classList.contains("hidden"), false);
   assert.equal(harness.elements.toggleFilters.getAttribute("aria-expanded"), "true");
+});
+
+
+test("editorial selection restores, combines with search, and clears its description", () => {
+  const labelledRecipes = [
+    { ...recipes[0], collections: ["main-dishes", "health-conscious", "meal-prep-friendly"] },
+    { ...recipes[1], collections: ["breakfast", "health-conscious", "meal-prep-friendly"] },
+    { id: "other", title: "Other", collections: ["desserts"] },
+  ];
+  const harness = createDiscoveryHarness({
+    recipes: labelledRecipes,
+    uiFilters: { collection: ["health-conscious"] },
+  });
+  harness.controller.attach();
+  harness.controller.refresh();
+  assert.deepEqual(harness.renderCalls.at(-1), [0, 1]);
+  assert.equal(harness.elements.recipeCollection.value, "health-conscious");
+  assert.equal(harness.elements.recipeCollectionHelp.hidden, false);
+  assert.match(harness.elements.recipeCollectionHelp.textContent, /not been assessed/);
+
+  harness.controller.applyFilter("cake");
+  assert.deepEqual(harness.renderCalls.at(-1), [1]);
+  harness.elements.recipeCollection.value = "meal-prep-friendly";
+  harness.elements.recipeCollection.dispatchEvent(createFakeEvent("change"));
+  assert.deepEqual(harness.uiState.filters, { collection: ["meal-prep-friendly"] });
+  assert.match(harness.elements.recipeCollectionHelp.textContent, /sauces and toppings/);
+
+  harness.controller.clear();
+  assert.equal(harness.elements.recipeCollectionHelp.hidden, true);
+  assert.equal(harness.elements.recipeCollectionHelp.textContent, "");
+  assert.deepEqual(harness.uiState.filters, {});
+  assert.deepEqual(harness.renderCalls.at(-1), [0, 1, 2]);
+});
+
+test("editorial help disappears for ordinary or removed collections", () => {
+  const harness = createDiscoveryHarness({
+    recipes: [{ ...recipes[0], collections: ["main-dishes", "health-conscious"] }],
+    uiFilters: { collection: ["health-conscious"] },
+  });
+  harness.controller.attach();
+  harness.controller.refresh();
+  assert.equal(harness.elements.recipeCollectionHelp.hidden, false);
+  harness.elements.recipeCollection.value = "main-dishes";
+  harness.elements.recipeCollection.dispatchEvent(createFakeEvent("change"));
+  assert.equal(harness.elements.recipeCollectionHelp.hidden, true);
+  harness.uiState.filters = { collection: ["health-conscious"] };
+  harness.setRecipes(recipes);
+  harness.controller.syncRecipeCollectionOptions();
+  harness.controller.refresh();
+  assert.equal(harness.elements.recipeCollection.value, "");
+  assert.equal(harness.elements.recipeCollectionHelp.textContent, "");
+  assert.deepEqual(harness.uiState.filters, {});
 });
