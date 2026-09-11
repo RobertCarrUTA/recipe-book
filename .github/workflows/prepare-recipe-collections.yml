@@ -50,7 +50,8 @@ jobs:
           let css = fs.readFileSync('css/styles.css', 'utf8');
           for (const [before, after] of [
             ['@media (max-width: 420px)', '@media (max-width: 480px)'],
-            ['grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);', 'grid-template-columns: minmax(0, 1fr) minmax(370px, 0.72fr);'],
+            ['grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);', 'grid-template-columns: repeat(auto-fit, minmax(min(100%, 370px), 1fr));'],
+            ['@media (max-width: 979px) {\n', '@media (max-width: 979px) {\n  .recipe-search:has(.recipe-filters:not(.hidden)) {\n    position: static;\n  }\n\n'],
           ]) {
             assert.equal(css.split(before).length, 2);
             css = css.replace(before, after);
@@ -78,7 +79,7 @@ jobs:
           node --input-type=module <<'JS'
           import { chromium } from 'playwright';
           const browser = await chromium.launch({headless:true});
-          for (const width of [1280,381]) {
+          for (const width of [1280,1024,381]) {
             const page = await browser.newPage({viewport:{width,height:900}});
             await page.goto('http://127.0.0.1:8765/', {waitUntil:'networkidle'});
             await page.waitForSelector('.recipe');
@@ -99,7 +100,7 @@ jobs:
         run: |
           set -euo pipefail
           git add -A
-          test "$(git write-tree)" = 0e15f1c0a8c7008e53b4c7e5b0039ea4c894a041
+          test "$(git write-tree)" = d61fac7f616debfebe1fde492988a75e6bde6c85
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Add scoped health-conscious and meal-prep collections; remove temporary workflow'
