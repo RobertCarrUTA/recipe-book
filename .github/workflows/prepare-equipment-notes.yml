@@ -6,20 +6,138 @@ on:
     paths: [.github/workflows/prepare-equipment-notes.yml]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  source:
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 5a126a87c60b522fa24fbf9e0e7b41358eebb7cf
-      - name: Archive the PR baseline
-        run: git archive --format=tar HEAD > "$RUNNER_TEMP/recipe-equipment-base.tar"
-      - uses: actions/upload-artifact@v4
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
         with:
-          name: recipe-equipment-base
-          path: ${{ runner.temp }}/recipe-equipment-base.tar
-          retention-days: 1
+          node-version: 22
+          cache: npm
+      - name: Verify unchanged PR baseline
+        run: |
+          git diff --exit-code 5a126a87c60b522fa24fbf9e0e7b41358eebb7cf -- . ':!.github/workflows/prepare-equipment-notes.yml'
+          npm ci
+          npm run verify
+      - name: Apply reviewed equipment instructions
+        shell: bash
+        run: |
+          cat > "$RUNNER_TEMP/update-recipe-equipment.mjs" <<'NODE'
+          import assert from 'node:assert/strict';
+          import crypto from 'node:crypto';
+          import fs from 'node:fs';
+          import path from 'node:path';
+
+          const root = process.argv[2] || process.cwd();
+          const originals = {
+            'chipotle-lime-chicken-with-sweet-potatoes': '63059e4cfab27da4c49b4d69c3e24f098ba88157',
+            'orange-ginger-chicken-with-brown-rice': 'cdd04e84c7ee699afe2399e31468bf7d2299a12e',
+            'smoky-lemon-chicken-with-brown-rice': '967877aafa5635284e0dc96e16945fd5a2c07f0d',
+            'tomato-balsamic-chicken-with-white-beans': '5076dfaa2c8491725425bdcfb6ae4f27bde2e2c5',
+          };
+          const recipes = {};
+          for (const [id, expected] of Object.entries(originals)) {
+            const bytes = fs.readFileSync(path.join(root, 'data/recipes', `${id}.json`));
+            const hash = crypto.createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex');
+            assert.equal(hash, expected, `Source changed since review: ${id}`);
+            recipes[id] = JSON.parse(bytes);
+          }
+
+          function replaceText(recipe, field, index, before, after) {
+            assert.ok(recipe[field][index].includes(before), `Missing expected text in ${recipe.id}/${field}/${index}`);
+            recipe[field][index] = recipe[field][index].replace(before, after);
+          }
+
+          const riceCooker = "Rice cooker option, including Zojirushi NP-HCC10/XH: Start the rice before the other cooking. For Lundberg brown basmati, rinse and drain the recipe's 1 standard US cup of dry rice and add 1 3/4 standard US cups water, following the rice producer's rice-cooker ratio. Use BROWN, not QUICK or the white-basmati setting; follow a different rice brand's rice-cooker water guidance when supplied. Measure both amounts with standard US cups, not the supplied 180 mL rice cup. Zojirushi's BROWN water lines are for short-/medium-grain brown rice measured with its supplied cup, so do not top up to those lines as well. Allow about 84 to 90 minutes for the regular BROWN cycle, with variation by conditions; the cycle includes soaking and steaming, so fluff when it finishes without adding the saucepan's 10-minute rest. GABA BROWN takes much longer. Keep chicken, sauces, and vegetables out of the rice cooker.";
+          const riceHolding = "Rice-cooker serving and meal prep: Use the supplied nonmetal rice paddle. If dinner needs a short delay, hold only plain cooked rice on the powered REGULAR KEEP WARM setting according to the manual, not in a switched-off cooker. For meal prep, move rice to shallow containers and begin the rapid cooling and freezing plan in these notes; KEEP WARM is not a way to reheat refrigerated or frozen rice.";
+          const skilletOption = "Stainless-steel chicken option: Keep the oven method for the vegetables and replace only the chicken roasting step. Pat and pound the chicken to the same 3/4-inch thickness and apply the same dry seasonings and citrus zest, but put the chicken's measured 1 tablespoon oil in the skillet rather than on the meat. Preheat a 12-inch stainless skillet, such as All-Clad D5, over medium heat; add 1 1/2 teaspoons oil for each of two uncrowded batches. When the oil shimmers without smoking, add two portions and leave them undisturbed for about 3 to 4 minutes, until they release with a gentle nudge. Turn, reduce to medium-low, and cook about 4 to 7 minutes more, checking from 7 minutes total and continuing until every thickest part reaches 165 degrees F (74 degrees C). If spices darken before the center is done, lower the heat and add 1 tablespoon water, then cover briefly to finish. Do not force stuck chicken loose or cook until the spices turn black. Repeat with the remaining 1 1/2 teaspoons oil, resting each finished portion for 5 minutes on a clean plate, then add the finishing citrus as directed. Allow about 20 to 30 minutes for both batches and resting; begin while the vegetables roast. This is an alternative, not an extra sear after roasting, and uses no additional oil.";
+
+          const chipotle = recipes['chipotle-lime-chicken-with-sweet-potatoes'];
+          chipotle.equipment[0] = 'Two rimmed metal sheet pans for the oven method; one 18-by-13-inch vegetable pan plus a 12-inch stainless steel skillet with lid for the skillet option';
+          chipotle.equipment.push('Food processor with chopping blade, optional for larger batches of cilantro');
+          replaceText(chipotle, 'instructions', 2, 'Pat the chicken dry;', 'For skillet chicken, use the alternative in the notes instead of this roasting step. Otherwise, pat the chicken dry;');
+          chipotle.notes.splice(1, 0, skilletOption);
+          chipotle.notes.push("Optional food-processor prep: For several batches, pulse clean, thoroughly dry cilantro with the chopping blade, then measure the chopped amount and divide it between sauce and beans. A 14-cup Cuisinart DFP-14BCNY is optional; for a single batch, a knife and spoon are simpler. Keep the sweet potatoes in 3/4-inch cubes and peppers in 1-inch pieces cut by hand: the supplied slicing/shredding discs do not dice them, and thin slices would need different roasting times. Stir the small yogurt sauce by hand and prepare all produce before handling raw chicken.");
+          chipotle.tags.equipment = ['oven', 'sheet-pan', 'skillet', 'stovetop'];
+
+          const orange = recipes['orange-ginger-chicken-with-brown-rice'];
+          orange.equipment[0] = '12-inch stainless steel skillet with a lid, such as All-Clad D5; a nonstick skillet also works';
+          orange.equipment[1] = 'Rice cooker, such as Zojirushi NP-HCC10/XH, or a saucepan with a tight-fitting lid';
+          replaceText(orange, 'ingredients', 2, 'plus 1/4 cup for broccoli and 1/4 cup for sauce', 'plus 1/4 cup for broccoli, 1/4 cup for sauce, and small amounts as needed');
+          replaceText(orange, 'instructions', 0, 'Start the rice first and prepare the other ingredients while it cooks. Rinse', "Choose the rice-cooker option in the notes or this saucepan method, not both; start the rice first and prepare the other ingredients while it cooks. For the saucepan, rinse");
+          replaceText(orange, 'instructions', 2, 'about 20 minutes left including its rest', 'about 25 to 30 minutes left until serving, including the saucepan rest if used');
+          orange.instructions[3] = "For stainless steel, preheat the dry skillet over medium heat, then add 2 teaspoons canola oil and swirl to coat. When shimmering, not smoking, spread half the chicken in one layer with gaps. Leave undisturbed for about 2 to 3 minutes, then gently test a piece; if stuck and not burning, give it another 30 seconds rather than tearing off the coating. Turn and cook about 3 to 5 minutes more, until lightly golden and the thickest pieces reach 165 degrees F (74 degrees C). Transfer to a clean plate. Repeat with another 2 teaspoons oil and the remaining chicken. Maintain a steady sizzle, lowering the heat if the coating or pan residue darkens too quickly; avoid maximum heat or induction boost. For nonstick, heat the oil with the pan following its maker's guidance. Do not crowd the pan or keep cooking done chicken for a darker crust.";
+          orange.instructions[4] = "Reduce heat to medium-low; on a heat-retaining pan, briefly lift it off the burner if still very hot. Keep golden-brown residue for the sauce. If any residue is blackened, let the pan cool enough to clean it out safely before continuing. Add the remaining 1/2 teaspoon canola oil, ginger, garlic, and green-onion whites, and stir for about 30 seconds without browning the garlic. Whisk the sauce again to lift settled starch, pour it in, and gently scrape up the browned bits. Adjust heat to a simmer and stir for 1 to 2 minutes until glossy and lightly thickened. Return the broccoli for 1 to 2 minutes until tender to your liking, then add the cooked chicken and its juices just long enough to coat and warm through. Loosen with water a tablespoon at a time if too thick; do not reduce to a sticky syrup.";
+          orange.notes[0] = "Allow about 60 to 65 minutes with saucepan brown rice and about 25 to 30 minutes of hands-on work. With the NP-HCC10 BROWN cycle, plan about 95 to 105 minutes from measuring rice to serving; use the final 25 to 30 minutes for the skillet cooking, adjusting to the cooker's countdown. Its longer hands-off cycle does not make the skillet method faster. Plain quick-cooking brown rice can shorten dinner to about 30 to 35 minutes: use enough dry rice to yield roughly 3 cups cooked and follow its package saucepan directions, not the regular BROWN cycle.";
+          orange.notes.splice(1, 0, riceCooker, riceHolding);
+          orange.notes.push("Prep tools: For this batch, use a fine grater for ginger and orange zest, a knife for garlic, green onions, and broccoli, and a whisk for the sauce. A large food processor is not needed for the small sauce; chopping the broccoli in it would lose the florets. The stainless-steel method keeps the original measured oil, soy sauce, and cornstarch amounts; adding oil or salty sauce to compensate for sticking is not part of the method.");
+          orange.tags.equipment = ['rice-cooker', 'skillet', 'stovetop'];
+
+          const smoky = recipes['smoky-lemon-chicken-with-brown-rice'];
+          smoky.equipment[0] = chipotle.equipment[0];
+          smoky.equipment[1] = orange.equipment[1];
+          smoky.equipment.push('Food processor with chopping blade, optional for larger batches of parsley');
+          replaceText(smoky, 'instructions', 0, 'Start the rice first and continue with the remaining preparation while it cooks and rests. Heat', 'Choose the rice-cooker option in the notes or the saucepan method below, not both; start rice first. For a long rice-cooker cycle, wait until about 45 to 50 minutes remain before heating the oven and preparing the other components. Heat');
+          replaceText(smoky, 'instructions', 0, 'Rinse the rice and drain.', 'For the saucepan method, rinse the rice and drain.');
+          replaceText(smoky, 'instructions', 3, 'Pat the chicken dry;', 'For skillet chicken, use the alternative in the notes instead of this roasting step. Otherwise, pat the chicken dry;');
+          replaceText(smoky, 'instructions', 4, 'Fluff the rested rice and fold in', 'Fluff the finished rice; for the rice-cooker method, transfer to a separate serving bowl before adding citrus. Fold in');
+          smoky.notes[0] = "Allow about 60 to 65 minutes with saucepan rice, or about 95 to 105 minutes from measuring rice to serving with the NP-HCC10 BROWN cycle. Hands-on work is roughly 20 to 25 minutes with oven chicken and longer with batch-seared skillet chicken. Prepare the remaining components during the final 45 to 50 minutes of the rice-cooker cycle; do not roast chicken early and keep cooking it while waiting for rice. Keep chicken and vegetables on separate pans so they can be removed independently. If vegetables do not fit in one uncrowded layer, use additional pan space or roast in batches and allow more time.";
+          smoky.notes[6] = riceCooker;
+          smoky.notes.splice(1, 0, skilletOption);
+          smoky.notes.push(riceHolding);
+          smoky.notes.push("Optional food-processor prep: For larger batches, pulse clean, dry parsley with the chopping blade, then measure the chopped amount and divide between rice and sauce. A Cuisinart DFP-14BCNY is optional; a knife, fine grater, and spoon are simpler for one small sauce batch. Keep the broccoli florets and pepper pieces cut by hand for the stated roasting times. Do not process raw chicken together with produce or sauce. Transfer cooked rice out of the rice-cooker pot before folding in lemon and parsley, and do not keep the seasoned rice on KEEP WARM.");
+          smoky.tags.equipment = ['oven', 'rice-cooker', 'sheet-pan', 'skillet', 'stovetop'];
+
+          const tomato = recipes['tomato-balsamic-chicken-with-white-beans'];
+          tomato.equipment[0] = 'Wide 4- to 5-quart stainless steel saute pan with a lid, such as All-Clad D5, or a Dutch oven';
+          tomato.equipment.push('Food processor with 4 mm slicing disc and chopping blade, optional for vegetables');
+          replaceText(tomato, 'instructions', 0, 'Heat 1 tablespoon oil in a wide 4- to 5-quart saute pan over medium-high heat. Lay', 'For stainless steel, preheat a wide 4- to 5-quart saute pan over medium heat, then add the measured 1 tablespoon oil. For a Dutch oven, heat the oil with the pot over medium heat. When the oil shimmers without smoking, lay');
+          replaceText(tomato, 'instructions', 0, 'brown for about 3 minutes per side;', 'brown for about 3 minutes per side, allowing the first side to release before turning and lowering heat if the pan residue darkens too fast;');
+          replaceText(tomato, 'instructions', 1, 'Reduce to medium heat', 'Use medium to medium-low heat');
+          tomato.notes[0] = 'Allow about 50 minutes overall and 20 to 25 minutes of hands-on work; allow another 5 to 10 minutes if the chicken needs two searing batches. Use a wide pan with at least 4 quarts capacity, not a small shallow skillet or a 3-quart saute pan. With stainless steel, including All-Clad D5, use moderate heat rather than maximum heat or induction boost, dry the chicken, and wait for it to release before turning. Keep browned pan residue for deglazing, but cool the pan enough to clean out blackened residue safely. Brown mushrooms and tomato paste before adding liquid; these steps provide depth without bouillon, cream, or cheese. The measured balsamic is vinegar, not a sweet glaze.';
+          tomato.notes.push("Optional Cuisinart DFP-14BCNY prep: Use the supplied 4 mm slicing disc for the trimmed mushrooms, feeding with the pusher and light pressure. Use the chopping blade to pulse the onion, first cut into 1-inch pieces, until finely chopped but not pureed; chop garlic separately because it enters the pan later. Keep within the manual's 3-cup capacity for chopped vegetables, even though the bowl holds 14 cups of sliced vegetables. Stop and unplug before changing blades or scraping, and keep hands out of the feed tube. Keep mushrooms sliced rather than finely minced, tear basil by hand, and leave the beans and finished sauce chunky. Process produce before handling raw chicken; the processor is a shortcut, not required equipment.");
+
+          replaceText(orange, 'instructions', 1, 'Pat chicken dry, cut evenly, and toss with the remaining 2 teaspoons cornstarch.', 'Pat chicken dry, cut evenly, and refrigerate covered until the skillet is ready. Toss with the remaining 2 teaspoons cornstarch just before searing.');
+          orange.notes = orange.notes.map(note => note.replace('Divide rice promptly after its rest into shallow portions', 'Divide rice into shallow portions as soon as the cooking cycle or saucepan rest is complete'));
+          smoky.notes = smoky.notes.map(note => note.replace('Divide the rice into shallow portions immediately after its covered rest', 'Divide the rice into shallow portions as soon as the cooking cycle or saucepan rest is complete'));
+          replaceText(chipotle, 'instructions', 3, 'While the chicken roasts', 'While the chicken cooks');
+          replaceText(chipotle, 'instructions', 4, 'Remove each oven component', 'Remove each component');
+          replaceText(chipotle, 'notes', 0, 'Allow about 55 minutes overall and 20 to 25 minutes of hands-on work.', 'Allow about 55 minutes overall and 20 to 25 minutes of hands-on work with oven chicken. The skillet alternative needs more active attention and may add 5 to 10 minutes.');
+          replaceText(tomato, 'instructions', 0, 'then add the measured 1 tablespoon oil. For a Dutch oven, heat the oil with the pot over medium heat.', 'then add 1 tablespoon oil for a single batch, or 1 1/2 teaspoons per batch if two batches are needed. For a Dutch oven, heat that same measured oil with the pot over medium heat.');
+
+          for (const [id, recipe] of Object.entries(recipes)) {
+            assert.equal(recipe.author, 'Robert Carr');
+            assert.equal(recipe.servings, '4');
+            assert.equal(recipe.tags.status, 'not-tried');
+            assert.equal(recipe.rating, null);
+            assert.equal(recipe.nutrition, null);
+            fs.writeFileSync(path.join(root, 'data/recipes', `${id}.json`), `${JSON.stringify(recipe, null, 2)}\n`);
+          }
+          console.log('Updated four chicken dinners without changing measured groceries or ratings.');
+          NODE
+          node "$RUNNER_TEMP/update-recipe-equipment.mjs" "$GITHUB_WORKSPACE"
+          npm run build:recipes
+          npm run report:data-quality
+          npm run verify
+      - name: Match reviewed files and commit only recipe updates
+        shell: bash
+        run: |
+          test "$(git hash-object data/recipes.json)" = 35464c831f25ebc7200036ad04d45be053d56706
+          test "$(git hash-object data/recipes/chipotle-lime-chicken-with-sweet-potatoes.json)" = 5d7e34361ad554e40417b47d4c7a3c15e980a382
+          test "$(git hash-object data/recipes/orange-ginger-chicken-with-brown-rice.json)" = bad8193e569ff902d83f2f6bc855c25694c48913
+          test "$(git hash-object data/recipes/smoky-lemon-chicken-with-brown-rice.json)" = cecbf598666b632134168888607550dff2a552f5
+          test "$(git hash-object data/recipes/tomato-balsamic-chicken-with-white-beans.json)" = c9e9c3cf14813715882d6d70828eb5524aa711c0
+          test "$(git hash-object tests/fixtures/normalization_catalog_snapshot.json)" = 24581a38d255668532e5cc59c268e2362eb7e791
+          git diff --check
+          git add data/recipes.json data/recipes/chipotle-lime-chicken-with-sweet-potatoes.json data/recipes/orange-ginger-chicken-with-brown-rice.json data/recipes/smoky-lemon-chicken-with-brown-rice.json data/recipes/tomato-balsamic-chicken-with-white-beans.json
+          git diff --cached --stat
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Add stainless-steel and appliance instructions to chicken dinners'
+          git push origin HEAD:refs/heads/feat/chicken-meal-prep-trio
