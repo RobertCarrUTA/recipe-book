@@ -111,12 +111,35 @@ The controlled catalog is defined in `js/recipe_collections.js`. Current IDs are
 breakfast        main-dishes      pizza             sandwiches
 burgers          steak            soups-stews       sides-snacks
 salsas-sauces    baking           cookies           desserts
-drinks
+drinks          health-conscious  meal-prep-friendly
 ```
 
 Collections may overlap. A steak sandwich can belong to `main-dishes`, `sandwiches`, and `steak`; a cookie can belong to `baking`, `cookies`, and `desserts`. Use `baking` for baked recipes and oven projects rather than automatically assigning it to every dessert.
 
 Adding a collection changes JavaScript as well as recipe data: update the catalog, assign recipes, bump the asset version, rebuild the bundle, and run the full verification gate.
+
+### Editorial collections
+
+The **Collection** picker includes two editorial labels alongside dish types. It uses the existing single-collection selection and persisted `filters.collection` state; search, status, equipment, favorites, and other filter groups still combine with it. Select **All collections** or clear filters to remove the collection restriction.
+
+| ID | Label | Review criteria |
+| --- | --- | --- |
+| `health-conscious` | Health-conscious | Review the complete recipe, including sides and sauces, for fruit/vegetables, whole grains/beans/lean protein, measured fats, added sugar, and salty ingredients. This is an editorial selection, not a nutrient threshold, medical recommendation, certification, or claim of a tested health outcome. |
+| `meal-prep-friendly` | Meal-prep friendly | Require practical portioning, cooling, storage, thawing, and reheating instructions, with separate components where needed. Follow the individual recipe's limits; the label does not promise a full week in the refrigerator or kitchen-tested freezer results. |
+
+These criteria take general eating-pattern context from the [NIH DASH eating plan](https://www.nhlbi.nih.gov/health/dash-eating-plan), not a certification of any individual recipe. Health-conscious does not mean low sodium, low saturated fat, low calorie, or a specific nutrient target. Portions, brands, substitutions, and the overall diet matter. The oatmeal retains its whole-milk base and existing lower-fat substitution; the label does not imply those versions have identical nutrition.
+
+Only the following recipes receive both labels in the initial reviewed set:
+
+- `oatmeal-with-fruit`
+- `smoky-lemon-chicken-with-brown-rice`
+- `chipotle-lime-chicken-with-sweet-potatoes`
+- `orange-ginger-chicken-with-brown-rice`
+- `tomato-balsamic-chicken-with-white-beans`
+
+Preserve their existing Breakfast/Main Dishes membership. Other recipes are **not assessed**, not unhealthy or unsuitable for meal prep. Do not bulk-assign these labels, infer them from keywords, or automatically label future recipes. A later expansion needs explicit recipe-by-recipe review and an intentional update to the scoped membership test. Collection labels do not change tried status, ratings, ingredient quantities, or nutrition fields.
+
+The catalog owns each label's `description` and `showOnCard` flag. A selected editorial collection displays its description below the picker; the corresponding non-interactive badges appear in recipe headers, including their accessible descriptions. No separate tag schema, scoring system, or stored-state migration is needed.
 
 ## Tags and Ratings
 

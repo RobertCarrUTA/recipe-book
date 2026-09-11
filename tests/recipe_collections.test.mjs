@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 
 import {
+  getRecipeCollectionBadges,
+  getRecipeCollectionDescription,
   getRecipeCollectionLabel,
   getRecipeCollectionOptions,
   isRecipeCollectionId,
@@ -23,11 +25,13 @@ const expectedDefinitions = [
   { id: "cookies", label: "Cookies & Bars" },
   { id: "desserts", label: "Desserts" },
   { id: "drinks", label: "Drinks" },
+  { id: "health-conscious", label: "Health-conscious" },
+  { id: "meal-prep-friendly", label: "Meal-prep friendly" },
 ];
 
 test("recipe collection catalog keeps its curated ids, labels, and order", () => {
-  assert.deepEqual(recipeCollectionDefinitions, expectedDefinitions);
-  assert.equal(recipeCollectionDefinitions.length, 13);
+  assert.deepEqual(recipeCollectionDefinitions.map(({ id, label }) => ({ id, label })), expectedDefinitions);
+  assert.equal(recipeCollectionDefinitions.length, 15);
   assert.equal(
     new Set(recipeCollectionDefinitions.map(({ id }) => id)).size,
     recipeCollectionDefinitions.length
@@ -70,4 +74,19 @@ test("recipe collection helpers normalize and identify canonical ids", () => {
   assert.equal(isRecipeCollectionId("unknown"), false);
   assert.equal(getRecipeCollectionLabel("soups-stews"), "Soups & Stews");
   assert.equal(getRecipeCollectionLabel("unknown"), "unknown");
+});
+
+
+test("editorial collection badges are opt-in, normalized, and in catalog order", () => {
+  const badges = getRecipeCollectionBadges([
+    "meal-prep-friendly", " Breakfast ", " HEALTH-CONSCIOUS ", "health-conscious", "unknown",
+  ]);
+  assert.deepEqual(badges.map(({ id }) => id), ["health-conscious", "meal-prep-friendly"]);
+  assert.ok(badges.every(({ description, showOnCard }) => description && showOnCard));
+  assert.deepEqual(getRecipeCollectionBadges(null), []);
+  assert.deepEqual(getRecipeCollectionBadges(["breakfast", "main-dishes"]), []);
+  assert.match(getRecipeCollectionDescription("health-conscious"), /Not a nutrition certification/);
+  assert.match(getRecipeCollectionDescription("meal-prep-friendly"), /storage/);
+  assert.equal(getRecipeCollectionDescription("breakfast"), "");
+  assert.equal(getRecipeCollectionDescription("unknown"), "");
 });

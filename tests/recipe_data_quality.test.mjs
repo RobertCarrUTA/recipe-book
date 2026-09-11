@@ -153,3 +153,33 @@ test("current salsa recipe data keeps white onion quantities recipe-specific", a
     "sausage-egg-potato-cheese-breakfast-burritos-with-simmered-guajillo-arbol-drip-sauce": "1/8 white onion",
   });
 });
+
+
+test("editorial collections are assigned only to the five reviewed oatmeal and chicken recipes", async () => {
+  const rawRecipes = await loadRawRecipes();
+  const expectedIds = [
+    "chipotle-lime-chicken-with-sweet-potatoes",
+    "oatmeal-with-fruit",
+    "orange-ginger-chicken-with-brown-rice",
+    "smoky-lemon-chicken-with-brown-rice",
+    "tomato-balsamic-chicken-with-white-beans",
+  ];
+  const { recipes, warnings } = normalizeRecipeBook(rawRecipes);
+  assert.deepEqual(warnings, []);
+  for (const collectionId of ["health-conscious", "meal-prep-friendly"]) {
+    for (const catalog of [rawRecipes, recipes]) {
+      assert.deepEqual(
+        catalog.filter((recipe) => recipe.collections.includes(collectionId)).map(({ id }) => id).sort(),
+        expectedIds
+      );
+    }
+  }
+  for (const id of expectedIds) {
+    const recipe = rawRecipes.find((entry) => entry.id === id);
+    assert.deepEqual(recipe.collections, [
+      id === "oatmeal-with-fruit" ? "breakfast" : "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly",
+    ]);
+  }
+});

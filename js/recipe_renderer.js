@@ -5,6 +5,7 @@ import {
   getRecipeServingsText,
 } from "./recipe_formatting.js";
 import { createRecipeActionsRenderer } from "./recipe_actions_renderer.js";
+import { getRecipeCollectionBadges } from "./recipe_collections.js";
 import { createElement, createEmptyState, createTextElement } from "./dom.js";
 import { mealPlanDays } from "./meal_plan_model.js";
 import {
@@ -386,7 +387,15 @@ export function createRecipeRenderer({
       ],
       className: "recipe-header-top",
     });
-    const headerMetaItems = getRecipeHeaderMeta(recipe);
+    const headerMetaItems = [
+      ...getRecipeHeaderMeta(recipe),
+      ...getRecipeCollectionBadges(recipe.collections).map(({ id, label, description }) => ({
+        collectionId: id,
+        description,
+        text: label,
+        variant: "recipe-collection-badge",
+      })),
+    ];
     const header = createElement(document, "button", {
       attributes: {
         "aria-controls": contentId,
@@ -415,6 +424,10 @@ export function createRecipeRenderer({
               item.primary ? "primary" : "",
               item.variant || "",
             ].filter(Boolean).join(" "),
+            ...(item.collectionId ? {
+              dataset: { collectionId: item.collectionId },
+              title: item.description,
+            } : {}),
           })
         ),
         className: "recipe-header-meta",

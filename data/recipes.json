@@ -19697,7 +19697,9 @@
     "additionalTime": "2 minutes",
     "author": "Robert Carr",
     "collections": [
-      "breakfast"
+      "breakfast",
+      "health-conscious",
+      "meal-prep-friendly"
     ],
     "cookTime": "20 minutes",
     "description": "Creamy old-fashioned oatmeal with whole milk, fruit, and optional cinnamon, with stovetop and microwave options and notes for make-ahead portions.",
@@ -19778,7 +19780,9 @@
     "additionalTime": "10 minutes",
     "author": "Robert Carr",
     "collections": [
-      "main-dishes"
+      "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly"
     ],
     "cookTime": "40 minutes",
     "description": "Smoked paprika and lemon chicken with lemon-parsley brown basmati rice, roasted broccoli and red peppers, and a cool garlic-lemon yogurt sauce.",
@@ -19953,7 +19957,9 @@
     "additionalTime": "5 minutes",
     "author": "Robert Carr",
     "collections": [
-      "main-dishes"
+      "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly"
     ],
     "cookTime": "35 minutes",
     "description": "Chipotle-spiced chicken with browned sweet potatoes and peppers, lime-cilantro black beans, and a cool lime-yogurt sauce.",
@@ -20115,7 +20121,9 @@
     "additionalTime": "10 minutes",
     "author": "Robert Carr",
     "collections": [
-      "main-dishes"
+      "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly"
     ],
     "cookTime": "40 minutes",
     "description": "Lightly seared chicken and broccoli in an orange, ginger, garlic, and toasted-sesame sauce, served with brown rice.",
@@ -20275,7 +20283,9 @@
     "additionalTime": "0 minutes",
     "author": "Robert Carr",
     "collections": [
-      "main-dishes"
+      "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly"
     ],
     "cookTime": "35 minutes",
     "description": "Tender chicken thighs gently simmered with browned mushrooms, white beans, tomatoes, spinach, and basil in a garlic-balsamic sauce.",
