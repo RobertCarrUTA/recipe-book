@@ -6,20 +6,47 @@ on:
     paths: [.github/workflows/prepare-chicken-meals.yml]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  source:
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 559291f9419f6157ef415a5b5674ec59116a9bf5
-      - name: Archive the reviewed base
-        run: git archive --format=tar HEAD > "$RUNNER_TEMP/chicken-meals-base.tar"
-      - uses: actions/upload-artifact@v4
+          ref: feat/chicken-meal-prep-trio
+      - uses: actions/setup-node@v4
         with:
-          name: chicken-meals-base
-          path: ${{ runner.temp }}/chicken-meals-base.tar
-          retention-days: 1
+          node-version: 22
+          cache: npm
+      - name: Match reviewed source files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object data/recipes/chipotle-lime-chicken-with-sweet-potatoes.json)" = 63059e4cfab27da4c49b4d69c3e24f098ba88157
+          test "$(git hash-object data/recipes/orange-ginger-chicken-with-brown-rice.json)" = cdd04e84c7ee699afe2399e31468bf7d2299a12e
+          test "$(git hash-object data/recipes/tomato-balsamic-chicken-with-white-beans.json)" = 5076dfaa2c8491725425bdcfb6ae4f27bde2e2c5
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Build and review data
+        run: |
+          npm run build:recipes
+          npm run update:normalization-snapshot
+          npm run report:data-quality
+      - name: Verify the complete repository
+        run: npm run verify
+      - name: Match reviewed output and commit generated files only
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object data/recipes.json)" = 31bbbe832d3e6b5936765160f5fff17ec7f87f6d
+          test "$(git hash-object tests/fixtures/normalization_catalog_snapshot.json)" = 24581a38d255668532e5cc59c268e2362eb7e791
+          git rm .github/workflows/prepare-chicken-meals.yml
+          git add data/recipes.json tests/fixtures/normalization_catalog_snapshot.json
+          git diff --cached --check
+          test "$(git write-tree)" = 2d029bf17b35f55b28eb2ee9723735afb237c614
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Regenerate chicken meal recipes and remove temporary workflow'
+          git push origin HEAD:refs/heads/feat/chicken-meal-prep-trio
