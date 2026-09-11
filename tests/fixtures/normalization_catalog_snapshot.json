@@ -1744,6 +1744,13 @@
       }
     },
     {
+      "item": "old-fashioned rolled oats",
+      "canonical": {
+        "base": "old-fashioned rolled oats",
+        "display": "old-fashioned rolled oats"
+      }
+    },
+    {
       "item": "olive oil",
       "canonical": {
         "base": "olive oil",

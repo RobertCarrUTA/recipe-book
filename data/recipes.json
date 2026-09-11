@@ -19692,5 +19692,86 @@
     "title": "Spicy Beef Hot Dogs",
     "totalTime": "45 minutes",
     "yield": "4 hot dogs"
+  },
+  {
+    "additionalTime": "2 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "breakfast"
+    ],
+    "cookTime": "20 minutes",
+    "description": "Creamy old-fashioned oatmeal with whole milk, fruit, and optional cinnamon, with stovetop and microwave options and notes for make-ahead portions.",
+    "equipment": [
+      "Small saucepan and stovetop, or a microwave and a microwave-safe bowl with at least 4 cups capacity",
+      "Measuring cups and spoons",
+      "Spoon or silicone spatula",
+      "Shallow airtight refrigerator- and freezer-safe containers, for meal prep",
+      "Instant-read thermometer, for reheating leftovers"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "old-fashioned rolled oats",
+        "note": "Bob's Red Mill or another brand; not steel-cut or instant oats.",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "whole milk",
+        "note": "Plus a little extra to loosen the oatmeal; lower-fat milk also works.",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "blueberries",
+        "note": "Fresh or unsweetened frozen; other fruit can be substituted.",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "item": "ground cinnamon",
+        "optional": true,
+        "quantity": 0.25,
+        "unit": "tsp"
+      }
+    ],
+    "id": "oatmeal-with-fruit",
+    "ingredients": [
+      "1/2 cup old-fashioned rolled oats, such as Bob's Red Mill",
+      "1/2 cup whole milk, plus more as needed",
+      "1/2 cup water",
+      "1/2 cup fresh or unsweetened frozen blueberries, or another fruit from the notes",
+      "1/4 teaspoon ground cinnamon, optional"
+    ],
+    "instructions": [
+      "Measure the oats, milk, water, and optional cinnamon. Rinse fresh blueberries. For frozen fruit, follow the package preparation instructions and the frozen-fruit note below. Choose either the stovetop or microwave method; do not do both.",
+      "Stovetop option: Bring the milk and water to a gentle simmer in a small saucepan over medium-low heat. Stir in the oats and optional cinnamon. Reduce the heat to low and cook uncovered for 10 to 20 minutes, stirring frequently and scraping the bottom, until the oats are tender and creamy. Add a splash of water if the mixture thickens before the oats soften. Keep the milk at a gentle simmer, not a rolling boil, then remove from the heat.",
+      "Microwave option, instead of the stovetop step: Combine the oats, milk, water, and optional cinnamon in a microwave-safe bowl with at least 4 cups capacity. Microwave uncovered on high for 2 minutes, stir, then continue in 30- to 60-second intervals, stirring between each, until the oats are tender and the mixture is bubbling, usually 3 to 5 minutes total. Watch closely and stop if the foam approaches the rim; let it settle before continuing. Wattage and oat thickness affect timing, so add a splash of water and more short intervals as needed.",
+      "Let the cooked oatmeal stand for 2 minutes, then stir in a splash of milk or water if it is thicker than you like. Top with the prepared fruit and serve. For meal prep, portion the oatmeal promptly and add toppings after reheating as described in the notes."
+    ],
+    "link": null,
+    "notes": [
+      "The listed time allows for the stovetop method. Microwave portions are usually ready in about 7 to 9 minutes including preparation and the rest. These methods are for old-fashioned rolled oats; check the package when using a different cut or thickness. Microwave one serving at a time; use the stovetop for a large batch.",
+      "Whole milk gives a creamy result; 2%, 1%, or skim milk can be used in the same amount. For richer oatmeal, replace the water with more milk and watch especially closely for scorching or boil-over. Ripe fruit supplies sweetness without needing added sugar.",
+      "Fresh fruit options include sliced banana, chopped strawberries, diced peaches, or finely diced apple. Add soft fruit after cooking. For softer apple pieces, simmer them with the oats on the stovetop, adding a little water if needed.",
+      "Unsweetened frozen blueberries, mixed berries, peaches, or mango work well. For a warm topping, heat the fruit separately according to its package instructions, then spoon it over the oats. If a package says to cook before eating, follow those directions rather than simply thawing the fruit or stirring it into warm oatmeal. Cut large pieces after they soften. Extra fruit juice will make the oatmeal looser.",
+      "Plain frozen vegetables also work for a separate side or a savory oatmeal variation. For savory oats, omit the fruit and cinnamon, cook the vegetables fully according to their package instructions, drain excess water, and stir them into the cooked oats. Choose vegetables without added sauces or seasonings; they are not an extra ingredient required for the fruit version.",
+      "Sunday meal prep for seven breakfasts: Use 3 1/2 cups oats, 3 1/2 cups milk, 3 1/2 cups water, and optionally 1 3/4 teaspoons cinnamon in a large pot. Have 3 1/2 cups fruit for serving during the week. Cook on the stovetop until tender; the larger batch will take longer to heat. Divide into seven shallow single-serving containers. Refrigerate three for Monday through Wednesday and freeze the other four for Thursday through Sunday once chilled. Store toppings separately for the best texture.",
+      "Refrigerate cooked oatmeal promptly in shallow containers, within 2 hours of cooking, or within 1 hour if the room or outdoor temperature is above 90 degrees F. Do not leave a large pot on the counter to cool completely. Keep refrigerated portions at 40 degrees F or below and use within 3 to 4 days. Label freezer portions with the date, leave a little room for expansion, and freeze at 0 degrees F or below. Aim to use frozen portions within 3 months for quality; do not refrigerate a whole week's batch without freezing the later portions.",
+      "Reheating: Thaw one frozen portion overnight in the refrigerator, or use the microwave's defrost setting and reheat immediately. Add 1 to 2 tablespoons milk or water. Microwave in a microwave-safe bowl under a vented cover, stirring every 30 to 60 seconds, or warm gently in a saucepan while stirring. Reheat leftovers to 165 degrees F throughout; after microwaving, allow a brief stand and check more than one spot with a thermometer. Add more liquid as needed, then the prepared toppings. Reheat only the portion being served."
+    ],
+    "nutrition": null,
+    "prepTime": "2 minutes",
+    "rating": null,
+    "servings": "1",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "microwave",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Oatmeal with Fruit",
+    "totalTime": "24 minutes"
   }
 ]
