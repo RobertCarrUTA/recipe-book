@@ -1,0 +1,25 @@
+name: Prepare chicken meal recipes
+
+on:
+  push:
+    branches: [feat/chicken-meal-prep-trio]
+    paths: [.github/workflows/prepare-chicken-meals.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 559291f9419f6157ef415a5b5674ec59116a9bf5
+      - name: Archive the reviewed base
+        run: git archive --format=tar HEAD > "$RUNNER_TEMP/chicken-meals-base.tar"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chicken-meals-base
+          path: ${{ runner.temp }}/chicken-meals-base.tar
+          retention-days: 1
