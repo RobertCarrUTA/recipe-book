@@ -1,0 +1,78 @@
+name: Recipe 156 review helper
+
+on:
+  push:
+    branches:
+      - recipes/156-heart-conscious-meal-prep
+    paths:
+      - .github/workflows/recipe-156-review.yml
+      - scripts/review-156-once.mjs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recipe-156-review-helper
+  cancel-in-progress: false
+
+jobs:
+  review:
+    if: github.repository == 'RobertCarrUTA/recipe-book' && github.ref == 'refs/heads/recipes/156-heart-conscious-meal-prep'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: recipes/156-heart-conscious-meal-prep
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Apply the scoped review and regenerate catalog
+        run: node scripts/review-156-once.mjs
+      - name: Review data quality and diffs
+        run: |
+          npm run report:data-quality
+          git diff --check
+          git diff --stat
+          git diff -- tests/fixtures/normalization_catalog_snapshot.json
+      - name: Core verification
+        run: npm run verify
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Browser smoke verification
+        run: npm run smoke:browser
+      - name: Commit verified review and generated files to this branch only
+        run: |
+          test "$(git branch --show-current)" = "recipes/156-heart-conscious-meal-prep"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/recipes data/recipes.json tests/fixtures/normalization_catalog_snapshot.json tests/recipe_data_quality.test.mjs scripts/smoke-browser.mjs README.md docs/recipe-schema.md js/grouping.js index.html 404.html sw.js
+          git diff --cached --quiet || git commit -m 'Review meal-prep flavor, integrate editorial collections and regenerate recipes'
+          git push origin HEAD:refs/heads/recipes/156-heart-conscious-meal-prep
+      - name: Preserve review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: recipe-156-review-evidence
+          retention-days: 3
+          path: |
+            data/
+            docs/
+            js/
+            scripts/
+            tests/
+            index.html
+            404.html
+            sw.js
+            package.json
+            package-lock.json
+            README.md
+            AGENTS.md
+            CONTRIBUTING.md
+            css/
+            icons/
+            manifest.webmanifest
