@@ -1,31 +1,137 @@
 {
   "additionalTime": "0 minutes",
   "author": "Robert Carr",
-  "collections": ["main-dishes", "health-conscious", "meal-prep-friendly"],
+  "collections": [
+    "main-dishes",
+    "health-conscious",
+    "meal-prep-friendly"
+  ],
   "cookTime": "35 minutes",
   "description": "Cumin-coriander roasted cauliflower and chickpeas with farro, lemon-softened kale, green herb-tahini sauce, dates, almonds and pomegranate. A filling plant-based meal with toasted spices, citrus and contrasting textures; no tofu.",
-  "equipment": ["Oven", "Two 18-by-13-inch rimmed sheet pans", "Medium saucepan", "Fine-mesh strainer", "Large mixing bowl", "Digital kitchen scale", "Five shallow meal-prep containers and separate sauce/topping cups"],
+  "equipment": [
+    "Oven",
+    "Two 18-by-13-inch rimmed sheet pans",
+    "3-quart saucepan with lid",
+    "Fine-mesh strainer",
+    "6-quart mixing bowl",
+    "Digital kitchen scale",
+    "Five shallow meal-prep containers and separate sauce/topping cups"
+  ],
   "groceryIngredients": [
-    { "item": "quick-cooking farro", "quantity": 150, "unit": "g", "note": "Unseasoned 10-12-minute pearled variety, not a long-cooking whole farro." },
-    { "item": "fine sea salt", "quantity": 0.5, "unit": "tsp", "note": "3 g total; use a fine salt weighing about 6 g per teaspoon." },
-    { "item": "no-salt-added chickpeas", "quantity": 2, "unit": "can", "note": "15 oz each; approximately 500 g drained and rinsed total." },
-    { "item": "cauliflower florets", "quantity": 2, "unit": "lb", "note": "Ready-trimmed florets keep prep within the stated time." },
-    { "item": "red onion", "quantity": 1, "unit": "item", "note": "Large; 225 g peeled." },
-    { "item": "extra-virgin olive oil", "quantity": 2, "unit": "tbsp" },
-    { "item": "ground cumin", "quantity": 2, "unit": "tsp" },
-    { "item": "ground coriander", "quantity": 2, "unit": "tsp" },
-    { "item": "smoked paprika", "quantity": 1, "unit": "tsp" },
-    { "item": "ground turmeric", "quantity": 0.5, "unit": "tsp" },
-    { "item": "cayenne pepper", "quantity": 0.25, "unit": "tsp" },
-    { "item": "kale", "quantity": 10, "unit": "oz", "note": "284 g trimmed leaves, without tough stems." },
-    { "item": "lemon", "quantity": 2, "unit": "item", "note": "Need 5 tablespoons juice." },
-    { "item": "tahini", "quantity": 0.25, "unit": "cup", "note": "60 g; unsalted and well stirred." },
-    { "item": "garlic", "quantity": 1, "unit": "clove", "note": "4 g peeled." },
-    { "item": "fresh flat-leaf parsley", "quantity": 0.5, "unit": "cup", "note": "Finely chopped, 15 g." },
-    { "item": "fresh cilantro", "quantity": 0.5, "unit": "cup", "note": "Finely chopped, 15 g." },
-    { "item": "Medjool dates", "quantity": 2, "unit": "item", "note": "48 g pitted flesh total." },
-    { "item": "unsalted almonds", "quantity": 35, "unit": "g", "note": "Roasted and chopped." },
-    { "item": "pomegranate arils", "quantity": 175, "unit": "g", "note": "About 1 cup; purchase ready-to-eat arils for the stated timing." }
+    {
+      "item": "quick-cooking farro",
+      "quantity": 150,
+      "unit": "g",
+      "note": "Unseasoned 10-12-minute pearled variety, not a long-cooking whole farro."
+    },
+    {
+      "item": "fine sea salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "note": "3 g total; use a fine salt weighing about 6 g per teaspoon."
+    },
+    {
+      "item": "no-salt-added chickpeas",
+      "quantity": 2,
+      "unit": "can",
+      "note": "15 oz each; approximately 500 g drained and rinsed total."
+    },
+    {
+      "item": "cauliflower florets",
+      "quantity": 2,
+      "unit": "lb",
+      "note": "Ready-trimmed florets keep prep within the stated time."
+    },
+    {
+      "item": "red onion",
+      "quantity": 1,
+      "unit": "item",
+      "note": "Large; 225 g peeled."
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "ground cumin",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground coriander",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "smoked paprika",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground turmeric",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "item": "cayenne pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "kale",
+      "quantity": 10,
+      "unit": "oz",
+      "note": "284 g trimmed leaves, without tough stems."
+    },
+    {
+      "item": "lemon",
+      "quantity": 2,
+      "unit": "item",
+      "note": "Need 5 tablespoons juice."
+    },
+    {
+      "item": "tahini",
+      "quantity": 0.25,
+      "unit": "cup",
+      "note": "60 g; unsalted and well stirred."
+    },
+    {
+      "item": "garlic",
+      "quantity": 1,
+      "unit": "clove",
+      "note": "4 g peeled."
+    },
+    {
+      "item": "fresh flat-leaf parsley",
+      "quantity": 0.5,
+      "unit": "cup",
+      "note": "Finely chopped, 15 g."
+    },
+    {
+      "item": "fresh cilantro",
+      "quantity": 0.5,
+      "unit": "cup",
+      "note": "Finely chopped, 15 g."
+    },
+    {
+      "item": "Medjool dates",
+      "quantity": 2,
+      "unit": "item",
+      "note": "48 g pitted flesh total."
+    },
+    {
+      "item": "unsalted almonds",
+      "quantity": 35,
+      "unit": "g",
+      "note": "Roasted and chopped."
+    },
+    {
+      "item": "pomegranate arils",
+      "quantity": 175,
+      "unit": "g",
+      "note": "About 1 cup; purchase ready-to-eat arils for the stated timing."
+    }
   ],
   "id": "chermoula-chickpea-cauliflower-farro",
   "ingredients": [
@@ -44,14 +150,15 @@
     "Sauce: 1/2 cup (15 g) finely chopped flat-leaf parsley and 1/2 cup (15 g) finely chopped cilantro",
     "Finish: 2 Medjool dates (48 g pitted flesh), finely chopped",
     "Finish: 35 g chopped unsalted roasted almonds, about 1/4 cup",
-    "Finish: 175 g pomegranate arils, about 1 cup"
+    "Finish: 175 g pomegranate arils, about 1 cup",
+    "Greens: 2 tablespoons (30 mL) water for briefly steaming the kale"
   ],
   "instructions": [
     "Start the oven and farro: Heat the oven to 450 F with racks in the upper and lower thirds. Bring 4 cups water to a boil in a saucepan. Add 150 g quick-cooking farro and simmer for its package's 10-12-minute time, until chewy but tender. Drain thoroughly and toss with 1/8 teaspoon (0.75 g) fine sea salt. Do not use a long-cooking variety and expect the same elapsed time.",
     "Season the roast: In the large mixing bowl, combine the drained chickpeas from two 15-oz cans (about 500 g drained), 2 lb (907 g) cauliflower florets and 225 g red onion wedges. Toss very thoroughly with 2 tablespoons olive oil, 2 teaspoons cumin, 2 teaspoons coriander, 1 teaspoon smoked paprika, 1/2 teaspoon turmeric, 1/4 teaspoon cayenne and 1/4 teaspoon (1.5 g) fine sea salt.",
     "Roast without crowding: Spread the seasoned chickpea-cauliflower-onion mixture across both sheet pans in a single layer. Roast for 25-30 minutes, turning the vegetables and swapping the pans' rack positions after 15 minutes. Look for dark golden cauliflower edges and tender stems; the chickpeas should be lightly browned, not dried into hard snacks.",
     "Make the green sauce while the vegetables roast: Whisk 1/4 cup (60 g) tahini, 3 tablespoons (45 g) lemon juice, 1/4 cup (60 g) water, 4 g grated garlic and 1/8 teaspoon (0.75 g) fine sea salt until smooth. Stir in 1/2 cup (15 g) chopped parsley and 1/2 cup (15 g) chopped cilantro. These measured ingredients make about 200 g sauce. Refrigerate until portioning.",
-    "Soften the kale: In the cleaned large mixing bowl, toss 10 oz (284 g) thinly sliced kale leaves with 2 tablespoons (30 mL) lemon juice. Massage firmly for 90 seconds until darker and softer. Add the warm cooked farro made from 150 g dry farro and toss to soften the kale further.",
+    "Soften the kale: In the cleaned 6-quart mixing bowl, toss 10 oz (284 g) thinly sliced kale leaves with 2 tablespoons (30 mL) lemon juice and massage for 90 seconds. Transfer the massaged kale to the 3-quart saucepan with the cooked farro made from 150 g dry farro and 2 tablespoons (30 mL) water. Cover and steam over medium-low heat for 2-3 minutes, stirring once, until the kale is tender enough to eat comfortably. Return the kale and farro to the mixing bowl. This avoids relying on residual heat from farro that finished cooking much earlier.",
     "Combine the hot components: Add the roasted mixture made from two cans chickpeas, 2 lb cauliflower and 225 g onion to the farro-kale bowl. Fold in 2 finely chopped Medjool dates (48 g pitted flesh), distributing the small pieces through the grains rather than leaving sticky clumps.",
     "Portion: Weigh the finished grain-vegetable mixture and distribute it evenly among five shallow containers. Pack about 40 g green tahini sauce, 35 g pomegranate arils and 7 g chopped almonds for each meal in separate cups. Keep sauce and pomegranate refrigerated, and keep the almonds dry. Add these toppings after reheating rather than microwaving them with the vegetables."
   ],
@@ -70,7 +177,15 @@
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "5",
-  "tags": { "difficulty": "medium", "equipment": ["oven", "sheet-pan", "stovetop"], "status": "not-tried" },
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "sheet-pan",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
   "title": "Chermoula Chickpea-Cauliflower Farro Bowls",
   "totalTime": "55 minutes"
 }

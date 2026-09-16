@@ -1,30 +1,132 @@
 {
   "additionalTime": "0 minutes",
   "author": "Robert Carr",
-  "collections": ["main-dishes", "health-conscious", "meal-prep-friendly"],
+  "collections": [
+    "main-dishes",
+    "health-conscious",
+    "meal-prep-friendly"
+  ],
   "cookTime": "35 minutes",
   "description": "Browned turkey and lentils in a spiced tomato braise, served with deeply roasted cabbage and cold lemon-herb yogurt. Tomato paste, ginger and warm spices build flavor without a stock cube or salty bottled sauce.",
-  "equipment": ["Oven", "18-by-13-inch rimmed sheet pan", "5-6-quart Dutch oven or braiser", "Digital kitchen scale", "Instant-read thermometer", "Four shallow meal-prep containers and four sauce cups"],
+  "equipment": [
+    "Oven",
+    "18-by-13-inch rimmed sheet pan",
+    "5-6-quart Dutch oven or braiser",
+    "Digital kitchen scale",
+    "Instant-read thermometer",
+    "Four shallow meal-prep containers and four sauce cups"
+  ],
   "groceryIngredients": [
-    { "item": "green cabbage", "quantity": 1, "unit": "lb" },
-    { "item": "extra-virgin olive oil", "quantity": 4, "unit": "tsp" },
-    { "item": "fine sea salt", "quantity": 0.625, "unit": "tsp", "note": "3.75 g total; use a fine salt weighing about 6 g per teaspoon." },
-    { "item": "black pepper", "quantity": 0.25, "unit": "tsp" },
-    { "item": "93% lean ground turkey", "quantity": 1.25, "unit": "lb", "note": "Plain, unseasoned, without added brine." },
-    { "item": "yellow onion", "quantity": 1, "unit": "item", "note": "Large; use 225 g peeled onion." },
-    { "item": "garlic", "quantity": 4, "unit": "clove", "note": "About 9 g for the braise and 4 g for the yogurt." },
-    { "item": "fresh ginger", "quantity": 1, "unit": "tbsp", "note": "Finely grated, about 12 g." },
-    { "item": "salt-free berbere seasoning", "quantity": 1, "unit": "tbsp", "note": "Use a mild blend; see the measured lower-heat variation." },
-    { "item": "sweet paprika", "quantity": 1, "unit": "tbsp" },
-    { "item": "ground cumin", "quantity": 1, "unit": "tsp" },
-    { "item": "ground cinnamon", "quantity": 0.25, "unit": "tsp" },
-    { "item": "no-salt-added tomato paste", "quantity": 2, "unit": "tbsp" },
-    { "item": "no-salt-added crushed tomatoes", "quantity": 1, "unit": "can", "note": "28 oz can." },
-    { "item": "no-salt-added lentils", "quantity": 2, "unit": "can", "note": "15 oz each; cooked, drained and rinsed, approximately 500 g drained total. Do not substitute dry lentils directly." },
-    { "item": "baby spinach", "quantity": 8, "unit": "oz" },
-    { "item": "plain 2% Greek yogurt", "quantity": 228, "unit": "g" },
-    { "item": "lemon", "quantity": 1, "unit": "item", "note": "Need 2 tablespoons juice and 1 teaspoon zest." },
-    { "item": "fresh cilantro", "quantity": 0.5, "unit": "cup", "note": "Finely chopped, about 16 g." }
+    {
+      "item": "green cabbage",
+      "quantity": 1,
+      "unit": "lb"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 4,
+      "unit": "tsp"
+    },
+    {
+      "item": "fine sea salt",
+      "quantity": 0.625,
+      "unit": "tsp",
+      "note": "3.75 g total; use a fine salt weighing about 6 g per teaspoon."
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "93% lean ground turkey",
+      "quantity": 1.25,
+      "unit": "lb",
+      "note": "Plain, unseasoned, without added brine."
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1,
+      "unit": "item",
+      "note": "Large; use 225 g peeled onion."
+    },
+    {
+      "item": "garlic",
+      "quantity": 4,
+      "unit": "clove",
+      "note": "About 9 g for the braise and 4 g for the yogurt."
+    },
+    {
+      "item": "fresh ginger",
+      "quantity": 1,
+      "unit": "tbsp",
+      "note": "Finely grated, about 12 g."
+    },
+    {
+      "item": "salt-free berbere seasoning",
+      "quantity": 1,
+      "unit": "tbsp",
+      "note": "Use a mild blend; see the measured lower-heat variation."
+    },
+    {
+      "item": "sweet paprika",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "ground cumin",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground cinnamon",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "no-salt-added tomato paste",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "no-salt-added crushed tomatoes",
+      "quantity": 1,
+      "unit": "can",
+      "note": "28 oz can."
+    },
+    {
+      "item": "no-salt-added lentils",
+      "quantity": 2,
+      "unit": "can",
+      "note": "15 oz each; cooked, drained and rinsed, approximately 500 g drained total. Do not substitute dry lentils directly."
+    },
+    {
+      "item": "baby spinach",
+      "quantity": 8,
+      "unit": "oz"
+    },
+    {
+      "item": "plain 2% Greek yogurt",
+      "quantity": 228,
+      "unit": "g"
+    },
+    {
+      "item": "lemon",
+      "quantity": 1,
+      "unit": "item",
+      "note": "Need 2 tablespoons juice and 1 teaspoon zest."
+    },
+    {
+      "item": "fresh cilantro",
+      "quantity": 0.5,
+      "unit": "cup",
+      "note": "Finely chopped, about 16 g."
+    },
+    {
+      "item": "red wine vinegar",
+      "quantity": 2,
+      "unit": "tsp"
+    }
   ],
   "id": "berbere-turkey-lentil-braise",
   "ingredients": [
@@ -43,15 +145,16 @@
     "Yogurt: 228 g plain 2% Greek yogurt, measured by weight",
     "Yogurt: 2 tablespoons (30 g) fresh lemon juice and 1 teaspoon (2 g) finely grated lemon zest",
     "Yogurt: 1 garlic clove (4 g peeled), finely grated",
-    "Yogurt: 1/2 cup (16 g) finely chopped fresh cilantro"
+    "Yogurt: 1/2 cup (16 g) finely chopped fresh cilantro",
+    "Braise finish: 2 teaspoons (10 mL) red wine vinegar"
   ],
   "instructions": [
     "Roast the cabbage: Heat the oven to 450 F. Toss 1 lb (454 g) cabbage ribbons with 2 teaspoons olive oil, 1/8 teaspoon (0.75 g) fine sea salt and 1/4 teaspoon black pepper on the sheet pan. Spread into a single layer. Once the oven is hot, roast for 20-25 minutes, turning at about 12 minutes, until tender with dark golden edges rather than blackened leaves.",
     "Brown the turkey while the cabbage roasts: Heat 2 teaspoons olive oil in a 5-6-quart Dutch oven over medium-high heat. Add 1 1/4 lb (567 g) ground turkey in a broad layer. Leave it undisturbed for 3 minutes, then turn and break into coarse crumbles. Cook for another 3-4 minutes so browned patches develop; avoid constantly stirring the meat into a fine, steamed crumble.",
-    "Build the braise: Add 225 g diced yellow onion to the turkey and cook for 5 minutes, stirring. Add 9 g minced garlic, 1 tablespoon (12 g) grated ginger, 1 tablespoon mild salt-free berbere, 1 tablespoon sweet paprika, 1 teaspoon cumin and 1/4 teaspoon cinnamon; stir for 30 seconds. Add 2 tablespoons (32 g) tomato paste and cook for 1 minute, stirring until the paste darkens slightly without scorching.",
+    "Build the braise: Add 225 g diced yellow onion to the turkey and cook for 5 minutes, stirring. Stir in 2 tablespoons (32 g) tomato paste and cook for 90 seconds until slightly darker. Lower the heat to medium. Add 9 g minced garlic, 1 tablespoon (12 g) grated ginger, 1 tablespoon mild salt-free berbere, 1 tablespoon sweet paprika, 1 teaspoon cumin and 1/4 teaspoon cinnamon; stir for 30 seconds, then proceed immediately to the liquid ingredients. Do not keep frying the ground spices until they blacken.",
     "Simmer: Stir in one 28-oz (794 g) can crushed tomatoes, the drained lentils from two 15-oz cans (about 500 g drained), 1/2 cup (120 mL) water and 1/2 teaspoon (3 g) fine sea salt. Scrape up the browned bits. Bring to a simmer and cook uncovered for 10-12 minutes, stirring occasionally, until thick but still spoonable.",
     "Make the cold yogurt during the simmer: Mix 228 g plain 2% Greek yogurt, 2 tablespoons (30 g) lemon juice, 1 teaspoon (2 g) lemon zest, 4 g grated garlic and 1/2 cup (16 g) chopped cilantro. The measured ingredients make about 280 g sauce. Refrigerate until portioning.",
-    "Finish and check doneness: Fold 8 oz (227 g) baby spinach into the braise in two additions of 4 oz (113-114 g) each. Cook for 2-3 minutes until wilted. Check that the turkey crumbles and the surrounding braise reach at least 165 F.",
+    "Finish and check doneness: Fold 8 oz (227 g) baby spinach into the braise in two additions of 4 oz (113-114 g) each. Cook for 2-3 minutes until wilted. Check that the turkey crumbles and the surrounding braise reach at least 165 F. Turn off the heat and stir in 2 teaspoons (10 mL) red wine vinegar to brighten the tomato-lentil mixture.",
     "Portion: Weigh the cooked braise and portion evenly among four shallow containers. Weigh the cooked cabbage and distribute evenly among the same four meals. Pack about 70 g lemon-herb yogurt in each separate sauce cup. Keep the yogurt cold and add it only after reheating a meal. Refrigerate promptly rather than waiting for a deep pot of braise to cool on the counter."
   ],
   "link": null,
@@ -70,7 +173,16 @@
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "4",
-  "tags": { "difficulty": "medium", "equipment": ["dutch-oven", "oven", "sheet-pan", "stovetop"], "status": "not-tried" },
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "dutch-oven",
+      "oven",
+      "sheet-pan",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
   "title": "Berbere Turkey-Lentil Braise",
   "totalTime": "55 minutes"
 }

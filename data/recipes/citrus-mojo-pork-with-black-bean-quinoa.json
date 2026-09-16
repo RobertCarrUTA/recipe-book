@@ -1,31 +1,140 @@
 {
   "additionalTime": "5 minutes resting",
   "author": "Robert Carr",
-  "collections": ["main-dishes", "health-conscious", "meal-prep-friendly"],
+  "collections": [
+    "main-dishes",
+    "health-conscious",
+    "meal-prep-friendly"
+  ],
   "cookTime": "30 minutes",
   "description": "Garlic-cumin pork tenderloin with orange-lime mojo, black-bean quinoa, pineapple-pepper salsa, avocado and toasted pepitas. Six filling portions with a measured smaller-portion option and a plan for freezing extra meals.",
-  "equipment": ["Oven", "Rimmed sheet pan", "Medium saucepan with lid", "Small saucepan", "Fine-mesh strainer", "Digital kitchen scale", "Instant-read thermometer", "Six shallow meal-prep containers and separate salsa cups"],
+  "equipment": [
+    "Oven",
+    "Rimmed sheet pan",
+    "Medium saucepan with lid",
+    "Small saucepan",
+    "Fine-mesh strainer",
+    "Digital kitchen scale",
+    "Instant-read thermometer",
+    "Six shallow meal-prep containers and separate salsa cups",
+    "Large heatproof mixing bowl"
+  ],
   "groceryIngredients": [
-    { "item": "pork tenderloin", "quantity": 2, "unit": "lb", "note": "Two approximately 1-lb tenderloins, trimmed; not a single pork loin roast, and not enhanced with brine." },
-    { "item": "extra-virgin olive oil", "quantity": 2, "unit": "tbsp" },
-    { "item": "garlic powder", "quantity": 2, "unit": "tsp", "note": "Not garlic salt." },
-    { "item": "ground cumin", "quantity": 2, "unit": "tsp" },
-    { "item": "dried oregano", "quantity": 2, "unit": "tsp" },
-    { "item": "smoked paprika", "quantity": 1, "unit": "tsp" },
-    { "item": "fine sea salt", "quantity": 0.75, "unit": "tsp", "note": "4.5 g total; use a fine salt weighing about 6 g per teaspoon." },
-    { "item": "black pepper", "quantity": 0.75, "unit": "tsp" },
-    { "item": "orange", "quantity": 2, "unit": "item", "note": "Need 1/2 cup freshly squeezed juice." },
-    { "item": "lime", "quantity": 2, "unit": "item", "note": "Need 4 tablespoons juice total." },
-    { "item": "garlic", "quantity": 3, "unit": "clove", "note": "9 g peeled garlic." },
-    { "item": "quinoa", "quantity": 255, "unit": "g", "note": "Dry, unseasoned; about 1 1/2 cups." },
-    { "item": "no-salt-added black beans", "quantity": 2, "unit": "can", "note": "15 oz each; approximately 500 g drained and rinsed total." },
-    { "item": "fresh cilantro", "quantity": 1, "unit": "cup", "note": "Chopped, about 32 g total." },
-    { "item": "pineapple", "quantity": 495, "unit": "g", "note": "Fresh prepared flesh, diced; buying prepared pineapple keeps prep practical." },
-    { "item": "red bell pepper", "quantity": 2, "unit": "item", "note": "Use 300 g trimmed flesh total." },
-    { "item": "red onion", "quantity": 1, "unit": "item", "note": "Small; use 120 g peeled onion." },
-    { "item": "jalapeno", "quantity": 1, "unit": "item", "note": "Small; use 15 g trimmed pepper." },
-    { "item": "avocado", "quantity": 2, "unit": "item", "note": "About 300 g edible flesh total; slice at serving time." },
-    { "item": "unsalted pepitas", "quantity": 60, "unit": "g", "note": "Roasted, shelled pumpkin seeds." }
+    {
+      "item": "pork tenderloin",
+      "quantity": 2,
+      "unit": "lb",
+      "note": "Two approximately 1-lb tenderloins, trimmed; not a single pork loin roast, and not enhanced with brine."
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "garlic powder",
+      "quantity": 2,
+      "unit": "tsp",
+      "note": "Not garlic salt."
+    },
+    {
+      "item": "ground cumin",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "dried oregano",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "smoked paprika",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "fine sea salt",
+      "quantity": 0.75,
+      "unit": "tsp",
+      "note": "4.5 g total; use a fine salt weighing about 6 g per teaspoon."
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.75,
+      "unit": "tsp"
+    },
+    {
+      "item": "orange",
+      "quantity": 2,
+      "unit": "item",
+      "note": "Need 1/2 cup freshly squeezed juice and 1 teaspoon finely grated zest."
+    },
+    {
+      "item": "lime",
+      "quantity": 2,
+      "unit": "item",
+      "note": "Need 4 tablespoons juice total."
+    },
+    {
+      "item": "garlic",
+      "quantity": 3,
+      "unit": "clove",
+      "note": "9 g peeled garlic."
+    },
+    {
+      "item": "quinoa",
+      "quantity": 255,
+      "unit": "g",
+      "note": "Dry, unseasoned; about 1 1/2 cups."
+    },
+    {
+      "item": "no-salt-added black beans",
+      "quantity": 2,
+      "unit": "can",
+      "note": "15 oz each; approximately 500 g drained and rinsed total."
+    },
+    {
+      "item": "fresh cilantro",
+      "quantity": 1,
+      "unit": "cup",
+      "note": "Chopped, about 32 g total."
+    },
+    {
+      "item": "pineapple",
+      "quantity": 495,
+      "unit": "g",
+      "note": "Fresh prepared flesh, diced; buying prepared pineapple keeps prep practical."
+    },
+    {
+      "item": "red bell pepper",
+      "quantity": 2,
+      "unit": "item",
+      "note": "Use 300 g trimmed flesh total."
+    },
+    {
+      "item": "red onion",
+      "quantity": 1,
+      "unit": "item",
+      "note": "Small; use 120 g peeled onion."
+    },
+    {
+      "item": "jalapeno",
+      "quantity": 1,
+      "unit": "item",
+      "note": "Small; use 15 g trimmed pepper."
+    },
+    {
+      "item": "avocado",
+      "quantity": 2,
+      "unit": "item",
+      "note": "About 300 g edible flesh total; slice at serving time."
+    },
+    {
+      "item": "unsalted pepitas",
+      "quantity": 60,
+      "unit": "g",
+      "note": "Roasted, shelled pumpkin seeds."
+    }
   ],
   "id": "citrus-mojo-pork-with-black-bean-quinoa",
   "ingredients": [
@@ -46,16 +155,17 @@
     "Salsa: 1 small jalapeno (15 g trimmed), finely minced",
     "Salsa: 2 tablespoons (30 mL) fresh lime juice and 1/2 cup (16 g) chopped fresh cilantro",
     "Finish: 2 medium avocados, approximately 300 g edible flesh total",
-    "Finish: 60 g unsalted roasted pepitas, about a scant 1/2 cup"
+    "Finish: 60 g unsalted roasted pepitas, about a scant 1/2 cup",
+    "Pork: 1 teaspoon finely grated orange zest"
   ],
   "instructions": [
-    "Start the pork: Heat the oven to 425 F. Pat two trimmed pork tenderloins, 2 lb (907 g) total, dry and tuck very thin tail ends underneath to make the thickness more even. Rub with 1 tablespoon olive oil, 2 teaspoons garlic powder, 1 teaspoon cumin, 1 teaspoon oregano, 1 teaspoon smoked paprika, 1/2 teaspoon (3 g) fine sea salt and 1/2 teaspoon black pepper. Arrange on the sheet pan with space between the pieces.",
+    "Start the pork: Heat the oven to 425 F. Pat two trimmed pork tenderloins, 2 lb (907 g) total, dry and tuck very thin tail ends underneath to make the thickness more even. Rub with 1 tablespoon olive oil, 1 teaspoon orange zest, 2 teaspoons garlic powder, 1 teaspoon cumin, 1 teaspoon oregano, 1 teaspoon smoked paprika, 1/2 teaspoon (3 g) fine sea salt and 1/2 teaspoon black pepper. Arrange on the sheet pan with space between the pieces.",
     "Roast and rest: Put the two seasoned tenderloins into the preheated oven. Roast for about 20-28 minutes, starting temperature checks at 18 minutes. Remove each piece when its thickest part reaches 145 F, then rest for 5 minutes before slicing; the rest must be at least 3 minutes for the standard pork safety endpoint. Do not treat a much thicker pork loin roast as an interchangeable cut.",
     "Cook the quinoa while the pork roasts: Combine 1 1/2 cups (255 g) rinsed dry quinoa and 3 cups (710 mL) water in a saucepan. Bring to a boil, cover, reduce to low and simmer for about 15 minutes until the water is absorbed. Turn off the heat and leave covered for 5 minutes.",
     "Make the mojo: In the small saucepan, combine 1/2 cup (120 mL) orange juice, 9 g grated garlic, 1 teaspoon cumin, 1 teaspoon oregano and 1/4 teaspoon black pepper. Simmer gently for 4-5 minutes so the garlic softens; do not boil it dry. Remove from the heat and stir in 2 tablespoons (30 mL) lime juice.",
-    "Make the salsa while the hot components cook: Mix 3 cups (495 g) diced pineapple, 300 g diced red bell pepper, 120 g diced red onion, 15 g minced jalapeno, 2 tablespoons (30 mL) lime juice and 1/2 cup (16 g) chopped cilantro in a clean bowl. Refrigerate until portioning.",
+    "Make the salsa while the hot components cook: Combine 120 g diced red onion, 15 g minced jalapeno and 2 tablespoons (30 mL) lime juice in a clean bowl. Let stand for 5-10 minutes while preparing 3 cups (495 g) diced pineapple and 300 g diced red bell pepper. Stir the prepared pineapple and bell pepper into the lime-onion mixture with 1/2 cup (16 g) chopped cilantro. Refrigerate until portioning. The measured lime juice is used once, at the start of this step.",
     "Finish the quinoa: Fold the drained beans from two 15-oz cans, approximately 500 g drained, into the quinoa cooked from 255 g dry grain. Stir in 1 tablespoon olive oil and 1/4 teaspoon (1.5 g) fine sea salt. Warm over low heat for 2-3 minutes, stirring, until the beans are hot. Turn off the heat and fold in 1/2 cup (16 g) chopped cilantro.",
-    "Sauce the pork: Slice the rested pork made from 2 lb raw tenderloin across the grain into 1/2-inch slices. Transfer the slices directly into the saucepan containing the mojo made from 1/2 cup orange juice and 2 tablespoons lime juice, and turn gently to coat. This reuses the already-prepared mojo; it does not call for another batch of juice or seasoning.",
+    "Sauce the pork: Slice the rested pork made from 2 lb raw tenderloin across the grain into 1/2-inch slices and place in the large heatproof mixing bowl. Pour the prepared mojo made from 1/2 cup orange juice, 9 g garlic, 1 teaspoon cumin, 1 teaspoon oregano, 1/4 teaspoon black pepper and 2 tablespoons lime juice over the slices and turn gently to coat. These quantities identify the sauce already prepared, not new ingredient additions. The wide bowl gives the sliced pork room that the small saucepan does not.",
     "Portion: Weigh the cooked pork with its mojo and divide evenly among six shallow containers, then distribute the finished black-bean quinoa evenly among them. Divide the finished salsa into six separate chilled cups. Pack 10 g pepitas for each meal. At serving time add 50 g freshly sliced avocado, using about 300 g edible flesh across six meals; keep whole avocados uncut until needed."
   ],
   "link": null,
@@ -74,7 +184,15 @@
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "6",
-  "tags": { "difficulty": "medium", "equipment": ["oven", "sheet-pan", "stovetop"], "status": "not-tried" },
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "oven",
+      "sheet-pan",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
   "title": "Citrus-Mojo Pork with Black-Bean Quinoa",
   "totalTime": "55 minutes"
 }
