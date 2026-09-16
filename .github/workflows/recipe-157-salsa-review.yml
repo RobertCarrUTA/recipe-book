@@ -1,0 +1,86 @@
+name: Recipe 157 salsa yield review
+
+on:
+  push:
+    branches:
+      - recipes/156-heart-conscious-meal-prep
+    paths:
+      - .github/workflows/recipe-157-salsa-review.yml
+
+permissions:
+  contents: write
+
+jobs:
+  verify-and-commit:
+    if: github.repository == 'RobertCarrUTA/recipe-book' && github.ref == 'refs/heads/recipes/156-heart-conscious-meal-prep'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Check the reviewed parent and install locked dependencies
+        run: |
+          test "$(git rev-parse HEAD^)" = c17321da0a41548cb197c72bf1b4a8bfdcffd26c
+          npm ci
+      - name: Correct the measured salsa portion and add regression coverage
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs/promises';
+          const file = 'data/recipes/citrus-mojo-pork-with-black-bean-quinoa.json';
+          const recipe = JSON.parse(await fs.readFile(file, 'utf8'));
+          const before = 'Pack approximately 180 g finished pineapple-pepper salsa in each of six separate chilled cups; produce moisture makes the final yield approximate.';
+          const after = 'Pack approximately 163 g finished pineapple-pepper salsa in each of six separate chilled cups. The measured salsa ingredients make about 976 g before small bowl-transfer losses; distribute any small yield difference evenly across the six cups.';
+          assert.equal(recipe.instructions.filter((step) => step.includes(before)).length, 1);
+          recipe.instructions = recipe.instructions.map((step) => step.replace(before, after));
+          await fs.writeFile(file, `${JSON.stringify(recipe, null, 2)}\n`);
+          JS
+          cat >> tests/meal_prep_recipes.test.mjs <<'TEST'
+
+          test("meal-prep cold sauce and salsa portions match their measured ingredient yields", () => {
+            const cases = [
+              ["zaatar-pistachio-salmon-with-lemon-dill-barley", "Sauce:", /Pack about (\d+) g dill-tahini yogurt/, 6],
+              ["berbere-turkey-lentil-braise", "Yogurt:", /Pack about (\d+) g lemon-herb yogurt/, 5],
+              ["chermoula-chickpea-cauliflower-farro", "Sauce:", /Pack about (\d+) g green tahini sauce/, 7],
+              ["citrus-mojo-pork-with-black-bean-quinoa", "Salsa:", /Pack approximately (\d+) g finished pineapple-pepper salsa/, 6],
+            ];
+            for (const [id, prefix, portionPattern, expectedAmountCount] of cases) {
+              const recipe = recipes.find((entry) => entry.id === id);
+              // These four uncooked components list every ingredient in g or mL.
+              // Model juice/water as 1 g/mL, matching the documented nutrition approximation.
+              const amounts = recipe.ingredients.filter((line) => line.startsWith(prefix))
+                .flatMap((line) => [...line.matchAll(/\b(\d+(?:\.\d+)?) (?:g|mL)\b/g)])
+                .map((match) => Number(match[1]));
+              assert.equal(amounts.length, expectedAmountCount, `${id}: recheck the component's metric amounts`);
+              const perServing = amounts.reduce((sum, amount) => sum + amount, 0) / Number(recipe.servings);
+              const portion = recipe.instructions.at(-1).match(portionPattern);
+              assert.ok(portion, `${id}: keep an explicit cold-component portion`);
+              assert.equal(Number(portion[1]), Math.round(perServing), `${id}: portion must match ingredient yield`);
+            }
+          });
+          TEST
+          npm run build:recipes
+      - name: Verify the exact changes
+        run: |
+          npm run verify
+          git diff --check
+          git diff --stat
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import { execFileSync } from 'node:child_process';
+          const changed = execFileSync('git', ['diff', '--name-only'], { encoding: 'utf8' }).trim().split('\n').sort();
+          assert.deepEqual(changed, ['data/recipes.json', 'data/recipes/citrus-mojo-pork-with-black-bean-quinoa.json', 'tests/meal_prep_recipes.test.mjs']);
+          JS
+      - name: Commit only the verified source, generated bundle and test
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/recipes/citrus-mojo-pork-with-black-bean-quinoa.json data/recipes.json tests/meal_prep_recipes.test.mjs
+          git commit -m 'Fix pork salsa portion yield and verify cold-component serving arithmetic'
+          git push origin HEAD:refs/heads/recipes/156-heart-conscious-meal-prep
