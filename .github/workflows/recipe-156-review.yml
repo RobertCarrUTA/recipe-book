@@ -31,8 +31,13 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
-      - name: Apply the scoped review and regenerate catalog
-        run: node scripts/review-156-once.mjs
+      - name: Collect primary nutrition inputs and apply final review
+        run: |
+          node scripts/review-156-once.mjs
+          python3 scripts/review-156-nutrition.py
+          npm run set-asset-version -- 20260915-2
+          npm run build:recipes
+          npm run update:normalization-snapshot
       - name: Review data quality and diffs
         run: |
           npm run report:data-quality
@@ -45,13 +50,13 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Browser smoke verification
         run: npm run smoke:browser
-      - name: Commit verified review and generated files to this branch only
+      - name: Commit verified final review to this branch only
         run: |
           test "$(git branch --show-current)" = "recipes/156-heart-conscious-meal-prep"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/recipes data/recipes.json tests/fixtures/normalization_catalog_snapshot.json tests/recipe_data_quality.test.mjs scripts/smoke-browser.mjs README.md docs/recipe-schema.md js/grouping.js index.html 404.html sw.js
-          git diff --cached --quiet || git commit -m 'Review meal-prep flavor, integrate editorial collections and regenerate recipes'
+          git add data/recipes data/recipes.json tests/fixtures/normalization_catalog_snapshot.json tests/fixtures/meal_prep_156_nutrition.json js/grouping.js index.html 404.html sw.js
+          git diff --cached --quiet || git commit -m 'Complete second recipe review: auditable nutrition, precise portions and practical cooking fixes'
           git push origin HEAD:refs/heads/recipes/156-heart-conscious-meal-prep
       - name: Preserve review evidence
         if: always()
