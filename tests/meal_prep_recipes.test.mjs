@@ -73,3 +73,25 @@ test("meal-prep split quantities, component yields and grocery groups retain fix
   assert.equal(determineGroupForKey("no-salt-added lentils"), "Pantry");
   assert.equal(determineGroupForKey("no-salt-added chickpeas"), "Pantry");
 });
+
+test("meal-prep cold sauce and salsa portions match their measured ingredient yields", () => {
+  const cases = [
+    ["zaatar-pistachio-salmon-with-lemon-dill-barley", "Sauce:", /Pack about (\d+) g dill-tahini yogurt/, 6],
+    ["berbere-turkey-lentil-braise", "Yogurt:", /Pack about (\d+) g lemon-herb yogurt/, 5],
+    ["chermoula-chickpea-cauliflower-farro", "Sauce:", /Pack about (\d+) g green tahini sauce/, 7],
+    ["citrus-mojo-pork-with-black-bean-quinoa", "Salsa:", /Pack approximately (\d+) g finished pineapple-pepper salsa/, 6],
+  ];
+  for (const [id, prefix, portionPattern, expectedAmountCount] of cases) {
+    const recipe = recipes.find((entry) => entry.id === id);
+    // These four uncooked components list every ingredient in g or mL.
+    // Model juice/water as 1 g/mL, matching the documented nutrition approximation.
+    const amounts = recipe.ingredients.filter((line) => line.startsWith(prefix))
+      .flatMap((line) => [...line.matchAll(/\b(\d+(?:\.\d+)?) (?:g|mL)\b/g)])
+      .map((match) => Number(match[1]));
+    assert.equal(amounts.length, expectedAmountCount, `${id}: recheck the component's metric amounts`);
+    const perServing = amounts.reduce((sum, amount) => sum + amount, 0) / Number(recipe.servings);
+    const portion = recipe.instructions.at(-1).match(portionPattern);
+    assert.ok(portion, `${id}: keep an explicit cold-component portion`);
+    assert.equal(Number(portion[1]), Math.round(perServing), `${id}: portion must match ingredient yield`);
+  }
+});
