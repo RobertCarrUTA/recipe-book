@@ -23,6 +23,8 @@ test("determineGroupForKey classifies common recipe catalog grocery labels", () 
     ["cream of coconut", "Pantry"],
     ["sesame oil", "Pantry"],
     ["tomato sauce", "Pantry"],
+    ["no-salt-added lentils", "Pantry"],
+    ["no-salt-added chickpeas", "Pantry"],
     ["shallot", "Produce"],
     ["half-and-half", "Dairy"],
     ["blueberries", "Fruit"],
@@ -78,6 +80,8 @@ test("determineGroupForKey prefers specific matches before broad words", () => {
   assert.equal(determineGroupForKey("chipotle peppers in adobo sauce"), "Sauces, Marinades, & Condiments");
   assert.equal(determineGroupForKey("unsalted butter"), "Dairy");
   assert.equal(determineGroupForKey("semi-sweet chocolate chips"), "Baking");
+  assert.equal(determineGroupForKey("red wine vinegar"), "Sauces, Marinades, & Condiments");
+  assert.equal(determineGroupForKey("red wine"), "Wine");
 });
 
 test("hot dog grocery labels use the correct shopping groups", () => {
