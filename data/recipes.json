@@ -20605,16 +20605,26 @@
     "link": null,
     "notes": [
       "Timing: Allow about 55 minutes including chopping, preheating, browning and portioning. The cabbage, braise and yogurt are prepared in parallel. Use already-cooked canned lentils, not dry lentils; the stated time does not include cooking lentils from dry.",
-      "Heat control: Berbere varies enormously. For a hot blend, replace the 1 tablespoon berbere with 1 teaspoon berbere plus 2 teaspoons additional sweet paprika. This is in addition to the listed 1 tablespoon sweet paprika. Choose salt-free blends rather than adding salty stock to compensate for less chile heat.",
+      "Heat control: Berbere varies enormously. For a hot blend, use 1 teaspoon salt-free berbere and 1 tablespoon plus 2 teaspoons sweet paprika in the spice-blooming step, instead of the base 1 tablespoon berbere and 1 tablespoon paprika. Other quantities stay unchanged. Do not use a salty stock cube to compensate for less chile heat.",
       "Meal prep: Refrigerate in shallow containers at 40 F or colder within 2 hours, or within 1 hour above 90 F. Store the yogurt separately and use the refrigerated meals and sauce within 3-4 days. Do not repeatedly warm the full batch.",
       "Reheating: Add 1 tablespoon water to one braise/cabbage portion, cover with a vented lid and microwave, stirring between intervals, until the meal reaches 165 F in several places. Alternatively, heat in a covered saucepan, stirring and bringing the braise to a brief boil. Add the cold 70 g yogurt afterward.",
       "Freezing: Freeze hot-component portions that will not be eaten within 3-4 days on prep day. Thaw overnight in the refrigerator and reheat the following day. Keep yogurt within its refrigerated window; its texture may separate after freezing.",
       "Portion options: The base makes four substantial meals. For a smaller portion, divide the finished braise and cabbage into five meals and pack about 56 g yogurt per meal. For a larger portion, serve one base meal with 1/2 cup cooked unsalted quinoa (about 90 g); preparing that extra grain is not included in the base recipe time or nutrition.",
       "Health-conscious review: Lean turkey and lentils provide protein, while cabbage, spinach, onion and tomatoes add vegetable volume and fiber. The recipe uses measured olive oil and no-salt-added canned foods. Weight loss or muscle gain depends on total intake and activity, not the recipe title.",
       "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
-      "Allergens: Milk; spice blends may contain additional allergens. Original recipe developed for this collection; not kitchen-tested."
+      "Allergens: Milk; spice blends may contain additional allergens. Original recipe developed for this collection; not kitchen-tested.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
     ],
-    "nutrition": null,
+    "nutrition": {
+      "Calories": "About 600 kcal",
+      "Protein": "About 52 g",
+      "Carbohydrates": "About 62 g",
+      "Fat": "About 20 g",
+      "Fiber": "About 21 g",
+      "Saturated fat": "About 5 g",
+      "Sodium": "About 575 mg"
+    },
     "prepTime": "20 minutes",
     "rating": null,
     "servings": "4",
@@ -20804,9 +20814,19 @@
       "Portion options: The base makes five generous vegetable-forward meals. For more energy, divide the same batch into four meals and use about 50 g sauce, 44 g pomegranate and 8.75 g almonds per meal. For additional protein without tofu, add 170 g plain nonfat Greek yogurt to an individual meal as a separate savory side; this changes the vegan and milk-allergen status and is not included in base nutrition.",
       "Health-conscious review: Chickpeas, vegetables, seeds and nuts provide fiber and plant protein with measured olive oil and salt. Quick-cooking pearled farro is not necessarily a whole grain; the label is based on the complete meal, not an unsupported whole-grain claim. Portions and the rest of the day's intake determine suitability for weight loss or bulking.",
       "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
-      "Allergens: Wheat, sesame and almonds. Original recipe developed for this collection; not kitchen-tested."
+      "Allergens: Wheat, sesame and almonds. Original recipe developed for this collection; not kitchen-tested.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
     ],
-    "nutrition": null,
+    "nutrition": {
+      "Calories": "About 580 kcal",
+      "Protein": "About 24 g",
+      "Carbohydrates": "About 85 g",
+      "Fat": "About 21 g",
+      "Fiber": "About 21 g",
+      "Saturated fat": "About 2.5 g",
+      "Sodium": "About 350 mg"
+    },
     "prepTime": "20 minutes",
     "rating": null,
     "servings": "5",
@@ -20990,7 +21010,7 @@
       "Make the salsa while the hot components cook: Combine 120 g diced red onion, 15 g minced jalapeno and 2 tablespoons (30 mL) lime juice in a clean bowl. Let stand for 5-10 minutes while preparing 3 cups (495 g) diced pineapple and 300 g diced red bell pepper. Stir the prepared pineapple and bell pepper into the lime-onion mixture with 1/2 cup (16 g) chopped cilantro. Refrigerate until portioning. The measured lime juice is used once, at the start of this step.",
       "Finish the quinoa: Fold the drained beans from two 15-oz cans, approximately 500 g drained, into the quinoa cooked from 255 g dry grain. Stir in 1 tablespoon olive oil and 1/4 teaspoon (1.5 g) fine sea salt. Warm over low heat for 2-3 minutes, stirring, until the beans are hot. Turn off the heat and fold in 1/2 cup (16 g) chopped cilantro.",
       "Sauce the pork: Slice the rested pork made from 2 lb raw tenderloin across the grain into 1/2-inch slices and place in the large heatproof mixing bowl. Pour the prepared mojo made from 1/2 cup orange juice, 9 g garlic, 1 teaspoon cumin, 1 teaspoon oregano, 1/4 teaspoon black pepper and 2 tablespoons lime juice over the slices and turn gently to coat. These quantities identify the sauce already prepared, not new ingredient additions. The wide bowl gives the sliced pork room that the small saucepan does not.",
-      "Portion: Weigh the cooked pork with its mojo and divide evenly among six shallow containers, then distribute the finished black-bean quinoa evenly among them. Divide the finished salsa into six separate chilled cups. Pack 10 g pepitas for each meal. At serving time add 50 g freshly sliced avocado, using about 300 g edible flesh across six meals; keep whole avocados uncut until needed."
+      "Portion: Weigh the cooked pork with its mojo and divide evenly among six shallow containers, then distribute the finished black-bean quinoa evenly among them. Pack approximately 180 g finished pineapple-pepper salsa in each of six separate chilled cups; produce moisture makes the final yield approximate. Pack 10 g pepitas for each meal. At serving time add 50 g freshly sliced avocado, using about 300 g edible flesh across six meals; keep whole avocados uncut until needed."
     ],
     "link": null,
     "notes": [
@@ -21002,9 +21022,19 @@
       "Portion options: For a smaller meal, keep the pork, beans and vegetables but use 170 g dry quinoa with 2 cups water for the batch, then serve 25 g avocado and 5 g pepitas per meal. For a larger meal, divide the full base batch into five meals instead of six; use 60 g avocado and 12 g pepitas per meal. Nutrition for the base six-serving version does not apply unchanged to either option.",
       "Health-conscious review: Tenderloin is an unprocessed lean pork cut. Quinoa, beans, produce and measured olive oil, avocado and seeds create a more balanced plate than making a calorie surplus primarily from butter or processed meat. Healthy bulking still requires an appropriate total calorie surplus and resistance training; this is not a promise of muscle gain.",
       "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
-      "Allergens: Check spice labels and possible seed cross-contact. Original recipe developed for this collection; not kitchen-tested."
+      "Allergens: Check spice labels and possible seed cross-contact. Original recipe developed for this collection; not kitchen-tested.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
     ],
-    "nutrition": null,
+    "nutrition": {
+      "Calories": "About 710 kcal",
+      "Protein": "About 51 g",
+      "Carbohydrates": "About 74 g",
+      "Fat": "About 26 g",
+      "Fiber": "About 18 g",
+      "Saturated fat": "About 5 g",
+      "Sodium": "About 375 mg"
+    },
     "prepTime": "20 minutes",
     "rating": null,
     "servings": "6",
@@ -21037,7 +21067,9 @@
       "6-quart pot for cooking noodles and combining the finished meal",
       "Colander",
       "Instant-read thermometer",
-      "Four shallow meal-prep containers"
+      "Four shallow meal-prep containers",
+      "Small saucepan for cooking edamame in parallel",
+      "Digital kitchen scale"
     ],
     "groceryIngredients": [
       {
@@ -21138,15 +21170,15 @@
       },
       {
         "item": "sesame seeds",
-        "quantity": 1.5,
+        "quantity": 1.3333333333333333,
         "unit": "tbsp",
-        "note": "Toasted, unsalted."
+        "note": "Toasted, unsalted; measure 12 g total."
       },
       {
         "item": "scallion",
-        "quantity": 0.25,
-        "unit": "cup",
-        "note": "Thinly sliced, about 25 g."
+        "quantity": 24,
+        "unit": "g",
+        "note": "Thinly sliced."
       }
     ],
     "id": "ginger-sesame-chicken-soba",
@@ -21166,31 +21198,42 @@
       "Sauce: 1 tablespoon (20 g) pure maple syrup",
       "Sauce aromatics: 2 tablespoons (24 g) finely grated fresh ginger and 3 garlic cloves (9 g peeled), finely grated",
       "Sauce finish: 2 tablespoons (30 mL) fresh lime juice, 2 teaspoons toasted sesame oil and 1 teaspoon mild gochugaru",
-      "Toppings: 1 1/2 tablespoons (13.5 g) toasted unsalted sesame seeds and 1/4 cup (25 g) thinly sliced scallions"
+      "Toppings: 1 tablespoon plus 1 teaspoon (12 g) toasted unsalted sesame seeds and 24 g thinly sliced scallions (about 1/4 cup)"
     ],
     "instructions": [
-      "Start the roasted vegetables: Heat the oven to 425 F. Toss 8 oz (227 g) sliced shiitake caps and 12 oz (340 g) sliced carrots with 2 teaspoons canola oil on the sheet pan. Spread into one layer. Roast in the preheated oven for 20-25 minutes, turning at 12 minutes, until the mushrooms have browned edges and the carrots are tender.",
+      "Start the oven, noodle water and roasted vegetables: Heat the oven to 425 F. Put 10 cups unsalted water in the 6-quart noodle pot, cover and begin heating it on a separate burner while preparing the vegetables. Toss 8 oz (227 g) sliced shiitake caps and 12 oz (340 g) sliced carrots with 2 teaspoons canola oil on the sheet pan. Spread into one layer. Roast in the preheated oven for 20-25 minutes, turning at 12 minutes, until the mushrooms have browned edges and the carrots are tender.",
       "Prepare and brown the chicken: Pat 1 1/2 lb (680 g) chicken pieces dry and toss with 1 tablespoon (8 g) cornstarch. Preheat the 12-inch skillet over medium-high heat, then add 1 teaspoon canola oil. Add 12 oz (340 g) coated chicken in one layer. Cook undisturbed for about 3 minutes, then turn and cook 3-4 minutes more, until the thickest pieces reach 165 F. Transfer to a clean plate. Add 1 teaspoon canola oil and cook the second 12 oz (340 g) chicken batch the same way. Keep raw-chicken utensils and the cutting board away from cooked food.",
-      "Cook the edamame while the chicken browns: Bring 3 cups water to a boil in a saucepan. Add 1 1/2 cups (234 g) frozen shelled edamame and cook for the package's full cooking time, usually 4-6 minutes. Drain and set aside. Do not assume that merely thawed frozen edamame is ready to eat.",
-      "Cook the noodles: Refill the saucepan with 10 cups unsalted water and bring to a boil. Add 8 oz (227 g) dry soba. Cook for the lower end of the package's range, tasting for a tender but resilient noodle. Drain, rinse briefly under cold running water to remove loose starch and drain thoroughly again. The 8 oz quantity is the dry weight, not the cooked noodle yield.",
+      "Cook the edamame while the chicken browns: Bring 3 cups water to a boil in the small saucepan, separate from the noodle pot. Add 1 1/2 cups (234 g) frozen shelled edamame and cook for the package's full cooking time, usually 4-6 minutes. Drain and set aside. Do not assume that merely thawed frozen edamame is ready to eat.",
+      "Cook the noodles: Bring the 10 cups unsalted water already heating in the 6-quart noodle pot to a rolling boil; do not add another 10 cups. Add 8 oz (227 g) dry soba. Cook for the lower end of the package's range, tasting for a tender but resilient noodle. Drain, rinse briefly under cold running water to remove loose starch and drain thoroughly again. The 8 oz quantity is the dry weight, not the cooked noodle yield.",
       "Cook the bok choy and aromatics: After the chicken is on its clean plate, add 1 teaspoon canola oil to the skillet. Add the sliced stems from 1 lb (454 g) prepared bok choy and stir-fry for 2 minutes. Add the leaves from the same 1 lb bok choy and 2 tablespoons water; cover for 1-2 minutes. Uncover and let surface moisture evaporate. Stir in 2 tablespoons (24 g) grated ginger and 9 g grated garlic and cook for 30 seconds, lowering the heat if the garlic begins to color.",
       "Make the sauce directly in the skillet: Whisk 1 tablespoon (17 g) white miso with 3 tablespoons (45 mL) water in a small cup until smooth. Add this measured miso-water mixture to the skillet along with 1 tablespoon (15 mL) reduced-sodium tamari, 3 tablespoons (45 mL) rice vinegar and 1 tablespoon (20 g) maple syrup. Stir for about 1 minute over medium heat; do not reduce it to a sticky glaze.",
       "Combine and finish in the emptied 6-quart noodle pot, not the crowded skillet: Put the noodles cooked from 8 oz dry soba, the cooked chicken made from 1 1/2 lb raw chicken, the cooked 1 1/2 cups edamame, and the roasted vegetables made from 8 oz shiitakes and 12 oz carrots into the pot. Scrape the bok choy and sauce made in the preceding two steps into the same pot. This transfers the sauce made with 1 tablespoon miso, 1 tablespoon tamari, 3 tablespoons vinegar, 3 tablespoons water and 1 tablespoon maple syrup; it does not call for another batch. Toss gently over low heat until hot, then turn off the heat and add 2 tablespoons (30 mL) lime juice, 2 teaspoons toasted sesame oil and 1 teaspoon gochugaru. No extra salt or soy sauce is called for.",
-      "Portion: Weigh the finished chicken-noodle mixture and distribute it evenly among four shallow containers. Pack about 3.4 g toasted sesame seeds and 6 g sliced scallions per serving separately, using the measured totals of 13.5 g seeds and 25 g scallions. Add the toppings after reheating. Refrigerate promptly."
+      "Portion: Weigh the finished chicken-noodle mixture and distribute it evenly among four shallow containers. Pack 3 g toasted sesame seeds and 6 g sliced scallions per serving separately, using the measured totals of 12 g seeds and 24 g scallions. Add the toppings after reheating. Refrigerate promptly."
     ],
     "link": null,
     "notes": [
-      "Timing: About 55 minutes total with ready-trimmed sliced shiitakes and overlapping oven, skillet and noodle work. Two chicken batches are intentional: crowding the skillet steams the chicken. This replaces the proposed tofu recipe rather than offering tofu as the default.",
+      "Timing: About 55 minutes total with ready-trimmed sliced shiitakes and overlapping oven, skillet and noodle work on three burners: heat noodle water from the start and cook edamame in its separate small saucepan. Two chicken batches are intentional: crowding the skillet steams the chicken. This replaces the proposed tofu recipe rather than offering tofu as the default.",
       "Sodium: Use plain chicken without injected salt solution, unsalted edamame, unseasoned rice vinegar and lower-sodium noodles. The miso and tamari quantities are deliberately bounded. Their label values and the noodle brand can change sodium substantially; reduced-sodium does not mean sodium-free.",
       "Meal prep: Refrigerate shallow portions at 40 F or colder within 2 hours of cooking, or 1 hour above 90 F, and use within 3-4 days. Refrigerate the scallions separately. Keep the sesame seeds dry. Rinsing and thoroughly draining the soba helps avoid carrying excess starch and water into storage.",
-      "Reheating: Add 1 tablespoon water to one chicken-noodle portion. Cover with a vented lid and microwave in short intervals, gently loosening and turning the noodles between intervals, until the chicken and noodles reach 165 F in several places. Finish with the reserved 3.4 g sesame seeds and 6 g scallions for that meal.",
+      "Reheating: Add 1 tablespoon water to one chicken-noodle portion. Cover with a vented lid and microwave in short intervals, gently loosening and turning the noodles between intervals, until the chicken and noodles reach 165 F in several places. Finish with the reserved 3 g sesame seeds and 6 g scallions for that meal.",
       "Freezing: Freeze portions beyond the 3-4-day refrigerated window on prep day. Thaw overnight in the refrigerator and reheat the next day. Soba and bok choy can soften after freezing; refrigerator meal prep is the preferred texture plan, not a promise of unchanged freezer quality.",
       "Portion options: For a smaller meal, use 6 oz (170 g) dry soba instead of 8 oz for the four-serving batch, leaving chicken, edamame and vegetables unchanged. For a larger meal, use 12 oz (340 g) dry soba and add 1 extra tablespoon water per serving during reheating. Changes are not included in base nutrition.",
       "Health-conscious review: Chicken and edamame provide protein, vegetables contribute fiber and volume, and measured canola/sesame oils replace a heavy butter or cream sauce. Buckwheat content varies: ordinary soba is not necessarily 100% buckwheat or wholly whole grain. The overall eating pattern, not a single ingredient, supports blood-pressure management.",
       "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
-      "Allergens: Soy and sesame; most soba also contains wheat. Check the miso and noodle labels. Original recipe developed for this collection; not kitchen-tested."
+      "Allergens: Soy and sesame; most soba also contains wheat. Check the miso and noodle labels. Original recipe developed for this collection; not kitchen-tested.",
+      "Noodle selection: Hakubaku US/Canada no-salt soba is an example of the intended low-sodium type. The same brand's AU/EU versions contain salt. Check the actual package rather than relying on the brand name. Manufacturer reference: https://hakubaku.com.au/product/soba/.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
     ],
-    "nutrition": null,
+    "nutrition": {
+      "Calories": "About 670 kcal",
+      "Protein": "About 58 g",
+      "Carbohydrates": "About 69 g",
+      "Fat": "About 19 g",
+      "Fiber": "About 10 g",
+      "Saturated fat": "About 3 g",
+      "Sodium": "About 600 mg"
+    },
     "prepTime": "20 minutes",
     "rating": null,
     "servings": "4",
@@ -21353,10 +21396,21 @@
       "Portion options: For a smaller meal, reduce the dry barley from 150 g to 100 g for the batch and keep the fish and vegetables unchanged. For a larger meal, increase dry barley to 250 g and cooking water to 5 cups, still draining after the package cooking time. The nutrition estimate is for the base version, not these adjustments.",
       "Health-conscious review: Salmon, barley, vegetables, measured olive oil, nuts and a low-fat yogurt sauce fit a heart-conscious eating pattern. Barley that is pearled or quick-cooking is not necessarily a whole grain. Overall sodium, saturated fat and calories across the day still matter; this meal does not promise a blood-pressure or weight change.",
       "Food-safety basis: FDA Selecting and Serving Fresh and Frozen Seafood Safely, https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely; USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety.",
-      "Allergens: Fish, milk, sesame, pistachios and barley gluten. Original recipe developed for this collection; not kitchen-tested. Leave status as not-tried until cooked.",
-      "Flavor review: A thin measured Dijon coating helps the lemon-zaatar seasoning cling to the salmon. Zest supplies citrus aroma without an acidic overnight fish marinade. The 2 teaspoons mustard are included in the whole batch, not added to each serving. Mustard adds sodium, so the recipe does not increase its existing measured salt."
+      "Allergens: Fish, milk, sesame, pistachios, mustard and barley gluten. Original recipe developed for this collection; not kitchen-tested. Leave status as not-tried until cooked.",
+      "Flavor review: A thin measured Dijon coating helps the lemon-zaatar seasoning cling to the salmon. Zest supplies citrus aroma without an acidic overnight fish marinade. The 2 teaspoons mustard are included in the whole batch, not added to each serving. Mustard adds sodium, so the recipe does not increase its existing measured salt.",
+      "Salmon meal-prep quality: For your first trial, consider freezing the day-3 and day-4 fish portions promptly on prep day and thawing each overnight in the refrigerator before use. This is a flavor/texture preference, not an extension of the 3-4-day refrigerated safety window. Never try to improve an off-smelling fish portion with more seasoning.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
     ],
-    "nutrition": null,
+    "nutrition": {
+      "Calories": "About 680 kcal",
+      "Protein": "About 46 g",
+      "Carbohydrates": "About 51 g",
+      "Fat": "About 35 g",
+      "Fiber": "About 12 g",
+      "Saturated fat": "About 7 g",
+      "Sodium": "About 450 mg"
+    },
     "prepTime": "20 minutes",
     "rating": null,
     "servings": "4",

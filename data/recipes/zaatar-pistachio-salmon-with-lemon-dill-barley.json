@@ -144,10 +144,21 @@
     "Portion options: For a smaller meal, reduce the dry barley from 150 g to 100 g for the batch and keep the fish and vegetables unchanged. For a larger meal, increase dry barley to 250 g and cooking water to 5 cups, still draining after the package cooking time. The nutrition estimate is for the base version, not these adjustments.",
     "Health-conscious review: Salmon, barley, vegetables, measured olive oil, nuts and a low-fat yogurt sauce fit a heart-conscious eating pattern. Barley that is pearled or quick-cooking is not necessarily a whole grain. Overall sodium, saturated fat and calories across the day still matter; this meal does not promise a blood-pressure or weight change.",
     "Food-safety basis: FDA Selecting and Serving Fresh and Frozen Seafood Safely, https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely; USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety.",
-    "Allergens: Fish, milk, sesame, pistachios and barley gluten. Original recipe developed for this collection; not kitchen-tested. Leave status as not-tried until cooked.",
-    "Flavor review: A thin measured Dijon coating helps the lemon-zaatar seasoning cling to the salmon. Zest supplies citrus aroma without an acidic overnight fish marinade. The 2 teaspoons mustard are included in the whole batch, not added to each serving. Mustard adds sodium, so the recipe does not increase its existing measured salt."
+    "Allergens: Fish, milk, sesame, pistachios, mustard and barley gluten. Original recipe developed for this collection; not kitchen-tested. Leave status as not-tried until cooked.",
+    "Flavor review: A thin measured Dijon coating helps the lemon-zaatar seasoning cling to the salmon. Zest supplies citrus aroma without an acidic overnight fish marinade. The 2 teaspoons mustard are included in the whole batch, not added to each serving. Mustard adds sodium, so the recipe does not increase its existing measured salt.",
+    "Salmon meal-prep quality: For your first trial, consider freezing the day-3 and day-4 fish portions promptly on prep day and thawing each overnight in the refrigerator before use. This is a flavor/texture preference, not an extension of the 3-4-day refrigerated safety window. Never try to improve an off-smelling fish portion with more seasoning.",
+    "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+    "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
   ],
-  "nutrition": null,
+  "nutrition": {
+    "Calories": "About 680 kcal",
+    "Protein": "About 46 g",
+    "Carbohydrates": "About 51 g",
+    "Fat": "About 35 g",
+    "Fiber": "About 12 g",
+    "Saturated fat": "About 7 g",
+    "Sodium": "About 450 mg"
+  },
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "4",

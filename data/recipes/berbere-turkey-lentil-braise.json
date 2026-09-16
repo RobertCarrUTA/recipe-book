@@ -160,16 +160,26 @@
   "link": null,
   "notes": [
     "Timing: Allow about 55 minutes including chopping, preheating, browning and portioning. The cabbage, braise and yogurt are prepared in parallel. Use already-cooked canned lentils, not dry lentils; the stated time does not include cooking lentils from dry.",
-    "Heat control: Berbere varies enormously. For a hot blend, replace the 1 tablespoon berbere with 1 teaspoon berbere plus 2 teaspoons additional sweet paprika. This is in addition to the listed 1 tablespoon sweet paprika. Choose salt-free blends rather than adding salty stock to compensate for less chile heat.",
+    "Heat control: Berbere varies enormously. For a hot blend, use 1 teaspoon salt-free berbere and 1 tablespoon plus 2 teaspoons sweet paprika in the spice-blooming step, instead of the base 1 tablespoon berbere and 1 tablespoon paprika. Other quantities stay unchanged. Do not use a salty stock cube to compensate for less chile heat.",
     "Meal prep: Refrigerate in shallow containers at 40 F or colder within 2 hours, or within 1 hour above 90 F. Store the yogurt separately and use the refrigerated meals and sauce within 3-4 days. Do not repeatedly warm the full batch.",
     "Reheating: Add 1 tablespoon water to one braise/cabbage portion, cover with a vented lid and microwave, stirring between intervals, until the meal reaches 165 F in several places. Alternatively, heat in a covered saucepan, stirring and bringing the braise to a brief boil. Add the cold 70 g yogurt afterward.",
     "Freezing: Freeze hot-component portions that will not be eaten within 3-4 days on prep day. Thaw overnight in the refrigerator and reheat the following day. Keep yogurt within its refrigerated window; its texture may separate after freezing.",
     "Portion options: The base makes four substantial meals. For a smaller portion, divide the finished braise and cabbage into five meals and pack about 56 g yogurt per meal. For a larger portion, serve one base meal with 1/2 cup cooked unsalted quinoa (about 90 g); preparing that extra grain is not included in the base recipe time or nutrition.",
     "Health-conscious review: Lean turkey and lentils provide protein, while cabbage, spinach, onion and tomatoes add vegetable volume and fiber. The recipe uses measured olive oil and no-salt-added canned foods. Weight loss or muscle gain depends on total intake and activity, not the recipe title.",
     "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
-    "Allergens: Milk; spice blends may contain additional allergens. Original recipe developed for this collection; not kitchen-tested."
+    "Allergens: Milk; spice blends may contain additional allergens. Original recipe developed for this collection; not kitchen-tested.",
+    "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+    "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
   ],
-  "nutrition": null,
+  "nutrition": {
+    "Calories": "About 600 kcal",
+    "Protein": "About 52 g",
+    "Carbohydrates": "About 62 g",
+    "Fat": "About 20 g",
+    "Fiber": "About 21 g",
+    "Saturated fat": "About 5 g",
+    "Sodium": "About 575 mg"
+  },
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "4",

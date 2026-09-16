@@ -15,7 +15,9 @@
     "6-quart pot for cooking noodles and combining the finished meal",
     "Colander",
     "Instant-read thermometer",
-    "Four shallow meal-prep containers"
+    "Four shallow meal-prep containers",
+    "Small saucepan for cooking edamame in parallel",
+    "Digital kitchen scale"
   ],
   "groceryIngredients": [
     {
@@ -116,15 +118,15 @@
     },
     {
       "item": "sesame seeds",
-      "quantity": 1.5,
+      "quantity": 1.3333333333333333,
       "unit": "tbsp",
-      "note": "Toasted, unsalted."
+      "note": "Toasted, unsalted; measure 12 g total."
     },
     {
       "item": "scallion",
-      "quantity": 0.25,
-      "unit": "cup",
-      "note": "Thinly sliced, about 25 g."
+      "quantity": 24,
+      "unit": "g",
+      "note": "Thinly sliced."
     }
   ],
   "id": "ginger-sesame-chicken-soba",
@@ -144,31 +146,42 @@
     "Sauce: 1 tablespoon (20 g) pure maple syrup",
     "Sauce aromatics: 2 tablespoons (24 g) finely grated fresh ginger and 3 garlic cloves (9 g peeled), finely grated",
     "Sauce finish: 2 tablespoons (30 mL) fresh lime juice, 2 teaspoons toasted sesame oil and 1 teaspoon mild gochugaru",
-    "Toppings: 1 1/2 tablespoons (13.5 g) toasted unsalted sesame seeds and 1/4 cup (25 g) thinly sliced scallions"
+    "Toppings: 1 tablespoon plus 1 teaspoon (12 g) toasted unsalted sesame seeds and 24 g thinly sliced scallions (about 1/4 cup)"
   ],
   "instructions": [
-    "Start the roasted vegetables: Heat the oven to 425 F. Toss 8 oz (227 g) sliced shiitake caps and 12 oz (340 g) sliced carrots with 2 teaspoons canola oil on the sheet pan. Spread into one layer. Roast in the preheated oven for 20-25 minutes, turning at 12 minutes, until the mushrooms have browned edges and the carrots are tender.",
+    "Start the oven, noodle water and roasted vegetables: Heat the oven to 425 F. Put 10 cups unsalted water in the 6-quart noodle pot, cover and begin heating it on a separate burner while preparing the vegetables. Toss 8 oz (227 g) sliced shiitake caps and 12 oz (340 g) sliced carrots with 2 teaspoons canola oil on the sheet pan. Spread into one layer. Roast in the preheated oven for 20-25 minutes, turning at 12 minutes, until the mushrooms have browned edges and the carrots are tender.",
     "Prepare and brown the chicken: Pat 1 1/2 lb (680 g) chicken pieces dry and toss with 1 tablespoon (8 g) cornstarch. Preheat the 12-inch skillet over medium-high heat, then add 1 teaspoon canola oil. Add 12 oz (340 g) coated chicken in one layer. Cook undisturbed for about 3 minutes, then turn and cook 3-4 minutes more, until the thickest pieces reach 165 F. Transfer to a clean plate. Add 1 teaspoon canola oil and cook the second 12 oz (340 g) chicken batch the same way. Keep raw-chicken utensils and the cutting board away from cooked food.",
-    "Cook the edamame while the chicken browns: Bring 3 cups water to a boil in a saucepan. Add 1 1/2 cups (234 g) frozen shelled edamame and cook for the package's full cooking time, usually 4-6 minutes. Drain and set aside. Do not assume that merely thawed frozen edamame is ready to eat.",
-    "Cook the noodles: Refill the saucepan with 10 cups unsalted water and bring to a boil. Add 8 oz (227 g) dry soba. Cook for the lower end of the package's range, tasting for a tender but resilient noodle. Drain, rinse briefly under cold running water to remove loose starch and drain thoroughly again. The 8 oz quantity is the dry weight, not the cooked noodle yield.",
+    "Cook the edamame while the chicken browns: Bring 3 cups water to a boil in the small saucepan, separate from the noodle pot. Add 1 1/2 cups (234 g) frozen shelled edamame and cook for the package's full cooking time, usually 4-6 minutes. Drain and set aside. Do not assume that merely thawed frozen edamame is ready to eat.",
+    "Cook the noodles: Bring the 10 cups unsalted water already heating in the 6-quart noodle pot to a rolling boil; do not add another 10 cups. Add 8 oz (227 g) dry soba. Cook for the lower end of the package's range, tasting for a tender but resilient noodle. Drain, rinse briefly under cold running water to remove loose starch and drain thoroughly again. The 8 oz quantity is the dry weight, not the cooked noodle yield.",
     "Cook the bok choy and aromatics: After the chicken is on its clean plate, add 1 teaspoon canola oil to the skillet. Add the sliced stems from 1 lb (454 g) prepared bok choy and stir-fry for 2 minutes. Add the leaves from the same 1 lb bok choy and 2 tablespoons water; cover for 1-2 minutes. Uncover and let surface moisture evaporate. Stir in 2 tablespoons (24 g) grated ginger and 9 g grated garlic and cook for 30 seconds, lowering the heat if the garlic begins to color.",
     "Make the sauce directly in the skillet: Whisk 1 tablespoon (17 g) white miso with 3 tablespoons (45 mL) water in a small cup until smooth. Add this measured miso-water mixture to the skillet along with 1 tablespoon (15 mL) reduced-sodium tamari, 3 tablespoons (45 mL) rice vinegar and 1 tablespoon (20 g) maple syrup. Stir for about 1 minute over medium heat; do not reduce it to a sticky glaze.",
     "Combine and finish in the emptied 6-quart noodle pot, not the crowded skillet: Put the noodles cooked from 8 oz dry soba, the cooked chicken made from 1 1/2 lb raw chicken, the cooked 1 1/2 cups edamame, and the roasted vegetables made from 8 oz shiitakes and 12 oz carrots into the pot. Scrape the bok choy and sauce made in the preceding two steps into the same pot. This transfers the sauce made with 1 tablespoon miso, 1 tablespoon tamari, 3 tablespoons vinegar, 3 tablespoons water and 1 tablespoon maple syrup; it does not call for another batch. Toss gently over low heat until hot, then turn off the heat and add 2 tablespoons (30 mL) lime juice, 2 teaspoons toasted sesame oil and 1 teaspoon gochugaru. No extra salt or soy sauce is called for.",
-    "Portion: Weigh the finished chicken-noodle mixture and distribute it evenly among four shallow containers. Pack about 3.4 g toasted sesame seeds and 6 g sliced scallions per serving separately, using the measured totals of 13.5 g seeds and 25 g scallions. Add the toppings after reheating. Refrigerate promptly."
+    "Portion: Weigh the finished chicken-noodle mixture and distribute it evenly among four shallow containers. Pack 3 g toasted sesame seeds and 6 g sliced scallions per serving separately, using the measured totals of 12 g seeds and 24 g scallions. Add the toppings after reheating. Refrigerate promptly."
   ],
   "link": null,
   "notes": [
-    "Timing: About 55 minutes total with ready-trimmed sliced shiitakes and overlapping oven, skillet and noodle work. Two chicken batches are intentional: crowding the skillet steams the chicken. This replaces the proposed tofu recipe rather than offering tofu as the default.",
+    "Timing: About 55 minutes total with ready-trimmed sliced shiitakes and overlapping oven, skillet and noodle work on three burners: heat noodle water from the start and cook edamame in its separate small saucepan. Two chicken batches are intentional: crowding the skillet steams the chicken. This replaces the proposed tofu recipe rather than offering tofu as the default.",
     "Sodium: Use plain chicken without injected salt solution, unsalted edamame, unseasoned rice vinegar and lower-sodium noodles. The miso and tamari quantities are deliberately bounded. Their label values and the noodle brand can change sodium substantially; reduced-sodium does not mean sodium-free.",
     "Meal prep: Refrigerate shallow portions at 40 F or colder within 2 hours of cooking, or 1 hour above 90 F, and use within 3-4 days. Refrigerate the scallions separately. Keep the sesame seeds dry. Rinsing and thoroughly draining the soba helps avoid carrying excess starch and water into storage.",
-    "Reheating: Add 1 tablespoon water to one chicken-noodle portion. Cover with a vented lid and microwave in short intervals, gently loosening and turning the noodles between intervals, until the chicken and noodles reach 165 F in several places. Finish with the reserved 3.4 g sesame seeds and 6 g scallions for that meal.",
+    "Reheating: Add 1 tablespoon water to one chicken-noodle portion. Cover with a vented lid and microwave in short intervals, gently loosening and turning the noodles between intervals, until the chicken and noodles reach 165 F in several places. Finish with the reserved 3 g sesame seeds and 6 g scallions for that meal.",
     "Freezing: Freeze portions beyond the 3-4-day refrigerated window on prep day. Thaw overnight in the refrigerator and reheat the next day. Soba and bok choy can soften after freezing; refrigerator meal prep is the preferred texture plan, not a promise of unchanged freezer quality.",
     "Portion options: For a smaller meal, use 6 oz (170 g) dry soba instead of 8 oz for the four-serving batch, leaving chicken, edamame and vegetables unchanged. For a larger meal, use 12 oz (340 g) dry soba and add 1 extra tablespoon water per serving during reheating. Changes are not included in base nutrition.",
     "Health-conscious review: Chicken and edamame provide protein, vegetables contribute fiber and volume, and measured canola/sesame oils replace a heavy butter or cream sauce. Buckwheat content varies: ordinary soba is not necessarily 100% buckwheat or wholly whole grain. The overall eating pattern, not a single ingredient, supports blood-pressure management.",
     "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
-    "Allergens: Soy and sesame; most soba also contains wheat. Check the miso and noodle labels. Original recipe developed for this collection; not kitchen-tested."
+    "Allergens: Soy and sesame; most soba also contains wheat. Check the miso and noodle labels. Original recipe developed for this collection; not kitchen-tested.",
+    "Noodle selection: Hakubaku US/Canada no-salt soba is an example of the intended low-sodium type. The same brand's AU/EU versions contain salt. Check the actual package rather than relying on the brand name. Manufacturer reference: https://hakubaku.com.au/product/soba/.",
+    "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+    "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
   ],
-  "nutrition": null,
+  "nutrition": {
+    "Calories": "About 670 kcal",
+    "Protein": "About 58 g",
+    "Carbohydrates": "About 69 g",
+    "Fat": "About 19 g",
+    "Fiber": "About 10 g",
+    "Saturated fat": "About 3 g",
+    "Sodium": "About 600 mg"
+  },
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "4",

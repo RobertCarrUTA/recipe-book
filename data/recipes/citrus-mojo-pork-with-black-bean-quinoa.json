@@ -166,7 +166,7 @@
     "Make the salsa while the hot components cook: Combine 120 g diced red onion, 15 g minced jalapeno and 2 tablespoons (30 mL) lime juice in a clean bowl. Let stand for 5-10 minutes while preparing 3 cups (495 g) diced pineapple and 300 g diced red bell pepper. Stir the prepared pineapple and bell pepper into the lime-onion mixture with 1/2 cup (16 g) chopped cilantro. Refrigerate until portioning. The measured lime juice is used once, at the start of this step.",
     "Finish the quinoa: Fold the drained beans from two 15-oz cans, approximately 500 g drained, into the quinoa cooked from 255 g dry grain. Stir in 1 tablespoon olive oil and 1/4 teaspoon (1.5 g) fine sea salt. Warm over low heat for 2-3 minutes, stirring, until the beans are hot. Turn off the heat and fold in 1/2 cup (16 g) chopped cilantro.",
     "Sauce the pork: Slice the rested pork made from 2 lb raw tenderloin across the grain into 1/2-inch slices and place in the large heatproof mixing bowl. Pour the prepared mojo made from 1/2 cup orange juice, 9 g garlic, 1 teaspoon cumin, 1 teaspoon oregano, 1/4 teaspoon black pepper and 2 tablespoons lime juice over the slices and turn gently to coat. These quantities identify the sauce already prepared, not new ingredient additions. The wide bowl gives the sliced pork room that the small saucepan does not.",
-    "Portion: Weigh the cooked pork with its mojo and divide evenly among six shallow containers, then distribute the finished black-bean quinoa evenly among them. Divide the finished salsa into six separate chilled cups. Pack 10 g pepitas for each meal. At serving time add 50 g freshly sliced avocado, using about 300 g edible flesh across six meals; keep whole avocados uncut until needed."
+    "Portion: Weigh the cooked pork with its mojo and divide evenly among six shallow containers, then distribute the finished black-bean quinoa evenly among them. Pack approximately 180 g finished pineapple-pepper salsa in each of six separate chilled cups; produce moisture makes the final yield approximate. Pack 10 g pepitas for each meal. At serving time add 50 g freshly sliced avocado, using about 300 g edible flesh across six meals; keep whole avocados uncut until needed."
   ],
   "link": null,
   "notes": [
@@ -178,9 +178,19 @@
     "Portion options: For a smaller meal, keep the pork, beans and vegetables but use 170 g dry quinoa with 2 cups water for the batch, then serve 25 g avocado and 5 g pepitas per meal. For a larger meal, divide the full base batch into five meals instead of six; use 60 g avocado and 12 g pepitas per meal. Nutrition for the base six-serving version does not apply unchanged to either option.",
     "Health-conscious review: Tenderloin is an unprocessed lean pork cut. Quinoa, beans, produce and measured olive oil, avocado and seeds create a more balanced plate than making a calorie surplus primarily from butter or processed meat. Healthy bulking still requires an appropriate total calorie surplus and resistance training; this is not a promise of muscle gain.",
     "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
-    "Allergens: Check spice labels and possible seed cross-contact. Original recipe developed for this collection; not kitchen-tested."
+    "Allergens: Check spice labels and possible seed cross-contact. Original recipe developed for this collection; not kitchen-tested.",
+    "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+    "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
   ],
-  "nutrition": null,
+  "nutrition": {
+    "Calories": "About 710 kcal",
+    "Protein": "About 51 g",
+    "Carbohydrates": "About 74 g",
+    "Fat": "About 26 g",
+    "Fiber": "About 18 g",
+    "Saturated fat": "About 5 g",
+    "Sodium": "About 375 mg"
+  },
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "6",

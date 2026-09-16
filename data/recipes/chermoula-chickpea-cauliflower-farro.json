@@ -171,9 +171,19 @@
     "Portion options: The base makes five generous vegetable-forward meals. For more energy, divide the same batch into four meals and use about 50 g sauce, 44 g pomegranate and 8.75 g almonds per meal. For additional protein without tofu, add 170 g plain nonfat Greek yogurt to an individual meal as a separate savory side; this changes the vegan and milk-allergen status and is not included in base nutrition.",
     "Health-conscious review: Chickpeas, vegetables, seeds and nuts provide fiber and plant protein with measured olive oil and salt. Quick-cooking pearled farro is not necessarily a whole grain; the label is based on the complete meal, not an unsupported whole-grain claim. Portions and the rest of the day's intake determine suitability for weight loss or bulking.",
     "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
-    "Allergens: Wheat, sesame and almonds. Original recipe developed for this collection; not kitchen-tested."
+    "Allergens: Wheat, sesame and almonds. Original recipe developed for this collection; not kitchen-tested.",
+    "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+    "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
   ],
-  "nutrition": null,
+  "nutrition": {
+    "Calories": "About 580 kcal",
+    "Protein": "About 24 g",
+    "Carbohydrates": "About 85 g",
+    "Fat": "About 21 g",
+    "Fiber": "About 21 g",
+    "Saturated fat": "About 2.5 g",
+    "Sodium": "About 350 mg"
+  },
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "5",

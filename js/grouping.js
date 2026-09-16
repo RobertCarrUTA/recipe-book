@@ -4,6 +4,7 @@ import { escapeRegex } from "./normalization.js";
 INGREDIENT GROUP MAP
 ================================ */
 const ingredientGroups = {
+  "red wine vinegar": "Sauces, Marinades, & Condiments",
   "almonds": "Baking",
   "barley": "Pantry",
   "bok choy": "Vegetables",
