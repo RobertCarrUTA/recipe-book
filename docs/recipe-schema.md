@@ -129,13 +129,18 @@ The **Collection** picker includes two editorial labels alongside dish types. It
 
 These criteria take general eating-pattern context from the [NIH DASH eating plan](https://www.nhlbi.nih.gov/health/dash-eating-plan), not a certification of any individual recipe. Health-conscious does not mean low sodium, low saturated fat, low calorie, or a specific nutrient target. Portions, brands, substitutions, and the overall diet matter. The oatmeal retains its whole-milk base and existing lower-fat substitution; the label does not imply those versions have identical nutrition.
 
-Only the following recipes receive both labels in the initial reviewed set:
+The following recipes receive both labels after individual editorial review:
 
 - `oatmeal-with-fruit`
 - `smoky-lemon-chicken-with-brown-rice`
 - `chipotle-lime-chicken-with-sweet-potatoes`
 - `orange-ginger-chicken-with-brown-rice`
 - `tomato-balsamic-chicken-with-white-beans`
+- `berbere-turkey-lentil-braise`
+- `chermoula-chickpea-cauliflower-farro`
+- `citrus-mojo-pork-with-black-bean-quinoa`
+- `ginger-sesame-chicken-soba`
+- `zaatar-pistachio-salmon-with-lemon-dill-barley`
 
 Preserve their existing Breakfast/Main Dishes membership. Other recipes are **not assessed**, not unhealthy or unsuitable for meal prep. Do not bulk-assign these labels, infer them from keywords, or automatically label future recipes. A later expansion needs explicit recipe-by-recipe review and an intentional update to the scoped membership test. Collection labels do not change tried status, ratings, ingredient quantities, or nutrition fields.
 

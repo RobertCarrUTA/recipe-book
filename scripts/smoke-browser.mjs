@@ -161,17 +161,24 @@ const browserChecks = [
     async run(page) {
       await openApp(page, { debug: true });
       const expectedIds = [
-        "chipotle-lime-chicken-with-sweet-potatoes", "oatmeal-with-fruit",
-        "orange-ginger-chicken-with-brown-rice", "smoky-lemon-chicken-with-brown-rice",
-        "tomato-balsamic-chicken-with-white-beans",
-      ];
+  "berbere-turkey-lentil-braise",
+  "chermoula-chickpea-cauliflower-farro",
+  "chipotle-lime-chicken-with-sweet-potatoes",
+  "citrus-mojo-pork-with-black-bean-quinoa",
+  "ginger-sesame-chicken-soba",
+  "oatmeal-with-fruit",
+  "orange-ginger-chicken-with-brown-rice",
+  "smoky-lemon-chicken-with-brown-rice",
+  "tomato-balsamic-chicken-with-white-beans",
+  "zaatar-pistachio-salmon-with-lemon-dill-barley"
+];
       for (const collectionId of ["health-conscious", "meal-prep-friendly"]) {
         await page.selectOption("#recipeCollection", collectionId);
-        await page.waitForFunction(() => document.querySelectorAll(".recipe").length === 5);
+        await page.waitForFunction(() => document.querySelectorAll(".recipe").length === 10);
         assert.deepEqual(await page.locator(".recipe:visible").evaluateAll(
           (elements) => elements.map((element) => element.dataset.recipeId).sort()
         ), expectedIds);
-        assert.equal(await page.locator(".recipe-collection-badge:visible").count(), 10);
+        assert.equal(await page.locator(".recipe-collection-badge:visible").count(), 20);
         assert.equal(await page.locator("#recipeCollectionHelp").isVisible(), true);
         assert.equal(await page.locator("#recipeCollection").getAttribute("aria-describedby"), "recipeCollectionHelp");
         await assertNoHorizontalOverflow(page, ["#recipeCollection", "#recipeCollectionHelp", ".recipe"]);
@@ -179,7 +186,7 @@ const browserChecks = [
         await page.reload({ waitUntil: "networkidle" });
         await page.waitForSelector(".recipe");
         assert.equal(await page.locator("#recipeCollection").inputValue(), collectionId);
-        assert.equal(await visibleRecipeCount(page), 5);
+        assert.equal(await visibleRecipeCount(page), 10);
       }
       if (viewport.width < 980) {
         const search = page.locator(".recipe-search");
@@ -190,7 +197,7 @@ const browserChecks = [
         assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "static");
       }
       await page.selectOption("#recipeSort", "fastest");
-      assert.equal(await visibleRecipeCount(page), 5);
+      assert.equal(await visibleRecipeCount(page), 10);
       await page.fill("#recipeSearch", "oatmeal");
       await page.waitForFunction(() => document.querySelectorAll(".recipe").length === 1);
       assert.equal(await page.locator(".recipe").getAttribute("data-recipe-id"), "oatmeal-with-fruit");

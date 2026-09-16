@@ -36,6 +36,13 @@
       }
     },
     {
+      "item": "93% lean ground turkey",
+      "canonical": {
+        "base": "93% lean ground turkey",
+        "display": "93% lean ground turkey"
+      }
+    },
+    {
       "item": "active dry or instant yeast",
       "canonical": {
         "base": "active dry or instant yeast",
@@ -147,6 +154,13 @@
       "canonical": {
         "base": "baby arugula",
         "display": "baby arugula"
+      }
+    },
+    {
+      "item": "baby bok choy",
+      "canonical": {
+        "base": "baby bok choy",
+        "display": "baby bok choy"
       }
     },
     {
@@ -475,6 +489,13 @@
       }
     },
     {
+      "item": "cauliflower florets",
+      "canonical": {
+        "base": "cauliflower florets",
+        "display": "cauliflower florets"
+      }
+    },
+    {
       "item": "cayenne pepper",
       "canonical": {
         "base": "cayenne pepper",
@@ -509,6 +530,13 @@
         "base": "cheddar cheese",
         "display": "cheddar cheese",
         "notes": []
+      }
+    },
+    {
+      "item": "cherry tomatoes",
+      "canonical": {
+        "base": "cherry tomatoes",
+        "display": "cherry tomatoes"
       }
     },
     {
@@ -934,6 +962,14 @@
       }
     },
     {
+      "item": "fine sea salt",
+      "canonical": {
+        "base": "sea salt",
+        "display": "sea salt",
+        "notes": []
+      }
+    },
+    {
       "item": "fire-roasted diced tomatoes",
       "canonical": {
         "base": "fire-roasted diced tomatoes",
@@ -1032,6 +1068,13 @@
       "canonical": {
         "base": "blueberries",
         "display": "blueberries"
+      }
+    },
+    {
+      "item": "fresh cilantro",
+      "canonical": {
+        "base": "fresh cilantro",
+        "display": "fresh cilantro"
       }
     },
     {
@@ -1141,6 +1184,13 @@
       }
     },
     {
+      "item": "frozen shelled edamame",
+      "canonical": {
+        "base": "frozen shelled edamame",
+        "display": "frozen shelled edamame"
+      }
+    },
+    {
       "item": "frozen wild blueberries",
       "canonical": {
         "base": "blueberries",
@@ -1166,6 +1216,13 @@
       "canonical": {
         "base": "garlic powder",
         "display": "garlic powder"
+      }
+    },
+    {
+      "item": "gochugaru",
+      "canonical": {
+        "base": "gochugaru",
+        "display": "gochugaru"
       }
     },
     {
@@ -1242,6 +1299,13 @@
       }
     },
     {
+      "item": "green cabbage",
+      "canonical": {
+        "base": "green cabbage",
+        "display": "green cabbage"
+      }
+    },
+    {
       "item": "green onion",
       "canonical": {
         "base": "green onion",
@@ -1309,6 +1373,13 @@
       "canonical": {
         "base": "ground pork",
         "display": "ground pork"
+      }
+    },
+    {
+      "item": "ground turmeric",
+      "canonical": {
+        "base": "ground turmeric",
+        "display": "ground turmeric"
       }
     },
     {
@@ -1409,6 +1480,13 @@
       "canonical": {
         "base": "jasmine rice",
         "display": "jasmine rice"
+      }
+    },
+    {
+      "item": "kale",
+      "canonical": {
+        "base": "kale",
+        "display": "kale"
       }
     },
     {
@@ -1643,6 +1721,13 @@
       }
     },
     {
+      "item": "medjool dates",
+      "canonical": {
+        "base": "medjool dates",
+        "display": "medjool dates"
+      }
+    },
+    {
       "item": "mexican oregano",
       "canonical": {
         "base": "mexican oregano",
@@ -1747,6 +1832,46 @@
       "canonical": {
         "base": "neutral high-heat oil",
         "display": "neutral high-heat oil"
+      }
+    },
+    {
+      "item": "no-salt-added black beans",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "no-salt-added chickpeas",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "no-salt-added crushed tomatoes",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "no-salt-added lentils",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "no-salt-added tomato paste",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
       }
     },
     {
@@ -2004,6 +2129,13 @@
       }
     },
     {
+      "item": "pineapple",
+      "canonical": {
+        "base": "pineapple",
+        "display": "pineapple"
+      }
+    },
+    {
       "item": "pineapple juice",
       "canonical": {
         "base": "pineapple juice",
@@ -2053,6 +2185,14 @@
       }
     },
     {
+      "item": "plain 2% greek yogurt",
+      "canonical": {
+        "base": "greek yogurt",
+        "display": "greek yogurt",
+        "notes": []
+      }
+    },
+    {
       "item": "plain shredded cabbage and carrot coleslaw mix",
       "canonical": {
         "base": "plain shredded cabbage and carrot coleslaw mix",
@@ -2067,6 +2207,13 @@
       }
     },
     {
+      "item": "pomegranate arils",
+      "canonical": {
+        "base": "pomegranate arils",
+        "display": "pomegranate arils"
+      }
+    },
+    {
       "item": "poppy seeds",
       "canonical": {
         "base": "poppy seeds",
@@ -2078,6 +2225,13 @@
       "canonical": {
         "base": "pork sausage",
         "display": "pork sausage"
+      }
+    },
+    {
+      "item": "pork tenderloin",
+      "canonical": {
+        "base": "pork tenderloin",
+        "display": "pork tenderloin"
       }
     },
     {
@@ -2159,6 +2313,34 @@
       }
     },
     {
+      "item": "pure maple syrup",
+      "canonical": {
+        "base": "maple syrup",
+        "display": "maple syrup"
+      }
+    },
+    {
+      "item": "quick-cooking barley",
+      "canonical": {
+        "base": "quick-cooking barley",
+        "display": "quick-cooking barley"
+      }
+    },
+    {
+      "item": "quick-cooking farro",
+      "canonical": {
+        "base": "quick-cooking farro",
+        "display": "quick-cooking farro"
+      }
+    },
+    {
+      "item": "quinoa",
+      "canonical": {
+        "base": "quinoa",
+        "display": "quinoa"
+      }
+    },
+    {
       "item": "raspberries",
       "canonical": {
         "base": "raspberries",
@@ -2212,6 +2394,13 @@
       "canonical": {
         "base": "red wine vinegar",
         "display": "red wine vinegar"
+      }
+    },
+    {
+      "item": "reduced-sodium tamari",
+      "canonical": {
+        "base": "reduced-sodium tamari",
+        "display": "reduced-sodium tamari"
       }
     },
     {
@@ -2279,11 +2468,34 @@
       }
     },
     {
+      "item": "salt-free berbere seasoning",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "salt-free zaatar seasoning",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
       "item": "salted butter",
       "canonical": {
         "base": "salted butter",
         "display": "salted butter",
         "notes": []
+      }
+    },
+    {
+      "item": "scallion",
+      "canonical": {
+        "base": "scallion",
+        "display": "scallion"
       }
     },
     {
@@ -2352,6 +2564,13 @@
       }
     },
     {
+      "item": "shiitake mushrooms",
+      "canonical": {
+        "base": "shiitake mushrooms",
+        "display": "shiitake mushrooms"
+      }
+    },
+    {
       "item": "short-grain white rice",
       "canonical": {
         "base": "short-grain white rice",
@@ -2367,6 +2586,13 @@
       }
     },
     {
+      "item": "skinless salmon fillet",
+      "canonical": {
+        "base": "skinless salmon fillet",
+        "display": "skinless salmon fillet"
+      }
+    },
+    {
       "item": "sliced pepperoncini peppers",
       "canonical": {
         "base": "sliced pepperoncini peppers",
@@ -2378,6 +2604,13 @@
       "canonical": {
         "base": "smoked paprika",
         "display": "smoked paprika"
+      }
+    },
+    {
+      "item": "soba noodles",
+      "canonical": {
+        "base": "soba noodles",
+        "display": "soba noodles"
       }
     },
     {
@@ -2468,6 +2701,13 @@
       }
     },
     {
+      "item": "tahini",
+      "canonical": {
+        "base": "tahini",
+        "display": "tahini"
+      }
+    },
+    {
       "item": "tapioca starch",
       "canonical": {
         "base": "tapioca starch",
@@ -2545,11 +2785,42 @@
       }
     },
     {
+      "item": "unsalted almonds",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
       "item": "unsalted butter",
       "canonical": {
         "base": "unsalted butter",
         "display": "unsalted butter",
         "notes": []
+      }
+    },
+    {
+      "item": "unsalted pepitas",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "unsalted pistachios",
+      "canonical": {
+        "base": "salt",
+        "display": "salt",
+        "notes": []
+      }
+    },
+    {
+      "item": "unseasoned rice vinegar",
+      "canonical": {
+        "base": "unseasoned rice vinegar",
+        "display": "unseasoned rice vinegar"
       }
     },
     {
@@ -2613,6 +2884,13 @@
       "canonical": {
         "base": "white chocolate",
         "display": "white chocolate"
+      }
+    },
+    {
+      "item": "white miso",
+      "canonical": {
+        "base": "white miso",
+        "display": "white miso"
       }
     },
     {

@@ -20442,5 +20442,988 @@
     },
     "title": "Tomato-Balsamic Chicken with White Beans and Spinach",
     "totalTime": "50 minutes"
+  },
+  {
+    "additionalTime": "0 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "35 minutes",
+    "description": "Browned turkey and lentils in a spiced tomato braise, served with deeply roasted cabbage and cold lemon-herb yogurt. Tomato paste, ginger and warm spices build flavor without a stock cube or salty bottled sauce.",
+    "equipment": [
+      "Oven",
+      "18-by-13-inch rimmed sheet pan",
+      "5-6-quart Dutch oven or braiser",
+      "Digital kitchen scale",
+      "Instant-read thermometer",
+      "Four shallow meal-prep containers and four sauce cups"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "green cabbage",
+        "quantity": 1,
+        "unit": "lb"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 4,
+        "unit": "tsp"
+      },
+      {
+        "item": "fine sea salt",
+        "quantity": 0.625,
+        "unit": "tsp",
+        "note": "3.75 g total; use a fine salt weighing about 6 g per teaspoon."
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "93% lean ground turkey",
+        "quantity": 1.25,
+        "unit": "lb",
+        "note": "Plain, unseasoned, without added brine."
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1,
+        "unit": "item",
+        "note": "Large; use 225 g peeled onion."
+      },
+      {
+        "item": "garlic",
+        "quantity": 4,
+        "unit": "clove",
+        "note": "About 9 g for the braise and 4 g for the yogurt."
+      },
+      {
+        "item": "fresh ginger",
+        "quantity": 1,
+        "unit": "tbsp",
+        "note": "Finely grated, about 12 g."
+      },
+      {
+        "item": "salt-free berbere seasoning",
+        "quantity": 1,
+        "unit": "tbsp",
+        "note": "Use a mild blend; see the measured lower-heat variation."
+      },
+      {
+        "item": "sweet paprika",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "ground cinnamon",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "no-salt-added tomato paste",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "no-salt-added crushed tomatoes",
+        "quantity": 1,
+        "unit": "can",
+        "note": "28 oz can."
+      },
+      {
+        "item": "no-salt-added lentils",
+        "quantity": 2,
+        "unit": "can",
+        "note": "15 oz each; cooked, drained and rinsed, approximately 500 g drained total. Do not substitute dry lentils directly."
+      },
+      {
+        "item": "baby spinach",
+        "quantity": 8,
+        "unit": "oz"
+      },
+      {
+        "item": "plain 2% Greek yogurt",
+        "quantity": 228,
+        "unit": "g"
+      },
+      {
+        "item": "lemon",
+        "quantity": 1,
+        "unit": "item",
+        "note": "Need 2 tablespoons juice and 1 teaspoon zest."
+      },
+      {
+        "item": "fresh cilantro",
+        "quantity": 0.5,
+        "unit": "cup",
+        "note": "Finely chopped, about 16 g."
+      },
+      {
+        "item": "red wine vinegar",
+        "quantity": 2,
+        "unit": "tsp"
+      }
+    ],
+    "id": "berbere-turkey-lentil-braise",
+    "ingredients": [
+      "Cabbage: 1 lb (454 g) green cabbage, cut into 1-inch-wide ribbons",
+      "Cabbage: 2 teaspoons extra-virgin olive oil, 1/8 teaspoon (0.75 g) fine sea salt and 1/4 teaspoon black pepper",
+      "Braise: 1 1/4 lb (567 g) plain 93% lean ground turkey",
+      "Braise: 2 teaspoons extra-virgin olive oil",
+      "Braise: 1 large yellow onion (225 g peeled), finely diced",
+      "Braise: 3 garlic cloves (9 g peeled), minced, and 1 tablespoon (12 g) finely grated fresh ginger",
+      "Braise: 1 tablespoon salt-free mild berbere, 1 tablespoon sweet paprika, 1 teaspoon ground cumin and 1/4 teaspoon ground cinnamon",
+      "Braise: 2 tablespoons (32 g) no-salt-added tomato paste",
+      "Braise: one 28-oz (794 g) can no-salt-added crushed tomatoes",
+      "Braise: two 15-oz cans no-salt-added cooked lentils, drained and rinsed, approximately 500 g drained total",
+      "Braise: 1/2 cup (120 mL) water and 1/2 teaspoon (3 g) fine sea salt",
+      "Braise finish: 8 oz (227 g) baby spinach",
+      "Yogurt: 228 g plain 2% Greek yogurt, measured by weight",
+      "Yogurt: 2 tablespoons (30 g) fresh lemon juice and 1 teaspoon (2 g) finely grated lemon zest",
+      "Yogurt: 1 garlic clove (4 g peeled), finely grated",
+      "Yogurt: 1/2 cup (16 g) finely chopped fresh cilantro",
+      "Braise finish: 2 teaspoons (10 mL) red wine vinegar"
+    ],
+    "instructions": [
+      "Roast the cabbage: Heat the oven to 450 F. Toss 1 lb (454 g) cabbage ribbons with 2 teaspoons olive oil, 1/8 teaspoon (0.75 g) fine sea salt and 1/4 teaspoon black pepper on the sheet pan. Spread into a single layer. Once the oven is hot, roast for 20-25 minutes, turning at about 12 minutes, until tender with dark golden edges rather than blackened leaves.",
+      "Brown the turkey while the cabbage roasts: Heat 2 teaspoons olive oil in a 5-6-quart Dutch oven over medium-high heat. Add 1 1/4 lb (567 g) ground turkey in a broad layer. Leave it undisturbed for 3 minutes, then turn and break into coarse crumbles. Cook for another 3-4 minutes so browned patches develop; avoid constantly stirring the meat into a fine, steamed crumble.",
+      "Build the braise: Add 225 g diced yellow onion to the turkey and cook for 5 minutes, stirring. Stir in 2 tablespoons (32 g) tomato paste and cook for 90 seconds until slightly darker. Lower the heat to medium. Add 9 g minced garlic, 1 tablespoon (12 g) grated ginger, 1 tablespoon mild salt-free berbere, 1 tablespoon sweet paprika, 1 teaspoon cumin and 1/4 teaspoon cinnamon; stir for 30 seconds, then proceed immediately to the liquid ingredients. Do not keep frying the ground spices until they blacken.",
+      "Simmer: Stir in one 28-oz (794 g) can crushed tomatoes, the drained lentils from two 15-oz cans (about 500 g drained), 1/2 cup (120 mL) water and 1/2 teaspoon (3 g) fine sea salt. Scrape up the browned bits. Bring to a simmer and cook uncovered for 10-12 minutes, stirring occasionally, until thick but still spoonable.",
+      "Make the cold yogurt during the simmer: Mix 228 g plain 2% Greek yogurt, 2 tablespoons (30 g) lemon juice, 1 teaspoon (2 g) lemon zest, 4 g grated garlic and 1/2 cup (16 g) chopped cilantro. The measured ingredients make about 280 g sauce. Refrigerate until portioning.",
+      "Finish and check doneness: Fold 8 oz (227 g) baby spinach into the braise in two additions of 4 oz (113-114 g) each. Cook for 2-3 minutes until wilted. Check that the turkey crumbles and the surrounding braise reach at least 165 F. Turn off the heat and stir in 2 teaspoons (10 mL) red wine vinegar to brighten the tomato-lentil mixture.",
+      "Portion: Weigh the cooked braise and portion evenly among four shallow containers. Weigh the cooked cabbage and distribute evenly among the same four meals. Pack about 70 g lemon-herb yogurt in each separate sauce cup. Keep the yogurt cold and add it only after reheating a meal. Refrigerate promptly rather than waiting for a deep pot of braise to cool on the counter."
+    ],
+    "link": null,
+    "notes": [
+      "Timing: Allow about 55 minutes including chopping, preheating, browning and portioning. The cabbage, braise and yogurt are prepared in parallel. Use already-cooked canned lentils, not dry lentils; the stated time does not include cooking lentils from dry.",
+      "Heat control: Berbere varies enormously. For a hot blend, use 1 teaspoon salt-free berbere and 1 tablespoon plus 2 teaspoons sweet paprika in the spice-blooming step, instead of the base 1 tablespoon berbere and 1 tablespoon paprika. Other quantities stay unchanged. Do not use a salty stock cube to compensate for less chile heat.",
+      "Meal prep: Refrigerate in shallow containers at 40 F or colder within 2 hours, or within 1 hour above 90 F. Store the yogurt separately and use the refrigerated meals and sauce within 3-4 days. Do not repeatedly warm the full batch.",
+      "Reheating: Add 1 tablespoon water to one braise/cabbage portion, cover with a vented lid and microwave, stirring between intervals, until the meal reaches 165 F in several places. Alternatively, heat in a covered saucepan, stirring and bringing the braise to a brief boil. Add the cold 70 g yogurt afterward.",
+      "Freezing: Freeze hot-component portions that will not be eaten within 3-4 days on prep day. Thaw overnight in the refrigerator and reheat the following day. Keep yogurt within its refrigerated window; its texture may separate after freezing.",
+      "Portion options: The base makes four substantial meals. For a smaller portion, divide the finished braise and cabbage into five meals and pack about 56 g yogurt per meal. For a larger portion, serve one base meal with 1/2 cup cooked unsalted quinoa (about 90 g); preparing that extra grain is not included in the base recipe time or nutrition.",
+      "Health-conscious review: Lean turkey and lentils provide protein, while cabbage, spinach, onion and tomatoes add vegetable volume and fiber. The recipe uses measured olive oil and no-salt-added canned foods. Weight loss or muscle gain depends on total intake and activity, not the recipe title.",
+      "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
+      "Allergens: Milk; spice blends may contain additional allergens. Original recipe developed for this collection; not kitchen-tested.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
+    ],
+    "nutrition": {
+      "Calories": "About 600 kcal",
+      "Protein": "About 52 g",
+      "Carbohydrates": "About 62 g",
+      "Fat": "About 20 g",
+      "Fiber": "About 21 g",
+      "Saturated fat": "About 5 g",
+      "Sodium": "About 575 mg"
+    },
+    "prepTime": "20 minutes",
+    "rating": null,
+    "servings": "4",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "dutch-oven",
+        "oven",
+        "sheet-pan",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Berbere Turkey-Lentil Braise",
+    "totalTime": "55 minutes"
+  },
+  {
+    "additionalTime": "0 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "35 minutes",
+    "description": "Cumin-coriander roasted cauliflower and chickpeas with farro, lemon-softened kale, green herb-tahini sauce, dates, almonds and pomegranate. A filling plant-based meal with toasted spices, citrus and contrasting textures; no tofu.",
+    "equipment": [
+      "Oven",
+      "Two 18-by-13-inch rimmed sheet pans",
+      "3-quart saucepan with lid",
+      "Fine-mesh strainer",
+      "6-quart mixing bowl",
+      "Digital kitchen scale",
+      "Five shallow meal-prep containers and separate sauce/topping cups"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "quick-cooking farro",
+        "quantity": 150,
+        "unit": "g",
+        "note": "Unseasoned 10-12-minute pearled variety, not a long-cooking whole farro."
+      },
+      {
+        "item": "fine sea salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "note": "3 g total; use a fine salt weighing about 6 g per teaspoon."
+      },
+      {
+        "item": "no-salt-added chickpeas",
+        "quantity": 2,
+        "unit": "can",
+        "note": "15 oz each; approximately 500 g drained and rinsed total."
+      },
+      {
+        "item": "cauliflower florets",
+        "quantity": 2,
+        "unit": "lb",
+        "note": "Ready-trimmed florets keep prep within the stated time."
+      },
+      {
+        "item": "red onion",
+        "quantity": 1,
+        "unit": "item",
+        "note": "Large; 225 g peeled."
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "ground cumin",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "ground coriander",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "ground turmeric",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "cayenne pepper",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "kale",
+        "quantity": 10,
+        "unit": "oz",
+        "note": "284 g trimmed leaves, without tough stems."
+      },
+      {
+        "item": "lemon",
+        "quantity": 2,
+        "unit": "item",
+        "note": "Need 5 tablespoons juice."
+      },
+      {
+        "item": "tahini",
+        "quantity": 0.25,
+        "unit": "cup",
+        "note": "60 g; unsalted and well stirred."
+      },
+      {
+        "item": "garlic",
+        "quantity": 1,
+        "unit": "clove",
+        "note": "4 g peeled."
+      },
+      {
+        "item": "fresh flat-leaf parsley",
+        "quantity": 0.5,
+        "unit": "cup",
+        "note": "Finely chopped, 15 g."
+      },
+      {
+        "item": "fresh cilantro",
+        "quantity": 0.5,
+        "unit": "cup",
+        "note": "Finely chopped, 15 g."
+      },
+      {
+        "item": "Medjool dates",
+        "quantity": 2,
+        "unit": "item",
+        "note": "48 g pitted flesh total."
+      },
+      {
+        "item": "unsalted almonds",
+        "quantity": 35,
+        "unit": "g",
+        "note": "Roasted and chopped."
+      },
+      {
+        "item": "pomegranate arils",
+        "quantity": 175,
+        "unit": "g",
+        "note": "About 1 cup; purchase ready-to-eat arils for the stated timing."
+      }
+    ],
+    "id": "chermoula-chickpea-cauliflower-farro",
+    "ingredients": [
+      "Farro: 150 g dry unseasoned quick-cooking farro, a 10-12-minute variety",
+      "Farro: 4 cups water for cooking and 1/8 teaspoon (0.75 g) fine sea salt for finishing after draining",
+      "Roast: two 15-oz cans no-salt-added chickpeas, drained, rinsed and dried, approximately 500 g drained total",
+      "Roast: 2 lb (907 g) cauliflower florets, cut into 1-inch pieces",
+      "Roast: 1 large red onion (225 g peeled), cut into 1/2-inch wedges",
+      "Roast: 2 tablespoons extra-virgin olive oil",
+      "Roast: 2 teaspoons ground cumin, 2 teaspoons ground coriander and 1 teaspoon smoked paprika",
+      "Roast: 1/2 teaspoon ground turmeric, 1/4 teaspoon cayenne and 1/4 teaspoon (1.5 g) fine sea salt",
+      "Greens: 10 oz (284 g) trimmed kale leaves, thinly sliced, and 2 tablespoons (30 mL) fresh lemon juice",
+      "Sauce: 1/4 cup (60 g) unsalted tahini, well stirred",
+      "Sauce: 3 tablespoons (45 g) fresh lemon juice and 1/4 cup (60 g) water",
+      "Sauce: 1 garlic clove (4 g peeled), finely grated, and 1/8 teaspoon (0.75 g) fine sea salt",
+      "Sauce: 1/2 cup (15 g) finely chopped flat-leaf parsley and 1/2 cup (15 g) finely chopped cilantro",
+      "Finish: 2 Medjool dates (48 g pitted flesh), finely chopped",
+      "Finish: 35 g chopped unsalted roasted almonds, about 1/4 cup",
+      "Finish: 175 g pomegranate arils, about 1 cup",
+      "Greens: 2 tablespoons (30 mL) water for briefly steaming the kale"
+    ],
+    "instructions": [
+      "Start the oven and farro: Heat the oven to 450 F with racks in the upper and lower thirds. Bring 4 cups water to a boil in a saucepan. Add 150 g quick-cooking farro and simmer for its package's 10-12-minute time, until chewy but tender. Drain thoroughly and toss with 1/8 teaspoon (0.75 g) fine sea salt. Do not use a long-cooking variety and expect the same elapsed time.",
+      "Season the roast: In the large mixing bowl, combine the drained chickpeas from two 15-oz cans (about 500 g drained), 2 lb (907 g) cauliflower florets and 225 g red onion wedges. Toss very thoroughly with 2 tablespoons olive oil, 2 teaspoons cumin, 2 teaspoons coriander, 1 teaspoon smoked paprika, 1/2 teaspoon turmeric, 1/4 teaspoon cayenne and 1/4 teaspoon (1.5 g) fine sea salt.",
+      "Roast without crowding: Spread the seasoned chickpea-cauliflower-onion mixture across both sheet pans in a single layer. Roast for 25-30 minutes, turning the vegetables and swapping the pans' rack positions after 15 minutes. Look for dark golden cauliflower edges and tender stems; the chickpeas should be lightly browned, not dried into hard snacks.",
+      "Make the green sauce while the vegetables roast: Whisk 1/4 cup (60 g) tahini, 3 tablespoons (45 g) lemon juice, 1/4 cup (60 g) water, 4 g grated garlic and 1/8 teaspoon (0.75 g) fine sea salt until smooth. Stir in 1/2 cup (15 g) chopped parsley and 1/2 cup (15 g) chopped cilantro. These measured ingredients make about 200 g sauce. Refrigerate until portioning.",
+      "Soften the kale: In the cleaned 6-quart mixing bowl, toss 10 oz (284 g) thinly sliced kale leaves with 2 tablespoons (30 mL) lemon juice and massage for 90 seconds. Transfer the massaged kale to the 3-quart saucepan with the cooked farro made from 150 g dry farro and 2 tablespoons (30 mL) water. Cover and steam over medium-low heat for 2-3 minutes, stirring once, until the kale is tender enough to eat comfortably. Return the kale and farro to the mixing bowl. This avoids relying on residual heat from farro that finished cooking much earlier.",
+      "Combine the hot components: Add the roasted mixture made from two cans chickpeas, 2 lb cauliflower and 225 g onion to the farro-kale bowl. Fold in 2 finely chopped Medjool dates (48 g pitted flesh), distributing the small pieces through the grains rather than leaving sticky clumps.",
+      "Portion: Weigh the finished grain-vegetable mixture and distribute it evenly among five shallow containers. Pack about 40 g green tahini sauce, 35 g pomegranate arils and 7 g chopped almonds for each meal in separate cups. Keep sauce and pomegranate refrigerated, and keep the almonds dry. Add these toppings after reheating rather than microwaving them with the vegetables."
+    ],
+    "link": null,
+    "notes": [
+      "Timing: About 55 minutes including oven preheating, preparation and portioning, using ready-trimmed cauliflower, prepared pomegranate arils and 10-12-minute farro. Two full-size sheet pans are required for browning; crowding this volume onto one pan steams the vegetables.",
+      "Meal prep: Refrigerate shallow portions, the green sauce and pomegranate at 40 F or colder within 2 hours of preparation, or 1 hour above 90 F. Use within 3-4 days. Keep almonds separate so they stay crunchy. Chickpeas soften during storage; the separately packed nuts provide the reliable reheated-meal crunch.",
+      "Five portions, not five fridge days: Eat two portions on one day, or freeze the extra hot-component portion on prep day. Freeze any portion that will not be eaten within 3-4 days. Thaw overnight in the refrigerator and reheat the next day. Sauce and pomegranate are best within their refrigerated window; freezing can change their texture.",
+      "Reheating: Add 1 tablespoon water to one grain-vegetable portion, cover with a vented lid and heat in short microwave intervals, stirring between intervals, until it reaches 165 F in several places. Add that meal's 40 g green tahini sauce, 35 g pomegranate and 7 g almonds after heating.",
+      "Portion options: The base makes five generous vegetable-forward meals. For more energy, divide the same batch into four meals and use about 50 g sauce, 44 g pomegranate and 8.75 g almonds per meal. For additional protein without tofu, add 170 g plain nonfat Greek yogurt to an individual meal as a separate savory side; this changes the vegan and milk-allergen status and is not included in base nutrition.",
+      "Health-conscious review: Chickpeas, vegetables, seeds and nuts provide fiber and plant protein with measured olive oil and salt. Quick-cooking pearled farro is not necessarily a whole grain; the label is based on the complete meal, not an unsupported whole-grain claim. Portions and the rest of the day's intake determine suitability for weight loss or bulking.",
+      "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
+      "Allergens: Wheat, sesame and almonds. Original recipe developed for this collection; not kitchen-tested.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
+    ],
+    "nutrition": {
+      "Calories": "About 580 kcal",
+      "Protein": "About 24 g",
+      "Carbohydrates": "About 85 g",
+      "Fat": "About 21 g",
+      "Fiber": "About 21 g",
+      "Saturated fat": "About 2.5 g",
+      "Sodium": "About 350 mg"
+    },
+    "prepTime": "20 minutes",
+    "rating": null,
+    "servings": "5",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "sheet-pan",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Chermoula Chickpea-Cauliflower Farro Bowls",
+    "totalTime": "55 minutes"
+  },
+  {
+    "additionalTime": "5 minutes resting",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "30 minutes",
+    "description": "Garlic-cumin pork tenderloin with orange-lime mojo, black-bean quinoa, pineapple-pepper salsa, avocado and toasted pepitas. Six filling portions with a measured smaller-portion option and a plan for freezing extra meals.",
+    "equipment": [
+      "Oven",
+      "Rimmed sheet pan",
+      "Medium saucepan with lid",
+      "Small saucepan",
+      "Fine-mesh strainer",
+      "Digital kitchen scale",
+      "Instant-read thermometer",
+      "Six shallow meal-prep containers and separate salsa cups",
+      "Large heatproof mixing bowl"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "pork tenderloin",
+        "quantity": 2,
+        "unit": "lb",
+        "note": "Two approximately 1-lb tenderloins, trimmed; not a single pork loin roast, and not enhanced with brine."
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "garlic powder",
+        "quantity": 2,
+        "unit": "tsp",
+        "note": "Not garlic salt."
+      },
+      {
+        "item": "ground cumin",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "dried oregano",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "smoked paprika",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "fine sea salt",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "note": "4.5 g total; use a fine salt weighing about 6 g per teaspoon."
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.75,
+        "unit": "tsp"
+      },
+      {
+        "item": "orange",
+        "quantity": 2,
+        "unit": "item",
+        "note": "Need 1/2 cup freshly squeezed juice and 1 teaspoon finely grated zest."
+      },
+      {
+        "item": "lime",
+        "quantity": 2,
+        "unit": "item",
+        "note": "Need 4 tablespoons juice total."
+      },
+      {
+        "item": "garlic",
+        "quantity": 3,
+        "unit": "clove",
+        "note": "9 g peeled garlic."
+      },
+      {
+        "item": "quinoa",
+        "quantity": 255,
+        "unit": "g",
+        "note": "Dry, unseasoned; about 1 1/2 cups."
+      },
+      {
+        "item": "no-salt-added black beans",
+        "quantity": 2,
+        "unit": "can",
+        "note": "15 oz each; approximately 500 g drained and rinsed total."
+      },
+      {
+        "item": "fresh cilantro",
+        "quantity": 1,
+        "unit": "cup",
+        "note": "Chopped, about 32 g total."
+      },
+      {
+        "item": "pineapple",
+        "quantity": 495,
+        "unit": "g",
+        "note": "Fresh prepared flesh, diced; buying prepared pineapple keeps prep practical."
+      },
+      {
+        "item": "red bell pepper",
+        "quantity": 2,
+        "unit": "item",
+        "note": "Use 300 g trimmed flesh total."
+      },
+      {
+        "item": "red onion",
+        "quantity": 1,
+        "unit": "item",
+        "note": "Small; use 120 g peeled onion."
+      },
+      {
+        "item": "jalapeno",
+        "quantity": 1,
+        "unit": "item",
+        "note": "Small; use 15 g trimmed pepper."
+      },
+      {
+        "item": "avocado",
+        "quantity": 2,
+        "unit": "item",
+        "note": "About 300 g edible flesh total; slice at serving time."
+      },
+      {
+        "item": "unsalted pepitas",
+        "quantity": 60,
+        "unit": "g",
+        "note": "Roasted, shelled pumpkin seeds."
+      }
+    ],
+    "id": "citrus-mojo-pork-with-black-bean-quinoa",
+    "ingredients": [
+      "Pork: 2 lb (907 g) trimmed pork tenderloin, in two approximately 1-lb pieces",
+      "Pork: 1 tablespoon extra-virgin olive oil",
+      "Pork: 2 teaspoons garlic powder, 1 teaspoon ground cumin, 1 teaspoon dried oregano and 1 teaspoon smoked paprika",
+      "Pork: 1/2 teaspoon (3 g) fine sea salt and 1/2 teaspoon black pepper",
+      "Mojo: 1/2 cup (120 mL) fresh orange juice",
+      "Mojo: 3 garlic cloves (9 g peeled), finely grated",
+      "Mojo: 1 teaspoon ground cumin, 1 teaspoon dried oregano and 1/4 teaspoon black pepper",
+      "Mojo finish: 2 tablespoons (30 mL) fresh lime juice",
+      "Quinoa: 1 1/2 cups (255 g) dry quinoa, rinsed well, and 3 cups (710 mL) water",
+      "Quinoa finish: two 15-oz cans no-salt-added black beans, drained and rinsed, approximately 500 g drained total",
+      "Quinoa finish: 1 tablespoon extra-virgin olive oil, 1/4 teaspoon (1.5 g) fine sea salt and 1/2 cup (16 g) chopped fresh cilantro",
+      "Salsa: 3 cups (495 g) fresh pineapple, cut into 1/2-inch dice",
+      "Salsa: 2 red bell peppers (300 g trimmed total), diced",
+      "Salsa: 1 small red onion (120 g peeled), finely diced",
+      "Salsa: 1 small jalapeno (15 g trimmed), finely minced",
+      "Salsa: 2 tablespoons (30 mL) fresh lime juice and 1/2 cup (16 g) chopped fresh cilantro",
+      "Finish: 2 medium avocados, approximately 300 g edible flesh total",
+      "Finish: 60 g unsalted roasted pepitas, about a scant 1/2 cup",
+      "Pork: 1 teaspoon finely grated orange zest"
+    ],
+    "instructions": [
+      "Start the pork: Heat the oven to 425 F. Pat two trimmed pork tenderloins, 2 lb (907 g) total, dry and tuck very thin tail ends underneath to make the thickness more even. Rub with 1 tablespoon olive oil, 1 teaspoon orange zest, 2 teaspoons garlic powder, 1 teaspoon cumin, 1 teaspoon oregano, 1 teaspoon smoked paprika, 1/2 teaspoon (3 g) fine sea salt and 1/2 teaspoon black pepper. Arrange on the sheet pan with space between the pieces.",
+      "Roast and rest: Put the two seasoned tenderloins into the preheated oven. Roast for about 20-28 minutes, starting temperature checks at 18 minutes. Remove each piece when its thickest part reaches 145 F, then rest for 5 minutes before slicing; the rest must be at least 3 minutes for the standard pork safety endpoint. Do not treat a much thicker pork loin roast as an interchangeable cut.",
+      "Cook the quinoa while the pork roasts: Combine 1 1/2 cups (255 g) rinsed dry quinoa and 3 cups (710 mL) water in a saucepan. Bring to a boil, cover, reduce to low and simmer for about 15 minutes until the water is absorbed. Turn off the heat and leave covered for 5 minutes.",
+      "Make the mojo: In the small saucepan, combine 1/2 cup (120 mL) orange juice, 9 g grated garlic, 1 teaspoon cumin, 1 teaspoon oregano and 1/4 teaspoon black pepper. Simmer gently for 4-5 minutes so the garlic softens; do not boil it dry. Remove from the heat and stir in 2 tablespoons (30 mL) lime juice.",
+      "Make the salsa while the hot components cook: Combine 120 g diced red onion, 15 g minced jalapeno and 2 tablespoons (30 mL) lime juice in a clean bowl. Let stand for 5-10 minutes while preparing 3 cups (495 g) diced pineapple and 300 g diced red bell pepper. Stir the prepared pineapple and bell pepper into the lime-onion mixture with 1/2 cup (16 g) chopped cilantro. Refrigerate until portioning. The measured lime juice is used once, at the start of this step.",
+      "Finish the quinoa: Fold the drained beans from two 15-oz cans, approximately 500 g drained, into the quinoa cooked from 255 g dry grain. Stir in 1 tablespoon olive oil and 1/4 teaspoon (1.5 g) fine sea salt. Warm over low heat for 2-3 minutes, stirring, until the beans are hot. Turn off the heat and fold in 1/2 cup (16 g) chopped cilantro.",
+      "Sauce the pork: Slice the rested pork made from 2 lb raw tenderloin across the grain into 1/2-inch slices and place in the large heatproof mixing bowl. Pour the prepared mojo made from 1/2 cup orange juice, 9 g garlic, 1 teaspoon cumin, 1 teaspoon oregano, 1/4 teaspoon black pepper and 2 tablespoons lime juice over the slices and turn gently to coat. These quantities identify the sauce already prepared, not new ingredient additions. The wide bowl gives the sliced pork room that the small saucepan does not.",
+      "Portion: Weigh the cooked pork with its mojo and divide evenly among six shallow containers, then distribute the finished black-bean quinoa evenly among them. Pack approximately 163 g finished pineapple-pepper salsa in each of six separate chilled cups. The measured salsa ingredients make about 976 g before small bowl-transfer losses; distribute any small yield difference evenly across the six cups. Pack 10 g pepitas for each meal. At serving time add 50 g freshly sliced avocado, using about 300 g edible flesh across six meals; keep whole avocados uncut until needed."
+    ],
+    "link": null,
+    "notes": [
+      "Timing: About 55 minutes including preparation, oven preheating, a 5-minute pork rest and portioning. Use two approximately 1-lb tenderloins and prepared pineapple. The quinoa is cooked on the stovetop so a long rice-cooker cycle is not hidden inside the time estimate.",
+      "Meal prep: Refrigerate shallow pork/quinoa portions and separate salsa cups at 40 F or colder within 2 hours, or within 1 hour above 90 F. Use refrigerated food within 3-4 days. Six portions do not mean six safe refrigerator days: freeze portions beyond your next 3-4 days on prep day.",
+      "Texture: Store salsa separately from the warm components, keep pepitas dry, and cut avocado at serving time. Pineapple salsa can release juice during storage; stir the individual salsa cup before serving rather than soaking the grain during the entire storage period.",
+      "Reheating: Add 1 tablespoon water to one pork/quinoa portion, cover with a vented lid and heat in short microwave intervals. Turn the slices and stir the grain between intervals until several spots, including the pork, reach 165 F. Add that meal's cold salsa, 50 g avocado and 10 g pepitas afterward.",
+      "Freezing: Freeze the pork with its mojo and the quinoa in shallow meal-sized containers. Thaw overnight in the refrigerator and reheat the following day. The uncooked salsa is best within its refrigerated window; freezing it softens the fruit and peppers. Do not promise that six refrigerated salsa cups last six days.",
+      "Portion options: For a smaller meal, keep the pork, beans and vegetables but use 170 g dry quinoa with 2 cups water for the batch, then serve 25 g avocado and 5 g pepitas per meal. For a larger meal, divide the full base batch into five meals instead of six; use 60 g avocado and 12 g pepitas per meal. Nutrition for the base six-serving version does not apply unchanged to either option.",
+      "Health-conscious review: Tenderloin is an unprocessed lean pork cut. Quinoa, beans, produce and measured olive oil, avocado and seeds create a more balanced plate than making a calorie surplus primarily from butter or processed meat. Healthy bulking still requires an appropriate total calorie surplus and resistance training; this is not a promise of muscle gain.",
+      "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
+      "Allergens: Check spice labels and possible seed cross-contact. Original recipe developed for this collection; not kitchen-tested.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
+    ],
+    "nutrition": {
+      "Calories": "About 710 kcal",
+      "Protein": "About 51 g",
+      "Carbohydrates": "About 74 g",
+      "Fat": "About 26 g",
+      "Fiber": "About 18 g",
+      "Saturated fat": "About 5 g",
+      "Sodium": "About 375 mg"
+    },
+    "prepTime": "20 minutes",
+    "rating": null,
+    "servings": "6",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "sheet-pan",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Citrus-Mojo Pork with Black-Bean Quinoa",
+    "totalTime": "55 minutes"
+  },
+  {
+    "additionalTime": "0 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "35 minutes",
+    "description": "Ginger-sesame chicken and soba with edamame, browned shiitakes, sweet roasted carrots and bok choy. A measured miso-tamari sauce gets its brightness from rice vinegar and fresh lime rather than a large pour of soy sauce.",
+    "equipment": [
+      "Oven",
+      "18-by-13-inch rimmed sheet pan",
+      "12-inch stainless-steel skillet, such as All-Clad D5",
+      "6-quart pot for cooking noodles and combining the finished meal",
+      "Colander",
+      "Instant-read thermometer",
+      "Four shallow meal-prep containers",
+      "Small saucepan for cooking edamame in parallel",
+      "Digital kitchen scale"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "boneless skinless chicken breast",
+        "quantity": 1.5,
+        "unit": "lb",
+        "note": "Plain chicken without injected broth, salt or brine."
+      },
+      {
+        "item": "cornstarch",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "canola oil",
+        "quantity": 5,
+        "unit": "tsp"
+      },
+      {
+        "item": "shiitake mushrooms",
+        "quantity": 8,
+        "unit": "oz",
+        "note": "Trimmed caps, sliced; purchase pre-sliced for the stated prep time."
+      },
+      {
+        "item": "carrot",
+        "quantity": 12,
+        "unit": "oz"
+      },
+      {
+        "item": "baby bok choy",
+        "quantity": 1,
+        "unit": "lb"
+      },
+      {
+        "item": "soba noodles",
+        "quantity": 8,
+        "unit": "oz",
+        "note": "Unseasoned, ideally 0-50 mg sodium per 2 oz dry. Buckwheat-wheat soba holds up better than fragile varieties; check allergens."
+      },
+      {
+        "item": "frozen shelled edamame",
+        "quantity": 1.5,
+        "unit": "cup",
+        "note": "Unsalted, approximately 234 g."
+      },
+      {
+        "item": "white miso",
+        "quantity": 1,
+        "unit": "tbsp",
+        "note": "17 g; compare labels, ideally no more than 650 mg sodium per tablespoon."
+      },
+      {
+        "item": "reduced-sodium tamari",
+        "quantity": 1,
+        "unit": "tbsp",
+        "note": "Choose no more than 700 mg sodium per tablespoon."
+      },
+      {
+        "item": "unseasoned rice vinegar",
+        "quantity": 3,
+        "unit": "tbsp",
+        "note": "Not seasoned sushi vinegar, which adds sugar and salt."
+      },
+      {
+        "item": "lime",
+        "quantity": 1,
+        "unit": "item",
+        "note": "Need 2 tablespoons juice."
+      },
+      {
+        "item": "pure maple syrup",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "fresh ginger",
+        "quantity": 2,
+        "unit": "tbsp",
+        "note": "Finely grated, about 24 g."
+      },
+      {
+        "item": "garlic",
+        "quantity": 3,
+        "unit": "clove",
+        "note": "About 9 g peeled."
+      },
+      {
+        "item": "toasted sesame oil",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "gochugaru",
+        "quantity": 1,
+        "unit": "tsp",
+        "note": "Mild Korean red-pepper flakes, without salt."
+      },
+      {
+        "item": "sesame seeds",
+        "quantity": 1.3333333333333333,
+        "unit": "tbsp",
+        "note": "Toasted, unsalted; measure 12 g total."
+      },
+      {
+        "item": "scallion",
+        "quantity": 24,
+        "unit": "g",
+        "note": "Thinly sliced."
+      }
+    ],
+    "id": "ginger-sesame-chicken-soba",
+    "ingredients": [
+      "Chicken: 1 1/2 lb (680 g) boneless skinless chicken breast, cut into 3/4-inch pieces",
+      "Chicken: 1 tablespoon (8 g) cornstarch",
+      "Chicken: 2 teaspoons canola oil, allocated as 1 teaspoon for each of two batches",
+      "Roasted vegetables: 8 oz (227 g) trimmed shiitake caps, sliced 1/4 inch thick",
+      "Roasted vegetables: 12 oz (340 g) carrots, sliced into 1/4-inch-thick half-moons",
+      "Roasted vegetables: 2 teaspoons canola oil",
+      "Bok choy: 1 lb (454 g) baby bok choy, washed and dried; stems sliced 1/2 inch thick and leaves cut into 2-inch pieces",
+      "Bok choy: 1 teaspoon canola oil and 2 tablespoons water",
+      "Noodles: 8 oz (227 g) dry unseasoned soba and 10 cups unsalted cooking water",
+      "Edamame: 1 1/2 cups (234 g) frozen unsalted shelled edamame and 3 cups cooking water",
+      "Sauce: 1 tablespoon (17 g) white miso and 1 tablespoon (15 mL) reduced-sodium tamari",
+      "Sauce: 3 tablespoons (45 mL) unseasoned rice vinegar and 3 tablespoons (45 mL) water",
+      "Sauce: 1 tablespoon (20 g) pure maple syrup",
+      "Sauce aromatics: 2 tablespoons (24 g) finely grated fresh ginger and 3 garlic cloves (9 g peeled), finely grated",
+      "Sauce finish: 2 tablespoons (30 mL) fresh lime juice, 2 teaspoons toasted sesame oil and 1 teaspoon mild gochugaru",
+      "Toppings: 1 tablespoon plus 1 teaspoon (12 g) toasted unsalted sesame seeds and 24 g thinly sliced scallions (about 1/4 cup)"
+    ],
+    "instructions": [
+      "Start the oven, noodle water and roasted vegetables: Heat the oven to 425 F. Put 10 cups unsalted water in the 6-quart noodle pot, cover and begin heating it on a separate burner while preparing the vegetables. Toss 8 oz (227 g) sliced shiitake caps and 12 oz (340 g) sliced carrots with 2 teaspoons canola oil on the sheet pan. Spread into one layer. Roast in the preheated oven for 20-25 minutes, turning at 12 minutes, until the mushrooms have browned edges and the carrots are tender.",
+      "Prepare and brown the chicken: Pat 1 1/2 lb (680 g) chicken pieces dry and toss with 1 tablespoon (8 g) cornstarch. Preheat the 12-inch skillet over medium-high heat, then add 1 teaspoon canola oil. Add 12 oz (340 g) coated chicken in one layer. Cook undisturbed for about 3 minutes, then turn and cook 3-4 minutes more, until the thickest pieces reach 165 F. Transfer to a clean plate. Add 1 teaspoon canola oil and cook the second 12 oz (340 g) chicken batch the same way. Keep raw-chicken utensils and the cutting board away from cooked food.",
+      "Cook the edamame while the chicken browns: Bring 3 cups water to a boil in the small saucepan, separate from the noodle pot. Add 1 1/2 cups (234 g) frozen shelled edamame and cook for the package's full cooking time, usually 4-6 minutes. Drain and set aside. Do not assume that merely thawed frozen edamame is ready to eat.",
+      "Cook the noodles: Bring the 10 cups unsalted water already heating in the 6-quart noodle pot to a rolling boil; do not add another 10 cups. Add 8 oz (227 g) dry soba. Cook for the lower end of the package's range, tasting for a tender but resilient noodle. Drain, rinse briefly under cold running water to remove loose starch and drain thoroughly again. The 8 oz quantity is the dry weight, not the cooked noodle yield.",
+      "Cook the bok choy and aromatics: After the chicken is on its clean plate, add 1 teaspoon canola oil to the skillet. Add the sliced stems from 1 lb (454 g) prepared bok choy and stir-fry for 2 minutes. Add the leaves from the same 1 lb bok choy and 2 tablespoons water; cover for 1-2 minutes. Uncover and let surface moisture evaporate. Stir in 2 tablespoons (24 g) grated ginger and 9 g grated garlic and cook for 30 seconds, lowering the heat if the garlic begins to color.",
+      "Make the sauce directly in the skillet: Whisk 1 tablespoon (17 g) white miso with 3 tablespoons (45 mL) water in a small cup until smooth. Add this measured miso-water mixture to the skillet along with 1 tablespoon (15 mL) reduced-sodium tamari, 3 tablespoons (45 mL) rice vinegar and 1 tablespoon (20 g) maple syrup. Stir for about 1 minute over medium heat; do not reduce it to a sticky glaze.",
+      "Combine and finish in the emptied 6-quart noodle pot, not the crowded skillet: Put the noodles cooked from 8 oz dry soba, the cooked chicken made from 1 1/2 lb raw chicken, the cooked 1 1/2 cups edamame, and the roasted vegetables made from 8 oz shiitakes and 12 oz carrots into the pot. Scrape the bok choy and sauce made in the preceding two steps into the same pot. This transfers the sauce made with 1 tablespoon miso, 1 tablespoon tamari, 3 tablespoons vinegar, 3 tablespoons water and 1 tablespoon maple syrup; it does not call for another batch. Toss gently over low heat until hot, then turn off the heat and add 2 tablespoons (30 mL) lime juice, 2 teaspoons toasted sesame oil and 1 teaspoon gochugaru. No extra salt or soy sauce is called for.",
+      "Portion: Weigh the finished chicken-noodle mixture and distribute it evenly among four shallow containers. Pack 3 g toasted sesame seeds and 6 g sliced scallions per serving separately, using the measured totals of 12 g seeds and 24 g scallions. Add the toppings after reheating. Refrigerate promptly."
+    ],
+    "link": null,
+    "notes": [
+      "Timing: About 55 minutes total with ready-trimmed sliced shiitakes and overlapping oven, skillet and noodle work on three burners: heat noodle water from the start and cook edamame in its separate small saucepan. Two chicken batches are intentional: crowding the skillet steams the chicken. This replaces the proposed tofu recipe rather than offering tofu as the default.",
+      "Sodium: Use plain chicken without injected salt solution, unsalted edamame, unseasoned rice vinegar and lower-sodium noodles. The miso and tamari quantities are deliberately bounded. Their label values and the noodle brand can change sodium substantially; reduced-sodium does not mean sodium-free.",
+      "Meal prep: Refrigerate shallow portions at 40 F or colder within 2 hours of cooking, or 1 hour above 90 F, and use within 3-4 days. Refrigerate the scallions separately. Keep the sesame seeds dry. Rinsing and thoroughly draining the soba helps avoid carrying excess starch and water into storage.",
+      "Reheating: Add 1 tablespoon water to one chicken-noodle portion. Cover with a vented lid and microwave in short intervals, gently loosening and turning the noodles between intervals, until the chicken and noodles reach 165 F in several places. Finish with the reserved 3 g sesame seeds and 6 g scallions for that meal.",
+      "Freezing: Freeze portions beyond the 3-4-day refrigerated window on prep day. Thaw overnight in the refrigerator and reheat the next day. Soba and bok choy can soften after freezing; refrigerator meal prep is the preferred texture plan, not a promise of unchanged freezer quality.",
+      "Portion options: For a smaller meal, use 6 oz (170 g) dry soba instead of 8 oz for the four-serving batch, leaving chicken, edamame and vegetables unchanged. For a larger meal, use 12 oz (340 g) dry soba and add 1 extra tablespoon water per serving during reheating. Changes are not included in base nutrition.",
+      "Health-conscious review: Chicken and edamame provide protein, vegetables contribute fiber and volume, and measured canola/sesame oils replace a heavy butter or cream sauce. Buckwheat content varies: ordinary soba is not necessarily 100% buckwheat or wholly whole grain. The overall eating pattern, not a single ingredient, supports blood-pressure management.",
+      "Food-safety basis: USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety. Eating-pattern basis: NIH DASH, https://www.nhlbi.nih.gov/health/dash-eating-plan.",
+      "Allergens: Soy and sesame; most soba also contains wheat. Check the miso and noodle labels. Original recipe developed for this collection; not kitchen-tested.",
+      "Noodle selection: Hakubaku US/Canada no-salt soba is an example of the intended low-sodium type. The same brand's AU/EU versions contain salt. Check the actual package rather than relying on the brand name. Manufacturer reference: https://hakubaku.com.au/product/soba/.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
+    ],
+    "nutrition": {
+      "Calories": "About 670 kcal",
+      "Protein": "About 58 g",
+      "Carbohydrates": "About 69 g",
+      "Fat": "About 19 g",
+      "Fiber": "About 10 g",
+      "Saturated fat": "About 3 g",
+      "Sodium": "About 600 mg"
+    },
+    "prepTime": "20 minutes",
+    "rating": null,
+    "servings": "4",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "sheet-pan",
+        "stainless-steel-skillet",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Ginger-Sesame Chicken and Soba",
+    "totalTime": "55 minutes"
+  },
+  {
+    "additionalTime": "0 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "30 minutes",
+    "description": "Lemon-zaatar salmon with browned broccoli, roasted tomatoes, chewy barley, dill-tahini yogurt and pistachios. The citrus, herbs and creamy sauce are intended to make salmon approachable without relying on a salty glaze.",
+    "equipment": [
+      "Oven",
+      "Two 18-by-13-inch rimmed sheet pans",
+      "Medium saucepan",
+      "Fine-mesh strainer",
+      "Digital kitchen scale",
+      "Instant-read thermometer, such as Thermapen ONE",
+      "Four shallow meal-prep containers and four small sauce containers"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "quick-cooking barley",
+        "quantity": 150,
+        "unit": "g",
+        "note": "Choose an unseasoned 10-12-minute variety; not regular or hulled barley."
+      },
+      {
+        "item": "fine sea salt",
+        "quantity": 0.375,
+        "unit": "tsp",
+        "note": "2.25 g total; use a fine salt weighing about 6 g per teaspoon."
+      },
+      {
+        "item": "lemon",
+        "quantity": 2,
+        "unit": "item",
+        "note": "Need 3 tablespoons juice and 2 teaspoons finely grated zest."
+      },
+      {
+        "item": "fresh dill",
+        "quantity": 4,
+        "unit": "tbsp",
+        "note": "Finely chopped, about 12 g."
+      },
+      {
+        "item": "broccoli florets",
+        "quantity": 1.5,
+        "unit": "lb"
+      },
+      {
+        "item": "cherry tomatoes",
+        "quantity": 12,
+        "unit": "oz"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 5,
+        "unit": "tsp"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "item": "skinless salmon fillet",
+        "quantity": 20,
+        "unit": "oz",
+        "note": "Four 5-ounce portions, thawed, pin bones removed, without added brine; nutrition will depend on species."
+      },
+      {
+        "item": "salt-free zaatar seasoning",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "note": "Check the label: many zaatar blends contain salt."
+      },
+      {
+        "item": "plain 2% Greek yogurt",
+        "quantity": 170,
+        "unit": "g"
+      },
+      {
+        "item": "tahini",
+        "quantity": 2,
+        "unit": "tbsp",
+        "note": "30 g; unsalted, well stirred."
+      },
+      {
+        "item": "garlic",
+        "quantity": 1,
+        "unit": "clove",
+        "note": "Use 4 g peeled garlic for the sauce."
+      },
+      {
+        "item": "unsalted pistachios",
+        "quantity": 24,
+        "unit": "g",
+        "note": "Shelled and roasted."
+      },
+      {
+        "item": "Dijon mustard",
+        "quantity": 2,
+        "unit": "tsp",
+        "note": "10 g; choose at most 120 mg sodium per teaspoon."
+      }
+    ],
+    "id": "zaatar-pistachio-salmon-with-lemon-dill-barley",
+    "ingredients": [
+      "Barley: 150 g dry quick-cooking barley, an unseasoned 10-12-minute variety",
+      "Barley: 3 cups water for cooking",
+      "Barley finish: 1 tablespoon (15 mL) fresh lemon juice, 2 tablespoons (6 g) finely chopped fresh dill and 1/8 teaspoon (0.75 g) fine sea salt",
+      "Vegetables: 1 1/2 lb (680 g) broccoli florets, cut into 1 1/2-inch pieces and dried",
+      "Vegetables: 12 oz (340 g) cherry tomatoes, left whole and dried",
+      "Vegetables: 1 tablespoon extra-virgin olive oil, allocated as 2 teaspoons for broccoli and 1 teaspoon for tomatoes",
+      "Vegetables: 1/8 teaspoon (0.75 g) fine sea salt and 1/4 teaspoon black pepper, both for the broccoli",
+      "Salmon: four 5-oz portions skinless salmon, 20 oz (567 g) total, thawed and pin bones removed",
+      "Salmon: 2 teaspoons extra-virgin olive oil and 2 teaspoons (10 g) Dijon mustard",
+      "Salmon: 1 1/2 tablespoons salt-free zaatar seasoning, 2 teaspoons finely grated lemon zest, 1/8 teaspoon (0.75 g) fine sea salt and 1/4 teaspoon black pepper",
+      "Sauce: 170 g plain 2% Greek yogurt, about 3/4 cup",
+      "Sauce: 2 tablespoons (30 g) unsalted tahini, well stirred",
+      "Sauce: 2 tablespoons (30 g) fresh lemon juice",
+      "Sauce: 1 tablespoon plus 1 teaspoon (20 g) water",
+      "Sauce: 1 small garlic clove (4 g peeled), finely grated",
+      "Sauce: 2 tablespoons (6 g) finely chopped fresh dill",
+      "Finish: 3 tablespoons (24 g) chopped unsalted roasted pistachios"
+    ],
+    "instructions": [
+      "Start the oven and barley: Heat the oven to 425 F with racks in the upper and lower thirds. Bring 3 cups water to a boil in a medium saucepan. Add 150 g dry quick-cooking barley and simmer for the package's 10-12-minute cooking time, until tender with a little chew. Drain thoroughly. The timing assumes this quick-cooking variety, not regular barley.",
+      "Roast the vegetables: Toss 1 1/2 lb (680 g) dried broccoli florets with 2 teaspoons olive oil, 1/8 teaspoon (0.75 g) fine sea salt and 1/4 teaspoon black pepper on the first sheet pan. On the second pan, toss 12 oz (340 g) cherry tomatoes with 1 teaspoon olive oil. Spread each vegetable into a single layer. Put both pans in the preheated oven. Roast the broccoli for 22-28 minutes, turning it at 15 minutes; the tomatoes get a 10-minute head start before the salmon joins their pan.",
+      "Make the cold sauce while the vegetables roast: Whisk 170 g plain 2% Greek yogurt, 2 tablespoons (30 g) tahini, 2 tablespoons (30 g) lemon juice, 1 tablespoon plus 1 teaspoon (20 g) water, 4 g finely grated garlic and 2 tablespoons (6 g) chopped dill in a bowl. Scrape the sides thoroughly. These measured ingredients make about 260 g sauce. Refrigerate it while the hot food cooks.",
+      "Season the salmon: Pat four 5-oz salmon portions, 20 oz (567 g) total, thoroughly dry. Mix 2 teaspoons olive oil, 2 teaspoons (10 g) Dijon mustard, 1 1/2 tablespoons salt-free zaatar, 2 teaspoons lemon zest, 1/8 teaspoon (0.75 g) fine sea salt and 1/4 teaspoon black pepper directly over the tops and sides of the four portions, rubbing into a thin, even coating. Wash your hands and sanitize the raw-fish preparation area before handling cooked food or sauce.",
+      "Cook the salmon: After the tomatoes have roasted for 10 minutes, carefully move the tomatoes toward the pan's edges and place the four seasoned 5-oz salmon portions in the center without overlap. Roast for about 10-15 minutes, checking the thickest part of each portion at 10 minutes. Remove each portion when its center reaches 145 F. Do not keep cooking a finished portion while waiting for a thicker one. The tomatoes should be blistered and tender; the broccoli should have browned edges.",
+      "Finish the barley: Toss the cooked barley made from 150 g dry barley with 1 tablespoon (15 mL) lemon juice, 2 tablespoons (6 g) chopped dill and 1/8 teaspoon (0.75 g) fine sea salt.",
+      "Portion: Weigh the finished barley and distribute it evenly among four shallow containers; do the same with the cooked broccoli and tomatoes. Add one cooked salmon portion to each container. Pack about 65 g dill-tahini yogurt in each of four separate cups and 6 g chopped pistachios in each of four dry topping cups. Keep both toppings off the hot food until serving. Refrigerate the meal portions promptly as described in the notes."
+    ],
+    "link": null,
+    "notes": [
+      "Timing: About 50 minutes total from starting preparation to portioning, including oven preheating. Use thawed salmon, ready-trimmed broccoli and 10-12-minute barley. Frozen-fish thawing is a separate advance step, not something completed inside the cooking time.",
+      "For a salmon newcomer: Buy fish with a fresh, mild smell. Strong sour, rancid, ammonia-like or distinctly off fishy odors are rejection signs, not something to cover with lemon or sauce. This recipe still tastes like salmon; a non-fishy result or a particular tasting score cannot be guaranteed.",
+      "Meal prep: Refrigerate shallow portions promptly at 40 F or colder, within 2 hours of cooking or 1 hour if the room is above 90 F. Do not leave food on the counter until completely cool. Keep the yogurt sauce refrigerated and the pistachios separate. Use refrigerated portions within 3-4 days.",
+      "Salmon quality: For the most cautious introduction to salmon, eat one portion freshly cooked. For later meals, properly chilled cooked salmon may be served cold with the yogurt sauce alongside the heated barley and vegetables. Repeated reheating is not necessary.",
+      "Freezing: Freeze any salmon/barley/vegetable portions not planned for the next 3-4 days on prep day. Thaw overnight in the refrigerator and use the next day. Keep the yogurt sauce refrigerated for its 3-4-day window rather than promising that it will freeze without separating.",
+      "Reheating: Remove the yogurt and pistachios. Add 1 tablespoon water to one hot-component portion, cover with a vented lid and microwave at medium power in short intervals. Check several places and reheat leftovers to 165 F; add the cold 65 g sauce and 6 g pistachios afterward. This safety endpoint can make reheated salmon firmer than freshly cooked salmon.",
+      "Portion options: For a smaller meal, reduce the dry barley from 150 g to 100 g for the batch and keep the fish and vegetables unchanged. For a larger meal, increase dry barley to 250 g and cooking water to 5 cups, still draining after the package cooking time. The nutrition estimate is for the base version, not these adjustments.",
+      "Health-conscious review: Salmon, barley, vegetables, measured olive oil, nuts and a low-fat yogurt sauce fit a heart-conscious eating pattern. Barley that is pearled or quick-cooking is not necessarily a whole grain. Overall sodium, saturated fat and calories across the day still matter; this meal does not promise a blood-pressure or weight change.",
+      "Food-safety basis: FDA Selecting and Serving Fresh and Frozen Seafood Safely, https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely; USDA Leftovers and Food Safety, https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety.",
+      "Allergens: Fish, milk, sesame, pistachios, mustard and barley gluten. Original recipe developed for this collection; not kitchen-tested. Leave status as not-tried until cooked.",
+      "Flavor review: A thin measured Dijon coating helps the lemon-zaatar seasoning cling to the salmon. Zest supplies citrus aroma without an acidic overnight fish marinade. The 2 teaspoons mustard are included in the whole batch, not added to each serving. Mustard adds sodium, so the recipe does not increase its existing measured salt.",
+      "Salmon meal-prep quality: For your first trial, consider freezing the day-3 and day-4 fish portions promptly on prep day and thawing each overnight in the refrigerator before use. This is a flavor/texture preference, not an extension of the 3-4-day refrigerated safety window. Never try to improve an off-smelling fish portion with more seasoning.",
+      "Nutrition: Approximate per base serving, including the listed sauce, oil and toppings. Calculated using raw meat/fish weights, dry grain weights and about 500 g drained legumes per two cans, with USDA SR Legacy and representative product labels. Brands, cooking losses, drained yields and portion changes alter the result. The repository nutrition audit documents ingredient weights and explicit proxies; these estimates are not a medical certification or a kitchen test.",
+      "Water for reheating is a serving-time addition, separate from the cooking water in the ingredient list. Its measured 1 tablespoon per reheated portion adds no meaningful nutrients and is not a grocery purchase."
+    ],
+    "nutrition": {
+      "Calories": "About 680 kcal",
+      "Protein": "About 46 g",
+      "Carbohydrates": "About 51 g",
+      "Fat": "About 35 g",
+      "Fiber": "About 12 g",
+      "Saturated fat": "About 7 g",
+      "Sodium": "About 450 mg"
+    },
+    "prepTime": "20 minutes",
+    "rating": null,
+    "servings": "4",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "oven",
+        "sheet-pan",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Zaatar-Pistachio Salmon with Lemon-Dill Barley",
+    "totalTime": "50 minutes"
   }
 ]
