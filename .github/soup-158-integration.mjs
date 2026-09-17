@@ -1,101 +1,43 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 
-const soupIds = [
+function editRecipe(id, transform) {
+  const path = `data/recipes/${id}.json`;
+  const recipe = JSON.parse(fs.readFileSync(path, "utf8"));
+  assert.equal(recipe.id, id);
+  transform(recipe);
+  fs.writeFileSync(path, JSON.stringify(recipe, null, 2) + "\n");
+}
+
+// First written post-PR review: retain every ingredient total.
+editRecipe("harissa-red-lentil-sweet-potato-chickpea-soup", (recipe) => {
+  if (recipe.instructions[2].includes("1 lb (454 g) sweet potato cubes")) {
+    assert.equal(recipe.instructions.length, 6);
+    recipe.instructions[2] = "Add 6 cups (1.44 L) low-sodium vegetable broth, 1 1/2 cups (300 g) rinsed split red lentils, 1/4 tsp (1.5 g) fine sea salt, and 1/2 tsp black pepper. Scrape the base of the pot, bring to a boil, then simmer gently with the lid slightly ajar for 8 minutes. Stir every few minutes, scraping the bottom.";
+    recipe.instructions.splice(3, 0, "Add 1 lb (454 g) sweet potato cut into 1/2-inch cubes. Continue simmering gently for 12-15 minutes, stirring regularly, until the lentils are breaking down and the sweet potato is almost tender. Giving the lentils an 8-minute head start helps the sweet potato retain pieces rather than dissolve during cooking and reheating.");
+  }
+  assert.equal(recipe.instructions.length, 7);
+});
+
+editRecipe("roasted-tomatillo-chicken-pozole-verde", (recipe) => {
+  recipe.instructions[2] = "Let the roasted vegetables cool for 5 minutes. Peel the 6 roasted garlic cloves and remove any loose, blackened pepper skin. Divide the complete roasted vegetable mixture and pan juices into 2 equal portions. Blend the first vegetable portion with 1/4 cup (30 g) toasted pepitas, 1/4 cup (8 g) cilantro, and 1/2 cup (120 mL) chicken broth until mostly smooth; transfer to a bowl. Blend the second vegetable portion with 1/4 cup (30 g) toasted pepitas, 1/4 cup (8 g) cilantro, and 1/2 cup (120 mL) chicken broth, then combine the two purees. Use a blender rated for warm liquids, leave the manufacturer's required headroom and vent its lid as directed; do not use a sealed personal-blender cup with hot ingredients.";
+  if (!recipe.equipment.includes("Mixing bowl for the two puree batches")) {
+    recipe.equipment.push("Mixing bowl for the two puree batches");
+  }
+});
+
+const ids = [
   "beef-mushroom-barley-soup",
   "harissa-red-lentil-sweet-potato-chickpea-soup",
   "lemon-rosemary-chicken-white-bean-kale-soup",
   "roasted-tomatillo-chicken-pozole-verde",
   "thai-red-curry-chicken-edamame-vegetable-soup",
 ];
-const groups = [
-  ["harissa paste", "Sauces, Marinades, & Condiments"],
-  ["poblano pepper", "Vegetables"],
-  ["thai red curry paste", "Sauces, Marinades, & Condiments"],
-  ["white hominy", "Pantry"],
-];
-
-function edit(path, transform) {
-  const before = fs.readFileSync(path, "utf8");
-  const after = transform(before);
-  if (after !== before) fs.writeFileSync(path, after);
-}
-
-function extendIds(text, indent) {
-  const match = text.match(/const expectedIds = (\[[\s\S]*?\]);/);
-  assert.ok(match, "Expected the existing scoped editorial-ID array");
-  const ids = [...new Set([...JSON.parse(match[1]), ...soupIds])].sort();
-  assert.equal(ids.length, 15);
-  const array = `[\n${ids.map((id) => `${indent}  ${JSON.stringify(id)}`).join(",\n")}\n${indent}]`;
-  return text.replace(match[0], `const expectedIds = ${array};`);
-}
-
-edit("tests/recipe_data_quality.test.mjs", (text) => {
-  text = text.replace("the ten individually reviewed recipes", "the fifteen individually reviewed recipes");
-  text = extendIds(text, "  ");
-  if (!text.includes("const soupIds =")) {
-    const array = JSON.stringify(soupIds, null, 2).replaceAll("\n", "\n  ");
-    text = text.replace("  const expectedIds =", `  const soupIds = ${array};\n  const expectedIds =`);
-  }
-  const line = '      id === "oatmeal-with-fruit" ? "breakfast" : "main-dishes",';
-  assert.ok(text.includes(line));
-  if (!text.includes('...(soupIds.includes(id) ? ["soups-stews"] : [])')) {
-    text = text.replace(line, `${line}\n      ...(soupIds.includes(id) ? ["soups-stews"] : []),`);
-  }
-  return text;
-});
-
-edit("scripts/smoke-browser.mjs", (text) => {
-  text = extendIds(text, "      ");
-  const start = text.indexOf("const browserChecks = [");
-  const end = text.indexOf('name: "loads recipe data and renders the initial recipe stream"', start);
-  assert.ok(start >= 0 && end > start);
-  let section = text.slice(start, end);
-  section = section.replace(
-    'await page.waitForFunction(() => document.querySelectorAll(".recipe").length === 10);',
-    'await page.waitForFunction((count) => document.querySelectorAll(".recipe").length === count, expectedIds.length);'
-  );
-  section = section.replace('await page.locator(".recipe-collection-badge:visible").count(), 20', 'await page.locator(".recipe-collection-badge:visible").count(), expectedIds.length * 2');
-  section = section.replaceAll('await visibleRecipeCount(page), 10', 'await visibleRecipeCount(page), expectedIds.length');
-  return text.slice(0, start) + section + text.slice(end);
-});
-
-edit("README.md", (text) => {
-  assert.ok(text.includes("individually reviewed recipes under"));
-  return text.replace("the ten individually reviewed recipes under", "the fifteen individually reviewed recipes under");
-});
-
-edit("docs/recipe-schema.md", (text) => {
-  const anchor = "- `zaatar-pistachio-salmon-with-lemon-dill-barley`";
-  assert.ok(text.includes(anchor));
-  if (!text.includes("- `beef-mushroom-barley-soup`")) {
-    text = text.replace(anchor, anchor + "\n" + soupIds.map((id) => `- \`${id}\``).join("\n"));
-  }
-  return text.replace("Preserve their existing Breakfast/Main Dishes membership.", "Preserve their Breakfast/Main Dishes membership and the five soups' Soups & Stews membership.");
-});
-
-edit("js/grouping.js", (text) => {
-  const entries = groups.filter(([key]) => !text.includes(`${JSON.stringify(key)}:`));
-  return text.replace("const ingredientGroups = {", "const ingredientGroups = {" + entries.map(([key, value]) => `\n  ${JSON.stringify(key)}: ${JSON.stringify(value)},`).join(""));
-});
-
-edit("tests/grouping.test.mjs", (text) => {
-  const entries = groups.filter(([key]) => !text.includes(`[${JSON.stringify(key)},`));
-  return text.replace("  const cases = [", "  const cases = [" + entries.map((entry) => `\n    ${JSON.stringify(entry)},`).join(""));
-});
-
-for (const id of soupIds) {
+for (const id of ids) {
   const recipe = JSON.parse(fs.readFileSync(`data/recipes/${id}.json`, "utf8"));
-  assert.equal(recipe.id, id);
   assert.equal(recipe.rating, null);
   assert.equal(recipe.tags.status, "not-tried");
-  assert.equal(recipe.nutrition, null);
-  assert.deepEqual(recipe.collections, ["main-dishes", "soups-stews", "health-conscious", "meal-prep-friendly"]);
   assert.ok(!/\btofu\b/i.test(recipe.ingredients.join(" ")));
   assert.ok(!/\bremaining\b|\brest of (?:the )?(?:salt|oil|broth)\b/i.test(recipe.instructions.join(" ")));
-  assert.ok(recipe.groceryIngredients.every((entry) => Number.isFinite(entry.quantity) && entry.quantity > 0 && entry.unit));
-  // Apply the same stable authoring format to only these five new source files.
-  const sorted = Object.fromEntries(Object.entries(recipe).sort(([left], [right]) => left.localeCompare(right)));
-  fs.writeFileSync(`data/recipes/${id}.json`, JSON.stringify(sorted, null, 2) + "\n");
 }
-console.log("Integrated five explicitly scoped soup recipes; temporary helper must be removed before completion.");
+console.log("Applied first post-PR flavor/texture review without changing ingredient totals.");
