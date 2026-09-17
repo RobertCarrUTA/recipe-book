@@ -1,0 +1,76 @@
+name: Soup 158 branch integration
+
+on:
+  push:
+    branches:
+      - feat/158-hearty-meal-prep-soups
+
+permissions:
+  contents: write
+
+concurrency:
+  group: soup-158-integration
+  cancel-in-progress: true
+
+jobs:
+  integrate:
+    if: github.repository == 'RobertCarrUTA/recipe-book' && github.ref == 'refs/heads/feat/158-hearty-meal-prep-soups' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/158-hearty-meal-prep-soups
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install locked dependencies and browser
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Integrate only the requested soup content
+        run: |
+          node .github/soup-158-integration.mjs
+          npm run set-asset-version -- 20260916-1
+          npm run build:recipes
+          npm run update:normalization-snapshot
+          npm run report:data-quality | tee /tmp/soup-158-data-quality.log
+      - name: Verify sources, generated data and browser behavior
+        run: |
+          set -o pipefail
+          npm run verify:full | tee /tmp/soup-158-verification.log
+      - name: Commit only allowlisted generated and integration files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- \
+            data/recipes/beef-mushroom-barley-soup.json \
+            data/recipes/harissa-red-lentil-sweet-potato-chickpea-soup.json \
+            data/recipes/lemon-rosemary-chicken-white-bean-kale-soup.json \
+            data/recipes/roasted-tomatillo-chicken-pozole-verde.json \
+            data/recipes/thai-red-curry-chicken-edamame-vegetable-soup.json \
+            data/recipes.json README.md docs/recipe-schema.md \
+            tests/recipe_data_quality.test.mjs scripts/smoke-browser.mjs \
+            js/grouping.js tests/grouping.test.mjs \
+            tests/fixtures/normalization_catalog_snapshot.json \
+            index.html 404.html sw.js
+          if ! git diff --cached --quiet; then
+            git commit -m 'Integrate soup collections and rebuild verified recipe data'
+            git push origin HEAD:refs/heads/feat/158-hearty-meal-prep-soups
+          fi
+          git rev-parse HEAD > /tmp/soup-158-verified-head.txt
+      - name: Export source and verification evidence
+        if: always()
+        run: zip -qr /tmp/soup-158-source.zip . -x '.git/*' 'node_modules/*'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: soup-158-source-and-verification
+          path: |
+            /tmp/soup-158-source.zip
+            /tmp/soup-158-data-quality.log
+            /tmp/soup-158-verification.log
+            /tmp/soup-158-verified-head.txt
+          retention-days: 3
