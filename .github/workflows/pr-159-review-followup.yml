@@ -1,0 +1,82 @@
+name: PR 159 review follow-up
+
+on:
+  push:
+    branches:
+      - feat/158-hearty-meal-prep-soups
+    paths:
+      - .github/workflows/pr-159-review-followup.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply-reviewed-fix:
+    if: github.repository == 'RobertCarrUTA/recipe-book' && github.ref == 'refs/heads/feat/158-hearty-meal-prep-soups' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Check reviewed baseline
+        run: |
+          test "$(git rev-parse HEAD^)" = '70ddc78adfe9b3f4ef30e410ccf9b147b9cf715e'
+          test "$(git hash-object data/recipes/roasted-tomatillo-chicken-pozole-verde.json)" = '32c610fb2165b841c2b4e056612349d96b6c2ab6'
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Apply one shopping-label correction and verify its scope
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import childProcess from 'node:child_process';
+          import fs from 'node:fs';
+          import { createRecipeRuntimeState, selectAllRecipes } from './js/grocery_model.js';
+          import { normalizeRecipeBook } from './js/recipe_schema.js';
+          import { formatTotalsForKey } from './js/units.js';
+          const id = 'roasted-tomatillo-chicken-pozole-verde';
+          const recipePath = `data/recipes/${id}.json`;
+          const before = JSON.parse(fs.readFileSync('data/recipes.json', 'utf8'));
+          const snapshotBefore = JSON.parse(fs.readFileSync('tests/fixtures/normalization_catalog_snapshot.json', 'utf8'));
+          const text = fs.readFileSync(recipePath, 'utf8');
+          assert.equal(text.split('"item": "tomatillos"').length - 1, 1);
+          fs.writeFileSync(recipePath, text.replace('"item": "tomatillos"', '"item": "tomatillo"'));
+          childProcess.execFileSync('npm', ['run', 'build:recipes'], { stdio: 'inherit' });
+          childProcess.execFileSync('npm', ['run', 'update:normalization-snapshot'], { stdio: 'inherit' });
+          const after = JSON.parse(fs.readFileSync('data/recipes.json', 'utf8'));
+          const expected = structuredClone(before);
+          expected.find((recipe) => recipe.id === id).groceryIngredients.find((entry) => entry.item === 'tomatillos').item = 'tomatillo';
+          assert.deepEqual(after, expected);
+          const state = createRecipeRuntimeState();
+          const selected = normalizeRecipeBook(after).recipes.filter((recipe) => [id, 'roasted-poblano-salsa-verde'].includes(recipe.id));
+          assert.equal(selected.length, 2);
+          selectAllRecipes(state, selected);
+          assert.deepEqual(state.grocery.totalsByKey.tomatillo, { oz: { min: 48, max: 48 } });
+          assert.ok(!Object.hasOwn(state.grocery.totalsByKey, 'tomatillos'));
+          assert.equal(formatTotalsForKey(state.grocery.totalsByKey.tomatillo, { canonicalKey: 'tomatillo' }), '3 lb');
+          assert.equal(snapshotBefore.labels.filter((entry) => entry.item === 'tomatillos').length, 1);
+          snapshotBefore.labels = snapshotBefore.labels.filter((entry) => entry.item !== 'tomatillos');
+          assert.deepEqual(JSON.parse(fs.readFileSync('tests/fixtures/normalization_catalog_snapshot.json', 'utf8')), snapshotBefore);
+          console.log('Verified one 3 lb tomatillo entry; all other 127 recipes and all cooking quantities/instructions unchanged.');
+          console.log('Snapshot removes only the duplicate plural label; units unchanged.');
+          JS
+          test "$(git hash-object data/recipes/roasted-tomatillo-chicken-pozole-verde.json)" = 'c2265c2e8b89df60b87b7196f134734e361dba19'
+          test "$(git hash-object data/recipes.json)" = '810874520d48d008b8e3c3014afa2d067198e60f'
+          test "$(git hash-object tests/fixtures/normalization_catalog_snapshot.json)" = '55ab89337dfe4ae2362da6e022f0c3d46c11b58f'
+          git diff --check
+          git diff --stat
+      - name: Run existing verification and advisory report
+        run: |
+          npm run verify
+          npm run report:data-quality
+      - name: Commit only the reviewed recipe and generated data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/recipes/roasted-tomatillo-chicken-pozole-verde.json data/recipes.json tests/fixtures/normalization_catalog_snapshot.json
+          git commit -m 'Fix tomatillo grocery aggregation from PR review'
+          git push origin HEAD:refs/heads/feat/158-hearty-meal-prep-soups
