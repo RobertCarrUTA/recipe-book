@@ -5,6 +5,10 @@ import { test } from "./test_helpers.mjs";
 
 test("determineGroupForKey classifies common recipe catalog grocery labels", () => {
   const cases = [
+    ["harissa paste","Sauces, Marinades, & Condiments"],
+    ["poblano pepper","Vegetables"],
+    ["thai red curry paste","Sauces, Marinades, & Condiments"],
+    ["white hominy","Pantry"],
     ["baking powder", "Baking"],
     ["baking soda", "Baking"],
     ["sourdough discard", "Baking"],

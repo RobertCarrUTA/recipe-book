@@ -15,7 +15,7 @@ The project intentionally has no framework, backend, database, bundler, or trans
 ## Key Features
 
 - Browse recipes by collection, search text, status, rating, difficulty, equipment, favorites, and grocery selection.
-- Find the ten individually reviewed recipes under **Collection > Health-conscious** or **Meal-prep friendly**, with labels on their cards. See the [editorial criteria](docs/recipe-schema.md#editorial-collections); other recipes have not been assessed.
+- Find the fifteen individually reviewed recipes under **Collection > Health-conscious** or **Meal-prep friendly**, with labels on their cards. See the [editorial criteria](docs/recipe-schema.md#editorial-collections); other recipes have not been assessed.
 - Sort by favorites, grocery selection, time, rating, or difficulty.
 - Plan recipes across a week and turn the plan into grocery quantities.
 - Aggregate structured grocery ingredients, compatible units, recipe multipliers, and manual items.

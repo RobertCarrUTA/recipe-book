@@ -43,6 +43,13 @@
       }
     },
     {
+      "item": "95% lean ground beef",
+      "canonical": {
+        "base": "95% lean ground beef",
+        "display": "95% lean ground beef"
+      }
+    },
+    {
       "item": "active dry or instant yeast",
       "canonical": {
         "base": "active dry or instant yeast",
@@ -696,6 +703,13 @@
       }
     },
     {
+      "item": "cremini mushrooms",
+      "canonical": {
+        "base": "cremini mushrooms",
+        "display": "cremini mushrooms"
+      }
+    },
+    {
       "item": "crinkle-cut dill pickles",
       "canonical": {
         "base": "dill pickle chips",
@@ -867,6 +881,13 @@
       }
     },
     {
+      "item": "dried mexican oregano",
+      "canonical": {
+        "base": "dried mexican oregano",
+        "display": "dried mexican oregano"
+      }
+    },
+    {
       "item": "dried oregano",
       "canonical": {
         "base": "dried oregano",
@@ -881,10 +902,17 @@
       }
     },
     {
+      "item": "dried rosemary",
+      "canonical": {
+        "base": "dried rosemary",
+        "display": "dried rosemary"
+      }
+    },
+    {
       "item": "dried thyme",
       "canonical": {
-        "base": "thyme",
-        "display": "thyme"
+        "base": "dried thyme",
+        "display": "dried thyme"
       }
     },
     {
@@ -964,9 +992,8 @@
     {
       "item": "fine sea salt",
       "canonical": {
-        "base": "sea salt",
-        "display": "sea salt",
-        "notes": []
+        "base": "fine sea salt",
+        "display": "fine sea salt"
       }
     },
     {
@@ -1397,6 +1424,13 @@
       }
     },
     {
+      "item": "harissa paste",
+      "canonical": {
+        "base": "harissa paste",
+        "display": "harissa paste"
+      }
+    },
+    {
       "item": "heavy cream",
       "canonical": {
         "base": "heavy cream",
@@ -1601,6 +1635,13 @@
       }
     },
     {
+      "item": "light coconut milk",
+      "canonical": {
+        "base": "light coconut milk",
+        "display": "light coconut milk"
+      }
+    },
+    {
       "item": "light or dark corn syrup",
       "canonical": {
         "base": "light or dark corn syrup",
@@ -1669,6 +1710,13 @@
       "canonical": {
         "base": "low-sodium soy sauce",
         "display": "low-sodium soy sauce"
+      }
+    },
+    {
+      "item": "low-sodium vegetable broth",
+      "canonical": {
+        "base": "low-sodium vegetable broth",
+        "display": "low-sodium vegetable broth"
       }
     },
     {
@@ -1837,41 +1885,50 @@
     {
       "item": "no-salt-added black beans",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added black beans",
+        "display": "no-salt-added black beans"
+      }
+    },
+    {
+      "item": "no-salt-added cannellini beans",
+      "canonical": {
+        "base": "no-salt-added cannellini beans",
+        "display": "no-salt-added cannellini beans"
       }
     },
     {
       "item": "no-salt-added chickpeas",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added chickpeas",
+        "display": "no-salt-added chickpeas"
       }
     },
     {
       "item": "no-salt-added crushed tomatoes",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added crushed tomatoes",
+        "display": "no-salt-added crushed tomatoes"
+      }
+    },
+    {
+      "item": "no-salt-added diced tomatoes",
+      "canonical": {
+        "base": "no-salt-added diced tomatoes",
+        "display": "no-salt-added diced tomatoes"
       }
     },
     {
       "item": "no-salt-added lentils",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added lentils",
+        "display": "no-salt-added lentils"
       }
     },
     {
       "item": "no-salt-added tomato paste",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added tomato paste",
+        "display": "no-salt-added tomato paste"
       }
     },
     {
@@ -2069,6 +2126,13 @@
       "canonical": {
         "base": "peanut or vegetable oil",
         "display": "peanut or vegetable oil"
+      }
+    },
+    {
+      "item": "pearl barley",
+      "canonical": {
+        "base": "pearl barley",
+        "display": "pearl barley"
       }
     },
     {
@@ -2348,6 +2412,13 @@
       }
     },
     {
+      "item": "raw pepitas",
+      "canonical": {
+        "base": "raw pepitas",
+        "display": "raw pepitas"
+      }
+    },
+    {
       "item": "red bell pepper",
       "canonical": {
         "base": "red bell pepper",
@@ -2366,6 +2437,13 @@
       "canonical": {
         "base": "red leaf lettuce",
         "display": "red leaf lettuce"
+      }
+    },
+    {
+      "item": "red lentils",
+      "canonical": {
+        "base": "red lentils",
+        "display": "red lentils"
       }
     },
     {
@@ -2394,6 +2472,13 @@
       "canonical": {
         "base": "red wine vinegar",
         "display": "red wine vinegar"
+      }
+    },
+    {
+      "item": "reduced-sodium soy sauce",
+      "canonical": {
+        "base": "reduced-sodium soy sauce",
+        "display": "reduced-sodium soy sauce"
       }
     },
     {
@@ -2722,6 +2807,20 @@
       }
     },
     {
+      "item": "thai basil",
+      "canonical": {
+        "base": "thai basil",
+        "display": "thai basil"
+      }
+    },
+    {
+      "item": "thai red curry paste",
+      "canonical": {
+        "base": "thai red curry paste",
+        "display": "thai red curry paste"
+      }
+    },
+    {
       "item": "thick-cut ribeye steak",
       "canonical": {
         "base": "thick-cut ribeye steak",
@@ -2884,6 +2983,13 @@
       "canonical": {
         "base": "white chocolate",
         "display": "white chocolate"
+      }
+    },
+    {
+      "item": "white hominy",
+      "canonical": {
+        "base": "white hominy",
+        "display": "white hominy"
       }
     },
     {

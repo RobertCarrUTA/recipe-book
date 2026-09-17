@@ -281,3 +281,33 @@ test("parsed hot dog ingredients preserve shopping labels and groups", () => {
     assert.equal(determineGroupForKey(parsed.canonical.base), expectedGroup, item);
   });
 });
+
+
+test("parseStructuredGroceryIngredient preserves sodium, fat and herb shopping distinctions", () => {
+  const labels = [
+    "95% lean ground beef",
+    "dried rosemary",
+    "dried thyme",
+    "fine sea salt",
+    "light coconut milk",
+    "no-salt-added black beans",
+    "no-salt-added cannellini beans",
+    "no-salt-added chickpeas",
+    "no-salt-added crushed tomatoes",
+    "no-salt-added diced tomatoes",
+    "no-salt-added lentils",
+    "no-salt-added tomato paste",
+    "thai basil"
+  ];
+  for (const item of labels) {
+    const entry = parseStructuredGroceryIngredient({ item, quantity: 2, unit: "tbsp", note: "keep label specification" });
+    assert.equal(entry.canonical.base, item, item);
+    assert.equal(entry.canonical.display, item, item);
+    assert.deepEqual(entry.quantityRange, { min: 2, max: 2 });
+    assert.equal(entry.unitKey, "tbsp");
+    assert.deepEqual(entry.notes, ["keep label specification"]);
+  }
+  assert.equal(parseStructuredGroceryIngredient({ item: "salt", quantity: 1, unit: "tsp" }).canonical.base, "salt");
+  assert.equal(parseStructuredGroceryIngredient({ item: "coconut milk", quantity: 1, unit: "can" }).canonical.base, "coconut milk");
+  assert.equal(parseStructuredGroceryIngredient({ item: "basil", quantity: 1, unit: "cup" }).canonical.base, "basil");
+});
