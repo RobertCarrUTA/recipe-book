@@ -7,7 +7,7 @@
     "health-conscious",
     "meal-prep-friendly"
   ],
-  "cookTime": "1 hour 10 minutes",
+  "cookTime": "1 hour 20 minutes",
   "description": "A substantial beef and barley soup with deeply browned mushrooms, porcini, thyme and a small miso-balsamic finish. Lean ground beef gives reliable tenderness without a long stew-meat braise.",
   "equipment": [
     "8-quart Dutch oven or heavy soup pot with lid",
@@ -168,7 +168,7 @@
     "Meal prep: divide into 6 shallow containers and refrigerate at 40 F (4 C) or below within 2 hours, or within 1 hour above 90 F (32 C). Do not wait for the entire pot to cool on the counter. Use refrigerated portions within 3-4 days; freeze portions intended for later days on prep day, leaving expansion room. Plan to use frozen portions within 3 months for quality. Thaw overnight in the refrigerator.",
     "Barley continues absorbing liquid. Reheat one portion with 1/4 cup (60 mL) water, stirring often, until the soup briefly reaches a rolling boil and the center reaches 165 F (74 C). For a still-thick portion, add a second 2 tbsp (30 mL) water and heat through again. For microwave reheating, cover loosely, stir halfway and check several spots reach 165 F (74 C).",
     "Allergens: barley contains gluten; miso contains soy and may also contain barley; Worcestershire commonly contains fish and may contain wheat. Check all packaged labels. Tap water used for soaking and reheating is intentionally not a grocery purchase.",
-    "Developed and reviewed in writing; not yet kitchen-tested. Numerical nutrition estimates are not published because final product labels and a complete calculation have not been verified."
+    "Developed and reviewed in writing; not yet kitchen-tested."
   ],
   "nutrition": null,
   "prepTime": "20 minutes",
@@ -183,5 +183,5 @@
     "status": "not-tried"
   },
   "title": "Beef, Mushroom and Barley Soup",
-  "totalTime": "1 hour 35 minutes"
+  "totalTime": "1 hour 45 minutes"
 }

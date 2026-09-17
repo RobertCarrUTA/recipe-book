@@ -7,7 +7,7 @@
     "health-conscious",
     "meal-prep-friendly"
   ],
-  "cookTime": "45 minutes",
+  "cookTime": "55 minutes",
   "description": "Chicken and hominy in a roasted tomatillo-poblano broth thickened with toasted pumpkin seeds. Cooking down the green puree gives the soup a deep savory base before cilantro and a restrained lime finish.",
   "equipment": [
     "8-quart Dutch oven or heavy soup pot",
@@ -137,7 +137,7 @@
     "While the vegetables broil, toast 1/2 cup (60 g) raw pepitas in the dry soup pot over medium heat for 3-4 minutes, stirring frequently, until fragrant and lightly golden. Transfer to a plate immediately so they do not scorch.",
     "Let the roasted vegetables cool for 5 minutes. Peel the 6 roasted garlic cloves and remove any loose, blackened pepper skin. Divide the complete roasted vegetable mixture and pan juices into 2 equal portions. Blend the first vegetable portion with 1/4 cup (30 g) toasted pepitas, 1/4 cup (8 g) cilantro, and 1/2 cup (120 mL) chicken broth until mostly smooth; transfer to a bowl. Blend the second vegetable portion with 1/4 cup (30 g) toasted pepitas, 1/4 cup (8 g) cilantro, and 1/2 cup (120 mL) chicken broth, then combine the two purees. Use a blender rated for warm liquids, leave the manufacturer's required headroom and vent its lid as directed; do not use a sealed personal-blender cup with hot ingredients.",
     "Heat 1 tbsp (13.5 g) olive oil in the pot over medium heat. Add 1 tsp cumin and 2 tsp crumbled Mexican oregano; stir for 20 seconds. Carefully pour in the complete green puree from the previous step; it may splatter. Cook for 5-6 minutes, stirring frequently, until slightly thickened and the aroma is roasted and savory rather than raw and grassy.",
-    "Add 5 cups (1.2 L) chicken broth, about 500 g drained hominy from 2 cans, 1/4 tsp (1.5 g) fine sea salt, and 1/2 tsp black pepper. Bring just to a simmer. Lower in 2 lb (907 g) chicken cutlets, submerge them and return to a gentle simmer. Cook for 12-18 minutes, turning once, until each cutlet reaches 165 F (74 C) in its thickest part. Remove individual pieces as they reach temperature rather than continuing to cook the thinner ones.",
+    "Add 5 cups (1.2 L) chicken broth, about 500 g drained hominy from 2 cans, 1/4 tsp (1.5 g) fine sea salt, and 1/2 tsp black pepper. Bring just to a simmer. Halve 2 lb (907 g) chicken breasts horizontally where needed to make cutlets no thicker than 3/4 inch. Lower the cutlets into the broth, submerge them and return to a gentle simmer. Cook for 12-18 minutes, turning once, until each cutlet reaches 165 F (74 C) in its thickest part. Remove individual pieces as they reach temperature rather than continuing to cook the thinner ones.",
     "Transfer the cooked chicken from the 907 g raw batch to a clean board and shred into bite-size pieces. Turn off the heat, return all shredded chicken to the pot, and stir in 2 tbsp (30 mL) lime juice and 1/2 cup (16 g) cilantro. Rest for 5 minutes. Stir thoroughly and divide the complete batch evenly among 6 servings, distributing chicken and hominy evenly. Do not boil the shredded chicken for another 10 minutes; it has already reached its safe cooking temperature."
   ],
   "link": null,
@@ -148,7 +148,7 @@
     "Meal prep: divide into 6 shallow containers rather than cooling the full pot on the counter. Refrigerate at 40 F (4 C) or below within 2 hours, or within 1 hour above 90 F (32 C). Use refrigerated portions within 3-4 days. Freeze portions intended for later days on prep day, leaving headroom, and plan to use them within 3 months for quality. Thaw overnight in the refrigerator.",
     "Reheat one portion with 2 tbsp (30 mL) water, stirring, until the soup briefly reaches a rolling boil and the chicken and center reach 165 F (74 C). Avoid prolonged boiling once hot. For microwave reheating, cover loosely, stir halfway and check several spots reach 165 F (74 C). Store any fresh crunchy garnishes separately and add them only after reheating.",
     "Check broth and hominy labels for allergens or sulfites. Pepitas are pumpkin seeds. The blender and broth make this thicker than a clear chicken soup; actual finished volume depends on evaporation, so divide by six equal portions rather than an assumed cup yield.",
-    "Developed and reviewed in writing; not yet kitchen-tested. Numerical nutrition estimates are not published because final product labels and a complete calculation have not been verified."
+    "Developed and reviewed in writing; not yet kitchen-tested."
   ],
   "nutrition": null,
   "prepTime": "25 minutes",
@@ -165,5 +165,5 @@
     "status": "not-tried"
   },
   "title": "Roasted Tomatillo Chicken Pozole Verde",
-  "totalTime": "1 hour 15 minutes"
+  "totalTime": "1 hour 25 minutes"
 }

@@ -7,7 +7,7 @@
     "health-conscious",
     "meal-prep-friendly"
   ],
-  "cookTime": "45 minutes",
+  "cookTime": "50 minutes",
   "description": "Browned chicken, creamy white beans and kale in a rosemary broth finished with lemon, parsley and a little Parmesan. Three cans of beans give six substantial bowls body without heavy cream.",
   "equipment": [
     "8-quart Dutch oven or heavy soup pot with lid",
@@ -139,12 +139,12 @@
     "1/2 tsp black pepper, divided into two 1/4-tsp portions"
   ],
   "instructions": [
-    "Pat 1 1/2 lb (680 g) chicken breast pieces dry. Toss with 1/4 tsp (1.5 g) fine sea salt and 1/4 tsp black pepper. Mash 240 g drained cannellini beans with a fork; keep 480 g drained cannellini beans whole. Zest 2 lemons to obtain 2 tsp zest, then squeeze them to measure 1/4 cup (60 mL) juice.",
+    "Pat 1 1/2 lb (680 g) chicken breast pieces dry. Toss with 1/4 tsp (1.5 g) fine sea salt and 1/4 tsp black pepper. Drain and rinse 3 cans (15 oz each) cannellini beans. Mash the contents of 1 can (about 240 g) with a fork; keep the contents of 2 cans (about 480 g) whole. Zest 2 lemons to obtain 2 tsp zest, then squeeze them to measure 1/4 cup (60 mL) juice.",
     "Heat 2 tsp (9 g) olive oil in an 8-quart pot over medium-high heat. Add 340 g seasoned chicken in one layer. Brown for 3 minutes without moving, then turn and cook for 1 minute. Transfer to a bowl. Heat 2 tsp (9 g) olive oil in the pot and brown the second 340 g seasoned chicken for 3 minutes on the first side and 1 minute on the second. Transfer to the same bowl. The chicken is not fully cooked; continue the recipe immediately.",
     "Reduce the heat to medium. Add 2 tsp (9 g) olive oil, 1 diced yellow onion (250 g), 3 diced carrots (250 g), 4 diced celery stalks (200 g), and 1/4 tsp (1.5 g) fine sea salt. Cook for 8-10 minutes, stirring and scraping, until softened with some golden edges. Keep the brown coating on the pot golden-brown, not black.",
     "Stir in 2 tbsp (32 g) tomato paste and cook for 2 minutes until brick-red. Add 6 minced garlic cloves (18 g), 2 tsp crushed dried rosemary, and 1/4 tsp red pepper flakes. Stir for 30 seconds until fragrant.",
-    "Pour in 6 cups (1.44 L) low-sodium chicken broth and scrape up the browned coating. Stir in the 240 g mashed cannellini beans and 480 g whole cannellini beans. Bring to a gentle simmer, then cook partially covered for 8 minutes, until the carrots are nearly tender. Stir occasionally to prevent the mashed beans from sticking.",
-    "Add 8 oz (227 g) chopped kale and all browned chicken from the 680 g raw batch, including its collected juices. Simmer gently for 5-8 minutes, stirring occasionally, until the kale is tender and several of the largest chicken pieces reach 165 F (74 C). Use the temperature rather than the clock, and stop simmering once the chicken is done.",
+    "Pour in 6 cups (1.44 L) low-sodium chicken broth and scrape up the browned coating. Stir in the mashed beans from 1 can (about 240 g) and the whole beans from 2 cans (about 480 g). Bring to a gentle simmer, then cook partially covered for 8 minutes, until the carrots are nearly tender. Stir occasionally to prevent the mashed beans from sticking.",
+    "Stir in 8 oz (227 g) chopped kale and simmer gently for 3 minutes. Add all browned chicken from the 680 g raw batch, including its collected juices, and simmer gently for 5-8 minutes, stirring occasionally, until several of the largest chicken pieces reach 165 F (74 C). The kale should be tender; if it needs longer, lift the cooked chicken into a clean bowl, finish the kale, then return the chicken off heat. Do not keep cooking chicken that has reached its temperature just to soften the greens.",
     "Turn off the heat. Stir in 1 oz (28 g) finely grated Parmesan, 2 tsp lemon zest, 1/4 cup (60 mL) lemon juice, 1/2 cup (20 g) chopped parsley, 1/4 tsp (1.5 g) fine sea salt, and 1/4 tsp black pepper. Rest for 5 minutes, then stir well and divide the complete batch evenly among 6 servings, distributing chicken and beans evenly. The finished broth should be creamy but spoonable, savory and distinctly lemony, not dominated by salt."
   ],
   "link": null,
@@ -155,7 +155,7 @@
     "Meal prep: stir and divide into 6 shallow containers rather than cooling the entire pot on the counter. Refrigerate at 40 F (4 C) or below within 2 hours, or within 1 hour when the room is above 90 F (32 C). Use refrigerated portions within 3-4 days. Freeze portions for later days on prep day; allow expansion room and use within 3 months for best planned quality. Thaw overnight in the refrigerator, not on the counter.",
     "Reheat one portion with 2 tbsp (30 mL) water in a saucepan, stirring frequently. Bring the soup briefly to a rolling boil and verify the chicken and center of the portion reach 165 F (74 C); do not keep boiling after that. For microwave reheating, cover loosely, stir halfway and check several spots reach 165 F (74 C). Reheat only the portion being eaten.",
     "Allergens: milk from Parmesan; check broth labels for any additional allergens. Six equal portions are the serving definition; the finished cup volume depends on evaporation. Optional bread or other sides are not part of the base recipe.",
-    "Developed and reviewed in writing; not yet kitchen-tested. Numerical nutrition estimates are not published because final product labels and a complete calculation have not been verified."
+    "Developed and reviewed in writing; not yet kitchen-tested."
   ],
   "nutrition": null,
   "prepTime": "20 minutes",
@@ -170,5 +170,5 @@
     "status": "not-tried"
   },
   "title": "Lemon-Rosemary Chicken, White Bean and Kale Soup",
-  "totalTime": "1 hour 10 minutes"
+  "totalTime": "1 hour 15 minutes"
 }

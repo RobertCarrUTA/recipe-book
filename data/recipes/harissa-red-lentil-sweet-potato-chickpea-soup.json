@@ -7,7 +7,7 @@
     "health-conscious",
     "meal-prep-friendly"
   ],
-  "cookTime": "45 minutes",
+  "cookTime": "50 minutes",
   "description": "A thick, warmly spiced lentil soup with sweet potato, chickpeas and spinach. Harissa, toasted spices and a lemon-tahini finish give it depth and brightness without cream.",
   "equipment": [
     "8-quart Dutch oven or heavy soup pot with lid",
@@ -82,9 +82,9 @@
     },
     {
       "item": "sweet potato",
-      "quantity": 1,
+      "quantity": 1.25,
       "unit": "lb",
-      "note": "454 g peeled; buy about 1 1/4 lb whole"
+      "note": "buy about 567 g whole to supply the 454 g peeled cooking quantity"
     },
     {
       "item": "no-salt-added diced tomatoes",
@@ -181,7 +181,7 @@
     "Meal prep: divide into 6 shallow containers and refrigerate at 40 F (4 C) or below within 2 hours, or within 1 hour above 90 F (32 C). Do not cool the whole pot on the counter. Refrigerate for up to 3-4 days. Freeze portions for later days on prep day with expansion room, planning to use them within 3 months for quality. Thaw overnight in the refrigerator.",
     "The lentils thicken during storage. Reheat one portion with 1/4 cup (60 mL) water, stirring frequently to prevent scorching. Bring briefly to a rolling boil and verify the center reaches 165 F (74 C). If still too thick, add another 2 tbsp (30 mL) water and heat through. For microwave reheating, cover loosely, stir halfway and check several spots reach 165 F (74 C).",
     "Allergen: sesame from tahini. Check harissa and broth labels for other allergens and choose plant-based broth and paste for a vegan version. Six equal portions define the serving size; optional pita or other sides are not included.",
-    "Developed and reviewed in writing; not yet kitchen-tested. Numerical nutrition estimates are not published because final product labels and a complete calculation have not been verified."
+    "Developed and reviewed in writing; not yet kitchen-tested."
   ],
   "nutrition": null,
   "prepTime": "20 minutes",
@@ -196,5 +196,5 @@
     "status": "not-tried"
   },
   "title": "Harissa Red Lentil, Sweet Potato and Chickpea Soup",
-  "totalTime": "1 hour 10 minutes"
+  "totalTime": "1 hour 15 minutes"
 }
