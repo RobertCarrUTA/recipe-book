@@ -1,32 +1,144 @@
 {
   "additionalTime": "5 minutes",
   "author": "Robert Carr",
-  "collections": ["main-dishes", "soups-stews", "health-conscious", "meal-prep-friendly"],
+  "collections": [
+    "main-dishes",
+    "soups-stews",
+    "health-conscious",
+    "meal-prep-friendly"
+  ],
   "cookTime": "45 minutes",
   "description": "A thick, warmly spiced lentil soup with sweet potato, chickpeas and spinach. Harissa, toasted spices and a lemon-tahini finish give it depth and brightness without cream.",
-  "equipment": ["8-quart Dutch oven or heavy soup pot with lid", "Chef's knife and cutting board", "Fine-mesh strainer", "Kitchen scale and measuring spoons", "Small bowl and whisk", "Instant-read thermometer for reheating", "Six shallow meal-prep containers"],
+  "equipment": [
+    "8-quart Dutch oven or heavy soup pot with lid",
+    "Chef's knife and cutting board",
+    "Fine-mesh strainer",
+    "Kitchen scale and measuring spoons",
+    "Small bowl and whisk",
+    "Instant-read thermometer for reheating",
+    "Six shallow meal-prep containers"
+  ],
   "groceryIngredients": [
-    {"item": "extra-virgin olive oil", "quantity": 2, "unit": "tbsp"},
-    {"item": "yellow onion", "quantity": 1, "unit": "item", "note": "large; 250 g peeled"},
-    {"item": "carrot", "quantity": 200, "unit": "g", "note": "about 2 medium, trimmed"},
-    {"item": "garlic", "quantity": 6, "unit": "clove", "note": "20 g peeled"},
-    {"item": "fresh ginger", "quantity": 20, "unit": "g", "note": "about 2 tbsp finely grated"},
-    {"item": "harissa paste", "quantity": 2, "unit": "tbsp", "note": "30 g; choose mild paste with 200 mg sodium or less per tbsp, not dry harissa seasoning"},
-    {"item": "no-salt-added tomato paste", "quantity": 2, "unit": "tbsp"},
-    {"item": "ground cumin", "quantity": 2, "unit": "tsp"},
-    {"item": "ground coriander", "quantity": 2, "unit": "tsp"},
-    {"item": "smoked paprika", "quantity": 2, "unit": "tsp"},
-    {"item": "red lentils", "quantity": 1.5, "unit": "cup", "note": "300 g dry split red lentils"},
-    {"item": "sweet potato", "quantity": 1, "unit": "lb", "note": "454 g peeled; buy about 1 1/4 lb whole"},
-    {"item": "no-salt-added diced tomatoes", "quantity": 1, "unit": "can", "note": "14.5 oz; use all 411 g including juice"},
-    {"item": "low-sodium vegetable broth", "quantity": 6, "unit": "cup", "note": "choose 140 mg sodium or less per cup"},
-    {"item": "no-salt-added chickpeas", "quantity": 2, "unit": "can", "note": "15 oz each; about 480 g total drained and rinsed"},
-    {"item": "baby spinach", "quantity": 5, "unit": "oz", "note": "142 g"},
-    {"item": "lemon", "quantity": 2, "unit": "item", "note": "supply 1/4 cup juice"},
-    {"item": "tahini", "quantity": 2, "unit": "tbsp", "note": "30 g; unsalted, well stirred"},
-    {"item": "cilantro", "quantity": 0.5, "unit": "cup", "note": "16 g chopped leaves and tender stems"},
-    {"item": "fine sea salt", "quantity": 0.5, "unit": "tsp", "note": "3 g total, divided"},
-    {"item": "black pepper", "quantity": 0.5, "unit": "tsp"}
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1,
+      "unit": "item",
+      "note": "large; 250 g peeled"
+    },
+    {
+      "item": "carrot",
+      "quantity": 200,
+      "unit": "g",
+      "note": "about 2 medium, trimmed"
+    },
+    {
+      "item": "garlic",
+      "quantity": 6,
+      "unit": "clove",
+      "note": "20 g peeled"
+    },
+    {
+      "item": "fresh ginger",
+      "quantity": 20,
+      "unit": "g",
+      "note": "about 2 tbsp finely grated"
+    },
+    {
+      "item": "harissa paste",
+      "quantity": 2,
+      "unit": "tbsp",
+      "note": "30 g; choose mild paste with 200 mg sodium or less per tbsp, not dry harissa seasoning"
+    },
+    {
+      "item": "no-salt-added tomato paste",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "ground cumin",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "ground coriander",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "smoked paprika",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "red lentils",
+      "quantity": 1.5,
+      "unit": "cup",
+      "note": "300 g dry split red lentils"
+    },
+    {
+      "item": "sweet potato",
+      "quantity": 1,
+      "unit": "lb",
+      "note": "454 g peeled; buy about 1 1/4 lb whole"
+    },
+    {
+      "item": "no-salt-added diced tomatoes",
+      "quantity": 1,
+      "unit": "can",
+      "note": "14.5 oz; use all 411 g including juice"
+    },
+    {
+      "item": "low-sodium vegetable broth",
+      "quantity": 6,
+      "unit": "cup",
+      "note": "choose 140 mg sodium or less per cup"
+    },
+    {
+      "item": "no-salt-added chickpeas",
+      "quantity": 2,
+      "unit": "can",
+      "note": "15 oz each; about 480 g total drained and rinsed"
+    },
+    {
+      "item": "baby spinach",
+      "quantity": 5,
+      "unit": "oz",
+      "note": "142 g"
+    },
+    {
+      "item": "lemon",
+      "quantity": 2,
+      "unit": "item",
+      "note": "supply 1/4 cup juice"
+    },
+    {
+      "item": "tahini",
+      "quantity": 2,
+      "unit": "tbsp",
+      "note": "30 g; unsalted, well stirred"
+    },
+    {
+      "item": "cilantro",
+      "quantity": 0.5,
+      "unit": "cup",
+      "note": "16 g chopped leaves and tender stems"
+    },
+    {
+      "item": "fine sea salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "note": "3 g total, divided"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
   ],
   "id": "harissa-red-lentil-sweet-potato-chickpea-soup",
   "ingredients": [
@@ -74,7 +186,14 @@
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "6 substantial main-meal servings",
-  "tags": {"difficulty": "easy", "equipment": ["dutch-oven", "stovetop"], "status": "not-tried"},
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "dutch-oven",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
   "title": "Harissa Red Lentil, Sweet Potato and Chickpea Soup",
   "totalTime": "1 hour 10 minutes"
 }

@@ -1,28 +1,122 @@
 {
   "additionalTime": "5 minutes",
   "author": "Robert Carr",
-  "collections": ["main-dishes", "soups-stews", "health-conscious", "meal-prep-friendly"],
+  "collections": [
+    "main-dishes",
+    "soups-stews",
+    "health-conscious",
+    "meal-prep-friendly"
+  ],
   "cookTime": "45 minutes",
   "description": "Browned chicken, creamy white beans and kale in a rosemary broth finished with lemon, parsley and a little Parmesan. Three cans of beans give six substantial bowls body without heavy cream.",
-  "equipment": ["8-quart Dutch oven or heavy soup pot with lid", "Chef's knife and cutting board", "Kitchen scale and measuring spoons", "Fork or potato masher", "Instant-read thermometer", "Fine grater", "Six shallow meal-prep containers"],
+  "equipment": [
+    "8-quart Dutch oven or heavy soup pot with lid",
+    "Chef's knife and cutting board",
+    "Kitchen scale and measuring spoons",
+    "Fork or potato masher",
+    "Instant-read thermometer",
+    "Fine grater",
+    "Six shallow meal-prep containers"
+  ],
   "groceryIngredients": [
-    {"item": "boneless skinless chicken breast", "quantity": 1.5, "unit": "lb", "note": "680 g; choose unbrined chicken without an added salt solution"},
-    {"item": "extra-virgin olive oil", "quantity": 2, "unit": "tbsp"},
-    {"item": "yellow onion", "quantity": 1, "unit": "item", "note": "large; about 250 g peeled"},
-    {"item": "carrot", "quantity": 250, "unit": "g", "note": "about 3 medium, trimmed"},
-    {"item": "celery", "quantity": 200, "unit": "g", "note": "about 4 stalks, trimmed"},
-    {"item": "garlic", "quantity": 6, "unit": "clove", "note": "about 18 g peeled"},
-    {"item": "no-salt-added tomato paste", "quantity": 2, "unit": "tbsp"},
-    {"item": "dried rosemary", "quantity": 2, "unit": "tsp"},
-    {"item": "red pepper flakes", "quantity": 0.25, "unit": "tsp"},
-    {"item": "low-sodium chicken broth", "quantity": 6, "unit": "cup", "note": "choose a label with 70 mg sodium or less per cup"},
-    {"item": "no-salt-added cannellini beans", "quantity": 3, "unit": "can", "note": "15 oz each; about 720 g total drained and rinsed"},
-    {"item": "kale", "quantity": 8, "unit": "oz", "note": "227 g trimmed leaves; buy extra if sold with heavy stems"},
-    {"item": "Parmesan cheese", "quantity": 1, "unit": "oz", "note": "28 g, finely grated; not a rind"},
-    {"item": "lemon", "quantity": 2, "unit": "item", "note": "supply 2 tsp zest and 1/4 cup juice"},
-    {"item": "flat-leaf parsley", "quantity": 0.5, "unit": "cup", "note": "20 g chopped"},
-    {"item": "fine sea salt", "quantity": 0.75, "unit": "tsp", "note": "4.5 g total, divided"},
-    {"item": "black pepper", "quantity": 0.5, "unit": "tsp", "note": "divided"}
+    {
+      "item": "boneless skinless chicken breast",
+      "quantity": 1.5,
+      "unit": "lb",
+      "note": "680 g; choose unbrined chicken without an added salt solution"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1,
+      "unit": "item",
+      "note": "large; about 250 g peeled"
+    },
+    {
+      "item": "carrot",
+      "quantity": 250,
+      "unit": "g",
+      "note": "about 3 medium, trimmed"
+    },
+    {
+      "item": "celery",
+      "quantity": 200,
+      "unit": "g",
+      "note": "about 4 stalks, trimmed"
+    },
+    {
+      "item": "garlic",
+      "quantity": 6,
+      "unit": "clove",
+      "note": "about 18 g peeled"
+    },
+    {
+      "item": "no-salt-added tomato paste",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "dried rosemary",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "red pepper flakes",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "item": "low-sodium chicken broth",
+      "quantity": 6,
+      "unit": "cup",
+      "note": "choose a label with 70 mg sodium or less per cup"
+    },
+    {
+      "item": "no-salt-added cannellini beans",
+      "quantity": 3,
+      "unit": "can",
+      "note": "15 oz each; about 720 g total drained and rinsed"
+    },
+    {
+      "item": "kale",
+      "quantity": 8,
+      "unit": "oz",
+      "note": "227 g trimmed leaves; buy extra if sold with heavy stems"
+    },
+    {
+      "item": "Parmesan cheese",
+      "quantity": 1,
+      "unit": "oz",
+      "note": "28 g, finely grated; not a rind"
+    },
+    {
+      "item": "lemon",
+      "quantity": 2,
+      "unit": "item",
+      "note": "supply 2 tsp zest and 1/4 cup juice"
+    },
+    {
+      "item": "flat-leaf parsley",
+      "quantity": 0.5,
+      "unit": "cup",
+      "note": "20 g chopped"
+    },
+    {
+      "item": "fine sea salt",
+      "quantity": 0.75,
+      "unit": "tsp",
+      "note": "4.5 g total, divided"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "note": "divided"
+    }
   ],
   "id": "lemon-rosemary-chicken-white-bean-kale-soup",
   "ingredients": [
@@ -67,7 +161,14 @@
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "6 substantial main-meal servings",
-  "tags": {"difficulty": "easy", "equipment": ["dutch-oven", "stovetop"], "status": "not-tried"},
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "dutch-oven",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
   "title": "Lemon-Rosemary Chicken, White Bean and Kale Soup",
   "totalTime": "1 hour 10 minutes"
 }

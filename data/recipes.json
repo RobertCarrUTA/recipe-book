@@ -21425,5 +21425,916 @@
     },
     "title": "Zaatar-Pistachio Salmon with Lemon-Dill Barley",
     "totalTime": "50 minutes"
+  },
+  {
+    "additionalTime": "5 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "soups-stews",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "1 hour 10 minutes",
+    "description": "A substantial beef and barley soup with deeply browned mushrooms, porcini, thyme and a small miso-balsamic finish. Lean ground beef gives reliable tenderness without a long stew-meat braise.",
+    "equipment": [
+      "8-quart Dutch oven or heavy soup pot with lid",
+      "Chef's knife and cutting board",
+      "Heatproof bowl and measuring jug",
+      "Fine-mesh strainer lined with a coffee filter",
+      "Kitchen scale and measuring spoons",
+      "Instant-read thermometer",
+      "Six shallow meal-prep containers"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "95% lean ground beef",
+        "quantity": 1.5,
+        "unit": "lb",
+        "note": "680 g"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "cremini mushrooms",
+        "quantity": 1,
+        "unit": "lb",
+        "note": "454 g, thickly sliced"
+      },
+      {
+        "item": "dried porcini mushrooms",
+        "quantity": 0.5,
+        "unit": "oz",
+        "note": "14 g"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1,
+        "unit": "item",
+        "note": "large; 250 g peeled"
+      },
+      {
+        "item": "carrot",
+        "quantity": 200,
+        "unit": "g",
+        "note": "about 2 medium, trimmed"
+      },
+      {
+        "item": "celery",
+        "quantity": 150,
+        "unit": "g",
+        "note": "about 3 stalks, trimmed"
+      },
+      {
+        "item": "garlic",
+        "quantity": 5,
+        "unit": "clove",
+        "note": "16 g peeled"
+      },
+      {
+        "item": "no-salt-added tomato paste",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "dried thyme",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "bay leaf",
+        "quantity": 2,
+        "unit": "leaf"
+      },
+      {
+        "item": "pearl barley",
+        "quantity": 1,
+        "unit": "cup",
+        "note": "200 g dry; not hulled barley or quick-cooking barley"
+      },
+      {
+        "item": "low-sodium beef broth",
+        "quantity": 6,
+        "unit": "cup",
+        "note": "choose 140 mg sodium or less per cup; compare unsalted stocks by their labels"
+      },
+      {
+        "item": "Worcestershire sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "note": "check fish and wheat allergens"
+      },
+      {
+        "item": "white miso",
+        "quantity": 1,
+        "unit": "tbsp",
+        "note": "18 g; choose 650 mg sodium or less per tbsp"
+      },
+      {
+        "item": "balsamic vinegar",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "flat-leaf parsley",
+        "quantity": 0.5,
+        "unit": "cup",
+        "note": "20 g chopped"
+      },
+      {
+        "item": "fine sea salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "note": "3 g total, divided"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "note": "divided"
+      }
+    ],
+    "id": "beef-mushroom-barley-soup",
+    "ingredients": [
+      "1 1/2 lb (680 g) 95% lean ground beef",
+      "2 tbsp (27 g) extra-virgin olive oil, divided into three 2-tsp portions",
+      "1 lb (454 g) cremini mushrooms, cleaned, dried and thickly sliced",
+      "1/2 oz (14 g) dried porcini mushrooms",
+      "2 cups (480 mL) boiling water for the porcini; after filtering, add water only to restore the soaking liquid to 2 cups (480 mL)",
+      "1 large yellow onion (250 g peeled), diced",
+      "2 medium carrots (200 g trimmed), cut into 1/4-inch dice",
+      "3 celery stalks (150 g trimmed), cut into 1/4-inch dice",
+      "5 garlic cloves (16 g peeled), minced",
+      "2 tbsp (32 g) no-salt-added tomato paste",
+      "1 tsp dried thyme",
+      "2 bay leaves",
+      "1 cup (200 g) dry pearl barley, rinsed; not hulled or quick-cooking barley",
+      "6 cups (1.44 L) low-sodium beef broth, with 140 mg sodium or less per cup",
+      "1 tbsp (15 mL) Worcestershire sauce",
+      "1 tbsp (18 g) white miso, with 650 mg sodium or less per tbsp",
+      "1 tbsp (15 mL) balsamic vinegar",
+      "1/2 cup (20 g) chopped flat-leaf parsley",
+      "1/2 tsp (3 g) fine sea salt, divided into two 1/4-tsp portions",
+      "1/2 tsp black pepper, divided into two 1/4-tsp portions"
+    ],
+    "instructions": [
+      "Cover 1/2 oz (14 g) dried porcini with 2 cups (480 mL) boiling water in a heatproof bowl. Soak for 15 minutes while you begin browning the beef. Lift out the porcini, rinse off any grit, and chop finely. Filter the soaking liquid through a coffee-filter-lined strainer into a measuring jug, leaving grit behind. Add water only until the filtered liquid measures 2 cups (480 mL).",
+      "Heat 2 tsp (9 g) olive oil in an 8-quart pot over medium-high heat. Add 1 1/2 lb (680 g) lean ground beef, 1/4 tsp (1.5 g) fine sea salt, and 1/4 tsp black pepper. Press the beef into a broad layer and leave it for 3-4 minutes to brown. Turn in sections, break into bite-size crumbles, and cook for 4-5 minutes, until browned and the largest clumps reach 160 F (71 C). Transfer the beef and its juices to a bowl. Do not discard the brown coating on the pot.",
+      "Add 2 tsp (9 g) olive oil and 1 lb (454 g) sliced cremini mushrooms to the pot. Cook over medium-high heat for 10-12 minutes, stirring occasionally, until released liquid has evaporated and the mushrooms have deeply browned edges. Reduce the heat if the coating on the pot threatens to burn; pale, watery mushrooms are not finished.",
+      "Reduce the heat to medium. Add 2 tsp (9 g) olive oil, 1 diced onion (250 g), 2 diced carrots (200 g), 3 diced celery stalks (150 g), and 1/4 tsp (1.5 g) fine sea salt. Cook for 6-8 minutes, stirring, until softened. Stir in 2 tbsp (32 g) tomato paste and cook for 2 minutes. Add 5 minced garlic cloves (16 g) and 1 tsp dried thyme; stir for 30 seconds.",
+      "Add 6 cups (1.44 L) low-sodium beef broth and the measured 2 cups (480 mL) filtered porcini liquid. Scrape up the brown coating. Stir in the chopped porcini from the 14 g dry batch, 1 cup (200 g) rinsed pearl barley, 2 bay leaves, 1 tbsp (15 mL) Worcestershire sauce, and all browned beef from the 680 g raw batch with its juices. Bring to a boil, then simmer gently with the lid slightly ajar for 35-45 minutes, stirring every 10 minutes, until the barley is pleasantly chewy with no hard center. Start checking at 30 minutes; barley brands and simmer intensity vary.",
+      "Remove the 2 bay leaves. Take 1/2 cup (120 mL) hot broth out of the soup and whisk it with 1 tbsp (18 g) white miso in a bowl until smooth. Turn off the heat and return that mixture to the pot; this is broth taken from the batch, not extra broth. Stir in 1 tbsp (15 mL) balsamic vinegar, 1/2 cup (20 g) chopped parsley, and 1/4 tsp black pepper. Rest for 5 minutes, then divide the complete batch evenly among 6 servings, distributing beef, mushrooms and barley evenly."
+    ],
+    "link": null,
+    "notes": [
+      "Flavor: properly browned beef and mushrooms, filtered porcini broth, brick-red tomato paste and thyme supply the savory base. The small miso dose rounds it out, while balsamic brightens the finish without turning the soup into a sweet glaze. Do not add bouillon cubes or extra salt automatically.",
+      "Health-conscious design: use 95% lean beef rather than fatty mince or sausage. Mushrooms and barley add substantial volume and fiber; oil, miso, Worcestershire and salt are measured. Pearl barley is not a whole grain, although it supplies fiber. Hulled barley is a different product with a longer cooking time and is not a direct timed substitution here.",
+      "The timing intentionally allows a proper barley simmer and mushroom browning. This is not a 30-minute soup. White miso, Worcestershire and broth all contribute sodium; choose the specified labels and do not assume an unsalted stock is sodium-free. This recipe is not certified low sodium.",
+      "Meal prep: divide into 6 shallow containers and refrigerate at 40 F (4 C) or below within 2 hours, or within 1 hour above 90 F (32 C). Do not wait for the entire pot to cool on the counter. Use refrigerated portions within 3-4 days; freeze portions intended for later days on prep day, leaving expansion room. Plan to use frozen portions within 3 months for quality. Thaw overnight in the refrigerator.",
+      "Barley continues absorbing liquid. Reheat one portion with 1/4 cup (60 mL) water, stirring often, until the soup briefly reaches a rolling boil and the center reaches 165 F (74 C). For a still-thick portion, add a second 2 tbsp (30 mL) water and heat through again. For microwave reheating, cover loosely, stir halfway and check several spots reach 165 F (74 C).",
+      "Allergens: barley contains gluten; miso contains soy and may also contain barley; Worcestershire commonly contains fish and may contain wheat. Check all packaged labels. Tap water used for soaking and reheating is intentionally not a grocery purchase.",
+      "Developed and reviewed in writing; not yet kitchen-tested. Numerical nutrition estimates are not published because final product labels and a complete calculation have not been verified."
+    ],
+    "nutrition": null,
+    "prepTime": "20 minutes",
+    "rating": null,
+    "servings": "6 substantial main-meal servings",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "dutch-oven",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Beef, Mushroom and Barley Soup",
+    "totalTime": "1 hour 35 minutes"
+  },
+  {
+    "additionalTime": "5 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "soups-stews",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "45 minutes",
+    "description": "A thick, warmly spiced lentil soup with sweet potato, chickpeas and spinach. Harissa, toasted spices and a lemon-tahini finish give it depth and brightness without cream.",
+    "equipment": [
+      "8-quart Dutch oven or heavy soup pot with lid",
+      "Chef's knife and cutting board",
+      "Fine-mesh strainer",
+      "Kitchen scale and measuring spoons",
+      "Small bowl and whisk",
+      "Instant-read thermometer for reheating",
+      "Six shallow meal-prep containers"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1,
+        "unit": "item",
+        "note": "large; 250 g peeled"
+      },
+      {
+        "item": "carrot",
+        "quantity": 200,
+        "unit": "g",
+        "note": "about 2 medium, trimmed"
+      },
+      {
+        "item": "garlic",
+        "quantity": 6,
+        "unit": "clove",
+        "note": "20 g peeled"
+      },
+      {
+        "item": "fresh ginger",
+        "quantity": 20,
+        "unit": "g",
+        "note": "about 2 tbsp finely grated"
+      },
+      {
+        "item": "harissa paste",
+        "quantity": 2,
+        "unit": "tbsp",
+        "note": "30 g; choose mild paste with 200 mg sodium or less per tbsp, not dry harissa seasoning"
+      },
+      {
+        "item": "no-salt-added tomato paste",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "ground cumin",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "ground coriander",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "smoked paprika",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "red lentils",
+        "quantity": 1.5,
+        "unit": "cup",
+        "note": "300 g dry split red lentils"
+      },
+      {
+        "item": "sweet potato",
+        "quantity": 1,
+        "unit": "lb",
+        "note": "454 g peeled; buy about 1 1/4 lb whole"
+      },
+      {
+        "item": "no-salt-added diced tomatoes",
+        "quantity": 1,
+        "unit": "can",
+        "note": "14.5 oz; use all 411 g including juice"
+      },
+      {
+        "item": "low-sodium vegetable broth",
+        "quantity": 6,
+        "unit": "cup",
+        "note": "choose 140 mg sodium or less per cup"
+      },
+      {
+        "item": "no-salt-added chickpeas",
+        "quantity": 2,
+        "unit": "can",
+        "note": "15 oz each; about 480 g total drained and rinsed"
+      },
+      {
+        "item": "baby spinach",
+        "quantity": 5,
+        "unit": "oz",
+        "note": "142 g"
+      },
+      {
+        "item": "lemon",
+        "quantity": 2,
+        "unit": "item",
+        "note": "supply 1/4 cup juice"
+      },
+      {
+        "item": "tahini",
+        "quantity": 2,
+        "unit": "tbsp",
+        "note": "30 g; unsalted, well stirred"
+      },
+      {
+        "item": "cilantro",
+        "quantity": 0.5,
+        "unit": "cup",
+        "note": "16 g chopped leaves and tender stems"
+      },
+      {
+        "item": "fine sea salt",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "note": "3 g total, divided"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "id": "harissa-red-lentil-sweet-potato-chickpea-soup",
+    "ingredients": [
+      "2 tbsp (27 g) extra-virgin olive oil",
+      "1 large yellow onion (250 g peeled), diced",
+      "2 medium carrots (200 g trimmed), cut into 1/4-inch dice",
+      "6 garlic cloves (20 g peeled), minced",
+      "2 tbsp (20 g) finely grated fresh ginger",
+      "2 tbsp (30 g) mild harissa paste, with 200 mg sodium or less per tbsp; not dry seasoning",
+      "2 tbsp (32 g) no-salt-added tomato paste",
+      "2 tsp ground cumin",
+      "2 tsp ground coriander",
+      "2 tsp smoked paprika",
+      "1 1/2 cups (300 g) dry split red lentils, picked over and rinsed",
+      "1 lb (454 g) peeled sweet potato, cut into 1/2-inch cubes",
+      "1 can (14.5 oz / 411 g) no-salt-added diced tomatoes with their juice",
+      "6 cups (1.44 L) low-sodium vegetable broth, with 140 mg sodium or less per cup",
+      "2 cans (15 oz each) no-salt-added chickpeas, drained and rinsed; about 480 g total",
+      "5 oz (142 g) baby spinach",
+      "2 lemons, supplying 1/4 cup (60 mL) juice",
+      "2 tbsp (30 g) unsalted tahini, stirred smooth before measuring",
+      "1/2 cup (16 g) chopped cilantro leaves and tender stems",
+      "1/2 tsp (3 g) fine sea salt, divided into two 1/4-tsp portions",
+      "1/2 tsp black pepper"
+    ],
+    "instructions": [
+      "Heat 2 tbsp (27 g) olive oil in an 8-quart pot over medium heat. Add 1 diced onion (250 g), 2 diced carrots (200 g), and 1/4 tsp (1.5 g) fine sea salt. Cook for 8 minutes, stirring occasionally, until the onion is soft with golden edges.",
+      "Add 2 tbsp (32 g) tomato paste and cook for 2 minutes, stirring, until the paste darkens. Add 6 minced garlic cloves (20 g), 2 tbsp (20 g) grated ginger, 2 tsp cumin, 2 tsp coriander, and 2 tsp smoked paprika. Stir for 30 seconds. Add 2 tbsp (30 g) mild harissa paste and stir for another 30 seconds. The spices should smell fragrant, not scorched.",
+      "Add 6 cups (1.44 L) low-sodium vegetable broth, 1 1/2 cups (300 g) rinsed split red lentils, 1 lb (454 g) sweet potato cubes, 1/4 tsp (1.5 g) fine sea salt, and 1/2 tsp black pepper. Scrape the base of the pot, bring to a boil, then simmer gently with the lid slightly ajar for 18-22 minutes. Stir every few minutes, scraping the bottom, until the lentils are breaking down and the sweet potato is almost tender.",
+      "Stir in 1 can (14.5 oz / 411 g) diced tomatoes with their juice and about 480 g drained chickpeas from 2 cans. Simmer gently for 8-10 minutes, stirring often, until the lentils are creamy and the sweet potato is fully tender. The tomato addition is deliberately late rather than at the start of the lentil simmer.",
+      "Stir in 5 oz (142 g) baby spinach and cook for 2 minutes until wilted. Take 1/2 cup (120 mL) hot liquid from the pot. In a small bowl, whisk 2 tbsp (30 g) tahini with 1/4 cup (60 mL) lemon juice, then whisk in that 1/2 cup (120 mL) hot soup liquid gradually until smooth; the tahini may thicken at first before loosening.",
+      "Turn off the heat. Stir the complete tahini-lemon mixture back into the soup and fold in 1/2 cup (16 g) chopped cilantro. Rest for 5 minutes, then stir and divide the full batch evenly among 6 servings. Aim for a thick, spoonable soup with tender chickpeas, warm chile flavor and a bright finish, not a dry lentil mash."
+    ],
+    "link": null,
+    "notes": [
+      "Flavor: cook the tomato paste to remove its raw edge, bloom the spices briefly, and use a fresh, fragrant harissa rather than a stale jar. Mild harissa is the base recipe; brands vary widely in heat and salt. The lemon-tahini finish softens the chile impression without masking the cumin and coriander.",
+      "Health-conscious design: lentils and chickpeas provide plant protein and fiber, sweet potato and spinach add vegetables, and olive oil and tahini are measured. No sugar, cream or butter is added separately. Check broth and harissa labels rather than assuming a vegan soup is low sodium. This is an editorial designation, not a nutrient certification.",
+      "Use split red lentils, not whole green or brown lentils; the timing and creamy texture depend on that choice. Use both drained cans of chickpeas even if their actual drained weight differs slightly from the 480 g estimate. At the end of cooking, if the soup has become too thick to ladle, stir in exactly 1/2 cup (120 mL) water and heat through; tap water is not a grocery purchase.",
+      "Meal prep: divide into 6 shallow containers and refrigerate at 40 F (4 C) or below within 2 hours, or within 1 hour above 90 F (32 C). Do not cool the whole pot on the counter. Refrigerate for up to 3-4 days. Freeze portions for later days on prep day with expansion room, planning to use them within 3 months for quality. Thaw overnight in the refrigerator.",
+      "The lentils thicken during storage. Reheat one portion with 1/4 cup (60 mL) water, stirring frequently to prevent scorching. Bring briefly to a rolling boil and verify the center reaches 165 F (74 C). If still too thick, add another 2 tbsp (30 mL) water and heat through. For microwave reheating, cover loosely, stir halfway and check several spots reach 165 F (74 C).",
+      "Allergen: sesame from tahini. Check harissa and broth labels for other allergens and choose plant-based broth and paste for a vegan version. Six equal portions define the serving size; optional pita or other sides are not included.",
+      "Developed and reviewed in writing; not yet kitchen-tested. Numerical nutrition estimates are not published because final product labels and a complete calculation have not been verified."
+    ],
+    "nutrition": null,
+    "prepTime": "20 minutes",
+    "rating": null,
+    "servings": "6 substantial main-meal servings",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "dutch-oven",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Harissa Red Lentil, Sweet Potato and Chickpea Soup",
+    "totalTime": "1 hour 10 minutes"
+  },
+  {
+    "additionalTime": "5 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "soups-stews",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "45 minutes",
+    "description": "Browned chicken, creamy white beans and kale in a rosemary broth finished with lemon, parsley and a little Parmesan. Three cans of beans give six substantial bowls body without heavy cream.",
+    "equipment": [
+      "8-quart Dutch oven or heavy soup pot with lid",
+      "Chef's knife and cutting board",
+      "Kitchen scale and measuring spoons",
+      "Fork or potato masher",
+      "Instant-read thermometer",
+      "Fine grater",
+      "Six shallow meal-prep containers"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "boneless skinless chicken breast",
+        "quantity": 1.5,
+        "unit": "lb",
+        "note": "680 g; choose unbrined chicken without an added salt solution"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1,
+        "unit": "item",
+        "note": "large; about 250 g peeled"
+      },
+      {
+        "item": "carrot",
+        "quantity": 250,
+        "unit": "g",
+        "note": "about 3 medium, trimmed"
+      },
+      {
+        "item": "celery",
+        "quantity": 200,
+        "unit": "g",
+        "note": "about 4 stalks, trimmed"
+      },
+      {
+        "item": "garlic",
+        "quantity": 6,
+        "unit": "clove",
+        "note": "about 18 g peeled"
+      },
+      {
+        "item": "no-salt-added tomato paste",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "dried rosemary",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "red pepper flakes",
+        "quantity": 0.25,
+        "unit": "tsp"
+      },
+      {
+        "item": "low-sodium chicken broth",
+        "quantity": 6,
+        "unit": "cup",
+        "note": "choose a label with 70 mg sodium or less per cup"
+      },
+      {
+        "item": "no-salt-added cannellini beans",
+        "quantity": 3,
+        "unit": "can",
+        "note": "15 oz each; about 720 g total drained and rinsed"
+      },
+      {
+        "item": "kale",
+        "quantity": 8,
+        "unit": "oz",
+        "note": "227 g trimmed leaves; buy extra if sold with heavy stems"
+      },
+      {
+        "item": "Parmesan cheese",
+        "quantity": 1,
+        "unit": "oz",
+        "note": "28 g, finely grated; not a rind"
+      },
+      {
+        "item": "lemon",
+        "quantity": 2,
+        "unit": "item",
+        "note": "supply 2 tsp zest and 1/4 cup juice"
+      },
+      {
+        "item": "flat-leaf parsley",
+        "quantity": 0.5,
+        "unit": "cup",
+        "note": "20 g chopped"
+      },
+      {
+        "item": "fine sea salt",
+        "quantity": 0.75,
+        "unit": "tsp",
+        "note": "4.5 g total, divided"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "note": "divided"
+      }
+    ],
+    "id": "lemon-rosemary-chicken-white-bean-kale-soup",
+    "ingredients": [
+      "1 1/2 lb (680 g) boneless skinless chicken breast, unbrined, cut into 1-inch pieces",
+      "2 tbsp (27 g) extra-virgin olive oil, divided into three 2-tsp portions",
+      "1 large yellow onion (250 g peeled), diced",
+      "3 medium carrots (250 g trimmed), cut into 1/4-inch dice",
+      "4 celery stalks (200 g trimmed), cut into 1/4-inch dice",
+      "6 garlic cloves (18 g peeled), minced",
+      "2 tbsp (32 g) no-salt-added tomato paste",
+      "2 tsp dried rosemary, crushed finely between your fingers",
+      "1/4 tsp red pepper flakes",
+      "6 cups (1.44 L) low-sodium chicken broth, with 70 mg sodium or less per cup",
+      "3 cans (15 oz each) no-salt-added cannellini beans, drained and rinsed; about 720 g total, divided into 240 g mashed and 480 g whole beans",
+      "8 oz (227 g) kale leaves, tough stems removed, cut into bite-size pieces",
+      "1 oz (28 g) Parmesan cheese, finely grated",
+      "2 lemons, supplying 2 tsp finely grated zest and 1/4 cup (60 mL) juice",
+      "1/2 cup (20 g) chopped flat-leaf parsley",
+      "3/4 tsp (4.5 g) fine sea salt, divided into three 1/4-tsp portions",
+      "1/2 tsp black pepper, divided into two 1/4-tsp portions"
+    ],
+    "instructions": [
+      "Pat 1 1/2 lb (680 g) chicken breast pieces dry. Toss with 1/4 tsp (1.5 g) fine sea salt and 1/4 tsp black pepper. Mash 240 g drained cannellini beans with a fork; keep 480 g drained cannellini beans whole. Zest 2 lemons to obtain 2 tsp zest, then squeeze them to measure 1/4 cup (60 mL) juice.",
+      "Heat 2 tsp (9 g) olive oil in an 8-quart pot over medium-high heat. Add 340 g seasoned chicken in one layer. Brown for 3 minutes without moving, then turn and cook for 1 minute. Transfer to a bowl. Heat 2 tsp (9 g) olive oil in the pot and brown the second 340 g seasoned chicken for 3 minutes on the first side and 1 minute on the second. Transfer to the same bowl. The chicken is not fully cooked; continue the recipe immediately.",
+      "Reduce the heat to medium. Add 2 tsp (9 g) olive oil, 1 diced yellow onion (250 g), 3 diced carrots (250 g), 4 diced celery stalks (200 g), and 1/4 tsp (1.5 g) fine sea salt. Cook for 8-10 minutes, stirring and scraping, until softened with some golden edges. Keep the brown coating on the pot golden-brown, not black.",
+      "Stir in 2 tbsp (32 g) tomato paste and cook for 2 minutes until brick-red. Add 6 minced garlic cloves (18 g), 2 tsp crushed dried rosemary, and 1/4 tsp red pepper flakes. Stir for 30 seconds until fragrant.",
+      "Pour in 6 cups (1.44 L) low-sodium chicken broth and scrape up the browned coating. Stir in the 240 g mashed cannellini beans and 480 g whole cannellini beans. Bring to a gentle simmer, then cook partially covered for 8 minutes, until the carrots are nearly tender. Stir occasionally to prevent the mashed beans from sticking.",
+      "Add 8 oz (227 g) chopped kale and all browned chicken from the 680 g raw batch, including its collected juices. Simmer gently for 5-8 minutes, stirring occasionally, until the kale is tender and several of the largest chicken pieces reach 165 F (74 C). Use the temperature rather than the clock, and stop simmering once the chicken is done.",
+      "Turn off the heat. Stir in 1 oz (28 g) finely grated Parmesan, 2 tsp lemon zest, 1/4 cup (60 mL) lemon juice, 1/2 cup (20 g) chopped parsley, 1/4 tsp (1.5 g) fine sea salt, and 1/4 tsp black pepper. Rest for 5 minutes, then stir well and divide the complete batch evenly among 6 servings, distributing chicken and beans evenly. The finished broth should be creamy but spoonable, savory and distinctly lemony, not dominated by salt."
+    ],
+    "link": null,
+    "notes": [
+      "Flavor: brown the chicken in two uncrowded batches, crush the rosemary, and cook the tomato paste before adding broth. Mashed beans provide body; the measured Parmesan adds depth without making this a cream soup. Add the lemon after cooking so it stays bright.",
+      "Health-conscious design: unbrined lean chicken, three cans of no-salt-added beans, substantial vegetables, measured olive oil and a small amount of cheese. Broth and Parmesan still contribute sodium; low-sodium and unsalted labels are not interchangeable, so check the sodium per cup. This is an editorial recipe choice, not a medical or low-sodium certification.",
+      "Can yields vary. Use the contents of all three drained cans; mash one can and keep two cans whole. The 240 g / 480 g split is the expected drained yield, not a reason to discard beans or buy another can for a small weight difference.",
+      "Meal prep: stir and divide into 6 shallow containers rather than cooling the entire pot on the counter. Refrigerate at 40 F (4 C) or below within 2 hours, or within 1 hour when the room is above 90 F (32 C). Use refrigerated portions within 3-4 days. Freeze portions for later days on prep day; allow expansion room and use within 3 months for best planned quality. Thaw overnight in the refrigerator, not on the counter.",
+      "Reheat one portion with 2 tbsp (30 mL) water in a saucepan, stirring frequently. Bring the soup briefly to a rolling boil and verify the chicken and center of the portion reach 165 F (74 C); do not keep boiling after that. For microwave reheating, cover loosely, stir halfway and check several spots reach 165 F (74 C). Reheat only the portion being eaten.",
+      "Allergens: milk from Parmesan; check broth labels for any additional allergens. Six equal portions are the serving definition; the finished cup volume depends on evaporation. Optional bread or other sides are not part of the base recipe.",
+      "Developed and reviewed in writing; not yet kitchen-tested. Numerical nutrition estimates are not published because final product labels and a complete calculation have not been verified."
+    ],
+    "nutrition": null,
+    "prepTime": "20 minutes",
+    "rating": null,
+    "servings": "6 substantial main-meal servings",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "dutch-oven",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Lemon-Rosemary Chicken, White Bean and Kale Soup",
+    "totalTime": "1 hour 10 minutes"
+  },
+  {
+    "additionalTime": "5 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "soups-stews",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "45 minutes",
+    "description": "Chicken and hominy in a roasted tomatillo-poblano broth thickened with toasted pumpkin seeds. Cooking down the green puree gives the soup a deep savory base before cilantro and a restrained lime finish.",
+    "equipment": [
+      "8-quart Dutch oven or heavy soup pot",
+      "Broiler-safe rimmed sheet pan and foil",
+      "Blender approved for warm liquids with a vented lid",
+      "Chef's knife and cutting board",
+      "Kitchen scale and measuring spoons",
+      "Instant-read thermometer",
+      "Six shallow meal-prep containers"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "boneless skinless chicken breast",
+        "quantity": 2,
+        "unit": "lb",
+        "note": "907 g; choose unbrined chicken without added salt solution"
+      },
+      {
+        "item": "extra-virgin olive oil",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "item": "tomatillos",
+        "quantity": 1.5,
+        "unit": "lb",
+        "note": "680 g after husking; buy slightly extra if needed"
+      },
+      {
+        "item": "poblano pepper",
+        "quantity": 2,
+        "unit": "item",
+        "note": "about 300 g before trimming"
+      },
+      {
+        "item": "jalapeno",
+        "quantity": 1,
+        "unit": "item",
+        "note": "about 15 g; remove seeds and pale ribs for moderate heat"
+      },
+      {
+        "item": "white onion",
+        "quantity": 1,
+        "unit": "item",
+        "note": "large; 300 g peeled"
+      },
+      {
+        "item": "garlic",
+        "quantity": 6,
+        "unit": "clove",
+        "note": "20 g peeled yield; roast in their skins"
+      },
+      {
+        "item": "raw pepitas",
+        "quantity": 0.5,
+        "unit": "cup",
+        "note": "60 g; unsalted, shelled pumpkin seeds"
+      },
+      {
+        "item": "cilantro",
+        "quantity": 1,
+        "unit": "cup",
+        "note": "32 g leaves and tender stems, divided"
+      },
+      {
+        "item": "ground cumin",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "item": "dried Mexican oregano",
+        "quantity": 2,
+        "unit": "tsp"
+      },
+      {
+        "item": "low-sodium chicken broth",
+        "quantity": 6,
+        "unit": "cup",
+        "note": "choose 70 mg sodium or less per cup; divided"
+      },
+      {
+        "item": "white hominy",
+        "quantity": 2,
+        "unit": "can",
+        "note": "15.5 oz each; about 500 g drained and rinsed; compare sodium labels"
+      },
+      {
+        "item": "lime",
+        "quantity": 2,
+        "unit": "item",
+        "note": "supply 2 tbsp juice"
+      },
+      {
+        "item": "fine sea salt",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "note": "1.5 g; canned hominy supplies additional salt"
+      },
+      {
+        "item": "black pepper",
+        "quantity": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "id": "roasted-tomatillo-chicken-pozole-verde",
+    "ingredients": [
+      "2 lb (907 g) unbrined boneless skinless chicken breast; halve thick breasts horizontally into cutlets no thicker than 3/4 inch",
+      "1 tbsp (13.5 g) extra-virgin olive oil",
+      "1 1/2 lb (680 g) tomatillos after husking, rinsed and halved",
+      "2 poblano peppers (about 300 g), halved, stems and seeds removed",
+      "1 jalapeno (about 15 g), halved, stem, seeds and pale ribs removed",
+      "1 large white onion (300 g peeled), cut into 1/2-inch wedges",
+      "6 garlic cloves, left in their skins for roasting; about 20 g peeled yield",
+      "1/2 cup (60 g) raw unsalted pepitas",
+      "1 cup (32 g) cilantro leaves and tender stems, divided into two 1/2-cup portions",
+      "1 tsp ground cumin",
+      "2 tsp dried Mexican oregano, crumbled",
+      "6 cups (1.44 L) low-sodium chicken broth, with 70 mg sodium or less per cup, divided into 1 cup and 5 cups",
+      "2 cans (15.5 oz each) white hominy, drained and rinsed; about 500 g total",
+      "2 limes, supplying 2 tbsp (30 mL) juice",
+      "1/4 tsp (1.5 g) fine sea salt",
+      "1/2 tsp black pepper"
+    ],
+    "instructions": [
+      "Set an oven rack about 6 inches below the broiler and heat the broiler to high. Line a broiler-safe sheet pan with foil, not parchment. Arrange 1 1/2 lb (680 g) halved tomatillos, 2 halved poblanos (300 g), 1 halved jalapeno (15 g), 1 white onion cut into wedges (300 g), and 6 skin-on garlic cloves (20 g peeled yield) in a single layer, with pepper skins upward. Broil for 10-15 minutes until softened and blistered in spots. Turn the onion once, and remove garlic cloves as soon as they soften, usually after 5-8 minutes; do not let the garlic burn.",
+      "While the vegetables broil, toast 1/2 cup (60 g) raw pepitas in the dry soup pot over medium heat for 3-4 minutes, stirring frequently, until fragrant and lightly golden. Transfer to a plate immediately so they do not scorch.",
+      "Let the roasted vegetables cool for 5 minutes. Peel the 6 roasted garlic cloves and remove any loose, blackened pepper skin. Transfer all roasted vegetables and their pan juices to a blender, together with the toasted 1/2 cup (60 g) pepitas, 1/2 cup (16 g) cilantro, and 1 cup (240 mL) chicken broth. Blend until mostly smooth. Use a blender rated for warm liquids, leave headroom and vent its lid according to its instructions; do not use a sealed personal-blender cup with hot ingredients.",
+      "Heat 1 tbsp (13.5 g) olive oil in the pot over medium heat. Add 1 tsp cumin and 2 tsp crumbled Mexican oregano; stir for 20 seconds. Carefully pour in the complete green puree from the previous step; it may splatter. Cook for 5-6 minutes, stirring frequently, until slightly thickened and the aroma is roasted and savory rather than raw and grassy.",
+      "Add 5 cups (1.2 L) chicken broth, about 500 g drained hominy from 2 cans, 1/4 tsp (1.5 g) fine sea salt, and 1/2 tsp black pepper. Bring just to a simmer. Lower in 2 lb (907 g) chicken cutlets, submerge them and return to a gentle simmer. Cook for 12-18 minutes, turning once, until each cutlet reaches 165 F (74 C) in its thickest part. Remove individual pieces as they reach temperature rather than continuing to cook the thinner ones.",
+      "Transfer the cooked chicken from the 907 g raw batch to a clean board and shred into bite-size pieces. Turn off the heat, return all shredded chicken to the pot, and stir in 2 tbsp (30 mL) lime juice and 1/2 cup (16 g) cilantro. Rest for 5 minutes. Stir thoroughly and divide the complete batch evenly among 6 servings, distributing chicken and hominy evenly. Do not boil the shredded chicken for another 10 minutes; it has already reached its safe cooking temperature."
+    ],
+    "link": null,
+    "notes": [
+      "Flavor: roast the green vegetables, toast the pepitas and cook down the blended puree before adding the bulk of the broth. These are separate flavor-building steps, not optional decoration. Lime is deliberately restrained because tomatillos already provide acidity. Poblanos and jalapenos vary in heat even after trimming.",
+      "Health-conscious design: lean unbrined chicken, vegetables, unsalted seeds, measured olive oil and modest added salt. Canned hominy can be quite salty; compare labels and drain and rinse it. Rinsing does not make hominy sodium-free, and no fixed sodium-reduction percentage is assumed. This soup is not certified low sodium.",
+      "Use fully cooked canned hominy, not dried hominy or ordinary sweetcorn; dried hominy needs a different preparation. Use the contents of both drained cans even if the actual drained yield differs slightly from 500 g. Optional shredded cabbage and radish can be served separately for crunch, but are not included in this base recipe or its grocery list.",
+      "Meal prep: divide into 6 shallow containers rather than cooling the full pot on the counter. Refrigerate at 40 F (4 C) or below within 2 hours, or within 1 hour above 90 F (32 C). Use refrigerated portions within 3-4 days. Freeze portions intended for later days on prep day, leaving headroom, and plan to use them within 3 months for quality. Thaw overnight in the refrigerator.",
+      "Reheat one portion with 2 tbsp (30 mL) water, stirring, until the soup briefly reaches a rolling boil and the chicken and center reach 165 F (74 C). Avoid prolonged boiling once hot. For microwave reheating, cover loosely, stir halfway and check several spots reach 165 F (74 C). Store any fresh crunchy garnishes separately and add them only after reheating.",
+      "Check broth and hominy labels for allergens or sulfites. Pepitas are pumpkin seeds. The blender and broth make this thicker than a clear chicken soup; actual finished volume depends on evaporation, so divide by six equal portions rather than an assumed cup yield.",
+      "Developed and reviewed in writing; not yet kitchen-tested. Numerical nutrition estimates are not published because final product labels and a complete calculation have not been verified."
+    ],
+    "nutrition": null,
+    "prepTime": "25 minutes",
+    "rating": null,
+    "servings": "6 substantial main-meal servings",
+    "tags": {
+      "difficulty": "medium",
+      "equipment": [
+        "blender",
+        "broiler",
+        "dutch-oven",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Roasted Tomatillo Chicken Pozole Verde",
+    "totalTime": "1 hour 15 minutes"
+  },
+  {
+    "additionalTime": "5 minutes",
+    "author": "Robert Carr",
+    "collections": [
+      "main-dishes",
+      "soups-stews",
+      "health-conscious",
+      "meal-prep-friendly"
+    ],
+    "cookTime": "45 minutes",
+    "description": "A fragrant red curry soup with browned chicken, mushrooms, edamame and vegetables in a light coconut broth. Ginger, lime, scallions and basil keep it vivid rather than heavy or bland.",
+    "equipment": [
+      "8-quart Dutch oven or heavy soup pot",
+      "Chef's knife and cutting board",
+      "Kitchen scale and measuring spoons",
+      "Fine grater",
+      "Instant-read thermometer",
+      "Six shallow meal-prep containers"
+    ],
+    "groceryIngredients": [
+      {
+        "item": "boneless skinless chicken breast",
+        "quantity": 1.5,
+        "unit": "lb",
+        "note": "680 g; unbrined, without an added salt solution"
+      },
+      {
+        "item": "frozen shelled edamame",
+        "quantity": 12,
+        "unit": "oz",
+        "note": "340 g; unsalted beans, not pods"
+      },
+      {
+        "item": "canola oil",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "item": "cremini mushrooms",
+        "quantity": 10,
+        "unit": "oz",
+        "note": "283 g"
+      },
+      {
+        "item": "yellow onion",
+        "quantity": 1,
+        "unit": "item",
+        "note": "medium; 200 g peeled"
+      },
+      {
+        "item": "carrot",
+        "quantity": 250,
+        "unit": "g",
+        "note": "about 3 medium, trimmed"
+      },
+      {
+        "item": "red bell pepper",
+        "quantity": 1,
+        "unit": "item",
+        "note": "large; about 200 g after removing stem and seeds"
+      },
+      {
+        "item": "garlic",
+        "quantity": 6,
+        "unit": "clove",
+        "note": "20 g peeled"
+      },
+      {
+        "item": "fresh ginger",
+        "quantity": 25,
+        "unit": "g",
+        "note": "about 2 tbsp grated"
+      },
+      {
+        "item": "Thai red curry paste",
+        "quantity": 4,
+        "unit": "tbsp",
+        "note": "60 g mild supermarket-style paste; choose 400 mg sodium or less per tbsp; read heat/allergen notes"
+      },
+      {
+        "item": "light coconut milk",
+        "quantity": 1,
+        "unit": "can",
+        "note": "13.5 fl oz / 400 mL; shaken, divided into 120 mL and 280 mL"
+      },
+      {
+        "item": "low-sodium chicken broth",
+        "quantity": 4,
+        "unit": "cup",
+        "note": "choose 70 mg sodium or less per cup"
+      },
+      {
+        "item": "reduced-sodium soy sauce",
+        "quantity": 1,
+        "unit": "tbsp",
+        "note": "choose 600 mg sodium or less per tbsp"
+      },
+      {
+        "item": "baby spinach",
+        "quantity": 6,
+        "unit": "oz",
+        "note": "170 g"
+      },
+      {
+        "item": "lime",
+        "quantity": 3,
+        "unit": "item",
+        "note": "supply 1/4 cup juice"
+      },
+      {
+        "item": "scallion",
+        "quantity": 1,
+        "unit": "bunch",
+        "note": "60 g trimmed, divided into 30 g white/light-green parts and 30 g dark-green parts"
+      },
+      {
+        "item": "cilantro",
+        "quantity": 0.5,
+        "unit": "cup",
+        "note": "16 g chopped leaves and tender stems"
+      },
+      {
+        "item": "Thai basil",
+        "quantity": 0.5,
+        "unit": "cup",
+        "note": "12 g leaves; ordinary basil works as a substitute"
+      }
+    ],
+    "id": "thai-red-curry-chicken-edamame-vegetable-soup",
+    "ingredients": [
+      "1 1/2 lb (680 g) unbrined boneless skinless chicken breast, cut into 1-inch pieces",
+      "12 oz (340 g) frozen unsalted shelled edamame, not pods",
+      "2 tbsp (27 g) canola oil, divided into 1 tsp, 1 tsp, 2 tsp and 2 tsp portions",
+      "10 oz (283 g) cremini mushrooms, cleaned, dried and sliced",
+      "1 medium yellow onion (200 g peeled), thinly sliced",
+      "3 medium carrots (250 g trimmed), thinly sliced into 1/8-inch half-moons",
+      "1 large red bell pepper (200 g trimmed), cut into thin strips",
+      "6 garlic cloves (20 g peeled), minced",
+      "2 tbsp (25 g) finely grated fresh ginger",
+      "4 tbsp (60 g) mild Thai red curry paste, with 400 mg sodium or less per tbsp; see brand/heat note",
+      "1 can (13.5 fl oz / 400 mL) light coconut milk, shaken, divided into 1/2 cup (120 mL) and 280 mL",
+      "4 cups (960 mL) low-sodium chicken broth, with 70 mg sodium or less per cup",
+      "1 tbsp (15 mL) reduced-sodium soy sauce, with 600 mg sodium or less per tbsp",
+      "6 oz (170 g) baby spinach",
+      "3 limes, supplying 1/4 cup (60 mL) juice",
+      "1 bunch scallions (60 g trimmed), sliced and divided into 30 g white/light-green parts and 30 g dark-green parts",
+      "1/2 cup (16 g) chopped cilantro leaves and tender stems",
+      "1/2 cup (12 g) Thai basil leaves, torn; ordinary basil may be substituted"
+    ],
+    "instructions": [
+      "Pat 1 1/2 lb (680 g) chicken pieces dry. Heat 1 tsp (4.5 g) canola oil in an 8-quart pot over medium-high heat. Add 340 g chicken in a single layer and brown for 3 minutes without moving, then turn and cook for 1 minute. Transfer to a bowl. Heat 1 tsp (4.5 g) canola oil and repeat with the second 340 g chicken, cooking for 3 minutes on the first side and 1 minute on the second. Transfer to the bowl and continue immediately; the chicken is not fully cooked yet.",
+      "Add 2 tsp (9 g) canola oil and 10 oz (283 g) sliced mushrooms to the pot. Cook for 7-9 minutes, stirring occasionally, until their liquid has evaporated and their edges are brown. Reduce the heat if the coating on the pot threatens to burn.",
+      "Reduce the heat to medium. Add 2 tsp (9 g) canola oil, 1 sliced onion (200 g), 3 thinly sliced carrots (250 g), 1 sliced red bell pepper (200 g), and 30 g scallion white/light-green parts. Cook for 5 minutes, stirring, until the onion softens. Add 6 minced garlic cloves (20 g) and 2 tbsp (25 g) ginger; stir for 30 seconds.",
+      "Add 4 tbsp (60 g) mild red curry paste and stir for 45-60 seconds until fragrant, without scorching it. Pour in 1/2 cup (120 mL) shaken light coconut milk. Scrape up the brown coating and simmer for 2 minutes, stirring, to combine the coconut milk and curry paste. Light coconut milk does not need to split or release oil for this step to work.",
+      "Add 280 mL light coconut milk and 4 cups (960 mL) chicken broth. Bring to a gentle simmer. Add 12 oz (340 g) frozen shelled edamame and all browned chicken from the 680 g raw batch with its collected juices. Simmer gently for 6 minutes, then stir in 6 oz (170 g) baby spinach and cook for 2-4 minutes. Check several of the largest chicken pieces reach 165 F (74 C), the edamame is fully cooked according to its package directions, and the carrots are tender. Remove chicken pieces as they reach temperature if the vegetables need longer.",
+      "Turn off the heat. Return any cooked chicken set aside during the previous step. Stir in 1 tbsp (15 mL) reduced-sodium soy sauce, 1/4 cup (60 mL) lime juice, 30 g scallion dark-green parts, 1/2 cup (16 g) cilantro, and 1/2 cup (12 g) torn basil. Rest for 5 minutes. Stir and divide the complete batch evenly among 6 servings, distributing chicken, edamame and vegetables evenly. There is no additional salt in the base recipe; the curry paste and soy sauce already supply it."
+    ],
+    "link": null,
+    "notes": [
+      "The tofu proposal is replaced with chicken, not simply relabeled: the recipe includes browning, a raw-chicken handling sequence and a 165 F (74 C) endpoint. Edamame stays for extra substance and plant protein. This is tofu-free, not soy-free.",
+      "Flavor: cook the curry paste briefly before diluting it, brown the mushrooms, use thin carrot slices, and add lime and fresh herbs off heat. Four cups of broth plus one can of light coconut milk keep the base concentrated without needing multiple cans of coconut milk.",
+      "The 4 tbsp (60 g) curry-paste amount assumes a mild supermarket-style paste. A very hot concentrated Thai paste is not a one-for-one substitution: use 2 tbsp (30 g) of that paste initially instead of 4 tbsp, keeping all other quantities unchanged, and expect a different flavor/sodium profile. Do not add an unmeasured spoonful. Check that the chosen paste fits your heat tolerance and the label guidance; some contain shrimp or fish.",
+      "Health-conscious design: lean unbrined chicken, edamame, substantial vegetables and measured oil. Use light coconut milk, not coconut cream or a sweetened coconut drink; coconut still contributes saturated fat. Choose the listed broth, curry-paste and soy-sauce sodium levels. No separate sugar or salt is added, but packaged condiments may contain them. This is not a low-sodium certification.",
+      "Meal prep: divide into 6 shallow containers and refrigerate at 40 F (4 C) or below within 2 hours, or within 1 hour above 90 F (32 C). Do not cool the full pot on the counter. Use refrigerated portions within 3-4 days. Freeze portions for later days on prep day, leaving expansion room, and plan to use them within 3 months for quality. Thaw overnight in the refrigerator.",
+      "Reheat one portion with 2 tbsp (30 mL) water, stirring so any separated coconut milk recombines. Bring the soup briefly to a rolling boil and verify the chicken and center reach 165 F (74 C). Do not continue boiling once hot. For microwave reheating, cover loosely, stir halfway and check several spots reach 165 F (74 C). Vegetables will soften during storage and freezing; freezer texture has not been kitchen-tested.",
+      "Allergens: soy from edamame and soy sauce; conventional soy sauce generally contains wheat. Curry paste may contain shrimp, fish or soy depending on brand. The recipe also contains coconut. Optional brown rice is a separate side, not part of the six-portion base recipe or its shopping quantities.",
+      "Developed and reviewed in writing; not yet kitchen-tested. Numerical nutrition estimates are not published because final product labels and a complete calculation have not been verified."
+    ],
+    "nutrition": null,
+    "prepTime": "20 minutes",
+    "rating": null,
+    "servings": "6 substantial main-meal servings",
+    "tags": {
+      "difficulty": "easy",
+      "equipment": [
+        "dutch-oven",
+        "stovetop"
+      ],
+      "status": "not-tried"
+    },
+    "title": "Thai Red Curry Chicken, Edamame and Vegetable Soup",
+    "totalTime": "1 hour 10 minutes"
   }
 ]

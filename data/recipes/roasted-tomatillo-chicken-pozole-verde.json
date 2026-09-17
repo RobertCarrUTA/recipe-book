@@ -1,27 +1,116 @@
 {
   "additionalTime": "5 minutes",
   "author": "Robert Carr",
-  "collections": ["main-dishes", "soups-stews", "health-conscious", "meal-prep-friendly"],
+  "collections": [
+    "main-dishes",
+    "soups-stews",
+    "health-conscious",
+    "meal-prep-friendly"
+  ],
   "cookTime": "45 minutes",
   "description": "Chicken and hominy in a roasted tomatillo-poblano broth thickened with toasted pumpkin seeds. Cooking down the green puree gives the soup a deep savory base before cilantro and a restrained lime finish.",
-  "equipment": ["8-quart Dutch oven or heavy soup pot", "Broiler-safe rimmed sheet pan and foil", "Blender approved for warm liquids with a vented lid", "Chef's knife and cutting board", "Kitchen scale and measuring spoons", "Instant-read thermometer", "Six shallow meal-prep containers"],
+  "equipment": [
+    "8-quart Dutch oven or heavy soup pot",
+    "Broiler-safe rimmed sheet pan and foil",
+    "Blender approved for warm liquids with a vented lid",
+    "Chef's knife and cutting board",
+    "Kitchen scale and measuring spoons",
+    "Instant-read thermometer",
+    "Six shallow meal-prep containers"
+  ],
   "groceryIngredients": [
-    {"item": "boneless skinless chicken breast", "quantity": 2, "unit": "lb", "note": "907 g; choose unbrined chicken without added salt solution"},
-    {"item": "extra-virgin olive oil", "quantity": 1, "unit": "tbsp"},
-    {"item": "tomatillos", "quantity": 1.5, "unit": "lb", "note": "680 g after husking; buy slightly extra if needed"},
-    {"item": "poblano pepper", "quantity": 2, "unit": "item", "note": "about 300 g before trimming"},
-    {"item": "jalapeno", "quantity": 1, "unit": "item", "note": "about 15 g; remove seeds and pale ribs for moderate heat"},
-    {"item": "white onion", "quantity": 1, "unit": "item", "note": "large; 300 g peeled"},
-    {"item": "garlic", "quantity": 6, "unit": "clove", "note": "20 g peeled yield; roast in their skins"},
-    {"item": "raw pepitas", "quantity": 0.5, "unit": "cup", "note": "60 g; unsalted, shelled pumpkin seeds"},
-    {"item": "cilantro", "quantity": 1, "unit": "cup", "note": "32 g leaves and tender stems, divided"},
-    {"item": "ground cumin", "quantity": 1, "unit": "tsp"},
-    {"item": "dried Mexican oregano", "quantity": 2, "unit": "tsp"},
-    {"item": "low-sodium chicken broth", "quantity": 6, "unit": "cup", "note": "choose 70 mg sodium or less per cup; divided"},
-    {"item": "white hominy", "quantity": 2, "unit": "can", "note": "15.5 oz each; about 500 g drained and rinsed; compare sodium labels"},
-    {"item": "lime", "quantity": 2, "unit": "item", "note": "supply 2 tbsp juice"},
-    {"item": "fine sea salt", "quantity": 0.25, "unit": "tsp", "note": "1.5 g; canned hominy supplies additional salt"},
-    {"item": "black pepper", "quantity": 0.5, "unit": "tsp"}
+    {
+      "item": "boneless skinless chicken breast",
+      "quantity": 2,
+      "unit": "lb",
+      "note": "907 g; choose unbrined chicken without added salt solution"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "tomatillos",
+      "quantity": 1.5,
+      "unit": "lb",
+      "note": "680 g after husking; buy slightly extra if needed"
+    },
+    {
+      "item": "poblano pepper",
+      "quantity": 2,
+      "unit": "item",
+      "note": "about 300 g before trimming"
+    },
+    {
+      "item": "jalapeno",
+      "quantity": 1,
+      "unit": "item",
+      "note": "about 15 g; remove seeds and pale ribs for moderate heat"
+    },
+    {
+      "item": "white onion",
+      "quantity": 1,
+      "unit": "item",
+      "note": "large; 300 g peeled"
+    },
+    {
+      "item": "garlic",
+      "quantity": 6,
+      "unit": "clove",
+      "note": "20 g peeled yield; roast in their skins"
+    },
+    {
+      "item": "raw pepitas",
+      "quantity": 0.5,
+      "unit": "cup",
+      "note": "60 g; unsalted, shelled pumpkin seeds"
+    },
+    {
+      "item": "cilantro",
+      "quantity": 1,
+      "unit": "cup",
+      "note": "32 g leaves and tender stems, divided"
+    },
+    {
+      "item": "ground cumin",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "dried Mexican oregano",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "item": "low-sodium chicken broth",
+      "quantity": 6,
+      "unit": "cup",
+      "note": "choose 70 mg sodium or less per cup; divided"
+    },
+    {
+      "item": "white hominy",
+      "quantity": 2,
+      "unit": "can",
+      "note": "15.5 oz each; about 500 g drained and rinsed; compare sodium labels"
+    },
+    {
+      "item": "lime",
+      "quantity": 2,
+      "unit": "item",
+      "note": "supply 2 tbsp juice"
+    },
+    {
+      "item": "fine sea salt",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "note": "1.5 g; canned hominy supplies additional salt"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
   ],
   "id": "roasted-tomatillo-chicken-pozole-verde",
   "ingredients": [
@@ -64,7 +153,16 @@
   "prepTime": "25 minutes",
   "rating": null,
   "servings": "6 substantial main-meal servings",
-  "tags": {"difficulty": "medium", "equipment": ["blender", "broiler", "dutch-oven", "stovetop"], "status": "not-tried"},
+  "tags": {
+    "difficulty": "medium",
+    "equipment": [
+      "blender",
+      "broiler",
+      "dutch-oven",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
   "title": "Roasted Tomatillo Chicken Pozole Verde",
   "totalTime": "1 hour 15 minutes"
 }

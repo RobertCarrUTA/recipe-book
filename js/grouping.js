@@ -4,6 +4,10 @@ import { escapeRegex } from "./normalization.js";
 INGREDIENT GROUP MAP
 ================================ */
 const ingredientGroups = {
+  "harissa paste": "Sauces, Marinades, & Condiments",
+  "poblano pepper": "Vegetables",
+  "thai red curry paste": "Sauces, Marinades, & Condiments",
+  "white hominy": "Pantry",
   "red wine vinegar": "Sauces, Marinades, & Condiments",
   "almonds": "Baking",
   "barley": "Pantry",

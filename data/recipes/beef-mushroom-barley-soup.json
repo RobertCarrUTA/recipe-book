@@ -1,30 +1,133 @@
 {
   "additionalTime": "5 minutes",
   "author": "Robert Carr",
-  "collections": ["main-dishes", "soups-stews", "health-conscious", "meal-prep-friendly"],
+  "collections": [
+    "main-dishes",
+    "soups-stews",
+    "health-conscious",
+    "meal-prep-friendly"
+  ],
   "cookTime": "1 hour 10 minutes",
   "description": "A substantial beef and barley soup with deeply browned mushrooms, porcini, thyme and a small miso-balsamic finish. Lean ground beef gives reliable tenderness without a long stew-meat braise.",
-  "equipment": ["8-quart Dutch oven or heavy soup pot with lid", "Chef's knife and cutting board", "Heatproof bowl and measuring jug", "Fine-mesh strainer lined with a coffee filter", "Kitchen scale and measuring spoons", "Instant-read thermometer", "Six shallow meal-prep containers"],
+  "equipment": [
+    "8-quart Dutch oven or heavy soup pot with lid",
+    "Chef's knife and cutting board",
+    "Heatproof bowl and measuring jug",
+    "Fine-mesh strainer lined with a coffee filter",
+    "Kitchen scale and measuring spoons",
+    "Instant-read thermometer",
+    "Six shallow meal-prep containers"
+  ],
   "groceryIngredients": [
-    {"item": "95% lean ground beef", "quantity": 1.5, "unit": "lb", "note": "680 g"},
-    {"item": "extra-virgin olive oil", "quantity": 2, "unit": "tbsp"},
-    {"item": "cremini mushrooms", "quantity": 1, "unit": "lb", "note": "454 g, thickly sliced"},
-    {"item": "dried porcini mushrooms", "quantity": 0.5, "unit": "oz", "note": "14 g"},
-    {"item": "yellow onion", "quantity": 1, "unit": "item", "note": "large; 250 g peeled"},
-    {"item": "carrot", "quantity": 200, "unit": "g", "note": "about 2 medium, trimmed"},
-    {"item": "celery", "quantity": 150, "unit": "g", "note": "about 3 stalks, trimmed"},
-    {"item": "garlic", "quantity": 5, "unit": "clove", "note": "16 g peeled"},
-    {"item": "no-salt-added tomato paste", "quantity": 2, "unit": "tbsp"},
-    {"item": "dried thyme", "quantity": 1, "unit": "tsp"},
-    {"item": "bay leaf", "quantity": 2, "unit": "leaf"},
-    {"item": "pearl barley", "quantity": 1, "unit": "cup", "note": "200 g dry; not hulled barley or quick-cooking barley"},
-    {"item": "low-sodium beef broth", "quantity": 6, "unit": "cup", "note": "choose 140 mg sodium or less per cup; compare unsalted stocks by their labels"},
-    {"item": "Worcestershire sauce", "quantity": 1, "unit": "tbsp", "note": "check fish and wheat allergens"},
-    {"item": "white miso", "quantity": 1, "unit": "tbsp", "note": "18 g; choose 650 mg sodium or less per tbsp"},
-    {"item": "balsamic vinegar", "quantity": 1, "unit": "tbsp"},
-    {"item": "flat-leaf parsley", "quantity": 0.5, "unit": "cup", "note": "20 g chopped"},
-    {"item": "fine sea salt", "quantity": 0.5, "unit": "tsp", "note": "3 g total, divided"},
-    {"item": "black pepper", "quantity": 0.5, "unit": "tsp", "note": "divided"}
+    {
+      "item": "95% lean ground beef",
+      "quantity": 1.5,
+      "unit": "lb",
+      "note": "680 g"
+    },
+    {
+      "item": "extra-virgin olive oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cremini mushrooms",
+      "quantity": 1,
+      "unit": "lb",
+      "note": "454 g, thickly sliced"
+    },
+    {
+      "item": "dried porcini mushrooms",
+      "quantity": 0.5,
+      "unit": "oz",
+      "note": "14 g"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1,
+      "unit": "item",
+      "note": "large; 250 g peeled"
+    },
+    {
+      "item": "carrot",
+      "quantity": 200,
+      "unit": "g",
+      "note": "about 2 medium, trimmed"
+    },
+    {
+      "item": "celery",
+      "quantity": 150,
+      "unit": "g",
+      "note": "about 3 stalks, trimmed"
+    },
+    {
+      "item": "garlic",
+      "quantity": 5,
+      "unit": "clove",
+      "note": "16 g peeled"
+    },
+    {
+      "item": "no-salt-added tomato paste",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "dried thyme",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "item": "bay leaf",
+      "quantity": 2,
+      "unit": "leaf"
+    },
+    {
+      "item": "pearl barley",
+      "quantity": 1,
+      "unit": "cup",
+      "note": "200 g dry; not hulled barley or quick-cooking barley"
+    },
+    {
+      "item": "low-sodium beef broth",
+      "quantity": 6,
+      "unit": "cup",
+      "note": "choose 140 mg sodium or less per cup; compare unsalted stocks by their labels"
+    },
+    {
+      "item": "Worcestershire sauce",
+      "quantity": 1,
+      "unit": "tbsp",
+      "note": "check fish and wheat allergens"
+    },
+    {
+      "item": "white miso",
+      "quantity": 1,
+      "unit": "tbsp",
+      "note": "18 g; choose 650 mg sodium or less per tbsp"
+    },
+    {
+      "item": "balsamic vinegar",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "item": "flat-leaf parsley",
+      "quantity": 0.5,
+      "unit": "cup",
+      "note": "20 g chopped"
+    },
+    {
+      "item": "fine sea salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "note": "3 g total, divided"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "note": "divided"
+    }
   ],
   "id": "beef-mushroom-barley-soup",
   "ingredients": [
@@ -71,7 +174,14 @@
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "6 substantial main-meal servings",
-  "tags": {"difficulty": "easy", "equipment": ["dutch-oven", "stovetop"], "status": "not-tried"},
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "dutch-oven",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
   "title": "Beef, Mushroom and Barley Soup",
   "totalTime": "1 hour 35 minutes"
 }

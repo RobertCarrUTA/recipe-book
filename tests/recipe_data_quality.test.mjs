@@ -155,20 +155,32 @@ test("current salsa recipe data keeps white onion quantities recipe-specific", a
 });
 
 
-test("editorial collections are assigned only to the ten individually reviewed recipes", async () => {
+test("editorial collections are assigned only to the fifteen individually reviewed recipes", async () => {
   const rawRecipes = await loadRawRecipes();
+  const soupIds = [
+    "beef-mushroom-barley-soup",
+    "harissa-red-lentil-sweet-potato-chickpea-soup",
+    "lemon-rosemary-chicken-white-bean-kale-soup",
+    "roasted-tomatillo-chicken-pozole-verde",
+    "thai-red-curry-chicken-edamame-vegetable-soup"
+  ];
   const expectedIds = [
-  "berbere-turkey-lentil-braise",
-  "chermoula-chickpea-cauliflower-farro",
-  "chipotle-lime-chicken-with-sweet-potatoes",
-  "citrus-mojo-pork-with-black-bean-quinoa",
-  "ginger-sesame-chicken-soba",
-  "oatmeal-with-fruit",
-  "orange-ginger-chicken-with-brown-rice",
-  "smoky-lemon-chicken-with-brown-rice",
-  "tomato-balsamic-chicken-with-white-beans",
-  "zaatar-pistachio-salmon-with-lemon-dill-barley"
-];
+    "beef-mushroom-barley-soup",
+    "berbere-turkey-lentil-braise",
+    "chermoula-chickpea-cauliflower-farro",
+    "chipotle-lime-chicken-with-sweet-potatoes",
+    "citrus-mojo-pork-with-black-bean-quinoa",
+    "ginger-sesame-chicken-soba",
+    "harissa-red-lentil-sweet-potato-chickpea-soup",
+    "lemon-rosemary-chicken-white-bean-kale-soup",
+    "oatmeal-with-fruit",
+    "orange-ginger-chicken-with-brown-rice",
+    "roasted-tomatillo-chicken-pozole-verde",
+    "smoky-lemon-chicken-with-brown-rice",
+    "thai-red-curry-chicken-edamame-vegetable-soup",
+    "tomato-balsamic-chicken-with-white-beans",
+    "zaatar-pistachio-salmon-with-lemon-dill-barley"
+  ];
   const { recipes, warnings } = normalizeRecipeBook(rawRecipes);
   assert.deepEqual(warnings, []);
   for (const collectionId of ["health-conscious", "meal-prep-friendly"]) {
@@ -183,6 +195,7 @@ test("editorial collections are assigned only to the ten individually reviewed r
     const recipe = rawRecipes.find((entry) => entry.id === id);
     assert.deepEqual(recipe.collections, [
       id === "oatmeal-with-fruit" ? "breakfast" : "main-dishes",
+      ...(soupIds.includes(id) ? ["soups-stews"] : []),
       "health-conscious",
       "meal-prep-friendly",
     ]);

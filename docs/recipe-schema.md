@@ -141,8 +141,13 @@ The following recipes receive both labels after individual editorial review:
 - `citrus-mojo-pork-with-black-bean-quinoa`
 - `ginger-sesame-chicken-soba`
 - `zaatar-pistachio-salmon-with-lemon-dill-barley`
+- `beef-mushroom-barley-soup`
+- `harissa-red-lentil-sweet-potato-chickpea-soup`
+- `lemon-rosemary-chicken-white-bean-kale-soup`
+- `roasted-tomatillo-chicken-pozole-verde`
+- `thai-red-curry-chicken-edamame-vegetable-soup`
 
-Preserve their existing Breakfast/Main Dishes membership. Other recipes are **not assessed**, not unhealthy or unsuitable for meal prep. Do not bulk-assign these labels, infer them from keywords, or automatically label future recipes. A later expansion needs explicit recipe-by-recipe review and an intentional update to the scoped membership test. Collection labels do not change tried status, ratings, ingredient quantities, or nutrition fields.
+Preserve their Breakfast/Main Dishes membership and the five soups' Soups & Stews membership. Other recipes are **not assessed**, not unhealthy or unsuitable for meal prep. Do not bulk-assign these labels, infer them from keywords, or automatically label future recipes. A later expansion needs explicit recipe-by-recipe review and an intentional update to the scoped membership test. Collection labels do not change tried status, ratings, ingredient quantities, or nutrition fields.
 
 The catalog owns each label's `description` and `showOnCard` flag. A selected editorial collection displays its description below the picker; the corresponding non-interactive badges appear in recipe headers, including their accessible descriptions. No separate tag schema, scoring system, or stored-state migration is needed.
 

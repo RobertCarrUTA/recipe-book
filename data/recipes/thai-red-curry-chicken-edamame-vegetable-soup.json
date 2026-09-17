@@ -1,29 +1,130 @@
 {
   "additionalTime": "5 minutes",
   "author": "Robert Carr",
-  "collections": ["main-dishes", "soups-stews", "health-conscious", "meal-prep-friendly"],
+  "collections": [
+    "main-dishes",
+    "soups-stews",
+    "health-conscious",
+    "meal-prep-friendly"
+  ],
   "cookTime": "45 minutes",
   "description": "A fragrant red curry soup with browned chicken, mushrooms, edamame and vegetables in a light coconut broth. Ginger, lime, scallions and basil keep it vivid rather than heavy or bland.",
-  "equipment": ["8-quart Dutch oven or heavy soup pot", "Chef's knife and cutting board", "Kitchen scale and measuring spoons", "Fine grater", "Instant-read thermometer", "Six shallow meal-prep containers"],
+  "equipment": [
+    "8-quart Dutch oven or heavy soup pot",
+    "Chef's knife and cutting board",
+    "Kitchen scale and measuring spoons",
+    "Fine grater",
+    "Instant-read thermometer",
+    "Six shallow meal-prep containers"
+  ],
   "groceryIngredients": [
-    {"item": "boneless skinless chicken breast", "quantity": 1.5, "unit": "lb", "note": "680 g; unbrined, without an added salt solution"},
-    {"item": "frozen shelled edamame", "quantity": 12, "unit": "oz", "note": "340 g; unsalted beans, not pods"},
-    {"item": "canola oil", "quantity": 2, "unit": "tbsp"},
-    {"item": "cremini mushrooms", "quantity": 10, "unit": "oz", "note": "283 g"},
-    {"item": "yellow onion", "quantity": 1, "unit": "item", "note": "medium; 200 g peeled"},
-    {"item": "carrot", "quantity": 250, "unit": "g", "note": "about 3 medium, trimmed"},
-    {"item": "red bell pepper", "quantity": 1, "unit": "item", "note": "large; about 200 g after removing stem and seeds"},
-    {"item": "garlic", "quantity": 6, "unit": "clove", "note": "20 g peeled"},
-    {"item": "fresh ginger", "quantity": 25, "unit": "g", "note": "about 2 tbsp grated"},
-    {"item": "Thai red curry paste", "quantity": 4, "unit": "tbsp", "note": "60 g mild supermarket-style paste; choose 400 mg sodium or less per tbsp; read heat/allergen notes"},
-    {"item": "light coconut milk", "quantity": 1, "unit": "can", "note": "13.5 fl oz / 400 mL; shaken, divided into 120 mL and 280 mL"},
-    {"item": "low-sodium chicken broth", "quantity": 4, "unit": "cup", "note": "choose 70 mg sodium or less per cup"},
-    {"item": "reduced-sodium soy sauce", "quantity": 1, "unit": "tbsp", "note": "choose 600 mg sodium or less per tbsp"},
-    {"item": "baby spinach", "quantity": 6, "unit": "oz", "note": "170 g"},
-    {"item": "lime", "quantity": 3, "unit": "item", "note": "supply 1/4 cup juice"},
-    {"item": "scallion", "quantity": 1, "unit": "bunch", "note": "60 g trimmed, divided into 30 g white/light-green parts and 30 g dark-green parts"},
-    {"item": "cilantro", "quantity": 0.5, "unit": "cup", "note": "16 g chopped leaves and tender stems"},
-    {"item": "Thai basil", "quantity": 0.5, "unit": "cup", "note": "12 g leaves; ordinary basil works as a substitute"}
+    {
+      "item": "boneless skinless chicken breast",
+      "quantity": 1.5,
+      "unit": "lb",
+      "note": "680 g; unbrined, without an added salt solution"
+    },
+    {
+      "item": "frozen shelled edamame",
+      "quantity": 12,
+      "unit": "oz",
+      "note": "340 g; unsalted beans, not pods"
+    },
+    {
+      "item": "canola oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "item": "cremini mushrooms",
+      "quantity": 10,
+      "unit": "oz",
+      "note": "283 g"
+    },
+    {
+      "item": "yellow onion",
+      "quantity": 1,
+      "unit": "item",
+      "note": "medium; 200 g peeled"
+    },
+    {
+      "item": "carrot",
+      "quantity": 250,
+      "unit": "g",
+      "note": "about 3 medium, trimmed"
+    },
+    {
+      "item": "red bell pepper",
+      "quantity": 1,
+      "unit": "item",
+      "note": "large; about 200 g after removing stem and seeds"
+    },
+    {
+      "item": "garlic",
+      "quantity": 6,
+      "unit": "clove",
+      "note": "20 g peeled"
+    },
+    {
+      "item": "fresh ginger",
+      "quantity": 25,
+      "unit": "g",
+      "note": "about 2 tbsp grated"
+    },
+    {
+      "item": "Thai red curry paste",
+      "quantity": 4,
+      "unit": "tbsp",
+      "note": "60 g mild supermarket-style paste; choose 400 mg sodium or less per tbsp; read heat/allergen notes"
+    },
+    {
+      "item": "light coconut milk",
+      "quantity": 1,
+      "unit": "can",
+      "note": "13.5 fl oz / 400 mL; shaken, divided into 120 mL and 280 mL"
+    },
+    {
+      "item": "low-sodium chicken broth",
+      "quantity": 4,
+      "unit": "cup",
+      "note": "choose 70 mg sodium or less per cup"
+    },
+    {
+      "item": "reduced-sodium soy sauce",
+      "quantity": 1,
+      "unit": "tbsp",
+      "note": "choose 600 mg sodium or less per tbsp"
+    },
+    {
+      "item": "baby spinach",
+      "quantity": 6,
+      "unit": "oz",
+      "note": "170 g"
+    },
+    {
+      "item": "lime",
+      "quantity": 3,
+      "unit": "item",
+      "note": "supply 1/4 cup juice"
+    },
+    {
+      "item": "scallion",
+      "quantity": 1,
+      "unit": "bunch",
+      "note": "60 g trimmed, divided into 30 g white/light-green parts and 30 g dark-green parts"
+    },
+    {
+      "item": "cilantro",
+      "quantity": 0.5,
+      "unit": "cup",
+      "note": "16 g chopped leaves and tender stems"
+    },
+    {
+      "item": "Thai basil",
+      "quantity": 0.5,
+      "unit": "cup",
+      "note": "12 g leaves; ordinary basil works as a substitute"
+    }
   ],
   "id": "thai-red-curry-chicken-edamame-vegetable-soup",
   "ingredients": [
@@ -69,7 +170,14 @@
   "prepTime": "20 minutes",
   "rating": null,
   "servings": "6 substantial main-meal servings",
-  "tags": {"difficulty": "easy", "equipment": ["dutch-oven", "stovetop"], "status": "not-tried"},
+  "tags": {
+    "difficulty": "easy",
+    "equipment": [
+      "dutch-oven",
+      "stovetop"
+    ],
+    "status": "not-tried"
+  },
   "title": "Thai Red Curry Chicken, Edamame and Vegetable Soup",
   "totalTime": "1 hour 10 minutes"
 }
