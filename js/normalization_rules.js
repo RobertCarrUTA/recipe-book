@@ -47,6 +47,20 @@ export const canonicalNoteTokens = Object.freeze([
 // These rule lists are intentionally ordered. Keep specific ingredient labels
 // before broader labels that would also match the same text.
 export const leadingIngredientRules = freezeRuleList([
+  // Preserve shopping-critical qualifiers before salt, milk, meat and herb fallbacks.
+  { includes: "95% lean ground beef", base: "95% lean ground beef" },
+  { includes: "dried rosemary", base: "dried rosemary" },
+  { includes: "dried thyme", base: "dried thyme" },
+  { includes: "fine sea salt", base: "fine sea salt" },
+  { includes: "light coconut milk", base: "light coconut milk" },
+  { includes: "no-salt-added black beans", base: "no-salt-added black beans" },
+  { includes: "no-salt-added cannellini beans", base: "no-salt-added cannellini beans" },
+  { includes: "no-salt-added chickpeas", base: "no-salt-added chickpeas" },
+  { includes: "no-salt-added crushed tomatoes", base: "no-salt-added crushed tomatoes" },
+  { includes: "no-salt-added diced tomatoes", base: "no-salt-added diced tomatoes" },
+  { includes: "no-salt-added lentils", base: "no-salt-added lentils" },
+  { includes: "no-salt-added tomato paste", base: "no-salt-added tomato paste" },
+  { includes: "thai basil", base: "thai basil" },
   {
     includesAny: ["dark or semi sweet chocolate", "dark or semi-sweet chocolate"],
     base: "chocolate",

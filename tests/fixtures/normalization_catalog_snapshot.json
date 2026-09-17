@@ -45,8 +45,8 @@
     {
       "item": "95% lean ground beef",
       "canonical": {
-        "base": "lean ground beef",
-        "display": "lean ground beef"
+        "base": "95% lean ground beef",
+        "display": "95% lean ground beef"
       }
     },
     {
@@ -904,15 +904,15 @@
     {
       "item": "dried rosemary",
       "canonical": {
-        "base": "rosemary",
-        "display": "rosemary"
+        "base": "dried rosemary",
+        "display": "dried rosemary"
       }
     },
     {
       "item": "dried thyme",
       "canonical": {
-        "base": "thyme",
-        "display": "thyme"
+        "base": "dried thyme",
+        "display": "dried thyme"
       }
     },
     {
@@ -992,9 +992,8 @@
     {
       "item": "fine sea salt",
       "canonical": {
-        "base": "sea salt",
-        "display": "sea salt",
-        "notes": []
+        "base": "fine sea salt",
+        "display": "fine sea salt"
       }
     },
     {
@@ -1638,9 +1637,8 @@
     {
       "item": "light coconut milk",
       "canonical": {
-        "base": "coconut milk",
-        "display": "coconut milk",
-        "notes": []
+        "base": "light coconut milk",
+        "display": "light coconut milk"
       }
     },
     {
@@ -1887,57 +1885,50 @@
     {
       "item": "no-salt-added black beans",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added black beans",
+        "display": "no-salt-added black beans"
       }
     },
     {
       "item": "no-salt-added cannellini beans",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added cannellini beans",
+        "display": "no-salt-added cannellini beans"
       }
     },
     {
       "item": "no-salt-added chickpeas",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added chickpeas",
+        "display": "no-salt-added chickpeas"
       }
     },
     {
       "item": "no-salt-added crushed tomatoes",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added crushed tomatoes",
+        "display": "no-salt-added crushed tomatoes"
       }
     },
     {
       "item": "no-salt-added diced tomatoes",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added diced tomatoes",
+        "display": "no-salt-added diced tomatoes"
       }
     },
     {
       "item": "no-salt-added lentils",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added lentils",
+        "display": "no-salt-added lentils"
       }
     },
     {
       "item": "no-salt-added tomato paste",
       "canonical": {
-        "base": "salt",
-        "display": "salt",
-        "notes": []
+        "base": "no-salt-added tomato paste",
+        "display": "no-salt-added tomato paste"
       }
     },
     {
@@ -2818,8 +2809,8 @@
     {
       "item": "thai basil",
       "canonical": {
-        "base": "basil",
-        "display": "basil"
+        "base": "thai basil",
+        "display": "thai basil"
       }
     },
     {
