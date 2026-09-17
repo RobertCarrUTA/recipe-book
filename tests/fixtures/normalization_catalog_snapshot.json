@@ -2856,13 +2856,6 @@
       }
     },
     {
-      "item": "tomatillos",
-      "canonical": {
-        "base": "tomatillos",
-        "display": "tomatillos"
-      }
-    },
-    {
       "item": "tomato paste",
       "canonical": {
         "base": "tomato paste",
