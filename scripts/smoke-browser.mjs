@@ -157,7 +157,7 @@ async function runBrowserCheck(browser, check) {
 
 const browserChecks = [
   ...[360, 381].map((width) => ({
-    name: `mobile recipe controls stay reachable through Hide/Show at ${width}px`,
+    name: `mobile recipe controls toggle in place and follow scrolling at ${width}px`,
     hasTouch: true,
     isMobile: true,
     viewport: { width, height: 844 },
@@ -168,13 +168,11 @@ const browserChecks = [
 
       // Start while the expanded, unfiltered controls are pinned above the recipes.
       await page.evaluate(() => window.scrollTo(0, 1300));
-      await tapRecipeControlsInViewport(page, "Hide");
-      await assertRecipeControlsInViewport(page, "Show");
+      await toggleRecipeControlsInPlace(page, "Hide");
       assert.ok(await page.evaluate(() => window.scrollY > 500), "Hide should not jump back to the top");
-      await tapRecipeControlsInViewport(page, "Show");
-      await assertRecipeControlsInViewport(page, "Hide");
+      await toggleRecipeControlsInPlace(page, "Show");
 
-      // Open filters make the expanded panel non-sticky, even without a selection.
+      // Open and selected filters must stay pinned without losing the recipe.
       await page.locator("#toggleFilters").tap();
       for (const filtered of [false, true]) {
         if (filtered) {
@@ -190,10 +188,24 @@ const browserChecks = [
           await assertRecipeControlsInViewport(page, "Show");
           await page.evaluate(() => window.scrollTo(0, 1300));
           assert.ok(await page.evaluate(() => window.scrollY > 500), "exercise controls below their original position");
-          await tapRecipeControlsInViewport(page, "Show");
-          await assertRecipeControlsInViewport(page, "Hide");
+          await toggleRecipeControlsInPlace(page, "Show");
+          await toggleRecipeControlsInPlace(page, "Hide");
+          await toggleRecipeControlsInPlace(page, "Show");
         }
       }
+
+      // Preserve a point inside an expanded recipe as well as collapsed cards.
+      const readingRecipe = page.locator(".recipe").nth(3);
+      await readingRecipe.locator(".accordion-header").click();
+      await readingRecipe.locator("ol li").nth(1).evaluate((step) => {
+        window.scrollBy(0, step.getBoundingClientRect().top - innerHeight * 0.65);
+      });
+      await toggleRecipeControlsInPlace(page, "Hide");
+      await page.evaluate(() => window.scrollBy(0, 200));
+      await toggleRecipeControlsInPlace(page, "Show");
+      await page.evaluate(() => window.scrollBy(0, 200));
+      await toggleRecipeControlsInPlace(page, "Hide");
+      await toggleRecipeControlsInPlace(page, "Show");
 
       await tapRecipeControlsInViewport(page, "Hide");
       await page.locator('[data-view="grocery"]').tap();
@@ -204,15 +216,12 @@ const browserChecks = [
       await assertRecipeControlsInViewport(page, "Show");
       await page.setViewportSize({ width: 844, height: 381 });
       await page.evaluate(() => window.scrollTo(0, 800));
-      await tapRecipeControlsInViewport(page, "Show");
-      await assertRecipeControlsInViewport(page, "Hide");
+      await toggleRecipeControlsInPlace(page, "Show");
       await page.setViewportSize({ width, height: 844 });
       await assertRecipeControlsInViewport(page, "Hide");
       await toggle.focus();
-      await page.keyboard.press("Enter");
-      await assertRecipeControlsInViewport(page, "Show");
-      await page.keyboard.press("Space");
-      await assertRecipeControlsInViewport(page, "Hide");
+      await toggleRecipeControlsInPlace(page, "Hide", "Enter");
+      await toggleRecipeControlsInPlace(page, "Show", "Space");
 
       assert.equal(await page.locator("#recipeSearch").inputValue(), "chicken");
       assert.equal(await page.locator("#recipeCollection").inputValue(), "main-dishes");
@@ -266,11 +275,11 @@ const browserChecks = [
       }
       if (viewport.width < 980) {
         const search = page.locator(".recipe-search");
-        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "static");
+        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "sticky");
         await page.locator("#toggleRecipeControls").click();
         assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "sticky");
         await page.locator("#toggleRecipeControls").click();
-        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "static");
+        assert.equal(await search.evaluate((element) => getComputedStyle(element).position), "sticky");
       }
       await page.selectOption("#recipeSort", "fastest");
       assert.equal(await visibleRecipeCount(page), expectedIds.length);
@@ -1425,6 +1434,10 @@ async function assertRecipeControlsInViewport(page, label) {
       label: button.textContent.trim(),
       expanded: button.getAttribute("aria-expanded"),
       panelHidden: document.getElementById("recipeControlsPanel").hidden,
+      headerTop: header.top,
+      controlsBottom: button.closest(".recipe-search").getBoundingClientRect().bottom,
+      scrolled: window.scrollY > 500,
+      viewportHeight: window.innerHeight,
       inViewport: header.top >= 0 && header.bottom <= window.innerHeight && rect.left >= 0 && rect.right <= window.innerWidth,
       receivesTap: hit === button || button.contains(hit),
       x: rect.x + rect.width / 2,
@@ -1436,12 +1449,42 @@ async function assertRecipeControlsInViewport(page, label) {
   assert.equal(report.panelHidden, label === "Show");
   assert.equal(report.inViewport, true, `recipe controls should stay on screen: ${JSON.stringify(report)}`);
   assert.equal(report.receivesTap, true, "recipe toggle should receive taps without scrolling back to the top");
+  if (report.scrolled) {
+    assert.ok(report.headerTop < 40, "recipe controls should follow the page near the top while scrolling");
+    assert.ok(report.controlsBottom <= report.viewportHeight / 2, "leave room below the controls to read and use recipes");
+  }
   return report;
 }
 
 async function tapRecipeControlsInViewport(page, label) {
   const { x, y } = await assertRecipeControlsInViewport(page, label);
   await page.touchscreen.tap(x, y);
+}
+
+async function toggleRecipeControlsInPlace(page, label, key) {
+  await assertRecipeControlsInViewport(page, label);
+  const before = await page.locator(".recipe").evaluateAll((recipes) => {
+    const recipe = recipes.find((element) => {
+      const rect = element.getBoundingClientRect();
+      return rect.bottom > innerHeight * 0.65 && rect.top < innerHeight - 100;
+    });
+    return recipe && { id: recipe.dataset.recipeId, top: recipe.getBoundingClientRect().top, scrollY };
+  });
+  assert.ok(before && before.scrollY > 500, "exercise a recipe well below the top of the page");
+  if (key) {
+    await page.keyboard.press(key);
+  } else {
+    await tapRecipeControlsInViewport(page, label);
+  }
+  await assertRecipeControlsInViewport(page, label === "Hide" ? "Show" : "Hide");
+  const after = await page.locator(`.recipe[data-recipe-id="${before.id}"]`).evaluate((recipe) => ({
+    top: recipe.getBoundingClientRect().top,
+    scrollY,
+  }));
+  assert.ok(
+    Math.abs(after.top - before.top) <= 4,
+    `${label} must preserve the recipe's screen position: ${JSON.stringify({ before, after })}`
+  );
 }
 
 async function assertRecipeDeepLinkOpen(page, recipeId) {
