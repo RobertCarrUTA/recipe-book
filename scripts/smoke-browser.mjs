@@ -156,6 +156,51 @@ async function runBrowserCheck(browser, check) {
 }
 
 const browserChecks = [
+  {
+    name: "legacy state migrates and failed backup imports retain live and durable data",
+    async run(page) {
+      await page.addInitScript(() => {
+        if (sessionStorage.getItem("data-safety-seeded")) return;
+        localStorage.setItem("offline_recipebook_grocery_state_v1", JSON.stringify({
+          selectedRecipeIds: { "chicken-fried-steak": true },
+          recipeMultipliersById: { "chicken-fried-steak": 3 },
+        }));
+        sessionStorage.setItem("data-safety-seeded", "1");
+      });
+      await openApp(page);
+      const before = await page.evaluate(() => localStorage.getItem("offline_recipebook_state_snapshot"));
+      assert.deepEqual(JSON.parse(before).data.recipeMultipliersById, { "chicken-fried-steak": 3 });
+      assert.ok(await page.evaluate(() => localStorage.getItem("offline_recipebook_grocery_state_v1")));
+
+      await page.evaluate(() => {
+        window.__originalStorageSet = Storage.prototype.setItem;
+        Storage.prototype.setItem = function (key, value) {
+          if (key === "offline_recipebook_state_snapshot") throw new DOMException("Quota exceeded", "QuotaExceededError");
+          return window.__originalStorageSet.call(this, key, value);
+        };
+      });
+      const replacement = { app: "robert-recipe-book", schemaVersion: 1, data: { selectedRecipeIds: { "a5-wagyu-burger": true } } };
+      const upload = { name: "backup.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(replacement)) };
+      await page.locator("#stateBackupInput").setInputFiles(upload);
+      await expectLocatorText(page.locator("#stateBackupStatus"), /Existing data was kept/);
+      assert.equal(await page.evaluate(() => localStorage.getItem("offline_recipebook_state_snapshot")), before);
+
+      const downloadPromise = page.waitForEvent("download");
+      await page.locator("#exportStateBackup").click();
+      const download = await downloadPromise;
+      const exported = JSON.parse(await fs.readFile(await download.path(), "utf8"));
+      assert.deepEqual(exported.data.selectedRecipeIds, { "chicken-fried-steak": true }, "failed import must preserve live state too");
+      assert.deepEqual(exported.data.recipeMultipliersById, { "chicken-fried-steak": 3 });
+
+      await page.evaluate(() => { Storage.prototype.setItem = window.__originalStorageSet; });
+      await page.locator("#stateBackupInput").setInputFiles(upload);
+      await expectLocatorText(page.locator("#stateBackupStatus"), /Backup restored/);
+      await page.reload({ waitUntil: "networkidle" });
+      await page.waitForSelector(".recipe");
+      const after = await page.evaluate(() => JSON.parse(localStorage.getItem("offline_recipebook_state_snapshot")).data);
+      assert.deepEqual(after.selectedRecipeIds, { "a5-wagyu-burger": true });
+    },
+  },
   ...[360, 381].map((width) => ({
     name: `mobile recipe controls toggle in place and follow scrolling at ${width}px`,
     hasTouch: true,
