@@ -39,4 +39,10 @@ export function syncCollapsibleControlsPanel(document, options) {
     expandedText: options.expandedText || "Hide",
     expandedTitle: options.expandedLabel,
   });
+
+  // Mobile filtered controls switch between sticky and normal flow. Keep the
+  // user's toggle in reach after the layout changes, without moving focus.
+  if (options.revealToggle && toggle) {
+    toggle.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
 }
