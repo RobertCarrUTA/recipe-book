@@ -53,6 +53,7 @@ import { normalizeRecipeSort } from "./recipe_sort.js";
 import { createRenderer } from "./render.js";
 import {
   clearGroceryPersistence,
+  commitRestoredPersistentState,
   normalizeUiState,
   restorePersistentState,
   savePersistentState,
@@ -185,9 +186,18 @@ function createRecipeBookApp() {
       return { applied: false, persisted: false, reason: "recipes-not-ready" };
     }
 
-    appState.runtime = createRecipeRuntimeState(restoredState);
-    appState.mealPlan = normalizeMealPlan(restoredState.mealPlan);
-    appState.ui = normalizeUiState(restoredState.ui);
+    const runtime = createRecipeRuntimeState(restoredState);
+    const mealPlan = normalizeMealPlan(restoredState.mealPlan);
+    const ui = normalizeUiState(restoredState.ui);
+    pruneRecipeRuntimeState(runtime, appState.recipes);
+    pruneMealPlanForRecipes(mealPlan, appState.recipes);
+    if (!commitRestoredPersistentState({ ...runtime, mealPlan, ui })) {
+      return { applied: false, persisted: false, reason: "storage" };
+    }
+    appStatePersistence.clearPendingSave();
+    appState.runtime = runtime;
+    appState.mealPlan = mealPlan;
+    appState.ui = ui;
 
     applyUiStateToControls();
     wakeLockController?.applyPreference(appState.ui.keepScreenAwake);
@@ -198,7 +208,7 @@ function createRecipeBookApp() {
     closeMealPlanPanel({ restoreFocus: false });
     return {
       applied: true,
-      persisted: saveAppState({ immediate: true }) === true,
+      persisted: true,
     };
   }
 

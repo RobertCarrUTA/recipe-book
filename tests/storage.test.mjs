@@ -161,41 +161,42 @@ test("migratePersistentState promotes legacy selected recipes", () => {
 
   const result = migratePersistentState(storage);
   assert.equal(result.migrated, true);
-  assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion));
-  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.selectedRecipes)), { chili: true });
-  assert.equal(storage.getItem(storageKeys.groceryState), null);
+  const snapshot = JSON.parse(storage.getItem(storageKeys.snapshot));
+  assert.equal(snapshot.storageVersion, currentStorageVersion);
+  assert.deepEqual(snapshot.data.selectedRecipeIds, { chili: true });
+  assert.notEqual(storage.getItem(storageKeys.groceryState), null, "legacy recovery state remains untouched");
 });
 
 test("migration preserves legacy selections when promotion cannot be written", () => {
   const legacyState = JSON.stringify({ selectedRecipeIds: { chili: true } });
   const storage = createMemoryStorage(
     { [storageKeys.groceryState]: legacyState },
-    { failWrites: new Set([storageKeys.selectedRecipes]) }
+    { failWrites: new Set([storageKeys.snapshot]) }
   );
 
   const result = migratePersistentState(storage);
 
   assert.equal(result.failed, true);
   assert.equal(result.migrated, false);
-  assert.equal(storage.getItem(storageKeys.version), null);
+  assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion), "the fence protects legacy data until migration can retry");
   assert.equal(storage.getItem(storageKeys.groceryState), legacyState);
   assert.deepEqual(restorePersistentState(storage).selectedRecipeIds, { chili: true });
 });
 
-test("migration remains retryable when the version write fails", () => {
+test("migration remains retryable when the snapshot write fails", () => {
   const legacyState = JSON.stringify({ selectedRecipeIds: { chili: true } });
   const storage = createMemoryStorage(
     { [storageKeys.groceryState]: legacyState },
-    { failWrites: new Set([storageKeys.version]) }
+    { failWrites: new Set([storageKeys.snapshot]) }
   );
 
   const result = migratePersistentState(storage);
 
   assert.equal(result.failed, true);
   assert.equal(result.migrated, false);
-  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.selectedRecipes)), { chili: true });
+  assert.equal(storage.getItem(storageKeys.snapshot), null);
   assert.equal(storage.getItem(storageKeys.groceryState), legacyState);
-  assert.equal(storage.getItem(storageKeys.version), null);
+  assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion), "the fence protects legacy data until migration can retry");
 });
 
 test("newer storage versions are preserved for a newer app", () => {
@@ -250,22 +251,24 @@ test("savePersistentState writes versioned runtime and ui state", () => {
   );
 
   assert.equal(saved, true);
-  assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion));
-  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.favoriteRecipes)), { chili: true });
-  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.manualGroceryItems)), {
+  const snapshot = JSON.parse(storage.getItem(storageKeys.snapshot));
+  assert.equal(snapshot.storageVersion, currentStorageVersion);
+  const restored = restorePersistentState(storage);
+  assert.deepEqual(restored.favoriteRecipeIds, { chili: true });
+  assert.deepEqual(restored.manualGroceryItemsById, {
     "manual-1": { id: "manual-1", name: "Paper towels" },
   });
-  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.mealPlan)).days.monday, ["chili"]);
-  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.recipeMultipliers)), { chili: 2 });
-  assert.deepEqual(JSON.parse(storage.getItem(storageKeys.collapsedGroceryGroups)), { Produce: true });
-  assert.equal(storage.getItem(storageKeys.groceryControlsCollapsed), "1");
-  assert.equal(storage.getItem(storageKeys.grocerySearchSuffix), "Central Market");
-  assert.equal(storage.getItem(storageKeys.hideCheckedGroceryItems), "1");
-  assert.equal(storage.getItem(storageKeys.mobileView), "grocery");
-  assert.equal(storage.getItem(storageKeys.recipeControlsCollapsed), "1");
-  assert.equal(storage.getItem(storageKeys.recipeSort), "fastest");
-  assert.equal(storage.getItem(storageKeys.showSelectedRecipesOnly), "1");
-  assert.equal(storage.getItem(storageKeys.skipClearGroceryConfirmation), "1");
+  assert.deepEqual(restored.mealPlan.days.monday, ["chili"]);
+  assert.deepEqual(restored.recipeMultipliersById, { chili: 2 });
+  assert.deepEqual(restored.ui.collapsedGroceryGroups, { Produce: true });
+  assert.equal(restored.ui.groceryControlsCollapsed, true);
+  assert.equal(restored.ui.grocerySearchSuffix, "Central Market");
+  assert.equal(restored.ui.hideCheckedGroceryItems, true);
+  assert.equal(restored.ui.mobileView, "grocery");
+  assert.equal(restored.ui.recipeControlsCollapsed, true);
+  assert.equal(restored.ui.recipeSort, "fastest");
+  assert.equal(restored.ui.showSelectedRecipesOnly, true);
+  assert.equal(restored.ui.skipClearGroceryConfirmation, true);
   assert.equal(storage.getItem(storageKeys.groceryState), null, "derived grocery totals should not be persisted");
 });
 
@@ -281,13 +284,14 @@ test("clearGroceryPersistence removes list state without clearing preferences", 
     [storageKeys.selectedRecipes]: JSON.stringify({ chili: true }),
   });
 
-  clearGroceryPersistence(storage);
-
-  assert.equal(storage.getItem(storageKeys.groceryState), null);
-  assert.equal(storage.getItem(storageKeys.groceryChecked), null);
-  assert.equal(storage.getItem(storageKeys.manualGroceryItems), null);
-  assert.equal(storage.getItem(storageKeys.recipeMultipliers), null);
-  assert.equal(storage.getItem(storageKeys.selectedRecipes), null);
+  const before = storage.snapshot();
+  assert.equal(clearGroceryPersistence(storage), true);
+  const restored = restorePersistentState(storage);
+  assert.deepEqual(restored.selectedRecipeIds, {});
+  assert.deepEqual(restored.groceryCheckedByKey, {});
+  assert.deepEqual(restored.manualGroceryItemsById, {});
+  assert.deepEqual(restored.recipeMultipliersById, {});
+  for (const [key, value] of Object.entries(before)) assert.equal(storage.getItem(key), value);
   assert.deepEqual(JSON.parse(storage.getItem(storageKeys.favoriteRecipes)), { chili: true });
   assert.equal(storage.getItem(storageKeys.groupToggle), "1");
   assert.equal(storage.getItem(storageKeys.groceryControlsCollapsed), "1");
@@ -359,7 +363,7 @@ test("normalizePersistentStateBackup returns safe restored state", () => {
         staleKey: { id: "canonical-id", name: "Paper towels" },
       },
       mealPlan: { days: { monday: ["chili", "chili", ""], friday: ["soup"] } },
-      recipeMultipliersById: { chili: 3, soup: "bad" },
+      recipeMultipliersById: { chili: 3, soup: 1 },
       selectedRecipeIds: { chili: true },
       ui: {
         filters: { difficulty: ["easy", ""] },
