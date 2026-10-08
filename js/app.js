@@ -359,7 +359,7 @@ function createRecipeBookApp() {
     recipeSourceNavigationController?.handleMobileViewChange(event);
   }
 
-  function syncRecipeControlsPanel() {
+  function syncRecipeControlsPanel({ revealToggle = false } = {}) {
     syncCollapsibleControlsPanel(document, {
       collapsed: Boolean(appState.ui.recipeControlsCollapsed) && isCompactControlsLayout(),
       collapsedClass: "is-compact",
@@ -367,6 +367,7 @@ function createRecipeBookApp() {
       containerSelector: ".recipe-search",
       expandedLabel: "Hide recipe controls",
       panelId: "recipeControlsPanel",
+      revealToggle,
       toggleId: "toggleRecipeControls",
     });
   }
@@ -592,7 +593,9 @@ function createRecipeBookApp() {
     onId("clearCheckedGroceryItems", "click", clearCheckedGroceryListItems);
     onId("addAllRecipesToGroceryList", "click", addAllRecipesToGroceryList);
     onId("copyGroceryList", "click", handleCopyGroceryList);
-    attachCollapsedPanelToggle("toggleRecipeControls", "recipeControlsCollapsed", syncRecipeControlsPanel);
+    attachCollapsedPanelToggle("toggleRecipeControls", "recipeControlsCollapsed", () => {
+      syncRecipeControlsPanel({ revealToggle: true });
+    });
     attachCollapsedPanelToggle("toggleGroceryControls", "groceryControlsCollapsed", syncGroceryControlsPanel);
     attachGrocerySearchSuffixControl();
   }

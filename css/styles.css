@@ -2799,6 +2799,8 @@ li {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    scroll-margin-top: calc(20px + var(--safe-area-top));
+    scroll-margin-bottom: calc(84px + var(--safe-area-bottom));
   }
 
   .grocery-list {
