@@ -124,6 +124,44 @@ Grocery totals are derived state. Restore selections, multipliers, and manual it
 
 `app_state_persistence.js` schedules and flushes writes. Controllers should request a save through the application boundary rather than write their own storage keys.
 
+Storage version 7 commits one serialized snapshot under `offline_recipebook_state_snapshot`.
+The envelope contains `storageVersion`, a unique `revision`, and `data` using the portable
+backup's normalized state shape. A single `localStorage.setItem` is the commit point;
+quota or access failures leave the previous complete snapshot intact. Derived grocery
+totals are excluded. Migration reads versions 1–6, including legacy grocery selections
+and multipliers, and keeps every old key unchanged as recovery material. The snapshot
+becomes authoritative after its successful write; subsequent legacy-key edits are ignored.
+
+Restore observes the exact snapshot bytes. Saves refuse to replace a snapshot changed
+by another tab until the app explicitly restores the current state or reloads. This detects
+stale tabs but is not a cross-tab transaction lock: truly simultaneous writes can still use
+last-writer semantics because localStorage has no compare-and-swap operation. A UI should
+surface a `storage` event for the snapshot key, preserve unsaved work for export, and ask
+the user to reload rather than silently combining complete application states.
+
+`getPersistentStateStatus()` reports `{ writable, reason }`; reasons include `conflict`,
+`future-version`, `corrupt-snapshot`, `unavailable`, `write-failed`, and `invalid-data`.
+Future versions are read-only, including during explicit backup restoration. Corrupt
+snapshots are retained during ordinary startup/saves and may be repaired through an
+explicit valid backup import. If storage is unavailable the app remains usable in memory.
+
+Portable backups retain app ID `robert-recipe-book` and schema version 1. Historical
+partial `data` objects remain compatible, but absent or malformed `data` and recognized
+field types are rejected. Imports are capped at 2 MiB, 20,000 characters per string,
+5,000 entries per collection, 50,000 JSON nodes, and 12 nested levels. Prototype-related
+keys are rejected. Additive UI preference fields are preserved. Use
+`parsePersistentStateBackup(text)` to stage validated data, then
+`commitRestoredPersistentState(data)` before replacing live state. Only a successful
+commit may be reported as restored; a failed import retains both prior live and durable
+state. Check `File.size` before reading an uploaded file as well.
+
+Rollback is a data operation as well as a code operation. An old version-6 application
+cannot read the current version-7 snapshot; retained legacy keys contain only the
+pre-migration recovery state, not recent edits. Export a current schema-v1 backup before
+rolling back, or ship a compatible reader. Version-6 backup import can read that portable
+schema, but testing the exact rollback build is still required. Do not delete the snapshot
+or assume a Git revert restores current user data.
+
 When the stored shape changes:
 
 1. increment the storage version;

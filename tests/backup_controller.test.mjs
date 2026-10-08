@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 
 import { createBackupController } from "../js/backup_controller.js";
-import { backupAppId, backupSchemaVersion } from "../js/storage.js";
+import { backupAppId, backupSchemaVersion, MAX_BACKUP_BYTES } from "../js/storage.js";
 import {
   createFakeDocument,
   createFakeElement,
@@ -217,4 +217,30 @@ test("backup controller keeps invalid imports non-fatal and sticky", async () =>
   assert.equal(elements.stateBackupStatus.hidden, false);
   assert.equal(elements.stateBackupStatus.classList.contains("is-error"), true);
   assert.equal(window.timers.length, 0, "sticky error status should not schedule auto-clear");
+});
+
+test("backup controller rejects oversized files before reading or applying them", async () => {
+  const { document, window } = createBackupDom();
+  let reads = 0;
+  let restores = 0;
+  const controller = createBackupController({ document, window, logger: { warn() {} }, onRestore() { restores += 1; } });
+  assert.equal(await controller.importBackup({ size: MAX_BACKUP_BYTES + 1, async text() { reads += 1; return "{}"; } }), false);
+  assert.equal(reads, 0);
+  assert.equal(restores, 0);
+});
+
+test("backup controller rejects a compatible envelope with missing data", async () => {
+  const { document, window } = createBackupDom();
+  let restores = 0;
+  const controller = createBackupController({ document, window, logger: { warn() {} }, onRestore() { restores += 1; } });
+  assert.equal(await controller.importBackup({ async text() { return JSON.stringify({ app: backupAppId, schemaVersion: backupSchemaVersion }); } }), false);
+  assert.equal(restores, 0);
+});
+
+test("backup controller reports an unapplied storage failure without claiming success", async () => {
+  const { document, elements, window } = createBackupDom();
+  const controller = createBackupController({ document, window, onRestore: () => ({ applied: false, persisted: false, reason: "storage" }) });
+  assert.equal(await controller.importBackup({ async text() { return JSON.stringify(createCompatibleBackup()); } }), false);
+  assert.equal(elements.stateBackupStatus.textContent, "Backup could not be saved. Existing data was kept.");
+  assert.equal(elements.stateBackupStatus.classList.contains("is-error"), true);
 });

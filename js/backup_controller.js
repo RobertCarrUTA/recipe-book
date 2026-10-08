@@ -1,7 +1,7 @@
 import {
   createPersistentStateBackup,
-  normalizePersistentStateBackup,
-  safeJsonParse,
+  MAX_BACKUP_BYTES,
+  parsePersistentStateBackup,
 } from "./storage.js";
 import { downloadTextFile } from "./download.js";
 import { createStatusMessageController } from "./status_message_controller.js";
@@ -81,8 +81,10 @@ export function createBackupController({
     }
 
     try {
-      const parsed = safeJsonParse(await file.text(), null);
-      const restoredState = normalizePersistentStateBackup(parsed);
+      if (typeof file.size === "number" && file.size > MAX_BACKUP_BYTES) {
+        throw new Error("Backup exceeds the 2 MiB limit.");
+      }
+      const restoredState = parsePersistentStateBackup(await file.text());
       const restoreResult = onRestore(restoredState);
       const result = restoreResult && typeof restoreResult.then === "function"
         ? await restoreResult
@@ -91,7 +93,9 @@ export function createBackupController({
       if (result && result.applied === false) {
         const message = result.reason === "recipes-not-ready"
           ? "Backup could not be applied because recipes are not ready."
-          : "Backup could not be applied.";
+          : result.reason === "storage"
+            ? "Backup could not be saved. Existing data was kept."
+            : "Backup could not be applied.";
         setStatus(message, { kind: "error", sticky: true });
         return false;
       }
