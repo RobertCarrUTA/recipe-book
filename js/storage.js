@@ -34,8 +34,10 @@ export const backupSchemaVersion = 1;
 export const MAX_BACKUP_BYTES = 2 * 1024 * 1024;
 const MAX_TEXT_LENGTH = 20000;
 const unsafeKeys = new Set(["__proto__", "prototype", "constructor"]);
+const unobservedSnapshot = Symbol("unobserved snapshot");
 const sessions = new WeakMap();
 const storageStatuses = new WeakMap();
+let defaultStorageAccessFailed = false;
 const mobileViews = new Set(["recipes", "grocery"]);
 const uiBooleanStorageBindings = Object.freeze([
   ["groceryControlsCollapsed", storageKeys.groceryControlsCollapsed],
@@ -56,8 +58,14 @@ function isPlainObject(value) {
 
 function getDefaultStorage() {
   try {
-    return globalThis.localStorage;
+    const storage = globalThis.localStorage;
+    if (storage && defaultStorageAccessFailed) {
+      sessions.set(storage, unobservedSnapshot);
+      defaultStorageAccessFailed = false;
+    }
+    return storage;
   } catch (error) {
+    defaultStorageAccessFailed = true;
     return null;
   }
 }
@@ -189,14 +197,17 @@ function readStorageVersion(storage) {
 
 export function migratePersistentState(storage = getDefaultStorage()) {
   if (!storage) return { fromVersion: 0, toVersion: currentStorageVersion, migrated: false };
+  setStorageStatus(storage);
   const snapshot = inspectSnapshot(storage);
   if (snapshot.data) {
     sessions.set(storage, snapshot.raw);
-    return { fromVersion: currentStorageVersion, toVersion: currentStorageVersion, migrated: false };
+    const fenced = ensureVersionFence(storage);
+    return { fromVersion: currentStorageVersion, toVersion: currentStorageVersion, migrated: false, ...(fenced ? {} : { failed: true }) };
   }
   const fromVersion = readStorageVersion(storage);
   if (snapshot.reason || fromVersion > currentStorageVersion) {
     const reason = snapshot.reason || "future-version";
+    if (reason === "unavailable") sessions.set(storage, unobservedSnapshot);
     setStorageStatus(storage, reason);
     return {
       fromVersion,
@@ -207,8 +218,9 @@ export function migratePersistentState(storage = getDefaultStorage()) {
     };
   }
   const data = readLegacyState(storage);
-  sessions.set(storage, null);
-  const committed = getPersistentStateStatus(storage).reason !== "unavailable" && commitSnapshot(data, storage);
+  const observed = getPersistentStateStatus(storage).reason !== "unavailable";
+  sessions.set(storage, observed ? null : unobservedSnapshot);
+  const committed = observed && commitSnapshot(data, storage);
   return {
     fromVersion,
     toVersion: committed ? currentStorageVersion : fromVersion,
@@ -449,14 +461,36 @@ function inspectSnapshot(storage) {
   }
 }
 
+function ensureVersionFence(storage) {
+  try {
+    const version = Number(storage.getItem(storageKeys.version));
+    if (version > currentStorageVersion) {
+      setStorageStatus(storage, "future-version");
+      return false;
+    }
+    if (version !== currentStorageVersion) storage.setItem(storageKeys.version, String(currentStorageVersion));
+    return true;
+  } catch (error) {
+    setStorageStatus(storage, "write-failed");
+    return false;
+  }
+}
+
 function commitSnapshot(data, storage, { replaceCorrupt = false } = {}) {
   if (!storage) return false;
   const previous = inspectSnapshot(storage);
   if (previous.reason && !(replaceCorrupt && previous.reason === "corrupt-snapshot")) {
+    if (previous.reason === "unavailable") sessions.set(storage, unobservedSnapshot);
     setStorageStatus(storage, previous.reason);
     return false;
   }
-  if (sessions.has(storage) && sessions.get(storage) !== previous.raw) {
+  const baseline = sessions.get(storage);
+  const observed = sessions.has(storage) && baseline !== unobservedSnapshot;
+  if (!replaceCorrupt && (baseline === unobservedSnapshot || (!observed && previous.raw !== null))) {
+    setStorageStatus(storage, "restore-required");
+    return false;
+  }
+  if (observed && baseline !== previous.raw) {
     setStorageStatus(storage, "conflict");
     return false;
   }
@@ -474,6 +508,9 @@ function commitSnapshot(data, storage, { replaceCorrupt = false } = {}) {
     setStorageStatus(storage, "invalid-data");
     return false;
   }
+  // Fence older clients before adopting the snapshot. If the following commit is
+  // interrupted, legacy fields remain intact and this version can retry migration.
+  if (!ensureVersionFence(storage)) return false;
   try {
     // One setItem is the commit point. Failure leaves the previous snapshot intact.
     storage.setItem(storageKeys.snapshot, serialized);
@@ -492,15 +529,19 @@ export function restorePersistentState(storage = getDefaultStorage()) {
   const snapshot = inspectSnapshot(storage);
   if (snapshot.data) {
     sessions.set(storage, snapshot.raw);
+    ensureVersionFence(storage);
     return snapshot.data;
   }
   const legacy = readLegacyState(storage);
   if (snapshot.reason) {
-    if (snapshot.raw !== undefined) sessions.set(storage, snapshot.raw);
+    sessions.set(storage, snapshot.reason === "unavailable" ? unobservedSnapshot : snapshot.raw);
     setStorageStatus(storage, snapshot.reason);
     return legacy;
   }
-  if (getPersistentStateStatus(storage).reason === "unavailable") return legacy;
+  if (getPersistentStateStatus(storage).reason === "unavailable") {
+    sessions.set(storage, unobservedSnapshot);
+    return legacy;
+  }
   sessions.set(storage, snapshot.raw);
   commitSnapshot(normalizePersistentData(legacy), storage);
   return legacy;
@@ -534,6 +575,7 @@ export function clearGroceryPersistence(storage = getDefaultStorage()) {
   if (!storage) return false;
   const snapshot = inspectSnapshot(storage);
   if (snapshot.reason) {
+    if (snapshot.reason === "unavailable") sessions.set(storage, unobservedSnapshot);
     setStorageStatus(storage, snapshot.reason);
     return false;
   }

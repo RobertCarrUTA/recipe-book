@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import * as persistence from "../js/storage.js";
 import { test } from "./test_helpers.mjs";
+import { saveLegacyV6Selection } from "./fixtures/legacy_v6_storage.mjs";
 
 const { storageKeys, restorePersistentState, savePersistentState, normalizePersistentStateBackup } = persistence;
 
@@ -8,10 +9,11 @@ function memoryStorage(initial = {}) {
   const values = new Map(Object.entries(initial));
   return {
     failWrites: false,
+    failKeys: new Set(),
     writes: [],
     getItem(key) { return values.get(key) ?? null; },
     setItem(key, value) {
-      if (this.failWrites) throw new Error("Quota exceeded");
+      if (this.failWrites || this.failKeys.has(key)) throw new Error("Quota exceeded");
       this.writes.push(key);
       values.set(key, String(value));
     },
@@ -32,7 +34,7 @@ test("snapshot migration preserves legacy multipliers and its recovery source", 
     assert.deepEqual(restored.recipeMultipliersById, { chili: 3 });
     assert.deepEqual(restored.selectedRecipeIds, { chili: true });
     assert.equal(storage.getItem(storageKeys.groceryState), legacy);
-    assert.equal(storage.getItem(storageKeys.version), String(version));
+    assert.equal(storage.getItem(storageKeys.version), String(persistence.currentStorageVersion));
     assert.deepEqual(restorePersistentState(storage), restored);
   }
 });
@@ -49,6 +51,8 @@ test("a failed snapshot commit changes no durable field", () => {
 
 test("a snapshot commit makes exactly one atomic storage write", () => {
   const storage = memoryStorage();
+  restorePersistentState(storage);
+  storage.writes.length = 0;
   assert.equal(savePersistentState(state("chili"), storage), true);
   assert.deepEqual(storage.writes, [storageKeys.snapshot]);
 });
@@ -156,7 +160,94 @@ test("blocked reads cannot cause a default snapshot to overwrite existing data",
   assert.deepEqual(storage.snapshot(), before);
   assert.equal(persistence.getPersistentStateStatus(storage).reason, "unavailable");
   storage.getItem = originalRead;
+  assert.equal(savePersistentState(state("retry"), storage), false, "read recovery alone must not authorize a save");
+  restorePersistentState(storage);
   assert.equal(savePersistentState(state("retry"), storage), true);
+});
+
+test("fresh startup read failure requires restore before saving when reads recover", () => {
+  const seeded = memoryStorage();
+  savePersistentState(state("saved-before-boot"), seeded);
+  const before = seeded.snapshot();
+  let blocked = true;
+  const freshSession = {
+    getItem(key) { if (blocked) throw new Error("Storage unavailable at startup"); return seeded.getItem(key); },
+    setItem: seeded.setItem.bind(seeded),
+  };
+  const fallback = restorePersistentState(freshSession);
+  assert.deepEqual(fallback.selectedRecipeIds, {});
+  blocked = false;
+  assert.equal(savePersistentState({ runtime: fallback, ui: fallback.ui }, freshSession), false);
+  assert.deepEqual(seeded.snapshot(), before);
+  assert.equal(persistence.getPersistentStateStatus(freshSession).reason, "restore-required");
+  assert.deepEqual(restorePersistentState(freshSession).selectedRecipeIds, { "saved-before-boot": true });
+  assert.equal(savePersistentState(state("after-explicit-restore"), freshSession), true);
+});
+
+test("explicit validated import can recover a fresh unreadable startup", () => {
+  const seeded = memoryStorage();
+  savePersistentState(state("before"), seeded);
+  let blocked = true;
+  const freshSession = {
+    getItem(key) { if (blocked) throw new Error("blocked"); return seeded.getItem(key); },
+    setItem: seeded.setItem.bind(seeded),
+  };
+  restorePersistentState(freshSession);
+  blocked = false;
+  assert.equal(persistence.commitRestoredPersistentState({ selectedRecipeIds: { imported: true } }, freshSession), true);
+  assert.deepEqual(restorePersistentState(freshSession).selectedRecipeIds, { imported: true });
+});
+
+test("blocked default-storage getter cannot authorize a save when it recovers", () => {
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, "localStorage");
+  const storage = memoryStorage();
+  savePersistentState(state("before"), storage);
+  const before = storage.snapshot();
+  try {
+    Object.defineProperty(globalThis, "localStorage", { configurable: true, get() { throw new Error("blocked getter"); } });
+    restorePersistentState();
+    Object.defineProperty(globalThis, "localStorage", { configurable: true, value: storage });
+    assert.equal(savePersistentState(state("defaults")), false);
+    assert.deepEqual(storage.snapshot(), before);
+    assert.deepEqual(restorePersistentState().selectedRecipeIds, { before: true });
+    assert.equal(savePersistentState(state("after-restore")), true);
+  } finally {
+    if (descriptor) Object.defineProperty(globalThis, "localStorage", descriptor);
+    else delete globalThis.localStorage;
+  }
+});
+
+test("version fence prevents baseline-v6 tabs from saving after snapshot adoption", () => {
+  const storage = memoryStorage({ [storageKeys.version]: "6", [storageKeys.selectedRecipes]: '{"legacy":true}' });
+  restorePersistentState(storage);
+  assert.equal(storage.getItem(storageKeys.version), "7");
+  const before = storage.snapshot();
+  assert.equal(saveLegacyV6Selection(storage, "old-tab-edit"), false);
+  assert.deepEqual(storage.snapshot(), before);
+});
+
+test("interruption after the version fence keeps legacy recovery data and blocks old saves", () => {
+  const initial = { [storageKeys.version]: "6", [storageKeys.selectedRecipes]: '{"legacy":true}', [storageKeys.recipeMultipliers]: '{"legacy":3}' };
+  const storage = memoryStorage(initial);
+  storage.failKeys.add(storageKeys.snapshot);
+  assert.deepEqual(restorePersistentState(storage).recipeMultipliersById, { legacy: 3 });
+  assert.equal(storage.getItem(storageKeys.version), "7");
+  assert.equal(storage.getItem(storageKeys.snapshot), null);
+  assert.equal(storage.getItem(storageKeys.selectedRecipes), initial[storageKeys.selectedRecipes]);
+  assert.equal(saveLegacyV6Selection(storage, "old-tab-edit"), false);
+  storage.failKeys.clear();
+  assert.deepEqual(restorePersistentState(storage).recipeMultipliersById, { legacy: 3 });
+  assert.ok(storage.getItem(storageKeys.snapshot));
+});
+
+test("failure to write the version fence leaves both old data and snapshot untouched", () => {
+  const initial = { [storageKeys.version]: "6", [storageKeys.selectedRecipes]: '{"legacy":true}' };
+  const storage = memoryStorage(initial);
+  storage.failKeys.add(storageKeys.version);
+  assert.deepEqual(restorePersistentState(storage).selectedRecipeIds, { legacy: true });
+  assert.deepEqual(storage.snapshot(), initial);
+  assert.equal(persistence.commitRestoredPersistentState({ selectedRecipeIds: { imported: true } }, storage), false);
+  assert.deepEqual(storage.snapshot(), initial);
 });
 
 test("backup validation rejects invalid values, future formats and excessive nesting", () => {

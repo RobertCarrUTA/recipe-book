@@ -178,7 +178,7 @@ test("migration preserves legacy selections when promotion cannot be written", (
 
   assert.equal(result.failed, true);
   assert.equal(result.migrated, false);
-  assert.equal(storage.getItem(storageKeys.version), null);
+  assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion), "the fence protects legacy data until migration can retry");
   assert.equal(storage.getItem(storageKeys.groceryState), legacyState);
   assert.deepEqual(restorePersistentState(storage).selectedRecipeIds, { chili: true });
 });
@@ -196,7 +196,7 @@ test("migration remains retryable when the snapshot write fails", () => {
   assert.equal(result.migrated, false);
   assert.equal(storage.getItem(storageKeys.snapshot), null);
   assert.equal(storage.getItem(storageKeys.groceryState), legacyState);
-  assert.equal(storage.getItem(storageKeys.version), null);
+  assert.equal(storage.getItem(storageKeys.version), String(currentStorageVersion), "the fence protects legacy data until migration can retry");
 });
 
 test("newer storage versions are preserved for a newer app", () => {

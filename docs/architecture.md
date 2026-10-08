@@ -129,8 +129,13 @@ The envelope contains `storageVersion`, a unique `revision`, and `data` using th
 backup's normalized state shape. A single `localStorage.setItem` is the commit point;
 quota or access failures leave the previous complete snapshot intact. Derived grocery
 totals are excluded. Migration reads versions 1–6, including legacy grocery selections
-and multipliers, and keeps every old key unchanged as recovery material. The snapshot
-becomes authoritative after its successful write; subsequent legacy-key edits are ignored.
+and multipliers, and keeps every old data field unchanged as recovery material. Before
+committing the first snapshot it sets the existing storage-version marker to 7. That
+fence makes version-6 tabs refuse later saves instead of silently writing obsolete fields.
+If the fence write fails, adoption stops; if the snapshot write fails after the fence,
+legacy fields remain intact and version 7 can retry while version 6 stays read-only.
+The snapshot becomes authoritative after its successful write. A truly simultaneous
+old-client write already past its guard remains subject to the concurrency limit below.
 
 Restore observes the exact snapshot bytes. Saves refuse to replace a snapshot changed
 by another tab until the app explicitly restores the current state or reloads. This detects
@@ -140,7 +145,10 @@ surface a `storage` event for the snapshot key, preserve unsaved work for export
 the user to reload rather than silently combining complete application states.
 
 `getPersistentStateStatus()` reports `{ writable, reason }`; reasons include `conflict`,
-`future-version`, `corrupt-snapshot`, `unavailable`, `write-failed`, and `invalid-data`.
+`future-version`, `corrupt-snapshot`, `unavailable`, `restore-required`, `write-failed`,
+and `invalid-data`. If startup cannot read storage, later read availability alone cannot
+authorize saving fallback defaults over existing data. A successful explicit restore
+or validated backup import must first establish the state for that session.
 Future versions are read-only, including during explicit backup restoration. Corrupt
 snapshots are retained during ordinary startup/saves and may be repaired through an
 explicit valid backup import. If storage is unavailable the app remains usable in memory.
@@ -158,9 +166,11 @@ state. Check `File.size` before reading an uploaded file as well.
 Rollback is a data operation as well as a code operation. An old version-6 application
 cannot read the current version-7 snapshot; retained legacy keys contain only the
 pre-migration recovery state, not recent edits. Export a current schema-v1 backup before
-rolling back, or ship a compatible reader. Version-6 backup import can read that portable
-schema, but testing the exact rollback build is still required. Do not delete the snapshot
-or assume a Git revert restores current user data.
+rolling back and ship a compatible reader. Version-6 backup parsing understands that
+portable schema, but its writes are blocked by the version-7 fence; importing into the
+old application on the same origin is not a durable rollback procedure. Do not lower
+the fence or delete the snapshot to make the old app writable. Test the exact recovery
+build and backup round trip instead of assuming a Git revert restores current user data.
 
 When the stored shape changes:
 
