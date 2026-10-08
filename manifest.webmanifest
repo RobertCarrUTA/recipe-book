@@ -12,7 +12,7 @@
   "categories": ["food", "lifestyle", "utilities"],
   "icons": [
     {
-      "src": "icons/icon.svg",
+      "src": "icons/icon.svg?v=20261008-2",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
