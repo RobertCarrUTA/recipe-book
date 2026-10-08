@@ -129,6 +129,13 @@
       }
     },
     {
+      "item": "asian pear",
+      "canonical": {
+        "base": "asian pear",
+        "display": "asian pear"
+      }
+    },
+    {
       "item": "asian pear or bosc pear",
       "canonical": {
         "base": "asian pear or bosc pear",
@@ -1806,6 +1813,13 @@
       }
     },
     {
+      "item": "mirin rice wine",
+      "canonical": {
+        "base": "mirin rice wine",
+        "display": "mirin rice wine"
+      }
+    },
+    {
       "item": "mixed berries",
       "canonical": {
         "base": "mixed berries",
@@ -2496,6 +2510,13 @@
       }
     },
     {
+      "item": "rice syrup or honey",
+      "canonical": {
+        "base": "rice syrup or honey",
+        "display": "rice syrup or honey"
+      }
+    },
+    {
       "item": "rice vinegar",
       "canonical": {
         "base": "rice vinegar",
@@ -2535,6 +2556,13 @@
       "canonical": {
         "base": "rotisserie chicken",
         "display": "rotisserie chicken"
+      }
+    },
+    {
+      "item": "sake or korean rice wine",
+      "canonical": {
+        "base": "sake or korean rice wine",
+        "display": "sake or korean rice wine"
       }
     },
     {

@@ -1,204 +1,227 @@
 {
-  "additionalTime": "30 minutes short-rib soak plus 6 to 24 hours marinating",
-  "author": "Robert Carr",
+  "id": "korean-bbq-galbi",
   "collections": [
-    "main-dishes"
+    "main-dishes",
+    "steak"
   ],
-  "cookTime": "20 minutes",
-  "description": "Korean BBQ galbi with flanken-cut beef short ribs, pear-soy marinade, garlic, ginger, sesame, scallions, grilled onion, and a simmered glaze for charred edges.",
+  "title": "Korean BBQ Galbi",
+  "author": "Robert Carr",
+  "description": "LA-style beef short ribs in a pear, soy, and rice-wine marinade, grilled over two heat zones on stainless-steel grates and finished with a reserved sesame glaze.",
+  "prepTime": "35 minutes",
+  "cookTime": "15 minutes, allowing 3 to 5 minutes per batch",
+  "additionalTime": "8 to 18 hours marinating, plus 3 minutes resting",
+  "totalTime": "8 hours 53 minutes to 18 hours 53 minutes",
+  "servings": "6",
+  "yield": "About 10 to 12 flanken-cut strips, depending on the butcher",
+  "rating": null,
+  "tags": {
+    "status": "not-tried",
+    "difficulty": "medium",
+    "equipment": [
+      "grill",
+      "stovetop"
+    ]
+  },
   "equipment": [
-    "Outdoor grill, cast-iron skillet, carbon-steel skillet, or grill pan",
-    "Large mixing bowl",
+    "Gas grill with stainless-steel grates and independently controlled burners",
+    "Blender or food processor",
+    "Food-safe zipper bag or shallow nonreactive dish",
+    "Small covered container for reserved marinade",
     "Small saucepan",
-    "Box grater or microplane",
-    "Rimmed baking sheet",
-    "Wire rack",
-    "Tongs",
-    "Basting brush",
-    "Instant-read thermometer"
+    "Wire rack over a rimmed baking sheet or colander",
+    "Grill cleaning tool",
+    "Tongs and basting brush",
+    "Instant-read thermometer",
+    "Kitchen shears"
+  ],
+  "ingredients": [
+    "3 pounds (1.36 kg) LA-style flanken-cut beef short ribs, sliced across the bones 1/4 inch (6 mm) thick",
+    "180 g Korean or Asian pear, peeled and cored, about 1 medium pear",
+    "120 g yellow onion, about 1 small onion, roughly chopped",
+    "30 g garlic, about 8 large cloves, peeled",
+    "15 g fresh ginger, peeled, about 1 tablespoon finely grated",
+    "3/4 cup (180 mL) standard-strength brewed soy sauce",
+    "1/2 cup (120 mL) water",
+    "1/4 cup (60 mL) mirin or Korean mirim",
+    "1/4 cup (60 mL) dry sake or Korean rice wine",
+    "1/4 cup packed (55 g) brown sugar",
+    "1 1/2 tablespoons (30 g) rice syrup or honey",
+    "2 tablespoons (30 mL) toasted sesame oil, divided: 1 1/2 tablespoons for the marinade and 1 1/2 teaspoons for the glaze",
+    "4 medium scallions (50 g), whites and light greens for the marinade, dark greens sliced for garnish",
+    "1 1/2 teaspoons (4 g) freshly ground black pepper",
+    "1/2 teaspoon (2 g) MSG, optional",
+    "1 tablespoon (15 mL) neutral high-heat oil, for the ribs",
+    "2 teaspoons (10 mL) unseasoned rice vinegar, for the glaze",
+    "1 1/2 tablespoons (12 g) toasted sesame seeds, for garnish",
+    "Steamed short-grain rice, optional for serving",
+    "Red leaf lettuce, optional for wraps",
+    "Kimchi, optional for serving"
   ],
   "groceryIngredients": [
     {
       "item": "flanken-cut beef short ribs",
-      "display": "flanken-cut beef short ribs",
-      "quantity": 1.5,
-      "unit": "lb"
+      "quantity": 3,
+      "unit": "lb",
+      "note": "LA-style, 1/4 inch (6 mm) thick"
     },
     {
-      "item": "Asian pear or Bosc pear",
-      "quantity": 1
+      "item": "Asian pear",
+      "quantity": 180,
+      "unit": "g",
+      "note": "Peeled and cored weight; about 1 medium pear; Bosc pear or tart apple can substitute"
     },
     {
       "item": "yellow onion",
-      "quantity": 1
+      "quantity": 120,
+      "unit": "g",
+      "note": "About 1 small onion"
     },
     {
-      "item": "garlic clove",
-      "quantity": 4
+      "item": "garlic",
+      "quantity": 30,
+      "unit": "g",
+      "note": "About 8 large cloves"
     },
     {
       "item": "fresh ginger",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 15,
+      "unit": "g",
+      "note": "About 1 tablespoon finely grated"
     },
     {
-      "item": "green onion",
-      "quantity": 3
+      "item": "soy sauce",
+      "quantity": 0.75,
+      "unit": "cup",
+      "note": "Standard-strength brewed soy sauce, not sweet or dark soy sauce"
     },
     {
-      "item": "low-sodium soy sauce",
-      "quantity": 0.333,
+      "item": "water",
+      "quantity": 0.5,
       "unit": "cup"
     },
     {
-      "item": "packed light brown sugar",
-      "quantity": 2,
-      "unit": "tbsp"
+      "item": "mirin rice wine",
+      "quantity": 0.25,
+      "unit": "cup",
+      "note": "Japanese mirin or Korean mirim"
     },
     {
-      "item": "honey",
-      "quantity": 1,
-      "unit": "tbsp"
+      "item": "sake or Korean rice wine",
+      "quantity": 0.25,
+      "unit": "cup",
+      "note": "Dry"
     },
     {
-      "item": "mirin or rice wine",
-      "quantity": 1.5,
-      "unit": "tbsp"
+      "item": "brown sugar",
+      "quantity": 55,
+      "unit": "g",
+      "note": "1/4 cup packed"
     },
     {
-      "item": "rice vinegar",
-      "quantity": 1.5,
-      "unit": "tsp"
-    },
-    {
-      "item": "gochujang",
-      "quantity": 1,
-      "unit": "tsp"
+      "item": "rice syrup or honey",
+      "quantity": 30,
+      "unit": "g",
+      "note": "About 1 1/2 tablespoons"
     },
     {
       "item": "toasted sesame oil",
       "quantity": 2,
+      "unit": "tbsp",
+      "note": "Total for marinade and finishing glaze"
+    },
+    {
+      "item": "green onion",
+      "quantity": 4,
+      "unit": "item",
+      "note": "Medium scallions, about 50 g"
+    },
+    {
+      "item": "black pepper",
+      "quantity": 1.5,
       "unit": "tsp"
     },
     {
-      "item": "sesame seeds",
+      "item": "MSG",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "optional": true
+    },
+    {
+      "item": "neutral high-heat oil",
       "quantity": 1,
       "unit": "tbsp"
     },
     {
-      "item": "black pepper",
-      "quantity": 0.75,
-      "unit": "tsp"
-    },
-    {
-      "item": "kosher salt",
-      "quantity": 0.125,
-      "unit": "tsp"
-    },
-    {
-      "item": "neutral high-heat oil",
+      "item": "rice vinegar",
       "quantity": 2,
-      "unit": "tsp"
+      "unit": "tsp",
+      "note": "Unseasoned"
+    },
+    {
+      "item": "sesame seeds",
+      "quantity": 1.5,
+      "unit": "tbsp",
+      "note": "Toasted"
     },
     {
       "item": "short-grain white rice",
-      "quantity": 0.75,
-      "unit": "cup"
+      "marker": "as needed",
+      "note": "Cook for serving",
+      "optional": true
     },
     {
       "item": "red leaf lettuce",
-      "display": "red leaf lettuce",
-      "quantity": 1,
-      "unit": "head",
+      "marker": "as needed",
+      "note": "For wraps",
       "optional": true
     },
     {
       "item": "kimchi",
-      "quantity": 8,
-      "unit": "oz",
+      "marker": "as needed",
+      "note": "For serving",
       "optional": true
     }
   ],
-  "id": "korean-bbq-galbi",
-  "ingredients": [
-    "1 1/2 pounds flanken-cut beef short ribs, cross-cut through the bone 1/4 to 1/2 inch thick, usually 4 to 6 strips",
-    "1/2 medium Asian pear or Bosc pear, peeled and cored, using 1/3 cup finely grated pear and juice",
-    "1 small yellow onion, half finely grated for 3 tablespoons onion and juice and half sliced into 1/2-inch rings for grilling",
-    "4 garlic cloves, finely grated or minced",
-    "1 1/2 teaspoons peeled fresh ginger, finely grated",
-    "3 green onions, 2 thinly sliced for the marinade and 1 thinly sliced for garnish",
-    "1/3 cup low-sodium soy sauce",
-    "2 tablespoons packed light brown sugar",
-    "1 tablespoon honey",
-    "1 1/2 tablespoons mirin or rice wine",
-    "1 1/2 teaspoons rice vinegar",
-    "1 teaspoon gochujang",
-    "2 teaspoons toasted sesame oil, divided",
-    "1 tablespoon toasted sesame seeds, divided",
-    "3/4 teaspoon black pepper, freshly ground if possible",
-    "Small pinch Diamond Crystal kosher salt or Morton kosher salt, for the onion rings",
-    "2 teaspoons neutral high-heat oil, such as avocado, grapeseed, canola, or vegetable oil, for the grill or pan",
-    "3/4 cup uncooked short-grain white rice, cooked for serving",
-    "1 head red leaf lettuce, leaves separated, optional for wraps",
-    "8 ounces kimchi, optional for serving"
-  ],
   "instructions": [
-    "Place the 1 1/2 pounds flanken-cut beef short ribs in a large bowl of cold water for 30 minutes, changing the water once after 15 minutes if it looks very cloudy.",
-    "Drain the 1 1/2 pounds short ribs, then rinse each strip briefly under cold running water to remove bone dust from the cross-cut bones.",
-    "Pat the rinsed 1 1/2 pounds short ribs very dry with paper towels and arrange them on a rimmed baking sheet.",
-    "Trim away only any thick loose knobs of surface fat from the short ribs, leaving the thin marbling and small fat edges attached for flavor and browning.",
-    "Finely grate enough peeled pear to measure 1/3 cup packed pear and juice.",
-    "Cut the yellow onion in half, finely grate one half until you have about 3 tablespoons onion and juice, and slice the remaining half into 1/2-inch rings for grilling.",
-    "In a mixing bowl, whisk together the 1/3 cup grated pear and juice, 3 tablespoons grated onion and juice, 1/3 cup low-sodium soy sauce, 2 tablespoons packed light brown sugar, 1 tablespoon honey, 1 1/2 tablespoons mirin or rice wine, 1 1/2 teaspoons rice vinegar, 1 teaspoon gochujang, 1 1/2 teaspoons toasted sesame oil, 4 finely grated garlic cloves, 1 1/2 teaspoons finely grated ginger, 3/4 teaspoon black pepper, 2 thinly sliced green onions, and 1 1/2 teaspoons toasted sesame seeds.",
-    "Before any raw beef touches the marinade, spoon 1/4 cup of the clean marinade into a small saucepan and stir in the remaining 1/2 teaspoon toasted sesame oil.",
-    "Bring the 1/4 cup reserved clean marinade to a simmer over medium heat for 2 to 3 minutes, stirring often, until it thickens slightly into a glossy glaze; remove it from the heat and save it for brushing the cooked galbi.",
-    "Add the dried short ribs to the mixing bowl with the remaining marinade.",
-    "Use clean hands or tongs to turn and massage the short ribs in the marinade for 1 to 2 minutes, making sure the pear, onion, garlic, and scallions coat both sides of every strip.",
-    "Press the short ribs down into the marinade, cover the bowl, and refrigerate for at least 6 hours and up to 24 hours. For the deepest flavor with a clean beef texture, aim for 12 to 18 hours.",
-    "Take the marinated short ribs out of the refrigerator 30 minutes before cooking so the chill comes off while the meat stays cool.",
-    "While the short ribs sit at room temperature, cook the 3/4 cup short-grain white rice if serving with rice, separate the leaves from the red leaf lettuce if using, and put the 8 ounces kimchi in a serving bowl if using.",
-    "Brush the sliced half onion rings with about 1/2 teaspoon neutral high-heat oil and season them with a small pinch Diamond Crystal kosher salt.",
-    "For an outdoor grill, heat the grill to medium-high, about 450 to 500 degrees F, then clean and oil the grates with about 1 teaspoon neutral high-heat oil.",
-    "For indoor cooking, heat a large cast-iron skillet, carbon-steel skillet, or grill pan over medium-high heat for 4 to 5 minutes, then add 1/2 teaspoon neutral high-heat oil and work in batches.",
-    "Lift the short ribs from the marinade, let excess marinade drip back into the bowl for 3 to 5 seconds, and lay only as many ribs on the grill or pan as will fit in a single uncrowded layer.",
-    "Cook the first side of the short ribs for 2 to 3 minutes, until the edges are browned, the meat releases easily, and dark grill marks or seared patches appear.",
-    "Flip the short ribs with tongs and cook the second side for 1 1/2 to 3 minutes, until the meat is sizzling, caramelized, and at least 145 degrees F in the thickest meaty section if checking with a thermometer.",
-    "Brush each cooked side lightly with the simmered reserved glaze during only the last 30 to 45 seconds of cooking so the honey and pear turn shiny without burning.",
-    "Transfer the cooked short ribs to a clean wire rack or platter and repeat with the remaining marinated short ribs, adding another 1 teaspoon neutral oil to the pan between indoor batches if the surface looks dry.",
-    "Grill or sear the oiled half onion rings for 2 to 3 minutes per side, until softened and browned at the edges.",
-    "Discard the raw marinade left in the large bowl after the short ribs are removed.",
-    "Brush the hot galbi with any remaining simmered reserved glaze, then sprinkle it with the remaining 1 1/2 teaspoons toasted sesame seeds and the remaining thinly sliced green onion.",
-    "Rest the galbi for 3 to 5 minutes so the glaze settles and the meat juices stop bubbling.",
-    "Serve the galbi immediately with the cooked short-grain rice, grilled onion rings, separated red leaf lettuce leaves, and kimchi if using."
+    "Inspect the 3 pounds of short ribs for bone-saw fragments and remove any with a damp disposable towel. Trim hard exterior fat and loose tissue while leaving marbling and soft fat edges. Do not rinse or soak the raw beef.",
+    "Blend 180 g peeled and cored pear, 120 g onion, 30 g garlic, and 15 g peeled ginger into a smooth puree.",
+    "Add 3/4 cup soy sauce, 1/2 cup water, 1/4 cup mirin, 1/4 cup sake, 55 g brown sugar, 30 g rice syrup or honey, the white and light-green parts of 4 scallions, 1 1/2 teaspoons black pepper, and the optional 1/2 teaspoon MSG. Blend until combined and the sugar dissolves, then stir in 1 1/2 tablespoons toasted sesame oil. Refrigerate the sliced dark scallion greens for garnish.",
+    "Before adding any beef, measure 1/2 cup (120 mL) of the clean marinade into a separate covered container and refrigerate it for the glaze.",
+    "Place the 3 pounds of ribs in a food-safe bag or shallow nonreactive dish and coat with the remaining marinade, working it between the strips. Seal or cover and refrigerate for 8 to 18 hours, turning once if practical. Keep the full pear marinade to 24 hours or less.",
+    "On cooking day, pour the reserved 1/2 cup clean marinade into a small saucepan. Simmer until reduced to about 1/4 cup (55 to 65 mL), stirring and watching closely; it should lightly coat a spoon. Off the heat, stir in 2 teaspoons rice vinegar and the remaining 1 1/2 teaspoons toasted sesame oil.",
+    "Preheat the gas grill on high with the lid closed for about 15 minutes, until the chamber reaches 500 to 550 degrees F (260 to 288 degrees C). Clean the stainless-steel grates, then set a direct cooking zone to medium-high, about 450 to 500 degrees F (232 to 260 degrees C), with an adjacent unlit or low zone.",
+    "While the grill preheats, lift the ribs onto a rack over a tray or into a colander and drain for 10 minutes. Blot away thick clumps of pear and onion, leaving a thin seasoning film. Discard the used raw marinade. Lightly coat both sides of the ribs with 1 tablespoon neutral high-heat oil total.",
+    "Grill the ribs in uncrowded batches over the direct zone, leaving room to move them away from flare-ups. Leave the first side undisturbed for 75 to 90 seconds. If the meat resists lifting, give it another 10 to 20 seconds before trying again.",
+    "Flip and cook the second side for 60 to 90 seconds. Continue turning every 20 to 30 seconds as needed for even browning. Expect about 3 to 5 minutes total per batch of 1/4-inch ribs. Move any strips surrounded by flames to the cool zone and lower the burner before resuming direct grilling.",
+    "During only the final 20 to 30 seconds per side, brush on a very thin layer of the reduced glaze. Divide the glaze among the batches. Look for a deep brown surface with small charred edges; move the ribs to the cooler zone if the sugars blacken before the meat is done.",
+    "Check for at least 145 degrees F (63 degrees C) in the thickest meat by inserting an instant-read thermometer horizontally, away from bone. Transfer to a clean platter and rest each batch for at least 3 minutes before cutting or eating. Do not tightly wrap the ribs in foil.",
+    "Scatter the 1 1/2 tablespoons toasted sesame seeds and reserved dark scallion greens over the ribs. Use kitchen shears to cut between the bone sections into bite-size pieces. Serve with steamed short-grain rice, red leaf lettuce, and kimchi if desired."
   ],
-  "link": null,
   "notes": [
-    "Ask for flanken-cut beef short ribs, also sold as LA galbi or cross-cut short ribs. They should be sliced across the bones about 1/4 to 1/2 inch thick, not English-cut short ribs.",
-    "The 30 minute cold-water soak and quick rinse help remove bone dust. Dry the ribs well afterward so the grill browns instead of steaming.",
-    "Asian pear adds sweetness and helps tenderize the beef. Bosc pear is a good substitute and is gentler than kiwi or pineapple.",
-    "Use low-sodium soy sauce. If using regular soy sauce, reduce the soy sauce to 1/2 cup and add 2 tablespoons water to keep the galbi from tasting too salty after marinating.",
-    "The reserved glaze must be taken out before raw beef touches the marinade. Do not brush cooked galbi with leftover raw marinade.",
-    "A 12 to 18 hour marinade gives the best balance of seasoning and texture. Going beyond 24 hours can make the surface too soft because of the pear.",
-    "Medium-high heat matters. Galbi should cook quickly enough to char the edges while the thin short ribs stay juicy.",
-    "Brush the glaze only at the end of cooking because the pear, honey, and brown sugar can burn if they sit over direct heat too long.",
-    "If cooking indoors, turn on the vent fan, open a window if needed, and cook in small batches so the ribs sear instead of steaming.",
-    "Cut between the bones with kitchen shears at the table or before serving if you want smaller pieces for rice bowls or lettuce wraps.",
-    "Leftovers keep for 3 days in the refrigerator. Reheat quickly in a hot skillet with 1 tablespoon water, just until warmed through."
+    "Choose LA-style flanken ribs cut across several bones, ideally 1/4 inch (6 mm) thick; 1/8-inch (3 mm) strips cook faster. Thick English-cut ribs need butterflying into thin sheets before this quick grilling method will work.",
+    "The preferred marinade window is 8 to 18 hours. A 1 to 2 hour marinade is a workable quick option; 24 hours is the upper limit for the complete pear mixture. Keep the meat refrigerated throughout marinating.",
+    "For a staged 24 to 48 hour schedule, first make the marinade without the 180 g pear and 15 g ginger. Reserve 1/2 cup of that clean base before it touches beef and refrigerate separately for the glaze. Marinate the ribs in the remaining base, adding the freshly pureed pear and ginger only for the final 4 to 8 hours. The reserved glaze in this variation will be less fruity; never take glaze from the meat's marinade.",
+    "Bosc pear or tart apple can replace Asian pear by weight. Do not replace the pear with an equal amount of kiwi or fresh pineapple for an overnight marinade; their tenderizing action can make the surface mushy.",
+    "For less sweetness, use 35 g brown sugar and 15 g rice syrup or honey. For less salt, replace the 180 mL soy sauce with 150 mL soy sauce and increase the water from 120 to 150 mL.",
+    "To replace the sake and mirin, use 90 mL water plus 30 mL pear or apple juice in place of their combined 120 mL, and add 10 g brown sugar. This is in addition to the base recipe's water and sugar.",
+    "Use certified gluten-free tamari and check the other condiments if a gluten-free version is needed. For sesame-free preparation, omit the sesame oil and seeds and use a little additional neutral oil when finishing.",
+    "If the ribs stick, allow more searing time before lifting. If they steam, drain more thoroughly and cook smaller batches. If the glaze turns bitter or black, reduce the heat, use the cool zone, and brush it on later.",
+    "Optional ginger dipping sauce, separate from the main ingredient and grocery lists: whisk 2 tablespoons soy sauce, 2 tablespoons rice vinegar, 1 tablespoon plus 1 teaspoon water, 1 tablespoon finely grated pear (15 g), and 2 teaspoons rice syrup or honey (12 g). Stir in 2 tablespoons finely grated ginger (30 g), 2 tablespoons sliced scallion (10 g), 2 teaspoons toasted sesame oil, 1 tablespoon neutral oil, and 1 teaspoon toasted sesame seeds. Add 1/4 to 1/2 teaspoon gochugaru if desired. Let stand for 15 minutes and serve sparingly, about 1 to 2 teaspoons per wrap.",
+    "Other optional table accompaniments include perilla leaves, ssamjang, sliced garlic, and fresh green chile. Side dishes and the optional dipping sauce are excluded from the nutrition estimates.",
+    "The marinade can be made up to 2 days ahead and refrigerated separately. Refrigerate cooked ribs within 2 hours, or within 1 hour when the surrounding temperature exceeds 90 degrees F (32 degrees C). Use refrigerated leftovers within 3 to 4 days. Reheat in a skillet with a little water as needed, until the meat reaches 165 degrees F (74 degrees C); use temperature rather than a fixed reheating time.",
+    "Nutrition is the supplied research report's rough estimate for one of six servings of galbi and glaze. Rib marbling, bone weight, trim, and discarded marinade make actual calories and sodium highly variable; these values are not a measured analysis.",
+    "Project adaptation of the supplied Korean BBQ Galbi research report, with original recipe wording. The report draws on Hooni Kim's My Korea, Maangchi's LA galbi (https://www.maangchi.com/recipe/la-galbi), and Sasha Marx's Serious Eats recipe based on Beverly Kim's marinade (https://www.seriouseats.com/grilled-beef-galbi-korean-style-marinated-short-ribs). The linked recipe is one influence, not the sole source of this formulation.",
+    "Cooking, resting, and reheating temperatures follow USDA food-safety guidance: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe"
   ],
-  "nutrition": null,
   "personalNotes": [],
-  "prepTime": "35 minutes",
-  "rating": null,
-  "servings": "2",
-  "tags": {
-    "difficulty": "medium",
-    "equipment": [
-      "grill",
-      "cast-iron skillet",
-      "stovetop"
-    ],
-    "status": "not-tried"
+  "nutrition": {
+    "calories": "About 750 kcal per serving (estimated)",
+    "protein": "About 40 g",
+    "fat": "About 55 g",
+    "saturated fat": "About 20 g",
+    "carbohydrates": "About 24 g",
+    "sugars": "About 15 g",
+    "sodium": "About 1,100 mg"
   },
-  "title": "Korean BBQ Galbi",
-  "totalTime": "55 minutes plus 30 minutes short-rib soak and 6 to 24 hours marinating"
+  "link": "https://www.seriouseats.com/grilled-beef-galbi-korean-style-marinated-short-ribs"
 }
