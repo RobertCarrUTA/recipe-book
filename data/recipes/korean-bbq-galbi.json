@@ -6,11 +6,11 @@
   ],
   "title": "Korean BBQ Galbi",
   "author": "Robert Carr",
-  "description": "LA-style beef short ribs in a pear, soy, and rice-wine marinade, grilled over two heat zones on stainless-steel grates and finished with a reserved sesame glaze.",
+  "description": "LA-style beef short ribs marinated with pear, soy, and rice wine, seared in an All-Clad D5 stainless-steel pan, and lightly finished with a reserved sesame glaze.",
   "prepTime": "35 minutes",
-  "cookTime": "15 minutes, allowing 3 to 5 minutes per batch",
+  "cookTime": "40 minutes, including batches and pan cleanup",
   "additionalTime": "8 to 18 hours marinating, plus 3 minutes resting",
-  "totalTime": "8 hours 53 minutes to 18 hours 53 minutes",
+  "totalTime": "9 hours 18 minutes to 19 hours 18 minutes",
   "servings": "6",
   "yield": "About 10 to 12 flanken-cut strips, depending on the butcher",
   "rating": null,
@@ -18,21 +18,23 @@
     "status": "not-tried",
     "difficulty": "medium",
     "equipment": [
-      "grill",
-      "stovetop"
+      "stainless-steel-skillet",
+      "stovetop",
+      "oven"
     ]
   },
   "equipment": [
-    "Gas grill with stainless-steel grates and independently controlled burners",
+    "All-Clad D5 stainless-steel fry pan, preferably 12 inches, or the widest flat-bottomed saute pan in the set",
     "Blender or food processor",
     "Food-safe zipper bag or shallow nonreactive dish",
     "Small covered container for reserved marinade",
     "Small saucepan",
-    "Wire rack over a rimmed baking sheet or colander",
-    "Grill cleaning tool",
-    "Tongs and basting brush",
-    "Instant-read thermometer",
-    "Kitchen shears"
+    "Colander over a bowl for draining raw ribs",
+    "Clean rimmed baking sheet and oven-safe wire rack for cooked ribs",
+    "Tongs, thin spatula, and basting brush",
+    "Fine-tip instant-read thermometer",
+    "Kitchen shears and paper towels",
+    "Optional broiler, with a broiler-safe metal baking sheet and wire rack"
   ],
   "ingredients": [
     "3 pounds (1.36 kg) LA-style flanken-cut beef short ribs, sliced across the bones 1/4 inch (6 mm) thick",
@@ -50,7 +52,7 @@
     "4 medium scallions (50 g), whites and light greens for the marinade, dark greens sliced for garnish",
     "1 1/2 teaspoons (4 g) freshly ground black pepper",
     "1/2 teaspoon (2 g) MSG, optional",
-    "1 tablespoon (15 mL) neutral high-heat oil, for the ribs",
+    "2 tablespoons (30 mL) neutral high-heat oil, such as avocado or canola, available for cooking; use only enough for a thin film between batches",
     "2 teaspoons (10 mL) unseasoned rice vinegar, for the glaze",
     "1 1/2 tablespoons (12 g) toasted sesame seeds, for garnish",
     "Steamed short-grain rice, optional for serving",
@@ -148,8 +150,9 @@
     },
     {
       "item": "neutral high-heat oil",
-      "quantity": 1,
-      "unit": "tbsp"
+      "quantity": 2,
+      "unit": "tbsp",
+      "note": "For a thin film in the pan; actual use depends on rendered rib fat"
     },
     {
       "item": "rice vinegar",
@@ -189,15 +192,18 @@
     "Before adding any beef, measure 1/2 cup (120 mL) of the clean marinade into a separate covered container and refrigerate it for the glaze.",
     "Place the 3 pounds of ribs in a food-safe bag or shallow nonreactive dish and coat with the remaining marinade, working it between the strips. Seal or cover and refrigerate for 8 to 18 hours, turning once if practical. Keep the full pear marinade to 24 hours or less.",
     "On cooking day, pour the reserved 1/2 cup clean marinade into a small saucepan. Simmer until reduced to about 1/4 cup (55 to 65 mL), stirring and watching closely; it should lightly coat a spoon. Off the heat, stir in 2 teaspoons rice vinegar and the remaining 1 1/2 teaspoons toasted sesame oil.",
-    "Preheat the gas grill on high with the lid closed for about 15 minutes, until the chamber reaches 500 to 550 degrees F (260 to 288 degrees C). Clean the stainless-steel grates, then set a direct cooking zone to medium-high, about 450 to 500 degrees F (232 to 260 degrees C), with an adjacent unlit or low zone.",
-    "While the grill preheats, lift the ribs onto a rack over a tray or into a colander and drain for 10 minutes. Blot away thick clumps of pear and onion, leaving a thin seasoning film. Discard the used raw marinade. Lightly coat both sides of the ribs with 1 tablespoon neutral high-heat oil total.",
-    "Grill the ribs in uncrowded batches over the direct zone, leaving room to move them away from flare-ups. Leave the first side undisturbed for 75 to 90 seconds. If the meat resists lifting, give it another 10 to 20 seconds before trying again.",
-    "Flip and cook the second side for 60 to 90 seconds. Continue turning every 20 to 30 seconds as needed for even browning. Expect about 3 to 5 minutes total per batch of 1/4-inch ribs. Move any strips surrounded by flames to the cool zone and lower the burner before resuming direct grilling.",
-    "During only the final 20 to 30 seconds per side, brush on a very thin layer of the reduced glaze. Divide the glaze among the batches. Look for a deep brown surface with small charred edges; move the ribs to the cooler zone if the sugars blacken before the meat is done.",
-    "Check for at least 145 degrees F (63 degrees C) in the thickest meat by inserting an instant-read thermometer horizontally, away from bone. Transfer to a clean platter and rest each batch for at least 3 minutes before cutting or eating. Do not tightly wrap the ribs in foil.",
-    "Scatter the 1 1/2 tablespoons toasted sesame seeds and reserved dark scallion greens over the ribs. Use kitchen shears to cut between the bone sections into bite-size pieces. Serve with steamed short-grain rice, red leaf lettuce, and kimchi if desired."
+    "Before searing, have the rice and cold accompaniments ready and turn on the range hood. If briefly holding cooked batches, heat the oven to 200 degrees F (93 degrees C) and set a clean oven-safe rack on a rimmed baking sheet. Serve successive batches when possible; extended holding dries these thin ribs.",
+    "Drain the ribs in a colander over a bowl for 10 minutes in the refrigerator. Scrape off visible pear, onion, and garlic clumps and blot both sides thoroughly with paper towels, leaving only a thin seasoning film. Discard the raw marinade. Keep uncooked batches refrigerated. If long strips will not lie flat in your D5 pan, cut through the meat between bones with kitchen shears; do not try to cut through bone.",
+    "Preheat the dry D5 pan over medium-low to medium heat for about 3 to 5 minutes, using a burner that fits the pan base. Add 1 teaspoon of the measured 2 tablespoons neutral oil and swirl into a thin film. It should shimmer without smoking heavily. Add a rib tip to check for an immediate, steady sizzle; adjust the burner gradually. Do not use high heat or the grill preheat temperatures from an outdoor recipe.",
+    "Lay 2 to 3 rib strips in a single layer with space between them; use fewer in a smaller pan. Press gently with tongs just long enough to make flat contact. Cook uncovered over medium heat for about 90 seconds to 2 minutes, until browned underneath and releasing with a gentle nudge. If the meat sticks but the coating is still brown, wait another 15 to 20 seconds. If the coating blackens or smells acrid, lift the pan off the burner and reduce the heat.",
+    "Turn the ribs and cook the second side for about 1 to 2 minutes, then turn every 20 to 30 seconds as needed. Start checking doneness after about 3 minutes total; 1/4-inch ribs commonly take 4 to 6 minutes depending on the burner and meat. Insert a fine-tip thermometer horizontally into the thickest meat without touching bone, and reach at least 145 degrees F (63 degrees C). Stop cooking once done; if already well browned, use lower heat to finish rather than darkening the coating further.",
+    "Transfer cooked ribs with clean utensils to the clean rack or a warm platter. Brush both sides lightly with the cooked reserved glaze off the heat; do not pour the sugary glaze into the searing pan. Rest each batch at least 3 minutes before cutting or eating. Serve promptly, or hold uncovered in the 200-degree-F oven for no more than about 15 to 20 minutes for quality.",
+    "Between batches, move the empty pan off the heat. Pour excess rendered fat into a heatproof container, leaving only a thin film. Remove loose browned residue with a folded paper towel held in tongs. If a sticky dark layer remains, let the pan cool briefly, carefully add a little warm water off the heat, loosen the residue with a wooden or silicone utensil, discard it, and dry the pan. Never run cold water over the hot pan. Reheat gently and add another teaspoon of the measured oil only if needed. Repeat until all ribs are cooked.",
+    "Finish the ribs with 1 1/2 tablespoons toasted sesame seeds and the reserved dark scallion greens. Cut between the bones into bite-size pieces and serve with steamed short-grain rice, red leaf lettuce, and kimchi if desired. Offer any remaining clean cooked glaze separately rather than flooding the meat."
   ],
   "notes": [
+    "The default method uses the uncoated stainless-steel All-Clad D5 pan. Budget about 40 minutes for 3 pounds in batches, including cleanup; a smaller pan takes longer. The oven is optional. For six people, serving batches as they finish gives a better texture than holding the first ribs through the entire session.",
+    "Broiler alternative for a larger batch: follow the marinade, clean-glaze, draining, and blotting steps. Preheat the broiler for about 5 minutes. Use a broiler-rated metal sheet and rack, lightly oiled from the measured neutral oil; do not use parchment or a rack with an unsuitable coating. Place ribs in one uncrowded layer with their surface about 6 inches below the element. Broil the first side for roughly 3 to 5 minutes, checking from 2 minutes, then turn and cook roughly 2 to 4 minutes more. Rotate the sheet if browning is uneven and watch continuously near the end. Remove individual ribs as they reach 145 degrees F (63 degrees C); move the sheet farther from the element if the coating darkens too quickly. Brush on cooked glaze only after removal and rest at least 3 minutes. Cook a second sheet separately if needed. This replaces pan searing; do not fully pan-cook the ribs and then broil them again.",
     "Choose LA-style flanken ribs cut across several bones, ideally 1/4 inch (6 mm) thick; 1/8-inch (3 mm) strips cook faster. Thick English-cut ribs need butterflying into thin sheets before this quick grilling method will work.",
     "The preferred marinade window is 8 to 18 hours. A 1 to 2 hour marinade is a workable quick option; 24 hours is the upper limit for the complete pear mixture. Keep the meat refrigerated throughout marinating.",
     "For a staged 24 to 48 hour schedule, first make the marinade without the 180 g pear and 15 g ginger. Reserve 1/2 cup of that clean base before it touches beef and refrigerate separately for the glaze. Marinate the ribs in the remaining base, adding the freshly pureed pear and ginger only for the final 4 to 8 hours. The reserved glaze in this variation will be less fruity; never take glaze from the meat's marinade.",
@@ -205,13 +211,14 @@
     "For less sweetness, use 35 g brown sugar and 15 g rice syrup or honey. For less salt, replace the 180 mL soy sauce with 150 mL soy sauce and increase the water from 120 to 150 mL.",
     "To replace the sake and mirin, use 90 mL water plus 30 mL pear or apple juice in place of their combined 120 mL, and add 10 g brown sugar. This is in addition to the base recipe's water and sugar.",
     "Use certified gluten-free tamari and check the other condiments if a gluten-free version is needed. For sesame-free preparation, omit the sesame oil and seeds and use a little additional neutral oil when finishing.",
-    "If the ribs stick, allow more searing time before lifting. If they steam, drain more thoroughly and cook smaller batches. If the glaze turns bitter or black, reduce the heat, use the cool zone, and brush it on later.",
+    "For D5, a dry meat surface, moderate heat, and space between pieces matter more than maximum burner power. A little browning on the pan is expected; black residue must be cleared before the next batch. Use a thin spatula if a browned rib needs help releasing. Keep the pan uncovered so trapped steam does not soften the surface.",
     "Optional ginger dipping sauce, separate from the main ingredient and grocery lists: whisk 2 tablespoons soy sauce, 2 tablespoons rice vinegar, 1 tablespoon plus 1 teaspoon water, 1 tablespoon finely grated pear (15 g), and 2 teaspoons rice syrup or honey (12 g). Stir in 2 tablespoons finely grated ginger (30 g), 2 tablespoons sliced scallion (10 g), 2 teaspoons toasted sesame oil, 1 tablespoon neutral oil, and 1 teaspoon toasted sesame seeds. Add 1/4 to 1/2 teaspoon gochugaru if desired. Let stand for 15 minutes and serve sparingly, about 1 to 2 teaspoons per wrap.",
     "Other optional table accompaniments include perilla leaves, ssamjang, sliced garlic, and fresh green chile. Side dishes and the optional dipping sauce are excluded from the nutrition estimates.",
     "The marinade can be made up to 2 days ahead and refrigerated separately. Refrigerate cooked ribs within 2 hours, or within 1 hour when the surrounding temperature exceeds 90 degrees F (32 degrees C). Use refrigerated leftovers within 3 to 4 days. Reheat in a skillet with a little water as needed, until the meat reaches 165 degrees F (74 degrees C); use temperature rather than a fixed reheating time.",
     "Nutrition is the supplied research report's rough estimate for one of six servings of galbi and glaze. Rib marbling, bone weight, trim, and discarded marinade make actual calories and sodium highly variable; these values are not a measured analysis.",
     "Project adaptation of the supplied Korean BBQ Galbi research report, with original recipe wording. The report draws on Hooni Kim's My Korea, Maangchi's LA galbi (https://www.maangchi.com/recipe/la-galbi), and Sasha Marx's Serious Eats recipe based on Beverly Kim's marinade (https://www.seriouseats.com/grilled-beef-galbi-korean-style-marinated-short-ribs). The linked recipe is one influence, not the sole source of this formulation.",
-    "Cooking, resting, and reheating temperatures follow USDA food-safety guidance: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe"
+    "Cooking, resting, and reheating temperatures follow USDA food-safety guidance: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe",
+    "The D5 heat and care instructions follow All-Clad: https://www.all-clad.com/care-use. Pan-frying and the optional broiler method are project adaptations informed by Maangchi and Hyosun at Korean Bapsang: https://www.koreanbapsang.com/la-galbi-gui-grilled-la-style-short-ribs/."
   ],
   "personalNotes": [],
   "nutrition": {
