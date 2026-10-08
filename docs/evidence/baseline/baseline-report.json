@@ -1,0 +1,3701 @@
+{
+  "commit": "3117d47b9cdd3a844d063fbde2ca6cd5ff3a83d2",
+  "capturedAt": "2026-10-08T23:40:24.277Z",
+  "browser": {
+    "version": "154.0.8037.98",
+    "executable": "chrome.exe",
+    "engine": "Chromium",
+    "node": "v24.16.0"
+  },
+  "theme": "existing dark only",
+  "methodology": "Local uncompressed HTTP, ephemeral port; synthetic clean browser contexts; no authored recipe edits. Viewports emulate layout only, not physical devices. Performance uses 3 fresh contexts per viewport, service workers blocked to isolate startup resources, no CPU/network throttling. Search/open metrics are browser event-to-next-paint lab latency, not field INP. LCP/CLS sampled after initial app readiness plus 500 ms. Screenshots are viewport captures unless content is indicated.",
+  "fixtures": {
+    "recipeId": "dutch-oven-chicken-pot-pie",
+    "recipeTitle": "Dutch Oven Chicken Pot Pie",
+    "manualItem": "Paper towels",
+    "plan": [
+      "monday",
+      "wednesday"
+    ]
+  },
+  "screenshots": [
+    {
+      "file": "desktop-browse.png",
+      "label": "desktop",
+      "state": "browse",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:26.500Z"
+    },
+    {
+      "file": "desktop-planner-empty.png",
+      "label": "desktop",
+      "state": "planner-empty",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:26.669Z"
+    },
+    {
+      "file": "desktop-detail.png",
+      "label": "desktop",
+      "state": "detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:26.948Z"
+    },
+    {
+      "file": "desktop-detail-content.png",
+      "label": "desktop",
+      "state": "detail-content",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": ".accordion-content.open",
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:27.049Z"
+    },
+    {
+      "file": "desktop-cooking.png",
+      "label": "desktop",
+      "state": "cooking",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:27.280Z"
+    },
+    {
+      "file": "desktop-cooking-collapsed.png",
+      "label": "desktop",
+      "state": "cooking-collapsed",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:27.357Z"
+    },
+    {
+      "file": "desktop-planner.png",
+      "label": "desktop",
+      "state": "planner",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:27.495Z"
+    },
+    {
+      "file": "desktop-grocery-populated.png",
+      "label": "desktop",
+      "state": "grocery-populated",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:27.641Z"
+    },
+    {
+      "file": "desktop-grocery-checked.png",
+      "label": "desktop",
+      "state": "grocery-checked",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:27.729Z"
+    },
+    {
+      "file": "desktop-delete-dialog.png",
+      "label": "desktop",
+      "state": "delete-dialog",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:27.844Z"
+    },
+    {
+      "file": "desktop-grocery-completed.png",
+      "label": "desktop",
+      "state": "grocery-completed",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:28.259Z"
+    },
+    {
+      "file": "desktop-grocery-empty.png",
+      "label": "desktop",
+      "state": "grocery-empty",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:28.370Z"
+    },
+    {
+      "file": "desktop-search-filters.png",
+      "label": "desktop",
+      "state": "search-filters",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:28.476Z"
+    },
+    {
+      "file": "desktop-no-results.png",
+      "label": "desktop",
+      "state": "no-results",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:28.725Z"
+    },
+    {
+      "file": "mobile-browse.png",
+      "label": "mobile",
+      "state": "browse",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:30.656Z"
+    },
+    {
+      "file": "mobile-planner-empty.png",
+      "label": "mobile",
+      "state": "planner-empty",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:30.741Z"
+    },
+    {
+      "file": "mobile-detail.png",
+      "label": "mobile",
+      "state": "detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:31.062Z"
+    },
+    {
+      "file": "mobile-detail-content.png",
+      "label": "mobile",
+      "state": "detail-content",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": ".accordion-content.open",
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:31.189Z"
+    },
+    {
+      "file": "mobile-cooking.png",
+      "label": "mobile",
+      "state": "cooking",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:31.374Z"
+    },
+    {
+      "file": "mobile-cooking-collapsed.png",
+      "label": "mobile",
+      "state": "cooking-collapsed",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:31.436Z"
+    },
+    {
+      "file": "mobile-planner.png",
+      "label": "mobile",
+      "state": "planner",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:31.508Z"
+    },
+    {
+      "file": "mobile-grocery-populated.png",
+      "label": "mobile",
+      "state": "grocery-populated",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:31.661Z"
+    },
+    {
+      "file": "mobile-grocery-checked.png",
+      "label": "mobile",
+      "state": "grocery-checked",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:31.711Z"
+    },
+    {
+      "file": "mobile-delete-dialog.png",
+      "label": "mobile",
+      "state": "delete-dialog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:40:31.769Z"
+    },
+    {
+      "file": "tablet-browse.png",
+      "label": "tablet",
+      "state": "browse",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:03.337Z"
+    },
+    {
+      "file": "tablet-planner-empty.png",
+      "label": "tablet",
+      "state": "planner-empty",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:03.434Z"
+    },
+    {
+      "file": "tablet-detail.png",
+      "label": "tablet",
+      "state": "detail",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:03.712Z"
+    },
+    {
+      "file": "tablet-detail-content.png",
+      "label": "tablet",
+      "state": "detail-content",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": ".accordion-content.open",
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:03.834Z"
+    },
+    {
+      "file": "tablet-cooking.png",
+      "label": "tablet",
+      "state": "cooking",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:03.990Z"
+    },
+    {
+      "file": "tablet-cooking-collapsed.png",
+      "label": "tablet",
+      "state": "cooking-collapsed",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:04.066Z"
+    },
+    {
+      "file": "tablet-planner.png",
+      "label": "tablet",
+      "state": "planner",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:04.154Z"
+    },
+    {
+      "file": "tablet-grocery-populated.png",
+      "label": "tablet",
+      "state": "grocery-populated",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:04.303Z"
+    },
+    {
+      "file": "tablet-grocery-checked.png",
+      "label": "tablet",
+      "state": "grocery-checked",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:04.360Z"
+    },
+    {
+      "file": "tablet-delete-dialog.png",
+      "label": "tablet",
+      "state": "delete-dialog",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:04.460Z"
+    },
+    {
+      "file": "tablet-grocery-completed.png",
+      "label": "tablet",
+      "state": "grocery-completed",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:04.843Z"
+    },
+    {
+      "file": "tablet-grocery-empty.png",
+      "label": "tablet",
+      "state": "grocery-empty",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:04.915Z"
+    },
+    {
+      "file": "tablet-search-filters.png",
+      "label": "tablet",
+      "state": "search-filters",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:05.035Z"
+    },
+    {
+      "file": "tablet-no-results.png",
+      "label": "tablet",
+      "state": "no-results",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:05.285Z"
+    },
+    {
+      "file": "layout-360x800-browse.png",
+      "label": "layout-360x800",
+      "state": "browse",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:06.741Z"
+    },
+    {
+      "file": "layout-390x844-browse.png",
+      "label": "layout-390x844",
+      "state": "browse",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:08.125Z"
+    },
+    {
+      "file": "layout-430x932-browse.png",
+      "label": "layout-430x932",
+      "state": "browse",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:09.604Z"
+    },
+    {
+      "file": "layout-768x1024-browse.png",
+      "label": "layout-768x1024",
+      "state": "browse",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:11.018Z"
+    },
+    {
+      "file": "layout-1024x768-browse.png",
+      "label": "layout-1024x768",
+      "state": "browse",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:12.308Z"
+    },
+    {
+      "file": "layout-1280x800-browse.png",
+      "label": "layout-1280x800",
+      "state": "browse",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:13.661Z"
+    },
+    {
+      "file": "layout-1440x900-browse.png",
+      "label": "layout-1440x900",
+      "state": "browse",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:15.590Z"
+    },
+    {
+      "file": "layout-1920x1080-browse.png",
+      "label": "layout-1920x1080",
+      "state": "browse",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:41:17.526Z"
+    },
+    {
+      "file": "subpath-direct-recipe.png",
+      "label": "subpath",
+      "state": "direct-recipe",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/recipe-book/dutch-oven-chicken-pot-pie?debug=1",
+      "capturedAt": "2026-10-08T23:41:35.972Z"
+    },
+    {
+      "file": "subpath-offline-recipe.png",
+      "label": "subpath",
+      "state": "offline-recipe",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/recipe-book/dutch-oven-chicken-pot-pie?debug=1",
+      "capturedAt": "2026-10-08T23:41:36.367Z"
+    },
+    {
+      "file": "mobile-browse.png",
+      "label": "mobile",
+      "state": "browse",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:12.925Z"
+    },
+    {
+      "file": "mobile-planner-empty.png",
+      "label": "mobile",
+      "state": "planner-empty",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:13.043Z"
+    },
+    {
+      "file": "mobile-detail.png",
+      "label": "mobile",
+      "state": "detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:13.361Z"
+    },
+    {
+      "file": "mobile-detail-content.png",
+      "label": "mobile",
+      "state": "detail-content",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": ".accordion-content.open",
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:13.483Z"
+    },
+    {
+      "file": "mobile-cooking.png",
+      "label": "mobile",
+      "state": "cooking",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:13.683Z"
+    },
+    {
+      "file": "mobile-cooking-collapsed.png",
+      "label": "mobile",
+      "state": "cooking-collapsed",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:13.749Z"
+    },
+    {
+      "file": "mobile-planner.png",
+      "label": "mobile",
+      "state": "planner",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:13.828Z"
+    },
+    {
+      "file": "mobile-grocery-populated.png",
+      "label": "mobile",
+      "state": "grocery-populated",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:14.011Z"
+    },
+    {
+      "file": "mobile-grocery-checked.png",
+      "label": "mobile",
+      "state": "grocery-checked",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:14.061Z"
+    },
+    {
+      "file": "mobile-delete-dialog.png",
+      "label": "mobile",
+      "state": "delete-dialog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:14.131Z"
+    },
+    {
+      "file": "mobile-grocery-completed.png",
+      "label": "mobile",
+      "state": "grocery-completed",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:14.384Z"
+    },
+    {
+      "file": "mobile-grocery-empty.png",
+      "label": "mobile",
+      "state": "grocery-empty",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:14.459Z"
+    },
+    {
+      "file": "mobile-search-filters.png",
+      "label": "mobile",
+      "state": "search-filters",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:14.579Z"
+    },
+    {
+      "file": "mobile-no-results.png",
+      "label": "mobile",
+      "state": "no-results",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "dark",
+      "fullPage": false,
+      "selector": null,
+      "url": "/?debug=1",
+      "capturedAt": "2026-10-08T23:42:14.809Z"
+    }
+  ],
+  "layouts": [
+    {
+      "label": "desktop",
+      "state": "browse",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "desktop",
+      "state": "cooking",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "desktop",
+      "state": "planner",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "desktop",
+      "state": "grocery-populated",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "desktop",
+      "state": "delete-dialog",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "browse",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "cooking",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "planner",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "grocery-populated",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "delete-dialog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "tablet",
+      "state": "browse",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "tablet",
+      "state": "cooking",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "tablet",
+      "state": "planner",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "tablet",
+      "state": "grocery-populated",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "tablet",
+      "state": "delete-dialog",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "matrix",
+      "state": "browse",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "viewportWidth": 360,
+      "documentWidth": 360,
+      "bodyWidth": 360,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "matrix",
+      "state": "browse",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "matrix",
+      "state": "browse",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "viewportWidth": 430,
+      "documentWidth": 430,
+      "bodyWidth": 430,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "matrix",
+      "state": "browse",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "matrix",
+      "state": "browse",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "matrix",
+      "state": "browse",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "viewportWidth": 1280,
+      "documentWidth": 1280,
+      "bodyWidth": 1280,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "matrix",
+      "state": "browse",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "matrix",
+      "state": "browse",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "viewportWidth": 1920,
+      "documentWidth": 1920,
+      "bodyWidth": 1920,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "browse",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "cooking",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "planner",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "grocery-populated",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    },
+    {
+      "label": "mobile",
+      "state": "delete-dialog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "overflowPx": 0,
+      "overflowingControls": []
+    }
+  ],
+  "performance": [
+    {
+      "label": "desktop",
+      "repeat": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "lcp": 600,
+      "cls": 0,
+      "domContentLoaded": 554,
+      "load": 584,
+      "requestCount": 53,
+      "transferBytes": 3719040,
+      "bodyBytes": 3704340,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 44,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 11.800000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/css/styles.css",
+          "transferSize": 72193,
+          "encodedBodySize": 71893,
+          "duration": 305.7999999523163,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/js/app.js",
+          "transferSize": 27004,
+          "encodedBodySize": 26704,
+          "duration": 6.8999998569488525,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 73.09999990463257,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/js/grocery_model.js",
+          "transferSize": 13136,
+          "encodedBodySize": 12836,
+          "duration": 18.399999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/app_state_persistence.js",
+          "transferSize": 2518,
+          "encodedBodySize": 2218,
+          "duration": 18.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/clipboard.js",
+          "transferSize": 1577,
+          "encodedBodySize": 1277,
+          "duration": 19.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_controls.js",
+          "transferSize": 3533,
+          "encodedBodySize": 3233,
+          "duration": 20.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/download.js",
+          "transferSize": 1720,
+          "encodedBodySize": 1420,
+          "duration": 21.40000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/collapsible_controls.js",
+          "transferSize": 1766,
+          "encodedBodySize": 1466,
+          "duration": 33.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/backup_controller.js",
+          "transferSize": 4869,
+          "encodedBodySize": 4569,
+          "duration": 34.40000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/dom.js",
+          "transferSize": 6764,
+          "encodedBodySize": 6464,
+          "duration": 21.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/logger.js",
+          "transferSize": 1284,
+          "encodedBodySize": 984,
+          "duration": 22.100000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_panel_controller.js",
+          "transferSize": 3224,
+          "encodedBodySize": 2924,
+          "duration": 23.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_model.js",
+          "transferSize": 6081,
+          "encodedBodySize": 5781,
+          "duration": 23.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/mobile_view_controller.js",
+          "transferSize": 4792,
+          "encodedBodySize": 4492,
+          "duration": 23.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/offline_controller.js",
+          "transferSize": 4079,
+          "encodedBodySize": 3779,
+          "duration": 25.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_filter.js",
+          "transferSize": 7592,
+          "encodedBodySize": 7292,
+          "duration": 25.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery_controller.js",
+          "transferSize": 12398,
+          "encodedBodySize": 12098,
+          "duration": 26,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_exporter.js",
+          "transferSize": 4067,
+          "encodedBodySize": 3767,
+          "duration": 26.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_repository.js",
+          "transferSize": 764,
+          "encodedBodySize": 464,
+          "duration": 28.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_list_exporter.js",
+          "transferSize": 4059,
+          "encodedBodySize": 3759,
+          "duration": 28.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_source_navigation.js",
+          "transferSize": 13755,
+          "encodedBodySize": 13455,
+          "duration": 28.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_sort.js",
+          "transferSize": 7583,
+          "encodedBodySize": 7283,
+          "duration": 30.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/render.js",
+          "transferSize": 2335,
+          "encodedBodySize": 2035,
+          "duration": 30.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/storage.js",
+          "transferSize": 14881,
+          "encodedBodySize": 14581,
+          "duration": 31.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/status_message_controller.js",
+          "transferSize": 1464,
+          "encodedBodySize": 1164,
+          "duration": 32.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/ui_state.js",
+          "transferSize": 4082,
+          "encodedBodySize": 3782,
+          "duration": 32.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/wake_lock_controller.js",
+          "transferSize": 4570,
+          "encodedBodySize": 4270,
+          "duration": 33.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_ingredient_parser.js",
+          "transferSize": 2379,
+          "encodedBodySize": 2079,
+          "duration": 16.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization.js",
+          "transferSize": 7427,
+          "encodedBodySize": 7127,
+          "duration": 16.600000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_multiplier.js",
+          "transferSize": 1983,
+          "encodedBodySize": 1683,
+          "duration": 17.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/units.js",
+          "transferSize": 9474,
+          "encodedBodySize": 9174,
+          "duration": 18.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_collections.js",
+          "transferSize": 3306,
+          "encodedBodySize": 3006,
+          "duration": 10.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery.js",
+          "transferSize": 2217,
+          "encodedBodySize": 1917,
+          "duration": 11.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_formatting.js",
+          "transferSize": 3348,
+          "encodedBodySize": 3048,
+          "duration": 10.900000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/nutrition.js",
+          "transferSize": 2483,
+          "encodedBodySize": 2183,
+          "duration": 11.100000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipes.js",
+          "transferSize": 1868,
+          "encodedBodySize": 1568,
+          "duration": 10.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grouping.js",
+          "transferSize": 11976,
+          "encodedBodySize": 11676,
+          "duration": 10.099999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_view_model.js",
+          "transferSize": 5149,
+          "encodedBodySize": 4849,
+          "duration": 10.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_renderer.js",
+          "transferSize": 10361,
+          "encodedBodySize": 10061,
+          "duration": 9.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_renderer.js",
+          "transferSize": 18726,
+          "encodedBodySize": 18426,
+          "duration": 9.800000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_renderer.js",
+          "transferSize": 7795,
+          "encodedBodySize": 7495,
+          "duration": 10.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_renderer.js",
+          "transferSize": 33794,
+          "encodedBodySize": 33494,
+          "duration": 11,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization_rules.js",
+          "transferSize": 16571,
+          "encodedBodySize": 16271,
+          "duration": 6.300000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_schema.js",
+          "transferSize": 13642,
+          "encodedBodySize": 13342,
+          "duration": 3,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_model.js",
+          "transferSize": 656,
+          "encodedBodySize": 356,
+          "duration": 2.0999999046325684,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_actions_renderer.js",
+          "transferSize": 12965,
+          "encodedBodySize": 12665,
+          "duration": 1.8999998569488525,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 166.20000004768372,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 647.6000001430511,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 2181503,
+          "encodedBodySize": 2181203,
+          "duration": 11.200000047683716,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 163.09999990463257,
+      "openLatency": 15.5
+    },
+    {
+      "label": "desktop",
+      "repeat": 2,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "lcp": 604,
+      "cls": 0,
+      "domContentLoaded": 555.2999999523163,
+      "load": 585.7999999523163,
+      "requestCount": 53,
+      "transferBytes": 3719040,
+      "bodyBytes": 3704340,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 43.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 13.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/css/styles.css",
+          "transferSize": 72193,
+          "encodedBodySize": 71893,
+          "duration": 317.40000009536743,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/js/app.js",
+          "transferSize": 27004,
+          "encodedBodySize": 26704,
+          "duration": 6.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 50.700000047683716,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/js/grocery_model.js",
+          "transferSize": 13136,
+          "encodedBodySize": 12836,
+          "duration": 22,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/app_state_persistence.js",
+          "transferSize": 2518,
+          "encodedBodySize": 2218,
+          "duration": 22.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/backup_controller.js",
+          "transferSize": 4869,
+          "encodedBodySize": 4569,
+          "duration": 31.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/clipboard.js",
+          "transferSize": 1577,
+          "encodedBodySize": 1277,
+          "duration": 22.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/collapsible_controls.js",
+          "transferSize": 1766,
+          "encodedBodySize": 1466,
+          "duration": 31.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_controls.js",
+          "transferSize": 3533,
+          "encodedBodySize": 3233,
+          "duration": 23.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/download.js",
+          "transferSize": 1720,
+          "encodedBodySize": 1420,
+          "duration": 24.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/dom.js",
+          "transferSize": 6764,
+          "encodedBodySize": 6464,
+          "duration": 24.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/logger.js",
+          "transferSize": 1284,
+          "encodedBodySize": 984,
+          "duration": 25.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_model.js",
+          "transferSize": 6081,
+          "encodedBodySize": 5781,
+          "duration": 26.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/mobile_view_controller.js",
+          "transferSize": 4792,
+          "encodedBodySize": 4492,
+          "duration": 27.300000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_panel_controller.js",
+          "transferSize": 3224,
+          "encodedBodySize": 2924,
+          "duration": 27.40000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/offline_controller.js",
+          "transferSize": 4079,
+          "encodedBodySize": 3779,
+          "duration": 28.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_filter.js",
+          "transferSize": 7592,
+          "encodedBodySize": 7292,
+          "duration": 30,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery_controller.js",
+          "transferSize": 12398,
+          "encodedBodySize": 12098,
+          "duration": 30.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_exporter.js",
+          "transferSize": 4067,
+          "encodedBodySize": 3767,
+          "duration": 31.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_list_exporter.js",
+          "transferSize": 4059,
+          "encodedBodySize": 3759,
+          "duration": 32.89999985694885,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_repository.js",
+          "transferSize": 764,
+          "encodedBodySize": 464,
+          "duration": 32.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_source_navigation.js",
+          "transferSize": 13755,
+          "encodedBodySize": 13455,
+          "duration": 33.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_sort.js",
+          "transferSize": 7583,
+          "encodedBodySize": 7283,
+          "duration": 33.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/render.js",
+          "transferSize": 2335,
+          "encodedBodySize": 2035,
+          "duration": 34.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/storage.js",
+          "transferSize": 14881,
+          "encodedBodySize": 14581,
+          "duration": 34.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/status_message_controller.js",
+          "transferSize": 1464,
+          "encodedBodySize": 1164,
+          "duration": 34.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/ui_state.js",
+          "transferSize": 4082,
+          "encodedBodySize": 3782,
+          "duration": 35.80000019073486,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/wake_lock_controller.js",
+          "transferSize": 4570,
+          "encodedBodySize": 4270,
+          "duration": 36.10000014305115,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_ingredient_parser.js",
+          "transferSize": 2379,
+          "encodedBodySize": 2079,
+          "duration": 14.400000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_multiplier.js",
+          "transferSize": 1983,
+          "encodedBodySize": 1683,
+          "duration": 15.400000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization.js",
+          "transferSize": 7427,
+          "encodedBodySize": 7127,
+          "duration": 15.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/units.js",
+          "transferSize": 9474,
+          "encodedBodySize": 9174,
+          "duration": 16.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_collections.js",
+          "transferSize": 3306,
+          "encodedBodySize": 3006,
+          "duration": 8.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery.js",
+          "transferSize": 2217,
+          "encodedBodySize": 1917,
+          "duration": 8.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_formatting.js",
+          "transferSize": 3348,
+          "encodedBodySize": 3048,
+          "duration": 7.900000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/nutrition.js",
+          "transferSize": 2483,
+          "encodedBodySize": 2183,
+          "duration": 7.8999998569488525,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipes.js",
+          "transferSize": 1868,
+          "encodedBodySize": 1568,
+          "duration": 7.6000001430511475,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_view_model.js",
+          "transferSize": 5149,
+          "encodedBodySize": 4849,
+          "duration": 9.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grouping.js",
+          "transferSize": 11976,
+          "encodedBodySize": 11676,
+          "duration": 9.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_renderer.js",
+          "transferSize": 10361,
+          "encodedBodySize": 10061,
+          "duration": 8.600000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_renderer.js",
+          "transferSize": 18726,
+          "encodedBodySize": 18426,
+          "duration": 8.800000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_renderer.js",
+          "transferSize": 7795,
+          "encodedBodySize": 7495,
+          "duration": 8.399999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_renderer.js",
+          "transferSize": 33794,
+          "encodedBodySize": 33494,
+          "duration": 10.099999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization_rules.js",
+          "transferSize": 16571,
+          "encodedBodySize": 16271,
+          "duration": 7.900000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_schema.js",
+          "transferSize": 13642,
+          "encodedBodySize": 13342,
+          "duration": 6.1000001430511475,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_model.js",
+          "transferSize": 656,
+          "encodedBodySize": 356,
+          "duration": 2.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_actions_renderer.js",
+          "transferSize": 12965,
+          "encodedBodySize": 12665,
+          "duration": 2.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 179.29999995231628,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 644.3999998569489,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 2181503,
+          "encodedBodySize": 2181203,
+          "duration": 10.400000095367432,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 173.39999985694885,
+      "openLatency": 15.900000095367432
+    },
+    {
+      "label": "desktop",
+      "repeat": 3,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "lcp": 604,
+      "cls": 0,
+      "domContentLoaded": 554.8999998569489,
+      "load": 585.7999999523163,
+      "requestCount": 53,
+      "transferBytes": 3719040,
+      "bodyBytes": 3704340,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 31.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 19.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/css/styles.css",
+          "transferSize": 72193,
+          "encodedBodySize": 71893,
+          "duration": 316.5,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/js/app.js",
+          "transferSize": 27004,
+          "encodedBodySize": 26704,
+          "duration": 6.900000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 55.5,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/js/grocery_model.js",
+          "transferSize": 13136,
+          "encodedBodySize": 12836,
+          "duration": 23.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/app_state_persistence.js",
+          "transferSize": 2518,
+          "encodedBodySize": 2218,
+          "duration": 23.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/clipboard.js",
+          "transferSize": 1577,
+          "encodedBodySize": 1277,
+          "duration": 24.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/collapsible_controls.js",
+          "transferSize": 1766,
+          "encodedBodySize": 1466,
+          "duration": 29.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/backup_controller.js",
+          "transferSize": 4869,
+          "encodedBodySize": 4569,
+          "duration": 29.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_controls.js",
+          "transferSize": 3533,
+          "encodedBodySize": 3233,
+          "duration": 26,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/download.js",
+          "transferSize": 1720,
+          "encodedBodySize": 1420,
+          "duration": 26.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/dom.js",
+          "transferSize": 6764,
+          "encodedBodySize": 6464,
+          "duration": 27.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/logger.js",
+          "transferSize": 1284,
+          "encodedBodySize": 984,
+          "duration": 28.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_model.js",
+          "transferSize": 6081,
+          "encodedBodySize": 5781,
+          "duration": 30.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_panel_controller.js",
+          "transferSize": 3224,
+          "encodedBodySize": 2924,
+          "duration": 30.399999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/mobile_view_controller.js",
+          "transferSize": 4792,
+          "encodedBodySize": 4492,
+          "duration": 31.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/offline_controller.js",
+          "transferSize": 4079,
+          "encodedBodySize": 3779,
+          "duration": 32.39999985694885,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_filter.js",
+          "transferSize": 7592,
+          "encodedBodySize": 7292,
+          "duration": 33.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery_controller.js",
+          "transferSize": 12398,
+          "encodedBodySize": 12098,
+          "duration": 33.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_exporter.js",
+          "transferSize": 4067,
+          "encodedBodySize": 3767,
+          "duration": 34,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_list_exporter.js",
+          "transferSize": 4059,
+          "encodedBodySize": 3759,
+          "duration": 35.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_repository.js",
+          "transferSize": 764,
+          "encodedBodySize": 464,
+          "duration": 35,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_source_navigation.js",
+          "transferSize": 13755,
+          "encodedBodySize": 13455,
+          "duration": 35.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_sort.js",
+          "transferSize": 7583,
+          "encodedBodySize": 7283,
+          "duration": 36.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/render.js",
+          "transferSize": 2335,
+          "encodedBodySize": 2035,
+          "duration": 36.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/status_message_controller.js",
+          "transferSize": 1464,
+          "encodedBodySize": 1164,
+          "duration": 38.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/storage.js",
+          "transferSize": 14881,
+          "encodedBodySize": 14581,
+          "duration": 38.30000019073486,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/ui_state.js",
+          "transferSize": 4082,
+          "encodedBodySize": 3782,
+          "duration": 40.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/wake_lock_controller.js",
+          "transferSize": 4570,
+          "encodedBodySize": 4270,
+          "duration": 40.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_ingredient_parser.js",
+          "transferSize": 2379,
+          "encodedBodySize": 2079,
+          "duration": 17,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_multiplier.js",
+          "transferSize": 1983,
+          "encodedBodySize": 1683,
+          "duration": 17.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization.js",
+          "transferSize": 7427,
+          "encodedBodySize": 7127,
+          "duration": 17.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/units.js",
+          "transferSize": 9474,
+          "encodedBodySize": 9174,
+          "duration": 19.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_collections.js",
+          "transferSize": 3306,
+          "encodedBodySize": 3006,
+          "duration": 7.1000001430511475,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery.js",
+          "transferSize": 2217,
+          "encodedBodySize": 1917,
+          "duration": 8.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_formatting.js",
+          "transferSize": 3348,
+          "encodedBodySize": 3048,
+          "duration": 8.400000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/nutrition.js",
+          "transferSize": 2483,
+          "encodedBodySize": 2183,
+          "duration": 8.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grouping.js",
+          "transferSize": 11976,
+          "encodedBodySize": 11676,
+          "duration": 11.099999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipes.js",
+          "transferSize": 1868,
+          "encodedBodySize": 1568,
+          "duration": 11.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_view_model.js",
+          "transferSize": 5149,
+          "encodedBodySize": 4849,
+          "duration": 12,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_renderer.js",
+          "transferSize": 10361,
+          "encodedBodySize": 10061,
+          "duration": 11.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_renderer.js",
+          "transferSize": 18726,
+          "encodedBodySize": 18426,
+          "duration": 10.900000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_renderer.js",
+          "transferSize": 7795,
+          "encodedBodySize": 7495,
+          "duration": 11.800000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_renderer.js",
+          "transferSize": 33794,
+          "encodedBodySize": 33494,
+          "duration": 12.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization_rules.js",
+          "transferSize": 16571,
+          "encodedBodySize": 16271,
+          "duration": 8.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 169,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/js/recipe_schema.js",
+          "transferSize": 13642,
+          "encodedBodySize": 13342,
+          "duration": 3.9000000953674316,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_model.js",
+          "transferSize": 656,
+          "encodedBodySize": 356,
+          "duration": 2.9000000953674316,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_actions_renderer.js",
+          "transferSize": 12965,
+          "encodedBodySize": 12665,
+          "duration": 3.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 627.7999999523163,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 2181503,
+          "encodedBodySize": 2181203,
+          "duration": 320.10000014305115,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 171.5,
+      "openLatency": 15.5
+    },
+    {
+      "label": "mobile",
+      "repeat": 1,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 596,
+      "cls": 0,
+      "domContentLoaded": 545,
+      "load": 570.3000001907349,
+      "requestCount": 53,
+      "transferBytes": 3719040,
+      "bodyBytes": 3704340,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 33,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 12.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/css/styles.css",
+          "transferSize": 72193,
+          "encodedBodySize": 71893,
+          "duration": 305.59999990463257,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/js/app.js",
+          "transferSize": 27004,
+          "encodedBodySize": 26704,
+          "duration": 6.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 59.90000009536743,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/js/app_state_persistence.js",
+          "transferSize": 2518,
+          "encodedBodySize": 2218,
+          "duration": 20.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_model.js",
+          "transferSize": 13136,
+          "encodedBodySize": 12836,
+          "duration": 20.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/clipboard.js",
+          "transferSize": 1577,
+          "encodedBodySize": 1277,
+          "duration": 20.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/backup_controller.js",
+          "transferSize": 4869,
+          "encodedBodySize": 4569,
+          "duration": 36.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/download.js",
+          "transferSize": 1720,
+          "encodedBodySize": 1420,
+          "duration": 22.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_controls.js",
+          "transferSize": 3533,
+          "encodedBodySize": 3233,
+          "duration": 22.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/collapsible_controls.js",
+          "transferSize": 1766,
+          "encodedBodySize": 1466,
+          "duration": 36.30000019073486,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/dom.js",
+          "transferSize": 6764,
+          "encodedBodySize": 6464,
+          "duration": 23.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/logger.js",
+          "transferSize": 1284,
+          "encodedBodySize": 984,
+          "duration": 25.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_model.js",
+          "transferSize": 6081,
+          "encodedBodySize": 5781,
+          "duration": 25.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_panel_controller.js",
+          "transferSize": 3224,
+          "encodedBodySize": 2924,
+          "duration": 25.40000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/mobile_view_controller.js",
+          "transferSize": 4792,
+          "encodedBodySize": 4492,
+          "duration": 27,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/offline_controller.js",
+          "transferSize": 4079,
+          "encodedBodySize": 3779,
+          "duration": 27.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_filter.js",
+          "transferSize": 7592,
+          "encodedBodySize": 7292,
+          "duration": 27.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery_controller.js",
+          "transferSize": 12398,
+          "encodedBodySize": 12098,
+          "duration": 29,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_exporter.js",
+          "transferSize": 4067,
+          "encodedBodySize": 3767,
+          "duration": 29.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_list_exporter.js",
+          "transferSize": 4059,
+          "encodedBodySize": 3759,
+          "duration": 30.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_repository.js",
+          "transferSize": 764,
+          "encodedBodySize": 464,
+          "duration": 30.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_source_navigation.js",
+          "transferSize": 13755,
+          "encodedBodySize": 13455,
+          "duration": 32,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_sort.js",
+          "transferSize": 7583,
+          "encodedBodySize": 7283,
+          "duration": 32.40000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/render.js",
+          "transferSize": 2335,
+          "encodedBodySize": 2035,
+          "duration": 32.30000019073486,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/storage.js",
+          "transferSize": 14881,
+          "encodedBodySize": 14581,
+          "duration": 33.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/status_message_controller.js",
+          "transferSize": 1464,
+          "encodedBodySize": 1164,
+          "duration": 35.10000014305115,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/ui_state.js",
+          "transferSize": 4082,
+          "encodedBodySize": 3782,
+          "duration": 35,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/wake_lock_controller.js",
+          "transferSize": 4570,
+          "encodedBodySize": 4270,
+          "duration": 36.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_ingredient_parser.js",
+          "transferSize": 2379,
+          "encodedBodySize": 2079,
+          "duration": 16.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization.js",
+          "transferSize": 7427,
+          "encodedBodySize": 7127,
+          "duration": 16.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_multiplier.js",
+          "transferSize": 1983,
+          "encodedBodySize": 1683,
+          "duration": 16.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/units.js",
+          "transferSize": 9474,
+          "encodedBodySize": 9174,
+          "duration": 17.600000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_collections.js",
+          "transferSize": 3306,
+          "encodedBodySize": 3006,
+          "duration": 9.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery.js",
+          "transferSize": 2217,
+          "encodedBodySize": 1917,
+          "duration": 9.900000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_formatting.js",
+          "transferSize": 3348,
+          "encodedBodySize": 3048,
+          "duration": 9.600000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/nutrition.js",
+          "transferSize": 2483,
+          "encodedBodySize": 2183,
+          "duration": 9.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grouping.js",
+          "transferSize": 11976,
+          "encodedBodySize": 11676,
+          "duration": 9.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_view_model.js",
+          "transferSize": 5149,
+          "encodedBodySize": 4849,
+          "duration": 10.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipes.js",
+          "transferSize": 1868,
+          "encodedBodySize": 1568,
+          "duration": 10.800000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_renderer.js",
+          "transferSize": 10361,
+          "encodedBodySize": 10061,
+          "duration": 10.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_renderer.js",
+          "transferSize": 7795,
+          "encodedBodySize": 7495,
+          "duration": 10.400000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_renderer.js",
+          "transferSize": 18726,
+          "encodedBodySize": 18426,
+          "duration": 10.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_renderer.js",
+          "transferSize": 33794,
+          "encodedBodySize": 33494,
+          "duration": 11.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization_rules.js",
+          "transferSize": 16571,
+          "encodedBodySize": 16271,
+          "duration": 6.1000001430511475,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_schema.js",
+          "transferSize": 13642,
+          "encodedBodySize": 13342,
+          "duration": 3.0999999046325684,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_model.js",
+          "transferSize": 656,
+          "encodedBodySize": 356,
+          "duration": 2.1000001430511475,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_actions_renderer.js",
+          "transferSize": 12965,
+          "encodedBodySize": 12665,
+          "duration": 2.1000001430511475,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 162.70000004768372,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 629.9000000953674,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 2181503,
+          "encodedBodySize": 2181203,
+          "duration": 313.09999990463257,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 165.5,
+      "openLatency": 15.600000143051147
+    },
+    {
+      "label": "mobile",
+      "repeat": 2,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 656,
+      "cls": 0,
+      "domContentLoaded": 603.4000000953674,
+      "load": 634,
+      "requestCount": 53,
+      "transferBytes": 3719040,
+      "bodyBytes": 3704340,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 12.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 15.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/css/styles.css",
+          "transferSize": 72193,
+          "encodedBodySize": 71893,
+          "duration": 305.40000009536743,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/js/app.js",
+          "transferSize": 27004,
+          "encodedBodySize": 26704,
+          "duration": 8,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 86.80000019073486,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/js/grocery_model.js",
+          "transferSize": 13136,
+          "encodedBodySize": 12836,
+          "duration": 26.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/app_state_persistence.js",
+          "transferSize": 2518,
+          "encodedBodySize": 2218,
+          "duration": 26.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/clipboard.js",
+          "transferSize": 1577,
+          "encodedBodySize": 1277,
+          "duration": 27.199999809265137,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/backup_controller.js",
+          "transferSize": 4869,
+          "encodedBodySize": 4569,
+          "duration": 35.39999985694885,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/collapsible_controls.js",
+          "transferSize": 1766,
+          "encodedBodySize": 1466,
+          "duration": 34.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_controls.js",
+          "transferSize": 3533,
+          "encodedBodySize": 3233,
+          "duration": 29.40000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/download.js",
+          "transferSize": 1720,
+          "encodedBodySize": 1420,
+          "duration": 28.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/dom.js",
+          "transferSize": 6764,
+          "encodedBodySize": 6464,
+          "duration": 30.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/logger.js",
+          "transferSize": 1284,
+          "encodedBodySize": 984,
+          "duration": 32.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_model.js",
+          "transferSize": 6081,
+          "encodedBodySize": 5781,
+          "duration": 34,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_panel_controller.js",
+          "transferSize": 3224,
+          "encodedBodySize": 2924,
+          "duration": 34.69999980926514,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/mobile_view_controller.js",
+          "transferSize": 4792,
+          "encodedBodySize": 4492,
+          "duration": 35.19999980926514,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/offline_controller.js",
+          "transferSize": 4079,
+          "encodedBodySize": 3779,
+          "duration": 37,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_filter.js",
+          "transferSize": 7592,
+          "encodedBodySize": 7292,
+          "duration": 37,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_exporter.js",
+          "transferSize": 4067,
+          "encodedBodySize": 3767,
+          "duration": 37.60000014305115,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery_controller.js",
+          "transferSize": 12398,
+          "encodedBodySize": 12098,
+          "duration": 37.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_list_exporter.js",
+          "transferSize": 4059,
+          "encodedBodySize": 3759,
+          "duration": 38,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_repository.js",
+          "transferSize": 764,
+          "encodedBodySize": 464,
+          "duration": 40,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_source_navigation.js",
+          "transferSize": 13755,
+          "encodedBodySize": 13455,
+          "duration": 41,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_sort.js",
+          "transferSize": 7583,
+          "encodedBodySize": 7283,
+          "duration": 42.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/render.js",
+          "transferSize": 2335,
+          "encodedBodySize": 2035,
+          "duration": 42.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/storage.js",
+          "transferSize": 14881,
+          "encodedBodySize": 14581,
+          "duration": 42.80000019073486,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/status_message_controller.js",
+          "transferSize": 1464,
+          "encodedBodySize": 1164,
+          "duration": 42.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/ui_state.js",
+          "transferSize": 4082,
+          "encodedBodySize": 3782,
+          "duration": 43.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/wake_lock_controller.js",
+          "transferSize": 4570,
+          "encodedBodySize": 4270,
+          "duration": 45.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_ingredient_parser.js",
+          "transferSize": 2379,
+          "encodedBodySize": 2079,
+          "duration": 18.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_multiplier.js",
+          "transferSize": 1983,
+          "encodedBodySize": 1683,
+          "duration": 19.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization.js",
+          "transferSize": 7427,
+          "encodedBodySize": 7127,
+          "duration": 19.699999809265137,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/units.js",
+          "transferSize": 9474,
+          "encodedBodySize": 9174,
+          "duration": 20.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_formatting.js",
+          "transferSize": 3348,
+          "encodedBodySize": 3048,
+          "duration": 8.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/nutrition.js",
+          "transferSize": 2483,
+          "encodedBodySize": 2183,
+          "duration": 9.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_collections.js",
+          "transferSize": 3306,
+          "encodedBodySize": 3006,
+          "duration": 9.600000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery.js",
+          "transferSize": 2217,
+          "encodedBodySize": 1917,
+          "duration": 10.300000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_view_model.js",
+          "transferSize": 5149,
+          "encodedBodySize": 4849,
+          "duration": 11.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grouping.js",
+          "transferSize": 11976,
+          "encodedBodySize": 11676,
+          "duration": 12.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipes.js",
+          "transferSize": 1868,
+          "encodedBodySize": 1568,
+          "duration": 10.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_renderer.js",
+          "transferSize": 10361,
+          "encodedBodySize": 10061,
+          "duration": 7.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_renderer.js",
+          "transferSize": 18726,
+          "encodedBodySize": 18426,
+          "duration": 7.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_renderer.js",
+          "transferSize": 7795,
+          "encodedBodySize": 7495,
+          "duration": 8.600000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_renderer.js",
+          "transferSize": 33794,
+          "encodedBodySize": 33494,
+          "duration": 9.100000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization_rules.js",
+          "transferSize": 16571,
+          "encodedBodySize": 16271,
+          "duration": 6.3999998569488525,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_schema.js",
+          "transferSize": 13642,
+          "encodedBodySize": 13342,
+          "duration": 3,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_model.js",
+          "transferSize": 656,
+          "encodedBodySize": 356,
+          "duration": 5.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_actions_renderer.js",
+          "transferSize": 12965,
+          "encodedBodySize": 12665,
+          "duration": 4.800000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 175.39999985694885,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 633.5999999046326,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 2181503,
+          "encodedBodySize": 2181203,
+          "duration": 322.90000009536743,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 169.19999980926514,
+      "openLatency": 15.700000047683716
+    },
+    {
+      "label": "mobile",
+      "repeat": 3,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 612,
+      "cls": 0,
+      "domContentLoaded": 555.6000001430511,
+      "load": 585,
+      "requestCount": 53,
+      "transferBytes": 3719040,
+      "bodyBytes": 3704340,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 43.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 12.400000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/css/styles.css",
+          "transferSize": 72193,
+          "encodedBodySize": 71893,
+          "duration": 308.40000009536743,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/js/app.js",
+          "transferSize": 27004,
+          "encodedBodySize": 26704,
+          "duration": 6.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 69,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/js/app_state_persistence.js",
+          "transferSize": 2518,
+          "encodedBodySize": 2218,
+          "duration": 20.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/clipboard.js",
+          "transferSize": 1577,
+          "encodedBodySize": 1277,
+          "duration": 20.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_model.js",
+          "transferSize": 13136,
+          "encodedBodySize": 12836,
+          "duration": 20.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/backup_controller.js",
+          "transferSize": 4869,
+          "encodedBodySize": 4569,
+          "duration": 35.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_controls.js",
+          "transferSize": 3533,
+          "encodedBodySize": 3233,
+          "duration": 22.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/download.js",
+          "transferSize": 1720,
+          "encodedBodySize": 1420,
+          "duration": 22.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/dom.js",
+          "transferSize": 6764,
+          "encodedBodySize": 6464,
+          "duration": 22.600000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/collapsible_controls.js",
+          "transferSize": 1766,
+          "encodedBodySize": 1466,
+          "duration": 35,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/logger.js",
+          "transferSize": 1284,
+          "encodedBodySize": 984,
+          "duration": 24.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_model.js",
+          "transferSize": 6081,
+          "encodedBodySize": 5781,
+          "duration": 24.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_panel_controller.js",
+          "transferSize": 3224,
+          "encodedBodySize": 2924,
+          "duration": 25.399999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/mobile_view_controller.js",
+          "transferSize": 4792,
+          "encodedBodySize": 4492,
+          "duration": 26.09999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/offline_controller.js",
+          "transferSize": 4079,
+          "encodedBodySize": 3779,
+          "duration": 27,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_filter.js",
+          "transferSize": 7592,
+          "encodedBodySize": 7292,
+          "duration": 27.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_exporter.js",
+          "transferSize": 4067,
+          "encodedBodySize": 3767,
+          "duration": 28.600000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery_controller.js",
+          "transferSize": 12398,
+          "encodedBodySize": 12098,
+          "duration": 28.40000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_list_exporter.js",
+          "transferSize": 4059,
+          "encodedBodySize": 3759,
+          "duration": 29.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_repository.js",
+          "transferSize": 764,
+          "encodedBodySize": 464,
+          "duration": 30.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_source_navigation.js",
+          "transferSize": 13755,
+          "encodedBodySize": 13455,
+          "duration": 30.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_sort.js",
+          "transferSize": 7583,
+          "encodedBodySize": 7283,
+          "duration": 31.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/render.js",
+          "transferSize": 2335,
+          "encodedBodySize": 2035,
+          "duration": 32.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/storage.js",
+          "transferSize": 14881,
+          "encodedBodySize": 14581,
+          "duration": 32.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/status_message_controller.js",
+          "transferSize": 1464,
+          "encodedBodySize": 1164,
+          "duration": 33.60000014305115,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/ui_state.js",
+          "transferSize": 4082,
+          "encodedBodySize": 3782,
+          "duration": 35.30000019073486,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/wake_lock_controller.js",
+          "transferSize": 4570,
+          "encodedBodySize": 4270,
+          "duration": 35.60000014305115,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_ingredient_parser.js",
+          "transferSize": 2379,
+          "encodedBodySize": 2079,
+          "duration": 15.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization.js",
+          "transferSize": 7427,
+          "encodedBodySize": 7127,
+          "duration": 15.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_multiplier.js",
+          "transferSize": 1983,
+          "encodedBodySize": 1683,
+          "duration": 16.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/units.js",
+          "transferSize": 9474,
+          "encodedBodySize": 9174,
+          "duration": 17.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_formatting.js",
+          "transferSize": 3348,
+          "encodedBodySize": 3048,
+          "duration": 9.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/nutrition.js",
+          "transferSize": 2483,
+          "encodedBodySize": 2183,
+          "duration": 10.100000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_collections.js",
+          "transferSize": 3306,
+          "encodedBodySize": 3006,
+          "duration": 10,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_discovery.js",
+          "transferSize": 2217,
+          "encodedBodySize": 1917,
+          "duration": 10.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_view_model.js",
+          "transferSize": 5149,
+          "encodedBodySize": 4849,
+          "duration": 10.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grouping.js",
+          "transferSize": 11976,
+          "encodedBodySize": 11676,
+          "duration": 10.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipes.js",
+          "transferSize": 1868,
+          "encodedBodySize": 1568,
+          "duration": 10.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_renderer.js",
+          "transferSize": 10361,
+          "encodedBodySize": 10061,
+          "duration": 9.600000143051147,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/meal_plan_renderer.js",
+          "transferSize": 7795,
+          "encodedBodySize": 7495,
+          "duration": 9.899999856948853,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/grocery_renderer.js",
+          "transferSize": 18726,
+          "encodedBodySize": 18426,
+          "duration": 9.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_renderer.js",
+          "transferSize": 33794,
+          "encodedBodySize": 33494,
+          "duration": 10.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/normalization_rules.js",
+          "transferSize": 16571,
+          "encodedBodySize": 16271,
+          "duration": 7.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_schema.js",
+          "transferSize": 13642,
+          "encodedBodySize": 13342,
+          "duration": 2.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/cooking_model.js",
+          "transferSize": 656,
+          "encodedBodySize": 356,
+          "duration": 2.1999998092651367,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/js/recipe_actions_renderer.js",
+          "transferSize": 12965,
+          "encodedBodySize": 12665,
+          "duration": 2.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 166,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 645.7999999523163,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 2181503,
+          "encodedBodySize": 2181203,
+          "duration": 11,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 170.19999980926514,
+      "openLatency": 15.700000047683716
+    }
+  ],
+  "checks": [
+    {
+      "name": "visual workflows desktop",
+      "passed": true
+    },
+    {
+      "name": "visual workflows tablet",
+      "passed": true
+    },
+    {
+      "name": "layout 360x800",
+      "passed": true
+    },
+    {
+      "name": "layout 390x844",
+      "passed": true
+    },
+    {
+      "name": "layout 430x932",
+      "passed": true
+    },
+    {
+      "name": "layout 768x1024",
+      "passed": true
+    },
+    {
+      "name": "layout 1024x768",
+      "passed": true
+    },
+    {
+      "name": "layout 1280x800",
+      "passed": true
+    },
+    {
+      "name": "layout 1440x900",
+      "passed": true
+    },
+    {
+      "name": "layout 1920x1080",
+      "passed": true
+    },
+    {
+      "name": "performance desktop 1",
+      "passed": true
+    },
+    {
+      "name": "performance desktop 2",
+      "passed": true
+    },
+    {
+      "name": "performance desktop 3",
+      "passed": true
+    },
+    {
+      "name": "performance mobile 1",
+      "passed": true
+    },
+    {
+      "name": "performance mobile 2",
+      "passed": true
+    },
+    {
+      "name": "performance mobile 3",
+      "passed": true
+    },
+    {
+      "name": "subpath direct navigation and offline reload",
+      "passed": true
+    },
+    {
+      "name": "visual workflows mobile keyboard completion (original pointer failure retained)",
+      "passed": true
+    }
+  ],
+  "messages": [
+    {
+      "label": "performance-desktop-1",
+      "kind": "warning",
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "label": "performance-desktop-1",
+      "kind": "warning",
+      "text": "[recipe-book] Service worker registration failed TypeError: Cannot read properties of undefined (reading 'waiting')\n    at observeRegistration (http://127.0.0.1:62282/js/offline_controller.js:76:22)\n    at Object.attach (http://127.0.0.1:62282/js/offline_controller.js:106:7)"
+    },
+    {
+      "label": "performance-desktop-2",
+      "kind": "warning",
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "label": "performance-desktop-2",
+      "kind": "warning",
+      "text": "[recipe-book] Service worker registration failed TypeError: Cannot read properties of undefined (reading 'waiting')\n    at observeRegistration (http://127.0.0.1:62282/js/offline_controller.js:76:22)\n    at Object.attach (http://127.0.0.1:62282/js/offline_controller.js:106:7)"
+    },
+    {
+      "label": "performance-desktop-3",
+      "kind": "warning",
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "label": "performance-desktop-3",
+      "kind": "warning",
+      "text": "[recipe-book] Service worker registration failed TypeError: Cannot read properties of undefined (reading 'waiting')\n    at observeRegistration (http://127.0.0.1:62282/js/offline_controller.js:76:22)\n    at Object.attach (http://127.0.0.1:62282/js/offline_controller.js:106:7)"
+    },
+    {
+      "label": "performance-mobile-1",
+      "kind": "warning",
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "label": "performance-mobile-1",
+      "kind": "warning",
+      "text": "[recipe-book] Service worker registration failed TypeError: Cannot read properties of undefined (reading 'waiting')\n    at observeRegistration (http://127.0.0.1:62282/js/offline_controller.js:76:22)\n    at Object.attach (http://127.0.0.1:62282/js/offline_controller.js:106:7)"
+    },
+    {
+      "label": "performance-mobile-2",
+      "kind": "warning",
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "label": "performance-mobile-2",
+      "kind": "warning",
+      "text": "[recipe-book] Service worker registration failed TypeError: Cannot read properties of undefined (reading 'waiting')\n    at observeRegistration (http://127.0.0.1:62282/js/offline_controller.js:76:22)\n    at Object.attach (http://127.0.0.1:62282/js/offline_controller.js:106:7)"
+    },
+    {
+      "label": "performance-mobile-3",
+      "kind": "warning",
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "label": "performance-mobile-3",
+      "kind": "warning",
+      "text": "[recipe-book] Service worker registration failed TypeError: Cannot read properties of undefined (reading 'waiting')\n    at observeRegistration (http://127.0.0.1:62282/js/offline_controller.js:76:22)\n    at Object.attach (http://127.0.0.1:62282/js/offline_controller.js:106:7)"
+    }
+  ],
+  "failures": [
+    {
+      "name": "visual workflows mobile",
+      "error": "TimeoutError: locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#groceryList input[type=\"checkbox\"]').nth(4)\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"checkbox\" aria-label=\"potato - 2 potatoes\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"grocery-shopping-bar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <nav class=\"mobile-view-tabs\" aria-label=\"Primary views\">…</nav> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"grocery-shopping-bar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <p class=\"section-kicker\">Shop</p> from <div class=\"grocery-shopping-bar\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  14 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <nav class=\"mobile-view-tabs\" aria-label=\"Primary views\">…</nav> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"grocery-shopping-bar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <p class=\"section-kicker\">Shop</p> from <div class=\"grocery-shopping-bar\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <p class=\"section-kicker\">Shop</p> from <div class=\"grocery-shopping-bar\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+      "stack": "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#groceryList input[type=\"checkbox\"]').nth(4)\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"checkbox\" aria-label=\"potato - 2 potatoes\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"grocery-shopping-bar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <nav class=\"mobile-view-tabs\" aria-label=\"Primary views\">…</nav> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"grocery-shopping-bar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <p class=\"section-kicker\">Shop</p> from <div class=\"grocery-shopping-bar\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  14 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <nav class=\"mobile-view-tabs\" aria-label=\"Primary views\">…</nav> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"grocery-shopping-bar\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <p class=\"section-kicker\">Shop</p> from <div class=\"grocery-shopping-bar\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <p class=\"section-kicker\">Shop</p> from <div class=\"grocery-shopping-bar\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n    at <workspace>\\test-results\\baseline\\capture-baseline.mjs:129:76\n    at async runCase (<workspace>\\test-results\\baseline\\capture-baseline.mjs:96:9)\n    at async <workspace>/test-results/baseline/capture-baseline.mjs:103:5"
+    }
+  ]
+}
+
