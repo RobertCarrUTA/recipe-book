@@ -1,6 +1,6 @@
-# Redesign data migration and recovery
+# Data migration and recovery
 
-The redesign keeps personal data in the browser and authored recipes in `data/recipes/*.json`, with `data/recipes.json` generated for reading. It adds no account, server database or synchronization service. Storage fixes (#172/#141), the React UI and offline/root cutover (#173) are integrated in dev, most recently through [PR #178](https://github.com/RobertCarrUTA/recipe-book/pull/178) at `af08710a726af8e24fb34807d890c8f8daa2cd19`. **Final delivery #174 and production release are not complete.** This document describes the integrated data contract; [deployment evidence](deployment.md#release-evidence-and-recovery) distinguishes the passing integration from the pending final preview and release PR.
+Recipe Book keeps personal data in the browser and authored recipes in `data/recipes/*.json`, with `data/recipes.json` generated for reading. It has no account, server database or synchronization service. This document describes the maintained storage and backup contracts; [redesign history](redesign-history.md) records their introduction and release.
 
 ## Durable state and migration
 
@@ -54,10 +54,10 @@ An interrupted upgrade from an actual legacy worker can have cached new HTML wit
 
 A code revert therefore cannot roll back personal data. A safe rollback is another complete release with a v7-compatible reader/writer and a new release identity. Preserve the current snapshot and backups; never lower the fence, clear site data, or assume old multi-key values are current. Portable schema-v1 continuity also does not guarantee that an old v6 UI can safely write on an origin already migrated to v7.
 
-## Protecting checks and release boundary
+## Protecting checks
 
 - `tests/storage.test.mjs` and `storage_atomic.test.mjs` cover version fencing with a baseline-v6 fixture, legacy quantities, complete commits, interrupted migration, corrupt/future state, failed initial reads, validation and stale tabs. `tests/fixtures/legacy_v6_storage.mjs` remains after the obsolete UI source removal.
 - `tests/e2e/data-recovery.spec.ts` exercises actual downloads/import, immediate export/reload, pending-save cancellation, malformed/oversized backups, quota failures, denied/recovered reads and multiple tabs. Component tests protect startup warnings and theme/storage-event separation.
 - #173 worker/controller/build tests and `scripts/smoke-offline-build.mjs` cover complete shells, failed installs, explicit refresh, root/subpath navigation, old-tab assets, malformed recipe fallback and upgrades from actual Git commits `3117d47b9cdd3a844d063fbde2ca6cd5ff3a83d2` and `aec600142706c90f72ad52bcb97a32ee0555de3f`. Lifecycle CI needs those historical objects (`fetch-depth: 0` or explicit fetch); obsolete current-tree UI files are not needed to reconstruct them.
 
-The #173 integration passed all three jobs in [CI 37869671954](https://github.com/RobertCarrUTA/recipe-book/actions/runs/37869671954), including generated-release reproduction on Ubuntu/Windows and browser/offline checks. The exact PR-head and generated-source provenance are recorded in [deployment](deployment.md#release-evidence-and-recovery). Version-10 startup and supplemental journey measurements also passed. Final #174 records exact integration verification, live preview and the release PR; earlier results do not establish production-origin behavior. The [preservation matrix](preservation-matrix.md) and [execution record](redesign-state.md) track that boundary without duplicating raw logs.
+The [preservation matrix](preservation-matrix.md) maps the maintained contracts to tests. Run the relevant gates for each change and record actual results in its PR; earlier passing runs do not establish current production-origin behavior. See [deployment](deployment.md#release-evidence-and-recovery) for release checks.

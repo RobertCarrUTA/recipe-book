@@ -115,8 +115,10 @@ Keep each fact in its durable home:
 - `docs/architecture.md` owns boundaries and state flow.
 - `docs/deployment.md` owns the hosting and release contract.
 - `docs/build-and-offline.md` owns release integrity, worker updates, and interrupted-upgrade recovery.
-- `docs/redesign-migration.md` owns storage/backup compatibility and rollback limits.
-- Evidence directories own measured results, exact artifact metadata, and test limitations.
+- `docs/data-recovery.md` owns storage/backup compatibility and rollback limits.
+- Pull requests and CI artifacts record measured results, exact metadata, and test limitations; generated screenshots and reports belong in ignored `test-results/`.
+- `tests/e2e/__snapshots__/` owns reviewed visual regression expectations. These are test inputs, not disposable screenshots.
+- `docs/redesign-history.md` links the archived one-time redesign evidence.
 
 Documentation-only changes do not require a recipe build or asset-version bump. Check relative links and keep examples synchronized with actual commands.
 
@@ -177,10 +179,11 @@ Review that diff before committing. Staging neither publishes nor changes Pages
 settings. The source commit and content hash identify tracked output; the later
 artifact-containing commit cannot embed its own SHA.
 
-During this redesign, integrate feature work through `dev` and leave the final
-`dev` → `main` PR open for human review. Do not publish production or change its
-settings. The local production preview runs with `npm run preview` on port 4183;
-final preview claims must identify the actual tested commit and URL. See
+Use a focused branch and pull request; merge after review and passing checks.
+Merging into `main` publishes through the existing Pages configuration. Keep
+production setting changes explicit and separately reviewed. The local production
+preview runs with `npm run preview` on port 4183; preview results must identify
+the actual tested commit and URL. See
 [Deployment](docs/deployment.md) for the complete release and rollback contract.
 
 ## Pull Request Checklist

@@ -16,7 +16,7 @@ const playwrightModule = await import(pathToFileURL(require.resolve('playwright'
 const playwright = playwrightModule.chromium ? playwrightModule : playwrightModule.default;
 const {preview} = await import(pathToFileURL(require.resolve('vite')).href);
 const out = path.resolve(root, process.env.PERFORMANCE_OUTPUT || 'test-results/performance');
-const baseline = JSON.parse(await fs.readFile(path.join(root, 'docs/evidence/baseline/baseline-report.json'), 'utf8'));
+const baseline = JSON.parse(await fs.readFile(path.join(root, 'tests/fixtures/performance-baseline.json'), 'utf8'));
 const recipes = JSON.parse(await fs.readFile(path.join(root, 'dist/data/recipes.json'), 'utf8'));
 const {buildRecipeSearchText, recipeSearchTextMatches} = await import(pathToFileURL(path.join(root, 'js/recipe_filter.js')).href);
 const target = recipes.find(recipe => recipe.title === 'Dutch Oven Chicken Pot Pie');

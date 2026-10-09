@@ -3,7 +3,7 @@
 Recipe Book is a React and TypeScript browser application built with Vite. The
 output is static HTML, CSS, JavaScript, JSON, and a service worker; hosting requires
 no application server, database, accounts, or runtime secrets. Essential assets
-are self-hosted. The [architecture decision](redesign-architecture.md) records the
+are self-hosted. The [architecture decision](architecture-decisions.md) records the
 stack comparison and design direction; this document describes the maintained
 application after the root cutover.
 
@@ -75,7 +75,7 @@ import as restored.
 
 Storage is origin-wide, not isolated by pathname. Stale-tab detection is not a
 cross-tab transaction lock; localStorage has no compare-and-swap operation.
-Use a separate origin for preview data. See [migration and recovery](redesign-migration.md)
+Use a separate origin for preview data. See [migration and recovery](data-recovery.md)
 for exact limits, portable backups, old-client behavior, and rollback procedures.
 
 ## Build, offline, and security boundaries
@@ -103,6 +103,12 @@ does not permit arbitrary inline scripts or eval. An older fallback page explain
 that it cannot show or save newer v7 data and directs the user to reconnect and
 reload. That fallback does not replace the newer snapshot.
 
+Recipe and manual text render as values, never executable HTML. Source URLs are
+limited to HTTP(S), outbound links suppress opener/referrer access, and backup
+input is bounded and validated before replacement. Asset hashes detect incomplete
+or mismatched output; they are not signatures against a compromised publisher.
+Preserve complete dependency notices; the notice generator rejects empty licenses.
+
 See [build and offline details](build-and-offline.md) for the generated contracts,
 failure regressions, CSP authorization, and complete update lifecycle. See
 [deployment](deployment.md) for Pages staging and provenance.
@@ -120,9 +126,8 @@ lifecycle regressions. CI needs complete Git history for the historical worker
 fixtures. Commands describe required gates; release-specific results belong in
 the reviewed evidence and final PR.
 
-Relevant evidence: [preservation matrix](preservation-matrix.md),
-[baseline](evidence/baseline/README.md), [redesigned UI](evidence/redesign-ui/README.md),
-[performance budgets](performance-budgets.md), and
-[performance measurements](evidence/redesign-performance/README.md).
+Relevant guides: [preservation matrix](preservation-matrix.md),
+[performance budgets](performance-budgets.md), [journey timings](performance-journeys.md),
+and [archived redesign evidence](redesign-history.md).
 Browser emulation and local lab measurements do not establish physical-device,
 screen-reader, field-performance, or hosted-production behavior.
