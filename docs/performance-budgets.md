@@ -1,8 +1,8 @@
 # Production UI performance checks
 
-Run `npm.cmd run build`, then `node scripts/measure-redesign.mjs` from the frontend checkout. The script starts and closes an ephemeral loopback Vite preview server and local Chromium using the existing browser executable helper. It does not build or edit the application. Results go to ignored `test-results/performance/redesign-report.json` and `README.md`; set `PERFORMANCE_OUTPUT` to use another output directory. Dependencies resolve from the working directory, so a reviewer can run the script by absolute path from another worktree.
+Run `npm run build` (`npm.cmd` on Windows), then `node scripts/measure-redesign.mjs` from the repository root. The script starts and closes an ephemeral loopback Vite preview server and local Chromium using the existing browser executable helper. It does not build or edit the application. Results go to ignored `test-results/performance/redesign-report.json` and `README.md`; set `PERFORMANCE_OUTPUT` to use another output directory. Dependencies resolve from the working directory, so a reviewer can run the script by absolute path from another worktree.
 
-The baseline is commit `3117d47b9cdd3a844d063fbde2ca6cd5ff3a83d2`, with raw samples and its original runner preserved in [baseline evidence](evidence/baseline/README.md). The budgets below were specified before measuring the redesign, rather than fitted to its result.
+The baseline is commit `3117d47b9cdd3a844d063fbde2ca6cd5ff3a83d2`. The runner reads the unchanged [raw baseline fixture](../tests/fixtures/performance-baseline.json); its [provenance](../tests/fixtures/performance-baseline.README.md) links the original runner and archived captures. The budgets below were specified before measuring the redesign, rather than fitted to its result.
 
 | Median budget, separately for each viewport | Limit | Baseline desktop / mobile | Reason |
 | --- | ---: | ---: | --- |
@@ -31,4 +31,4 @@ The harness exits nonzero for execution errors, missing samples, compressed resp
 
 These measurements are lab event-to-render observations, **not field INP**. Mobile results emulate layout on the same desktop CPU. They do not establish performance on physical low-end devices, hosted-network behavior, service-worker upgrade speed, or accessibility. Exact built asset hashes, on-disk/gzip sizes, browser version, dirty-tree status, and startup long-task samples accompany each report so results can be tied to the measured artifact. A dirty working tree is explicitly identified, not represented as an immutable release.
 
-[Current version-10 measurements](evidence/release-performance/README.md) include the retained pre-fix shift failure and its correction. [Supplemental journey timings](performance-journeys.md) cover filtering, populated planning, cooking, themes and reopening persisted state. Run both scripts without concurrent browser jobs.
+[Archived version-10 measurements](redesign-history.md#archived-evidence) include the retained pre-fix shift failure and its correction. [Supplemental journey timings](performance-journeys.md) cover filtering, populated planning, cooking, themes and reopening persisted state. Run both scripts without concurrent browser jobs.

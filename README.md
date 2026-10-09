@@ -66,7 +66,7 @@ data/recipes.json          Generated runtime recipe bundle
 public/                    Self-hosted build inputs
 scripts/                   Generation, verification, release, and browser tools
 tests/                     Domain contracts and Playwright journeys
-docs/                      Architecture, recipe schema, migration, and evidence
+docs/                      Architecture, recipe schema, recovery, and test guides
 dist/                      Ignored production build
 index.html, assets/, sw.js  Reviewed generated Pages release
 ```
@@ -95,8 +95,7 @@ to maintain. Root HTML, hashed assets, and the worker are generated output.
 | `npm run stage:release` | Copy verified Pages artifacts into the working tree for review. |
 | `npm run check:release` | Rebuild and compare every tracked production artifact. |
 
-Commands describe the maintained cutover workflow; actual release results and
-remaining gaps are recorded in evidence and the final PR. Do not skip browser
+Record actual check results and remaining gaps in the pull request. Do not skip browser
 gates or treat development-server behavior as production offline verification.
 
 ## Recipe and application changes
@@ -116,27 +115,22 @@ hand-edit generated HTML or worker inventories.
 Persistence uses an atomic v7 snapshot and compatible schema-v1 backups. Imports
 validate and commit before replacing live state. Storage errors, stale tabs, and
 future versions require explicit recovery rather than silently overwriting
-existing data. See [migration and recovery](docs/redesign-migration.md).
+existing data. See [migration and recovery](docs/data-recovery.md).
 
-## Deployment and evidence
+## Deployment and documentation
 
-GitHub Pages remains configured for `main:/`. Reviewed generated root artifacts
-allow a later human merge of `dev` into `main` to publish through that existing
-configuration. The redesign does not change production settings or publish to
-production. [Final delivery #174](https://github.com/RobertCarrUTA/recipe-book/issues/174)
-is still being prepared; its dev→main PR must remain open for human review.
-
-The available authorized hosting capability did not provide an isolated preview;
-the local production-preview fallback must be verified at the final reviewed
-commit. See [deployment](docs/deployment.md) for base paths, provenance,
-staging/reproducibility, the preview boundary, and recovery.
+GitHub Pages publishes reviewed generated root artifacts from `main:/` at
+[Robert's Recipe Book](https://robertcarruta.github.io/recipe-book/). The redesign
+merged in [PR #180](https://github.com/RobertCarrUTA/recipe-book/pull/180).
+See [deployment](docs/deployment.md) for base paths, release staging,
+reproducibility, local previews, and recovery.
 
 - [Architecture](docs/architecture.md) — state, component/domain boundaries, security, and offline design.
 - [Build and offline](docs/build-and-offline.md) — complete release caches, explicit refresh, interrupted upgrades, and CSP.
 - [Contributing](CONTRIBUTING.md) and [agent notes](AGENTS.md) — authoring and change conventions.
 - [Preservation matrix](docs/preservation-matrix.md) — capability contracts and protecting checks.
-- [Baseline evidence](docs/evidence/baseline/README.md) and [redesigned UI evidence](docs/evidence/redesign-ui/README.md) — reviewed browser observations.
-- [Performance budgets](docs/performance-budgets.md) and [measurements](docs/evidence/redesign-performance/README.md) — reproducible local results and limitations.
+- [Performance budgets](docs/performance-budgets.md) and [journey timings](docs/performance-journeys.md) — repeatable measurement methods and limitations.
+- [Redesign history](docs/redesign-history.md) — merged release, design decisions, and archived review evidence.
 
 Browser emulation, automated accessibility checks, and local timing measurements
 do not establish physical-device, screen-reader, hosted-network, or field results.

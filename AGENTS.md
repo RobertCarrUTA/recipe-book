@@ -68,8 +68,8 @@ production offline behavior. On Windows PowerShell, use `npm.cmd` if needed.
 - Preserve the generated script CSP: self-hosted scripts plus the exact recovery-bootstrap hash. Do not add arbitrary inline-script or eval permissions, alter security software, or bypass a browser/platform restriction.
 - Keep previews on a separate origin from real personal data. localStorage is origin-wide, not pathname-isolated.
 - Preserve dependency and content licenses, including generated third-party notices. Essential startup assets must remain self-hosted.
-- During the redesign, integrate reviewed work through `dev`; never push implementation to `main`, merge the final `dev` → `main` PR, enable its auto-merge, deploy production, or change production settings.
+- Use a focused feature branch and reviewed pull request. Merge only after relevant checks pass and the user has authorized the merge. Merging into `main` publishes through the existing Pages configuration; changes to production settings need their own authorization.
 
 See [architecture](docs/architecture.md), [deployment](docs/deployment.md),
 [build/offline](docs/build-and-offline.md), and
-[migration/recovery](docs/redesign-migration.md) for the maintained contracts.
+[migration/recovery](docs/data-recovery.md) for the maintained contracts.

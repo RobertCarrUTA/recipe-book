@@ -121,8 +121,8 @@ visit still require a connection.
 
 ## Existing GitHub Pages publishing contract
 
-Read-only API inspection on 2026-10-08 confirmed `build_type: legacy`, source
-`main:/`, and `https://robertcarruta.github.io/recipe-book/`. GitHub's official
+GitHub Pages uses branch-based publishing from `main:/` at
+`https://robertcarruta.github.io/recipe-book/`. GitHub's official
 [publishing-source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 requires explicitly enabling Actions publishing before using a custom build
 workflow. Adding a deployment workflow alone is not a complete cutover.
@@ -138,10 +138,9 @@ node scripts/check-staged-release.mjs
 
 Staging copies only verified allowlisted outputs to the root and removes only
 obsolete assets identified by the prior release manifest. It does not deploy,
-commit, push, or change Pages settings. The final reviewed `dev` to `main` human
-merge lets the existing Pages publisher serve those files. `.nojekyll` prevents
-Jekyll from rewriting the bundle. Do not stage while the legacy UI still supplies
-unmigrated capabilities, and do not publish from a feature branch.
+commit, push, or change Pages settings. Merging a reviewed release PR into `main`
+lets the existing Pages publisher serve those files. `.nojekyll` prevents Jekyll
+from rewriting the bundle. Review and verify complete artifacts before merging.
 
 Generated artifacts cannot embed the SHA of the later commit containing those
 same artifacts without a circular self-reference. Tracked output therefore

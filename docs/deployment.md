@@ -6,11 +6,10 @@ database, credentials, or runtime environment configuration.
 
 ## Existing Pages contract
 
-Read-only inspection confirmed GitHub Pages publishes `main:/` at
-<https://robertcarruta.github.io/recipe-book/>. The redesign preserves that source:
-reviewed generated files are tracked at the repository root. A later human merge
-of the final `dev` → `main` PR lets the existing publisher serve the built app.
-No production settings change or production publication is part of the redesign.
+GitHub Pages publishes `main:/` at
+<https://robertcarruta.github.io/recipe-book/>. Reviewed generated files are tracked
+at the repository root. Merging a release PR into `main` lets the existing
+publisher serve those files; staging a local build does not publish it.
 
 Adding an Actions deployment workflow alone does not switch a branch-based
 Pages site to Actions publishing. See GitHub's
@@ -47,14 +46,9 @@ startup asset, recipe request, and worker scope. A first direct recipe navigatio
 through Pages' `404.html` may have HTTP status 404 while successfully loading the
 app. Missing assets must remain real failures instead of returning HTML.
 
-The authorized Sites capability available during this work provides production
-publication, not an isolated preview facility. It was not used to publish this
-redesign. The permitted fallback is a locally served production build tied to
-the reviewed commit. The [#174 delivery record](https://github.com/RobertCarrUTA/recipe-book/issues/174)
-and [execution record](redesign-state.md) own the final tested URL, commit and
-browser evidence; that current live-preview check remains pending.
+Record the tested URL, commit, build identity, and results in the release PR.
 Use a separate origin for synthetic preview state because localStorage is
-origin-wide.
+origin-wide. A local preview is accessible only while its server is running.
 
 ## Complete release artifact
 
@@ -93,7 +87,8 @@ grocery, plan, and preference state remains in the browser.
    `npm run check:release`. Staging copies only allowlisted verified artifacts and
    removes only obsolete generated chunks listed in the previous manifest.
 5. Review and commit the resulting root artifact diff. Re-run the reproducibility
-   gate in CI. Leave the final `dev` → `main` PR open for human review and merge.
+   gate in CI. Review the release PR and merge into `main` only when checks pass
+   and the merge is authorized.
 
 Staging does not deploy, push, or change Pages settings. The artifact-containing
 commit cannot embed its own SHA without a circular reference: tracked output
@@ -131,34 +126,20 @@ mechanics and their limits are documented in [build and offline](build-and-offli
 
 ## Release evidence and recovery
 
-Offline integration and generated root cutover (#173) merged through
-[PR #178](https://github.com/RobertCarrUTA/recipe-book/pull/178) into dev
-`af08710a726af8e24fb34807d890c8f8daa2cd19`. [CI 37869671954](https://github.com/RobertCarrUTA/recipe-book/actions/runs/37869671954)
-passed all three jobs at PR head `971b195ae49efaa475e24e13edb046af188d463f`:
-Ubuntu/Windows core checks and tracked-release reproduction, Ubuntu browser and
-offline lifecycle checks, and Firefox/WebKit journeys. That tracked artifact
-records clean source `f9b7ea9e48684cd202d8fbb37e355aceec8d8425`, version
-`20261008-9`, base `/recipe-book/`, and release `a4146a26e10f472179471217`;
-the source and artifact-containing commits are intentionally distinct.
-
-[Final delivery #174](https://github.com/RobertCarrUTA/recipe-book/issues/174)
-still owns the current live preview, final release PR and verification of any
-subsequent changes. Version 10 fixes the initial offline-error/loading shift;
-startup and supplemental measurements passed all 46 recorded budgets. Follow the
-[execution record](redesign-state.md) for current status; successful #173 CI
-does not establish final readiness or production deployment.
+The completed redesign and its immutable review evidence are recorded in
+[redesign history](redesign-history.md). For each subsequent release, record the
+actual PR head, generated-source provenance, checks, and limitations in its PR.
 
 Check direct recipe links, back/refresh, theme initialization, exports/imports,
 worker scope, waiting updates, interrupted installs, and offline reload at both
 `/` and `/recipe-book/`. The offline suite has thirteen lifecycle scenarios and
 uses actual `3117d47` and `aec6001` worker fixtures; CI must fetch full Git history.
 Modern Playwright coverage and [performance budgets](performance-budgets.md)
-complement those checks. Record actual runs and remaining limitations in the
-[UI](evidence/redesign-ui/README.md) and
-[performance](evidence/redesign-performance/README.md) evidence, not as assumed
-successes in this procedure.
+complement those checks. Keep generated reports/screenshots in ignored
+`test-results/` or CI artifacts and link them from the PR. The committed visual
+regression goldens and performance baseline are test inputs and must be retained.
 
-After a future human production release, verify the real public origin as well.
+After each production release, verify the real public origin as well.
 Local and CI tests cannot prove its final CDN headers, cache state, or device
 behavior. Cache Storage can be evicted, and an uncached first visit needs a
 connection.
@@ -167,4 +148,4 @@ A rollback must be another complete, verified release with compatible data
 handling. v6 code cannot read the current v7 snapshot; its retained legacy fields
 are only pre-migration recovery data. Do not lower the fence, delete the snapshot,
 or assume a Git revert restores current user data. Export a current backup and
-test a compatible recovery reader. See [migration and recovery](redesign-migration.md).
+test a compatible recovery reader. See [migration and recovery](data-recovery.md).
