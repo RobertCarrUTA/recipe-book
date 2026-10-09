@@ -24,13 +24,16 @@ Use Node.js >=22.12 and the committed lockfile:
 ```bash
 npm ci
 npm run verify
+npx playwright install chromium
 npm run smoke:browser
 npm run preview
 ```
 
 The maintained preview command serves `dist/` with the production server helper
-at <http://127.0.0.1:4183/>. It is a local preview, not public hosting. On Windows,
-use `npm.cmd` when needed. To model the production path:
+at <http://127.0.0.1:4183/>. It is a local preview, not public hosting. The browser
+executable is a separate prerequisite; on Linux use
+`npx playwright install --with-deps chromium`. On Windows, use `npm.cmd` and
+`npx.cmd` when needed. To model the production path:
 
 ```powershell
 $env:RECIPE_BOOK_BASE = '/recipe-book/'
@@ -47,8 +50,9 @@ app. Missing assets must remain real failures instead of returning HTML.
 The authorized Sites capability available during this work provides production
 publication, not an isolated preview facility. It was not used to publish this
 redesign. The permitted fallback is a locally served production build tied to
-the reviewed commit. The final handoff must record its actual tested URL,
-commit, and browser evidence; this guide does not claim that final check is done.
+the reviewed commit. The [#174 delivery record](https://github.com/RobertCarrUTA/recipe-book/issues/174)
+and [execution record](redesign-state.md) own the final tested URL, commit and
+browser evidence; that current live-preview check remains pending.
 Use a separate origin for synthetic preview state because localStorage is
 origin-wide.
 
@@ -80,7 +84,7 @@ grocery, plan, and preference state remains in the browser.
    changes, edit `data/recipes/*.json` and run `npm run build:recipes`.
 2. For app, CSS, HTML, or worker changes, run
    `npm run set-asset-version -- YYYYMMDD-N` using the current date and next suffix.
-   This updates `app-version.json`; during the parallel migration use `--build`.
+   This updates `app-version.json`.
    Recipe-only changes do not require an app-version bump.
 3. Commit the reviewed source, then build a clean checkout with
    `RECIPE_BOOK_BASE=/recipe-book/`. Run `verify`, `smoke:browser`, and the relevant
@@ -126,6 +130,23 @@ protects old cached apps when the new worker or bundles are unavailable. These
 mechanics and their limits are documented in [build and offline](build-and-offline.md).
 
 ## Release evidence and recovery
+
+Offline integration and generated root cutover (#173) merged through
+[PR #178](https://github.com/RobertCarrUTA/recipe-book/pull/178) into dev
+`af08710a726af8e24fb34807d890c8f8daa2cd19`. [CI 37869671954](https://github.com/RobertCarrUTA/recipe-book/actions/runs/37869671954)
+passed all three jobs at PR head `971b195ae49efaa475e24e13edb046af188d463f`:
+Ubuntu/Windows core checks and tracked-release reproduction, Ubuntu browser and
+offline lifecycle checks, and Firefox/WebKit journeys. That tracked artifact
+records clean source `f9b7ea9e48684cd202d8fbb37e355aceec8d8425`, version
+`20261008-9`, base `/recipe-book/`, and release `a4146a26e10f472179471217`;
+the source and artifact-containing commits are intentionally distinct.
+
+[Final delivery #174](https://github.com/RobertCarrUTA/recipe-book/issues/174)
+still owns the current live preview, final release PR and verification of any
+subsequent changes. Supplemental journey performance and the initial
+offline-error/loading layout shift remain under investigation. Follow the
+[execution record](redesign-state.md) for current status; successful #173 CI
+does not establish final readiness or production deployment.
 
 Check direct recipe links, back/refresh, theme initialization, exports/imports,
 worker scope, waiting updates, interrupted installs, and offline reload at both

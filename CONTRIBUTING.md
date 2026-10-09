@@ -93,10 +93,10 @@ When application JavaScript/TypeScript, CSS, HTML, or worker behavior changes, s
 npm run set-asset-version -- YYYYMMDD-N
 ```
 
-Use the current date and increment `N` for another app change that day. After
-root cutover, the command updates `app-version.json`; during parallel migration,
-append `--build`. Rebuild and run `verify:build`. Content hashes and the generated
-release inventory replace manual module lists and asset-query synchronization.
+Use the current date and increment `N` for another app change that day. The
+command updates `app-version.json`. Rebuild and run `verify:build`. Content
+hashes and the generated release inventory replace manual module lists and
+asset-query synchronization.
 
 Do not change the generated script CSP to accommodate a convenience script.
 Self-hosted startup code and the exact SHA-authorized recovery bootstrap are the
@@ -138,6 +138,19 @@ checks when their behavior changes. Record actual results rather than treating
 these instructions as evidence that a release passed.
 
 ### Browser Smoke Configuration
+
+Install a browser executable after `npm ci`, before running browser gates:
+
+```bash
+npx playwright install chromium
+```
+
+On Linux, use `npx playwright install --with-deps chromium` to install required
+system libraries too. `npm ci` installs the runner, not its browser binaries.
+The local executable helper can use an existing Chrome/Edge installation or
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE`. For the optional cross-browser projects, also
+run `npx playwright install firefox webkit` (add `--with-deps` on Linux), then
+enable `CROSS_BROWSER=1`. Use `npx.cmd` on Windows if execution policy requires it.
 
 The modern Playwright runner supports:
 
