@@ -143,8 +143,8 @@ the source and artifact-containing commits are intentionally distinct.
 
 [Final delivery #174](https://github.com/RobertCarrUTA/recipe-book/issues/174)
 still owns the current live preview, final release PR and verification of any
-subsequent changes. Supplemental journey performance and the initial
-offline-error/loading layout shift remain under investigation. Follow the
+subsequent changes. Version 10 fixes the initial offline-error/loading shift;
+startup and supplemental measurements passed all 46 recorded budgets. Follow the
 [execution record](redesign-state.md) for current status; successful #173 CI
 does not establish final readiness or production deployment.
 
