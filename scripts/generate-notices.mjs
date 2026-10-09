@@ -8,6 +8,11 @@ const manifest = JSON.parse(
 );
 const visited = new Set();
 const notices = [];
+async function readNotice(filename) {
+  const text = await fs.readFile(filename, "utf8");
+  if (!text.trim()) throw new Error(`Empty license notice: ${filename}`);
+  return text;
+}
 async function collect(name, from) {
   const require = createRequire(path.join(from, "package.json"));
   let directory;
@@ -34,7 +39,7 @@ async function collect(name, from) {
   const texts = await Promise.all(
     files.map(
       async (file) =>
-        `${file}\n${await fs.readFile(path.join(directory, file), "utf8")}`,
+        `${file}\n${await readNotice(path.join(directory, file))}`,
     ),
   );
   if (!files.length) {
@@ -45,7 +50,7 @@ async function collect(name, from) {
       `${pkg.name}-${pkg.version}.LICENSE`,
     );
     try {
-      texts.push(await fs.readFile(vendored, "utf8"));
+      texts.push(await readNotice(vendored));
     } catch {
       throw new Error(
         `No license notice found for distributed dependency ${identity}`,

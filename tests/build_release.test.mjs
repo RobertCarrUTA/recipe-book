@@ -20,6 +20,16 @@ async function fixture(run){
 }
 const provenance={sourceCommit:'a'.repeat(40),base:'/recipe-book/',dirty:false};
 
+test('recovery CSP accepts formatted and reordered meta attributes without weakening policy',async()=>fixture(async({source})=>{
+  const index=path.join(source,'index.html');
+  await fs.writeFile(index,(await fs.readFile(index,'utf8')).replace(
+    '<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; worker-src \'self\'">',
+    '<meta\n content="default-src \'self\'; worker-src \'self\'"\n http-equiv="Content-Security-Policy"\n />'
+  ));
+  await finalizeBuild({directory:source,...provenance});
+  await verifyBuild(source);
+}));
+
 test('build integrity rejects altered chunks and unrecorded output files',async()=>fixture(async({source})=>{
   const manifest=await finalizeBuild({directory:source,...provenance});
   assert.deepEqual(await verifyBuild(source),manifest);

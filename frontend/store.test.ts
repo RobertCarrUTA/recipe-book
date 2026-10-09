@@ -71,6 +71,16 @@ afterEach(() => {
 });
 
 describe("durable state lifecycle", () => {
+  it("persists a history return to the recipe collection across a subsequent reload", () => {
+    const store = storeAt();
+    store.navigate("settings");
+    store.flush();
+    history.replaceState({}, "", "/");
+    window.dispatchEvent(new PopStateEvent("popstate"));
+    expect(store.getSnapshot().view).toBe("recipes");
+    store.flush();
+    expect(storeAt().getSnapshot().view).toBe("recipes");
+  });
   it.each(["hidden", "pagehide"])(
     "flushes the latest dirty edits on %s before the debounce runs",
     (event) => {

@@ -3,8 +3,9 @@
 The new application remains a static site. Vite builds `frontend/` into `dist/`;
 `prepare-public.mjs` copies the generated recipes and essential public assets. The
 finalizer records every output file and generates the worker from
-`scripts/release-worker-template.js`. The root legacy application remains intact
-until full workflow parity is accepted. Do not hand-edit generated workers.
+`scripts/release-worker-template.js`. The former root UI is retired after the
+preservation review; root entry points are generated release files. Actual old
+workers remain available through pinned Git fixtures. Do not hand-edit workers.
 
 ## Commands
 
@@ -15,7 +16,7 @@ node scripts/verify-build.mjs
 node scripts/serve-build.mjs
 ```
 
-The default preview is `http://127.0.0.1:4173/`. For the production subpath:
+The default preview is `http://127.0.0.1:4183/`. For the production subpath:
 
 ```powershell
 $env:RECIPE_BOOK_BASE = '/recipe-book/'
@@ -24,17 +25,15 @@ node scripts/verify-build.mjs
 node scripts/serve-build.mjs --pages-404
 ```
 
-The expected URL becomes `http://127.0.0.1:4173/recipe-book/`. `--pages-404`
+The expected URL becomes `http://127.0.0.1:4183/recipe-book/`. `--pages-404`
 models Pages' custom-404 response for first visits to direct recipe paths. Its
 404 status is expected; the shell and relative-to-base assets still load. Once
 controlled, navigation uses the cached release shell. Query and legacy hash
 recipe links remain supported by the application route adapter.
 
-Use `npm run set-asset-version -- YYYYMMDD-N --build` during migration, or the
-same command without `--build` after root cutover. This writes `app-version.json`.
+Use `npm run set-asset-version -- YYYYMMDD-N`. This writes `app-version.json`.
 Rebuild and verify afterward. Vite content hashes and the finalized release ID
-replace manually maintained module URL lists. Legacy mode remains available
-while the old root entry point is present.
+replace manually maintained module URL lists.
 
 ## Integrity and provenance
 
@@ -173,10 +172,10 @@ source commit, fixture commits, and scenario outcomes in
 device or hosted-production testing.
 
 Worker unit regressions run with `npm test`; explicit refresh controller tests
-run with `npx vitest run frontend/offline.test.ts`. Existing legacy integrity
-tests remain until the integration cutover replaces them with built-output
-checks. CI should run core verification, types, component tests, build integrity,
-browser UI parity, and production lifecycle tests before the release is ready.
+run with `npx vitest run frontend/offline.test.ts`. Built-output checks replace
+the retired legacy HTML/module integrity tests. CI runs core verification,
+types, components, build integrity, exact staged-release reproduction,
+browser UI parity, Linux visual comparisons and production lifecycle tests.
 The lifecycle CI checkout must use `fetch-depth: 0` so both historical Git fixture
 commits remain available. The staging allowlist includes the generated
 `THIRD_PARTY_NOTICES.txt` dependency notices.

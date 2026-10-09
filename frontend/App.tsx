@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useApp } from "./store";
 import { useTheme } from "./theme";
+import { useOffline } from "./offline";
 import type { Theme } from "./types";
 import { Recipes } from "./features/Recipes";
 import { RecipeDetail } from "./features/RecipeDetail";
@@ -34,8 +35,9 @@ const views = [
   },
 ] as const;
 export function App() {
-  const { state, navigate, setUi, notify, loadRecipes } = useApp();
+  const { state, navigate, setUi, notify, loadRecipes, flush } = useApp();
   const { theme, setTheme } = useTheme();
+  const offline = useOffline(flush);
   const touch = useRef<{ x: number; y: number; time: number } | null>(null);
   const selectedCount = Object.keys(state.runtime.selectedRecipeIds).length;
   function changeTheme(next: Theme) {
@@ -179,6 +181,23 @@ export function App() {
             )}
           </span>
         </header>
+        {(offline.updateReady || offline.error) && (
+          <div className="status-banner" role="status">
+            <span>
+              {offline.error ||
+                "An updated recipe book is ready. Refresh when you’re ready to use it."}
+            </span>
+            {offline.updateReady && (
+              <button
+                className="button"
+                disabled={offline.updating}
+                onClick={() => void offline.refresh()}
+              >
+                {offline.updating ? "Refreshing…" : "Refresh app"}
+              </button>
+            )}
+          </div>
+        )}
         {state.persistenceError && (
           <div className="status-banner error" role="alert">
             <span>{state.persistenceError}</span>

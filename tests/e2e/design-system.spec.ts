@@ -22,8 +22,15 @@ async function capture(page: Page, testInfo: TestInfo, name: string) {
     .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
     .analyze();
   expect(results.violations, `${name} automated accessibility`).toEqual([]);
+  const screenshot = await page.screenshot();
+  if (process.env.VISUAL_REGRESSION) {
+    expect(screenshot).toMatchSnapshot(
+      `${testInfo.title.split(":")[0].replaceAll(" ", "-")}-${name}.png`,
+      { threshold: 0.2, maxDiffPixelRatio: 0.001 },
+    );
+  }
   await testInfo.attach(name, {
-    body: await page.screenshot(),
+    body: screenshot,
     contentType: "image/png",
   });
 }

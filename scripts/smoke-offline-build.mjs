@@ -15,6 +15,13 @@ import {stagePagesRelease} from './stage-pages-release.mjs';
 import {checkStagedRelease} from './check-staged-release.mjs';
 import {storageKeys,currentStorageVersion} from '../js/storage.js';
 
+const legacyBaseline = '3117d47b9cdd3a844d063fbde2ca6cd5ff3a83d2';
+const migratedBaseline = 'aec600142706c90f72ad52bcb97a32ee0555de3f';
+for (const commit of [legacyBaseline, migratedBaseline]) {
+  try { execFileSync('git', ['cat-file', '-e', `${commit}^{commit}`], {cwd: rootDir, stdio: 'pipe'}); }
+  catch { throw new Error(`Missing historical worker fixture ${commit}. Fetch full repository history; do not skip upgrade coverage.`); }
+}
+
 const temporary=await fs.mkdtemp(path.join(os.tmpdir(),'recipe-book-offline-'));
 const results=[];
 const legacyDirectories=new Map();
@@ -88,7 +95,11 @@ try{
       await report(first);await report(second);
       await expect.poll(()=>first.evaluate(async(release)=>{const name=(await caches.keys()).find(name=>name.endsWith(release));return name?(await(await caches.open(name)).keys()).length:0;},b.manifest.release),{timeout:15000}).toBe(b.manifest.shell.length);
       assert.equal(await first.locator('meta[name="recipe-book-release"]').getAttribute('content'),a.manifest.release);
-      await activate(first);await first.reload();await first.waitForSelector('.recipe-card');await report(first);await report(second);
+      await first.getByRole('searchbox',{name:'Search recipes'}).fill('chicken');
+      await first.getByRole('button',{name:'Refresh app',exact:true}).click();
+      await expect(first.locator('meta[name="recipe-book-release"]')).toHaveAttribute('content',b.manifest.release);
+      await first.waitForSelector('.recipe-card');await report(first);await report(second);
+      await expect(first.getByRole('searchbox',{name:'Search recipes'})).toHaveValue('chicken');
       assert.equal(await second.locator('meta[name="recipe-book-release"]').getAttribute('content'),a.manifest.release);
       assert.match(await second.evaluate(async(url)=>await(await fetch(`${url}assets/old-only.js`)).text(),served.url),/previous release/);
       assert.ok((await cacheNames(first)).some(name=>name.endsWith(a.manifest.release)));assert.ok((await cacheNames(first)).includes('unrelated-application'));
@@ -123,7 +134,7 @@ try{
       await context.setOffline(true);await page.reload();await expect(page.locator('.grocery-check')).toHaveCount(expected);
     }finally{await context.close();await served.close();}
   });
-  for(const [ref,release] of [['3117d47',root],['aec6001',b]])for(const mode of ['unavailable','invalid-script'])await run(`legacy ${ref} survives ${mode} worker and unavailable entry assets at ${release.manifest.base}`,async()=>{
+  for(const [ref,release] of [[legacyBaseline,root],[migratedBaseline,b]])for(const mode of ['unavailable','invalid-script'])await run(`legacy ${ref} survives ${mode} worker and unavailable entry assets at ${release.manifest.base}`,async()=>{
     let directory=await legacy(ref);let interrupted=false;
     const served=await startBuildServer({base:release.manifest.base,resolveDirectory:()=>directory,intercept:async(req,res,url)=>{
       if(!interrupted)return false;
@@ -141,7 +152,7 @@ try{
     }finally{await context.close();await served.close();}
   });
   await run('legacy fallback after v7 adoption preserves the new snapshot and explains read-only recovery',async()=>{
-    let directory=await legacy('3117d47');let interrupted=false;
+    let directory=await legacy(legacyBaseline);let interrupted=false;
     const served=await startBuildServer({base:root.manifest.base,resolveDirectory:()=>directory,intercept:async(req,res,url)=>{if(interrupted&&url.pathname.endsWith('/sw.js')){res.writeHead(503);res.end('Interrupted');return true;}return false;}});
     const context=await browser.newContext();const page=await context.newPage();
     try{
@@ -155,7 +166,7 @@ try{
       assert.equal(await page.evaluate(key=>localStorage.getItem(key),storageKeys.version),'7');
     }finally{await context.close();await served.close();}
   });
-  for(const ref of ['3117d47','aec6001'])await run(`actual legacy ${ref} interrupted install recovery and upgrade`,async()=>{
+  for(const ref of [legacyBaseline,migratedBaseline])await run(`actual legacy ${ref} interrupted install recovery and upgrade`,async()=>{
     let directory=await legacy(ref);let fail=false;
     const served=await startBuildServer({base:'/recipe-book/',resolveDirectory:()=>directory,intercept:async(req,res,url)=>{if(fail&&url.pathname.endsWith('build-info.json')){res.writeHead(503);res.end('interrupted');return true;}return false;}});
     const context=await browser.newContext();const page=await context.newPage();
@@ -170,6 +181,6 @@ try{
   });
 }finally{
   const version=browser.version();await browser.close();await fs.rm(temporary,{recursive:true,force:true});
-  await fs.mkdir(path.join(rootDir,'test-results'),{recursive:true});await fs.writeFile(path.join(rootDir,'test-results/offline-lifecycle.json'),JSON.stringify({sourceCommit,browser:version,fixtureCommits:['3117d47','aec6001'],results},null,2));
+  await fs.mkdir(path.join(rootDir,'test-results'),{recursive:true});await fs.writeFile(path.join(rootDir,'test-results/offline-lifecycle.json'),JSON.stringify({sourceCommit,browser:version,fixtureCommits:[legacyBaseline,migratedBaseline],results},null,2));
 }
 console.log(`Passed ${results.length} production lifecycle scenarios.`);

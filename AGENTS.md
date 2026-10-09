@@ -29,7 +29,7 @@ npm run set-asset-version -- YYYYMMDD-N
 ```
 
 - Use the current date and increment `N` for further app changes that day.
-- The command updates `app-version.json` after root cutover. During parallel migration, append `--build`.
+- The command updates `app-version.json`; generated assets carry content hashes.
 - Recipe-only source/bundle changes do not need an app-version bump. Recipes use independently validated network-first requests with a per-load cache key.
 - Rebuild and run output integrity checks. Do not edit root HTML, hashed chunks, generated worker code, or cache inventories by hand.
 - Stage reviewed release output with `npm run stage:release`; require `npm run check:release` to reproduce every artifact. Source commit and content hash are explicit provenance; do not pretend generated artifacts embed their own containing commit SHA.

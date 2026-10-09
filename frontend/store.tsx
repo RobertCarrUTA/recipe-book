@@ -129,14 +129,17 @@ export function createAppStore() {
     if (view !== "recipes") url.searchParams.set("view", view);
     history.pushState({ recipeBook: true }, "", url);
     patch({ view, recipeId: null });
-    setUi({
-      activeView: view,
-      ...(["recipes", "grocery"].includes(view) ? { mobileView: view } : {}),
-    });
+    rememberView(view);
     window.scrollTo({ top: 0 });
     requestAnimationFrame(() =>
       document.querySelector<HTMLElement>("main h1")?.focus(),
     );
+  }
+  function rememberView(view: View) {
+    setUi({
+      activeView: view,
+      ...(["recipes", "grocery"].includes(view) ? { mobileView: view } : {}),
+    });
   }
   function openRecipe(id: string, fromSource = false) {
     returnFocus =
@@ -295,12 +298,14 @@ export function createAppStore() {
       if (next.view !== "recipes") url.searchParams.set("view", next.view);
       history.replaceState({ recipeBook: true }, "", url);
       patch({ ...next, recipeId: null });
+      rememberView(next.view);
       notify(
         "That recipe could not be found. Your collection is still available.",
       );
       return;
     }
     patch({ ...next });
+    if (!next.recipeId) rememberView(next.view);
   };
   const onNetwork = () => patch({ offline: !navigator.onLine });
   const onHidden = () => {

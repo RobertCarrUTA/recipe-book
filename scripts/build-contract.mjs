@@ -27,11 +27,14 @@ export async function addRecoveryBootstrap(html, base) {
   const script = `${recovery}\n${bootstrap}`;
   const hash = createHash('sha256').update(script).digest('base64');
   let policyFound = false;
-  let result = html.replace(/(<meta http-equiv="Content-Security-Policy" content=")([^"]+)(">)/, (_, start, policy, end) => {
+  let result = html.replace(/<meta\b[^>]*\bhttp-equiv="Content-Security-Policy"[^>]*>/i, (tag) => {
+    const content = tag.match(/\bcontent="([^"]+)"/);
+    if (!content) throw new Error('Recovery bootstrap requires a CSP content attribute.');
+    const policy = content[1];
     policyFound = true;
     if (/script-src\s/.test(policy) && !/script-src 'self'(?:;|$)/.test(policy)) throw new Error('Recovery bootstrap requires a self-only source script policy.');
     const next = /script-src\s/.test(policy) ? policy.replace("script-src 'self'", `script-src 'self' 'sha256-${hash}'`) : `${policy};script-src 'self' 'sha256-${hash}'`;
-    return `${start}${next}${end}<script id="recipe-book-bootstrap">${script}</script>`;
+    return `${tag.replace(content[0], `content="${next}"`)}<script id="recipe-book-bootstrap">${script}</script>`;
   });
   if (!policyFound) throw new Error('Recovery bootstrap requires the production CSP meta tag.');
   let entries = 0;

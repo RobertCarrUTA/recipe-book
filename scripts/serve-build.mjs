@@ -33,6 +33,11 @@ export async function startBuildServer({directory=path.join(rootDir,'dist'),base
 }
 if(isEntrypoint(import.meta.url)){
   const info=JSON.parse(await fs.readFile(path.join(rootDir,'dist/build-info.json'),'utf8'));
-  const served=await startBuildServer({base:info.base,port:Number(process.env.PORT||4173),pages404:process.argv.includes('--pages-404')});
+  const portIndex=process.argv.indexOf('--port');
+  const port=Number(portIndex<0?(process.env.PORT||4183):process.argv[portIndex+1]);
+  if(!Number.isInteger(port)||port<1||port>65535)throw new Error('Preview port must be an integer from 1 through 65535.');
+  const hostIndex=process.argv.indexOf('--host');
+  if(hostIndex>=0&&process.argv[hostIndex+1]!=='127.0.0.1')throw new Error('This preview serves only the local loopback interface.');
+  const served=await startBuildServer({base:info.base,port,pages404:process.argv.includes('--pages-404')});
   console.log(`Production preview: ${served.url} (source ${info.sourceCommit})`);
 }
