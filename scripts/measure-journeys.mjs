@@ -91,7 +91,8 @@ if (process.argv.includes('--validate-only')) {
   process.exit(0);
 }
 
-const {chromium} = await import(pathToFileURL(require.resolve('playwright')).href);
+const playwrightModule = await import(pathToFileURL(require.resolve('playwright')).href);
+const {chromium} = playwrightModule.chromium ? playwrightModule : playwrightModule.default;
 const {startBuildServer} = await import(pathToFileURL(path.join(root, 'scripts/serve-build.mjs')).href);
 const {findBrowserExecutable} = await import(pathToFileURL(path.join(root, 'scripts/browser-executable.mjs')).href);
 await fs.mkdir(out, {recursive: true});
