@@ -1,36 +1,399 @@
-import {useState} from 'react';
-import {ArrowUpRight, ChefHat, Copy, Download, Heart, Minus, Plus, ShoppingBasket} from 'lucide-react';
-import {useApp,appBase} from '../store';
-import {Dialog} from '../components/Dialog';
-import {formatServingsText,mealPlanDays} from '../domain';
-import {createRecipeFormattedText as exportRecipeAsText, createRecipeJsonText as exportRecipeAsJson} from '../../js/recipe_exporter.js';
-import type {DayKey,Recipe} from '../types';
+import { useState } from "react";
+import {
+  ArrowUpRight,
+  ChefHat,
+  Copy,
+  Download,
+  Heart,
+  Minus,
+  Plus,
+  ShoppingBasket,
+} from "lucide-react";
+import { useApp, appBase } from "../store";
+import { Dialog } from "../components/Dialog";
+import { formatServingsText, mealPlanDays, formatHeaderLabel } from "../domain";
+import {
+  createRecipeFormattedText as exportRecipeAsText,
+  createRecipeJsonText as exportRecipeAsJson,
+} from "../../js/recipe_exporter.js";
+import { writeTextToClipboard } from "../../js/clipboard.js";
+import type { DayKey, Recipe } from "../types";
 
-async function copyText(text:string){if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);return;}const input=document.createElement('textarea');input.value=text;input.className='clipboard-fallback';document.body.append(input);input.select();const success=document.execCommand('copy');input.remove();if(!success)throw new Error('Clipboard unavailable');}
-export {copyText};
-export function downloadText(text:string,filename:string,type='text/plain'){const url=URL.createObjectURL(new Blob([text],{type}));const anchor=document.createElement('a');anchor.href=url;anchor.download=filename;document.body.append(anchor);anchor.click();anchor.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-
-function Quantity({recipe}:{recipe:Recipe}){
-  const {state,setMultiplier}=useApp();const multiplier=state.runtime.recipeMultipliersById[recipe.id]||1;const [draft,setDraft]=useState(String(multiplier));
-  const commit=(value:string)=>{const number=Number(value);if(Number.isFinite(number)&&number>0){const normalized=Math.round(Math.max(.25,Math.min(12,number))*100)/100;setMultiplier(recipe,normalized);setDraft(String(normalized));}else setDraft(String(multiplier));};
-  return <div className="quantity"><label htmlFor="groceryMultiplier">Grocery quantity</label><div><button className="icon-button" aria-label="Decrease grocery quantity" disabled={multiplier<=.25} onClick={()=>commit(String(multiplier-.25))}><Minus size={17} aria-hidden="true"/></button><input id="groceryMultiplier" aria-label="Grocery quantity multiplier" type="number" min="0.25" max="12" step="0.25" value={draft} onChange={event=>setDraft(event.target.value)} onBlur={()=>commit(draft)} onKeyDown={event=>{if(event.key==='Enter')commit(draft);if(event.key==='Escape'){event.stopPropagation();setDraft(String(multiplier));}}}/><span>×</span><button className="icon-button" aria-label="Increase grocery quantity" disabled={multiplier>=12} onClick={()=>commit(String(multiplier+.25))}><Plus size={17} aria-hidden="true"/></button></div><p>Scales the grocery list. Recipe instructions stay as written.</p></div>;
+async function copyText(text: string) {
+  await writeTextToClipboard(text);
 }
-export function RecipeDetail(){
-  const {state,closeRecipe,cook,setFavorite,setSelected,navigate,planAdd,notify}=useApp();
-  const recipe=state.recipes.find(item=>item.id===state.recipeId);const [day,setDay]=useState<DayKey>('monday');
-  if(!recipe)return null;
-  const selected=Boolean(state.runtime.selectedRecipeIds[recipe.id]);const favorite=Boolean(state.runtime.favoriteRecipeIds[recipe.id]);
-  const copy=async(text:string,message:string)=>{try{await copyText(text);notify(message);}catch{notify('Copy failed. Try downloading a text file instead.');}};
-  const metadata=[['Prep',recipe.prepTime],['Cook',recipe.cookTime],['Additional',recipe.additionalTime],['Total',recipe.totalTime],['Servings',formatServingsText(recipe.servings)],['Yield',recipe.yield]].filter(([,value])=>value);
-  return <Dialog open={Boolean(recipe)} onClose={closeRecipe} title={recipe.title} className="recipe-dialog">
-    {recipe.description&&<p className="recipe-full-description">{recipe.description}</p>}<div className="recipe-byline">{recipe.author&&<span>By {recipe.author}</span>}{recipe.category&&<span>{recipe.category}</span>}{recipe.rating?.value!==undefined&&<span>Rating {recipe.rating.value}{recipe.rating.count!==undefined?` · ${recipe.rating.count} reviews`:''}</span>}</div>
-    <div className="recipe-toolbar"><button className="button primary" onClick={()=>cook(recipe)} disabled={!recipe.instructions.length}><ChefHat size={19} aria-hidden="true"/>Start cooking</button><button className="button" aria-pressed={selected} onClick={()=>setSelected(recipe,!selected)}><ShoppingBasket size={18} aria-hidden="true"/>{selected?'Remove from groceries':'Add to groceries'}</button><button className={`icon-button ${favorite?'is-active':''}`} aria-label={`${favorite?'Unfavorite':'Favorite'} ${recipe.title}`} aria-pressed={favorite} onClick={()=>setFavorite(recipe,!favorite)}><Heart size={20} fill={favorite?'currentColor':'none'} aria-hidden="true"/></button>{selected&&<button className="text-button" onClick={()=>{closeRecipe();navigate('grocery');}}>View grocery list <ArrowUpRight size={17} aria-hidden="true"/></button>}</div>
-    <dl className="recipe-facts">{metadata.map(([name,value])=><div key={name}><dt>{name}</dt><dd>{value}</dd></div>)}</dl>
-    <div className="recipe-jumps"><button className="text-button" onClick={()=>document.getElementById('recipe-ingredients')?.focus()}>Ingredients</button><button className="text-button" onClick={()=>document.getElementById('recipe-method')?.focus()}>Jump to method</button></div><div className="recipe-reading"><aside><section><h3 id="recipe-ingredients" tabIndex={-1}>Ingredients</h3><ul className="ingredient-list">{recipe.ingredients.map((line,index)=><li key={index}>{line}</li>)}</ul></section>{selected&&<Quantity recipe={recipe} key={`${recipe.id}-${selected}`}/>}{recipe.equipment?.length&&<section><h3>Equipment</h3><ul className="plain-list">{recipe.equipment.map((item,index)=><li key={index}>{item}</li>)}</ul></section>}
-      <section className="plan-recipe"><h3>Make it this week</h3><label className="sr-only" htmlFor="planDay">Day to plan recipe</label><select id="planDay" value={day} onChange={event=>setDay(event.target.value as DayKey)}>{mealPlanDays.map(item=><option value={item.key} key={item.key}>{item.label}</option>)}</select><button className="button" disabled={state.mealPlan.days[day].includes(recipe.id)} onClick={()=>planAdd(day,recipe.id)}>{state.mealPlan.days[day].includes(recipe.id)?'Already planned':'Add to plan'}</button></section>
-    </aside><div><section><h3 id="recipe-method" tabIndex={-1}>Method</h3><ol className="method-list">{recipe.instructions.map((line,index)=><li key={index}><span aria-hidden="true">{index+1}</span><p>{line}</p></li>)}</ol></section>{recipe.personalNotes?.length&&<section className="recipe-notes"><h3>From the kitchen</h3>{recipe.personalNotes.map((line,index)=><p key={index}>{line}</p>)}</section>}{recipe.notes?.length&&<section className="recipe-notes"><h3>Notes</h3>{recipe.notes.map((line,index)=><p key={index}>{line}</p>)}</section>}{recipe.nutrition&&Object.keys(recipe.nutrition).length>0&&<section><h3>Nutrition</h3><dl className="nutrition">{Object.entries(recipe.nutrition).map(([name,value])=><div key={name}><dt>{name}</dt><dd>{value}</dd></div>)}</dl></section>}</div></div>
-    <section className="recipe-sharing"><h3>Keep a copy</h3><div className="button-row"><button className="button quiet" onClick={()=>copy(new URL(`${appBase}${recipe.id}`,location.origin).href,'Recipe link copied.')}><Copy size={16} aria-hidden="true"/>Copy link</button><button className="button quiet" onClick={()=>copy(exportRecipeAsText(recipe),'Recipe copied.')}><Copy size={16} aria-hidden="true"/>Copy recipe</button><button className="button quiet" onClick={()=>{try{downloadText(exportRecipeAsText(recipe),`${recipe.id}.txt`);notify('Recipe text downloaded.');}catch{notify('Download failed. Try copying the recipe.');}}}><Download size={16} aria-hidden="true"/>Text file</button><button className="button quiet" onClick={()=>{try{downloadText(exportRecipeAsJson(recipe),`${recipe.id}.json`,'application/json');notify('Recipe JSON downloaded.');}catch{notify('Download failed. Try again.');}}}><Download size={16} aria-hidden="true"/>JSON file</button>{recipe.link&&<a className="button quiet" href={recipe.link} target="_blank" rel="noopener noreferrer">Original source <ArrowUpRight size={16} aria-hidden="true"/></a>}</div></section>
-  </Dialog>;
+export { copyText };
+export function downloadText(
+  text: string,
+  filename: string,
+  type = "text/plain",
+) {
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = filename;
+  document.body.append(anchor);
+  anchor.click();
+  anchor.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-
+function Quantity({ recipe }: { recipe: Recipe }) {
+  const { state, setMultiplier } = useApp();
+  const multiplier = state.runtime.recipeMultipliersById[recipe.id] || 1;
+  const [draft, setDraft] = useState(String(multiplier));
+  const commit = (value: string) => {
+    const number = Number(value);
+    if (Number.isFinite(number) && number > 0) {
+      const normalized =
+        Math.round(Math.max(0.25, Math.min(12, number)) * 100) / 100;
+      setMultiplier(recipe, normalized);
+      setDraft(String(normalized));
+    } else setDraft(String(multiplier));
+  };
+  return (
+    <div className="quantity">
+      <label htmlFor="groceryMultiplier">Grocery quantity</label>
+      <div>
+        <button
+          className="icon-button"
+          aria-label="Decrease grocery quantity"
+          disabled={multiplier <= 0.25}
+          onClick={() => commit(String(multiplier - 0.25))}
+        >
+          <Minus size={17} aria-hidden="true" />
+        </button>
+        <input
+          data-escape-reverts
+          id="groceryMultiplier"
+          aria-label="Grocery quantity multiplier"
+          type="number"
+          min="0.25"
+          max="12"
+          step="0.25"
+          value={draft}
+          onChange={(event) => setDraft(event.target.value)}
+          onBlur={() => commit(draft)}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") commit(draft);
+            if (event.key === "Escape") {
+              event.stopPropagation();
+              setDraft(String(multiplier));
+            }
+          }}
+        />
+        <span>×</span>
+        <button
+          className="icon-button"
+          aria-label="Increase grocery quantity"
+          disabled={multiplier >= 12}
+          onClick={() => commit(String(multiplier + 0.25))}
+        >
+          <Plus size={17} aria-hidden="true" />
+        </button>
+      </div>
+      <p>Scales the grocery list. Recipe instructions stay as written.</p>
+    </div>
+  );
+}
+export function RecipeDetail() {
+  const {
+    state,
+    closeRecipe,
+    cook,
+    setFavorite,
+    setSelected,
+    navigate,
+    planAdd,
+    notify,
+    setUi,
+  } = useApp();
+  const recipe = state.recipes.find((item) => item.id === state.recipeId);
+  const [day, setDay] = useState<DayKey>("monday");
+  if (!recipe) return null;
+  const selected = Boolean(state.runtime.selectedRecipeIds[recipe.id]);
+  const favorite = Boolean(state.runtime.favoriteRecipeIds[recipe.id]);
+  const copy = async (text: string, message: string) => {
+    try {
+      await copyText(text);
+      notify(message);
+    } catch {
+      notify("Copy failed. Try downloading a text file instead.");
+    }
+  };
+  const metadata = [
+    ["Prep", recipe.prepTime],
+    ["Cook", recipe.cookTime],
+    ["Additional", recipe.additionalTime],
+    ["Total", recipe.totalTime],
+    ["Servings", formatServingsText(recipe.servings)],
+    ["Yield", recipe.yield],
+  ].filter(([, value]) => value);
+  return (
+    <Dialog
+      open={Boolean(recipe)}
+      onClose={closeRecipe}
+      title={recipe.title}
+      className="recipe-dialog"
+    >
+      {recipe.description && (
+        <p className="recipe-full-description">{recipe.description}</p>
+      )}
+      <div className="recipe-byline">
+        {recipe.author && <span>By {recipe.author}</span>}
+        {recipe.category && <span>{recipe.category}</span>}
+        {recipe.rating?.value !== undefined && (
+          <span>
+            Rating {recipe.rating.value}
+            {recipe.rating.count !== undefined
+              ? ` · ${recipe.rating.count} reviews`
+              : ""}
+          </span>
+        )}
+      </div>
+      <div className="recipe-toolbar">
+        <button
+          className="button primary"
+          onClick={() => cook(recipe)}
+          disabled={!recipe.instructions.length}
+        >
+          <ChefHat size={19} aria-hidden="true" />
+          Start cooking
+        </button>
+        <button
+          className="button"
+          aria-pressed={selected}
+          onClick={() => setSelected(recipe, !selected)}
+        >
+          <ShoppingBasket size={18} aria-hidden="true" />
+          {selected ? "Remove from groceries" : "Add to groceries"}
+        </button>
+        <button
+          className={`icon-button ${favorite ? "is-active" : ""}`}
+          aria-label={`${favorite ? "Unfavorite" : "Favorite"} ${recipe.title}`}
+          aria-pressed={favorite}
+          onClick={() => setFavorite(recipe, !favorite)}
+        >
+          <Heart
+            size={20}
+            fill={favorite ? "currentColor" : "none"}
+            aria-hidden="true"
+          />
+        </button>
+        {selected && (
+          <button className="text-button" onClick={() => navigate("grocery")}>
+            View grocery list <ArrowUpRight size={17} aria-hidden="true" />
+          </button>
+        )}
+      </div>
+      <div className="recipe-tag-actions" aria-label="Recipe tags">
+        {Object.entries(recipe.tags).flatMap(([key, value]) =>
+          (Array.isArray(value) ? value : [value])
+            .filter(Boolean)
+            .map((tag) => (
+              <button
+                className="text-button"
+                key={`${key}-${tag}`}
+                onClick={() => {
+                  setUi({
+                    filters: { ...state.ui.filters, [key]: [tag] },
+                    recipeSearch: "",
+                    showFavoriteRecipesOnly: false,
+                    showSelectedRecipesOnly: false,
+                  });
+                  navigate("recipes");
+                }}
+              >
+                {formatHeaderLabel(tag)}
+              </button>
+            )),
+        )}
+      </div>{" "}
+      <dl className="recipe-facts">
+        {metadata.map(([name, value]) => (
+          <div key={name}>
+            <dt>{name}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+      <div className="recipe-jumps">
+        <button
+          className="text-button"
+          onClick={() => document.getElementById("recipe-ingredients")?.focus()}
+        >
+          Ingredients
+        </button>
+        <button
+          className="text-button"
+          onClick={() => document.getElementById("recipe-method")?.focus()}
+        >
+          Jump to method
+        </button>
+      </div>
+      <div className="recipe-reading">
+        <aside>
+          <section>
+            <h3 id="recipe-ingredients" tabIndex={-1}>
+              Ingredients
+            </h3>
+            <ul className="ingredient-list">
+              {recipe.ingredients.map((line, index) => (
+                <li key={index}>{line}</li>
+              ))}
+            </ul>
+          </section>
+          {selected && (
+            <Quantity recipe={recipe} key={`${recipe.id}-${selected}`} />
+          )}
+          {recipe.equipment?.length && (
+            <section>
+              <h3>Equipment</h3>
+              <ul className="plain-list">
+                {recipe.equipment.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+          <section className="plan-recipe">
+            <h3>Make it this week</h3>
+            <label className="sr-only" htmlFor="planDay">
+              Day to plan recipe
+            </label>
+            <select
+              id="planDay"
+              value={day}
+              onChange={(event) => setDay(event.target.value as DayKey)}
+            >
+              {mealPlanDays.map((item) => (
+                <option value={item.key} key={item.key}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+            <button
+              className="button"
+              disabled={state.mealPlan.days[day].includes(recipe.id)}
+              onClick={() => planAdd(day, recipe.id)}
+            >
+              {state.mealPlan.days[day].includes(recipe.id)
+                ? "Already planned"
+                : "Add to plan"}
+            </button>
+          </section>
+        </aside>
+        <div>
+          <section>
+            <h3 id="recipe-method" tabIndex={-1}>
+              Method
+            </h3>
+            <ol className="method-list">
+              {recipe.instructions.map((line, index) => (
+                <li key={index}>
+                  <span aria-hidden="true">{index + 1}</span>
+                  <p>{line}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+          {recipe.personalNotes?.length && (
+            <section className="recipe-notes">
+              <h3>From the kitchen</h3>
+              {recipe.personalNotes.map((line, index) => (
+                <p key={index}>{line}</p>
+              ))}
+            </section>
+          )}
+          {recipe.notes?.length && (
+            <section className="recipe-notes">
+              <h3>Notes</h3>
+              {recipe.notes.map((line, index) => (
+                <p key={index}>{line}</p>
+              ))}
+            </section>
+          )}
+          {recipe.nutrition && Object.keys(recipe.nutrition).length > 0 && (
+            <section>
+              <h3>Nutrition</h3>
+              <dl className="nutrition">
+                {Object.entries(recipe.nutrition).map(([name, value]) => (
+                  <div key={name}>
+                    <dt>{name}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          )}
+        </div>
+      </div>
+      <section className="recipe-sharing">
+        <h3>Keep a copy</h3>
+        <div className="button-row">
+          <button
+            className="button quiet"
+            onClick={() =>
+              copy(
+                new URL(`${appBase}${recipe.id}`, location.origin).href,
+                "Recipe link copied.",
+              )
+            }
+          >
+            <Copy size={16} aria-hidden="true" />
+            Copy link
+          </button>
+          <button
+            className="button quiet"
+            onClick={() => copy(exportRecipeAsText(recipe), "Recipe copied.")}
+          >
+            <Copy size={16} aria-hidden="true" />
+            Copy recipe
+          </button>
+          <button
+            className="button quiet"
+            onClick={() => {
+              try {
+                downloadText(exportRecipeAsText(recipe), `${recipe.id}.txt`);
+                notify("Recipe text downloaded.");
+              } catch {
+                notify("Download failed. Try copying the recipe.");
+              }
+            }}
+          >
+            <Download size={16} aria-hidden="true" />
+            Text file
+          </button>
+          <button
+            className="button quiet"
+            onClick={() => {
+              try {
+                downloadText(
+                  exportRecipeAsJson(recipe),
+                  `${recipe.id}.json`,
+                  "application/json",
+                );
+                notify("Recipe JSON downloaded.");
+              } catch {
+                notify("Download failed. Try again.");
+              }
+            }}
+          >
+            <Download size={16} aria-hidden="true" />
+            JSON file
+          </button>
+          {recipe.link && (
+            <a
+              className="button quiet"
+              href={recipe.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Original source <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          )}
+        </div>
+      </section>
+    </Dialog>
+  );
+}

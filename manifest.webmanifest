@@ -7,12 +7,12 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#101214",
-  "theme_color": "#101214",
+  "background_color": "#f8f6f0",
+  "theme_color": "#f8f6f0",
   "categories": ["food", "lifestyle", "utilities"],
   "icons": [
     {
-      "src": "icons/icon.svg?v=20261008-2",
+      "src": "icons/icon.svg?v=20261008-5",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

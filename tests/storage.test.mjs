@@ -40,12 +40,19 @@ test("restorePersistentState returns safe defaults when storage is unavailable",
   assert.deepEqual(restored.recipeMultipliersById, {});
   assert.deepEqual(restored.ui.collapsedGroceryGroups, {});
   assert.equal(restored.ui.hideCheckedGroceryItems, false);
-  assert.equal(restored.ui.groceryControlsCollapsed, false);
+  assert.equal(restored.ui.groceryControlsCollapsed, true);
   assert.equal(restored.ui.grocerySearchSuffix, "");
   assert.equal(restored.ui.mobileView, "recipes");
   assert.equal(restored.ui.recipeControlsCollapsed, false);
   assert.equal(restored.ui.recipeSort, "default");
   assert.equal(restored.ui.skipClearGroceryConfirmation, false);
+});
+
+test("compact grocery defaults retain an explicitly expanded legacy preference", () => {
+  assert.equal(restorePersistentState(createMemoryStorage()).ui.groceryControlsCollapsed, true);
+  const storage = createMemoryStorage({[storageKeys.groceryControlsCollapsed]: "0"});
+  assert.equal(restorePersistentState(storage).ui.groceryControlsCollapsed, false);
+  assert.equal(normalizeUiState({groceryControlsCollapsed: false}).groceryControlsCollapsed, false);
 });
 
 test("restorePersistentState survives blocked localStorage access", () => {
