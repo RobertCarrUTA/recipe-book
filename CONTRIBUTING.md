@@ -1,6 +1,9 @@
 # Contributing
 
-This project favors a lightweight static architecture, explicit data files, and focused tests. Preserve those qualities unless a larger change clearly improves reliability or maintainability.
+This is a React/TypeScript application with a Vite build and static deployment.
+Keep recipe authoring explicit, shared domain rules testable, and production
+artifacts reproducible. The retired DOM application is retained only through
+historical compatibility fixtures.
 
 ## Before You Change Anything
 
@@ -16,7 +19,8 @@ On Windows PowerShell, use `npm.cmd` when execution policy blocks `npm`.
 
 ## Project Conventions
 
-- Keep the app usable as static HTML, CSS, JavaScript, JSON, and a service worker.
+- Keep the built app deployable as static HTML, CSS, JavaScript, JSON, and a service worker, without an application server.
+- Edit `frontend/`, retained shared `js/` modules, and build scripts. Do not hand-edit generated root HTML, hashed assets, or `sw.js`.
 - Prefer pure domain helpers, small browser adapters, and dependency injection over hidden global state.
 - Keep source recipes in `data/recipes/*.json`, one recipe object per file.
 - Treat `data/recipes.json` as generated output; never make an authored change there.
@@ -41,7 +45,7 @@ Keep titles and IDs literal. Do not add hype such as “ultimate,” “best,”
 
 1. Add or edit the matching file in `data/recipes/`.
 2. Assign at least one collection defined in `js/recipe_collections.js`.
-3. Prefer structured `groceryIngredients` for every shopping item.
+3. Provide nonempty structured `groceryIngredients` for shopping items. Malformed recognized fields cannot replace a valid offline catalog.
 4. Rebuild the runtime bundle:
 
    ```bash
@@ -73,22 +77,31 @@ Review the snapshot diff before accepting it. Confirm that specific shopping lab
 
 The recipe field and grocery contracts are documented in [Recipe Schema](docs/recipe-schema.md).
 
-## JavaScript and CSS Changes
+## Application and Build Changes
 
 Keep dependencies flowing toward explicit boundaries:
 
 - models and normalization helpers should not depend on the DOM;
-- controllers should translate events and browser APIs into model operations;
-- renderers should build and synchronize DOM output;
-- `js/app.js` should compose modules rather than accumulate domain rules.
+- browser adapters should translate events and optional APIs into store operations;
+- React components should render authoritative state through accessible controls;
+- `frontend/store.tsx` should own state transitions, with shared domain behavior behind `frontend/domain.ts`;
+- durable writes and backup validation should remain behind `js/storage.js`.
 
-When `index.html`, `css/styles.css`, `js/app.js`, an imported JavaScript module, or service-worker behavior changes, set a new asset version:
+When application JavaScript/TypeScript, CSS, HTML, or worker behavior changes, set a new build version:
 
 ```bash
 npm run set-asset-version -- YYYYMMDD-N
 ```
 
-Use the current date and increment `N` for another app-shell change on the same date. The command synchronizes the HTML asset references, service-worker cache version, and generated shell URL list. Review both `index.html` and `sw.js` afterward.
+Use the current date and increment `N` for another app change that day. The
+command updates `app-version.json`. Rebuild and run `verify:build`. Content
+hashes and the generated release inventory replace manual module lists and
+asset-query synchronization.
+
+Do not change the generated script CSP to accommodate a convenience script.
+Self-hosted startup code and the exact SHA-authorized recovery bootstrap are the
+allowed script boundary; arbitrary inline scripts and eval remain prohibited.
+Keep licenses and generated dependency notices with the deployed artifact.
 
 Add focused tests near the affected responsibility. Browser-visible rendering, interaction, responsive behavior, or loading changes also require the browser smoke suite.
 
@@ -101,6 +114,9 @@ Keep each fact in its durable home:
 - `docs/recipe-schema.md` owns recipe and grocery fields.
 - `docs/architecture.md` owns boundaries and state flow.
 - `docs/deployment.md` owns the hosting and release contract.
+- `docs/build-and-offline.md` owns release integrity, worker updates, and interrupted-upgrade recovery.
+- `docs/redesign-migration.md` owns storage/backup compatibility and rollback limits.
+- Evidence directories own measured results, exact artifact metadata, and test limitations.
 
 Documentation-only changes do not require a recipe build or asset-version bump. Check relative links and keep examples synchronized with actual commands.
 
@@ -111,22 +127,61 @@ Documentation-only changes do not require a recipe build or asset-version bump. 
 | Documentation only | Review rendered Markdown and links. |
 | Recipe data | Rebuild recipes, review the data report, then `npm run verify`. |
 | Pure model or utility | Add focused tests, then `npm run verify`. |
-| Controller, renderer, HTML, or CSS | `npm run verify:full`. |
+| Component, store, browser adapter, HTML, or CSS | `npm run verify:full`. |
 | Service worker, loading, or deployment behavior | `npm run verify:full` plus the relevant checks in the deployment guide. |
 
-The standard gate parses JavaScript, confirms the recipe bundle is current, runs focused tests, and validates application data. The full gate adds Chromium browser workflows.
+The standard gate checks syntax, generated recipes, domain/data contracts,
+TypeScript, component interactions, the production build, and output integrity.
+The full gate adds modern Playwright journeys and the production offline suite.
+Use the relevant visual, accessibility, cross-browser, migration, and performance
+checks when their behavior changes. Record actual results rather than treating
+these instructions as evidence that a release passed.
 
 ### Browser Smoke Configuration
 
-The smoke runner recognizes:
+Install a browser executable after `npm ci`, before running browser gates:
+
+```bash
+npx playwright install chromium
+```
+
+On Linux, use `npx playwright install --with-deps chromium` to install required
+system libraries too. `npm ci` installs the runner, not its browser binaries.
+The local executable helper can use an existing Chrome/Edge installation or
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE`. For the optional cross-browser projects, also
+run `npx playwright install firefox webkit` (add `--with-deps` on Linux), then
+enable `CROSS_BROWSER=1`. Use `npx.cmd` on Windows if execution policy requires it.
+
+The modern Playwright runner supports:
 
 | Variable | Meaning |
 | --- | --- |
-| `PLAYWRIGHT_CHROMIUM_EXECUTABLE` | Explicit Chromium, Chrome, or Edge executable path. |
-| `RECIPE_BOOK_SMOKE_PORT` | Override the local server port used by the smoke run. |
-| `RECIPE_BOOK_ALLOW_SMOKE_SKIP=1` | Allow a missing browser prerequisite to skip intentionally. |
+| `PLAYWRIGHT_CHROMIUM_EXECUTABLE` | Explicit local Chromium, Chrome, or Edge path used by the executable helper. |
+| `RECIPE_BOOK_TEST_PORT` | Override the local Playwright server port. |
+| `RECIPE_BOOK_TEST_URL` | Test an explicitly provided local built-app URL. |
+| `CROSS_BROWSER=1` | Include configured Firefox and WebKit projects. |
+| `RECIPE_BOOK_REPORT` | Override the Playwright JSON report path. |
 
-The skip flag is for constrained local environments only. Do not set it in the normal CI gate or use it after a browser assertion fails.
+Install the required Playwright browsers for the selected projects. The offline
+lifecycle runner uses isolated ephemeral ports and actual Git fixtures; CI needs
+`fetch-depth: 0`. Missing prerequisites and failed assertions must remain visible,
+not become silent skips. Keep traces and failure evidence; do not blindly replace
+visual baselines or relax performance budgets.
+
+## Reviewed Release Output
+
+Build from clean reviewed source with `RECIPE_BOOK_BASE=/recipe-book/` for Pages.
+After parity and offline gates, `npm run stage:release` copies verified generated
+output to the root; `npm run check:release` reproduces and compares every artifact.
+Review that diff before committing. Staging neither publishes nor changes Pages
+settings. The source commit and content hash identify tracked output; the later
+artifact-containing commit cannot embed its own SHA.
+
+During this redesign, integrate feature work through `dev` and leave the final
+`dev` → `main` PR open for human review. Do not publish production or change its
+settings. The local production preview runs with `npm run preview` on port 4183;
+final preview claims must identify the actual tested commit and URL. See
+[Deployment](docs/deployment.md) for the complete release and rollback contract.
 
 ## Pull Request Checklist
 
@@ -135,10 +190,11 @@ The skip flag is for constrained local environments only. Do not set it in the n
 - [ ] Recipe filenames, IDs, collections, and naming follow the project rules.
 - [ ] `data/recipes.json` was rebuilt after recipe changes.
 - [ ] Any normalization snapshot update was intentional and its diff was reviewed.
-- [ ] Runtime app-shell changes include a current asset-version bump.
+- [ ] Application or worker changes include a current build-version bump and verified generated output.
 - [ ] New or changed behavior has focused test coverage.
 - [ ] `npm run verify` passes.
 - [ ] `npm run smoke:browser` passes when UI, rendering, loading, or offline behavior changed.
+- [ ] Staged release artifacts pass `npm run check:release`, when the change includes release output.
 - [ ] User, schema, architecture, or deployment documentation was updated when its contract changed.
 - [ ] No local state, secrets, machine-specific paths, or generated test artifacts were committed.
 
@@ -146,4 +202,5 @@ The skip flag is for constrained local environments only. Do not set it in the n
 
 Only contribute material you have the right to share. Preserve recipe authorship and source links, distinguish project-authored notes from third-party material, and do not assume the project license grants rights to external recipe text or media.
 
-See [LICENSE.md](LICENSE.md) for the code and content terms.
+See [LICENSE.md](LICENSE.md) and [NOTICE](NOTICE) for the code and content terms.
+Preserve the generated `THIRD_PARTY_NOTICES.txt` for included dependency licenses.

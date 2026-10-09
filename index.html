@@ -1,426 +1,83 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Robert's Recipe Book and Grocery List</title>
-    <meta name="description" content="A private, offline-capable recipe book, meal planner, and grocery list." />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#101214" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Recipe Book — Robert's kitchen</title>
+    <meta
+      name="description"
+      content="Your recipes, weekly plan, and grocery list. An everyday companion for your kitchen."
+    />
+    <meta name="theme-color" content="#f8f6f0" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="referrer" content="no-referrer" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; form-action 'self'"
-    />
-    <link rel="stylesheet" href="css/styles.css?v=20261008-3" />
-    <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" href="icons/icon.svg?v=20261008-2" type="image/svg+xml" />
-  </head>
-  <body class="app-mode-recipes">
-    <a class="skip-link" href="#mainContent">Skip to main content</a>
-    <div class="app-shell">
-      <header class="app-header">
-        <div>
-          <p class="app-kicker">Robert's kitchen</p>
-          <h1>Recipe Book</h1>
-          <p class="app-subtitle">Cook from saved recipes and build a grocery list without losing your place.</p>
-        </div>
-        <div class="app-header-actions">
-          <span id="offlineStatus" class="offline-status" role="status" aria-live="polite" hidden></span>
-          <button id="refreshAppUpdate" class="secondary-button app-update-button" type="button" hidden>
-            Refresh
-          </button>
-        </div>
-      </header>
+      content="default-src 'self';base-uri 'none';object-src 'none';script-src 'self' 'sha256-l8IY3ajuNAOisVboyGLQ+Yc8lXipCHvTFmdQaL1Chj0=';style-src 'self' 'unsafe-inline';img-src 'self' data:;connect-src 'self';manifest-src 'self';worker-src 'self';form-action 'self'"
+    /><script id="recipe-book-bootstrap">async function recoverLegacyNavigation(scope) {
+  const index = new URL('index.html', scope).href;
+  let restored = false;
+  for (const name of await caches.keys()) {
+    if (!/^recipe-book-shell-\d{8}-\d+$/.test(name)) continue;
+    const cache = await caches.open(name);
+    const original = await cache.match(scope);
+    const current = await cache.match(index);
+    if (!original || !current) continue;
+    const oldText = await original.text();
+    const newText = await current.text();
+    const legacyEntry = /<script\b[^>]*\bsrc=["'](?:\.\/)?js\/app\.js(?:\?[^"']*)?["']/i;
+    if (!legacyEntry.test(oldText) || oldText.includes('name="recipe-book-release"') || !newText.includes('name="recipe-book-release"')) continue;
+    const notice = '<section id="recipe-book-upgrade-recovery" role="alert"><h2>Previous offline version</h2><p>The update could not finish. Reconnect and reload to complete it. If you used the newer app, this older version cannot show or save those newer changes. Your saved data is retained; keep this browser\'s site data.</p></section>';
+    const recovered = oldText.replace(/<body\b[^>]*>/i, (body) => body + notice);
+    if (recovered === oldText) continue;
+    await cache.put(index, new Response(recovered, {headers: {'Content-Type': 'text/html; charset=utf-8'}}));
+    restored = true;
+  }
+  return restored;
+}
 
-      <nav class="mobile-view-tabs" aria-label="Primary views">
-        <button class="mobile-view-tab active" type="button" data-view="recipes" aria-controls="recipesPanel" aria-pressed="true">
-          Recipes
-        </button>
-        <button class="mobile-view-tab" type="button" data-view="grocery" aria-controls="groceryPanel" aria-pressed="false">
-          Grocery List
-          <span id="mobileGroceryBadge" class="mobile-tab-badge" hidden>0</span>
-        </button>
-      </nav>
-
-      <main id="mainContent" class="app-layout" tabindex="-1">
-        <section id="recipesPanel" class="workspace recipes-section" aria-labelledby="recipesTitle">
-          <div class="workspace-header">
-            <div>
-              <p class="section-kicker">Browse</p>
-              <h2 id="recipesTitle">Recipes</h2>
-            </div>
-            <div id="recipeSearchMeta" class="recipe-search-meta" aria-live="polite">Loading...</div>
-          </div>
-
-          <div class="recipe-search">
-            <div class="recipe-search-header">
-              <span class="recipe-search-label">Search & filters</span>
-              <button
-                id="toggleRecipeControls"
-                class="recipe-controls-toggle"
-                type="button"
-                aria-expanded="true"
-                aria-controls="recipeControlsPanel"
-              >
-                Hide
-              </button>
-            </div>
-
-            <div id="recipeControlsPanel" class="recipe-controls-panel">
-              <div class="recipe-search-field">
-                <label class="visually-hidden" for="recipeSearch">Search recipes</label>
-                <input
-                  id="recipeSearch"
-                  type="search"
-                  placeholder="Search title, ingredients, notes, equipment..."
-                  autocomplete="off"
-                  enterkeyhint="search"
-                />
-                <button
-                  id="clearRecipeSearch"
-                  class="recipe-search-clear"
-                  type="button"
-                  aria-label="Clear recipe search"
-                  title="Clear recipe search"
-                  hidden
-                >
-                  &times;
-                </button>
-              </div>
-
-              <div class="recipe-browse-controls">
-                <label class="recipe-collection-control" for="recipeCollection">
-                  <span>Collection</span>
-                  <select id="recipeCollection" aria-describedby="recipeCollectionHelp" disabled>
-                    <option value="">Loading collections...</option>
-                  </select>
-                </label>
-
-                <label class="recipe-sort-control" for="recipeSort">
-                  <span>Sort</span>
-                  <select id="recipeSort">
-                    <option value="default">Default</option>
-                    <option value="favorites-first">Favorites</option>
-                    <option value="selected-first">In list</option>
-                    <option value="fastest">Fastest</option>
-                    <option value="highest-rated">Best rated</option>
-                    <option value="easiest">Easiest</option>
-                  </select>
-                </label>
-              </div>
-
-              <p id="recipeCollectionHelp" class="recipe-collection-help" role="status" hidden></p>
-
-              <div class="quick-controls" role="group" aria-label="Recipe options">
-                <label class="switch-control">
-                  <input id="showSelectedRecipesOnly" type="checkbox" />
-                  <span class="switch-track" aria-hidden="true"></span>
-                  <span>Selected only</span>
-                </label>
-                <label class="switch-control">
-                  <input id="showFavoriteRecipesOnly" type="checkbox" />
-                  <span class="switch-track" aria-hidden="true"></span>
-                  <span>Favorites</span>
-                </label>
-                <label class="switch-control">
-                  <input id="keepScreenAwake" type="checkbox" />
-                  <span class="switch-track" aria-hidden="true"></span>
-                  <span>Keep awake</span>
-                </label>
-                <button id="openMealPlan" class="secondary-button meal-plan-open-button" type="button" aria-controls="mealPlanPanel">
-                  Plan
-                  <span id="mobileMealPlanBadge" class="mobile-tab-badge" hidden>0</span>
-                </button>
-                <button id="toggleFilters" class="filter-toggle" type="button" aria-expanded="false" aria-controls="recipeFilters">
-                  Filters
-                </button>
-              </div>
-
-              <div class="recipe-filters hidden" id="recipeFilters">
-                <div class="filter-group" role="group" aria-labelledby="recipeFilterStatusLabel">
-                  <strong id="recipeFilterStatusLabel">Status</strong>
-                  <label><input type="checkbox" data-filter="status" value="tried" /> Tried</label>
-                  <label><input type="checkbox" data-filter="status" value="not-tried" /> Not Tried</label>
-                </div>
-                <div class="filter-group" role="group" aria-labelledby="recipeFilterRatingLabel">
-                  <strong id="recipeFilterRatingLabel">Rating</strong>
-                  <label><input type="checkbox" data-filter="rating" value="great" /> Great</label>
-                  <label><input type="checkbox" data-filter="rating" value="good" /> Good</label>
-                  <label><input type="checkbox" data-filter="rating" value="okay" /> Okay</label>
-                </div>
-                <div class="filter-group" role="group" aria-labelledby="recipeFilterDifficultyLabel">
-                  <strong id="recipeFilterDifficultyLabel">Difficulty</strong>
-                  <label><input type="checkbox" data-filter="difficulty" value="easy" /> Easy</label>
-                  <label><input type="checkbox" data-filter="difficulty" value="medium" /> Medium</label>
-                  <label><input type="checkbox" data-filter="difficulty" value="hard" /> Hard</label>
-                </div>
-                <div class="filter-group" role="group" aria-labelledby="recipeFilterEquipmentLabel">
-                  <strong id="recipeFilterEquipmentLabel">Equipment</strong>
-                  <label><input type="checkbox" data-filter="equipment" value="dutch-oven" /> Dutch Oven</label>
-                  <label><input type="checkbox" data-filter="equipment" value="instant-pot" /> Instant Pot</label>
-                </div>
-                <button id="clearFilters" type="button">Clear search and filters</button>
-              </div>
-            </div>
-          </div>
-
-          <div id="recipeContainer" class="recipe-list" aria-busy="true">
-            <div class="recipe-list-state recipe-list-loading" role="status">Loading recipes...</div>
-          </div>
-          <div id="recipeNoResults" class="empty-state recipe-no-results" hidden>
-            <strong>No recipes match.</strong>
-            <span>Clear the current search and filters to bring the full list back.</span>
-            <button id="clearRecipeDiscoveryFilters" class="secondary-button" type="button">
-              Clear search and filters
-            </button>
-          </div>
-        </section>
-
-        <aside
-          id="mealPlanPanel"
-          class="workspace meal-plan"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="mealPlanTitle"
-          tabindex="-1"
-        >
-          <div class="meal-plan-bar">
-            <div class="workspace-header meal-plan-header">
-              <div>
-                <p class="section-kicker">Plan</p>
-                <h2 id="mealPlanTitle">Meal Plan</h2>
-                <p id="mealPlanSummary" class="meal-plan-summary" aria-live="polite">No meals planned</p>
-              </div>
-              <div class="meal-plan-actions">
-                <button id="buildGroceryListFromMealPlan" class="primary-button" type="button" disabled>
-                  Build list
-                </button>
-                <button id="clearMealPlan" class="secondary-button" type="button" disabled>Clear plan</button>
-                <button id="closeMealPlanPanel" class="secondary-button meal-plan-close-button" type="button">
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-          <div id="mealPlanBoard" class="meal-plan-board"></div>
-        </aside>
-
-        <aside id="groceryPanel" class="workspace grocery-list" aria-labelledby="groceryTitle">
-          <div class="grocery-shopping-bar">
-            <div class="workspace-header grocery-header">
-              <div>
-                <p class="section-kicker">Shop</p>
-                <h2 id="groceryTitle">Grocery List</h2>
-                <p id="grocerySummary" class="grocery-summary" aria-live="polite">No items yet</p>
-              </div>
-              <div class="grocery-header-buttons">
-                <button
-                  id="toggleGroceryControls"
-                  class="grocery-controls-toggle"
-                  type="button"
-                  aria-expanded="true"
-                  aria-controls="groceryControlsPanel"
-                >
-                  Controls
-                </button>
-              </div>
-            </div>
-
-            <div id="groceryControlsPanel" class="grocery-controls-panel">
-              <div class="grocery-header-actions">
-                <button id="clearCheckedGroceryItems" class="secondary-button" type="button">Clear checked</button>
-                <button id="clearGroceryList" class="clear-grocery-button" type="button">Delete all</button>
-              </div>
-
-              <form id="manualGroceryForm" class="grocery-add-form">
-                <label class="visually-hidden" for="manualGroceryInput">Add grocery item</label>
-                <input
-                  id="manualGroceryInput"
-                  type="text"
-                  placeholder="Add grocery item..."
-                  autocomplete="off"
-                  enterkeyhint="done"
-                  maxlength="80"
-                />
-                <button class="primary-button" type="submit">Add</button>
-              </form>
-
-              <div class="grocery-toolbar">
-                <label class="switch-control compact-switch">
-                  <input type="checkbox" id="groupToggle" />
-                  <span class="switch-track" aria-hidden="true"></span>
-                  <span>Group sections</span>
-                </label>
-                <label class="switch-control compact-switch">
-                  <input type="checkbox" id="hideCheckedGroceryItems" />
-                  <span class="switch-track" aria-hidden="true"></span>
-                  <span>Hide checked</span>
-                </label>
-                <button id="addAllRecipesToGroceryList" class="secondary-button" type="button">Add all recipes</button>
-                <label class="grocery-search-suffix-control" for="grocerySearchSuffix">
-                  <span class="visually-hidden">Search suffix</span>
-                  <input
-                    id="grocerySearchSuffix"
-                    type="search"
-                    placeholder="Search suffix"
-                    autocomplete="off"
-                    enterkeyhint="done"
-                    maxlength="80"
-                  />
-                </label>
-              </div>
-
-              <div class="state-tools" role="group" aria-label="List and backup tools">
-                <button id="copyGroceryList" class="secondary-button" type="button" disabled>Copy list</button>
-                <button id="exportStateBackup" class="secondary-button" type="button">Export backup</button>
-                <button
-                  id="importStateBackup"
-                  class="secondary-button"
-                  type="button"
-                  title="Backup import is unavailable until recipes finish loading."
-                  disabled
-                >
-                  Import backup
-                </button>
-                <input id="stateBackupInput" type="file" accept="application/json,.json" hidden disabled />
-                <span
-                  id="statePersistenceStatus"
-                  class="state-tools-status"
-                  role="alert"
-                  aria-live="assertive"
-                  hidden
-                ></span>
-                <span id="stateBackupStatus" class="state-tools-status" role="status" aria-live="polite" hidden></span>
-              </div>
-            </div>
-
-            <div
-              class="grocery-progress"
-              role="progressbar"
-              aria-label="Grocery progress"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              aria-valuenow="0"
-            >
-              <span id="groceryProgressBar"></span>
-            </div>
-          </div>
-
-          <div id="groceryList" class="grocery-list-body"></div>
-        </aside>
-      </main>
-    </div>
-
-    <section
-      id="cookingMode"
-      class="cooking-mode"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="cookingTitle"
-      tabindex="-1"
-      hidden
+(() => {
+  if (!('caches' in globalThis) || !navigator.serviceWorker?.controller) return;
+  const scope = new URL("/recipe-book/", location.origin).href;
+  const recovery = navigator.serviceWorker.getRegistration(scope)
+    .then((registration) => registration?.scope === scope ? recoverLegacyNavigation(scope) : false)
+    .catch(() => false);
+  // Only an unavailable entry module can trigger this recovery reload. No new
+  // application state exists yet, and later dynamic imports never match it.
+  window.addEventListener('error', (event) => {
+    if (!event.target?.hasAttribute?.('data-recipe-book-entry')) return;
+    void recovery.then((restored) => {
+      if (restored && !navigator.onLine) { location.reload(); return; }
+      const root = document.getElementById('root');
+      if (!root || root.childNodes.length) return;
+      const panel = document.createElement('section');
+      panel.setAttribute('role', 'alert');
+      const title = document.createElement('h1'); title.textContent = 'The update could not finish loading';
+      const detail = document.createElement('p');
+      detail.textContent = restored
+        ? 'Your previous offline version is available. Reconnect and reload to finish the update. Keep this browser’s site data to retain your saved changes.'
+        : 'Reconnect and reload to try again. Keep this browser’s site data to retain your saved changes.';
+      const retry = document.createElement('button'); retry.type = 'button'; retry.textContent = 'Reload';
+      retry.addEventListener('click', () => location.reload());
+      panel.append(title, detail, retry); root.append(panel);
+    });
+  }, true);
+})();
+</script>
+    <script src="/recipe-book/theme-init.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/recipe-book/icons/icon.svg" />
+    <link rel="manifest" href="/recipe-book/manifest.webmanifest" />
+    <script data-recipe-book-entry type="module" crossorigin src="/recipe-book/assets/index-hhH3zPzp.js"></script>
+    <link rel="stylesheet" crossorigin href="/recipe-book/assets/index-CYOP0CIw.css">
+  <meta name="recipe-book-release" content="195518e6ee331c5c71aaf36b"><meta name="recipe-book-commit" content="e0ad7858b9232f38fb2ae6541cc3b3ea85f48447"></head>
+  <body>
+    <div id="root"></div>
+    <noscript
+      >Recipe Book needs JavaScript to search recipes and save your grocery
+      list.</noscript
     >
-      <div class="cooking-shell">
-        <header id="cookingHeader" class="cooking-header">
-          <div class="cooking-header-copy">
-            <p id="cookingHeaderKicker" class="section-kicker cooking-header-kicker">Cooking Mode</p>
-            <h2 id="cookingTitle">Recipe</h2>
-            <p id="cookingMeta" class="cooking-meta"></p>
-            <p id="cookingHeaderStep" class="cooking-header-step" hidden></p>
-          </div>
-          <div class="cooking-header-actions">
-            <button
-              id="toggleCookingHeader"
-              class="secondary-button cooking-header-toggle"
-              type="button"
-              aria-expanded="true"
-              aria-controls="cookingHeaderKicker cookingMeta"
-            >
-              Hide
-            </button>
-            <button id="closeCookingMode" class="icon-button" type="button" aria-label="Close cooking mode">Close</button>
-          </div>
-        </header>
-
-        <div
-          class="cooking-progress"
-          role="progressbar"
-          aria-label="Cooking progress"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          aria-valuenow="0"
-        >
-          <span id="cookingProgressBar"></span>
-        </div>
-
-        <div class="cooking-layout">
-          <aside id="cookingIngredientsPanel" class="cooking-ingredients" aria-labelledby="cookingIngredientsTitle">
-            <h3 class="cooking-ingredients-heading">
-              <button
-                id="toggleCookingIngredients"
-                class="cooking-ingredients-header"
-                type="button"
-                aria-expanded="true"
-                aria-controls="cookingIngredients"
-              >
-                <span class="cooking-ingredients-copy">
-                  <span id="cookingIngredientsTitle" class="cooking-ingredients-title">Ingredients</span>
-                  <span id="cookingIngredientsSummary" class="cooking-ingredients-summary"></span>
-                </span>
-                <span class="cooking-ingredients-toggle" aria-hidden="true"></span>
-              </button>
-            </h3>
-            <div id="cookingIngredients" class="cooking-ingredients-body"></div>
-          </aside>
-
-          <section class="cooking-step-panel" aria-live="polite">
-            <p id="cookingStepCount" class="cooking-step-count"></p>
-            <p id="cookingStepText" class="cooking-step-text"></p>
-          </section>
-        </div>
-
-        <footer class="cooking-footer">
-          <label class="switch-control compact-switch">
-            <input id="cookingKeepScreenAwake" type="checkbox" />
-            <span class="switch-track" aria-hidden="true"></span>
-            <span>Keep awake</span>
-          </label>
-          <div class="cooking-nav">
-            <button id="previousCookingStep" class="secondary-button" type="button">Previous</button>
-            <button id="nextCookingStep" class="primary-button" type="button">Next</button>
-          </div>
-        </footer>
-      </div>
-    </section>
-
-    <dialog
-      id="confirmClearGroceryDialog"
-      class="confirm-dialog"
-      aria-labelledby="confirmClearGroceryTitle"
-      aria-describedby="confirmClearGroceryDescription"
-    >
-      <form class="confirm-dialog-card" method="dialog">
-        <div>
-          <p class="section-kicker">Confirm</p>
-          <h2 id="confirmClearGroceryTitle">Delete grocery list?</h2>
-          <p id="confirmClearGroceryDescription" class="confirm-dialog-description">
-            This removes every grocery item and clears recipe selections for this list.
-          </p>
-        </div>
-        <label class="confirm-dialog-check">
-          <input id="skipClearGroceryConfirmation" type="checkbox" />
-          <span>Don't ask again</span>
-        </label>
-        <div class="confirm-dialog-actions">
-          <button id="cancelClearGroceryList" class="secondary-button" type="submit" value="cancel">Cancel</button>
-          <button id="confirmClearGroceryList" class="clear-grocery-button" type="submit" value="confirm">
-            Delete all
-          </button>
-        </div>
-      </form>
-    </dialog>
-
-    <script type="module" src="js/app.js?v=20261008-3"></script>
   </body>
 </html>

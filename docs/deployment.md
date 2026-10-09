@@ -1,170 +1,170 @@
 # Deployment
 
-The production application is a static site. It needs HTTPS, correct content types, predictable cache behavior, and an atomic set of files; it does not need Node.js, server-side rendering, a database, environment variables, or runtime secrets.
+Recipe Book deploys as a complete static build. Node.js is build tooling only;
+production needs HTTPS and correct file responses, with no application server,
+database, credentials, or runtime environment configuration.
 
-## Publishable Files
+## Existing Pages contract
 
-The simplest host can serve the repository root. A narrower production artifact only needs:
+Read-only inspection confirmed GitHub Pages publishes `main:/` at
+<https://robertcarruta.github.io/recipe-book/>. The redesign preserves that source:
+reviewed generated files are tracked at the repository root. A later human merge
+of the final `dev` → `main` PR lets the existing publisher serve the built app.
+No production settings change or production publication is part of the redesign.
 
-```text
-index.html
-404.html
-css/
-js/
-data/recipes.json
-icons/
-manifest.webmanifest
-sw.js
-LICENSE.md
-NOTICE
+Adding an Actions deployment workflow alone does not switch a branch-based
+Pages site to Actions publishing. See GitHub's
+[publishing-source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+The chosen staging contract is detailed in [build and offline](build-and-offline.md).
+
+## Build and local preview
+
+Use Node.js >=22.12 and the committed lockfile:
+
+```bash
+npm ci
+npm run verify
+npx playwright install chromium
+npm run smoke:browser
+npm run preview
 ```
 
-Recipe source files, tests, and development scripts are not requested by the browser. They may remain available when the repository itself is the published source, but never expose `.git/`, `node_modules/`, editor state, local backups, or test artifacts from a production web root.
+The maintained preview command serves `dist/` with the production server helper
+at <http://127.0.0.1:4183/>. It is a local preview, not public hosting. The browser
+executable is a separate prerequisite; on Linux use
+`npx playwright install --with-deps chromium`. On Windows, use `npm.cmd` and
+`npx.cmd` when needed. To model the production path:
 
-All deployed recipe data is public. Personal grocery, meal-plan, favorite, and preference state stays in each user's browser and is not uploaded by the app.
-
-## Origin and Path Requirements
-
-- Serve production over HTTPS. Service workers require a secure context outside `localhost`.
-- Serve every app file from the same origin.
-- Preserve the application directory: `sw.js` is registered relative to the page and controls that directory scope.
-- Relative URLs in the HTML, manifest, modules, repository, and worker support deployment at `/` or a subdirectory such as `/recipes/`.
-- Serve the directory URL as `index.html`.
-- For clean recipe links such as `/recipe-book/a5-wagyu-burger`, route missing page navigations to the app shell. On GitHub Pages, `404.html` mirrors `index.html` for that fallback.
-- Return real `404` responses for missing JavaScript, CSS, JSON, and icon files instead of rewriting them to HTML.
-
-For subdirectory hosting, validate the manifest start URL, worker scope, recipe request, and offline reload from the final public URL rather than only from local root hosting.
-
-## MIME Types
-
-At minimum, configure:
-
-| Files | Content type |
-| --- | --- |
-| `.html` | `text/html; charset=utf-8` |
-| `.css` | `text/css; charset=utf-8` |
-| `.js` | `text/javascript; charset=utf-8` |
-| `.json` | `application/json; charset=utf-8` |
-| `.webmanifest` | `application/manifest+json; charset=utf-8` |
-| `.svg` | `image/svg+xml` |
-
-ES modules fail when a host returns JavaScript as HTML or a generic download. Enable Brotli or gzip for HTML, CSS, JavaScript, JSON, SVG, and the web manifest.
-
-## HTTP Cache Policy
-
-The app has two cache layers:
-
-1. the host and browser HTTP cache;
-2. versioned Cache Storage managed by `sw.js`.
-
-Use revalidation-oriented host headers so those layers do not serve a mixed revision:
-
-| Resource | Recommended policy | Reason |
-| --- | --- | --- |
-| `index.html` and directory response | `Cache-Control: no-cache` | The page must discover current asset versions. |
-| `sw.js` | `Cache-Control: no-cache` | Browsers must revalidate the worker script for updates. |
-| `js/*.js` | `Cache-Control: no-cache` | Imported module URLs are not content-hashed. |
-| `css/*.css` | `Cache-Control: no-cache` | The source filename is stable even though the entry reference has a version query. |
-| `data/recipes.json` | `Cache-Control: no-cache` | Recipe data should revalidate; the app also requests it with `no-store` and a per-load query key. |
-| manifest and icons | Short cache with revalidation | Install metadata and icons can change between releases. |
-
-`no-cache` allows conditional requests and `304 Not Modified`; it does not mean “do not store.” Avoid a long immutable lifetime for stable module filenames unless deployment introduces content-hashed filenames throughout the import graph.
-
-The service worker uses network-first handling. A successful shell response or validated recipe response updates Cache Storage, and a network failure uses the last complete shell or validated recipe response. Cache Storage is a resilience layer, not permanent storage; browsers can evict it.
-
-## Security Headers
-
-The app has no server-side input or credentials, but production should still constrain browser capabilities. A suitable starting point is:
-
-```text
-Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
-X-Content-Type-Options: nosniff
-Referrer-Policy: strict-origin-when-cross-origin
-Permissions-Policy: camera=(), geolocation=(), microphone=()
+```powershell
+$env:RECIPE_BOOK_BASE = '/recipe-book/'
+npm.cmd run build
+npm.cmd run verify:build
+npm.cmd run preview -- --pages-404
 ```
 
-Set `Strict-Transport-Security` only after the domain and its required subdomains are permanently HTTPS. `frame-ancestors` must be an HTTP header; a CSP meta element cannot enforce it.
+Open <http://127.0.0.1:4183/recipe-book/>. The configured base determines every
+startup asset, recipe request, and worker scope. A first direct recipe navigation
+through Pages' `404.html` may have HTTP status 404 while successfully loading the
+app. Missing assets must remain real failures instead of returning HTML.
 
-Test recipe downloads, backup import/export, source links, clipboard behavior, Screen Wake Lock, the manifest, and the service worker after changing CSP or permissions policy. If the hosting platform adds inline scripts or styles, remove those additions or account for them deliberately rather than weakening the policy broadly.
+The authorized Sites capability available during this work provides production
+publication, not an isolated preview facility. It was not used to publish this
+redesign. The permitted fallback is a locally served production build tied to
+the reviewed commit. The [#174 delivery record](https://github.com/RobertCarrUTA/recipe-book/issues/174)
+and [execution record](redesign-state.md) own the final tested URL, commit and
+browser evidence; that current live-preview check remains pending.
+Use a separate origin for synthetic preview state because localStorage is
+origin-wide.
 
-## Asset and Service-Worker Versions
+## Complete release artifact
 
-`npm run set-asset-version -- YYYYMMDD-N` synchronizes:
+The publishable set is the finalized `dist/` directory, including:
 
-- the version query on `css/styles.css` in `index.html`;
-- the version query on `js/app.js` in `index.html`;
-- the matching GitHub Pages fallback shell in `404.html`;
-- `CACHE_VERSION` in `sw.js`;
-- the generated service-worker shell asset list.
+```text
+index.html, 404.html, .nojekyll
+assets/                      content-hashed JavaScript and CSS
+data/recipes.json             independently refreshed recipe catalog
+icons/, manifest.webmanifest, theme-init.js
+sw.js, build-info.json, release-manifest.json
+LICENSE.md, NOTICE, THIRD_PARTY_NOTICES.txt
+```
 
-Use a new version for every deployed HTML, CSS, JavaScript, or service-worker change. Recipe-only changes do not need a version bump because recipe requests are network-first, use a per-load cache key, and replace the canonical cached recipe response after success.
+Never edit these generated files independently. `verify:build` checks every file,
+hash, byte length, startup reference, deployment base, fallback HTML, CSP, and
+complete precache inventory. `build-info.json` records the full source commit,
+dirty-source flag, app version, content hash, and release identity.
 
-Deploy `index.html`, the complete module graph, CSS, and `sw.js` together. A partial upload can leave the page requesting a module that does not exist or a worker caching files from two revisions.
+Do not publish `.git/`, dependencies, personal backups, private editor state, or
+test output. Authored recipes and deployed application files are public; personal
+grocery, plan, and preference state remains in the browser.
 
-## Release Procedure
+## Versioning, staging, and reproducibility
 
-From a clean checkout of the release revision:
+1. Change source under `frontend/`, shared `js/`, or build scripts. For recipe
+   changes, edit `data/recipes/*.json` and run `npm run build:recipes`.
+2. For app, CSS, HTML, or worker changes, run
+   `npm run set-asset-version -- YYYYMMDD-N` using the current date and next suffix.
+   This updates `app-version.json`.
+   Recipe-only changes do not require an app-version bump.
+3. Commit the reviewed source, then build a clean checkout with
+   `RECIPE_BOOK_BASE=/recipe-book/`. Run `verify`, `smoke:browser`, and the relevant
+   accessibility, visual, performance, and migration checks for that revision.
+4. After full parity and offline review, run `npm run stage:release`, then
+   `npm run check:release`. Staging copies only allowlisted verified artifacts and
+   removes only obsolete generated chunks listed in the previous manifest.
+5. Review and commit the resulting root artifact diff. Re-run the reproducibility
+   gate in CI. Leave the final `dev` → `main` PR open for human review and merge.
 
-1. Install exactly the locked tools:
+Staging does not deploy, push, or change Pages settings. The artifact-containing
+commit cannot embed its own SHA without a circular reference: tracked output
+records the clean **source commit plus content hash**. `check:release` rebuilds
+current source with those explicit provenance fields and compares all artifact
+bytes. Only those stamp fields are pinned; no chunks or arbitrary metadata are
+ignored. A clean local preview built at the final integration commit can record
+that exact integration SHA separately.
 
-   ```bash
-   npm ci
-   ```
+## Hosting and browser policy
 
-2. Confirm authored recipe changes are reflected in the generated bundle:
+Serve HTML as `text/html`, JavaScript as `text/javascript`, CSS as `text/css`, JSON
+as `application/json`, the web manifest as `application/manifest+json`, and SVG
+as `image/svg+xml`. UTF-8 and compression are appropriate for textual assets.
+Keep all essential runtime resources on the same origin.
 
-   ```bash
-   npm run check:recipes
-   ```
+Where a host supports configurable headers, revalidate HTML, the worker, recipe
+JSON, and stable-name metadata. Content-hashed `assets/` files can use a long
+immutable HTTP lifetime. GitHub Pages' host headers are platform-controlled;
+do not represent recommended headers as a configuration already applied there.
 
-3. Confirm the current asset version is present when the app shell changed.
-4. Run the strict local gate:
+Use the emitted CSP, including its exact recovery-bootstrap hash. Do not replace
+it with a generic `script-src 'self'` header that blocks recovery, and do not add
+script `unsafe-inline` or `unsafe-eval`. The generated policy restricts startup
+resources to self, blocks objects and base URLs, and retains the existing style
+allowance required by the UI. The build check verifies the exact script policy.
+Additional `nosniff`, referrer, permissions, and framing headers can be reviewed
+on hosts that support them; `frame-ancestors` cannot be enforced by a meta tag.
 
-   ```bash
-   npm run verify:full
-   ```
+Offline shell caches are immutable and scope-specific. Recipe requests are
+validated network-first. Updates wait for a user Refresh and a successful state
+flush; open tabs retain their needed release assets. The recovery bootstrap
+protects old cached apps when the new worker or bundles are unavailable. These
+mechanics and their limits are documented in [build and offline](build-and-offline.md).
 
-5. Publish the complete revision atomically or to a versioned directory that becomes active in one switch.
-6. Perform the post-deploy checks below from a clean browser context.
+## Release evidence and recovery
 
-Do not set `RECIPE_BOOK_ALLOW_SMOKE_SKIP=1` in the normal release gate. A release without browser verification should be an explicit exception with its missing coverage recorded.
+Offline integration and generated root cutover (#173) merged through
+[PR #178](https://github.com/RobertCarrUTA/recipe-book/pull/178) into dev
+`af08710a726af8e24fb34807d890c8f8daa2cd19`. [CI 37869671954](https://github.com/RobertCarrUTA/recipe-book/actions/runs/37869671954)
+passed all three jobs at PR head `971b195ae49efaa475e24e13edb046af188d463f`:
+Ubuntu/Windows core checks and tracked-release reproduction, Ubuntu browser and
+offline lifecycle checks, and Firefox/WebKit journeys. That tracked artifact
+records clean source `f9b7ea9e48684cd202d8fbb37e355aceec8d8425`, version
+`20261008-9`, base `/recipe-book/`, and release `a4146a26e10f472179471217`;
+the source and artifact-containing commits are intentionally distinct.
 
-## Post-Deploy Checks
+[Final delivery #174](https://github.com/RobertCarrUTA/recipe-book/issues/174)
+still owns the current live preview, final release PR and verification of any
+subsequent changes. Version 10 fixes the initial offline-error/loading shift;
+startup and supplemental measurements passed all 46 recorded budgets. Follow the
+[execution record](redesign-state.md) for current status; successful #173 CI
+does not establish final readiness or production deployment.
 
-Verify the public URL, not just the host's preview URL:
+Check direct recipe links, back/refresh, theme initialization, exports/imports,
+worker scope, waiting updates, interrupted installs, and offline reload at both
+`/` and `/recipe-book/`. The offline suite has thirteen lifecycle scenarios and
+uses actual `3117d47` and `aec6001` worker fixtures; CI must fetch full Git history.
+Modern Playwright coverage and [performance budgets](performance-budgets.md)
+complement those checks. Record actual runs and remaining limitations in the
+[UI](evidence/redesign-ui/README.md) and
+[performance](evidence/redesign-performance/README.md) evidence, not as assumed
+successes in this procedure.
 
-- `index.html`, CSS, the app module, imported modules, the manifest, icon, worker, and recipe JSON return `200` with correct content types.
-- The recipe count loads without console errors or schema warnings.
-- A clean recipe URL such as `/recipe-book/a5-wagyu-burger` opens that recipe directly.
-- Search, a recipe expansion, grocery selection, and Cooking Mode work.
-- Recipe and backup downloads are permitted by the host policy.
-- `sw.js` registers with the expected scope.
-- After one successful online load, an offline reload shows the cached app and recipe data.
-- When replacing an older release, the app offers Refresh and reloads under the new worker.
-- A hard refresh receives the current HTML and recipe bundle rather than a stale CDN response.
-- There is no horizontal overflow at representative desktop and phone widths.
+After a future human production release, verify the real public origin as well.
+Local and CI tests cannot prove its final CDN headers, cache state, or device
+behavior. Cache Storage can be evicted, and an uncached first visit needs a
+connection.
 
-The automated smoke suite covers core Chromium interactions, but it does not replace a production-origin offline and update check. Service-worker behavior depends on final scope, headers, and CDN caching.
-
-## Rollback
-
-Keep the previous complete static revision available. To roll back:
-
-1. publish the previous known-good files as one unit;
-2. assign a new asset/cache version if any content differs from the currently deployed revision;
-3. purge or revalidate CDN HTML and worker entries;
-4. repeat the worker update, online, and offline checks.
-
-Do not restore only `index.html` or only `sw.js`. Browser `localStorage` survives a static rollback, so the older app must still understand the current storage version. If a release changes persisted state incompatibly, its rollback plan must include backward-compatible migrations before deployment.
-
-## Host Observability
-
-There is no application health endpoint or remote telemetry. Use static-host monitoring for:
-
-- availability and TLS validity;
-- elevated `404` or `5xx` responses for app assets;
-- unexpected MIME types;
-- CDN age or cache headers on HTML, worker, modules, and recipe JSON;
-- deployment and rollback audit history.
-
-Keep monitoring free of personal grocery or recipe-selection data. The application does not send that state to the host.
+A rollback must be another complete, verified release with compatible data
+handling. v6 code cannot read the current v7 snapshot; its retained legacy fields
+are only pre-migration recovery data. Do not lower the fence, delete the snapshot,
+or assume a Git revert restores current user data. Export a current backup and
+test a compatible recovery reader. See [migration and recovery](redesign-migration.md).

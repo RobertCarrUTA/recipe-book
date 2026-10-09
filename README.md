@@ -1,169 +1,145 @@
 # Robert's Recipe Book and Grocery List
 
-A mobile-first static web app for saved recipes, weekly meal planning, focused cooking, and grocery-list building.
+A static recipe application for browsing, weekly planning, focused cooking, and
+grocery-list building. React and TypeScript provide the interface; Vite produces
+self-hosted static files. Tested recipe and grocery domain modules remain shared
+behind a typed boundary. There is no application server, account system,
+analytics, advertising, or cloud synchronization.
 
-The project intentionally has no framework, backend, database, bundler, or transpiler. The browser loads native ES modules from static files, recipes are authored as individual JSON documents, and personal state stays in the browser.
+## Features and privacy
 
-## Privacy and Scope
+- Browse by collection, search, status, rating, difficulty, equipment, favorites,
+  and grocery selection; sort by the existing recipe criteria.
+- Plan a Monday–Sunday week and turn repeated recipes into grocery quantities.
+- Combine structured ingredients, unit conversions, recipe multipliers, and
+  manual items in grouped, checkable shopping lists with source tracing.
+- Read recipe detail and use focused Cooking Mode, keyboard controls, and
+  optional Screen Wake Lock.
+- Choose Light, Dark, or System appearance on desktop, tablet, and mobile.
+- Export recipes and import/export portable backups in **Settings & data**.
+- Reopen a complete cached release offline; choose when to refresh an update.
 
-- There are no accounts, analytics, advertisements, or cloud synchronization.
-- Favorites, meal plans, grocery state, filters, and preferences are stored in `localStorage`.
-- Exported backups are the portable copy of that state. Clearing site data removes the browser copy.
-- Every deployed recipe and source file is public to anyone who can access the static site.
-- This is a personal recipe application, not a hosted recipe service or shared database.
+Favorites, plans, groceries, and preferences stay in browser `localStorage`.
+Backups are the portable copy; clearing site data removes the local copy. Every
+deployed recipe and application file is public. Optional clipboard, installation,
+and wake-lock support varies by browser and must not block core workflows.
 
-## Key Features
+The fifteen individually reviewed recipes remain available in **Health-conscious**
+and **Meal-prep friendly** collections. See the
+[editorial criteria](docs/recipe-schema.md#editorial-collections); other recipes
+have not been assessed.
 
-- Browse recipes by collection, search text, status, rating, difficulty, equipment, favorites, and grocery selection.
-- Find the fifteen individually reviewed recipes under **Collection > Health-conscious** or **Meal-prep friendly**, with labels on their cards. See the [editorial criteria](docs/recipe-schema.md#editorial-collections); other recipes have not been assessed.
-- Sort by favorites, grocery selection, time, rating, or difficulty.
-- Plan recipes across a week and turn the plan into grocery quantities.
-- Aggregate structured grocery ingredients, compatible units, recipe multipliers, and manual items.
-- Shop from grouped, collapsible, checkable sections with source tracing and plain-text copy.
-- Use a full-screen Cooking Mode with one step at a time, progress, keyboard controls, and optional Screen Wake Lock.
-- Export individual recipes and import or export browser-state backups.
-- Reopen the installed app offline after a successful online load.
+## Start locally
 
-## Requirements
-
-- Node.js and npm for validation and recipe generation. CI currently tests Node.js 22.
-- An evergreen browser with native ES module support. Automated browser coverage runs in Chromium.
-- A local HTTP server. Do not open `index.html` directly from `file://`.
-
-Screen Wake Lock, service workers, installation prompts, and clipboard behavior vary by browser. Unsupported optional APIs degrade without blocking the core recipe and grocery workflows.
-
-## Quick Start
-
-Install the locked development dependencies:
+Use Node.js >=22.12, npm, and an evergreen browser. Install the locked tools:
 
 ```bash
 npm ci
+npm run dev
 ```
 
-Run the standard verification gate:
+Use the URL printed by Vite for development. For the built application:
 
 ```bash
 npm run verify
+npx playwright install chromium
+npm run smoke:browser
+npm run preview
 ```
 
-Serve the repository root with any static server. Python is one convenient option:
+The production preview serves `dist/` at <http://127.0.0.1:4183/> by default.
+Use HTTP/HTTPS, not `file://`. On Windows PowerShell, use `npm.cmd` if execution
+policy blocks `npm` (and `npx.cmd` for `npx`). The browser install supplies the
+executable; `npm ci` alone does not. On Linux use
+`npx playwright install --with-deps chromium` to include system libraries. The
+local runner can also use an existing Chrome/Edge installation or an explicit
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE`. Service-worker behavior is verified against the
+production build rather than the development server.
 
-```bash
-python -m http.server 8080
-```
-
-Open <http://localhost:8080>.
-
-On Windows PowerShell, use `npm.cmd` when script execution policy blocks `npm`:
-
-```powershell
-npm.cmd run verify
-```
-
-## Architecture at a Glance
+## Project layout
 
 ```text
-data/recipes/*.json
-        |
-        | npm run build:recipes
-        v
-data/recipes.json --> repository + schema normalization --> runtime state --> renderers
-                                                                  |
-                         localStorage <--> persistence/controllers |
-                                                                  |
-                         service worker <---- shell and recipe cache
+frontend/                  React components, store, themes, and browser adapters
+js/                        Retained domain, storage, formatting, and export modules
+data/recipes/              Authoritative recipe source files
+data/recipes.json          Generated runtime recipe bundle
+public/                    Self-hosted build inputs
+scripts/                   Generation, verification, release, and browser tools
+tests/                     Domain contracts and Playwright journeys
+docs/                      Architecture, recipe schema, migration, and evidence
+dist/                      Ignored production build
+index.html, assets/, sw.js  Reviewed generated Pages release
 ```
 
-The checked-in source files are the recipe authoring boundary. `data/recipes.json` is generated for the browser and must not be edited by hand. Pure model and normalization modules hold domain behavior; controllers adapt browser APIs and events; renderers own DOM output; `js/app.js` composes those boundaries.
-
-The service worker uses network-first requests for the app shell and recipe data, then falls back to its latest complete shell and validated recipe cache. The first successful online load is therefore required before offline use.
-
-See [Architecture](docs/architecture.md) for state ownership, module boundaries, rendering, persistence, and offline behavior.
-
-## Project Layout
-
-```text
-.
-|-- index.html              Static entry point and app structure
-|-- css/                    Theme and responsive layout
-|-- js/                     Native ES modules
-|-- data/recipes/           Authoritative recipe source files
-|-- data/recipes.json       Generated runtime bundle
-|-- scripts/                Build, validation, reporting, and smoke tools
-|-- tests/                  Unit, integration, and data contract tests
-|-- docs/                   Architecture, schema, and deployment guides
-|-- CONTRIBUTING.md         Change workflow and review checklist
-|-- sw.js                   Service worker and cache policy
-|-- manifest.webmanifest    Installable app metadata
-`-- .github/workflows/      Continuous verification
-```
+The former DOM application was retired during root cutover. Historical code remains
+available through fixed Git fixtures for upgrade tests; it is not a second UI
+to maintain. Root HTML, hashed assets, and the worker are generated output.
 
 ## Commands
 
 | Command | Purpose |
 | --- | --- |
-| `npm run build:recipes` | Rebuild `data/recipes.json` from recipe source files. |
-| `npm run check:recipes` | Fail when the generated recipe bundle is stale. |
+| `npm run dev` | Run the Vite development server. |
+| `npm run build` | Produce a complete, stamped static release in `dist/`. |
+| `npm run preview` | Serve the built release locally on port 4183. |
+| `npm run build:recipes` | Regenerate the runtime catalog from recipe files. |
+| `npm run check:recipes` | Fail when the generated catalog is stale. |
 | `npm run update:normalization-snapshot` | Record an intentionally reviewed grocery normalization catalog. |
-| `npm run set-asset-version -- YYYYMMDD-N` | Synchronize CSS, JavaScript, and service-worker cache versions. |
-| `npm run check:syntax` | Parse-check project JavaScript. |
-| `npm run report:data-quality` | Print the advisory recipe and grocery data report. |
-| `npm test` | Run the focused unit and integration tests. |
-| `npm run verify` | Run syntax, bundle, test, and application-data checks. |
-| `npm run smoke:browser` | Run the Chromium browser workflows against a local server. |
-| `npm run verify:full` | Run the standard gate and browser smoke suite. |
+| `npm run set-asset-version -- YYYYMMDD-N` | Update build metadata before rebuilding app changes. |
+| `npm run report:data-quality` | Print the advisory recipe/grocery report; add `-- --json` for JSON. |
+| `npm test` | Run shared domain, persistence, build, and worker regressions. |
+| `npm run test:components` | Run React component interaction tests. |
+| `npm run verify` | Check syntax, recipes, domain/data contracts, types, components, build, and output integrity. |
+| `npm run smoke:browser` | Run modern Playwright journeys and production offline lifecycle checks. |
+| `npm run verify:full` | Run verification and browser gates together. |
+| `npm run stage:release` | Copy verified Pages artifacts into the working tree for review. |
+| `npm run check:release` | Rebuild and compare every tracked production artifact. |
 
-`npm run report:data-quality -- --json` emits the report as JSON. The report is advisory; investigate parser failures and unknown units before treating a change as ready.
+Commands describe the maintained cutover workflow; actual release results and
+remaining gaps are recorded in evidence and the final PR. Do not skip browser
+gates or treat development-server behavior as production offline verification.
 
-## Common Changes
+## Recipe and application changes
 
-### Recipes
+Edit one object per `data/recipes/*.json` file. Keep the filename equal to the
+recipe ID, preserve literal and modest dish names, and run `npm run build:recipes`.
+Never hand-edit `data/recipes.json`. Recipe-only changes do not require an app
+version bump, but still require regeneration, verification, and a complete
+release artifact when publishing. The [recipe schema](docs/recipe-schema.md)
+covers grocery quantities, collections, tags, attribution, and normalization.
 
-Edit one file in `data/recipes/`, keep its filename equal to `<recipe-id>.json`, rebuild the bundle, and run verification. Recipe-only changes do not need an asset-version bump.
+Edit application source under `frontend/` and retained shared modules. For app,
+CSS, shell, or worker changes, increment the current-date version in
+`app-version.json` through `set-asset-version`, then rebuild and verify. Do not
+hand-edit generated HTML or worker inventories.
 
-The [Recipe Schema](docs/recipe-schema.md) documents the full field contract, structured grocery quantities, tags versus ratings, collections, attribution, and normalization snapshot workflow.
+Persistence uses an atomic v7 snapshot and compatible schema-v1 backups. Imports
+validate and commit before replacing live state. Storage errors, stale tabs, and
+future versions require explicit recovery rather than silently overwriting
+existing data. See [migration and recovery](docs/redesign-migration.md).
 
-### JavaScript, CSS, or App Shell
+## Deployment and evidence
 
-Keep domain logic in testable modules and browser behavior behind controllers or adapters. Changes to `index.html`, JavaScript, or CSS require a synchronized asset-version bump before verification.
+GitHub Pages remains configured for `main:/`. Reviewed generated root artifacts
+allow a later human merge of `dev` into `main` to publish through that existing
+configuration. The redesign does not change production settings or publish to
+production. [Final delivery #174](https://github.com/RobertCarrUTA/recipe-book/issues/174)
+is still being prepared; its dev→main PR must remain open for human review.
 
-The complete workflow, test expectations, naming rules, and PR checklist live in [Contributing](CONTRIBUTING.md).
+The available authorized hosting capability did not provide an isolated preview;
+the local production-preview fallback must be verified at the final reviewed
+commit. See [deployment](docs/deployment.md) for base paths, provenance,
+staging/reproducibility, the preview boundary, and recovery.
 
-### Deployment
+- [Architecture](docs/architecture.md) — state, component/domain boundaries, security, and offline design.
+- [Build and offline](docs/build-and-offline.md) — complete release caches, explicit refresh, interrupted upgrades, and CSP.
+- [Contributing](CONTRIBUTING.md) and [agent notes](AGENTS.md) — authoring and change conventions.
+- [Preservation matrix](docs/preservation-matrix.md) — capability contracts and protecting checks.
+- [Baseline evidence](docs/evidence/baseline/README.md) and [redesigned UI evidence](docs/evidence/redesign-ui/README.md) — reviewed browser observations.
+- [Performance budgets](docs/performance-budgets.md) and [measurements](docs/evidence/redesign-performance/README.md) — reproducible local results and limitations.
 
-Deploy the repository as one static revision over HTTPS. Correct MIME types, cache headers, security headers, service-worker scope, and atomic updates matter because the app has no server-side runtime to correct a partial deployment.
-
-See [Deployment](docs/deployment.md) for the production hosting contract, release checks, rollback guidance, and post-deploy validation.
-
-## Local State and Backups
-
-Stored browser state includes:
-
-- recipe selections, quantity multipliers, and grocery checkmarks;
-- manual grocery items and collapsed grocery sections;
-- the weekly meal plan and favorite recipes;
-- search, collection, sort, filter, and mobile-view preferences;
-- the keep-awake preference;
-- confirmation and control-collapse preferences.
-
-Use **Export backup** and **Import backup** in the Grocery List controls when moving devices or before clearing site data. Imports are validated, and grocery totals are recomputed against the current recipe data.
-
-## Browser Verification
-
-The browser smoke suite checks recipe loading, discovery controls, exports, sorting, meal planning, grocery interactions, Cooking Mode, and mobile navigation. It uses, in order:
-
-1. `PLAYWRIGHT_CHROMIUM_EXECUTABLE`, when set;
-2. a common local Chrome, Edge, or Chromium installation on Windows, macOS, or Linux;
-3. Playwright's managed Chromium, when installed.
-
-`RECIPE_BOOK_SMOKE_PORT` overrides the default local smoke-test port. `RECIPE_BOOK_ALLOW_SMOKE_SKIP=1` permits an intentional prerequisite skip; never use it to hide a browser regression or in the normal CI gate.
-
-## Detailed Guides
-
-- [Contributing](CONTRIBUTING.md) — change workflows, verification, asset versions, and PR checklist.
-- [Architecture](docs/architecture.md) — data flow, dependency boundaries, state, rendering, and offline design.
-- [Recipe Schema](docs/recipe-schema.md) — recipe fields, grocery structure, normalization, and attribution.
-- [Deployment](docs/deployment.md) — hosting, headers, caching, releases, rollbacks, and validation.
+Browser emulation, automated accessibility checks, and local timing measurements
+do not establish physical-device, screen-reader, hosted-network, or field results.
 
 ## License
 
@@ -173,4 +149,5 @@ This project is available for noncommercial use only.
 - Project-owned recipes, notes, documentation, and other non-software content are licensed under CC BY-NC-SA 4.0.
 - Third-party recipe material remains owned by its original rights holders and is not relicensed by this project.
 
-See [LICENSE.md](LICENSE.md) and [NOTICE](NOTICE) for the complete terms.
+See [LICENSE.md](LICENSE.md) and [NOTICE](NOTICE) for the complete terms. Preserve
+the generated `THIRD_PARTY_NOTICES.txt` dependency notices in production artifacts.

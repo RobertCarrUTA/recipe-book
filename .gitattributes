@@ -1,2 +1,4 @@
+# Keep reviewed release bytes identical on Windows and Linux checkouts.
+* text=auto eol=lf
 data/recipes.json linguist-generated=true text eol=lf
 tests/fixtures/normalization_catalog_snapshot.json linguist-generated=true text eol=lf

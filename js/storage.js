@@ -3,6 +3,7 @@ import { normalizeRecipeMultiplierRecord } from "./recipe_multiplier.js";
 import { normalizeRecipeSort, recipeSortModes } from "./recipe_sort.js";
 
 export const storageKeys = Object.freeze({
+  snapshot: "offline_recipebook_state_snapshot",
   version: "offline_recipebook_storage_version",
   groceryState: "offline_recipebook_grocery_state_v1",
   groceryChecked: "offline_recipebook_grocery_checked_v1",
@@ -27,9 +28,16 @@ export const storageKeys = Object.freeze({
   filters: "offline_recipebook_filters_v1",
 });
 
-export const currentStorageVersion = 6;
+export const currentStorageVersion = 7;
 export const backupAppId = "robert-recipe-book";
 export const backupSchemaVersion = 1;
+export const MAX_BACKUP_BYTES = 2 * 1024 * 1024;
+const MAX_TEXT_LENGTH = 20000;
+const unsafeKeys = new Set(["__proto__", "prototype", "constructor"]);
+const unobservedSnapshot = Symbol("unobserved snapshot");
+const sessions = new WeakMap();
+const storageStatuses = new WeakMap();
+let defaultStorageAccessFailed = false;
 const mobileViews = new Set(["recipes", "grocery"]);
 const uiBooleanStorageBindings = Object.freeze([
   ["groceryControlsCollapsed", storageKeys.groceryControlsCollapsed],
@@ -43,13 +51,21 @@ const uiBooleanStorageBindings = Object.freeze([
 ]);
 
 function isPlainObject(value) {
-  return Boolean(value && typeof value === "object" && !Array.isArray(value));
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  const prototype = Object.getPrototypeOf(value);
+  return prototype === Object.prototype || prototype === null;
 }
 
 function getDefaultStorage() {
   try {
-    return globalThis.localStorage;
+    const storage = globalThis.localStorage;
+    if (storage && defaultStorageAccessFailed) {
+      sessions.set(storage, unobservedSnapshot);
+      defaultStorageAccessFailed = false;
+    }
+    return storage;
   } catch (error) {
+    defaultStorageAccessFailed = true;
     return null;
   }
 }
@@ -68,34 +84,8 @@ function read(storage, key) {
   try {
     return storage.getItem(key);
   } catch (error) {
+    setStorageStatus(storage, "unavailable");
     return null;
-  }
-}
-
-function write(storage, key, value) {
-  try {
-    storage.setItem(key, value);
-    return true;
-  } catch (error) {
-    return false;
-  }
-}
-
-function writeJson(storage, key, value) {
-  return write(storage, key, JSON.stringify(value));
-}
-
-function writeBoolean(storage, key, value) {
-  return write(storage, key, value ? "1" : "0");
-}
-
-function remove(storage, key) {
-  try {
-    storage.removeItem(key);
-    return true;
-  } catch (error) {
-    // Storage failures are non-fatal; the app remains usable in-memory.
-    return false;
   }
 }
 
@@ -127,7 +117,7 @@ function truthyRecord(value) {
   if (!isPlainObject(value)) return {};
 
   return Object.keys(value).reduce((record, key) => {
-    if (value[key]) record[key] = true;
+    if (!unsafeKeys.has(key) && value[key]) record[key] = true;
     return record;
   }, {});
 }
@@ -135,6 +125,7 @@ function truthyRecord(value) {
 function normalizeManualGroceryItems(value) {
   if (!isPlainObject(value)) return {};
   return Object.keys(value).reduce((items, id) => {
+    if (unsafeKeys.has(id)) return items;
     const item = value[id];
     if (!isPlainObject(item)) return items;
 
@@ -142,6 +133,7 @@ function normalizeManualGroceryItems(value) {
     if (!name) return items;
 
     const itemId = String(item.id || id).trim() || String(id);
+    if (unsafeKeys.has(itemId)) return items;
     items[itemId] = {
       id: itemId,
       name,
@@ -164,7 +156,7 @@ function normalizeFilterData(value) {
   return Object.keys(value).reduce((filters, key) => {
     const normalizedKey = String(key || "").trim();
     const selected = normalizeStringList(value[key]);
-    if (normalizedKey && selected.length) filters[normalizedKey] = selected;
+    if (normalizedKey && !unsafeKeys.has(normalizedKey) && selected.length) filters[normalizedKey] = selected;
     return filters;
   }, {});
 }
@@ -179,9 +171,11 @@ export function normalizeUiState(uiState) {
 
   return {
     ...defaults,
+    // Keep bounded additive preferences in v1 backups when a newer UI introduces them.
+    ...Object.fromEntries(Object.entries(ui).filter(([key]) => !unsafeKeys.has(key))),
     collapsedGroceryGroups: truthyRecord(ui.collapsedGroceryGroups),
     filters: normalizeFilterData(ui.filters),
-    groceryControlsCollapsed: Boolean(ui.groceryControlsCollapsed),
+    groceryControlsCollapsed: ui.groceryControlsCollapsed === undefined ? true : Boolean(ui.groceryControlsCollapsed),
     grocerySearchSuffix: String(ui.grocerySearchSuffix || "").trim(),
     groupItems: Boolean(ui.groupItems),
     hideCheckedGroceryItems: Boolean(ui.hideCheckedGroceryItems),
@@ -196,64 +190,42 @@ export function normalizeUiState(uiState) {
   };
 }
 
-function writeStorageVersion(storage, version) {
-  return write(storage, storageKeys.version, String(version));
-}
-
 function readStorageVersion(storage) {
   const version = Number(read(storage, storageKeys.version));
   return Number.isInteger(version) && version > 0 ? version : 1;
 }
 
-function hasFutureStorageVersion(storage) {
-  return readStorageVersion(storage) > currentStorageVersion;
-}
-
 export function migratePersistentState(storage = getDefaultStorage()) {
   if (!storage) return { fromVersion: 0, toVersion: currentStorageVersion, migrated: false };
-
+  setStorageStatus(storage);
+  const snapshot = inspectSnapshot(storage);
+  if (snapshot.data) {
+    sessions.set(storage, snapshot.raw);
+    const fenced = ensureVersionFence(storage);
+    return { fromVersion: currentStorageVersion, toVersion: currentStorageVersion, migrated: false, ...(fenced ? {} : { failed: true }) };
+  }
   const fromVersion = readStorageVersion(storage);
-  if (fromVersion > currentStorageVersion) {
+  if (snapshot.reason || fromVersion > currentStorageVersion) {
+    const reason = snapshot.reason || "future-version";
+    if (reason === "unavailable") sessions.set(storage, unobservedSnapshot);
+    setStorageStatus(storage, reason);
     return {
       fromVersion,
-      incompatible: true,
-      migrated: false,
-      toVersion: currentStorageVersion,
-    };
-  }
-
-  if (fromVersion < 2) {
-    const savedGroceryState = readObject(storage, storageKeys.groceryState);
-    const selectedFromLegacyState = truthyRecord(savedGroceryState.selectedRecipeIds);
-    const selectedRecipes = readObject(storage, storageKeys.selectedRecipes);
-
-    if (Object.keys(selectedFromLegacyState).length && !Object.keys(selectedRecipes).length) {
-      if (!writeJson(storage, storageKeys.selectedRecipes, selectedFromLegacyState)) {
-        return {
-          failed: true,
-          fromVersion,
-          migrated: false,
-          toVersion: fromVersion,
-        };
-      }
-    }
-  }
-
-  if (fromVersion !== currentStorageVersion && !writeStorageVersion(storage, currentStorageVersion)) {
-    return {
+      incompatible: reason === "future-version",
       failed: true,
-      fromVersion,
       migrated: false,
       toVersion: fromVersion,
     };
   }
-
-  if (fromVersion < 6) remove(storage, storageKeys.groceryState);
-
+  const data = readLegacyState(storage);
+  const observed = getPersistentStateStatus(storage).reason !== "unavailable";
+  sessions.set(storage, observed ? null : unobservedSnapshot);
+  const committed = observed && commitSnapshot(data, storage);
   return {
     fromVersion,
-    toVersion: currentStorageVersion,
-    migrated: fromVersion !== currentStorageVersion,
+    toVersion: committed ? currentStorageVersion : fromVersion,
+    migrated: committed,
+    ...(committed ? {} : { failed: true }),
   };
 }
 
@@ -261,7 +233,7 @@ export function createDefaultUiState() {
   return {
     collapsedGroceryGroups: {},
     filters: {},
-    groceryControlsCollapsed: false,
+    groceryControlsCollapsed: true,
     grocerySearchSuffix: "",
     groupItems: false,
     hideCheckedGroceryItems: false,
@@ -287,7 +259,7 @@ function readPersistedUiState(storage) {
   ui.recipeSort = normalizeRecipeSort(read(storage, storageKeys.recipeSort));
 
   uiBooleanStorageBindings.forEach(([key, storageKey]) => {
-    ui[key] = readBoolean(storage, storageKey);
+    ui[key] = readBoolean(storage, storageKey, ui[key]);
   });
 
   return ui;
@@ -323,8 +295,22 @@ export function normalizePersistentStateBackup(backup) {
   if (backup.app !== backupAppId || backup.schemaVersion !== backupSchemaVersion) {
     throw new Error("Backup file is not compatible with this recipe book.");
   }
+  assertBoundedJson(backup);
+  if (backup.storageVersion !== undefined && (
+    !Number.isInteger(backup.storageVersion) || backup.storageVersion < 1 || backup.storageVersion > currentStorageVersion
+  )) throw new Error("Backup storage version is not compatible with this recipe book.");
+  validatePersistentData(backup.data);
+  return normalizePersistentData(backup.data);
+}
 
-  const data = isPlainObject(backup.data) ? backup.data : {};
+export function parsePersistentStateBackup(text) {
+  if (typeof text !== "string" || text.length > MAX_BACKUP_BYTES || new TextEncoder().encode(text).byteLength > MAX_BACKUP_BYTES) {
+    throw new Error("Backup exceeds the 2 MiB limit.");
+  }
+  return normalizePersistentStateBackup(safeJsonParse(text));
+}
+
+function normalizePersistentData(data) {
   return {
     favoriteRecipeIds: truthyRecord(data.favoriteRecipeIds),
     groceryCheckedByKey: truthyRecord(data.groceryCheckedByKey),
@@ -336,21 +322,89 @@ export function normalizePersistentStateBackup(backup) {
   };
 }
 
-export function restorePersistentState(storage = getDefaultStorage()) {
-  if (!storage) {
-    return {
-      favoriteRecipeIds: {},
-      groceryCheckedByKey: {},
-      manualGroceryItemsById: {},
-      mealPlan: normalizeMealPlan(),
-      recipeMultipliersById: {},
-      selectedRecipeIds: {},
-      ui: createDefaultUiState(),
-    };
+function assertBoundedJson(value) {
+  let nodes = 0;
+  const visited = new WeakSet();
+  function visit(item, depth) {
+    if (++nodes > 50000 || depth > 12) throw new Error("Backup is too complex.");
+    if (typeof item === "string" && item.length > MAX_TEXT_LENGTH) throw new Error("Backup text is too long.");
+    if (item === null || typeof item === "string" || typeof item === "boolean") return;
+    if (typeof item === "number" && Number.isFinite(item)) return;
+    if (!Array.isArray(item) && !isPlainObject(item)) throw new Error("Backup contains invalid data.");
+    if (visited.has(item)) throw new Error("Backup contains circular data.");
+    visited.add(item);
+    const keys = Object.keys(item);
+    if (keys.length > 5000) throw new Error("Backup contains too many items.");
+    for (const key of keys) {
+      if (unsafeKeys.has(key) || key.length > 1000) throw new Error("Backup contains an invalid key.");
+      visit(item[key], depth + 1);
+    }
+    visited.delete(item);
   }
+  visit(value, 0);
+  if (new TextEncoder().encode(JSON.stringify(value)).byteLength > MAX_BACKUP_BYTES) {
+    throw new Error("Backup exceeds the 2 MiB limit.");
+  }
+}
 
-  migratePersistentState(storage);
+function validatePersistentData(data) {
+  if (!isPlainObject(data)) throw new Error("Backup data must be an object.");
+  const requireRecord = (record) => {
+    if (!isPlainObject(record)) throw new Error("Backup contains an invalid record.");
+  };
+  const booleanRecord = (record) => {
+    requireRecord(record);
+    if (Object.values(record).some((value) => ![true, false, 0, 1].includes(value))) {
+      throw new Error("Backup contains an invalid selection.");
+    }
+  };
+  for (const key of ["favoriteRecipeIds", "groceryCheckedByKey", "selectedRecipeIds"]) {
+    if (Object.hasOwn(data, key)) booleanRecord(data[key]);
+  }
+  if (Object.hasOwn(data, "recipeMultipliersById")) {
+    requireRecord(data.recipeMultipliersById);
+    if (Object.values(data.recipeMultipliersById).some((value) => typeof value !== "number" || !Number.isFinite(value) || value <= 0)) {
+      throw new Error("Backup contains an invalid multiplier.");
+    }
+  }
+  if (Object.hasOwn(data, "manualGroceryItemsById")) {
+    requireRecord(data.manualGroceryItemsById);
+    for (const item of Object.values(data.manualGroceryItemsById)) {
+      requireRecord(item);
+      if (typeof item.name !== "string" || !item.name.trim() ||
+        (item.id !== undefined && (typeof item.id !== "string" || unsafeKeys.has(item.id))) ||
+        (item.note !== undefined && typeof item.note !== "string")) {
+        throw new Error("Backup contains an invalid grocery item.");
+      }
+    }
+  }
+  if (Object.hasOwn(data, "mealPlan")) {
+    requireRecord(data.mealPlan);
+    const days = Object.hasOwn(data.mealPlan, "days") ? data.mealPlan.days : data.mealPlan;
+    requireRecord(days);
+    for (const ids of Object.values(days)) {
+      if (!Array.isArray(ids) || ids.some((id) => typeof id !== "string")) throw new Error("Backup contains an invalid meal plan.");
+    }
+  }
+  if (Object.hasOwn(data, "ui")) {
+    requireRecord(data.ui);
+    for (const [key] of uiBooleanStorageBindings) {
+      if (Object.hasOwn(data.ui, key) && typeof data.ui[key] !== "boolean") throw new Error("Backup contains an invalid preference.");
+    }
+    for (const key of ["grocerySearchSuffix", "mobileView", "recipeSearch", "recipeSort"]) {
+      if (Object.hasOwn(data.ui, key) && typeof data.ui[key] !== "string") throw new Error("Backup contains an invalid preference.");
+    }
+    if (Object.hasOwn(data.ui, "collapsedGroceryGroups")) booleanRecord(data.ui.collapsedGroceryGroups);
+    if (Object.hasOwn(data.ui, "filters")) {
+      requireRecord(data.ui.filters);
+      for (const values of Object.values(data.ui.filters)) {
+        if (!Array.isArray(values) || values.some((value) => typeof value !== "string")) throw new Error("Backup contains an invalid filter.");
+      }
+    }
+  }
+}
 
+function readLegacyState(storage) {
   const savedGroceryState = readObject(storage, storageKeys.groceryState);
   const selectedFromLegacyState = truthyRecord(savedGroceryState.selectedRecipeIds);
   const recipeMultipliers = normalizeRecipeMultiplierRecord({
@@ -372,37 +426,159 @@ export function restorePersistentState(storage = getDefaultStorage()) {
   };
 }
 
+function setStorageStatus(storage, reason = null) {
+  if (storage && typeof storage === "object") storageStatuses.set(storage, { reason, writable: reason === null });
+}
+
+export function getPersistentStateStatus(storage = getDefaultStorage()) {
+  if (!storage) return { reason: "unavailable", writable: false };
+  return { ...(storageStatuses.get(storage) || { reason: null, writable: true }) };
+}
+
+function inspectSnapshot(storage) {
+  let raw;
+  try {
+    raw = storage.getItem(storageKeys.snapshot);
+    if (Number(storage.getItem(storageKeys.version)) > currentStorageVersion) return { raw, reason: "future-version" };
+  } catch (error) {
+    return { raw, reason: "unavailable" };
+  }
+  try {
+    if (raw === null) return { raw, data: null };
+    if (raw.length > MAX_BACKUP_BYTES) return { raw, reason: "corrupt-snapshot" };
+    const snapshot = JSON.parse(raw);
+    if (snapshot?.storageVersion > currentStorageVersion) return { raw, reason: "future-version" };
+    if (!isPlainObject(snapshot) || snapshot.storageVersion !== currentStorageVersion ||
+      typeof snapshot.revision !== "string" || !snapshot.revision) throw new Error("Invalid snapshot");
+    assertBoundedJson(snapshot);
+    validatePersistentData(snapshot.data);
+    for (const key of ["favoriteRecipeIds", "groceryCheckedByKey", "manualGroceryItemsById", "mealPlan", "recipeMultipliersById", "selectedRecipeIds", "ui"]) {
+      if (!Object.hasOwn(snapshot.data, key)) throw new Error("Incomplete snapshot");
+    }
+    return { raw, data: normalizePersistentData(snapshot.data) };
+  } catch (error) {
+    return { raw, reason: "corrupt-snapshot" };
+  }
+}
+
+function ensureVersionFence(storage) {
+  try {
+    const version = Number(storage.getItem(storageKeys.version));
+    if (version > currentStorageVersion) {
+      setStorageStatus(storage, "future-version");
+      return false;
+    }
+    if (version !== currentStorageVersion) storage.setItem(storageKeys.version, String(currentStorageVersion));
+    return true;
+  } catch (error) {
+    setStorageStatus(storage, "write-failed");
+    return false;
+  }
+}
+
+function commitSnapshot(data, storage, { replaceCorrupt = false } = {}) {
+  if (!storage) return false;
+  const previous = inspectSnapshot(storage);
+  if (previous.reason && !(replaceCorrupt && previous.reason === "corrupt-snapshot")) {
+    if (previous.reason === "unavailable") sessions.set(storage, unobservedSnapshot);
+    setStorageStatus(storage, previous.reason);
+    return false;
+  }
+  const baseline = sessions.get(storage);
+  const observed = sessions.has(storage) && baseline !== unobservedSnapshot;
+  if (!replaceCorrupt && (baseline === unobservedSnapshot || (!observed && previous.raw !== null))) {
+    setStorageStatus(storage, "restore-required");
+    return false;
+  }
+  if (observed && baseline !== previous.raw) {
+    setStorageStatus(storage, "conflict");
+    return false;
+  }
+  let serialized;
+  try {
+    const snapshot = {
+      storageVersion: currentStorageVersion,
+      revision: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+      data,
+    };
+    assertBoundedJson(snapshot);
+    validatePersistentData(data);
+    serialized = JSON.stringify(snapshot);
+  } catch (error) {
+    setStorageStatus(storage, "invalid-data");
+    return false;
+  }
+  // Fence older clients before adopting the snapshot. If the following commit is
+  // interrupted, legacy fields remain intact and this version can retry migration.
+  if (!ensureVersionFence(storage)) return false;
+  try {
+    // One setItem is the commit point. Failure leaves the previous snapshot intact.
+    storage.setItem(storageKeys.snapshot, serialized);
+    sessions.set(storage, serialized);
+    setStorageStatus(storage);
+    return true;
+  } catch (error) {
+    setStorageStatus(storage, "write-failed");
+    return false;
+  }
+}
+
+export function restorePersistentState(storage = getDefaultStorage()) {
+  if (!storage) return normalizePersistentData({});
+  setStorageStatus(storage);
+  const snapshot = inspectSnapshot(storage);
+  if (snapshot.data) {
+    sessions.set(storage, snapshot.raw);
+    ensureVersionFence(storage);
+    return snapshot.data;
+  }
+  const legacy = readLegacyState(storage);
+  if (snapshot.reason) {
+    sessions.set(storage, snapshot.reason === "unavailable" ? unobservedSnapshot : snapshot.raw);
+    setStorageStatus(storage, snapshot.reason);
+    return legacy;
+  }
+  if (getPersistentStateStatus(storage).reason === "unavailable") {
+    sessions.set(storage, unobservedSnapshot);
+    return legacy;
+  }
+  sessions.set(storage, snapshot.raw);
+  commitSnapshot(normalizePersistentData(legacy), storage);
+  return legacy;
+}
+
 export function savePersistentState(state, storage = getDefaultStorage()) {
-  if (!storage || hasFutureStorageVersion(storage)) return false;
+  if (!storage) return false;
+  try {
+    return commitSnapshot(createPersistentStateBackup(state).data, storage);
+  } catch (error) {
+    setStorageStatus(storage, "invalid-data");
+    return false;
+  }
+}
 
-  const runtime = state.runtime || {};
-  const ui = state.ui || createDefaultUiState();
-  const writes = [
-    write(storage, storageKeys.version, String(currentStorageVersion)),
-    writeJson(storage, storageKeys.selectedRecipes, runtime.selectedRecipeIds || {}),
-    writeJson(storage, storageKeys.recipeMultipliers, runtime.recipeMultipliersById || {}),
-    writeJson(storage, storageKeys.groceryChecked, runtime.groceryCheckedByKey || {}),
-    writeJson(storage, storageKeys.manualGroceryItems, runtime.manualGroceryItemsById || {}),
-    writeJson(storage, storageKeys.favoriteRecipes, runtime.favoriteRecipeIds || {}),
-    writeJson(storage, storageKeys.mealPlan, normalizeMealPlan(state.mealPlan)),
-    writeJson(storage, storageKeys.collapsedGroceryGroups, ui.collapsedGroceryGroups || {}),
-    writeJson(storage, storageKeys.filters, ui.filters || {}),
-    write(storage, storageKeys.grocerySearchSuffix, ui.grocerySearchSuffix || ""),
-    write(storage, storageKeys.mobileView, normalizeMobileView(ui.mobileView)),
-    write(storage, storageKeys.recipeSearch, ui.recipeSearch || ""),
-    write(storage, storageKeys.recipeSort, normalizeRecipeSort(ui.recipeSort)),
-    ...uiBooleanStorageBindings.map(([key, storageKey]) => writeBoolean(storage, storageKey, ui[key])),
-  ];
-
-  return writes.every(Boolean);
+// Validate and persist a staged restore before replacing any live application state.
+// An explicit backup restore may repair corrupt storage, but never a future version.
+export function commitRestoredPersistentState(data, storage = getDefaultStorage()) {
+  if (!storage) return false;
+  try {
+    assertBoundedJson(data);
+    validatePersistentData(data);
+    return commitSnapshot(normalizePersistentData(data), storage, { replaceCorrupt: true });
+  } catch (error) {
+    setStorageStatus(storage, "invalid-data");
+    return false;
+  }
 }
 
 export function clearGroceryPersistence(storage = getDefaultStorage()) {
-  if (!storage || hasFutureStorageVersion(storage)) return;
-
-  remove(storage, storageKeys.groceryState);
-  remove(storage, storageKeys.groceryChecked);
-  remove(storage, storageKeys.manualGroceryItems);
-  remove(storage, storageKeys.recipeMultipliers);
-  remove(storage, storageKeys.selectedRecipes);
+  if (!storage) return false;
+  const snapshot = inspectSnapshot(storage);
+  if (snapshot.reason) {
+    if (snapshot.reason === "unavailable") sessions.set(storage, unobservedSnapshot);
+    setStorageStatus(storage, snapshot.reason);
+    return false;
+  }
+  const data = snapshot.data || readLegacyState(storage);
+  return commitSnapshot({ ...data, selectedRecipeIds: {}, recipeMultipliersById: {}, groceryCheckedByKey: {}, manualGroceryItemsById: {} }, storage);
 }

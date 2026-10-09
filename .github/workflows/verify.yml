@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      - dev
 
 permissions:
   contents: read
@@ -16,7 +17,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Static app checks (${{ matrix.os }})
+    name: Recipe app checks (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     timeout-minutes: 20
     strategy:
@@ -29,6 +30,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -39,6 +42,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Audit dependency advisories
+        if: runner.os == 'Linux'
+        run: npm audit --audit-level=high
+
       - name: Install browser
         if: runner.os == 'Linux'
         run: npx playwright install --with-deps chromium
@@ -46,6 +53,50 @@ jobs:
       - name: Run core verification
         run: npm run verify
 
+      - name: Reproduce tracked Pages release
+        run: npm run check:release
+
       - name: Run browser smoke tests
         if: runner.os == 'Linux'
         run: npm run smoke:browser
+        env:
+          VISUAL_REGRESSION: '1'
+
+      - name: Retain browser diagnostics
+        if: always() && runner.os == 'Linux'
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-evidence-${{ github.sha }}
+          path: |
+            playwright-report/
+            test-results/e2e-results.json
+            test-results/playwright/
+            test-results/offline-lifecycle.json
+          retention-days: 14
+
+  cross-browser:
+    name: Firefox and WebKit journeys
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps firefox webkit
+      - run: npm run build
+      - name: Run behavior, recovery and theme journeys
+        run: npx playwright test --project=firefox --project=webkit --grep-invert "complete screen and accessibility matrix"
+        env:
+          CROSS_BROWSER: '1'
+      - name: Retain cross-browser diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cross-browser-evidence-${{ github.sha }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14
