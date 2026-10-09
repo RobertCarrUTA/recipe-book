@@ -99,7 +99,17 @@ export function App() {
     </nav>
   );
   return (
-    <>
+    <div
+      onClickCapture={(event) => {
+        // WebKit does not focus pointer-clicked buttons by default. Capture a
+        // consistent opener before dialogs move focus, including React portals.
+        if (event.button !== 0 || !(event.target instanceof Element)) return;
+        const control = event.target.closest<HTMLElement>(
+          "button:not(:disabled),a[href],summary",
+        );
+        control?.focus({ preventScroll: true });
+      }}
+    >
       <a className="skip-link" href="#mainContent">
         Skip to main content
       </a>
@@ -223,6 +233,6 @@ export function App() {
       >
         {state.message}
       </div>
-    </>
+    </div>
   );
 }

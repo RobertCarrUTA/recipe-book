@@ -25,6 +25,10 @@ Actual browser review reproduced and protected these defects: queued back naviga
 
 The specialist visually inspected 15 prior captures spanning all eight screens, desktop/mobile themes, tablet cooking/planning and 360px groceries. Root additionally inspected mobile browse, 360px dark groceries, tablet dark cooking and desktop light planning. They reported no other blocking clipping/contrast/layout problem in those samples. The review found a lingering success toast over cooking controls; cooking now clears stale messages and places new notices above the footer. Final captures use viewport-sized images to avoid full-page screenshot artifacts around fixed navigation and modal overlays.
 
+Root subsequently inspected 430px light recipe detail, 1024px dark groceries, 1280px light browse and 1920px dark settings, completing representative visual inspection at all eight required sizes. These samples had no additional material clipping or overlap findings. This is not a claim that every pixel of all 128 captures was manually inspected.
+
+Windows WebKit exposed a pointer-focus difference absent from the passing Linux CI run: its mousedown default blurred a button before a dialog captured its opener. The shared application click-capture boundary now focuses the activated button before its action runs. All 52 WebKit behavior/recovery/theme journeys passed locally after this correction, including source return, cancel confirmation and nested cooking. The first parallel local rerun also had one browser startup crash; the complete single-worker rerun passed. Local Firefox could not launch (`spawn UNKNOWN`); Linux CI runs both Firefox and WebKit and passed at `0440d15`, with the focus-fix head requiring a fresh CI result.
+
 New grocery options start collapsed so ingredients appear immediately; explicit old expanded/collapsed preferences remain intact. Card metadata and navigation labels are at least 12px. Recipe search controls retain their saved collapse preference, and the filter dialog preserves multiple collection selections.
 
 ## Evidence limits
