@@ -18,7 +18,13 @@ export default defineConfig({
   retries: 0,
   reporter: [
     ["list"],
-    ["json", { outputFile: "test-results/e2e-results.json" }],
+    [
+      "json",
+      {
+        outputFile:
+          process.env.RECIPE_BOOK_REPORT || "test-results/e2e-results.json",
+      },
+    ],
     ["html", { outputFolder: "playwright-report", open: "never" }],
   ],
   use: {
