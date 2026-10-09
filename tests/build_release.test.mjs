@@ -12,7 +12,7 @@ async function fixture(run){
   try{
     const source=path.join(directory,'dist');await fs.mkdir(path.join(source,'assets'),{recursive:true});
     await fs.mkdir(path.join(source,'data'));
-    await fs.writeFile(path.join(source,'index.html'),'<html><head><meta http-equiv="Content-Security-Policy" content="default-src \'self\'; worker-src \'self\'"><script src="/recipe-book/assets/app-a.js"></script></head><body></body></html>');
+    await fs.writeFile(path.join(source,'index.html'),'<html><head><meta http-equiv="Content-Security-Policy" content="default-src \'self\'; worker-src \'self\'"><script type="module" src="/recipe-book/assets/app-a.js"></script></head><body></body></html>');
     await fs.writeFile(path.join(source,'assets/app-a.js'),'console.log("built application")');
     await fs.writeFile(path.join(source,'data/recipes.json'),'[]');
     await run({directory,source});
@@ -33,6 +33,7 @@ test('build integrity rejects altered chunks and unrecorded output files',async(
 }));
 
 test('Pages staging copies a verified clean release and removes only prior generated chunks',async()=>fixture(async({directory,source})=>{
+  await fs.writeFile(path.join(source,'THIRD_PARTY_NOTICES.txt'),'Dependency notices\n');
   const manifest=await finalizeBuild({directory:source,...provenance});
   const destination=path.join(directory,'staged');await fs.mkdir(path.join(destination,'assets'),{recursive:true});
   await fs.writeFile(path.join(destination,'assets/old.js'),'old');
@@ -42,6 +43,7 @@ test('Pages staging copies a verified clean release and removes only prior gener
   await stagePagesRelease({source,destination});
   assert.equal(await fs.readFile(path.join(destination,'source.txt'),'utf8'),'source remains');
   assert.equal(await fs.readFile(path.join(destination,'assets/unrelated.js'),'utf8'),'keep');
+  assert.equal(await fs.readFile(path.join(destination,'THIRD_PARTY_NOTICES.txt'),'utf8'),'Dependency notices\n');
   await assert.rejects(fs.stat(path.join(destination,'assets/old.js')),error=>error.code==='ENOENT');
   assert.deepEqual(JSON.parse(await fs.readFile(path.join(destination,'release-manifest.json'),'utf8')),manifest);
 }));

@@ -2,15 +2,15 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import vm from 'node:vm';
 import {webcrypto} from 'node:crypto';
-import {sha256} from '../scripts/build-contract.mjs';
+import {sha256,readWorkerTemplate} from '../scripts/build-contract.mjs';
 import {test} from './test_helpers.mjs';
 
-const template=await fs.readFile(new URL('../scripts/release-worker-template.js',import.meta.url),'utf8');
+const template=await readWorkerTemplate();
 const scope='https://example.test/recipe-book/';
 const prefix=`rb-release-v1-${encodeURIComponent(scope)}-`;
 const release='a'.repeat(24);
 const config={release,document:'complete shell',shell:[{path:'index.html',sha256:sha256('complete shell')},{path:'assets/app-hash.js',sha256:sha256('complete app')}]};
-const recipe={id:'chili',title:'Chili',ingredients:['Beans'],instructions:['Simmer.']};
+const recipe={id:'chili',title:'Chili',ingredients:['Beans'],instructions:['Simmer.'],groceryIngredients:[{item:'Beans',quantity:1,unit:'cup'}]};
 const recipes=()=>new Response(JSON.stringify([recipe]),{headers:{'content-type':'application/json'}});
 function harness(fetcher=async url=>String(url).endsWith('recipes.json')?recipes():new Response(String(url).endsWith('.js')?'complete app':'complete shell')){
   const stores=new Map(),listeners=new Map(),deleted=[];
@@ -38,13 +38,22 @@ test('a wrong successful response rejects the entire release without deleting ot
 test('a failed legacy upgrade restores only its matching pristine cached navigation',async()=>{
   const h=harness(async()=>new Response('missing',{status:503}));
   const legacy=await h.caches.open('recipe-book-shell-20261008-4');
-  await legacy.put(scope,new Response('<script src="./js/app.js"></script>'));
+  await legacy.put(scope,new Response('<body><script src="./js/app.js"></script></body>'));
   await legacy.put(`${scope}index.html`,new Response('<meta name="recipe-book-release" content="new">'));
   const unrelated=await h.caches.open('recipe-book-shell-20261007-1');
   await unrelated.put('https://example.test/other/',new Response('other'));
   await assert.rejects(h.context.installRelease());
   assert.match(await(await legacy.match(`${scope}index.html`)).text(),/js\/app.js/);
+  assert.match(await(await legacy.match(`${scope}index.html`)).text(),/Previous offline version/);
   assert.equal(await(await unrelated.match('https://example.test/other/')).text(),'other');
+});
+
+test('legacy recovery never treats a newer bootstrap document as pristine legacy HTML',async()=>{
+  const h=harness();const cache=await h.caches.open('recipe-book-shell-20261008-4');
+  const next='<body><meta name="recipe-book-release" content="new"><script>const legacyPath="js/app.js";</script></body>';
+  await cache.put(scope,new Response(next));await cache.put(`${scope}index.html`,new Response(next));
+  assert.equal(await h.context.recoverLegacyNavigation(scope),false);
+  assert.equal(await(await cache.match(`${scope}index.html`)).text(),next);
 });
 test('recipe requests keep the validated collection across invalid network responses',async()=>{
   const h=harness(async()=>new Response('<html>error</html>',{headers:{'content-type':'text/html'}}));
@@ -52,6 +61,37 @@ test('recipe requests keep the validated collection across invalid network respo
   const response=await h.context.recipeResponse(new Request(`${scope}data/recipes.json?load=1`));
   assert.equal((await response.json())[0].id,'chili');
   assert.equal((await(await cache.match(`${scope}data/recipes.json`)).json())[0].id,'chili');
+});
+
+test('malformed structured groceries cannot replace a validated cached collection',async()=>{
+  const malformed={...recipe,groceryIngredients:['8 oz beans']};
+  const h=harness(async()=>new Response(JSON.stringify([malformed]),{headers:{'content-type':'application/json'}}));
+  const cache=await h.caches.open(`${prefix}recipes-schema1`);await cache.put(`${scope}data/recipes.json`,recipes());
+  const response=await h.context.recipeResponse(new Request(`${scope}data/recipes.json?bad-groceries=1`));
+  assert.deepEqual((await response.json())[0].groceryIngredients,recipe.groceryIngredients);
+  assert.deepEqual((await(await cache.match(`${scope}data/recipes.json`)).json())[0].groceryIngredients,recipe.groceryIngredients);
+});
+
+test('an invalid older data-cache entry is never treated as validated fallback',async()=>{
+  const h=harness(async()=>{throw new Error('offline');});
+  const cache=await h.caches.open(`${prefix}recipes-schema1`);
+  await cache.put(`${scope}data/recipes.json`,new Response(JSON.stringify([{...recipe,groceryIngredients:['bad']}]),{headers:{'content-type':'application/json'}}));
+  assert.equal((await h.context.recipeResponse(new Request(`${scope}data/recipes.json`))).status,503);
+});
+
+test('recipe cache validation preserves optional nulls and additive fields but rejects malformed recognized data',async()=>{
+  const h=harness();
+  const valid={...recipe,author:null,equipment:null,notes:null,tags:null,rating:null,nutrition:null,link:null,extra:{future:true}};
+  const response=value=>new Response(JSON.stringify([value]),{headers:{'content-type':'application/json'}});
+  assert.equal(await h.context.validRecipes(response(valid)),true);
+  for(const malformed of [
+    {groceryIngredients:null}, {groceryIngredients:[{item:'beans',quantity:'not a quantity'}]},
+    {groceryIngredients:[{item:'beans',quantity:{min:3,max:1}}]}, {groceryIngredients:[{item:'beans',optional:'yes'}]},
+    {ingredients:['Beans',7]}, {notes:{text:'note'}}, {tags:{difficulty:42}},
+    {nutrition:{calories:[]}}, {rating:{count:-1}}, {link:'javascript:alert(1)'},
+  ]) assert.equal(await h.context.validRecipes(response({...recipe,...malformed})),false,JSON.stringify(malformed));
+  const catalog=JSON.parse(await fs.readFile(new URL('../data/recipes.json',import.meta.url),'utf8'));
+  assert.equal(await h.context.validRecipes(new Response(JSON.stringify(catalog),{headers:{'content-type':'application/json'}})),true);
 });
 test('recipe validation rejects duplicate IDs and malformed content',async()=>{
   const h=harness();

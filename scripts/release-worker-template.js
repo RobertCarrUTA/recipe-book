@@ -8,6 +8,8 @@ const INDEX = new URL('index.html', SCOPE).href;
 const RECIPE_URL = new URL('data/recipes.json', SCOPE).href;
 const ASSETS = new Map(RELEASE.shell.map((entry) => [new URL(entry.path, SCOPE).href, entry]));
 const clientReleases = new Map();
+/*__RECIPE_VALIDATION__*/
+/*__LEGACY_RECOVERY__*/
 
 async function digest(response) {
   const bytes = await response.clone().arrayBuffer();
@@ -17,29 +19,8 @@ async function digest(response) {
 async function validRecipes(response) {
   if (!response?.ok || response.redirected || !response.headers.get('content-type')?.toLowerCase().includes('json')) return false;
   try {
-    const data = await response.clone().json();
-    const ids = new Set();
-    return Array.isArray(data) && data.length > 0 && data.every((recipe) => {
-      if (!recipe || typeof recipe.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(recipe.id) ||
-        typeof recipe.title !== 'string' || !recipe.title.trim() || ids.has(recipe.id)) return false;
-      if (!['ingredients', 'instructions'].every((field) => Array.isArray(recipe[field]) && recipe[field].length > 0 &&
-        recipe[field].every((value) => typeof value === 'string' && value.trim()))) return false;
-      ids.add(recipe.id); return true;
-    });
+    return validRecipeCollection(await response.clone().json());
   } catch { return false; }
-}
-async function recoverLegacyNavigation() {
-  // Legacy workers updated index.html network-first but kept their original ./ copy.
-  for (const name of await caches.keys()) {
-    if (!/^recipe-book-shell-\d{8}-\d+$/.test(name)) continue;
-    const cache = await caches.open(name);
-    const original = await cache.match(SCOPE);
-    const current = await cache.match(INDEX);
-    if (!original || !current) continue;
-    const oldText = await original.clone().text();
-    const newText = await current.clone().text();
-    if (oldText.includes('js/app.js') && newText.includes('name="recipe-book-release"')) await cache.put(INDEX, original);
-  }
 }
 async function installRelease() {
   try {
@@ -62,7 +43,7 @@ async function installRelease() {
   } catch (error) {
     console.error('Recipe Book offline installation failed:', error);
     await caches.delete(SHELL);
-    await recoverLegacyNavigation();
+    await recoverLegacyNavigation(SCOPE);
     throw error;
   }
 }
@@ -83,7 +64,8 @@ async function recipeResponse(request) {
     const response = await fetch(request, { cache: 'no-store' });
     if (await validRecipes(response)) { await cache.put(RECIPE_URL, response.clone()); return response; }
   } catch { /* Use only the last validated collection. */ }
-  return await cache.match(RECIPE_URL) || new Response('Recipes unavailable offline.', { status: 503 });
+  const cached = await cache.match(RECIPE_URL);
+  return await validRecipes(cached) ? cached : new Response('Recipes unavailable offline.', { status: 503 });
 }
 async function shellResponse(request, clientId) {
   const url = new URL(request.url); url.search = ''; url.hash = '';

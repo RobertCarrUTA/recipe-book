@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { rootDir, sha256, normalizeBase, listFiles, fileRecords, isEntrypoint, canonicalText, canonicalizeTextOutputs } from './build-contract.mjs';
+import { rootDir, sha256, normalizeBase, listFiles, fileRecords, isEntrypoint, canonicalizeTextOutputs, readWorkerTemplate, addRecoveryBootstrap } from './build-contract.mjs';
 
 export async function finalizeBuild({ directory = path.join(rootDir, 'dist'), base = process.env.RECIPE_BOOK_BASE || '/', sourceCommit, dirty } = {}) {
   base = normalizeBase(base);
@@ -11,11 +11,13 @@ export async function finalizeBuild({ directory = path.join(rootDir, 'dist'), ba
   const { version } = JSON.parse(await fs.readFile(path.join(rootDir, 'app-version.json'), 'utf8'));
   if (!/^\d{8}-[1-9]\d*$/.test(version)) throw new Error('Invalid app version.');
   await canonicalizeTextOutputs(directory);
-  const original = await fs.readFile(path.join(directory, 'index.html'), 'utf8');
-  if (original.includes('name="recipe-book-release"')) throw new Error('Output already finalized; rebuild before finalizing.');
+  const raw = await fs.readFile(path.join(directory, 'index.html'), 'utf8');
+  if (raw.includes('name="recipe-book-release"')) throw new Error('Output already finalized; rebuild before finalizing.');
+  const original = await addRecoveryBootstrap(raw, base);
+  await fs.writeFile(path.join(directory, 'index.html'), original);
   const inputs = await fileRecords(directory, await listFiles(directory));
   const contentHash = sha256(JSON.stringify(inputs));
-  const template = canonicalText(await fs.readFile(path.join(rootDir, 'scripts/release-worker-template.js'), 'utf8'));
+  const template = await readWorkerTemplate();
   const workerHash = sha256(template);
   const release = sha256(JSON.stringify({ contentHash, sourceCommit, version, base, dirty, workerHash })).slice(0, 24);
   const index = original.replace('</head>', `<meta name="recipe-book-release" content="${release}"><meta name="recipe-book-commit" content="${sourceCommit}"></head>`);

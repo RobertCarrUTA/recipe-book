@@ -13,9 +13,11 @@ import {startBuildServer} from './serve-build.mjs';
 import {findBrowserExecutable} from './browser-executable.mjs';
 import {stagePagesRelease} from './stage-pages-release.mjs';
 import {checkStagedRelease} from './check-staged-release.mjs';
+import {storageKeys,currentStorageVersion} from '../js/storage.js';
 
 const temporary=await fs.mkdtemp(path.join(os.tmpdir(),'recipe-book-offline-'));
 const results=[];
+const legacyDirectories=new Map();
 const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:rootDir,encoding:'utf8'}).trim();
 const browser=await playwright.chromium.launch({headless:true,executablePath:await findBrowserExecutable({playwright})||undefined});
 async function production(name,base){
@@ -27,9 +29,17 @@ async function production(name,base){
   return{directory,manifest};
 }
 async function legacy(ref){
+  if(legacyDirectories.has(ref))return legacyDirectories.get(ref);
   const directory=path.join(temporary,`legacy-${ref}`);
   const files=execFileSync('git',['ls-tree','-r','--name-only',ref],{cwd:rootDir,encoding:'utf8'}).trim().split('\n').filter(file=>/^(?:index\.html|404\.html|sw\.js|manifest\.webmanifest|css\/|js\/|icons\/|data\/recipes\.json$)/.test(file));
-  for(const file of files){await fs.mkdir(path.dirname(path.join(directory,file)),{recursive:true});await fs.writeFile(path.join(directory,file),execFileSync('git',['show',`${ref}:${file}`],{cwd:rootDir,maxBuffer:20*1024*1024}));}
+  const objects=execFileSync('git',['cat-file','--batch'],{cwd:rootDir,input:files.map(file=>`${ref}:${file}\n`).join(''),maxBuffer:20*1024*1024});
+  let offset=0;
+  for(const file of files){
+    const newline=objects.indexOf(10,offset);const header=objects.subarray(offset,newline).toString();const match=header.match(/^[a-f0-9]+ blob (\d+)$/);assert.ok(match,`Missing historical fixture ${ref}:${file}`);
+    const start=newline+1,end=start+Number(match[1]);assert.ok(end<objects.length);offset=end+1;
+    await fs.mkdir(path.dirname(path.join(directory,file)),{recursive:true});await fs.writeFile(path.join(directory,file),objects.subarray(start,end));
+  }
+  legacyDirectories.set(ref,directory);
   return directory;
 }
 async function register(page,url){
@@ -96,6 +106,53 @@ try{
       await requestUpdate(page);await installationSettled(page);
       assert.ok(!(await cacheNames(page)).some(name=>name.endsWith(b.manifest.release)));
       await context.setOffline(true);await page.reload();await page.waitForSelector('.recipe-card');assert.equal(await page.locator('meta[name="recipe-book-release"]').getAttribute('content'),a.manifest.release);
+    }finally{await context.close();await served.close();}
+  });
+  await run('malformed structured groceries preserve the cached collection and the visible offline list',async()=>{
+    const catalog=JSON.parse(await fs.readFile(path.join(a.directory,'data/recipes.json'),'utf8'));
+    const chosen=catalog.find(recipe=>recipe.id==='chicken-fried-steak');const expected=chosen.groceryIngredients.length;
+    chosen.groceryIngredients=['8 oz steak'];let malformed=false;
+    const served=await startBuildServer({directory:a.directory,base:a.manifest.base,intercept:async(req,res,url)=>{if(malformed&&url.pathname.endsWith('data/recipes.json')){res.writeHead(200,{'Content-Type':'application/json'});res.end(JSON.stringify(catalog));return true;}return false;}});
+    const context=await browser.newContext();const page=await context.newPage();
+    await context.addInitScript(({keys,version})=>{if(sessionStorage.getItem('seeded'))return;localStorage.setItem(keys.version,String(version));localStorage.setItem(keys.selectedRecipes,JSON.stringify({'chicken-fried-steak':true}));sessionStorage.setItem('seeded','1');},{keys:storageKeys,version:currentStorageVersion});
+    try{
+      await page.goto(`${served.url}?view=grocery`);await expect(page.locator('.grocery-check')).toHaveCount(expected);await register(page,served.url);await report(page);
+      malformed=true;
+      const received=await page.evaluate(async(url)=>(await(await fetch(`${url}data/recipes.json?malformed=1`)).json()).find(recipe=>recipe.id==='chicken-fried-steak').groceryIngredients,served.url);
+      assert.equal(received.length,expected);assert.equal(typeof received[0],'object');
+      await context.setOffline(true);await page.reload();await expect(page.locator('.grocery-check')).toHaveCount(expected);
+    }finally{await context.close();await served.close();}
+  });
+  for(const [ref,release] of [['3117d47',root],['aec6001',b]])for(const mode of ['unavailable','invalid-script'])await run(`legacy ${ref} survives ${mode} worker and unavailable entry assets at ${release.manifest.base}`,async()=>{
+    let directory=await legacy(ref);let interrupted=false;
+    const served=await startBuildServer({base:release.manifest.base,resolveDirectory:()=>directory,intercept:async(req,res,url)=>{
+      if(!interrupted)return false;
+      if(url.pathname.endsWith('/sw.js')){res.writeHead(mode==='unavailable'?503:200,{'Content-Type':'text/javascript'});res.end(mode==='unavailable'?'Interrupted':'function {');return true;}
+      if(url.pathname.includes('/assets/')){res.writeHead(503);res.end('Interrupted');return true;}return false;
+    }});
+    const context=await browser.newContext();const page=await context.newPage();
+    try{
+      await page.goto(served.url);await page.waitForSelector('.recipe');await register(page,served.url);
+      directory=release.directory;interrupted=true;await page.reload();await expect(page.getByRole('heading',{name:'The update could not finish loading'})).toBeVisible();
+      assert.ok(await page.evaluate(async()=>{try{await(await navigator.serviceWorker.getRegistration()).update();return false;}catch{return true;}}));
+      await expect.poll(()=>page.evaluate(async(scope)=>{for(const name of await caches.keys()){if(!/^recipe-book-shell-\d{8}-\d+$/.test(name))continue;const response=await(await caches.open(name)).match(new URL('index.html',scope));if(response&&(await response.text()).includes('recipe-book-upgrade-recovery'))return true;}return false;},served.url),{timeout:10000}).toBe(true);
+      await context.setOffline(true);await page.reload();await page.waitForSelector('.recipe');await expect(page.locator('#recipe-book-upgrade-recovery')).toBeVisible();
+      assert.equal(await page.locator('meta[name="recipe-book-release"]').count(),0);
+    }finally{await context.close();await served.close();}
+  });
+  await run('legacy fallback after v7 adoption preserves the new snapshot and explains read-only recovery',async()=>{
+    let directory=await legacy('3117d47');let interrupted=false;
+    const served=await startBuildServer({base:root.manifest.base,resolveDirectory:()=>directory,intercept:async(req,res,url)=>{if(interrupted&&url.pathname.endsWith('/sw.js')){res.writeHead(503);res.end('Interrupted');return true;}return false;}});
+    const context=await browser.newContext();const page=await context.newPage();
+    try{
+      await page.goto(served.url);await page.waitForSelector('.recipe');await register(page,served.url);directory=root.directory;interrupted=true;
+      await page.reload();await page.waitForSelector('.recipe-card');await page.locator('.recipe-card button[aria-label$="to groceries"]').first().click();
+      await expect.poll(()=>page.evaluate(key=>{const raw=localStorage.getItem(key);return raw?Object.keys(JSON.parse(raw).data.selectedRecipeIds).length:0;},storageKeys.snapshot)).toBe(1);
+      const before=await page.evaluate(key=>localStorage.getItem(key),storageKeys.snapshot);
+      await context.setOffline(true);await page.reload();await page.waitForSelector('.recipe');await expect(page.locator('#recipe-book-upgrade-recovery')).toContainText('cannot show or save those newer changes');
+      await page.locator('.recipe .accordion-header').first().click();await page.locator('.recipe-add-toggle input[type="checkbox"]').first().check();await page.reload();await page.waitForSelector('.recipe');
+      assert.equal(await page.evaluate(key=>localStorage.getItem(key),storageKeys.snapshot),before);
+      assert.equal(await page.evaluate(key=>localStorage.getItem(key),storageKeys.version),'7');
     }finally{await context.close();await served.close();}
   });
   for(const ref of ['3117d47','aec6001'])await run(`actual legacy ${ref} interrupted install recovery and upgrade`,async()=>{

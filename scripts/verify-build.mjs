@@ -18,6 +18,11 @@ export async function verifyBuild(directory=path.join(rootDir,'dist')) {
   assert.ok(index.includes(`name="recipe-book-release" content="${manifest.release}"`));
   assert.ok(index.includes(`name="recipe-book-commit" content="${manifest.sourceCommit}"`));
   assert.ok(index.includes("worker-src 'self'"),'Worker must fit the production CSP.');
+  const bootstrap = index.match(/<script id="recipe-book-bootstrap">([\s\S]*?)<\/script>/)?.[1];
+  assert.ok(bootstrap,'Transport-independent recovery bootstrap must be present.');
+  const scriptPolicy = index.match(/script-src ([^;"\n]+)/)?.[1];
+  assert.equal(scriptPolicy, `'self' 'sha256-${Buffer.from(sha256(bootstrap),'hex').toString('base64')}'`, 'Only self and the exact recovery script hash may authorize scripts.');
+  assert.equal((index.match(/data-recipe-book-entry/g)||[]).length,2,'Only the entry marker and its bootstrap guard should be present.');
   assert.ok(!index.includes('http://')&&!index.includes('https://'),'Startup assets must be self-hosted.');
   for(const [,url]of index.matchAll(/(?:src|href)="([^"]+)"/g)){
     if(url.startsWith('#'))continue;

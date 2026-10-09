@@ -3,7 +3,7 @@ import path from 'node:path';
 import {rootDir,isEntrypoint} from './build-contract.mjs';
 import {verifyBuild} from './verify-build.mjs';
 
-function safeArtifact(file){return /^(?:assets\/[A-Za-z0-9_.-]+|data\/recipes\.json|icons\/icon\.svg|index\.html|404\.html|sw\.js|theme-init\.js|manifest\.webmanifest|build-info\.json|LICENSE\.md|NOTICE|\.nojekyll)$/.test(file);}
+function safeArtifact(file){return /^(?:assets\/[A-Za-z0-9_.-]+|data\/recipes\.json|icons\/icon\.svg|index\.html|404\.html|sw\.js|theme-init\.js|manifest\.webmanifest|build-info\.json|LICENSE\.md|NOTICE|THIRD_PARTY_NOTICES\.txt|\.nojekyll)$/.test(file);}
 export async function stagePagesRelease({source=path.join(rootDir,'dist'),destination=rootDir}={}){
   const manifest=await verifyBuild(source);
   if(manifest.base!=='/recipe-book/')throw new Error('Pages release must be built for /recipe-book/.');

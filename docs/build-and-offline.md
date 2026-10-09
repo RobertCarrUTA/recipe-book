@@ -70,7 +70,12 @@ shell assets are immutable cache-first within a release; network requests never
 replace its HTML with a different release's HTML. Recipes use a separate
 scope-specific schema-v1 cache and validated network-first requests, falling back
 only to a previously validated nonempty collection with unique IDs, titles,
-ingredients, and instructions.
+ingredients, instructions, and structured grocery entries. The wire validator
+checks recognized optional field shapes and grocery quantities before replacing
+the cache; a tolerant UI normalizer alone would silently discard malformed data.
+Optional null values and additional fields remain compatible. If any recipe has
+malformed recognized data, the entire incoming collection is rejected and the
+previous complete collection remains available.
 
 Cache names include the complete registration scope and use `rb-release-v1-`,
 which also avoids the old worker's broad `recipe-book-` cleanup. New code does
@@ -87,12 +92,33 @@ state first; failed persistence prevents activation. Other tabs keep their views
 and receive their own refresh opportunity. They are never force-reloaded.
 
 Legacy workers kept their pristine scope-root HTML but overwrote cached
-`index.html` on successful online navigation. If a new install is interrupted,
-the new worker restores that pristine HTML only in a recognized legacy shell
-cache containing this exact scope's entries. This prevents a half-upgraded old
-worker from serving new HTML with uncached chunks on the next offline reload.
-Legacy data and cache contents are otherwise retained. Normal browser cache
-eviction and an uncached first visit still require a connection.
+`index.html` on successful online navigation. Generated HTML therefore contains
+a small recovery bootstrap before the application entry module. Its exact
+SHA-256 hash is added to `script-src 'self'`; arbitrary inline scripts and eval
+remain prohibited. This follows the browser's
+[hash-source CSP mechanism](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src).
+An external recovery file would itself fail when new worker and asset downloads
+are interrupted, so recovery must travel with the complete navigation response.
+Build integrity checks require the exact bootstrap hash in the policy.
+
+The bootstrap restores pristine HTML only in a recognized legacy shell cache
+containing this exact registration scope's entries. Recovery therefore runs even
+when `sw.js` cannot download or parse and its install handler never starts. The
+worker also uses the same recovery function when a later install step fails.
+An unavailable entry module shows a retry message; if an already-poisoned document
+is opened offline, recovery can reload the repaired cached shell. Only entry-load
+failure before the new app runs permits this automatic recovery reload. Normal
+application updates still require the explicit Refresh action.
+
+The restored older page displays an interrupted-update notice and directs the
+user to reconnect and reload while retaining site data. If the newer app has
+already migrated storage to v7, old v6 code cannot display the newer snapshot and
+the version fence prevents it from overwriting that snapshot. The older page is
+a temporary viewing fallback, not a current editable copy of v7 data. The new
+snapshot is retained byte for byte through old-app interactions and reloads.
+Completing the update restores the compatible reader. Legacy data and unrelated
+cache contents are retained. Normal browser cache eviction and an uncached first
+visit still require a connection.
 
 ## Existing GitHub Pages publishing contract
 
@@ -136,6 +162,8 @@ the fence. Service-worker rollback must itself be a complete new hashed release.
 Chromium against loopback servers. It covers `/` and `/recipe-book/`, direct
 navigation/back/reload, all shell entries, offline reload, explicit waiting-worker
 activation, multiple tabs, malformed recipe responses, interrupted installation,
+unavailable or invalid worker scripts alongside unavailable entry assets,
+malformed structured grocery data, v7 snapshot retention during legacy fallback,
 and upgrades from actual Git objects `3117d47` and `aec6001`. It also stages and
 rebuilds an isolated Pages artifact fixture to prove byte-for-byte reproducibility
 without replacing the checkout's root files. Fixture output and
@@ -149,3 +177,6 @@ run with `npx vitest run frontend/offline.test.ts`. Existing legacy integrity
 tests remain until the integration cutover replaces them with built-output
 checks. CI should run core verification, types, component tests, build integrity,
 browser UI parity, and production lifecycle tests before the release is ready.
+The lifecycle CI checkout must use `fetch-depth: 0` so both historical Git fixture
+commits remain available. The staging allowlist includes the generated
+`THIRD_PARTY_NOTICES.txt` dependency notices.
