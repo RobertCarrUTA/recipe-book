@@ -8,8 +8,10 @@ const safeView = (value: unknown): View => validViews.has(value as View) ? value
 function route() {
   const url = new URL(location.href);
   const hashId = new URLSearchParams(url.hash.slice(1)).get('recipe');
-  const path = decodeURIComponent(url.pathname.slice(appBase.length)).replace(/^\/+|\/+$/g,'');
-  return {view: safeView(url.searchParams.get('view')), recipeId: hashId || (path && !path.includes('/') && path !== 'index.html' ? path : null)};
+  let path='';try{path=decodeURIComponent(url.pathname.slice(appBase.length)).replace(/^\/+|\/+$/g,'');}catch{/* Invalid encoded paths have no recipe ID. */}
+  const candidate=hashId||path;
+  const recipeId=candidate.length<=160&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(candidate)?candidate:null;
+  return {view: safeView(url.searchParams.get('view')), recipeId};
 }
 
 export function createAppStore() {
@@ -42,6 +44,7 @@ export function createAppStore() {
     action(draft); patch(draft); schedule();
   }
   function setUi(next: Partial<UiState>) {patch({ui:{...state.ui,...next}}); schedule();}
+  function replaceState(next:DurableState){clearTimeout(saveTimer);dirty=false;patch({...next,persistenceError:''});}
   function notify(message: string) {clearTimeout(messageTimer); patch({message}); messageTimer=setTimeout(()=>patch({message:''}),5000);}
   function navigate(view: View) {
     const url = new URL(appBase,location.origin); if(view !== 'recipes') url.searchParams.set('view',view);
@@ -74,8 +77,8 @@ export function createAppStore() {
       if(!response.ok)throw new Error(`Recipe request failed (${response.status}).`);
       const recipes=domain.normalizeRecipes(await response.json());
       if(disposed)return;
-      const runtime=structuredClone(state.runtime);domain.recompute(runtime,recipes);
-      patch({recipes,runtime,loadState:'ready'});
+      const runtime=structuredClone(state.runtime);const mealPlan=structuredClone(state.mealPlan);domain.pruneRecipeRuntimeState(runtime,recipes);domain.pruneMealPlanForRecipes(mealPlan,recipes);domain.recompute(runtime,recipes);
+      patch({recipes,runtime,mealPlan,loadState:'ready'});
       if(state.recipeId&&!recipes.some(recipe=>recipe.id===state.recipeId)){notify('That recipe could not be found. Your collection is still available.');closeRecipe();}
     } catch(error) {
       if(error instanceof DOMException && error.name==='AbortError')return;
@@ -88,7 +91,7 @@ export function createAppStore() {
   const onStorage = (event: StorageEvent) => {if(event.key?.startsWith('offline_recipebook_'))patch({persistenceError:'Your recipe book changed in another tab. Export any unsaved changes, then reload to use the latest saved state.'});};
   window.addEventListener('popstate',onPop);window.addEventListener('online',onNetwork);window.addEventListener('offline',onNetwork);window.addEventListener('pagehide',flush);window.addEventListener('storage',onStorage);document.addEventListener('visibilitychange',onHidden);
   return {getSnapshot:()=>state,subscribe:(listener:()=>void)=>{listeners.add(listener);return()=>listeners.delete(listener);},
-    mutate,setUi,notify,navigate,openRecipe,closeRecipe,cook,setCooking,setSelected,setFavorite,setMultiplier,planAdd,planRemove,loadRecipes,flush,patch,
+    mutate,setUi,replaceState,notify,navigate,openRecipe,closeRecipe,cook,setCooking,setSelected,setFavorite,setMultiplier,planAdd,planRemove,loadRecipes,flush,patch,
     dispose(){disposed=true;loadController?.abort();flush();clearTimeout(messageTimer);window.removeEventListener('popstate',onPop);window.removeEventListener('online',onNetwork);window.removeEventListener('offline',onNetwork);window.removeEventListener('pagehide',flush);window.removeEventListener('storage',onStorage);document.removeEventListener('visibilitychange',onHidden);listeners.clear();}};
 }
 export type AppStore=ReturnType<typeof createAppStore>;

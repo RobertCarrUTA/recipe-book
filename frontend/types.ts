@@ -12,7 +12,7 @@ export interface Recipe {
   groceryIngredients?: Array<{item: string; quantity?: number | {min:number;max:number}; unit?: string; note?: string}>;
 }
 export interface MealPlan {days: Record<DayKey, string[]>}
-export interface Source {recipeId: string; recipeIndex: number; title: string; multiplier: number; notes: string[]; totals: Record<string, {min:number;max:number}>}
+export interface Source {id: string; title: string; multiplier: number; notes: string[]; totals: Record<string, {min:number;max:number}>}
 export interface Runtime {
   favoriteRecipeIds: Record<string, boolean>; selectedRecipeIds: Record<string, boolean>;
   recipeMultipliersById: Record<string, number>; groceryCheckedByKey: Record<string, boolean>;

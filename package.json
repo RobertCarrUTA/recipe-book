@@ -4,9 +4,13 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.12"
   },
   "scripts": {
+    "dev": "node scripts/prepare-public.mjs && vite",
+    "build": "node scripts/prepare-public.mjs && vite build && node scripts/finalize-build.mjs",
+    "preview": "vite preview",
+    "check:types": "tsc --noEmit",
     "build:recipes": "node scripts/build-recipes.mjs",
     "check:recipes": "node scripts/build-recipes.mjs --check",
     "update:normalization-snapshot": "node scripts/update-normalization-catalog-snapshot.mjs",
