@@ -6,3 +6,10 @@ test-results/
 *.trace.zip
 .DS_Store
 Thumbs.db
+dist/
+public/data/
+public/icons/
+public/manifest.webmanifest
+public/LICENSE.md
+public/NOTICE
+public/THIRD_PARTY_NOTICES.txt

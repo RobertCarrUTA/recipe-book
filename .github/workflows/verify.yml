@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      - dev
 
 permissions:
   contents: read
@@ -16,7 +17,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Static app checks (${{ matrix.os }})
+    name: Recipe app checks (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     timeout-minutes: 20
     strategy:
@@ -49,3 +50,41 @@ jobs:
       - name: Run browser smoke tests
         if: runner.os == 'Linux'
         run: npm run smoke:browser
+
+      - name: Retain browser diagnostics
+        if: always() && runner.os == 'Linux'
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-evidence-${{ github.sha }}
+          path: |
+            playwright-report/
+            test-results/e2e-results.json
+            test-results/playwright/
+          retention-days: 14
+
+  cross-browser:
+    name: Firefox and WebKit journeys
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps firefox webkit
+      - run: npm run build
+      - name: Run behavior, recovery and theme journeys
+        run: npx playwright test --project=firefox --project=webkit --grep-invert "complete screen and accessibility matrix"
+        env:
+          CROSS_BROWSER: '1'
+      - name: Retain cross-browser diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cross-browser-evidence-${{ github.sha }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14

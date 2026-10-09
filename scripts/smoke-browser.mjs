@@ -103,6 +103,11 @@ async function runBrowserCheck(browser, check) {
     viewport: check.viewport || { width: 1280, height: 900 },
   });
   await context.addInitScript(() => {
+    // Legacy-screen fixtures deliberately begin with expanded options. The new
+    // frontend suite separately verifies the compact default and saved choices.
+    if (localStorage.getItem("offline_recipebook_grocery_controls_collapsed_v1") === null) {
+      localStorage.setItem("offline_recipebook_grocery_controls_collapsed_v1", "0");
+    }
     function formatUnhandledRejectionReason(reason) {
       if (reason && typeof reason === "object") {
         if (reason.stack) return reason.stack;
@@ -179,7 +184,7 @@ const browserChecks = [
           return window.__originalStorageSet.call(this, key, value);
         };
       });
-      const replacement = { app: "robert-recipe-book", schemaVersion: 1, data: { selectedRecipeIds: { "a5-wagyu-burger": true } } };
+      const replacement = { app: "robert-recipe-book", schemaVersion: 1, data: { selectedRecipeIds: { "a5-wagyu-burger": true }, ui: { groceryControlsCollapsed: false } } };
       const upload = { name: "backup.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(replacement)) };
       await page.locator("#stateBackupInput").setInputFiles(upload);
       await expectLocatorText(page.locator("#stateBackupStatus"), /Existing data was kept/);

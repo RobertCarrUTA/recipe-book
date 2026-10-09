@@ -175,7 +175,7 @@ export function normalizeUiState(uiState) {
     ...Object.fromEntries(Object.entries(ui).filter(([key]) => !unsafeKeys.has(key))),
     collapsedGroceryGroups: truthyRecord(ui.collapsedGroceryGroups),
     filters: normalizeFilterData(ui.filters),
-    groceryControlsCollapsed: Boolean(ui.groceryControlsCollapsed),
+    groceryControlsCollapsed: ui.groceryControlsCollapsed === undefined ? true : Boolean(ui.groceryControlsCollapsed),
     grocerySearchSuffix: String(ui.grocerySearchSuffix || "").trim(),
     groupItems: Boolean(ui.groupItems),
     hideCheckedGroceryItems: Boolean(ui.hideCheckedGroceryItems),
@@ -233,7 +233,7 @@ export function createDefaultUiState() {
   return {
     collapsedGroceryGroups: {},
     filters: {},
-    groceryControlsCollapsed: false,
+    groceryControlsCollapsed: true,
     grocerySearchSuffix: "",
     groupItems: false,
     hideCheckedGroceryItems: false,
@@ -259,7 +259,7 @@ function readPersistedUiState(storage) {
   ui.recipeSort = normalizeRecipeSort(read(storage, storageKeys.recipeSort));
 
   uiBooleanStorageBindings.forEach(([key, storageKey]) => {
-    ui[key] = readBoolean(storage, storageKey);
+    ui[key] = readBoolean(storage, storageKey, ui[key]);
   });
 
   return ui;

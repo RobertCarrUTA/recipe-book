@@ -1,0 +1,558 @@
+{
+  "stats": {
+    "startTime": "2026-10-09T00:29:17.131Z",
+    "duration": 150560.273,
+    "expected": 68,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "sourceHead": "91252a35f98899f1964bade4c52e26bb30b17848",
+  "sourceDirty": true,
+  "note": "Working implementation evidence. Re-run at exact release head for final signoff; captures are not pre-approved visual baselines.",
+  "assets": {
+    "index.html": "e680f17c2834075b278c16d37445eb2e909705721b4134625c6ed56d9be367ef",
+    "assets/index-CYOP0CIw.css": "ef63542eb98ae989e89925c4f82bacf609bf8512e2f4b64b914811a72d98feed",
+    "assets/index-D20z6iPD.js": "ff84cd74eb2374fb53ce06cb7cddcfbeccf50a60d58191627fe2d1265f1e7f77"
+  },
+  "records": [
+    {
+      "title": "favorite and grocery selection survive an immediate reload",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2511
+    },
+    {
+      "title": "immediate backup includes the latest search and favorite before queued saves",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2205
+    },
+    {
+      "title": "confirmed import replaces dirty state and remains intact after pending saves and reload",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2821
+    },
+    {
+      "title": "rejects a backup with missing data without clearing saved state",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1501
+    },
+    {
+      "title": "rejects a backup with invalid selected recipes without clearing saved state",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1240
+    },
+    {
+      "title": "rejects an oversized backup before offering replacement",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1451
+    },
+    {
+      "title": "quota failure during import retains both the visible and durable prior data",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2302
+    },
+    {
+      "title": "ordinary quota failure warns and can export unsaved changes without overwriting saved state",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2704
+    },
+    {
+      "title": "corrupt saved data warns at startup and is never overwritten",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2022
+    },
+    {
+      "title": "future-version saved data warns at startup and is never overwritten",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2218
+    },
+    {
+      "title": "denied storage warns immediately while allowing editing and backup export",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1580
+    },
+    {
+      "title": "recovered reads cannot turn failed startup defaults into an overwrite",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2567
+    },
+    {
+      "title": "backup remains downloadable while the catalog is failed",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1196
+    },
+    {
+      "title": "backup remains downloadable while the catalog is loading",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1138
+    },
+    {
+      "title": "View grocery list finishes on the grocery screen after closing recipe detail",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1719
+    },
+    {
+      "title": "Close dialog returns a grocery source to the persisted grocery screen",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1404
+    },
+    {
+      "title": "browser Back returns a grocery source to the persisted grocery screen",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1275
+    },
+    {
+      "title": "Copy link uses the copy fallback when the Clipboard API denies access",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1363
+    },
+    {
+      "title": "Copy recipe uses the copy fallback when the Clipboard API denies access",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1381
+    },
+    {
+      "title": "Copy list uses the copy fallback when the Clipboard API denies access",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1157
+    },
+    {
+      "title": "a stale tab warns and cannot overwrite another tab’s saved favorite",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 3589
+    },
+    {
+      "title": "360x800 light: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 9539
+    },
+    {
+      "title": "360x800 dark: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 9544
+    },
+    {
+      "title": "390x844 light: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 9708
+    },
+    {
+      "title": "390x844 dark: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 9916
+    },
+    {
+      "title": "430x932 light: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 9765
+    },
+    {
+      "title": "430x932 dark: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 9518
+    },
+    {
+      "title": "768x1024 light: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 10177
+    },
+    {
+      "title": "768x1024 dark: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 10415
+    },
+    {
+      "title": "1024x768 light: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 10011
+    },
+    {
+      "title": "1024x768 dark: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 10352
+    },
+    {
+      "title": "1280x800 light: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 12029
+    },
+    {
+      "title": "1280x800 dark: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 12941
+    },
+    {
+      "title": "1440x900 light: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 13157
+    },
+    {
+      "title": "1440x900 dark: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 13644
+    },
+    {
+      "title": "1920x1080 light: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 12770
+    },
+    {
+      "title": "1920x1080 dark: complete screen and accessibility matrix",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 11574
+    },
+    {
+      "title": "System follows live OS changes; explicit choices persist and override OS",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1821
+    },
+    {
+      "title": "theme changes preserve cooking progress, selection and dialog state",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2515
+    },
+    {
+      "title": "320px reflow, intermediate width and keyboard dialogs remain usable",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2425
+    },
+    {
+      "title": "sorting and combined discovery remain available at this viewport",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2530
+    },
+    {
+      "title": "detail grocery action navigates once and stays on the list",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2222
+    },
+    {
+      "title": "quantity Escape reverts its draft without dismissing the recipe",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2736
+    },
+    {
+      "title": "recipe print excludes the underlying collection and retains the method",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1608
+    },
+    {
+      "title": "grocery sources expose quantities and return to the same list control",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2139
+    },
+    {
+      "title": "fifth and last grocery items remain reachable by pointer; hide and clear preserve semantics",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 3261
+    },
+    {
+      "title": "grouping, manual items, search suffix and list options work together",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2918
+    },
+    {
+      "title": "canceling delete restores focus; confirmed delete shows a fresh list",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2967
+    },
+    {
+      "title": "building groceries from repeated planned meals preserves manual extras",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2675
+    },
+    {
+      "title": "planner recipe, cooking, remove and clear actions keep the week consistent",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2678
+    },
+    {
+      "title": "nested cooking traps focus, advances by arrows and returns through both openers",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2439
+    },
+    {
+      "title": "sorting and combined discovery remain available at this viewport",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2566
+    },
+    {
+      "title": "detail grocery action navigates once and stays on the list",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1965
+    },
+    {
+      "title": "quantity Escape reverts its draft without dismissing the recipe",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2563
+    },
+    {
+      "title": "recipe print excludes the underlying collection and retains the method",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1633
+    },
+    {
+      "title": "grocery sources expose quantities and return to the same list control",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2143
+    },
+    {
+      "title": "fifth and last grocery items remain reachable by pointer; hide and clear preserve semantics",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 3403
+    },
+    {
+      "title": "grouping, manual items, search suffix and list options work together",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2831
+    },
+    {
+      "title": "canceling delete restores focus; confirmed delete shows a fresh list",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2590
+    },
+    {
+      "title": "building groceries from repeated planned meals preserves manual extras",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2206
+    },
+    {
+      "title": "planner recipe, cooking, remove and clear actions keep the week consistent",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2370
+    },
+    {
+      "title": "nested cooking traps focus, advances by arrows and returns through both openers",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2082
+    },
+    {
+      "title": "cooking swipe, ingredients and finish are usable on a small screen",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2251
+    },
+    {
+      "title": "a failed catalog can be retried without discarding the pending saved list",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2319
+    },
+    {
+      "title": "legacy recipe hashes and browser forward navigation retain a readable detail",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1569
+    },
+    {
+      "title": "authored hostile strings stay inert and long content reflows at 320px",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1209
+    },
+    {
+      "title": "saved collapsed recipe controls can be reopened and cleared",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2122
+    },
+    {
+      "title": "dark empty results, reduced motion and unsupported wake lock remain usable",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 2807
+    }
+  ],
+  "images": [
+    "chromium-360x800-light-browse.png",
+    "chromium-360x800-light-filters.png",
+    "chromium-360x800-light-recipe.png",
+    "chromium-360x800-light-cooking.png",
+    "chromium-360x800-light-groceries.png",
+    "chromium-360x800-light-confirmation.png",
+    "chromium-360x800-light-planner.png",
+    "chromium-360x800-light-settings.png",
+    "chromium-360x800-dark-browse.png",
+    "chromium-360x800-dark-filters.png",
+    "chromium-360x800-dark-recipe.png",
+    "chromium-360x800-dark-cooking.png",
+    "chromium-360x800-dark-groceries.png",
+    "chromium-360x800-dark-confirmation.png",
+    "chromium-360x800-dark-planner.png",
+    "chromium-360x800-dark-settings.png",
+    "chromium-390x844-light-browse.png",
+    "chromium-390x844-light-filters.png",
+    "chromium-390x844-light-recipe.png",
+    "chromium-390x844-light-cooking.png",
+    "chromium-390x844-light-groceries.png",
+    "chromium-390x844-light-confirmation.png",
+    "chromium-390x844-light-planner.png",
+    "chromium-390x844-light-settings.png",
+    "chromium-390x844-dark-browse.png",
+    "chromium-390x844-dark-filters.png",
+    "chromium-390x844-dark-recipe.png",
+    "chromium-390x844-dark-cooking.png",
+    "chromium-390x844-dark-groceries.png",
+    "chromium-390x844-dark-confirmation.png",
+    "chromium-390x844-dark-planner.png",
+    "chromium-390x844-dark-settings.png",
+    "chromium-430x932-light-browse.png",
+    "chromium-430x932-light-filters.png",
+    "chromium-430x932-light-recipe.png",
+    "chromium-430x932-light-cooking.png",
+    "chromium-430x932-light-groceries.png",
+    "chromium-430x932-light-confirmation.png",
+    "chromium-430x932-light-planner.png",
+    "chromium-430x932-light-settings.png",
+    "chromium-430x932-dark-browse.png",
+    "chromium-430x932-dark-filters.png",
+    "chromium-430x932-dark-recipe.png",
+    "chromium-430x932-dark-cooking.png",
+    "chromium-430x932-dark-groceries.png",
+    "chromium-430x932-dark-confirmation.png",
+    "chromium-430x932-dark-planner.png",
+    "chromium-430x932-dark-settings.png",
+    "chromium-768x1024-light-browse.png",
+    "chromium-768x1024-light-filters.png",
+    "chromium-768x1024-light-recipe.png",
+    "chromium-768x1024-light-cooking.png",
+    "chromium-768x1024-light-groceries.png",
+    "chromium-768x1024-light-confirmation.png",
+    "chromium-768x1024-light-planner.png",
+    "chromium-768x1024-light-settings.png",
+    "chromium-768x1024-dark-browse.png",
+    "chromium-768x1024-dark-filters.png",
+    "chromium-768x1024-dark-recipe.png",
+    "chromium-768x1024-dark-cooking.png",
+    "chromium-768x1024-dark-groceries.png",
+    "chromium-768x1024-dark-confirmation.png",
+    "chromium-768x1024-dark-planner.png",
+    "chromium-768x1024-dark-settings.png",
+    "chromium-1024x768-light-browse.png",
+    "chromium-1024x768-light-filters.png",
+    "chromium-1024x768-light-recipe.png",
+    "chromium-1024x768-light-cooking.png",
+    "chromium-1024x768-light-groceries.png",
+    "chromium-1024x768-light-confirmation.png",
+    "chromium-1024x768-light-planner.png",
+    "chromium-1024x768-light-settings.png",
+    "chromium-1024x768-dark-browse.png",
+    "chromium-1024x768-dark-filters.png",
+    "chromium-1024x768-dark-recipe.png",
+    "chromium-1024x768-dark-cooking.png",
+    "chromium-1024x768-dark-groceries.png",
+    "chromium-1024x768-dark-confirmation.png",
+    "chromium-1024x768-dark-planner.png",
+    "chromium-1024x768-dark-settings.png",
+    "chromium-1280x800-light-browse.png",
+    "chromium-1280x800-light-filters.png",
+    "chromium-1280x800-light-recipe.png",
+    "chromium-1280x800-light-cooking.png",
+    "chromium-1280x800-light-groceries.png",
+    "chromium-1280x800-light-confirmation.png",
+    "chromium-1280x800-light-planner.png",
+    "chromium-1280x800-light-settings.png",
+    "chromium-1280x800-dark-browse.png",
+    "chromium-1280x800-dark-filters.png",
+    "chromium-1280x800-dark-recipe.png",
+    "chromium-1280x800-dark-cooking.png",
+    "chromium-1280x800-dark-groceries.png",
+    "chromium-1280x800-dark-confirmation.png",
+    "chromium-1280x800-dark-planner.png",
+    "chromium-1280x800-dark-settings.png",
+    "chromium-1440x900-light-browse.png",
+    "chromium-1440x900-light-filters.png",
+    "chromium-1440x900-light-recipe.png",
+    "chromium-1440x900-light-cooking.png",
+    "chromium-1440x900-light-groceries.png",
+    "chromium-1440x900-light-confirmation.png",
+    "chromium-1440x900-light-planner.png",
+    "chromium-1440x900-light-settings.png",
+    "chromium-1440x900-dark-browse.png",
+    "chromium-1440x900-dark-filters.png",
+    "chromium-1440x900-dark-recipe.png",
+    "chromium-1440x900-dark-cooking.png",
+    "chromium-1440x900-dark-groceries.png",
+    "chromium-1440x900-dark-confirmation.png",
+    "chromium-1440x900-dark-planner.png",
+    "chromium-1440x900-dark-settings.png",
+    "chromium-1920x1080-light-browse.png",
+    "chromium-1920x1080-light-filters.png",
+    "chromium-1920x1080-light-recipe.png",
+    "chromium-1920x1080-light-cooking.png",
+    "chromium-1920x1080-light-groceries.png",
+    "chromium-1920x1080-light-confirmation.png",
+    "chromium-1920x1080-light-planner.png",
+    "chromium-1920x1080-light-settings.png",
+    "chromium-1920x1080-dark-browse.png",
+    "chromium-1920x1080-dark-filters.png",
+    "chromium-1920x1080-dark-recipe.png",
+    "chromium-1920x1080-dark-cooking.png",
+    "chromium-1920x1080-dark-groceries.png",
+    "chromium-1920x1080-dark-confirmation.png",
+    "chromium-1920x1080-dark-planner.png",
+    "chromium-1920x1080-dark-settings.png"
+  ]
+}
