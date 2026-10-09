@@ -62,6 +62,49 @@ test.describe("page-level catalog failure", () => {
   // Keep this page.route fixture at the application request boundary. Actual
   // worker/network/cache failures are exercised by smoke-offline-build.mjs.
   test.use({ serviceWorkers: "block" });
+  test("offline setup failure does not shift the loading screen", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    let releaseCatalog!: () => void;
+    const heldCatalog = new Promise<void>((resolve) => {
+      releaseCatalog = resolve;
+    });
+    await page.route("**/data/recipes.json?*", async (route) => {
+      await heldCatalog;
+      await route.continue();
+    });
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator.serviceWorker, "register", {
+        value: () => {
+          document.documentElement.dataset.offlineAttempted = "true";
+          return Promise.reject(new Error("Offline storage unavailable"));
+        },
+      });
+    });
+    await page.goto("./", { waitUntil: "domcontentloaded" });
+    await expect(
+      page.getByRole("heading", { name: "Opening your recipe book" }),
+    ).toBeVisible();
+    await expect(page.locator("html")).toHaveAttribute(
+      "data-offline-attempted",
+      "true",
+    );
+    await page.evaluate(
+      () =>
+        new Promise<void>((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
+        ),
+    );
+    await expect(page.locator(".status-banner")).toHaveCount(0);
+    releaseCatalog();
+    await expect(page.locator(".recipe-card").first()).toBeVisible();
+    await expect(
+      page
+        .getByRole("status")
+        .filter({ hasText: "Offline storage could not be prepared" }),
+    ).toBeVisible();
+  });
   test("a failed catalog shows an accessible error and can be retried", async ({
     page,
   }) => {

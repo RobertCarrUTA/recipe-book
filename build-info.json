@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "f9b7ea9e48684cd202d8fbb37e355aceec8d8425",
+  "sourceCommit": "e0ad7858b9232f38fb2ae6541cc3b3ea85f48447",
   "dirty": false,
-  "version": "20261008-9",
+  "version": "20261008-10",
   "base": "/recipe-book/",
-  "release": "a4146a26e10f472179471217",
-  "contentHash": "299f9c3f94d9c6ec0fad9766d1c83ea203ca6758a5b05c6fbb7856ab153524e1",
+  "release": "195518e6ee331c5c71aaf36b",
+  "contentHash": "5f7c91365ff455d5845ed1e38d830e01ad38e1b2ea74c70d1d11da37cf7c84d9",
   "workerHash": "94621d61cc41820504270174a2dfde5ae3b11cc391af9b76136595d6e8d551c7"
 }

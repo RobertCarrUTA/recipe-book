@@ -1,6 +1,6 @@
 # Redesign data migration and recovery
 
-The redesign keeps personal data in the browser and authored recipes in `data/recipes/*.json`, with `data/recipes.json` generated for reading. It adds no account, server database or synchronization service. Storage fixes (#172/#141) are integrated in dev; the React UI is implemented. **Final offline integration and generated root cutover remain pending #173.** This document describes the implemented data contract and the offline recovery boundary under review, not a completed production deployment.
+The redesign keeps personal data in the browser and authored recipes in `data/recipes/*.json`, with `data/recipes.json` generated for reading. It adds no account, server database or synchronization service. Storage fixes (#172/#141), the React UI and offline/root cutover (#173) are integrated in dev, most recently through [PR #178](https://github.com/RobertCarrUTA/recipe-book/pull/178) at `af08710a726af8e24fb34807d890c8f8daa2cd19`. **Final delivery #174 and production release are not complete.** This document describes the integrated data contract; [deployment evidence](deployment.md#release-evidence-and-recovery) distinguishes the passing integration from the pending final preview and release PR.
 
 ## Durable state and migration
 
@@ -46,7 +46,7 @@ Preview must use a separate **origin**, not merely another pathname. These local
 
 ## Interrupted offline updates and rollback
 
-The #173 implementation builds immutable, verified release shells and retains a separately validated recipe-data cache. Normal updates wait for explicit Refresh; the requesting tab flushes first, and failed persistence blocks activation. Other tabs are not force-reloaded. Full build/scope/cache details belong in `docs/build-and-offline.md` when that integration lands.
+The integrated worker builds immutable, verified release shells and retains a separately validated recipe-data cache. Normal updates wait for explicit Refresh; the requesting tab flushes first, and failed persistence blocks activation. Other tabs are not force-reloaded. See [build and offline](build-and-offline.md) for the build, scope and cache contracts.
 
 An interrupted upgrade from an actual legacy worker can have cached new HTML without its complete assets. The #173 recovery bootstrap repairs only recognized legacy caches for the matching worker scope, restoring the pristine old shell with an interrupted-update notice. Entry-module failure before the new app starts may trigger that recovery reload; this does not change the explicit-refresh rule for a running new app. The notice asks users to reconnect/reload and retain site data.
 
@@ -56,8 +56,8 @@ A code revert therefore cannot roll back personal data. A safe rollback is anoth
 
 ## Protecting checks and release boundary
 
-- `tests/storage.test.mjs` and `storage_atomic.test.mjs` cover version fencing with a baseline-v6 fixture, legacy quantities, complete commits, interrupted migration, corrupt/future state, failed initial reads, validation and stale tabs. Keep `tests/fixtures/legacy_v6_storage.mjs` even when old UI source is removed.
+- `tests/storage.test.mjs` and `storage_atomic.test.mjs` cover version fencing with a baseline-v6 fixture, legacy quantities, complete commits, interrupted migration, corrupt/future state, failed initial reads, validation and stale tabs. `tests/fixtures/legacy_v6_storage.mjs` remains after the obsolete UI source removal.
 - `tests/e2e/data-recovery.spec.ts` exercises actual downloads/import, immediate export/reload, pending-save cancellation, malformed/oversized backups, quota failures, denied/recovered reads and multiple tabs. Component tests protect startup warnings and theme/storage-event separation.
 - #173 worker/controller/build tests and `scripts/smoke-offline-build.mjs` cover complete shells, failed installs, explicit refresh, root/subpath navigation, old-tab assets, malformed recipe fallback and upgrades from actual Git commits `3117d47b9cdd3a844d063fbde2ca6cd5ff3a83d2` and `aec600142706c90f72ad52bcb97a32ee0555de3f`. Lifecycle CI needs those historical objects (`fetch-depth: 0` or explicit fetch); obsolete current-tree UI files are not needed to reconstruct them.
 
-Before root cutover, integrate and rerun those lifecycle checks against the final frontend, verify the complete generated artifact and attribution files, and record exact source/build provenance. Branch-level passing evidence is not a claim of final integration or production-origin behavior. The [preservation matrix](preservation-matrix.md) tracks remaining parity/release work without duplicating raw test logs.
+The #173 integration passed all three jobs in [CI 37869671954](https://github.com/RobertCarrUTA/recipe-book/actions/runs/37869671954), including generated-release reproduction on Ubuntu/Windows and browser/offline checks. The exact PR-head and generated-source provenance are recorded in [deployment](deployment.md#release-evidence-and-recovery). Version-10 startup and supplemental journey measurements also passed. Final #174 records exact integration verification, live preview and the release PR; earlier results do not establish production-origin behavior. The [preservation matrix](preservation-matrix.md) and [execution record](redesign-state.md) track that boundary without duplicating raw logs.

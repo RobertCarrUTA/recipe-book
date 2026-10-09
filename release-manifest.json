@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "release": "a4146a26e10f472179471217",
-  "version": "20261008-9",
-  "sourceCommit": "f9b7ea9e48684cd202d8fbb37e355aceec8d8425",
+  "release": "195518e6ee331c5c71aaf36b",
+  "version": "20261008-10",
+  "sourceCommit": "e0ad7858b9232f38fb2ae6541cc3b3ea85f48447",
   "base": "/recipe-book/",
   "shell": [
     {
@@ -12,7 +12,7 @@
     },
     {
       "path": "404.html",
-      "sha256": "2abd9fd2df33a24826d93df2d6f804933ddafbb2664492c215c4b385f9cedacd",
+      "sha256": "35fec93a323d7505b8740a2f5f43216cfbf31471ce64bbe5f1011ed1387f7225",
       "bytes": 4652
     },
     {
@@ -36,14 +36,14 @@
       "bytes": 35064
     },
     {
-      "path": "assets/index-D5tkg3hX.js",
-      "sha256": "66a87d3bba8237612ca6c273939dc3887d82b5c0b02e8a3136f7c39362589ee9",
-      "bytes": 399243
+      "path": "assets/index-hhH3zPzp.js",
+      "sha256": "d797ec05c356ed74cb902ffe2a40f6f57e91374fcc33b89e329610825761eb68",
+      "bytes": 399291
     },
     {
       "path": "build-info.json",
-      "sha256": "794709182e83d65b1862449d4fc687bc40ffeff70fd5181ba8a1e4d95807961f",
-      "bytes": 369
+      "sha256": "c914861aa9a81f4cf5ca7713bb6753de41898d116b327d0ab6758b15be300b67",
+      "bytes": 370
     },
     {
       "path": "icons/icon.svg",
@@ -52,7 +52,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "2abd9fd2df33a24826d93df2d6f804933ddafbb2664492c215c4b385f9cedacd",
+      "sha256": "35fec93a323d7505b8740a2f5f43216cfbf31471ce64bbe5f1011ed1387f7225",
       "bytes": 4652
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "path": "404.html",
-      "sha256": "2abd9fd2df33a24826d93df2d6f804933ddafbb2664492c215c4b385f9cedacd",
+      "sha256": "35fec93a323d7505b8740a2f5f43216cfbf31471ce64bbe5f1011ed1387f7225",
       "bytes": 4652
     },
     {
@@ -98,14 +98,14 @@
       "bytes": 35064
     },
     {
-      "path": "assets/index-D5tkg3hX.js",
-      "sha256": "66a87d3bba8237612ca6c273939dc3887d82b5c0b02e8a3136f7c39362589ee9",
-      "bytes": 399243
+      "path": "assets/index-hhH3zPzp.js",
+      "sha256": "d797ec05c356ed74cb902ffe2a40f6f57e91374fcc33b89e329610825761eb68",
+      "bytes": 399291
     },
     {
       "path": "build-info.json",
-      "sha256": "794709182e83d65b1862449d4fc687bc40ffeff70fd5181ba8a1e4d95807961f",
-      "bytes": 369
+      "sha256": "c914861aa9a81f4cf5ca7713bb6753de41898d116b327d0ab6758b15be300b67",
+      "bytes": 370
     },
     {
       "path": "data/recipes.json",
@@ -119,7 +119,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "2abd9fd2df33a24826d93df2d6f804933ddafbb2664492c215c4b385f9cedacd",
+      "sha256": "35fec93a323d7505b8740a2f5f43216cfbf31471ce64bbe5f1011ed1387f7225",
       "bytes": 4652
     },
     {
@@ -129,8 +129,8 @@
     },
     {
       "path": "sw.js",
-      "sha256": "339bfcbd143d3204c3615f56ce722d5fd6ae879c0153adb2071af9de7c41d374",
-      "bytes": 17445
+      "sha256": "e7418cd66457eff087cdf0304fb8e9878b3382c09f19f98adcc03f3bbd32bb0a",
+      "bytes": 17446
     },
     {
       "path": "theme-init.js",
@@ -138,5 +138,5 @@
       "bytes": 583
     }
   ],
-  "artifactHash": "9c9f59cd533553413439d9ec05eea3803a0f304b80554acd4109bddddc5c32ff"
+  "artifactHash": "5d4d983fe118456cd2f00aa6962138018e0f596807f8a25f19cdb4f69825ec2f"
 }

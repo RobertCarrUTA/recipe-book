@@ -42,14 +42,19 @@ Use the URL printed by Vite for development. For the built application:
 
 ```bash
 npm run verify
+npx playwright install chromium
 npm run smoke:browser
 npm run preview
 ```
 
 The production preview serves `dist/` at <http://127.0.0.1:4183/> by default.
 Use HTTP/HTTPS, not `file://`. On Windows PowerShell, use `npm.cmd` if execution
-policy blocks `npm`. Service-worker behavior is verified against the production
-build rather than the development server.
+policy blocks `npm` (and `npx.cmd` for `npx`). The browser install supplies the
+executable; `npm ci` alone does not. On Linux use
+`npx playwright install --with-deps chromium` to include system libraries. The
+local runner can also use an existing Chrome/Edge installation or an explicit
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE`. Service-worker behavior is verified against the
+production build rather than the development server.
 
 ## Project layout
 
@@ -63,10 +68,10 @@ scripts/                   Generation, verification, release, and browser tools
 tests/                     Domain contracts and Playwright journeys
 docs/                      Architecture, recipe schema, migration, and evidence
 dist/                      Ignored production build
-index.html, assets/, sw.js  Reviewed generated Pages release after root cutover
+index.html, assets/, sw.js  Reviewed generated Pages release
 ```
 
-The former DOM application is retired at root cutover. Historical code remains
+The former DOM application was retired during root cutover. Historical code remains
 available through fixed Git fixtures for upgrade tests; it is not a second UI
 to maintain. Root HTML, hashed assets, and the worker are generated output.
 
@@ -105,9 +110,8 @@ covers grocery quantities, collections, tags, attribution, and normalization.
 
 Edit application source under `frontend/` and retained shared modules. For app,
 CSS, shell, or worker changes, increment the current-date version in
-`app-version.json` through `set-asset-version`, then rebuild and verify. During
-parallel migration, append `--build`; after root cutover the command detects the
-generated entry point. Do not hand-edit generated HTML or worker inventories.
+`app-version.json` through `set-asset-version`, then rebuild and verify. Do not
+hand-edit generated HTML or worker inventories.
 
 Persistence uses an atomic v7 snapshot and compatible schema-v1 backups. Imports
 validate and commit before replacing live state. Storage errors, stale tabs, and
@@ -119,7 +123,8 @@ existing data. See [migration and recovery](docs/redesign-migration.md).
 GitHub Pages remains configured for `main:/`. Reviewed generated root artifacts
 allow a later human merge of `dev` into `main` to publish through that existing
 configuration. The redesign does not change production settings or publish to
-production. The final PR remains open for human review.
+production. [Final delivery #174](https://github.com/RobertCarrUTA/recipe-book/issues/174)
+is still being prepared; its dev→main PR must remain open for human review.
 
 The available authorized hosting capability did not provide an isolated preview;
 the local production-preview fallback must be verified at the final reviewed

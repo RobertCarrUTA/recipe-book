@@ -181,7 +181,11 @@ export function App() {
             )}
           </span>
         </header>
-        {(offline.updateReady || offline.error) && (
+        {/* Keep initial offline failures from moving the temporary loading screen.
+            Present the notice together with the loaded content or catalog error. */}
+        {(offline.updateReady ||
+          (offline.error &&
+            (state.loadState !== "loading" || state.view === "settings"))) && (
           <div className="status-banner" role="status">
             <span>
               {offline.error ||

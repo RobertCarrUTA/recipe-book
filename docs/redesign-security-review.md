@@ -44,3 +44,7 @@ Key reviewed working-tree bytes (SHA-256) distinguish uncommitted changes from t
 | `scripts/legacy-upgrade-bootstrap.js` | `6fcdb9bfcf6606d8c445fea58debad0b15f7c803697963182a4ec999f6dc6ed8` |
 | `scripts/generate-notices.mjs` | `4081a83959b4286adcba121e85f5c99f61f245244084688dc09fc374119289a0` |
 | `package-lock.json` | `2f1917154c797b74eb4442fab4d0b0a734c49a561184ce51fd92b69e8660d427` |
+
+## Integrated attribution follow-up
+
+PR #178 integrated the corrected full notice and rejection fixtures. At clean source `f9b7ea9`, the `/recipe-book/` root artifacts include complete notices for all 29 runtime identities, including the full supplemental MIT grant. Independent and Windows/Linux CI `check:release` runs reproduced artifact hash `9c9f59cd533553413439d9ec05eea3803a0f304b80554acd4109bddddc5c32ff` exactly. Version-10 rebuilt output retains that notice. The earlier dirty-build limitation above describes the original review checkpoint; [release review](redesign-release.md) links final integration evidence.

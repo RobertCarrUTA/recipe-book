@@ -1,6 +1,6 @@
 # Implemented frontend review
 
-Captured 2026-10-08 from the actual Vite production build on Windows, Chrome 154.0.8037.98. This is implementation evidence before final offline/release integration; `report.json` records the dirty working-tree status, checked-out commit, exact built asset hashes and 68 passing browser cases. It is not represented as final exact-head release evidence.
+Updated 2026-10-08 from the actual production build, Windows Chromium 154.0.8037.99, clean application source `0ea45243b8b2abd0a44ff94b4b92ecdb77a979f6`, version `20261008-10`. `report.json` records exact built asset hashes and 70 passing local browser cases. Two recipe-download cases are locally blocked by an injected browser hook and remain mandatory in Linux CI. Final integration/preview evidence is linked from [release review](../../redesign-release.md).
 
 All eight required viewports were captured in Light and Dark across browse, filters, recipe, cooking, groceries, confirmation, planning and settings: **128 viewport captures**. Each capture also passed page-overflow assertions and axe WCAG A/AA checks. Three additional cases verify System changes, state continuity and keyboard/reflow at 320, 640, 641, 850 and 1100 CSS pixels. These are browser-emulated layouts, not physical-device or screen-reader testing.
 
@@ -34,3 +34,7 @@ New grocery options start collapsed so ingredients appear immediately; explicit 
 ## Evidence limits
 
 Automated contrast/semantic checks do not prove full accessibility. No physical device or assistive-technology session is claimed. Browser-specific runs, original-worker lifecycle tests and final exact-head signoff are tracked separately. Data-recovery tests use isolated synthetic personal state and real public recipe content; no personal browser data is included.
+
+## Version-10 visual pass
+
+Root inspected the fresh 360px Light browse, 390px Dark filters, 430px Light recipe, 768px Dark cooking, 1024px Light groceries, 1280px Dark confirmation, 1440px Light planner and 1920px Dark settings captures. These cover every required size and major screen without a blocking clipping/overlap/readability finding. This is not a claim that all 128 images received pixel-by-pixel manual review. The complete matrix passed overflow and axe assertions. Earlier review history above remains historical; current CI/preview details are in #174 and the final release PR.
