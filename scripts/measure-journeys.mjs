@@ -12,7 +12,11 @@ const root = process.cwd();
 const dist = path.join(root, 'dist');
 const out = path.resolve(root, process.env.JOURNEY_PERFORMANCE_OUTPUT || 'test-results/performance-journeys');
 const build = JSON.parse(await fs.readFile(path.join(dist, 'build-info.json'), 'utf8'));
-const recipes = JSON.parse(await fs.readFile(path.join(dist, 'data/recipes.json'), 'utf8'));
+const recipeBytes = await fs.readFile(path.join(dist, 'data/recipes.json'));
+const {normalizeRecipeBook} = await import(pathToFileURL(path.join(root, 'js/recipe_schema.js')).href);
+const normalized = normalizeRecipeBook(JSON.parse(recipeBytes.toString('utf8')));
+const recipes = normalized.recipes;
+assert.equal(normalized.warnings.length, 0, 'The actual authored catalog should normalize without warnings');
 const require = createRequire(path.join(root, 'package.json'));
 const sha256 = value => createHash('sha256').update(value).digest('hex');
 const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
@@ -38,7 +42,7 @@ assert.ok(planPools.every(pool => pool.length), 'The fixture needs breakfast, ma
 const plan = Object.fromEntries(days.map((day, index) => {
   const used = new Set();
   const ids = planPools.map((pool, slot) => {
-    const offset = (index * 2 + slot) % pool.length;
+    const offset = slot === 0 ? index % Math.min(3, pool.length) : (index * 2 + slot) % pool.length;
     const recipe = [...pool.slice(offset), ...pool.slice(0, offset)].find(item => !used.has(item.id));
     assert.ok(recipe, `No distinct recipe available for ${day} fixture slot ${slot}`);
     used.add(recipe.id);
@@ -66,7 +70,7 @@ const report = {
   workingTreeDirty: Boolean(execFileSync('git', ['status', '--porcelain'], {cwd: root, encoding: 'utf8'}).trim()),
   build, browser: null, node: process.version, repeats, viewports, budgets,
   methodology: 'Unthrottled local production server; three fresh isolated contexts per desktop/mobile layout. Real authored catalog, synthetic 35-assignment week across seven days (five recipe/components per day), eight selected recipes and two manual items. Service workers remain enabled; timed actions begin only after activation, control and network idle. Action latency starts immediately before browser click/change dispatch and ends two animation frames after asserted rendered output. Persisted reload uses a new-document animation-frame readiness observer and navigation-relative performance.now(). These are lab event-to-render timings, not field INP or physical-device measurements.',
-  fixtures: {recipeCount: recipes.length, recipeJsonSha256: sha256(JSON.stringify(recipes)), snapshotSha256: sha256(JSON.stringify(fixture)), collection, filteredCount: filteredRecipes.length, expectedFilterIds, plan, plannedAssignments: 35, uniquePlannedRecipes: new Set(Object.values(plan).flat()).size, selectedRecipes: 8, manualItems: 2, addedRecipeId: additionalRecipe.id},
+  fixtures: {recipeCount: recipes.length, recipeJsonSha256: sha256(recipeBytes), snapshotSha256: sha256(JSON.stringify(fixture)), collection, filteredCount: filteredRecipes.length, expectedFilterIds, plan, plannedAssignments: 35, uniquePlannedRecipes: new Set(Object.values(plan).flat()).size, selectedRecipes: 8, manualItems: 2, addedRecipeId: additionalRecipe.id},
   artifacts: [], samples: [], checks: [], messages: [], failures: [],
 };
 async function files(directory, prefix = '') {
