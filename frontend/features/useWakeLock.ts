@@ -46,7 +46,9 @@ export function useWakeLock(enabled: boolean, onFailure: () => void) {
         });
       } catch {
         pending = false;
-        if (!disposed && requestGeneration === generation) {
+        if (requestGeneration !== generation && wantsLock()) {
+          void request();
+        } else if (!disposed && requestGeneration === generation) {
           setActive(false);
           onFailure();
         }
