@@ -17,6 +17,12 @@ const indexUrl = new URL("../index.html", import.meta.url);
 const fallbackUrl = new URL("../404.html", import.meta.url);
 const serviceWorkerUrl = new URL("../sw.js", import.meta.url);
 const indexHtml = await fs.readFile(indexUrl, "utf8");
+if (process.argv.includes("--build") || indexHtml.includes('name="recipe-book-release"')) {
+  if (!/^\d{8}-[1-9]\d*$/.test(assetVersion)) throw new Error("Built releases use YYYYMMDD-N versions.");
+  await fs.writeFile(new URL("../app-version.json", import.meta.url), `${JSON.stringify({ version: assetVersion }, null, 2)}\n`);
+  console.log(`Set build version to ${assetVersion}. Rebuild, verify, and stage the generated release before publishing.`);
+  process.exit(0);
+}
 const serviceWorkerJs = await fs.readFile(serviceWorkerUrl, "utf8");
 
 function replaceRequiredVersion(source, pattern, label) {
