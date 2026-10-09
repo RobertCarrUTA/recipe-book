@@ -1,428 +1,440 @@
 {
   "stats": {
-    "startTime": "2026-10-09T00:29:17.131Z",
-    "duration": 150560.273,
-    "expected": 68,
+    "startTime": "2026-10-09T01:35:59.788Z",
+    "duration": 117556.161,
+    "expected": 70,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
   },
-  "sourceHead": "91252a35f98899f1964bade4c52e26bb30b17848",
-  "sourceDirty": true,
-  "note": "Working implementation evidence. Re-run at exact release head for final signoff; captures are not pre-approved visual baselines.",
+  "sourceHead": "0ea45243b8b2abd0a44ff94b4b92ecdb77a979f6",
+  "sourceDirty": false,
+  "note": "Clean version-10 application evidence at sourceHead; final integration CI and live preview are recorded in issue #174 and the release PR. Captures are not automatically approved visual baselines.",
   "assets": {
-    "index.html": "e680f17c2834075b278c16d37445eb2e909705721b4134625c6ed56d9be367ef",
-    "assets/index-CYOP0CIw.css": "ef63542eb98ae989e89925c4f82bacf609bf8512e2f4b64b914811a72d98feed",
-    "assets/index-D20z6iPD.js": "ff84cd74eb2374fb53ce06cb7cddcfbeccf50a60d58191627fe2d1265f1e7f77"
+    "index.html": "eac3fca44e335aed0b72bfaa995f65361871b5a89b6688a3fbe1fc48c1ccf045",
+    "assets/index-CvANh-Ud.js": "ff88e7ae82e7ae9a7d72a8222708477289281936c1fd177f30544ff023d72832",
+    "assets/index-CYOP0CIw.css": "ef63542eb98ae989e89925c4f82bacf609bf8512e2f4b64b914811a72d98feed"
   },
   "records": [
     {
       "title": "favorite and grocery selection survive an immediate reload",
       "project": "chromium",
       "status": "passed",
-      "duration": 2511
+      "duration": 1665
     },
     {
       "title": "immediate backup includes the latest search and favorite before queued saves",
       "project": "chromium",
       "status": "passed",
-      "duration": 2205
+      "duration": 2022
     },
     {
       "title": "confirmed import replaces dirty state and remains intact after pending saves and reload",
       "project": "chromium",
       "status": "passed",
-      "duration": 2821
+      "duration": 2644
     },
     {
       "title": "rejects a backup with missing data without clearing saved state",
       "project": "chromium",
       "status": "passed",
-      "duration": 1501
+      "duration": 1307
     },
     {
       "title": "rejects a backup with invalid selected recipes without clearing saved state",
       "project": "chromium",
       "status": "passed",
-      "duration": 1240
+      "duration": 1331
     },
     {
       "title": "rejects an oversized backup before offering replacement",
       "project": "chromium",
       "status": "passed",
-      "duration": 1451
+      "duration": 1104
     },
     {
       "title": "quota failure during import retains both the visible and durable prior data",
       "project": "chromium",
       "status": "passed",
-      "duration": 2302
+      "duration": 1725
     },
     {
       "title": "ordinary quota failure warns and can export unsaved changes without overwriting saved state",
       "project": "chromium",
       "status": "passed",
-      "duration": 2704
+      "duration": 1728
     },
     {
       "title": "corrupt saved data warns at startup and is never overwritten",
       "project": "chromium",
       "status": "passed",
-      "duration": 2022
+      "duration": 2094
     },
     {
       "title": "future-version saved data warns at startup and is never overwritten",
       "project": "chromium",
       "status": "passed",
-      "duration": 2218
+      "duration": 1728
     },
     {
       "title": "denied storage warns immediately while allowing editing and backup export",
       "project": "chromium",
       "status": "passed",
-      "duration": 1580
+      "duration": 1585
     },
     {
       "title": "recovered reads cannot turn failed startup defaults into an overwrite",
       "project": "chromium",
       "status": "passed",
-      "duration": 2567
+      "duration": 2994
     },
     {
       "title": "backup remains downloadable while the catalog is failed",
       "project": "chromium",
       "status": "passed",
-      "duration": 1196
+      "duration": 1799
     },
     {
       "title": "backup remains downloadable while the catalog is loading",
       "project": "chromium",
       "status": "passed",
-      "duration": 1138
+      "duration": 1221
     },
     {
       "title": "View grocery list finishes on the grocery screen after closing recipe detail",
       "project": "chromium",
       "status": "passed",
-      "duration": 1719
+      "duration": 1769
     },
     {
       "title": "Close dialog returns a grocery source to the persisted grocery screen",
       "project": "chromium",
       "status": "passed",
-      "duration": 1404
+      "duration": 1362
     },
     {
       "title": "browser Back returns a grocery source to the persisted grocery screen",
       "project": "chromium",
       "status": "passed",
-      "duration": 1275
+      "duration": 1395
     },
     {
       "title": "Copy link uses the copy fallback when the Clipboard API denies access",
       "project": "chromium",
       "status": "passed",
-      "duration": 1363
+      "duration": 1337
     },
     {
       "title": "Copy recipe uses the copy fallback when the Clipboard API denies access",
       "project": "chromium",
       "status": "passed",
-      "duration": 1381
+      "duration": 1377
     },
     {
       "title": "Copy list uses the copy fallback when the Clipboard API denies access",
       "project": "chromium",
       "status": "passed",
-      "duration": 1157
+      "duration": 1190
     },
     {
       "title": "a stale tab warns and cannot overwrite another tab’s saved favorite",
       "project": "chromium",
       "status": "passed",
-      "duration": 3589
+      "duration": 2732
     },
     {
       "title": "360x800 light: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 9539
+      "duration": 8610
     },
     {
       "title": "360x800 dark: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 9544
+      "duration": 8751
     },
     {
       "title": "390x844 light: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 9708
+      "duration": 8551
     },
     {
       "title": "390x844 dark: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 9916
+      "duration": 8045
     },
     {
       "title": "430x932 light: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 9765
+      "duration": 8144
     },
     {
       "title": "430x932 dark: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 9518
+      "duration": 7947
     },
     {
       "title": "768x1024 light: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 10177
+      "duration": 7653
     },
     {
       "title": "768x1024 dark: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 10415
+      "duration": 7964
     },
     {
       "title": "1024x768 light: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 10011
+      "duration": 8076
     },
     {
       "title": "1024x768 dark: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 10352
+      "duration": 8079
     },
     {
       "title": "1280x800 light: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 12029
+      "duration": 9058
     },
     {
       "title": "1280x800 dark: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 12941
+      "duration": 9024
     },
     {
       "title": "1440x900 light: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 13157
+      "duration": 8623
     },
     {
       "title": "1440x900 dark: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 13644
+      "duration": 8380
     },
     {
       "title": "1920x1080 light: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 12770
+      "duration": 8507
     },
     {
       "title": "1920x1080 dark: complete screen and accessibility matrix",
       "project": "chromium",
       "status": "passed",
-      "duration": 11574
+      "duration": 8533
     },
     {
       "title": "System follows live OS changes; explicit choices persist and override OS",
       "project": "chromium",
       "status": "passed",
-      "duration": 1821
+      "duration": 1024
     },
     {
       "title": "theme changes preserve cooking progress, selection and dialog state",
       "project": "chromium",
       "status": "passed",
-      "duration": 2515
+      "duration": 1408
     },
     {
       "title": "320px reflow, intermediate width and keyboard dialogs remain usable",
       "project": "chromium",
       "status": "passed",
-      "duration": 2425
+      "duration": 1687
     },
     {
       "title": "sorting and combined discovery remain available at this viewport",
       "project": "chromium",
       "status": "passed",
-      "duration": 2530
+      "duration": 1701
     },
     {
       "title": "detail grocery action navigates once and stays on the list",
       "project": "chromium",
       "status": "passed",
-      "duration": 2222
+      "duration": 1332
     },
     {
       "title": "quantity Escape reverts its draft without dismissing the recipe",
       "project": "chromium",
       "status": "passed",
-      "duration": 2736
+      "duration": 1480
     },
     {
       "title": "recipe print excludes the underlying collection and retains the method",
       "project": "chromium",
       "status": "passed",
-      "duration": 1608
+      "duration": 1082
     },
     {
       "title": "grocery sources expose quantities and return to the same list control",
       "project": "chromium",
       "status": "passed",
-      "duration": 2139
+      "duration": 1793
     },
     {
       "title": "fifth and last grocery items remain reachable by pointer; hide and clear preserve semantics",
       "project": "chromium",
       "status": "passed",
-      "duration": 3261
+      "duration": 2322
     },
     {
       "title": "grouping, manual items, search suffix and list options work together",
       "project": "chromium",
       "status": "passed",
-      "duration": 2918
+      "duration": 1787
     },
     {
       "title": "canceling delete restores focus; confirmed delete shows a fresh list",
       "project": "chromium",
       "status": "passed",
-      "duration": 2967
+      "duration": 1711
     },
     {
       "title": "building groceries from repeated planned meals preserves manual extras",
       "project": "chromium",
       "status": "passed",
-      "duration": 2675
+      "duration": 1740
     },
     {
       "title": "planner recipe, cooking, remove and clear actions keep the week consistent",
       "project": "chromium",
       "status": "passed",
-      "duration": 2678
+      "duration": 1756
     },
     {
       "title": "nested cooking traps focus, advances by arrows and returns through both openers",
       "project": "chromium",
       "status": "passed",
-      "duration": 2439
+      "duration": 1936
     },
     {
       "title": "sorting and combined discovery remain available at this viewport",
       "project": "chromium",
       "status": "passed",
-      "duration": 2566
+      "duration": 1844
     },
     {
       "title": "detail grocery action navigates once and stays on the list",
       "project": "chromium",
       "status": "passed",
-      "duration": 1965
+      "duration": 1620
     },
     {
       "title": "quantity Escape reverts its draft without dismissing the recipe",
       "project": "chromium",
       "status": "passed",
-      "duration": 2563
+      "duration": 1802
     },
     {
       "title": "recipe print excludes the underlying collection and retains the method",
       "project": "chromium",
       "status": "passed",
-      "duration": 1633
+      "duration": 1271
     },
     {
       "title": "grocery sources expose quantities and return to the same list control",
       "project": "chromium",
       "status": "passed",
-      "duration": 2143
+      "duration": 1754
     },
     {
       "title": "fifth and last grocery items remain reachable by pointer; hide and clear preserve semantics",
       "project": "chromium",
       "status": "passed",
-      "duration": 3403
+      "duration": 2723
     },
     {
       "title": "grouping, manual items, search suffix and list options work together",
       "project": "chromium",
       "status": "passed",
-      "duration": 2831
+      "duration": 2070
     },
     {
       "title": "canceling delete restores focus; confirmed delete shows a fresh list",
       "project": "chromium",
       "status": "passed",
-      "duration": 2590
+      "duration": 2094
     },
     {
       "title": "building groceries from repeated planned meals preserves manual extras",
       "project": "chromium",
       "status": "passed",
-      "duration": 2206
+      "duration": 1792
     },
     {
       "title": "planner recipe, cooking, remove and clear actions keep the week consistent",
       "project": "chromium",
       "status": "passed",
-      "duration": 2370
+      "duration": 2173
     },
     {
       "title": "nested cooking traps focus, advances by arrows and returns through both openers",
       "project": "chromium",
       "status": "passed",
-      "duration": 2082
+      "duration": 1937
     },
     {
       "title": "cooking swipe, ingredients and finish are usable on a small screen",
       "project": "chromium",
       "status": "passed",
-      "duration": 2251
+      "duration": 1835
     },
     {
-      "title": "a failed catalog can be retried without discarding the pending saved list",
+      "title": "progressive recipe browsing retains keyboard first and last boundaries",
       "project": "chromium",
       "status": "passed",
-      "duration": 2319
+      "duration": 1668
     },
     {
       "title": "legacy recipe hashes and browser forward navigation retain a readable detail",
       "project": "chromium",
       "status": "passed",
-      "duration": 1569
+      "duration": 1362
     },
     {
       "title": "authored hostile strings stay inert and long content reflows at 320px",
       "project": "chromium",
       "status": "passed",
-      "duration": 1209
+      "duration": 1258
     },
     {
       "title": "saved collapsed recipe controls can be reopened and cleared",
       "project": "chromium",
       "status": "passed",
-      "duration": 2122
+      "duration": 1785
     },
     {
       "title": "dark empty results, reduced motion and unsupported wake lock remain usable",
       "project": "chromium",
       "status": "passed",
-      "duration": 2807
+      "duration": 1848
+    },
+    {
+      "title": "offline setup failure does not shift the loading screen",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1367
+    },
+    {
+      "title": "a failed catalog shows an accessible error and can be retried",
+      "project": "chromium",
+      "status": "passed",
+      "duration": 1800
     }
   ],
   "images": [

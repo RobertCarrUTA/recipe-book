@@ -1,0 +1,1668 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-09T01:30:12.337Z",
+  "commit": "af08710a726af8e24fb34807d890c8f8daa2cd19",
+  "workingTreeDirty": false,
+  "baselineCommit": "3117d47b9cdd3a844d063fbde2ca6cd5ff3a83d2",
+  "browser": {
+    "version": "154.0.8037.99",
+    "executable": "chrome.exe",
+    "engine": "Chromium",
+    "node": "v24.16.0"
+  },
+  "budgets": {
+    "production": {
+      "lcp": 800,
+      "cls": 0.05,
+      "searchLatency": 200,
+      "openLatency": 50,
+      "requestCount": 53,
+      "bodyBytes": 3704340,
+      "transferBytes": 3719040,
+      "jsBytes": 409600
+    },
+    "large": {
+      "searchLatency": 200,
+      "groceryCheckLatency": 200
+    },
+    "maximum": {
+      "productionCls": 0.1,
+      "largeSearchLatency": 400,
+      "largeGroceryCheckLatency": 400
+    }
+  },
+  "methodology": "Production dist served by loopback Vite preview with Accept-Encoding: identity; 3 fresh browser contexts for each desktop/mobile layout, dark theme, service workers blocked, no CPU/network throttling. Initial LCP and accumulated non-input CLS sampled after networkidle, visible recipes, and 500 ms (same baseline observation window). Resource Timing includes document plus all recorded resources. Search ends after matching rendered cards plus two animation frames. Detail reports both click-to-two-frames and dialog-ready-plus-two-frames. These are synthetic lab interaction latencies, not field INP. Large fixture uses intercepted local JSON and must not be used for transfer-byte comparisons.",
+  "fixtures": {
+    "productionRecipes": 128,
+    "target": {
+      "id": "dutch-oven-chicken-pot-pie",
+      "title": "Dutch Oven Chicken Pot Pie"
+    },
+    "productionSearchIds": [
+      "corn-chowder",
+      "dutch-oven-chicken-pot-pie",
+      "lemon-rosemary-chicken-white-bean-kale-soup",
+      "mojo-roast-pork-cubano-sandwiches",
+      "nashville-hot-chicken-sandwich",
+      "potato-soup",
+      "roasted-tomatillo-chicken-pozole-verde",
+      "thai-red-curry-chicken-edamame-vegetable-soup",
+      "tomato-balsamic-chicken-with-white-beans"
+    ],
+    "largeRecipes": 1000,
+    "largeGroceryRows": 1002,
+    "largeJsonSha256": "89a27cde3cffc934506afd986be9cb3aba0c0e38d7f97a3a7ca39851a9bb7547",
+    "largeJsonBytes": 546894
+  },
+  "bundles": [
+    {
+      "name": "index.html",
+      "bytes": 4580,
+      "gzipBytes": 1998,
+      "sha256": "13866baf9d9a81b76d09b300ab8b3c240c5b33aa565e3d348c16ce1cbb28e242"
+    },
+    {
+      "name": "assets/index-CiRdNdn_.js",
+      "bytes": 399202,
+      "gzipBytes": 121107,
+      "sha256": "8181896d468f2ccc003d6deda22fdef067d1d1bb5f01adbf061c13bd4d5e9023"
+    },
+    {
+      "name": "assets/index-CYOP0CIw.css",
+      "bytes": 35064,
+      "gzipBytes": 7440,
+      "sha256": "ef63542eb98ae989e89925c4f82bacf609bf8512e2f4b64b914811a72d98feed"
+    }
+  ],
+  "production": [
+    {
+      "label": "desktop",
+      "repeat": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "lcp": 580,
+      "cls": 0.01886918917683417,
+      "longTasks": [
+        {
+          "start": 110.59999990463257,
+          "duration": 192
+        },
+        {
+          "start": 424.5,
+          "duration": 112
+        }
+      ],
+      "domContentLoaded": 382.7999999523163,
+      "load": 383,
+      "requestCount": 10,
+      "transferBytes": 1561334,
+      "bodyBytes": 1559534,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 47,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 17.300000190734863,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 9.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 6.799999952316284,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 40.59999990463257,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 78.70000004768372,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 6.599999904632568,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 414.10000014305115,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 3.200000047683716,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 24.5,
+      "openLatency": 27.90000009536743,
+      "dialogReadyLatency": 27.90000009536743
+    },
+    {
+      "label": "desktop",
+      "repeat": 2,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "lcp": 760,
+      "cls": 0.01886918917683417,
+      "longTasks": [
+        {
+          "start": 89.79999995231628,
+          "duration": 140
+        },
+        {
+          "start": 616.7000000476837,
+          "duration": 106
+        }
+      ],
+      "domContentLoaded": 581,
+      "load": 581.0999999046326,
+      "requestCount": 10,
+      "transferBytes": 1561334,
+      "bodyBytes": 1559534,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 41.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 11.200000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 5.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 320.39999985694885,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 5,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 58.10000014305115,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 177.19999980926514,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 6.400000095367432,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 3.5,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 26.40000009536743,
+      "openLatency": 25.299999952316284,
+      "dialogReadyLatency": 25.299999952316284
+    },
+    {
+      "label": "desktop",
+      "repeat": 3,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "lcp": 776,
+      "cls": 0.01886918917683417,
+      "longTasks": [
+        {
+          "start": 85.60000014305115,
+          "duration": 141
+        },
+        {
+          "start": 627.2999999523163,
+          "duration": 107
+        }
+      ],
+      "domContentLoaded": 592.2999999523163,
+      "load": 592.4000000953674,
+      "requestCount": 10,
+      "transferBytes": 1561334,
+      "bodyBytes": 1559534,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 35.10000014305115,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 12.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 5.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 339,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 5.799999952316284,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 60.89999985694885,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 168.79999995231628,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 5.5,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 3.299999952316284,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 26.700000047683716,
+      "openLatency": 28.5,
+      "dialogReadyLatency": 28.5
+    },
+    {
+      "label": "mobile",
+      "repeat": 1,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 816,
+      "cls": 0.05529111734544459,
+      "longTasks": [
+        {
+          "start": 105.90000009536743,
+          "duration": 144
+        },
+        {
+          "start": 646.5999999046326,
+          "duration": 120
+        }
+      ],
+      "domContentLoaded": 609.7999999523163,
+      "load": 609.9000000953674,
+      "requestCount": 10,
+      "transferBytes": 1561334,
+      "bodyBytes": 1559534,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 38.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 31.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 5.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 330.2999999523163,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 5.099999904632568,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 73.40000009536743,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 452.2000000476837,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 6,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 3.9000000953674316,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 27.40000009536743,
+      "openLatency": 29.799999952316284,
+      "dialogReadyLatency": 29.799999952316284
+    },
+    {
+      "label": "mobile",
+      "repeat": 2,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 500,
+      "cls": 0.05529111734544459,
+      "longTasks": [
+        {
+          "start": 90.20000004768372,
+          "duration": 157
+        },
+        {
+          "start": 352.2999999523163,
+          "duration": 111
+        }
+      ],
+      "domContentLoaded": 312.7000000476837,
+      "load": 312.7000000476837,
+      "requestCount": 10,
+      "transferBytes": 1561334,
+      "bodyBytes": 1559534,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 33.40000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 13.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 5.400000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 31,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 5.799999952316284,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 67.60000014305115,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 6.3999998569488525,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 401.2000000476837,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 3.299999952316284,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 27.800000190734863,
+      "openLatency": 32.09999990463257,
+      "dialogReadyLatency": 32.09999990463257
+    },
+    {
+      "label": "mobile",
+      "repeat": 3,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 780,
+      "cls": 0.05529111734544459,
+      "longTasks": [
+        {
+          "start": 93,
+          "duration": 141
+        },
+        {
+          "start": 620.4000000953674,
+          "duration": 121
+        }
+      ],
+      "domContentLoaded": 585.4000000953674,
+      "load": 585.4000000953674,
+      "requestCount": 10,
+      "transferBytes": 1561334,
+      "bodyBytes": 1559534,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 42.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 11.099999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 6.900000095367432,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 320.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 6.599999904632568,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 64.29999995231628,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 179.29999995231628,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 1118638,
+          "encodedBodySize": 1118338,
+          "duration": 5.799999952316284,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 3.200000047683716,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 27.59999990463257,
+      "openLatency": 29.299999952316284,
+      "dialogReadyLatency": 29.299999952316284
+    }
+  ],
+  "large": [
+    {
+      "label": "desktop",
+      "repeat": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "lcp": 832,
+      "cls": 0.01886918917683417,
+      "longTasks": [
+        {
+          "start": 110.79999995231628,
+          "duration": 140
+        },
+        {
+          "start": 633.2999999523163,
+          "duration": 168
+        }
+      ],
+      "domContentLoaded": 602.1000001430511,
+      "load": 602.2000000476837,
+      "requestCount": 10,
+      "transferBytes": 989890,
+      "bodyBytes": 988090,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 50.39999985694885,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 12.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 3.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 6,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 322.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 73.90000009536743,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 161.20000004768372,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 547194,
+          "encodedBodySize": 546894,
+          "duration": 9.299999952316284,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 4.599999904632568,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 15.799999952316284,
+      "openLatency": 22.799999952316284,
+      "dialogReadyLatency": 22.799999952316284,
+      "groceryRows": 1002,
+      "groceryNavigationLatency": 404.10000014305115,
+      "groceryCheckLatency": 132.5
+    },
+    {
+      "label": "desktop",
+      "repeat": 2,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "lcp": 532,
+      "cls": 0,
+      "longTasks": [
+        {
+          "start": 101.70000004768372,
+          "duration": 151
+        },
+        {
+          "start": 346.5,
+          "duration": 148
+        }
+      ],
+      "domContentLoaded": 314.90000009536743,
+      "load": 315,
+      "requestCount": 10,
+      "transferBytes": 989890,
+      "bodyBytes": 988090,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 40.39999985694885,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 14,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 3.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 30.5,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 7,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 74,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 547194,
+          "encodedBodySize": 546894,
+          "duration": 8.299999952316284,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 416.5,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 3.5,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 14.699999809265137,
+      "openLatency": 24,
+      "dialogReadyLatency": 24,
+      "groceryRows": 1002,
+      "groceryNavigationLatency": 387.80000019073486,
+      "groceryCheckLatency": 142.90000009536743
+    },
+    {
+      "label": "desktop",
+      "repeat": 3,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "lcp": 548,
+      "cls": 0.01886918917683417,
+      "longTasks": [
+        {
+          "start": 104.40000009536743,
+          "duration": 147
+        },
+        {
+          "start": 352,
+          "duration": 159
+        }
+      ],
+      "domContentLoaded": 316,
+      "load": 316,
+      "requestCount": 10,
+      "transferBytes": 989890,
+      "bodyBytes": 988090,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 46,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 11.599999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 3.6000001430511475,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 7.5,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 36,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 61.69999980926514,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 547194,
+          "encodedBodySize": 546894,
+          "duration": 7.3999998569488525,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 178,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 4.599999904632568,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 15.899999856948853,
+      "openLatency": 26.90000009536743,
+      "dialogReadyLatency": 26.90000009536743,
+      "groceryRows": 1002,
+      "groceryNavigationLatency": 511.7999999523163,
+      "groceryCheckLatency": 148.5
+    },
+    {
+      "label": "mobile",
+      "repeat": 1,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 800,
+      "cls": 0,
+      "longTasks": [
+        {
+          "start": 107.40000009536743,
+          "duration": 144
+        },
+        {
+          "start": 623.2999999523163,
+          "duration": 148
+        }
+      ],
+      "domContentLoaded": 596.2999999523163,
+      "load": 596.4000000953674,
+      "requestCount": 10,
+      "transferBytes": 989890,
+      "bodyBytes": 988090,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 49.39999985694885,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 12.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 3.799999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 318.2000000476837,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 7.200000047683716,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 56.10000014305115,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 168,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 547194,
+          "encodedBodySize": 546894,
+          "duration": 12.199999809265137,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 4.1000001430511475,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 18,
+      "openLatency": 27.5,
+      "dialogReadyLatency": 27.5,
+      "groceryRows": 1002,
+      "groceryNavigationLatency": 386.40000009536743,
+      "groceryCheckLatency": 143.20000004768372
+    },
+    {
+      "label": "mobile",
+      "repeat": 2,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 636,
+      "cls": 0.05529111734544459,
+      "longTasks": [
+        {
+          "start": 108.5,
+          "duration": 138
+        },
+        {
+          "start": 624.8999998569489,
+          "duration": 157
+        }
+      ],
+      "domContentLoaded": 593.0999999046326,
+      "load": 593.2999999523163,
+      "requestCount": 10,
+      "transferBytes": 989890,
+      "bodyBytes": 988090,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 47.90000009536743,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 12.099999904632568,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 3.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 6.800000190734863,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 318.10000014305115,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 68,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 215,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 547194,
+          "encodedBodySize": 546894,
+          "duration": 8.900000095367432,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 4.199999809265137,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 13.799999952316284,
+      "openLatency": 29.899999856948853,
+      "dialogReadyLatency": 29.899999856948853,
+      "groceryRows": 1002,
+      "groceryNavigationLatency": 416.7000000476837,
+      "groceryCheckLatency": 139.29999995231628
+    },
+    {
+      "label": "mobile",
+      "repeat": 3,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lcp": 816,
+      "cls": 0,
+      "longTasks": [
+        {
+          "start": 101.70000004768372,
+          "duration": 144
+        },
+        {
+          "start": 621.1000001430511,
+          "duration": 160
+        }
+      ],
+      "domContentLoaded": 593.4000000953674,
+      "load": 593.5,
+      "requestCount": 10,
+      "transferBytes": 989890,
+      "bodyBytes": 988090,
+      "jsBytes": 399785,
+      "resources": [
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 44.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 13.299999952316284,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/theme-init.js",
+          "transferSize": 883,
+          "encodedBodySize": 583,
+          "duration": 3.700000047683716,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CiRdNdn_.js",
+          "transferSize": 399502,
+          "encodedBodySize": 399202,
+          "duration": 321,
+          "initiatorType": "script"
+        },
+        {
+          "name": "/assets/index-CYOP0CIw.css",
+          "transferSize": 35364,
+          "encodedBodySize": 35064,
+          "duration": 6.900000095367432,
+          "initiatorType": "link"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 69.10000014305115,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/adguard-ajax-api/api",
+          "transferSize": 0,
+          "encodedBodySize": 0,
+          "duration": 430.40000009536743,
+          "initiatorType": "xmlhttprequest"
+        },
+        {
+          "name": "/data/recipes.json",
+          "transferSize": 547194,
+          "encodedBodySize": 546894,
+          "duration": 8.200000047683716,
+          "initiatorType": "fetch"
+        },
+        {
+          "name": "/icons/icon.svg",
+          "transferSize": 1203,
+          "encodedBodySize": 903,
+          "duration": 4.200000047683716,
+          "initiatorType": "other"
+        }
+      ],
+      "searchLatency": 14.100000143051147,
+      "openLatency": 27.59999990463257,
+      "dialogReadyLatency": 27.59999990463257,
+      "groceryRows": 1002,
+      "groceryNavigationLatency": 404.69999980926514,
+      "groceryCheckLatency": 137.39999985694885
+    }
+  ],
+  "comparisons": [
+    {
+      "viewport": "desktop",
+      "metric": "lcp",
+      "baseline": 604,
+      "redesign": 760,
+      "delta": 156,
+      "percent": 25.828
+    },
+    {
+      "viewport": "desktop",
+      "metric": "cls",
+      "baseline": 0,
+      "redesign": 0.019,
+      "delta": 0.019,
+      "percent": null
+    },
+    {
+      "viewport": "desktop",
+      "metric": "searchLatency",
+      "baseline": 171.5,
+      "redesign": 26.4,
+      "delta": -145.1,
+      "percent": -84.606
+    },
+    {
+      "viewport": "desktop",
+      "metric": "openLatency",
+      "baseline": 15.5,
+      "redesign": 27.9,
+      "delta": 12.4,
+      "percent": 80
+    },
+    {
+      "viewport": "desktop",
+      "metric": "requestCount",
+      "baseline": 53,
+      "redesign": 10,
+      "delta": -43,
+      "percent": -81.132
+    },
+    {
+      "viewport": "desktop",
+      "metric": "bodyBytes",
+      "baseline": 3704340,
+      "redesign": 1559534,
+      "delta": -2144806,
+      "percent": -57.9
+    },
+    {
+      "viewport": "desktop",
+      "metric": "transferBytes",
+      "baseline": 3719040,
+      "redesign": 1561334,
+      "delta": -2157706,
+      "percent": -58.018
+    },
+    {
+      "viewport": "desktop",
+      "metric": "jsBytes",
+      "baseline": 312517,
+      "redesign": 399785,
+      "delta": 87268,
+      "percent": 27.924
+    },
+    {
+      "viewport": "mobile",
+      "metric": "lcp",
+      "baseline": 612,
+      "redesign": 780,
+      "delta": 168,
+      "percent": 27.451
+    },
+    {
+      "viewport": "mobile",
+      "metric": "cls",
+      "baseline": 0,
+      "redesign": 0.055,
+      "delta": 0.055,
+      "percent": null
+    },
+    {
+      "viewport": "mobile",
+      "metric": "searchLatency",
+      "baseline": 169.2,
+      "redesign": 27.6,
+      "delta": -141.6,
+      "percent": -83.688
+    },
+    {
+      "viewport": "mobile",
+      "metric": "openLatency",
+      "baseline": 15.7,
+      "redesign": 29.8,
+      "delta": 14.1,
+      "percent": 89.809
+    },
+    {
+      "viewport": "mobile",
+      "metric": "requestCount",
+      "baseline": 53,
+      "redesign": 10,
+      "delta": -43,
+      "percent": -81.132
+    },
+    {
+      "viewport": "mobile",
+      "metric": "bodyBytes",
+      "baseline": 3704340,
+      "redesign": 1559534,
+      "delta": -2144806,
+      "percent": -57.9
+    },
+    {
+      "viewport": "mobile",
+      "metric": "transferBytes",
+      "baseline": 3719040,
+      "redesign": 1561334,
+      "delta": -2157706,
+      "percent": -58.018
+    },
+    {
+      "viewport": "mobile",
+      "metric": "jsBytes",
+      "baseline": 312517,
+      "redesign": 399785,
+      "delta": 87268,
+      "percent": 27.924
+    }
+  ],
+  "checks": [
+    {
+      "kind": "production",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "lcp",
+      "actual": 760,
+      "limit": 800,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "cls",
+      "actual": 0.019,
+      "limit": 0.05,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "searchLatency",
+      "actual": 26.4,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "openLatency",
+      "actual": 27.9,
+      "limit": 50,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "requestCount",
+      "actual": 10,
+      "limit": 53,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "bodyBytes",
+      "actual": 1559534,
+      "limit": 3704340,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "transferBytes",
+      "actual": 1561334,
+      "limit": 3719040,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "jsBytes",
+      "actual": 399785,
+      "limit": 409600,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "desktop",
+      "statistic": "maximum",
+      "metric": "cls",
+      "actual": 0.019,
+      "limit": 0.1,
+      "passed": true
+    },
+    {
+      "kind": "large",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "searchLatency",
+      "actual": 15.8,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "kind": "large",
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "groceryCheckLatency",
+      "actual": 142.9,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "kind": "large",
+      "viewport": "desktop",
+      "statistic": "maximum",
+      "metric": "searchLatency",
+      "actual": 15.9,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "kind": "large",
+      "viewport": "desktop",
+      "statistic": "maximum",
+      "metric": "groceryCheckLatency",
+      "actual": 148.5,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "lcp",
+      "actual": 780,
+      "limit": 800,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "cls",
+      "actual": 0.055,
+      "limit": 0.05,
+      "passed": false
+    },
+    {
+      "kind": "production",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "searchLatency",
+      "actual": 27.6,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "openLatency",
+      "actual": 29.8,
+      "limit": 50,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "requestCount",
+      "actual": 10,
+      "limit": 53,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "bodyBytes",
+      "actual": 1559534,
+      "limit": 3704340,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "transferBytes",
+      "actual": 1561334,
+      "limit": 3719040,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "jsBytes",
+      "actual": 399785,
+      "limit": 409600,
+      "passed": true
+    },
+    {
+      "kind": "production",
+      "viewport": "mobile",
+      "statistic": "maximum",
+      "metric": "cls",
+      "actual": 0.055,
+      "limit": 0.1,
+      "passed": true
+    },
+    {
+      "kind": "large",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "searchLatency",
+      "actual": 14.1,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "kind": "large",
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "groceryCheckLatency",
+      "actual": 139.3,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "kind": "large",
+      "viewport": "mobile",
+      "statistic": "maximum",
+      "metric": "searchLatency",
+      "actual": 18,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "kind": "large",
+      "viewport": "mobile",
+      "statistic": "maximum",
+      "metric": "groceryCheckLatency",
+      "actual": 143.2,
+      "limit": 400,
+      "passed": true
+    }
+  ],
+  "messages": [
+    {
+      "run": "production-desktop-1",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "production-desktop-2",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "production-desktop-3",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "production-mobile-1",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "production-mobile-2",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "production-mobile-3",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "large-desktop-1",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "large-desktop-2",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "large-desktop-3",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "large-mobile-1",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "large-mobile-2",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    },
+    {
+      "run": "large-mobile-3",
+      "type": "warning",
+      "instrumentation": true,
+      "text": "Service Worker registration blocked by Playwright"
+    }
+  ],
+  "failures": []
+}

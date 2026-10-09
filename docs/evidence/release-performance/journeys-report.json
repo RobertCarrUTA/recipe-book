@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-09T01:39:09.288Z",
+  "commit": "14c1056324ea6c464d009b6bd7a53a33dc7baca8",
+  "workingTreeDirty": false,
+  "build": {
+    "schemaVersion": 1,
+    "sourceCommit": "5afe991610b8d5a761380a92d7056297ad72e43d",
+    "dirty": false,
+    "version": "20261008-10",
+    "base": "/",
+    "release": "9f84c40ac9c107a7fef88ef4",
+    "contentHash": "c49f41133c9da538c6bf94c1df30b15931e463151aafeaf0cc4aff0fe58d7045",
+    "workerHash": "94621d61cc41820504270174a2dfde5ae3b11cc391af9b76136595d6e8d551c7"
+  },
+  "browser": "154.0.8037.99",
+  "node": "v24.16.0",
+  "repeats": 3,
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "label": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "budgets": {
+    "median": {
+      "filterLatency": 200,
+      "planLatency": 200,
+      "cookingLatency": 200,
+      "themeLatency": 200,
+      "persistedReloadLatency": 1500
+    },
+    "maximum": {
+      "filterLatency": 400,
+      "planLatency": 400,
+      "cookingLatency": 400,
+      "themeLatency": 400,
+      "persistedReloadLatency": 2500
+    }
+  },
+  "methodology": "Unthrottled local production server; three fresh isolated contexts per desktop/mobile layout. Real authored catalog, synthetic 35-assignment week across seven days (five recipe/components per day), eight selected recipes and two manual items. Service workers remain enabled; timed actions begin only after activation, control and network idle. Action latency starts immediately before browser click/change dispatch and ends two animation frames after asserted rendered output. Persisted reload uses a new-document animation-frame readiness observer and navigation-relative performance.now(). These are lab event-to-render timings, not field INP or physical-device measurements.",
+  "fixtures": {
+    "recipeCount": 128,
+    "recipeJsonSha256": "aecc3dd4ba05dc2a654cb31b876113a77d56764bf92e76e04dbe3a0e1c9d1127",
+    "snapshotSha256": "8a18c30406ee6f5cb2dec8f9cae634e86a771c97587f4f0a908d9f0a63eb2a40",
+    "collection": "main-dishes",
+    "filteredCount": 71,
+    "expectedFilterIds": [
+      "a5-wagyu-burger",
+      "air-fryer-orange-chicken",
+      "baking-steel-pepperoni-sausage-ricotta-pizza",
+      "beef-tenderloin",
+      "beef-mushroom-barley-soup",
+      "berbere-turkey-lentil-braise",
+      "braised-beef-short-ribs",
+      "braised-short-ribs",
+      "carne-asada-burritos-with-crispy-potatoes-and-roasted-arbol-tomatillo-drip-hot-sauce",
+      "cheese-pizza",
+      "chermoula-chickpea-cauliflower-farro",
+      "chicken-florentine",
+      "chicken-francese",
+      "chicken-fried-steak",
+      "chicken-parmesan",
+      "chicken-piccata",
+      "chili-mac",
+      "chipotle-lime-chicken-with-sweet-potatoes",
+      "chorizo-cheddar-pickle-grilled-cheese",
+      "ciabatta-salami-melt",
+      "citrus-mojo-pork-with-black-bean-quinoa",
+      "cold-italian-grinder-sandwiches",
+      "corn-chowder",
+      "creamy-lemon-chicken-pasta"
+    ],
+    "plan": {
+      "monday": [
+        "banana-coffee-cake-pancakes",
+        "air-fryer-orange-chicken",
+        "baking-steel-pepperoni-sausage-ricotta-pizza",
+        "garlic-mashed-potatoes",
+        "brown-butter-blueberry-crumble-cake"
+      ],
+      "tuesday": [
+        "chorizo-cheddar-egg-sandwich",
+        "beef-tenderloin",
+        "beef-mushroom-barley-soup",
+        "instant-pot-jasmine-rice",
+        "chocolate-chip-cookie-bars"
+      ],
+      "wednesday": [
+        "cinnamon-crunch-blueberry-butter-swim-biscuits",
+        "berbere-turkey-lentil-braise",
+        "braised-beef-short-ribs",
+        "prosciutto-mozzarella-arugula-toast",
+        "classic-cheesecake"
+      ],
+      "thursday": [
+        "banana-coffee-cake-pancakes",
+        "braised-short-ribs",
+        "carne-asada-burritos-with-crispy-potatoes-and-roasted-arbol-tomatillo-drip-hot-sauce",
+        "air-fryer-sweet-potato-fries",
+        "creamy-jalapeno-taqueria-salsa"
+      ],
+      "friday": [
+        "chorizo-cheddar-egg-sandwich",
+        "cheese-pizza",
+        "chermoula-chickpea-cauliflower-farro",
+        "easy-breakfast-potatoes",
+        "fresh-table-salsa"
+      ],
+      "saturday": [
+        "cinnamon-crunch-blueberry-butter-swim-biscuits",
+        "chicken-florentine",
+        "chicken-francese",
+        "hush-puppies",
+        "homemade-beignets-with-french-hot-chocolate"
+      ],
+      "sunday": [
+        "banana-coffee-cake-pancakes",
+        "chicken-fried-steak",
+        "chicken-parmesan",
+        "instant-pot-sweet-potatoes",
+        "lemon-bars"
+      ]
+    },
+    "plannedAssignments": 35,
+    "uniquePlannedRecipes": 31,
+    "selectedRecipes": 8,
+    "manualItems": 2,
+    "addedRecipeId": "a5-wagyu-burger"
+  },
+  "artifacts": [
+    {
+      "name": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "404.html",
+      "bytes": 4580,
+      "sha256": "7b9dd4a9d1a00ff869abc9d827fd09c7ee54cda4c78200dc8f67038d0a14bade"
+    },
+    {
+      "name": "LICENSE.md",
+      "bytes": 3318,
+      "sha256": "78b30f44a035ec081789803bf3b7898246cceffc221abc745775519544435d14"
+    },
+    {
+      "name": "NOTICE",
+      "bytes": 220,
+      "sha256": "e7bf0a894ad6f79e80ebbdfeb59a360b8187d1c98ecb5bdb573e7c7a750ff9a0"
+    },
+    {
+      "name": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 36767,
+      "sha256": "6311d41c75e35c73245ce42c0f34364e05b012e6d2bcff8f7165f3c096cd8df3"
+    },
+    {
+      "name": "assets/index-CYOP0CIw.css",
+      "bytes": 35064,
+      "sha256": "ef63542eb98ae989e89925c4f82bacf609bf8512e2f4b64b914811a72d98feed"
+    },
+    {
+      "name": "assets/index-CvANh-Ud.js",
+      "bytes": 399250,
+      "sha256": "ff88e7ae82e7ae9a7d72a8222708477289281936c1fd177f30544ff023d72832"
+    },
+    {
+      "name": "build-info.json",
+      "bytes": 358,
+      "sha256": "504e353ad0f52e17a129b973a25eae8eb62efcf2c4a096ffd43fb37f636a8526"
+    },
+    {
+      "name": "data/recipes.json",
+      "bytes": 1118338,
+      "sha256": "aecc3dd4ba05dc2a654cb31b876113a77d56764bf92e76e04dbe3a0e1c9d1127"
+    },
+    {
+      "name": "icons/icon.svg",
+      "bytes": 903,
+      "sha256": "2ff2773100281118066692f42dc61317b28ed3bdc4390276b306235221d118fd"
+    },
+    {
+      "name": "index.html",
+      "bytes": 4580,
+      "sha256": "7b9dd4a9d1a00ff869abc9d827fd09c7ee54cda4c78200dc8f67038d0a14bade"
+    },
+    {
+      "name": "manifest.webmanifest",
+      "bytes": 497,
+      "sha256": "fb23d1a7a30649f51075926fae951a959f1a3332403f67359cb87125b79563b9"
+    },
+    {
+      "name": "release-manifest.json",
+      "bytes": 4177,
+      "sha256": "a2cad97ab9a02eeb29afae2c3ee2a9fee9fd7818106133da3098d79310d67e8f"
+    },
+    {
+      "name": "sw.js",
+      "bytes": 17362,
+      "sha256": "57a0e6e23f946198816869efadc19bcbe9b0aaef19d6a68744693f49f3528a2c"
+    },
+    {
+      "name": "theme-init.js",
+      "bytes": 583,
+      "sha256": "72ddbbc16371e886435e87f28947ebbd1b25b39a31f83ed4712ecfe767afd195"
+    }
+  ],
+  "samples": [
+    {
+      "viewport": "desktop",
+      "repeat": 1,
+      "filterLatency": 13.099999904632568,
+      "planLatency": 34.799999952316284,
+      "cookingLatency": 27,
+      "themeLatency": 13.100000143051147,
+      "persistedReloadLatency": 153.5,
+      "persistedSnapshotSha256": "1421ea37733bf7bc1967e48895567ae46a81974587f93b5dc5fbdf8cdb1448ee",
+      "reopenedAssignments": 36
+    },
+    {
+      "viewport": "desktop",
+      "repeat": 2,
+      "filterLatency": 15,
+      "planLatency": 35.5,
+      "cookingLatency": 26.600000143051147,
+      "themeLatency": 13,
+      "persistedReloadLatency": 153.90000009536743,
+      "persistedSnapshotSha256": "64803d6a5ca4b27f0a805a9f0dd1ca5fd3e30d1cde4e4a8d3a13bf202bed2098",
+      "reopenedAssignments": 36
+    },
+    {
+      "viewport": "desktop",
+      "repeat": 3,
+      "filterLatency": 13.200000047683716,
+      "planLatency": 36.5,
+      "cookingLatency": 28,
+      "themeLatency": 13.299999952316284,
+      "persistedReloadLatency": 155.60000014305115,
+      "persistedSnapshotSha256": "554805479cd7552209e4b9741e0e86c600127878d09cde9ce8538c8d7e637197",
+      "reopenedAssignments": 36
+    },
+    {
+      "viewport": "mobile",
+      "repeat": 1,
+      "filterLatency": 12.399999856948853,
+      "planLatency": 35.799999952316284,
+      "cookingLatency": 25.200000047683716,
+      "themeLatency": 13.700000047683716,
+      "persistedReloadLatency": 162.60000014305115,
+      "persistedSnapshotSha256": "80fc74e0278d88d12071a942750e92e062d708fcf85b61958b1b2b17d4f6c517",
+      "reopenedAssignments": 36
+    },
+    {
+      "viewport": "mobile",
+      "repeat": 2,
+      "filterLatency": 12.299999952316284,
+      "planLatency": 42.299999952316284,
+      "cookingLatency": 25.200000047683716,
+      "themeLatency": 13.199999809265137,
+      "persistedReloadLatency": 166.30000019073486,
+      "persistedSnapshotSha256": "ff951a0ffbd49c75be655502b2b0d3c6fac073890c57e8d243772451ca129c3e",
+      "reopenedAssignments": 36
+    },
+    {
+      "viewport": "mobile",
+      "repeat": 3,
+      "filterLatency": 10.799999952316284,
+      "planLatency": 35.299999952316284,
+      "cookingLatency": 24.800000190734863,
+      "themeLatency": 13.200000047683716,
+      "persistedReloadLatency": 163.79999995231628,
+      "persistedSnapshotSha256": "b8ac75d0b18f878a0f043e4ed29214ff8326ef5ac82b0ccf2ae3017dff0fe6c2",
+      "reopenedAssignments": 36
+    }
+  ],
+  "checks": [
+    {
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "filterLatency",
+      "actual": 13.2,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "planLatency",
+      "actual": 35.5,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "cookingLatency",
+      "actual": 27,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "themeLatency",
+      "actual": 13.1,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "statistic": "median",
+      "metric": "persistedReloadLatency",
+      "actual": 153.9,
+      "limit": 1500,
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "statistic": "maximum",
+      "metric": "filterLatency",
+      "actual": 15,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "statistic": "maximum",
+      "metric": "planLatency",
+      "actual": 36.5,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "statistic": "maximum",
+      "metric": "cookingLatency",
+      "actual": 28,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "statistic": "maximum",
+      "metric": "themeLatency",
+      "actual": 13.3,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "statistic": "maximum",
+      "metric": "persistedReloadLatency",
+      "actual": 155.6,
+      "limit": 2500,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "filterLatency",
+      "actual": 12.3,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "planLatency",
+      "actual": 35.8,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "cookingLatency",
+      "actual": 25.2,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "themeLatency",
+      "actual": 13.2,
+      "limit": 200,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "median",
+      "metric": "persistedReloadLatency",
+      "actual": 163.8,
+      "limit": 1500,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "maximum",
+      "metric": "filterLatency",
+      "actual": 12.4,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "maximum",
+      "metric": "planLatency",
+      "actual": 42.3,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "maximum",
+      "metric": "cookingLatency",
+      "actual": 25.2,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "maximum",
+      "metric": "themeLatency",
+      "actual": 13.7,
+      "limit": 400,
+      "passed": true
+    },
+    {
+      "viewport": "mobile",
+      "statistic": "maximum",
+      "metric": "persistedReloadLatency",
+      "actual": 166.3,
+      "limit": 2500,
+      "passed": true
+    }
+  ],
+  "messages": [],
+  "failures": []
+}
