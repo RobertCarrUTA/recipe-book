@@ -133,6 +133,77 @@ describe("durable state lifecycle", () => {
 });
 
 describe("recipe request lifecycle", () => {
+  it("restores valid saved collections and removes only collections missing from a successful load", async () => {
+    const previous = storeAt();
+    previous.setUi({
+      filters: {
+        collection: ["health-conscious", "soups-stews"],
+        difficulty: ["easy"],
+      },
+      recipeSearch: "beans",
+    });
+    previous.dispose();
+    const store = storeAt();
+    const available = {
+      ...soup,
+      collections: ["health-conscious", "soups-stews"],
+    };
+    vi.stubGlobal(
+      "fetch",
+      vi
+        .fn()
+        .mockResolvedValueOnce(response([available]))
+        .mockResolvedValueOnce(
+          response([{ ...soup, collections: ["soups-stews"] }]),
+        )
+        .mockResolvedValueOnce(
+          response([{ ...soup, collections: ["main-dishes"] }]),
+        ),
+    );
+    await store.loadRecipes();
+    expect(store.getSnapshot().ui.filters).toEqual({
+      collection: ["health-conscious", "soups-stews"],
+      difficulty: ["easy"],
+    });
+    await store.loadRecipes();
+    expect(store.getSnapshot().ui.filters).toEqual({
+      collection: ["soups-stews"],
+      difficulty: ["easy"],
+    });
+    await store.loadRecipes();
+    expect(store.getSnapshot().ui.filters).toEqual({ difficulty: ["easy"] });
+    expect(store.getSnapshot().ui.recipeSearch).toBe("beans");
+    store.flush();
+    expect(saved().ui.filters).toEqual({ difficulty: ["easy"] });
+  });
+
+  it("retains collection filters after a failed or obsolete catalog load", async () => {
+    const body = deferred<unknown>();
+    const store = storeAt();
+    store.setUi({
+      filters: { collection: ["health-conscious"], rating: ["great"] },
+    });
+    const filters = structuredClone(store.getSnapshot().ui.filters);
+    vi.stubGlobal(
+      "fetch",
+      vi
+        .fn()
+        .mockRejectedValueOnce(new Error("Offline"))
+        .mockResolvedValueOnce({ ok: true, json: () => body.promise })
+        .mockResolvedValueOnce(
+          response([{ ...soup, collections: ["health-conscious"] }]),
+        ),
+    );
+    await store.loadRecipes();
+    expect(store.getSnapshot().ui.filters).toEqual(filters);
+    const obsolete = store.loadRecipes();
+    await Promise.resolve();
+    await store.loadRecipes();
+    body.resolve([soup]);
+    await obsolete;
+    expect(store.getSnapshot().ui.filters).toEqual(filters);
+  });
+
   it.each(["network", "status", "json", "schema"])(
     "retains saved choices and the current catalog after a %s failure",
     async (kind) => {

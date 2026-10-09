@@ -246,7 +246,23 @@ export function createAppStore() {
       domain.pruneRecipeRuntimeState(runtime, recipes);
       domain.pruneMealPlanForRecipes(mealPlan, recipes);
       domain.recompute(runtime, recipes);
-      patch({ recipes, runtime, mealPlan, loadState: "ready" });
+      let ui = state.ui;
+      const selectedCollections = ui.filters.collection;
+      if (selectedCollections?.length) {
+        const available = new Set(
+          recipes.flatMap((recipe) => recipe.collections),
+        );
+        const retained = selectedCollections.filter((id) => available.has(id));
+        if (retained.length !== selectedCollections.length) {
+          const filters = { ...ui.filters };
+          if (retained.length) filters.collection = retained;
+          else delete filters.collection;
+          ui = { ...ui, filters };
+        }
+      }
+      const collectionsChanged = ui !== state.ui;
+      patch({ recipes, runtime, mealPlan, ui, loadState: "ready" });
+      if (collectionsChanged) schedule();
       if (
         state.recipeId &&
         !recipes.some((recipe) => recipe.id === state.recipeId)
