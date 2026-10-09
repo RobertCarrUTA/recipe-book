@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "release": "a4146a26e10f472179471217",
+  "version": "20261008-9",
+  "sourceCommit": "f9b7ea9e48684cd202d8fbb37e355aceec8d8425",
+  "base": "/recipe-book/",
+  "shell": [
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "404.html",
+      "sha256": "2abd9fd2df33a24826d93df2d6f804933ddafbb2664492c215c4b385f9cedacd",
+      "bytes": 4652
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "78b30f44a035ec081789803bf3b7898246cceffc221abc745775519544435d14",
+      "bytes": 3318
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "e7bf0a894ad6f79e80ebbdfeb59a360b8187d1c98ecb5bdb573e7c7a750ff9a0",
+      "bytes": 220
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "sha256": "6311d41c75e35c73245ce42c0f34364e05b012e6d2bcff8f7165f3c096cd8df3",
+      "bytes": 36767
+    },
+    {
+      "path": "assets/index-CYOP0CIw.css",
+      "sha256": "ef63542eb98ae989e89925c4f82bacf609bf8512e2f4b64b914811a72d98feed",
+      "bytes": 35064
+    },
+    {
+      "path": "assets/index-D5tkg3hX.js",
+      "sha256": "66a87d3bba8237612ca6c273939dc3887d82b5c0b02e8a3136f7c39362589ee9",
+      "bytes": 399243
+    },
+    {
+      "path": "build-info.json",
+      "sha256": "794709182e83d65b1862449d4fc687bc40ffeff70fd5181ba8a1e4d95807961f",
+      "bytes": 369
+    },
+    {
+      "path": "icons/icon.svg",
+      "sha256": "2ff2773100281118066692f42dc61317b28ed3bdc4390276b306235221d118fd",
+      "bytes": 903
+    },
+    {
+      "path": "index.html",
+      "sha256": "2abd9fd2df33a24826d93df2d6f804933ddafbb2664492c215c4b385f9cedacd",
+      "bytes": 4652
+    },
+    {
+      "path": "manifest.webmanifest",
+      "sha256": "fb23d1a7a30649f51075926fae951a959f1a3332403f67359cb87125b79563b9",
+      "bytes": 497
+    },
+    {
+      "path": "theme-init.js",
+      "sha256": "72ddbbc16371e886435e87f28947ebbd1b25b39a31f83ed4712ecfe767afd195",
+      "bytes": 583
+    }
+  ],
+  "artifacts": [
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "404.html",
+      "sha256": "2abd9fd2df33a24826d93df2d6f804933ddafbb2664492c215c4b385f9cedacd",
+      "bytes": 4652
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "78b30f44a035ec081789803bf3b7898246cceffc221abc745775519544435d14",
+      "bytes": 3318
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "e7bf0a894ad6f79e80ebbdfeb59a360b8187d1c98ecb5bdb573e7c7a750ff9a0",
+      "bytes": 220
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "sha256": "6311d41c75e35c73245ce42c0f34364e05b012e6d2bcff8f7165f3c096cd8df3",
+      "bytes": 36767
+    },
+    {
+      "path": "assets/index-CYOP0CIw.css",
+      "sha256": "ef63542eb98ae989e89925c4f82bacf609bf8512e2f4b64b914811a72d98feed",
+      "bytes": 35064
+    },
+    {
+      "path": "assets/index-D5tkg3hX.js",
+      "sha256": "66a87d3bba8237612ca6c273939dc3887d82b5c0b02e8a3136f7c39362589ee9",
+      "bytes": 399243
+    },
+    {
+      "path": "build-info.json",
+      "sha256": "794709182e83d65b1862449d4fc687bc40ffeff70fd5181ba8a1e4d95807961f",
+      "bytes": 369
+    },
+    {
+      "path": "data/recipes.json",
+      "sha256": "aecc3dd4ba05dc2a654cb31b876113a77d56764bf92e76e04dbe3a0e1c9d1127",
+      "bytes": 1118338
+    },
+    {
+      "path": "icons/icon.svg",
+      "sha256": "2ff2773100281118066692f42dc61317b28ed3bdc4390276b306235221d118fd",
+      "bytes": 903
+    },
+    {
+      "path": "index.html",
+      "sha256": "2abd9fd2df33a24826d93df2d6f804933ddafbb2664492c215c4b385f9cedacd",
+      "bytes": 4652
+    },
+    {
+      "path": "manifest.webmanifest",
+      "sha256": "fb23d1a7a30649f51075926fae951a959f1a3332403f67359cb87125b79563b9",
+      "bytes": 497
+    },
+    {
+      "path": "sw.js",
+      "sha256": "339bfcbd143d3204c3615f56ce722d5fd6ae879c0153adb2071af9de7c41d374",
+      "bytes": 17445
+    },
+    {
+      "path": "theme-init.js",
+      "sha256": "72ddbbc16371e886435e87f28947ebbd1b25b39a31f83ed4712ecfe767afd195",
+      "bytes": 583
+    }
+  ],
+  "artifactHash": "9c9f59cd533553413439d9ec05eea3803a0f304b80554acd4109bddddc5c32ff"
+}

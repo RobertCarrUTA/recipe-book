@@ -1,26 +1,88 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import fs from "node:fs/promises";
 
-test("a failed catalog shows an accessible error and can be retried", async ({
+test("progressive recipe browsing retains keyboard first and last boundaries", async ({
   page,
 }) => {
-  let attempts = 0;
-  await page.route("**/data/recipes.json?*", (route) =>
-    ++attempts === 1
-      ? route.fulfill({ status: 503, body: "Unavailable" })
-      : route.continue(),
-  );
   await page.goto("./");
-  await expect(
-    page.getByRole("heading", { name: "Your recipes couldn’t load" }),
-  ).toBeVisible();
-  expect(
-    (await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze())
-      .violations,
-  ).toEqual([]);
-  await page.getByRole("button", { name: "Try again" }).click();
-  await expect(page.locator(".recipe-card").first()).toBeVisible();
-  expect(attempts).toBe(2);
+  const links = page.locator(".recipe-card h2 a");
+  await expect(links).toHaveCount(24);
+  await page.getByRole("button", { name: "Show more recipes" }).click();
+  await expect(links).toHaveCount(48);
+  await links.first().focus();
+  await page.keyboard.press("End");
+  await expect(links).toHaveCount(128);
+  await expect(links.last()).toBeFocused();
+  await page.keyboard.press("ArrowDown");
+  await expect(links.last()).toBeFocused();
+  await page.keyboard.press("Home");
+  await expect(links.first()).toBeFocused();
+  await page.keyboard.press("ArrowUp");
+  await expect(links.first()).toBeFocused();
+});
+
+for (const [button, extension] of [
+  ["Text file", "txt"],
+  ["JSON file", "json"],
+]) {
+  test(`recipe ${extension} download preserves authored content`, async ({
+    page,
+  }) => {
+    const recipe = JSON.parse(
+      await fs.readFile(
+        new URL("../../data/recipes/chicken-fried-steak.json", import.meta.url),
+        "utf8",
+      ),
+    );
+    await page.goto("./chicken-fried-steak");
+    await expect(page.getByRole("dialog")).toBeVisible();
+    const waiting = page.waitForEvent("download");
+    await page.getByRole("button", { name: button, exact: true }).click();
+    const download = await waiting;
+    expect(download.suggestedFilename()).toBe(
+      `chicken-fried-steak.${extension}`,
+    );
+    const content = await fs.readFile((await download.path())!, "utf8");
+    if (extension === "json") {
+      const actual = JSON.parse(content);
+      expect(actual.id).toBe(recipe.id);
+      expect(actual.ingredients).toEqual(recipe.ingredients);
+      expect(actual.instructions).toEqual(recipe.instructions);
+      expect(actual.groceryIngredients).toEqual(recipe.groceryIngredients);
+    } else {
+      expect(content).toContain(recipe.title);
+      for (const line of [...recipe.ingredients, ...recipe.instructions])
+        expect(content).toContain(line);
+    }
+  });
+}
+
+test.describe("page-level catalog failure", () => {
+  // Keep this page.route fixture at the application request boundary. Actual
+  // worker/network/cache failures are exercised by smoke-offline-build.mjs.
+  test.use({ serviceWorkers: "block" });
+  test("a failed catalog shows an accessible error and can be retried", async ({
+    page,
+  }) => {
+    let attempts = 0;
+    await page.route("**/data/recipes.json?*", (route) =>
+      ++attempts === 1
+        ? route.fulfill({ status: 503, body: "Unavailable" })
+        : route.continue(),
+    );
+    await page.goto("./");
+    await expect(
+      page.getByRole("heading", { name: "Your recipes couldn’t load" }),
+    ).toBeVisible();
+    expect(
+      (await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze())
+        .violations,
+    ).toEqual([]);
+    await page.getByRole("button", { name: "Try again" }).click();
+    await expect(page.locator(".recipe-card").first()).toBeVisible();
+    expect(attempts).toBe(2);
+  });
 });
 
 test("legacy recipe hashes and browser forward navigation retain a readable detail", async ({

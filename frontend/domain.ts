@@ -1,4 +1,4 @@
-// Legacy modules remain the tested runtime-validation and calculation boundary.
+// Shared domain modules remain the tested validation and calculation boundary.
 // These structural types describe their normalized output; raw input stays unknown.
 import { normalizeRecipeBook } from "../js/recipe_schema.js";
 import {

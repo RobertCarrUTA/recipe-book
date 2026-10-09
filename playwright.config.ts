@@ -10,6 +10,8 @@ const executablePath = process.env.CI
 export default defineConfig({
   testDir: "./tests/e2e",
   outputDir: "test-results/playwright",
+  snapshotPathTemplate:
+    "{testDir}/__snapshots__/{projectName}-{platform}/{arg}{ext}",
   timeout: 60000,
   expect: { timeout: 10000 },
   fullyParallel: true,

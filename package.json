@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node scripts/prepare-public.mjs && vite",
     "build": "node scripts/prepare-public.mjs && vite build && node scripts/finalize-build.mjs",
-    "preview": "vite preview",
+    "preview": "node scripts/serve-build.mjs",
     "check:types": "tsc --noEmit",
     "test:components": "vitest run --config vitest.config.ts",
     "test:browser": "playwright test",
@@ -21,12 +21,15 @@
     "set-asset-version": "node scripts/set-asset-version.mjs",
     "check:syntax": "node scripts/check-syntax.mjs",
     "report:data-quality": "node scripts/report-data-quality.mjs",
-    "smoke:legacy": "node scripts/smoke-browser.mjs",
-    "smoke:browser": "npm run smoke:legacy && npm run test:browser",
+    "smoke:browser": "npm run test:browser && npm run smoke:offline",
     "test": "node scripts/run-tests.mjs",
     "verify:app": "node scripts/verify-app.mjs",
-    "verify": "npm run check:syntax && npm run check:recipes && npm run test && npm run verify:app && npm run check:types && npm run test:components && npm run build",
-    "verify:full": "npm run verify && npm run smoke:browser"
+    "verify": "npm run format:check && npm run check:syntax && npm run check:recipes && npm run test && npm run verify:app && npm run check:types && npm run test:components && npm run build && npm run verify:build",
+    "verify:full": "npm run verify && npm run smoke:browser && npm run check:release",
+    "verify:build": "node scripts/verify-build.mjs",
+    "smoke:offline": "node scripts/smoke-offline-build.mjs",
+    "stage:release": "node scripts/stage-pages-release.mjs --stage",
+    "check:release": "node scripts/check-staged-release.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

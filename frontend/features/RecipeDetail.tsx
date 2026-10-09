@@ -28,14 +28,17 @@ export function downloadText(
   filename: string,
   type = "text/plain",
 ) {
-  const url = URL.createObjectURL(new Blob([text], { type }));
   const anchor = document.createElement("a");
-  anchor.href = url;
-  anchor.download = filename;
-  document.body.append(anchor);
-  anchor.click();
-  anchor.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  try {
+    anchor.href = url;
+    anchor.download = filename;
+    document.body.append(anchor);
+    anchor.click();
+  } finally {
+    anchor.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
 }
 
 function Quantity({ recipe }: { recipe: Recipe }) {

@@ -30,6 +30,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -40,6 +42,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Audit dependency advisories
+        if: runner.os == 'Linux'
+        run: npm audit --audit-level=high
+
       - name: Install browser
         if: runner.os == 'Linux'
         run: npx playwright install --with-deps chromium
@@ -47,9 +53,14 @@ jobs:
       - name: Run core verification
         run: npm run verify
 
+      - name: Reproduce tracked Pages release
+        run: npm run check:release
+
       - name: Run browser smoke tests
         if: runner.os == 'Linux'
         run: npm run smoke:browser
+        env:
+          VISUAL_REGRESSION: '1'
 
       - name: Retain browser diagnostics
         if: always() && runner.os == 'Linux'
@@ -60,6 +71,7 @@ jobs:
             playwright-report/
             test-results/e2e-results.json
             test-results/playwright/
+            test-results/offline-lifecycle.json
           retention-days: 14
 
   cross-browser:

@@ -20,7 +20,8 @@ const safeView = (value: unknown): View =>
   validViews.has(value as View) ? (value as View) : "recipes";
 function route() {
   const url = new URL(location.href);
-  const hashId = new URLSearchParams(url.hash.slice(1)).get("recipe");
+  const hashIds = new URLSearchParams(url.hash.slice(1)).getAll("recipe");
+  const hashId = hashIds.length === 1 ? hashIds[0] : null;
   let path = "";
   try {
     path = decodeURIComponent(url.pathname.slice(appBase.length)).replace(
@@ -128,14 +129,17 @@ export function createAppStore() {
     if (view !== "recipes") url.searchParams.set("view", view);
     history.pushState({ recipeBook: true }, "", url);
     patch({ view, recipeId: null });
-    setUi({
-      activeView: view,
-      ...(["recipes", "grocery"].includes(view) ? { mobileView: view } : {}),
-    });
+    rememberView(view);
     window.scrollTo({ top: 0 });
     requestAnimationFrame(() =>
       document.querySelector<HTMLElement>("main h1")?.focus(),
     );
+  }
+  function rememberView(view: View) {
+    setUi({
+      activeView: view,
+      ...(["recipes", "grocery"].includes(view) ? { mobileView: view } : {}),
+    });
   }
   function openRecipe(id: string, fromSource = false) {
     returnFocus =
@@ -222,24 +226,46 @@ export function createAppStore() {
     mutate((draft) => domain.removeRecipeFromMealPlan(draft.mealPlan, day, id));
   }
   async function loadRecipes() {
+    if (disposed) return;
     loadController?.abort();
-    loadController = new AbortController();
+    const controller = new AbortController();
+    loadController = controller;
+    const obsolete = () =>
+      disposed || loadController !== controller || controller.signal.aborted;
     patch({ loadState: "loading", loadError: "" });
     try {
       const response = await fetch(
         `${appBase}data/recipes.json?load=${Date.now()}`,
-        { signal: loadController.signal, cache: "no-store" },
+        { signal: controller.signal, cache: "no-store" },
       );
+      if (obsolete()) return;
       if (!response.ok)
         throw new Error(`Recipe request failed (${response.status}).`);
-      const recipes = domain.normalizeRecipes(await response.json());
-      if (disposed) return;
+      const raw = await response.json();
+      if (obsolete()) return;
+      const recipes = domain.normalizeRecipes(raw);
       const runtime = structuredClone(state.runtime);
       const mealPlan = structuredClone(state.mealPlan);
       domain.pruneRecipeRuntimeState(runtime, recipes);
       domain.pruneMealPlanForRecipes(mealPlan, recipes);
       domain.recompute(runtime, recipes);
-      patch({ recipes, runtime, mealPlan, loadState: "ready" });
+      let ui = state.ui;
+      const selectedCollections = ui.filters.collection;
+      if (selectedCollections?.length) {
+        const available = new Set(
+          recipes.flatMap((recipe) => recipe.collections),
+        );
+        const retained = selectedCollections.filter((id) => available.has(id));
+        if (retained.length !== selectedCollections.length) {
+          const filters = { ...ui.filters };
+          if (retained.length) filters.collection = retained;
+          else delete filters.collection;
+          ui = { ...ui, filters };
+        }
+      }
+      const collectionsChanged = ui !== state.ui;
+      patch({ recipes, runtime, mealPlan, ui, loadState: "ready" });
+      if (collectionsChanged) schedule();
       if (
         state.recipeId &&
         !recipes.some((recipe) => recipe.id === state.recipeId)
@@ -250,6 +276,7 @@ export function createAppStore() {
         closeRecipe();
       }
     } catch (error) {
+      if (obsolete()) return;
       if (error instanceof DOMException && error.name === "AbortError") return;
       patch({
         loadState: "error",
@@ -262,7 +289,23 @@ export function createAppStore() {
   }
   const onPop = () => {
     const next = route();
+    if (
+      next.recipeId &&
+      state.loadState === "ready" &&
+      !state.recipes.some((recipe) => recipe.id === next.recipeId)
+    ) {
+      const url = new URL(appBase, location.origin);
+      if (next.view !== "recipes") url.searchParams.set("view", next.view);
+      history.replaceState({ recipeBook: true }, "", url);
+      patch({ ...next, recipeId: null });
+      rememberView(next.view);
+      notify(
+        "That recipe could not be found. Your collection is still available.",
+      );
+      return;
+    }
     patch({ ...next });
+    if (!next.recipeId) rememberView(next.view);
   };
   const onNetwork = () => patch({ offline: !navigator.onLine });
   const onHidden = () => {
